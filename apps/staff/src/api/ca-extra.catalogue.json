@@ -1,0 +1,2119 @@
+{
+  "regions": [
+    {
+      "id": "ky_thuat",
+      "name": "Kỹ thuật, sản xuất",
+      "card": "Tận mắt theo dõi một cây cầu, cỗ máy hay mẻ bánh được làm ra từng bước"
+    },
+    {
+      "id": "suc_khoe",
+      "name": "Sức khoẻ, giáo dục",
+      "card": "Giúp một người khoẻ lên, học tiến bộ hơn hay vượt qua lúc khó khăn"
+    },
+    {
+      "id": "kinh_doanh",
+      "name": "Kinh doanh, quản lý",
+      "card": "Tính xem quán nước phải bán bao nhiêu ly mỗi ngày thì mới có lời"
+    },
+    {
+      "id": "cong_nghe",
+      "name": "Công nghệ, khoa học",
+      "card": "Dùng máy tính hay thí nghiệm để tìm ra câu trả lời cho một thắc mắc"
+    },
+    {
+      "id": "sang_tao",
+      "name": "Sáng tạo, truyền thông",
+      "card": "Làm một video, bài hát hay thiết kế để nhiều người cùng xem"
+    },
+    {
+      "id": "dich_vu",
+      "name": "Dịch vụ, vận hành",
+      "card": "Lo cho khách được phục vụ chu đáo, đi lại an toàn và đúng giờ"
+    }
+  ],
+  "groups": [
+    {
+      "name": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat"
+    },
+    {
+      "name": "Sản xuất",
+      "regionId": "ky_thuat"
+    },
+    {
+      "name": "Xây dựng và khai khoáng",
+      "regionId": "ky_thuat"
+    },
+    {
+      "name": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat"
+    },
+    {
+      "name": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+      "regionId": "ky_thuat"
+    },
+    {
+      "name": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe"
+    },
+    {
+      "name": "Hỗ trợ y tế",
+      "regionId": "suc_khoe"
+    },
+    {
+      "name": "Cộng đồng và công tác xã hội",
+      "regionId": "suc_khoe"
+    },
+    {
+      "name": "Giáo dục và thư viện",
+      "regionId": "suc_khoe"
+    },
+    {
+      "name": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh"
+    },
+    {
+      "name": "Bán hàng",
+      "regionId": "kinh_doanh"
+    },
+    {
+      "name": "Quản lý",
+      "regionId": "kinh_doanh"
+    },
+    {
+      "name": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh"
+    },
+    {
+      "name": "Pháp lý",
+      "regionId": "kinh_doanh"
+    },
+    {
+      "name": "Công nghệ thông tin",
+      "regionId": "cong_nghe"
+    },
+    {
+      "name": "Toán học và thống kê",
+      "regionId": "cong_nghe"
+    },
+    {
+      "name": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe"
+    },
+    {
+      "name": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao"
+    },
+    {
+      "name": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu"
+    },
+    {
+      "name": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu"
+    },
+    {
+      "name": "Dịch vụ bảo vệ an ninh và an toàn",
+      "regionId": "dich_vu"
+    },
+    {
+      "name": "Chế biến và phục vụ ăn uống",
+      "regionId": "dich_vu"
+    },
+    {
+      "name": "Vệ sinh và bảo dưỡng toà nhà, cảnh quan",
+      "regionId": "dich_vu"
+    }
+  ],
+  "occupations": [
+    {
+      "code": "SWE_FRONTEND",
+      "name": "Lập trình viên Front-end",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Lập trình viên Front-end xây phần giao diện mà người dùng nhìn thấy và bấm vào trên web: màn hình, nút, biểu mẫu, hiệu ứng. Việc hằng ngày là biến bản thiết kế thành mã chạy được trên nhiều trình duyệt và thiết bị, nối giao diện với dữ liệu từ máy chủ, và giữ cho trang tải nhanh. Kết quả hiện ngay trên màn hình nên dễ thấy mình đã làm được gì.",
+      "interestCode": "CIA",
+      "levelCount": 7
+    },
+    {
+      "code": "SWE_BACKEND",
+      "name": "Lập trình viên Back-end / Kỹ sư Back-end",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Lập trình viên Back-end viết phần chạy phía máy chủ: xử lý nghiệp vụ, lưu và truy vấn dữ liệu, cung cấp API cho ứng dụng web và mobile. Người dùng không nhìn thấy phần này, nhưng mọi thao tác như đăng nhập, đặt hàng hay thanh toán đều đi qua nó. Càng lên cao, việc chuyển từ viết tính năng sang thiết kế hệ thống chịu tải lớn và chạy ổn định.",
+      "interestCode": "ICR",
+      "levelCount": 7
+    },
+    {
+      "code": "SWE_MOBILE",
+      "name": "Lập trình viên Mobile / Kỹ sư ứng dụng di động",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Lập trình viên Mobile làm ứng dụng chạy trên điện thoại, thường chuyên một nền tảng (iOS hoặc Android) hoặc dùng công cụ đa nền tảng như Flutter, React Native. Việc gồm dựng màn hình, nối với API, xử lý những đặc thù của điện thoại như pin, bộ nhớ, mất mạng, rồi đưa ứng dụng lên App Store và Google Play.",
+      "interestCode": "ICR",
+      "levelCount": 7
+    },
+    {
+      "code": "SWE_GAME",
+      "name": "Lập trình viên Game",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Lập trình viên Game viết mã cho trò chơi trên engine như Unity, Unreal hay Cocos: cơ chế chơi, điều khiển, hiệu ứng, giao diện trong game, và tích hợp quảng cáo, thanh toán trong ứng dụng. Phần khó là làm game vừa vui vừa chạy mượt trên máy cấu hình thấp. Việc làm tập trung ở một số ít studio, nhiều nơi làm game di động.",
+      "interestCode": "ICA",
+      "levelCount": 7
+    },
+    {
+      "code": "SWE_UIUX",
+      "name": "Chuyên viên thiết kế UI/UX",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Chuyên viên thiết kế UI/UX quyết định sản phẩm số trông thế nào và dùng ra sao: nghiên cứu người dùng, vẽ luồng thao tác, làm wireframe và bản thiết kế chi tiết (thường trên Figma), rồi kiểm thử với người dùng thật. Nghề không đòi viết mã, nhưng phải làm việc sát với lập trình viên và quản lý sản phẩm.",
+      "interestCode": "IAC",
+      "levelCount": 7
+    },
+    {
+      "code": "SWE_EMBEDDED",
+      "name": "Kỹ sư phần mềm nhúng / Kỹ sư IoT",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Kỹ sư phần mềm nhúng viết chương trình chạy trực tiếp trên thiết bị phần cứng như vi điều khiển, cảm biến, thiết bị IoT hay linh kiện ô tô. Việc gồm viết firmware và driver, làm việc với giao thức giao tiếp, đo kiểm bằng máy hiện sóng, và tối ưu trong giới hạn rất chặt về bộ nhớ và điện năng. Nhiều vị trí nằm ở công ty FDI Nhật, Hàn, Đức.",
+      "interestCode": "ICR",
+      "levelCount": 7
+    },
+    {
+      "code": "SWE_ARCH_SOL",
+      "name": "Kiến trúc sư giải pháp",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Kiến trúc sư giải pháp vẽ bức tranh tổng thể của một hệ thống trước khi các đội bắt tay xây: chia hệ thống thành những phần nào, dùng công nghệ và dịch vụ cloud nào, mua sẵn hay tự làm. Họ cân giữa tốc độ, chi phí, bảo mật và khả năng mở rộng, rồi thuyết phục cả đội kỹ thuật lẫn ban lãnh đạo. Phần lớn người làm nghề đi lên sau nhiều năm làm kỹ sư.",
+      "interestCode": "CIR",
+      "levelCount": 3
+    },
+    {
+      "code": "SWE_TECHLEAD",
+      "name": "Trưởng nhóm kỹ thuật",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Trưởng nhóm kỹ thuật chịu trách nhiệm kỹ thuật cho một đội: quyết định cách xây phần việc của đội, review mã, gỡ những vướng mắc khó nhất và kèm cặp thành viên. Họ vẫn viết mã nhưng dành nhiều thời gian hơn cho họp và điều phối. Đây không phải vị trí tuyển người mới; thường đến sau vài năm ở cấp Senior.",
+      "interestCode": "CIE",
+      "levelCount": 2
+    },
+    {
+      "code": "SWE_EM",
+      "name": "Trưởng phòng Kỹ thuật",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Trưởng phòng kỹ thuật (Engineering Manager) chịu trách nhiệm về con người và kết quả bàn giao của một hoặc nhiều đội kỹ sư: tuyển người, họp 1:1, đánh giá hiệu suất, xây lộ trình phát triển, quản lý tiến độ và rủi ro. Công việc chuyển từ tự làm sang giúp người khác làm tốt. Thường đến được vị trí này sau khoảng tám năm trở lên, qua vai trò trưởng nhóm.",
+      "interestCode": "CEI",
+      "levelCount": 3
+    },
+    {
+      "code": "QA_MANUAL",
+      "name": "Kỹ sư kiểm thử thủ công / Tester",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Kỹ sư kiểm thử tìm lỗi trong phần mềm trước khi người dùng gặp: đọc yêu cầu, viết kịch bản kiểm thử, chạy thử theo nhiều tình huống, và báo lỗi đủ rõ để lập trình viên sửa được. Đây là cửa vào ngành phổ biến cho người chưa có nền lập trình vững; theo thời gian, nhiều người chuyển sang viết kiểm thử tự động.",
+      "interestCode": "ICR",
+      "levelCount": 5
+    },
+    {
+      "code": "DATA_DA",
+      "name": "Chuyên viên phân tích dữ liệu",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Chuyên viên phân tích dữ liệu trả lời câu hỏi kinh doanh bằng số liệu: lấy dữ liệu bằng SQL, làm sạch, phân tích, dựng dashboard trên công cụ như Power BI hay Tableau, và trình bày kết luận cho các phòng ban. Nghề dùng ít mã hơn các nghề kỹ thuật khác nhưng cần giao tiếp và hiểu nghiệp vụ. Ngân hàng và công ty sản phẩm tuyển nhiều.",
+      "interestCode": "CIE",
+      "levelCount": 6
+    },
+    {
+      "code": "DATA_AI",
+      "name": "Kỹ sư trí tuệ nhân tạo",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Kỹ sư trí tuệ nhân tạo đưa mô hình học máy vào sản phẩm thật: chọn hoặc tinh chỉnh mô hình (kể cả mô hình ngôn ngữ lớn), chuẩn bị dữ liệu, đánh giá chất lượng, và tối ưu chi phí, độ trễ khi chạy cho người dùng. Hầu như không tuyển người mới ra trường; thường vào nghề sau khi đã có nền lập trình, ví dụ từ Back-end.",
+      "interestCode": "ICA",
+      "levelCount": 5
+    },
+    {
+      "code": "DATA_DE",
+      "name": "Kỹ sư dữ liệu",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Kỹ sư dữ liệu xây và vận hành đường ống đưa dữ liệu từ nhiều nguồn về kho dữ liệu, để người phân tích và hệ thống AI dùng được. Việc gồm viết job ETL/ELT, thiết kế kho dữ liệu, tối ưu xử lý dữ liệu lớn và giữ dữ liệu đúng, đủ, kịp giờ. Hiếm khi tuyển người mới; thường chuyển sang từ Back-end hoặc phân tích dữ liệu.",
+      "interestCode": "CIE",
+      "levelCount": 5
+    },
+    {
+      "code": "CLOUD_DEVOPS",
+      "name": "Kỹ sư DevOps",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Kỹ sư DevOps làm cho phần mềm được kiểm, đóng gói và đưa lên chạy thật một cách tự động, rồi giữ hệ thống chạy ổn định. Việc gồm dựng pipeline CI/CD, quản lý hạ tầng bằng mã (Infrastructure as Code), giám sát, xử lý sự cố và kiểm soát chi phí cloud. Thường không tuyển thẳng người mới; người làm nghề hay chuyển sang từ Back-end hoặc quản trị hệ thống sau vài năm.",
+      "interestCode": "CIR",
+      "levelCount": 5
+    },
+    {
+      "code": "CLOUD_ENG",
+      "name": "Kỹ sư điện toán đám mây",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Kỹ sư điện toán đám mây dựng và vận hành hạ tầng trên AWS, Azure hoặc Google Cloud: máy chủ ảo, lưu trữ, mạng, phân quyền, sao lưu. Nhiều người làm ở công ty đối tác cloud, triển khai hệ thống cho nhiều khách hàng, kể cả chuyển hệ thống cũ từ máy chủ vật lý lên cloud. Chứng chỉ của nhà cung cấp cloud thường được coi trọng.",
+      "interestCode": "CIR",
+      "levelCount": 5
+    },
+    {
+      "code": "SEC_ENG",
+      "name": "Kỹ sư an ninh mạng / Kỹ sư bảo mật",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Kỹ sư an ninh mạng bảo vệ hệ thống của tổ chức trước tấn công: giám sát cảnh báo, điều tra dấu hiệu xâm nhập, viết luật phát hiện trên SIEM, triển khai tường lửa, IDS và phần mềm bảo vệ máy trạm. Cửa vào phổ biến là vị trí phân tích viên SOC trực theo ca; lên cao hơn thì thiết kế kiến trúc và chính sách bảo mật cho cả tổ chức.",
+      "interestCode": "CIR",
+      "levelCount": 7
+    },
+    {
+      "code": "SEC_PENTEST",
+      "name": "Chuyên viên kiểm thử xâm nhập / Hacker mũ trắng",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Chuyên viên kiểm thử xâm nhập được thuê để tấn công thử vào hệ thống của khách hàng, trong phạm vi hợp đồng cho phép, nhằm tìm lỗ hổng trước kẻ xấu. Họ lên kế hoạch, khai thác lỗ hổng web, mobile hoặc hạ tầng, rồi viết báo cáo kèm cách khắc phục. Nhiều người vào nghề qua các cuộc thi CTF và chương trình bug bounty thay vì đi từ vị trí thực tập.",
+      "interestCode": "ICR",
+      "levelCount": 5
+    },
+    {
+      "code": "PROD_BA",
+      "name": "Chuyên viên phân tích nghiệp vụ / BA",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Chuyên viên phân tích nghiệp vụ (BA) là cầu nối giữa khách hàng hoặc phòng ban nghiệp vụ với đội kỹ thuật: tìm hiểu nhu cầu, làm rõ quy trình, viết tài liệu yêu cầu và user story, rồi theo sát để sản phẩm làm đúng điều đã thống nhất. Nghề giao tiếp nhiều, viết mã ít, và là cửa vào phổ biến cho người học trái ngành.",
+      "interestCode": "ICR",
+      "levelCount": 7
+    },
+    {
+      "code": "PROD_PM",
+      "name": "Quản lý sản phẩm / Product Manager",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Quản lý sản phẩm (Product Manager) quyết định sản phẩm nên làm gì trước, làm gì sau và vì sao: tìm hiểu người dùng, đặt mục tiêu, sắp xếp lộ trình, viết yêu cầu, rồi đo xem tính năng ra mắt có hiệu quả không. Họ phải thuyết phục kỹ thuật, kinh doanh và lãnh đạo đi cùng một hướng. Vài công ty sản phẩm lớn có vị trí Associate PM cho người mới; phần lớn PM chuyển sang từ BA hoặc lập trình viên.",
+      "interestCode": "ECI",
+      "levelCount": 7
+    },
+    {
+      "code": "INFRA_ERP",
+      "name": "Chuyên viên tư vấn giải pháp ERP",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Chuyên viên tư vấn giải pháp ERP triển khai hệ thống quản trị doanh nghiệp như SAP, Oracle hay Salesforce cho khách hàng: tìm hiểu quy trình của họ, cấu hình phần mềm theo quy trình đó, kiểm thử với người dùng và hỗ trợ sau khi đưa vào dùng. Mỗi người thường chuyên một mảng như mua hàng, tài chính hay bán hàng. Nghề cần hiểu nghiệp vụ hơn là viết mã.",
+      "interestCode": "CIE",
+      "levelCount": 5
+    },
+    {
+      "code": "INFRA_HELPDESK",
+      "name": "Nhân viên hỗ trợ kỹ thuật / IT Support",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Nhân viên hỗ trợ kỹ thuật giúp nhân viên trong công ty dùng được máy tính, phần mềm, máy in, mạng và tài khoản: nhận yêu cầu, xử lý sự cố, cài đặt thiết bị, quản lý tài sản IT. Đây là cửa vào ngành dễ tiếp cận nhất, không đòi bằng CNTT; nhiều người dùng vị trí này làm bước đệm sang quản trị hệ thống hoặc an ninh mạng.",
+      "interestCode": "CRI",
+      "levelCount": 4
+    },
+    {
+      "code": "INFRA_NETWORK",
+      "name": "Kỹ sư hệ thống mạng",
+      "group": "Công nghệ thông tin",
+      "regionId": "cong_nghe",
+      "summary": "Kỹ sư hệ thống mạng thiết kế, lắp đặt và vận hành mạng máy tính của tổ chức: switch, router, Wi-Fi, kết nối giữa các chi nhánh và các lớp bảo vệ mạng. Việc gồm cấu hình thiết bị, giám sát, xử lý sự cố và nâng cấp. Lộ trình nghề gắn chặt với các chứng chỉ như CCNA, CCNP, CCIE.",
+      "interestCode": "CIR",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-11-1021.00",
+      "name": "Giám đốc điều hành, quản lý vận hành",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, điều hành và điều phối hoạt động của tổ chức nhà nước hoặc tư nhân, giám sát nhiều phòng ban hoặc chi nhánh. Xây dựng chính sách, quản lý vận hành hằng ngày và lên kế hoạch sử dụng vật tư, nhân lực; phạm vi rộng, không gói trong một mảng chức năng như nhân sự hay mua hàng. Thường quản lý thông qua các trưởng bộ phận. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-11-3051.00",
+      "name": "Quản lý sản xuất",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối công việc và nguồn lực cần để sản xuất sản phẩm đúng yêu cầu về chi phí, chất lượng và số lượng. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECR",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-11-3012.00",
+      "name": "Quản lý hành chính",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối một hoặc nhiều dịch vụ hành chính của tổ chức như quản lý hồ sơ, thông tin, phân phát thư từ và các dịch vụ hỗ trợ văn phòng khác. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "ECS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-11-9021.00",
+      "name": "Quản lý xây dựng (chỉ huy trưởng công trình)",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối, thường qua các giám sát cấp dưới, việc xây dựng và bảo trì công trình, cơ sở và hệ thống. Tham gia từ ý tưởng dự án và giám sát tổ chức, tiến độ, ngân sách, thi công. Gồm cả quản lý các mảng chuyên biệt như mộc hay cấp thoát nước. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECR",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-11-9041.00",
+      "name": "Quản lý kỹ thuật và nghiên cứu",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối hoạt động trong các lĩnh vực như kiến trúc, kỹ thuật hoặc nghiên cứu và phát triển trong các lĩnh vực đó. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "EIC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-11-9032.00",
+      "name": "Quản lý giáo dục (hiệu trưởng, trưởng khoa)",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối hoạt động học thuật, hành chính và hỗ trợ của trường mầm non, tiểu học hoặc trung học. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SEC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-11-9051.00",
+      "name": "Quản lý nhà hàng",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối hoạt động của cơ sở hoặc bộ phận phục vụ đồ ăn, đồ uống. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "ECR",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-11-9081.00",
+      "name": "Quản lý khách sạn, khu nghỉ dưỡng",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối hoạt động của cơ sở hoặc bộ phận cung cấp chỗ ở và dịch vụ đi kèm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECS",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-11-9111.00",
+      "name": "Quản lý bệnh viện, cơ sở y tế",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối dịch vụ y tế ở bệnh viện, phòng khám, tổ chức bảo hiểm y tế, cơ quan y tế công cộng hoặc tổ chức tương tự. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-11-9013.00",
+      "name": "Chủ trang trại, quản lý nông nghiệp",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối việc quản lý, vận hành trang trại, nhà kính, cơ sở nuôi trồng thuỷ sản, vườn ươm, rừng trồng hoặc cơ sở nông nghiệp khác. Có thể tuyển, đào tạo, giám sát lao động hoặc thuê dịch vụ cho việc hằng ngày. Có thể tham gia hoặc giám sát trồng, chăm sóc, thu hoạch, tài chính và tiêu thụ. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ERC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-11-9141.00",
+      "name": "Quản lý bất động sản, toà nhà",
+      "group": "Quản lý",
+      "regionId": "kinh_doanh",
+      "summary": "Lập kế hoạch, chỉ đạo và điều phối việc mua bán, cho thuê hoặc quản trị bất động sản thương mại, công nghiệp và nhà ở. Gồm cả ban quản lý chung cư, khu nhà cho thuê, toà nhà hoặc đất. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-13-2011.00",
+      "name": "Kế toán, kiểm toán viên",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Kiểm tra, phân tích và diễn giải sổ sách kế toán để lập báo cáo tài chính, tư vấn, hoặc kiểm toán và đánh giá báo cáo do người khác lập. Xây dựng hoặc tư vấn hệ thống ghi nhận chi phí và các số liệu tài chính, ngân sách. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CEI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-2081.00",
+      "name": "Cán bộ thuế",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Xác định nghĩa vụ thuế hoặc thu thuế của cá nhân, doanh nghiệp theo luật và quy định. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "CES",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-13-1041.00",
+      "name": "Chuyên viên tuân thủ và quản lý rủi ro",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Kiểm tra, đánh giá và điều tra việc đáp ứng điều kiện hoặc tuân thủ luật và quy định về giấy phép, hợp đồng, và các hoạt động thanh tra, phân tích tuân thủ khác. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CEI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-1031.00",
+      "name": "Chuyên viên thẩm định và bồi thường bảo hiểm",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Xem xét các hồ sơ bồi thường đã giải quyết để bảo đảm chi trả đúng quy trình của công ty. Trao đổi với luật sư về hồ sơ cần khởi kiện. Có thể trực tiếp giải quyết bồi thường bảo hiểm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CEI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-2072.00",
+      "name": "Chuyên viên tín dụng ngân hàng",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Đánh giá, phê duyệt hoặc đề xuất duyệt các khoản vay thương mại, bất động sản hoặc tín dụng. Tư vấn cho người vay về tình hình tài chính và cách trả nợ. Gồm cả chuyên viên vay thế chấp, thu hồi nợ, quản lý khoản vay và thẩm định khoản vay. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CES",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-2052.00",
+      "name": "Chuyên viên tư vấn tài chính và đầu tư",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Tư vấn kế hoạch tài chính cho khách hàng dựa trên hiểu biết về thuế, chiến lược đầu tư, chứng khoán, bảo hiểm, hưu trí và bất động sản. Đánh giá tài sản, nợ, dòng tiền, bảo hiểm, tình trạng thuế và mục tiêu tài chính của khách. Có thể mua bán tài sản tài chính cho khách. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-2099.01",
+      "name": "Chuyên viên phân tích tài chính định lượng (quant)",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Phát triển kỹ thuật định lượng phục vụ đầu tư chứng khoán, cổ phiếu, định giá công cụ tài chính. Xây mô hình toán học, thống kê cho quản trị rủi ro, tối ưu tài sản, định giá hoặc phân tích giá trị tương đối. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ICE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-2023.00",
+      "name": "Thẩm định viên về giá",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Thẩm định bất động sản và ước tính giá trị hợp lý. Có thể định mức thuế theo biểu quy định. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CER",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-1071.00",
+      "name": "Chuyên viên nhân sự",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Tuyển dụng, sàng lọc, phỏng vấn hoặc bố trí nhân sự trong tổ chức. Có thể làm nhiều mảng nhân sự khác. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECS",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-1161.00",
+      "name": "Chuyên viên marketing và nghiên cứu thị trường",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Nghiên cứu thị trường địa phương, khu vực, toàn quốc hoặc trực tuyến. Thu thập thông tin để xác định doanh số tiềm năng của sản phẩm, dịch vụ hoặc lên kế hoạch chiến dịch marketing, quảng cáo. Có thể thu thập thông tin về đối thủ, giá, doanh số, cách tiếp thị và phân phối. Có thể dùng chiến thuật marketing tìm kiếm, phân tích số liệu web và đề xuất cách tăng thứ hạng tìm kiếm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECA",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-1082.00",
+      "name": "Chuyên viên quản lý dự án",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Phân tích và điều phối tiến độ, thời hạn, mua sắm, nhân sự và ngân sách của sản phẩm hoặc dịch vụ theo từng dự án. Dẫn dắt và hướng dẫn công việc của nhân viên kỹ thuật. Có thể là đầu mối liên hệ với khách hàng. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECS",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-1121.00",
+      "name": "Chuyên viên tổ chức sự kiện",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Điều phối nhân viên, đối tác hoặc khách hàng để chuẩn bị cho các buổi họp, sự kiện hoặc hội nghị. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECS",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-1081.00",
+      "name": "Chuyên viên logistics và xuất nhập khẩu",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Phân tích và điều phối các hoạt động logistics của doanh nghiệp hoặc tổ chức. Chịu trách nhiệm toàn bộ vòng đời sản phẩm, gồm mua, phân phối, phân bổ nội bộ, giao hàng và thanh lý. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CER",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-1023.00",
+      "name": "Chuyên viên mua hàng",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Mua máy móc, thiết bị, dụng cụ, phụ tùng, vật tư hoặc dịch vụ cần cho hoạt động của cơ sở. Mua nguyên liệu thô hoặc bán thành phẩm cho sản xuất. Có thể đàm phán hợp đồng. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CER",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-1051.00",
+      "name": "Kỹ sư dự toán (QS)",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Lập dự toán chi phí cho sản xuất sản phẩm, dự án xây dựng hoặc dịch vụ để ban quản lý dự thầu hoặc định giá. Có thể chuyên một loại dịch vụ hoặc sản phẩm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CEI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-13-1199.06",
+      "name": "Người kinh doanh online",
+      "group": "Kinh doanh và tài chính",
+      "regionId": "kinh_doanh",
+      "summary": "Kinh doanh bán lẻ hoàn toàn trên mạng. Có thể lập chiến lược kinh doanh, nhập hàng, quản lý tồn kho, làm marketing, xử lý và giao đơn hàng, cân đối sổ sách tài chính. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CER",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-15-2041.00",
+      "name": "Chuyên viên thống kê và toán ứng dụng",
+      "group": "Toán học và thống kê",
+      "regionId": "cong_nghe",
+      "summary": "Phát triển hoặc áp dụng lý thuyết và phương pháp toán học, thống kê để thu thập, sắp xếp, diễn giải và tóm tắt dữ liệu số thành thông tin dùng được. Có thể chuyên về thống kê sinh học, nông nghiệp, kinh doanh hoặc kinh tế. Gồm cả nhà thống kê toán học và thống kê điều tra. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ICR",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-15-2011.00",
+      "name": "Chuyên viên định phí bảo hiểm (actuary)",
+      "group": "Toán học và thống kê",
+      "regionId": "cong_nghe",
+      "summary": "Phân tích số liệu thống kê như tỉ lệ tử vong, tai nạn, ốm đau, tàn tật và nghỉ hưu, rồi lập bảng xác suất để dự báo rủi ro và nghĩa vụ chi trả quyền lợi trong tương lai. Có thể xác định mức phí bảo hiểm và quỹ dự phòng cần có để bảo đảm chi trả. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CIE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-15-2031.00",
+      "name": "Chuyên viên nghiên cứu vận trù",
+      "group": "Toán học và thống kê",
+      "regionId": "cong_nghe",
+      "summary": "Xây dựng và áp dụng mô hình toán học cùng các phương pháp tối ưu để tạo và diễn giải thông tin, giúp ban quản lý ra quyết định và xây dựng chính sách. Có thể thu thập, phân tích dữ liệu và phát triển phần mềm hỗ trợ ra quyết định. Có thể thiết kế mạng lưới tối ưu về thời gian, chi phí hoặc hậu cần. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ICE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-1011.00",
+      "name": "Kiến trúc sư",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Lập phương án và thiết kế công trình như nhà ở, toà văn phòng, nhà hát, nhà xưởng và các công trình khác. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "RAI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-1022.00",
+      "name": "Kỹ sư trắc địa, bản đồ",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Đo đạc chính xác và xác định ranh giới thửa đất. Cung cấp dữ liệu về hình dạng, địa hình, trọng lực, vị trí, độ cao và kích thước của đất và các đối tượng trên bề mặt trái đất cho kỹ thuật, làm bản đồ, khai mỏ, định giá đất, xây dựng và các mục đích khác. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CRI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Lập kế hoạch, thiết kế và giám sát xây dựng, bảo trì các công trình như đường bộ, đường sắt, sân bay, cầu, cảng, kênh, đập, thuỷ lợi, đường ống, nhà máy điện và hệ thống cấp thoát nước. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RCI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2071.00",
+      "name": "Kỹ sư điện",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Nghiên cứu, thiết kế, phát triển, thử nghiệm hoặc giám sát sản xuất và lắp đặt thiết bị, linh kiện, hệ thống điện cho thương mại, công nghiệp, quốc phòng hoặc khoa học. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2072.00",
+      "name": "Kỹ sư điện tử, viễn thông",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Nghiên cứu, thiết kế, phát triển hoặc thử nghiệm linh kiện và hệ thống điện tử cho thương mại, công nghiệp, quốc phòng hoặc khoa học, dựa trên lý thuyết điện tử và tính chất vật liệu. Thiết kế mạch và linh kiện cho viễn thông, dẫn đường hàng không, âm học, đo lường và điều khiển. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2141.00",
+      "name": "Kỹ sư cơ khí",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Lập kế hoạch và thiết kế dụng cụ, động cơ, máy móc và thiết bị cơ khí. Giám sát lắp đặt, vận hành, bảo trì và sửa chữa thiết bị như hệ thống nhiệt, khí, nước và hơi trung tâm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2141.02",
+      "name": "Kỹ sư ô tô",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Phát triển thiết kế mới hoặc cải tiến cho khung, động cơ, hộp số và các hệ thống khác của xe bằng phần mềm thiết kế. Chỉ đạo việc chế tạo, sửa đổi hoặc thử nghiệm xe và linh kiện. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2199.05",
+      "name": "Kỹ sư cơ điện tử, robot",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Nghiên cứu, thiết kế, phát triển hoặc thử nghiệm hệ thống tự động hoá, hệ thống thông minh, thiết bị thông minh hoặc điều khiển hệ thống công nghiệp. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2041.00",
+      "name": "Kỹ sư hoá học, vật liệu",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Thiết kế thiết bị nhà máy hoá chất và xây dựng quy trình sản xuất hoá chất và sản phẩm như xăng, cao su tổng hợp, nhựa, chất tẩy rửa, xi măng, giấy và bột giấy, dựa trên nguyên lý và công nghệ hoá học, vật lý và kỹ thuật. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2081.00",
+      "name": "Kỹ sư, chuyên viên môi trường",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Nghiên cứu, thiết kế, lập kế hoạch hoặc thực hiện công việc kỹ thuật để phòng ngừa, kiểm soát và khắc phục các mối nguy môi trường, vận dụng nhiều ngành kỹ thuật. Công việc có thể gồm xử lý chất thải, cải tạo khu vực ô nhiễm hoặc công nghệ kiểm soát ô nhiễm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "IRC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2112.00",
+      "name": "Kỹ sư công nghiệp, quản lý sản xuất",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Thiết kế, phát triển, thử nghiệm và đánh giá hệ thống tích hợp để quản lý quá trình sản xuất công nghiệp, gồm yếu tố con người, kiểm soát chất lượng, tồn kho, logistics và dòng vật liệu, phân tích chi phí và điều phối sản xuất. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "IRC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2151.00",
+      "name": "Kỹ sư mỏ, dầu khí",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Khảo sát dưới mặt đất để xác định đặc điểm của khu vực có thể khai thác hoặc xây dựng. Có thể chọn hệ thống chống đỡ, quy trình và thiết bị để khai thác hoặc thi công ngầm an toàn, tiết kiệm và thân thiện môi trường. Có thể kiểm tra điều kiện địa chất, thiết bị và môi trường làm việc không an toàn; thiết kế và điều phối chương trình an toàn mỏ. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-17-2031.00",
+      "name": "Kỹ sư y sinh",
+      "group": "Kiến trúc và kỹ thuật",
+      "regionId": "ky_thuat",
+      "summary": "Vận dụng kiến thức kỹ thuật, sinh học, hoá học, tin học và cơ sinh học để thiết kế, phát triển và đánh giá các hệ thống và sản phẩm sinh học, nông nghiệp, y tế như cơ quan nhân tạo, bộ phận giả, thiết bị đo, hệ thống thông tin y tế và hệ thống quản lý chăm sóc sức khoẻ. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "IRC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-1013.00",
+      "name": "Kỹ sư nông nghiệp",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Nghiên cứu chọn giống, sinh lý, sản xuất, năng suất và quản lý cây trồng, cây lâm nghiệp, cây cảnh; sự sinh trưởng của cây trong đất và phòng trừ sâu bệnh; hoặc nghiên cứu thành phần hoá học, vật lý, sinh học, khoáng vật của đất liên quan đến sinh trưởng cây trồng. Có thể phân loại và lập bản đồ đất, khảo sát tác động của các cách canh tác lên năng suất. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "RIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-1012.00",
+      "name": "Kỹ sư công nghệ thực phẩm",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Dùng hoá học, vi sinh, kỹ thuật và các ngành khoa học khác để nghiên cứu nguyên lý chế biến và hư hỏng của thực phẩm; phân tích hàm lượng vitamin, chất béo, đường và đạm; tìm nguồn thực phẩm mới; nghiên cứu cách làm thực phẩm chế biến an toàn, ngon và lành mạnh; xác định cách tốt nhất để chế biến, đóng gói, bảo quản, lưu kho và phân phối. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-1029.04",
+      "name": "Nhà sinh học, chuyên viên công nghệ sinh học",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Nghiên cứu các nguyên lý cơ bản của sự sống ở thực vật và động vật, như nguồn gốc, quan hệ, sự phát triển, giải phẫu và chức năng. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "IRC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-1031.00",
+      "name": "Chuyên viên lâm nghiệp và bảo tồn",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Quản lý, cải thiện và bảo vệ tài nguyên thiên nhiên để sử dụng tối đa mà không gây hại môi trường. Có thể khảo sát đất và lập kế hoạch chống xói mòn, bảo vệ đồng cỏ. Có thể hướng dẫn nông dân, chủ trang trại cách luân canh, cày theo đường đồng mức, làm ruộng bậc thang để giữ đất và nước, chọn số lượng, loại vật nuôi và cây thức ăn phù hợp. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-19-1041.00",
+      "name": "Nhà nghiên cứu y sinh, dịch tễ",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Điều tra và mô tả các yếu tố quyết định và sự phân bố của bệnh tật, khuyết tật hoặc kết quả sức khoẻ. Có thể xây dựng biện pháp phòng ngừa và kiểm soát. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ISC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-2012.00",
+      "name": "Nhà vật lý",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Nghiên cứu các hiện tượng vật lý, xây dựng lý thuyết dựa trên quan sát và thí nghiệm, và tìm cách ứng dụng các định luật, lý thuyết vật lý. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "IRC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-2031.00",
+      "name": "Nhà hoá học, chuyên viên kiểm nghiệm",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Phân tích hoá học định tính, định lượng hoặc làm thí nghiệm trong phòng thí nghiệm để kiểm soát chất lượng, kiểm soát quy trình hoặc phát triển sản phẩm, tri thức mới. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "IRC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-2042.00",
+      "name": "Nhà khoa học địa chất, khí tượng thuỷ văn",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Nghiên cứu thành phần, cấu trúc và các đặc điểm vật lý của trái đất. Có thể dùng kiến thức địa chất, vật lý, toán để thăm dò dầu khí, khoáng sản, nước ngầm, hoặc xử lý chất thải, cải tạo đất và các vấn đề môi trường. Có thể nghiên cứu cấu tạo bên trong, khí quyển, đại dương và các trường từ, điện, trọng lực của trái đất. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "IRC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-3011.00",
+      "name": "Nhà kinh tế học",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Nghiên cứu, viết báo cáo hoặc xây dựng kế hoạch giải quyết các vấn đề kinh tế liên quan đến sản xuất, phân phối hàng hoá, dịch vụ hoặc chính sách tiền tệ, tài khoá. Có thể thu thập và xử lý dữ liệu kinh tế, thống kê bằng kỹ thuật chọn mẫu và phương pháp kinh tế lượng. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ICE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-3041.00",
+      "name": "Nhà nghiên cứu khoa học xã hội",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Nghiên cứu xã hội loài người và hành vi xã hội qua các nhóm và thiết chế xã hội mà con người tạo ra, cũng như các tổ chức xã hội, tôn giáo, chính trị và kinh doanh. Có thể nghiên cứu hành vi, tương tác của các nhóm, nguồn gốc, sự phát triển và ảnh hưởng của hoạt động nhóm lên từng thành viên. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ICA",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-3033.00",
+      "name": "Nhà tâm lý học",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Đánh giá, chẩn đoán và điều trị rối loạn tâm thần, cảm xúc qua quan sát, phỏng vấn và trắc nghiệm tâm lý. Giúp người gặp khủng hoảng hoặc khó thích nghi hiểu vấn đề của mình dựa trên tiền sử, phỏng vấn và lý thuyết. Tham vấn cá nhân hoặc nhóm để phát triển và thích nghi tốt hơn về cá nhân, xã hội, học tập và nghề nghiệp. Có thể thiết kế chương trình điều chỉnh hành vi và trao đổi với nhân viên y tế về cách điều trị phù hợp. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ISC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-19-3051.00",
+      "name": "Chuyên viên quy hoạch đô thị",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Xây dựng quy hoạch và chương trình tổng thể về sử dụng đất và cơ sở vật chất của các địa phương như thị trấn, thành phố, tỉnh và vùng đô thị. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ICE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-19-5011.00",
+      "name": "Chuyên viên an toàn lao động (HSE)",
+      "group": "Khoa học tự nhiên và xã hội",
+      "regionId": "cong_nghe",
+      "summary": "Xem xét, đánh giá và phân tích môi trường làm việc, thiết kế chương trình và quy trình để kiểm soát, loại bỏ, phòng ngừa bệnh tật hay chấn thương do tác nhân hoá học, vật lý, sinh học hoặc yếu tố công thái học. Có thể thanh tra và buộc tuân thủ luật về an toàn, sức khoẻ. Có thể làm cho khu vực nhà nước hoặc tư nhân. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RIC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-21-1014.00",
+      "name": "Chuyên viên tư vấn tâm lý",
+      "group": "Cộng đồng và công tác xã hội",
+      "regionId": "suc_khoe",
+      "summary": "Tư vấn cho cá nhân và nhóm để nâng cao sức khoẻ tâm thần và cảm xúc, chú trọng phòng ngừa. Có thể giúp người gặp nhiều vấn đề như nghiện; khó khăn gia đình, nuôi dạy con, hôn nhân; quản lý căng thẳng; lòng tự trọng hoặc tuổi già. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-21-1012.00",
+      "name": "Chuyên viên tư vấn học đường và hướng nghiệp",
+      "group": "Cộng đồng và công tác xã hội",
+      "regionId": "suc_khoe",
+      "summary": "Tư vấn, hỗ trợ học sinh, sinh viên và cung cấp dịch vụ định hướng học tập và nghề nghiệp. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SCE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-21-1021.00",
+      "name": "Nhân viên công tác xã hội",
+      "group": "Cộng đồng và công tác xã hội",
+      "regionId": "suc_khoe",
+      "summary": "Cung cấp dịch vụ xã hội để cải thiện đời sống xã hội và tâm lý của trẻ em và gia đình, nâng cao hạnh phúc gia đình và việc học của trẻ. Có thể hỗ trợ cha mẹ, làm thủ tục nhận con nuôi và tìm gia đình nhận nuôi cho trẻ bị bỏ rơi hoặc bị bạo hành. Ở trường học, xử lý các vấn đề như mang thai tuổi vị thành niên, vi phạm kỷ luật và trốn học. Có thể tư vấn cho giáo viên. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "SCE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-21-1094.00",
+      "name": "Nhân viên y tế cộng đồng",
+      "group": "Cộng đồng và công tác xã hội",
+      "regionId": "suc_khoe",
+      "summary": "Nâng cao sức khoẻ trong cộng đồng bằng cách giúp mọi người tạo thói quen lành mạnh. Bênh vực nhu cầu sức khoẻ của người dân, giúp họ trao đổi hiệu quả với cơ sở y tế hoặc cơ quan dịch vụ xã hội. Làm cầu nối và triển khai chương trình nâng cao sức khoẻ cá nhân và cộng đồng. Có thể làm dịch vụ dự phòng như đo huyết áp, tầm soát tăng nhãn áp và thính lực. Có thể thu thập dữ liệu để xác định nhu cầu sức khoẻ của cộng đồng. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "SIC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-23-1011.00",
+      "name": "Luật sư",
+      "group": "Pháp lý",
+      "regionId": "kinh_doanh",
+      "summary": "Đại diện thân chủ trong các vụ án hình sự, dân sự và các thủ tục pháp lý khác, soạn thảo văn bản pháp lý, hoặc quản lý và tư vấn cho thân chủ về các giao dịch pháp lý. Có thể chuyên một lĩnh vực hoặc hành nghề rộng trong nhiều lĩnh vực luật. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ECI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-23-1023.00",
+      "name": "Thẩm phán",
+      "group": "Pháp lý",
+      "regionId": "kinh_doanh",
+      "summary": "Phân xử, tư vấn, xét xử hoặc thực thi công lý tại toà án. Có thể tuyên án bị cáo trong vụ án hình sự theo luật và khung hình phạt. Có thể xác định trách nhiệm của bị đơn trong vụ án dân sự. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ECI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-23-2011.00",
+      "name": "Trợ lý pháp lý, chuyên viên pháp chế",
+      "group": "Pháp lý",
+      "regionId": "kinh_doanh",
+      "summary": "Hỗ trợ luật sư bằng cách điều tra tình tiết, chuẩn bị văn bản pháp lý hoặc nghiên cứu án lệ. Nghiên cứu để phục vụ một thủ tục pháp lý, xây dựng hướng bào chữa hoặc khởi kiện. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "CIE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-25-1081.00",
+      "name": "Giảng viên đại học, cao đẳng",
+      "group": "Giáo dục và thư viện",
+      "regionId": "suc_khoe",
+      "summary": "Giảng dạy một hoặc nhiều môn ở trường đại học, cao đẳng: soạn đề cương và bài giảng, lên lớp, hướng dẫn sinh viên làm đồ án, luận văn, chấm thi. Đồng thời nghiên cứu khoa học, viết bài báo và tham gia công việc của khoa. Môn dạy là biến thể của nghề: kinh tế, kỹ thuật, khoa học tự nhiên, xã hội, y, luật, nghệ thuật, ngoại ngữ. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-25-2031.00",
+      "name": "Giáo viên trung học (THCS, THPT)",
+      "group": "Giáo dục và thư viện",
+      "regionId": "suc_khoe",
+      "summary": "Dạy một hoặc nhiều môn cho học sinh bậc trung học. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "SCA",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-25-2021.00",
+      "name": "Giáo viên tiểu học",
+      "group": "Giáo dục và thư viện",
+      "regionId": "suc_khoe",
+      "summary": "Dạy kiến thức và kỹ năng xã hội cho học sinh bậc tiểu học. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "SCA",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-25-2011.00",
+      "name": "Giáo viên mầm non",
+      "group": "Giáo dục và thư viện",
+      "regionId": "suc_khoe",
+      "summary": "Dạy trẻ ở tuổi mầm non theo chương trình hoặc giáo án, qua các hoạt động giúp trẻ phát triển về xã hội, thể chất và trí tuệ. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "SAC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-25-2051.00",
+      "name": "Giáo viên giáo dục đặc biệt",
+      "group": "Giáo dục và thư viện",
+      "regionId": "suc_khoe",
+      "summary": "Dạy kiến thức, kỹ năng xã hội và kỹ năng sống cho trẻ có khuyết tật về học tập, cảm xúc hoặc thể chất. Gồm cả giáo viên chuyên làm việc với trẻ khiếm thị, khiếm thính và trẻ khuyết tật trí tuệ. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "SIC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-25-3041.00",
+      "name": "Gia sư, giáo viên trung tâm",
+      "group": "Giáo dục và thư viện",
+      "regionId": "suc_khoe",
+      "summary": "Dạy kèm từng học sinh hoặc nhóm nhỏ các môn học để hỗ trợ việc học trên lớp hoặc ôn thi chuẩn hoá, thi tuyển sinh. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "SAC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-25-4022.00",
+      "name": "Thủ thư, chuyên viên lưu trữ",
+      "group": "Giáo dục và thư viện",
+      "regionId": "suc_khoe",
+      "summary": "Quản lý và duy trì thư viện hoặc kho thông tin cho người dùng tra cứu hoặc mượn. Làm việc ở trường học, bảo tàng, doanh nghiệp, với nhiều loại tài liệu như sách, tạp chí, bản ghi âm, phim và cơ sở dữ liệu. Công việc có thể gồm bổ sung, biên mục, cho mượn tài liệu, và hỗ trợ người dùng tìm, sắp xếp thông tin, hướng dẫn cách tra cứu và vận hành thiết bị nghe nhìn. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "CSI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-25-4012.00",
+      "name": "Chuyên viên bảo tàng",
+      "group": "Giáo dục và thư viện",
+      "regionId": "suc_khoe",
+      "summary": "Quản lý bộ sưu tập như tác phẩm nghệ thuật, đồ sưu tầm, hiện vật lịch sử hoặc mẫu vật khoa học của bảo tàng và cơ sở khác. Có thể tổ chức hoạt động giáo dục, nghiên cứu hoặc phục vụ công chúng. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "CRI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-25-9031.00",
+      "name": "Chuyên viên phát triển chương trình đào tạo",
+      "group": "Giáo dục và thư viện",
+      "regionId": "suc_khoe",
+      "summary": "Xây dựng học liệu, điều phối nội dung giáo dục và đưa công nghệ vào giảng dạy để hướng dẫn giáo viên xây dựng chương trình và tổ chức khoá học. Có thể đào tạo và huấn luyện giáo viên. Gồm cả chuyên viên tư vấn giáo dục và phụ trách học liệu. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SEI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-1024.00",
+      "name": "Nhà thiết kế đồ hoạ",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Thiết kế đồ hoạ cho nhu cầu thương mại hoặc quảng bá cụ thể như bao bì, trưng bày hay logo. Có thể dùng nhiều chất liệu để tạo hiệu quả nghệ thuật hoặc trang trí. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ACE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-1014.00",
+      "name": "Hoạ sĩ hoạt hình, kỹ xảo",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Tạo kỹ xảo hoặc hoạt hình bằng phim, video, máy tính hoặc công cụ điện tử khác cho các sản phẩm như trò chơi điện tử, phim, video ca nhạc và quảng cáo. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ARC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-1013.00",
+      "name": "Hoạ sĩ, nghệ nhân",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Sáng tác tác phẩm nghệ thuật gốc bằng nhiều chất liệu và kỹ thuật khác nhau. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RAC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-27-1021.00",
+      "name": "Nhà thiết kế sản phẩm công nghiệp",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Thiết kế và phát triển sản phẩm công nghiệp như ô tô, đồ gia dụng và đồ chơi trẻ em. Kết hợp năng khiếu nghệ thuật với nghiên cứu về cách dùng, thị trường và vật liệu để tạo thiết kế vừa tiện dụng vừa hấp dẫn. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ARI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-1022.00",
+      "name": "Nhà thiết kế thời trang",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Thiết kế quần áo và phụ kiện. Tạo thiết kế gốc hoặc phát triển từ xu hướng thời trang. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "ARE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-1025.00",
+      "name": "Nhà thiết kế nội thất và trang trí",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Lên kế hoạch, thiết kế và bày trí không gian bên trong phòng hoặc toà nhà. Thiết kế môi trường nội thất tiện dụng, thẩm mỹ và phù hợp mục đích sử dụng. Có thể chuyên một lĩnh vực, phong cách hoặc giai đoạn thiết kế nội thất. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ARE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-2011.00",
+      "name": "Diễn viên",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Đóng vai trong sân khấu, truyền hình, phát thanh, video, phim hoặc bối cảnh khác để giải trí, thông tin hoặc giáo dục. Thể hiện vai bi hoặc hài qua lời nói, cử chỉ và chuyển động cơ thể. Có thể nhảy và hát. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "ASE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-27-2012.00",
+      "name": "Đạo diễn, nhà sản xuất",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Sản xuất hoặc đạo diễn chương trình sân khấu, truyền hình, phát thanh, video hoặc phim để giải trí, thông tin hay giáo dục. Chịu trách nhiệm các quyết định sáng tạo như cách hiểu kịch bản, chọn diễn viên hoặc khách mời, thiết kế bối cảnh, âm thanh, kỹ xảo và biên đạo. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "EAC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-2042.00",
+      "name": "Ca sĩ, nhạc công",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Chơi một hoặc nhiều nhạc cụ hoặc hát. Có thể biểu diễn trên sân khấu, cho phát sóng hoặc thu âm, ghi hình. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "AES",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-27-2031.00",
+      "name": "Diễn viên múa",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Biểu diễn múa, nhảy. Có thể diễn trên sân khấu, cho phát sóng hoặc ghi hình. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "ARS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-27-2021.00",
+      "name": "Vận động viên, huấn luyện viên thể thao",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Thi đấu trong các sự kiện thể thao. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "ERS",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-3023.00",
+      "name": "Phóng viên, nhà báo",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Viết hoặc dẫn tin, bài bình luận, phê bình cho báo in, phát thanh, truyền hình hoặc phương tiện truyền thông khác. Có thể thu thập và phân tích thông tin qua phỏng vấn, điều tra hoặc quan sát. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "AEC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-3041.00",
+      "name": "Biên tập viên",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Lên kế hoạch, điều phối, sửa hoặc biên tập văn bản. Có thể xem xét đề xuất và bản thảo để cân nhắc xuất bản. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CAI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-3043.00",
+      "name": "Nhà văn, người viết nội dung",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Sáng tác và soạn văn bản như kịch bản, truyện, quảng cáo và các tài liệu khác. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "AEI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-27-3091.00",
+      "name": "Phiên dịch, biên dịch viên",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Phiên dịch lời nói hoặc ngôn ngữ ký hiệu, hoặc biên dịch văn bản từ ngôn ngữ này sang ngôn ngữ khác. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CAS",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-27-4031.00",
+      "name": "Nhiếp ảnh, quay phim và dựng phim",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Vận hành máy quay truyền hình, video hoặc phim để ghi hình ảnh, cảnh quay cho sản phẩm truyền hình, video hoặc điện ảnh. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "ARC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-27-4014.00",
+      "name": "Kỹ thuật viên âm thanh, ánh sáng, phát sóng",
+      "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+      "regionId": "sang_tao",
+      "summary": "Lắp ráp và vận hành thiết bị để thu, đồng bộ, trộn, dựng hoặc tái tạo âm thanh, gồm nhạc, giọng nói và hiệu ứng, cho sân khấu, video, phim, truyền hình, podcast, sự kiện thể thao và sản phẩm khác. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCA",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-29-1215.00",
+      "name": "Bác sĩ",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Khám, chẩn đoán và điều trị bệnh: hỏi bệnh, khám lâm sàng, chỉ định xét nghiệm và chẩn đoán hình ảnh, kê đơn, làm thủ thuật, theo dõi người bệnh và tư vấn phòng bệnh. Sau khi học y khoa và thực hành, bác sĩ chọn một chuyên khoa như nội, nhi, sản, tâm thần, gây mê, chẩn đoán hình ảnh hay y học gia đình; chuyên khoa là biến thể của nghề. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "ISR",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-29-1021.00",
+      "name": "Bác sĩ răng hàm mặt (nha sĩ)",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Khám, chẩn đoán và điều trị bệnh, chấn thương và dị tật của răng và nướu. Có thể điều trị bệnh của tuỷ và các mô răng ảnh hưởng tới vệ sinh và độ bền của răng. Có thể lắp khí cụ nha khoa hoặc chăm sóc dự phòng. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "RIS",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-29-1051.00",
+      "name": "Dược sĩ",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Cấp phát thuốc theo đơn của bác sĩ và nhân viên y tế, hướng dẫn người bệnh về thuốc và cách dùng. Có thể tư vấn cho bác sĩ về lựa chọn thuốc, liều dùng, tương tác và tác dụng phụ. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "CSR",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Đánh giá vấn đề và nhu cầu sức khoẻ của người bệnh, lập và thực hiện kế hoạch chăm sóc điều dưỡng, lưu hồ sơ y tế. Chăm sóc người bệnh, người bị thương, đang hồi phục hoặc khuyết tật. Có thể tư vấn giữ gìn sức khoẻ, phòng bệnh hoặc quản lý ca. Cần chứng chỉ hành nghề. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "SIC",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-29-1161.00",
+      "name": "Hộ sinh",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Chẩn đoán và điều phối mọi khâu của quá trình sinh, độc lập hoặc trong nhóm y tế. Có thể khám phụ khoa định kỳ cho phụ nữ. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SIR",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-29-1151.00",
+      "name": "Kỹ thuật viên gây mê hồi sức",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Gây mê, theo dõi dấu hiệu sinh tồn và giám sát người bệnh hồi tỉnh sau gây mê. Có thể hỗ trợ bác sĩ gây mê, phẫu thuật viên, bác sĩ khác hoặc nha sĩ. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SIR",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-29-1123.00",
+      "name": "Kỹ thuật viên, chuyên viên phục hồi chức năng",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Đánh giá, lập kế hoạch, tổ chức và tham gia chương trình phục hồi chức năng giúp cải thiện vận động, giảm đau, tăng sức mạnh và khắc phục tình trạng khuyết tật do bệnh hoặc chấn thương. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SIR",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-29-1291.00",
+      "name": "Y học cổ truyền, châm cứu",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Chẩn đoán, điều trị và phòng bệnh bằng cách kích thích các huyệt trên cơ thể bằng kim châm cứu. Có thể dùng giác hơi, thực phẩm bổ sung, xoa bóp trị liệu, bấm huyệt và các liệu pháp thay thế khác. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SIR",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-29-1031.00",
+      "name": "Chuyên viên dinh dưỡng",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Lập kế hoạch và tổ chức chương trình dinh dưỡng, dịch vụ ăn uống để nâng cao sức khoẻ và kiểm soát bệnh. Có thể giám sát bộ phận cung cấp suất ăn số lượng lớn, tư vấn cho từng người hoặc nghiên cứu dinh dưỡng. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "SIC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-29-1131.00",
+      "name": "Bác sĩ thú y",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Chẩn đoán, điều trị hoặc nghiên cứu bệnh và chấn thương ở động vật. Gồm cả bác sĩ thú y làm nghiên cứu, kiểm dịch vật nuôi hoặc chăm sóc thú cưng. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "RIC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-29-2011.00",
+      "name": "Kỹ thuật viên xét nghiệm",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Thực hiện các xét nghiệm y học phức tạp phục vụ chẩn đoán, điều trị và phòng bệnh. Có thể đào tạo hoặc giám sát nhân viên. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "IRC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-29-2034.00",
+      "name": "Kỹ thuật viên chẩn đoán hình ảnh",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Chụp X-quang, chụp CT hoặc đưa chất không phóng xạ vào máu người bệnh để chẩn đoán hoặc nghiên cứu. Gồm cả kỹ thuật viên chuyên các phương pháp chụp quét khác. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RIC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-29-1041.00",
+      "name": "Kỹ thuật viên khúc xạ, nhãn khoa",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Chẩn đoán, quản lý và điều trị các tình trạng, bệnh của mắt và hệ thị giác. Khám mắt, phát hiện vấn đề hoặc suy giảm thị lực, kê kính điều chỉnh và điều trị. Có thể kê thuốc điều trị một số bệnh mắt. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+      "interestCode": "RSI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-29-2043.00",
+      "name": "Nhân viên cấp cứu ngoại viện",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Cấp cứu cơ bản hoặc nâng cao và đánh giá chấn thương, bệnh tật. Có thể tiêm truyền thuốc, dùng thiết bị như máy điện tim hoặc hồi sức nâng cao cho người bệnh, người bị thương. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "SRI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-29-2072.00",
+      "name": "Chuyên viên hồ sơ bệnh án",
+      "group": "Y tế chuyên môn và kỹ thuật y tế",
+      "regionId": "suc_khoe",
+      "summary": "Tập hợp, xử lý và lưu hồ sơ bệnh án của bệnh viện, phòng khám đúng yêu cầu y khoa, hành chính, đạo đức, pháp lý và quy định ngành y. Mã hoá chẩn đoán, thủ thuật, dịch vụ và thiết bị y tế theo hệ thống mã số của ngành. Gồm cả nhân viên mã hoá y tế. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "CSI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-31-1131.00",
+      "name": "Hộ lý, trợ lý điều dưỡng",
+      "group": "Hỗ trợ y tế",
+      "regionId": "suc_khoe",
+      "summary": "Chăm sóc hoặc hỗ trợ chăm sóc cơ bản dưới sự chỉ đạo của điều dưỡng có chứng chỉ tại chỗ. Theo dõi sức khoẻ, cho ăn, tắm rửa, mặc quần áo, chải chuốt, vệ sinh và hỗ trợ đi lại cho người bệnh ở cơ sở y tế hoặc viện dưỡng lão. Có thể cho uống thuốc và làm các việc y tế khác. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RSC",
+      "levelCount": 4
+    },
+    {
+      "code": "ONET-31-1121.00",
+      "name": "Nhân viên chăm sóc tại nhà",
+      "group": "Hỗ trợ y tế",
+      "regionId": "suc_khoe",
+      "summary": "Theo dõi sức khoẻ của người khuyết tật hoặc người bệnh và đáp ứng nhu cầu y tế của họ, như thay băng, chăm sóc vết thương hoặc cho uống thuốc, dưới sự chỉ đạo của điều dưỡng có chứng chỉ. Hỗ trợ các việc chăm sóc thường ngày như ăn uống, tắm rửa, vệ sinh, đi lại. Tuỳ khả năng của người bệnh, có thể nấu ăn, dọn dẹp nhẹ và giặt giũ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "SRC",
+      "levelCount": 4
+    },
+    {
+      "code": "ONET-31-9091.00",
+      "name": "Trợ thủ nha khoa",
+      "group": "Hỗ trợ y tế",
+      "regionId": "suc_khoe",
+      "summary": "Làm một số việc lâm sàng giới hạn dưới sự chỉ đạo của nha sĩ, như chuẩn bị và tiệt trùng dụng cụ, chuẩn bị người bệnh, hỗ trợ nha sĩ trong khi điều trị và hướng dẫn người bệnh chăm sóc răng miệng. Có thể làm việc hành chính như đặt lịch hẹn, lưu hồ sơ, lập hoá đơn và mã hoá thông tin bảo hiểm. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-31-9092.00",
+      "name": "Trợ lý y khoa",
+      "group": "Hỗ trợ y tế",
+      "regionId": "suc_khoe",
+      "summary": "Làm việc hành chính và một số việc lâm sàng dưới sự chỉ đạo của bác sĩ. Việc hành chính có thể gồm đặt lịch hẹn, lưu hồ sơ bệnh án, lập hoá đơn và mã hoá thông tin bảo hiểm. Việc lâm sàng có thể gồm đo và ghi dấu hiệu sinh tồn, tiền sử bệnh, chuẩn bị người bệnh để khám, lấy máu và cho dùng thuốc theo chỉ định của bác sĩ. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "CSI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-31-9011.00",
+      "name": "Chuyên viên xoa bóp trị liệu",
+      "group": "Hỗ trợ y tế",
+      "regionId": "suc_khoe",
+      "summary": "Xoa bóp trị liệu cho mô mềm và khớp. Có thể hỗ trợ đánh giá tầm vận động và sức cơ, hoặc đề xuất kế hoạch trị liệu cho khách. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "SRI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-33-3051.00",
+      "name": "Cảnh sát (công an)",
+      "group": "Dịch vụ bảo vệ an ninh và an toàn",
+      "regionId": "dich_vu",
+      "summary": "Giữ trật tự, bảo vệ tính mạng và tài sản bằng cách thực thi pháp luật. Kết hợp các việc: tuần tra một khu vực, điều tiết giao thông, lập biên bản vi phạm giao thông, điều tra tai nạn, truy bắt nghi phạm hoặc tống đạt văn bản của toà. Gồm cả cảnh sát làm việc tại cơ sở giáo dục. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-33-3021.00",
+      "name": "Điều tra viên",
+      "group": "Dịch vụ bảo vệ an ninh và an toàn",
+      "regionId": "dich_vu",
+      "summary": "Điều tra các hành vi nghi vi phạm pháp luật để phòng ngừa hoặc phá án. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "CIR",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-33-3012.00",
+      "name": "Cán bộ quản giáo",
+      "group": "Dịch vụ bảo vệ an ninh và an toàn",
+      "regionId": "dich_vu",
+      "summary": "Canh giữ phạm nhân trong trại giam hoặc cơ sở cải tạo theo quy định và quy trình. Có thể áp giải phạm nhân giữa trại tạm giam, toà án, nhà tù và nơi khác. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CER",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-33-2011.00",
+      "name": "Lính cứu hoả, cứu nạn",
+      "group": "Dịch vụ bảo vệ an ninh và an toàn",
+      "regionId": "dich_vu",
+      "summary": "Kiểm soát và dập tắt đám cháy hoặc ứng phó tình huống khẩn cấp đe doạ tính mạng, tài sản hay môi trường. Có thể gồm phòng cháy, cấp cứu, xử lý chất nguy hại, tìm kiếm cứu nạn và cứu trợ thiên tai. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-33-2022.00",
+      "name": "Kiểm lâm",
+      "group": "Dịch vụ bảo vệ an ninh và an toàn",
+      "regionId": "dich_vu",
+      "summary": "Thực thi quy định về phòng cháy, kiểm tra rừng để phát hiện nguy cơ cháy và đề xuất biện pháp phòng, chống cháy rừng. Có thể báo cáo đám cháy và tình hình thời tiết. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-33-3051.04",
+      "name": "Cán bộ hải quan và biên phòng cửa khẩu",
+      "group": "Dịch vụ bảo vệ an ninh và an toàn",
+      "regionId": "dich_vu",
+      "summary": "Điều tra, kiểm tra người, phương tiện vận chuyển và hàng hoá xuất nhập cảnh để phát hiện vi phạm luật xuất nhập cảnh và hải quan. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "CER",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-33-9032.00",
+      "name": "Nhân viên bảo vệ, an ninh",
+      "group": "Dịch vụ bảo vệ an ninh và an toàn",
+      "regionId": "dich_vu",
+      "summary": "Canh gác, tuần tra hoặc giám sát khu vực để ngăn trộm cắp, bạo lực hoặc vi phạm nội quy. Có thể vận hành máy soi chiếu và máy dò kim loại. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CRE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-33-9092.00",
+      "name": "Nhân viên cứu hộ bể bơi, bãi biển",
+      "group": "Dịch vụ bảo vệ an ninh và an toàn",
+      "regionId": "dich_vu",
+      "summary": "Giám sát khu vui chơi giải trí như bể bơi, bãi biển hoặc dốc trượt tuyết để hỗ trợ và bảo vệ người tham gia. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RSC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-35-2014.00",
+      "name": "Đầu bếp",
+      "group": "Chế biến và phục vụ ăn uống",
+      "regionId": "dich_vu",
+      "summary": "Chế biến, nêm nếm và nấu các món như súp, thịt, rau hoặc tráng miệng ở nhà hàng. Có thể đặt hàng nguyên liệu, giữ sổ sách, định giá món hoặc lên thực đơn. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-35-3023.01",
+      "name": "Nhân viên pha chế (barista, bartender)",
+      "group": "Chế biến và phục vụ ăn uống",
+      "regionId": "dich_vu",
+      "summary": "Pha chế hoặc phục vụ cà phê đặc biệt và các loại đồ uống khác. Phục vụ đồ ăn như bánh nướng hoặc bánh mì kẹp. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-35-3031.00",
+      "name": "Nhân viên phục vụ nhà hàng",
+      "group": "Chế biến và phục vụ ăn uống",
+      "regionId": "dich_vu",
+      "summary": "Nhận gọi món và phục vụ đồ ăn, đồ uống cho khách tại bàn trong nhà hàng. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCS",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-37-2011.00",
+      "name": "Nhân viên vệ sinh và buồng phòng",
+      "group": "Vệ sinh và bảo dưỡng toà nhà, cảnh quan",
+      "regionId": "dich_vu",
+      "summary": "Giữ cho toà nhà sạch sẽ, gọn gàng. Làm các việc vệ sinh nặng như lau sàn, giặt thảm, lau tường và kính, dọn rác. Có thể trông lò sưởi và nồi hơi, bảo trì thường xuyên, báo quản lý khi cần sửa chữa, và dọn tuyết hoặc rác trên vỉa hè. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-37-3011.00",
+      "name": "Công nhân cảnh quan và cây xanh",
+      "group": "Vệ sinh và bảo dưỡng toà nhà, cảnh quan",
+      "regionId": "dich_vu",
+      "summary": "Làm và chăm sóc cảnh quan khuôn viên bằng dụng cụ cầm tay hoặc máy. Công việc thường gồm trải thảm cỏ, cắt cỏ, cắt tỉa, trồng cây, tưới nước, bón phân, đào xới, cào, lắp hệ thống tưới và xây tường chắn bằng khối bê tông lắp ghép. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-37-2021.00",
+      "name": "Nhân viên kiểm soát côn trùng",
+      "group": "Vệ sinh và bảo dưỡng toà nhà, cảnh quan",
+      "regionId": "dich_vu",
+      "summary": "Phun hoặc thả dung dịch hoá chất, khí độc và đặt bẫy để tiêu diệt hoặc loại bỏ côn trùng, chuột và sinh vật gây hại trong nhà và khu vực xung quanh. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-39-5012.00",
+      "name": "Thợ làm tóc",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Làm dịch vụ làm đẹp như cắt, nhuộm, tạo kiểu tóc, xoa bóp và chăm sóc da đầu. Có thể gội đầu, trang điểm, làm tóc giả, tẩy lông và chăm sóc móng, da. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-39-5094.00",
+      "name": "Chuyên viên chăm sóc da (spa)",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Chăm sóc da mặt và cơ thể để làm đẹp. Gồm cả chuyên viên triệt lông bằng điện và bằng laser. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RSC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-39-5092.00",
+      "name": "Thợ làm móng",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Làm sạch và tạo dáng móng tay, móng chân cho khách. Có thể sơn hoặc trang trí móng. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-39-5091.00",
+      "name": "Chuyên viên trang điểm",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Hoá trang cho người biểu diễn để thể hiện thời đại, bối cảnh và tình huống của vai diễn. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "ARC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-39-7011.00",
+      "name": "Hướng dẫn viên du lịch",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Dẫn cá nhân hoặc đoàn đi tham quan hoặc qua các điểm đáng chú ý như cơ sở công nghiệp, công trình công cộng và phòng trưng bày nghệ thuật. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "SEC",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-39-9011.00",
+      "name": "Nhân viên trông trẻ, bảo mẫu",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Chăm sóc trẻ em ở trường học, doanh nghiệp, gia đình và cơ sở giữ trẻ. Làm nhiều việc như thay quần áo, cho ăn, tắm và trông trẻ chơi. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "SAC",
+      "levelCount": 4
+    },
+    {
+      "code": "ONET-39-9031.00",
+      "name": "Huấn luyện viên thể hình",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Hướng dẫn hoặc huấn luyện nhóm, cá nhân tập luyện để nâng cao thể lực. Làm mẫu kỹ thuật và tư thế, quan sát người tập và giải thích cách sửa để cải thiện kỹ năng. Xây dựng và áp dụng chương trình tập riêng cho từng người. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "SER",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-39-9032.00",
+      "name": "Nhân viên tổ chức hoạt động vui chơi giải trí",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Tổ chức hoạt động giải trí cho nhóm ở cơ quan công, tư, tổ chức tình nguyện hoặc cơ sở vui chơi. Tổ chức và quảng bá các hoạt động như thủ công mỹ nghệ, thể thao, trò chơi, âm nhạc, kịch, sinh hoạt tập thể, cắm trại và sở thích, có tính tới nhu cầu và mối quan tâm của từng người. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "CSE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-39-2021.00",
+      "name": "Nhân viên chăm sóc thú cưng và động vật",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Cho ăn, uống, chải lông, tắm, cho vận động hoặc chăm sóc khác cho thú cưng và động vật không nuôi để lấy thịt, như chó, mèo, ngựa đua, cá cảnh, chim, thú trong vườn thú và chuột. Làm việc tại trại chó, trạm cứu hộ, vườn thú, rạp xiếc và thuỷ cung. Có thể ghi chép việc cho ăn, chữa trị, nhận và trả động vật. Có thể dọn rửa, khử trùng và sửa chuồng, lồng hoặc bể cá. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RSC",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-39-4031.00",
+      "name": "Nhân viên dịch vụ tang lễ",
+      "group": "Chăm sóc và dịch vụ cá nhân",
+      "regionId": "dich_vu",
+      "summary": "Làm nhiều việc để tổ chức và điều hành từng tang lễ, như điều phối vận chuyển thi hài, gặp gia đình để thống nhất chi tiết, chọn người khiêng quan tài, hỗ trợ chọn người làm nghi thức tôn giáo và lo phương tiện đi lại cho người đưa tang. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "CER",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-41-2031.00",
+      "name": "Nhân viên bán hàng",
+      "group": "Bán hàng",
+      "regionId": "kinh_doanh",
+      "summary": "Bán hàng như đồ nội thất, xe cộ, thiết bị gia dụng hoặc quần áo cho người tiêu dùng. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "ECR",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-41-2011.00",
+      "name": "Thu ngân",
+      "group": "Bán hàng",
+      "regionId": "kinh_doanh",
+      "summary": "Thu và chi tiền ở các cơ sở không phải tổ chức tài chính. Có thể dùng máy quét mã, máy tính tiền hoặc thiết bị liên quan. Có thể xử lý giao dịch thẻ tín dụng, thẻ ghi nợ và xác thực séc. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CER",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-41-3021.00",
+      "name": "Tư vấn viên bảo hiểm",
+      "group": "Bán hàng",
+      "regionId": "kinh_doanh",
+      "summary": "Bán bảo hiểm nhân thọ, tài sản, tai nạn, sức khoẻ, xe cơ giới hoặc các loại khác. Có thể giới thiệu khách cho môi giới độc lập, tự làm môi giới hoặc làm cho công ty bảo hiểm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECS",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-41-3031.00",
+      "name": "Nhân viên môi giới chứng khoán",
+      "group": "Bán hàng",
+      "regionId": "kinh_doanh",
+      "summary": "Mua bán chứng khoán hoặc hàng hoá tại công ty đầu tư và giao dịch, hoặc cung cấp dịch vụ tài chính cho doanh nghiệp và cá nhân. Có thể tư vấn cho khách về cổ phiếu, trái phiếu, quỹ đầu tư, hàng hoá và tình hình thị trường. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECS",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-41-9022.00",
+      "name": "Nhân viên môi giới bất động sản",
+      "group": "Bán hàng",
+      "regionId": "kinh_doanh",
+      "summary": "Cho thuê, mua hoặc bán bất động sản cho khách. Xem danh mục nhà đất, phỏng vấn khách tiềm năng, dẫn khách đi xem, trao đổi điều kiện bán và soạn hợp đồng. Gồm cả người đại diện cho bên mua. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "ECS",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-41-4012.00",
+      "name": "Nhân viên kinh doanh (sales B2B)",
+      "group": "Bán hàng",
+      "regionId": "kinh_doanh",
+      "summary": "Bán hàng của nhà bán buôn hoặc nhà sản xuất cho doanh nghiệp hoặc nhóm khách, không thuộc sản phẩm kỹ thuật và khoa học. Cần hiểu biết sâu về hàng mình bán. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECS",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-41-9031.00",
+      "name": "Kỹ sư kinh doanh (sales kỹ thuật)",
+      "group": "Bán hàng",
+      "regionId": "kinh_doanh",
+      "summary": "Bán hàng hoá hoặc dịch vụ cho doanh nghiệp, loại hàng đòi nền kỹ thuật tương đương bằng kỹ sư. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "ECI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-41-3041.00",
+      "name": "Nhân viên kinh doanh tour du lịch",
+      "group": "Bán hàng",
+      "regionId": "kinh_doanh",
+      "summary": "Lên kế hoạch và bán dịch vụ đi lại, lưu trú cho khách. Xác định điểm đến, phương tiện, ngày đi, chi phí và chỗ ở cần có. Có thể giới thiệu, lên lịch trình và bán tour trọn gói. Có thể hỗ trợ giải quyết sự cố khi khách đi du lịch. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "ECS",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-41-9012.00",
+      "name": "Người mẫu",
+      "group": "Bán hàng",
+      "regionId": "kinh_doanh",
+      "summary": "Trình diễn quần áo, phụ kiện cho người mua tiềm năng tại buổi trình diễn thời trang, buổi giới thiệu riêng hoặc cửa hàng. Có thể tạo dáng chụp ảnh cho tạp chí, quảng cáo. Có thể làm mẫu cho tranh, tượng và các hình thức nghệ thuật khác. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "ARE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "group": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh",
+      "summary": "Làm các việc hành chính thường ngày như soạn thư từ, đặt lịch hẹn, sắp xếp và lưu giữ hồ sơ giấy, điện tử, hoặc cung cấp thông tin cho người gọi điện. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CES",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "group": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh",
+      "summary": "Tiếp xúc với khách để cung cấp thông tin cơ bản hoặc theo kịch bản về sản phẩm, dịch vụ. Có thể xử lý và giải quyết khiếu nại thông thường. Không gồm người làm chủ yếu việc lắp đặt, bán hàng, sửa chữa và hỗ trợ kỹ thuật. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CES",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-43-4081.00",
+      "name": "Lễ tân khách sạn",
+      "group": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh",
+      "summary": "Phục vụ khách của khách sạn, nhà nghỉ, khu nghỉ dưỡng: làm thủ tục nhận phòng, xếp phòng, giao chìa khoá hoặc thẻ, chuyển và nhận lời nhắn, ghi chép phòng đang có khách và tài khoản của khách, đặt và xác nhận phòng, đưa hoá đơn và thu tiền khi khách trả phòng. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CSE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-43-3071.00",
+      "name": "Giao dịch viên ngân hàng",
+      "group": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh",
+      "summary": "Thu và chi tiền. Ghi chép tiền và giấy tờ có giá trong các giao dịch của tổ chức tài chính. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CES",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-43-4031.00",
+      "name": "Cán bộ tiếp nhận hồ sơ hành chính công",
+      "group": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh",
+      "summary": "Làm việc văn thư cho toà án, chính quyền địa phương hoặc cơ quan cấp phép. Có thể lập danh sách vụ việc đưa ra xét xử, tìm thông tin cho thẩm phán và toà án, soạn dự thảo chương trình họp, trả lời công văn, giữ sổ sách tài chính, cấp giấy phép, ghi dữ liệu, tổ chức kiểm tra hoặc thu phí. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CES",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-43-5071.00",
+      "name": "Nhân viên kho và kế hoạch vật tư",
+      "group": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh",
+      "summary": "Kiểm tra và ghi chép hàng nhập, hàng xuất liên quan đến tồn kho. Xác nhận, ghi nhận hàng hoá, vật tư nhập về và thu xếp vận chuyển sản phẩm. Có thể chuẩn bị hàng để gửi đi. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CRE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-43-5021.00",
+      "name": "Nhân viên giao hàng (shipper)",
+      "group": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh",
+      "summary": "Nhận và giao thư từ, tài liệu, bưu kiện và các món khác giữa các phòng ban hoặc trực tiếp tới doanh nghiệp khác, đi bộ, xe đạp, xe máy, ô tô hoặc phương tiện công cộng. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CRE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-43-5051.00",
+      "name": "Nhân viên bưu chính",
+      "group": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh",
+      "summary": "Làm các việc ở bưu cục như nhận thư và bưu kiện; bán tem, bưu thiếp và phong bì có tem; lập và bán phiếu chuyển tiền; chia thư vào ô, túi; kiểm tra cước thư. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CRS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-43-5032.00",
+      "name": "Điều phối viên vận tải và khẩn cấp",
+      "group": "Văn phòng và hỗ trợ hành chính",
+      "regionId": "kinh_doanh",
+      "summary": "Xếp lịch và điều người, đội, thiết bị hoặc xe dịch vụ để chở vật tư, hàng hoá, hành khách, hoặc đi lắp đặt, bảo dưỡng, sửa chữa khẩn cấp bên ngoài. Có thể dùng bộ đàm, điện thoại hoặc máy tính để giao việc và tổng hợp số liệu, báo cáo tiến độ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CRS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-45-2092.00",
+      "name": "Lao động trồng trọt",
+      "group": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+      "regionId": "ky_thuat",
+      "summary": "Trồng, chăm sóc và thu hoạch rau, quả, hạt, cây cảnh và cây trồng ngoài đồng bằng tay. Dùng dụng cụ như xẻng, bay, cuốc, đầm, liềm, kéo và dao. Có thể làm đất, bón phân, cấy, làm cỏ, tỉa thưa, cắt tỉa, phun thuốc, hoặc làm sạch, phân loại, đóng gói và bốc xếp nông sản. Có thể làm giàn, sửa hàng rào và chuồng trại, hoặc tham gia tưới tiêu. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-45-2093.00",
+      "name": "Lao động chăn nuôi và nuôi trồng thuỷ sản",
+      "group": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+      "regionId": "ky_thuat",
+      "summary": "Chăm sóc vật nuôi ở trang trại, đồng cỏ hoặc trại thuỷ sản, như bò, cừu, lợn, dê, ngựa, gia cầm, thỏ, cá, động vật có vỏ và ong, để lấy thịt, lông, da, trứng, sữa và mật. Công việc có thể gồm cho ăn uống, chăn dắt, vắt sữa, thiến, đánh dấu, cắt mỏ, cân, bắt và đưa vật nuôi lên xe. Có thể ghi chép về vật nuôi, khám phát hiện bệnh và chấn thương, hỗ trợ đỡ đẻ, tiêm thuốc và vắc-xin, dọn dẹp chuồng trại. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-45-3031.00",
+      "name": "Ngư dân, người đánh bắt thuỷ sản",
+      "group": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+      "regionId": "ky_thuat",
+      "summary": "Săn, đặt bẫy, đánh bắt hoặc thu lượm động vật hoang dã, động vật và thực vật thuỷ sinh. Có thể dùng lưới, bẫy hoặc thiết bị khác. Có thể kéo mẻ lưới lên tàu. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-45-4011.00",
+      "name": "Công nhân lâm nghiệp",
+      "group": "Nông nghiệp, ngư nghiệp và lâm nghiệp",
+      "regionId": "ky_thuat",
+      "summary": "Làm việc chân tay dưới sự giám sát để phát triển, duy trì và bảo vệ rừng, đất rừng, vùng đất ngập nước và đồng cỏ, như ươm và vận chuyển cây giống, phòng trừ sâu bệnh hại cây, làm công trình chống xói mòn và giữ nước. Gồm cả người phụ việc kiểm lâm, người nhổ và trồng cây giống, người thu hái lâm sản ngoài gỗ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-47-2021.00",
+      "name": "Thợ xây, ốp lát",
+      "group": "Xây dựng và khai khoáng",
+      "regionId": "ky_thuat",
+      "summary": "Xây và liên kết vật liệu như gạch, gạch block, bê tông, gạch kính, gạch nung bằng vữa và chất kết dính để xây hoặc sửa tường, vách ngăn, vòm, cống và công trình khác. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-47-2031.00",
+      "name": "Thợ mộc",
+      "group": "Xây dựng và khai khoáng",
+      "regionId": "ky_thuat",
+      "summary": "Làm, dựng, lắp hoặc sửa kết cấu và đồ gỗ hay vật liệu tương tự như cốp pha bê tông, khung nhà gồm vách ngăn, dầm, cột, kèo, cầu thang gỗ, khung cửa sổ, cửa đi và sàn gỗ. Có thể lắp tủ, ốp tường, vách thạch cao và tấm cách nhiệt. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-47-2141.00",
+      "name": "Thợ sơn, thạch cao và hoàn thiện",
+      "group": "Xây dựng và khai khoáng",
+      "regionId": "ky_thuat",
+      "summary": "Sơn tường, thiết bị, toà nhà, cầu và các bề mặt kết cấu khác bằng cọ, con lăn và súng phun. Có thể cạo sơn cũ để chuẩn bị bề mặt. Có thể pha màu hoặc dầu để có màu, độ đặc mong muốn. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCA",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-47-2111.00",
+      "name": "Thợ điện công trình",
+      "group": "Xây dựng và khai khoáng",
+      "regionId": "ky_thuat",
+      "summary": "Lắp đặt, bảo trì và sửa chữa dây điện, thiết bị và đồ điện. Bảo đảm làm đúng quy chuẩn. Có thể lắp hoặc bảo dưỡng đèn đường, hệ thống liên lạc nội bộ hoặc hệ thống điều khiển điện. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-47-2152.00",
+      "name": "Thợ ống nước, đường ống",
+      "group": "Xây dựng và khai khoáng",
+      "regionId": "ky_thuat",
+      "summary": "Lắp ráp, lắp đặt, sửa đổi và sửa chữa đường ống, hệ thống ống dẫn nước, hơi, khí nén hoặc chất lỏng, khí khác. Có thể lắp thiết bị sưởi, làm mát và hệ thống điều khiển cơ khí. Gồm cả thợ lắp hệ thống phun nước chữa cháy. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-47-2221.00",
+      "name": "Thợ kết cấu thép, nhôm kính",
+      "group": "Xây dựng và khai khoáng",
+      "regionId": "ky_thuat",
+      "summary": "Nâng, đặt và liên kết dầm, cột thép và các cấu kiện khác để tạo thành công trình hoặc khung kết cấu. Có thể dựng bồn chứa kim loại và lắp nhà thép tiền chế. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-47-2073.00",
+      "name": "Người vận hành máy thi công",
+      "group": "Xây dựng và khai khoáng",
+      "regionId": "ky_thuat",
+      "summary": "Vận hành một hoặc nhiều loại máy thi công như máy san, máy ủi, máy cạp, máy nén khí, máy bơm, cần trục, máy xúc, máy kéo hoặc máy xúc lật để đào, chuyển và san đất, dựng công trình hoặc đổ bê tông, mặt đường. Có thể sửa chữa và bảo dưỡng máy. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-47-5041.00",
+      "name": "Công nhân khai thác mỏ, dầu khí",
+      "group": "Xây dựng và khai khoáng",
+      "regionId": "ky_thuat",
+      "summary": "Vận hành máy khai thác tự hành để cắt than, quặng kim loại và phi kim, đá hoặc cát từ gương lò và đưa lên băng tải, xe goòng hoặc xe tải liên tục. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-49-3023.00",
+      "name": "Thợ sửa chữa ô tô",
+      "group": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat",
+      "summary": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu ô tô. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-49-3052.00",
+      "name": "Thợ sửa xe máy",
+      "group": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat",
+      "summary": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu xe máy, xe tay ga, xe gắn máy, xe địa hình và phương tiện có động cơ tương tự. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-49-3042.00",
+      "name": "Thợ sửa máy công trình, máy nông nghiệp",
+      "group": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat",
+      "summary": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu máy cơ khí, thuỷ lực và khí nén di động như cần cẩu, máy ủi, máy san và băng tải dùng trong xây dựng, khai thác gỗ và khai mỏ. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-49-3011.00",
+      "name": "Kỹ thuật viên bảo dưỡng máy bay",
+      "group": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat",
+      "summary": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu động cơ và các cụm của máy bay như hệ thống thuỷ lực và khí nén. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-49-9021.00",
+      "name": "Thợ điện lạnh",
+      "group": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat",
+      "summary": "Lắp đặt hoặc sửa chữa hệ thống sưởi, điều hoà trung tâm, thông gió hoặc làm lạnh, gồm cả lò đốt dầu, lò khí nóng và bếp sưởi. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-49-9041.00",
+      "name": "Thợ bảo trì máy công nghiệp",
+      "group": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat",
+      "summary": "Sửa chữa, lắp đặt, điều chỉnh hoặc bảo trì máy sản xuất, chế biến công nghiệp hoặc hệ thống phân phối của nhà máy lọc dầu và đường ống. Có thể lắp đặt, tháo dỡ hoặc di chuyển máy và thiết bị nặng theo phương án. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-49-9051.00",
+      "name": "Công nhân đường dây và trạm điện",
+      "group": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat",
+      "summary": "Lắp đặt hoặc sửa chữa cáp, dây dẫn của hệ thống truyền tải, phân phối điện. Có thể dựng cột và tháp truyền tải nhẹ hoặc nặng. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-49-9052.00",
+      "name": "Kỹ thuật viên lắp đặt viễn thông",
+      "group": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat",
+      "summary": "Lắp đặt và sửa chữa cáp viễn thông, kể cả cáp quang. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-49-2094.00",
+      "name": "Thợ sửa chữa điện, điện tử",
+      "group": "Lắp đặt, bảo trì và sửa chữa",
+      "regionId": "ky_thuat",
+      "summary": "Sửa chữa, thử nghiệm, điều chỉnh hoặc lắp đặt thiết bị điện tử như bộ điều khiển công nghiệp, máy phát sóng và ăng-ten. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-51-2092.00",
+      "name": "Công nhân lắp ráp",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Làm việc trong một tổ chịu trách nhiệm lắp ráp toàn bộ sản phẩm hoặc một cụm của sản phẩm. Công nhân làm được mọi việc của tổ trong quy trình lắp ráp và luân chuyển qua hầu hết các vị trí thay vì cố định một việc. Có thể tham gia quyết định về công việc. Gồm cả tổ trưởng cùng làm trong tổ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-51-4041.00",
+      "name": "Thợ cơ khí, tiện phay CNC",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Cài đặt và vận hành nhiều loại máy công cụ để làm chi tiết và dụng cụ chính xác bằng kim loại. Gồm cả thợ làm dụng cụ đo chính xác. Có thể chế tạo, sửa chi tiết để làm hoặc sửa máy công cụ, bảo trì máy công nghiệp, vận dụng kiến thức cơ học, toán, tính chất kim loại, lấy dấu và gia công. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-51-4121.00",
+      "name": "Thợ hàn",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Dùng thiết bị hàn tay, cắt bằng lửa, hàn thiếc hoặc hàn vảy để hàn, nối chi tiết kim loại hoặc lấp lỗ, vết lõm, đường nối trên sản phẩm kim loại. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-51-3092.00",
+      "name": "Công nhân chế biến thực phẩm",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Cài đặt và vận hành thiết bị trộn, phối nguyên liệu dùng trong sản xuất thực phẩm. Gồm cả thợ làm kẹo và làm phô mai. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-51-3011.00",
+      "name": "Thợ làm bánh",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Trộn nguyên liệu và nướng để làm bánh mì, bánh cuộn, bánh quy, bánh ngọt, bánh nướng và các loại bánh khác. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCA",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-51-5112.00",
+      "name": "Công nhân in ấn",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Cài đặt và vận hành máy in kỹ thuật số, in typo, in offset, in flexo, in ống đồng hoặc máy in khác. Gồm cả máy in offset số lượng nhỏ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CRA",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-51-6031.00",
+      "name": "Công nhân may mặc, da giày",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Vận hành hoặc trông máy may để ráp, gia cố, trang trí hoặc làm các thao tác may khác trong sản xuất quần áo và sản phẩm khác. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCA",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-51-7011.00",
+      "name": "Thợ mộc đồ gỗ nội thất",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Cắt, tạo hình và lắp ráp đồ gỗ hoặc cài đặt và vận hành nhiều loại máy chế biến gỗ như cưa máy, máy bào cuốn, máy đục mộng để bào, cắt, tạo hình gỗ hoặc làm chi tiết cho sản phẩm gỗ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCA",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-51-8013.00",
+      "name": "Vận hành nhà máy điện",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Điều khiển, vận hành hoặc bảo dưỡng máy móc phát điện. Gồm cả người vận hành thiết bị phụ trợ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-51-8031.00",
+      "name": "Vận hành nhà máy nước, xử lý nước thải",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Vận hành hoặc điều khiển toàn bộ quy trình hay hệ thống máy, thường qua bảng điều khiển, để chuyển hoặc xử lý nước và nước thải. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-51-8091.00",
+      "name": "Vận hành nhà máy hoá chất, lọc dầu, khí",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Điều khiển hoặc vận hành toàn bộ quy trình hoá chất hoặc hệ thống máy. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-51-9061.00",
+      "name": "Nhân viên kiểm tra chất lượng sản xuất (QC)",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Kiểm tra, thử nghiệm, phân loại, lấy mẫu hoặc cân nguyên liệu và sản phẩm đã gia công, chế tạo, lắp ráp để phát hiện lỗi, mòn và sai lệch so với yêu cầu. Có thể dùng dụng cụ đo chính xác và thiết bị thử phức tạp. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-51-9141.00",
+      "name": "Kỹ thuật viên sản xuất bán dẫn",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Làm một hoặc nhiều công đoạn trong sản xuất linh kiện bán dẫn: nạp vật liệu bán dẫn vào lò; cưa thỏi thành đoạn; nạp đoạn vào buồng nuôi tinh thể và theo dõi; xác định trục tinh thể bằng máy X-quang và cưa thỏi thành tấm wafer; làm sạch, đánh bóng và nạp wafer vào các lò, bể hoá chất và thiết bị dùng để tạo mạch và thay đổi tính dẫn điện. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-51-9071.00",
+      "name": "Thợ kim hoàn",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Thiết kế, chế tác, chỉnh sửa, sửa chữa hoặc thẩm định trang sức, vàng, bạc, kim loại quý khác hoặc đá quý. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCA",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-51-9081.00",
+      "name": "Kỹ thuật viên phục hình, chỉnh hình",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Làm và sửa hàm giả toàn phần, bán phần hoặc khí cụ nha khoa. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "group": "Sản xuất",
+      "regionId": "ky_thuat",
+      "summary": "Vận hành hoặc trông máy để chuẩn bị sản phẩm công nghiệp hoặc tiêu dùng cho lưu kho hoặc vận chuyển. Gồm cả công nhân nhà máy đồ hộp đóng gói thực phẩm. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-53-2011.00",
+      "name": "Phi công",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Lái và dẫn đường máy bay cánh cố định, thường trên các tuyến bay thường lệ, để chở khách và hàng. Cần chứng chỉ vận tải hàng không và năng định cho loại máy bay cụ thể. Gồm cả phi công nội địa, quốc tế và giáo viên huấn luyện phi công. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RCE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-53-2021.00",
+      "name": "Kiểm soát viên không lưu",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Điều hành hoạt động bay trên mặt đất và gần sân bay, và việc chuyển máy bay giữa các tầng độ cao, các trung tâm kiểm soát theo quy trình. Cho phép, điều tiết và kiểm soát các chuyến bay thương mại theo quy định để bảo đảm an toàn và nhanh chóng. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "CRE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-53-2031.00",
+      "name": "Tiếp viên",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Giám sát an toàn khoang hành khách. Phục vụ hành khách, hướng dẫn thông tin an toàn, phục vụ đồ ăn, đồ uống và xử lý sự cố khẩn cấp. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "CES",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-53-3032.00",
+      "name": "Tài xế xe tải",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Lái xe đầu kéo hoặc xe tải có tổng trọng tải lớn. Có thể phải dỡ hàng. Cần giấy phép lái xe hạng phù hợp. Gồm cả tài xế xe cứu hộ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-53-3052.00",
+      "name": "Tài xế xe khách, xe buýt",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Lái xe buýt hoặc xe khách, gồm chạy tuyến cố định, xe hợp đồng và xe riêng. Có thể giúp hành khách mang hành lý. Có thể thu tiền vé. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCS",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-53-4011.00",
+      "name": "Lái tàu hoả, tàu điện",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Lái đầu máy điện, diesel-điện, hơi nước hoặc tua-bin khí để chở khách hoặc hàng. Hiểu lệnh chạy tàu, tín hiệu điện tử hoặc thủ công và quy định đường sắt. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCE",
+      "levelCount": 6
+    },
+    {
+      "code": "ONET-53-5021.00",
+      "name": "Thuyền viên, sĩ quan hàng hải",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Chỉ huy hoặc giám sát hoạt động của tàu thuyền như tàu kéo, phà. Cần giấy phép do cơ quan hàng hải cấp. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+      "interestCode": "RCE",
+      "levelCount": 7
+    },
+    {
+      "code": "ONET-53-7051.00",
+      "name": "Người vận hành xe nâng, cần cẩu",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Vận hành xe nâng, xe kéo công nghiệp để chuyển vật liệu trong kho, bãi, nhà máy, công trường hoặc nơi tương tự. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCE",
+      "levelCount": 5
+    },
+    {
+      "code": "ONET-53-7062.00",
+      "name": "Công nhân bốc xếp, đóng gói",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Chuyển hàng hoá, hành lý hoặc vật liệu bằng tay, hoặc làm lao động phổ thông khác. Gồm mọi lao động chân tay chưa được phân loại ở nghề khác. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCE",
+      "levelCount": 4
+    },
+    {
+      "code": "ONET-53-7081.00",
+      "name": "Công nhân thu gom, xử lý rác và chất thải",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Thu gom và đổ rác hoặc phế liệu tái chế từ thùng chứa lên xe. Có thể lái xe. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+      "interestCode": "RCI",
+      "levelCount": 4
+    },
+    {
+      "code": "ONET-53-6051.00",
+      "name": "Đăng kiểm viên, thanh tra giao thông",
+      "group": "Vận tải và bốc dỡ hàng hoá",
+      "regionId": "dich_vu",
+      "summary": "Kiểm tra thiết bị hoặc hàng hoá liên quan đến an toàn vận chuyển hàng và người. Gồm cả thanh tra vận tải đường sắt như kiểm tra hàng, kiểm tra đường ray và thanh tra phương tiện vận tải khác. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+      "interestCode": "RCI",
+      "levelCount": 6
+    }
+  ]
+}

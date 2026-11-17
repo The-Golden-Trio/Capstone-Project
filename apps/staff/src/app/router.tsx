@@ -1,4 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
+import { CataloguePage } from '../pages/ca/CataloguePage';
+import { ReferenceImportPage } from '../pages/ca/ReferenceImportPage';
+import { PublishScenarioPage } from '../pages/ca/PublishScenarioPage';
+import { OccupationMonitorPage } from '../pages/ca/OccupationMonitorPage';
+import { SystemPromptsPage } from '../pages/ca/SystemPromptsPage';
+import { GameSettingsPage } from '../pages/ca/GameSettingsPage';
+
 import { AssetLibraryPage } from '../pages/ca/AssetLibraryPage';
 import { CaPortalPage } from '../pages/ca/CaPortalPage';
 import { GamifyPage } from '../pages/ca/GamifyPage';
@@ -36,6 +43,24 @@ export const routes = [
       { path: 'de', element: <DePortalPage /> }, // D01
       { path: 'de/scenarios/:scenarioId/author', element: <AuthoringPage /> }, // D03
       { path: 'de/scenarios/:scenarioId/review', element: <ReviewPage /> }, // D04
+      { path: 'ca/catalogue', element: <CataloguePage /> }, // C02
+      {
+        path: 'ca/catalogue/imports/:importId?',
+        element: <ReferenceImportPage />,
+      }, // C03
+      {
+        path: 'ca/scenarios/:scenarioId/publish',
+        element: <PublishScenarioPage />,
+      }, // C08
+      {
+        path: 'ca/occupations/:occupationId/monitor',
+        element: <OccupationMonitorPage />,
+      }, // C09
+      {
+        path: 'ca/occupations/:occupationId/prompts',
+        element: <SystemPromptsPage />,
+      }, // C10
+      { path: 'ca/settings', element: <GameSettingsPage /> }, // C11 ĐỀ XUẤT
       { path: '*', element: <PortalRedirect /> },
     ],
   },

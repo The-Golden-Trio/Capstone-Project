@@ -1,0 +1,19 @@
+/*
+ * Điểm nhập CSS của @datn/ui. App nhập sau `@import 'tailwindcss'`:
+ *
+ *   @import 'tailwindcss';
+ *   @import '../../../packages/ui/src/styles/index.css';
+ *   @source '../../../packages/ui/src';
+ *
+ * Font tự host (không gọi Google Fonts lúc chạy), chỉ nạp các bộ chữ cần.
+ */
+@import '@fontsource-variable/montserrat/wght.css';
+@import '@fontsource-variable/montserrat/wght-italic.css';
+@import '@fontsource-variable/playfair-display/wght.css';
+@import '@fontsource-variable/playfair-display/wght-italic.css';
+@import '@fontsource/cinzel/latin-500.css';
+@import '@fontsource/cinzel/latin-700.css';
+
+@import './tokens.css';
+@import './base.css';
+@import './toon.css';

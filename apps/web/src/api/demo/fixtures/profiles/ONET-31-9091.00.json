@@ -1,0 +1,706 @@
+{
+  "code": "ONET-31-9091.00",
+  "name": "Trợ thủ nha khoa",
+  "nameEn": "Dental Assistants",
+  "group": "Hỗ trợ y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Làm một số việc lâm sàng giới hạn dưới sự chỉ đạo của nha sĩ, như chuẩn bị và tiệt trùng dụng cụ, chuẩn bị người bệnh, hỗ trợ nha sĩ trong khi điều trị và hướng dẫn người bệnh chăm sóc răng miệng. Có thể làm việc hành chính như đặt lịch hẹn, lưu hồ sơ, lập hoá đơn và mã hoá thông tin bảo hiểm. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có tiếp xúc với bức xạ.",
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Hay phải cúi hoặc vặn người.",
+    "Lặp đi lặp lại cùng một động tác."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "2% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Phòng khám tư, chuyên khoa",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Kỹ thuật phục hình răng"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh phụ tá nha khoa",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị người bệnh, tiệt trùng hoặc khử trùng dụng cụ, bày khay dụng cụ, chuẩn bị vật liệu hoặc hỗ trợ nha sĩ khi làm thủ thuật.",
+        "Ghi thông tin điều trị vào hồ sơ người bệnh.",
+        "Hỗ trợ nha sĩ xử lý tình huống cấp cứu y khoa hoặc nha khoa.",
+        "Đặt hàng và theo dõi tồn kho vật tư, thiết bị nha khoa.",
+        "Chụp phim X-quang chẩn đoán nha khoa."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+          "name": "Lập sơ đồ răng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ thủ nha khoa",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị người bệnh, tiệt trùng hoặc khử trùng dụng cụ, bày khay dụng cụ, chuẩn bị vật liệu hoặc hỗ trợ nha sĩ khi làm thủ thuật.",
+        "Ghi thông tin điều trị vào hồ sơ người bệnh.",
+        "Hỗ trợ nha sĩ xử lý tình huống cấp cứu y khoa hoặc nha khoa.",
+        "Đặt hàng và theo dõi tồn kho vật tư, thiết bị nha khoa.",
+        "Chụp phim X-quang chẩn đoán nha khoa."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+          "name": "Lập sơ đồ răng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+          "name": "Lập sơ đồ răng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c77aeef-327e-440f-8510-74ce5a73bd8a",
+          "name": "Xoa dịu lo âu của người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14d88fae-ead0-4d19-8519-04b154b46987",
+          "name": "Thúc đẩy chính sách an toàn trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Trợ thủ nha khoa chính",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị người bệnh, tiệt trùng hoặc khử trùng dụng cụ, bày khay dụng cụ, chuẩn bị vật liệu hoặc hỗ trợ nha sĩ khi làm thủ thuật.",
+        "Ghi thông tin điều trị vào hồ sơ người bệnh.",
+        "Hỗ trợ nha sĩ xử lý tình huống cấp cứu y khoa hoặc nha khoa.",
+        "Đặt hàng và theo dõi tồn kho vật tư, thiết bị nha khoa.",
+        "Chụp phim X-quang chẩn đoán nha khoa."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+          "name": "Lập sơ đồ răng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c77aeef-327e-440f-8510-74ce5a73bd8a",
+          "name": "Xoa dịu lo âu của người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14d88fae-ead0-4d19-8519-04b154b46987",
+          "name": "Thúc đẩy chính sách an toàn trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+          "name": "Lập sơ đồ răng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c77aeef-327e-440f-8510-74ce5a73bd8a",
+          "name": "Xoa dịu lo âu của người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14d88fae-ead0-4d19-8519-04b154b46987",
+          "name": "Thúc đẩy chính sách an toàn trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Trưởng nhóm trợ thủ/điều phối phòng khám",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị người bệnh, tiệt trùng hoặc khử trùng dụng cụ, bày khay dụng cụ, chuẩn bị vật liệu hoặc hỗ trợ nha sĩ khi làm thủ thuật.",
+        "Ghi thông tin điều trị vào hồ sơ người bệnh.",
+        "Hỗ trợ nha sĩ xử lý tình huống cấp cứu y khoa hoặc nha khoa.",
+        "Đặt hàng và theo dõi tồn kho vật tư, thiết bị nha khoa.",
+        "Chụp phim X-quang chẩn đoán nha khoa."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+          "name": "Lập sơ đồ răng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c77aeef-327e-440f-8510-74ce5a73bd8a",
+          "name": "Xoa dịu lo âu của người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14d88fae-ead0-4d19-8519-04b154b46987",
+          "name": "Thúc đẩy chính sách an toàn trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+          "name": "Lập sơ đồ răng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c77aeef-327e-440f-8510-74ce5a73bd8a",
+          "name": "Xoa dịu lo âu của người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14d88fae-ead0-4d19-8519-04b154b46987",
+          "name": "Thúc đẩy chính sách an toàn trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Quản lý vận hành phòng khám nha khoa",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị người bệnh, tiệt trùng hoặc khử trùng dụng cụ, bày khay dụng cụ, chuẩn bị vật liệu hoặc hỗ trợ nha sĩ khi làm thủ thuật.",
+        "Ghi thông tin điều trị vào hồ sơ người bệnh.",
+        "Hỗ trợ nha sĩ xử lý tình huống cấp cứu y khoa hoặc nha khoa.",
+        "Đặt hàng và theo dõi tồn kho vật tư, thiết bị nha khoa.",
+        "Chụp phim X-quang chẩn đoán nha khoa."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+          "name": "Lập sơ đồ răng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c77aeef-327e-440f-8510-74ce5a73bd8a",
+          "name": "Xoa dịu lo âu của người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14d88fae-ead0-4d19-8519-04b154b46987",
+          "name": "Thúc đẩy chính sách an toàn trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+          "name": "Lập sơ đồ răng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c77aeef-327e-440f-8510-74ce5a73bd8a",
+          "name": "Xoa dịu lo âu của người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+          "name": "Dùng công nghệ y tế số và di động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14d88fae-ead0-4d19-8519-04b154b46987",
+          "name": "Thúc đẩy chính sách an toàn trong y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+          "name": "Giáo dục phòng bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-31-9091.00",
+          "name": "Trợ thủ nha khoa"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-9092.00",
+      "name": "Trợ lý y khoa",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1041.00",
+      "name": "Kỹ thuật viên khúc xạ, nhãn khoa",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1131.00",
+      "name": "Bác sĩ thú y",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10500000,
+    "median": 11500000,
+    "high": 12500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 23,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+      "name": "Đồng cảm với người bệnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+      "name": "Giáo dục sức khoẻ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8fced680-a4e4-4ecc-9999-3061ddc3583e",
+      "name": "Lập sơ đồ răng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+      "name": "Tuân thủ hướng dẫn lâm sàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6c77aeef-327e-440f-8510-74ce5a73bd8a",
+      "name": "Xoa dịu lo âu của người bệnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926",
+      "name": "Dùng công nghệ y tế số và di động",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/14d88fae-ead0-4d19-8519-04b154b46987",
+      "name": "Thúc đẩy chính sách an toàn trong y tế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+      "name": "Tương tác với người bệnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac",
+      "name": "Giáo dục phòng bệnh",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+      "name": "Năng lực lâm sàng theo bối cảnh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.118
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.577
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.455
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.251
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.144
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.028
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.145
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,943 @@
+{
+  "code": "ONET-13-2011.00",
+  "name": "Kế toán, kiểm toán viên",
+  "nameEn": "Accountants and Auditors",
+  "group": "Kinh doanh và tài chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Kiểm tra, phân tích và diễn giải sổ sách kế toán để lập báo cáo tài chính, tư vấn, hoặc kiểm toán và đánh giá báo cáo do người khác lập. Xây dựng hoặc tư vấn hệ thống ghi nhận chi phí và các số liệu tài chính, ngân sách. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Công việc lặp lại nhiều.",
+    "Ngồi gần như cả ngày.",
+    "Thường xuyên phải làm gấp cho kịp hạn."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "42% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "13% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Văn phòng doanh nghiệp vừa và nhỏ trong nước",
+      "weight": 55
+    },
+    {
+      "name": "Công ty kiểm toán, thẩm định giá, tư vấn",
+      "weight": 25
+    },
+    {
+      "name": "Văn phòng công ty nước ngoài, đa quốc gia",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kế toán", "Kiểm toán"],
+    "vocational": ["Kế toán", "Kế toán doanh nghiệp"],
+    "licence": "Chứng chỉ kiểm toán viên, kế toán viên (không bắt buộc với kế toán doanh nghiệp) — Luật Kiểm toán độc lập 2011, sửa đổi bởi Luật số 56/2024/QH15"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh kế toán – kiểm toán",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Lập, kiểm tra hoặc phân tích sổ sách, báo cáo tài chính để đánh giá độ chính xác, đầy đủ và tuân thủ chuẩn mực.",
+        "Xử lý hoá đơn để thanh toán.",
+        "Rà soát tài khoản để tìm chênh lệch và đối chiếu.",
+        "Tính thuế phải nộp và lập tờ khai thuế, bảo đảm tuân thủ yêu cầu nộp và báo cáo thuế.",
+        "Lập bút toán điều chỉnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kế toán viên / trợ lý kiểm toán",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Lập, kiểm tra hoặc phân tích sổ sách, báo cáo tài chính để đánh giá độ chính xác, đầy đủ và tuân thủ chuẩn mực.",
+        "Xử lý hoá đơn để thanh toán.",
+        "Rà soát tài khoản để tìm chênh lệch và đối chiếu.",
+        "Tính thuế phải nộp và lập tờ khai thuế, bảo đảm tuân thủ yêu cầu nộp và báo cáo thuế.",
+        "Lập bút toán điều chỉnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kế toán tổng hợp",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Lập, kiểm tra hoặc phân tích sổ sách, báo cáo tài chính để đánh giá độ chính xác, đầy đủ và tuân thủ chuẩn mực.",
+        "Xử lý hoá đơn để thanh toán.",
+        "Rà soát tài khoản để tìm chênh lệch và đối chiếu.",
+        "Tính thuế phải nộp và lập tờ khai thuế, bảo đảm tuân thủ yêu cầu nộp và báo cáo thuế.",
+        "Lập bút toán điều chỉnh."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+          "name": "Bút toán kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "name": "Quy trình phòng kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+          "name": "Lập tờ khai thuế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kế toán trưởng doanh nghiệp nhỏ",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Lập, kiểm tra hoặc phân tích sổ sách, báo cáo tài chính để đánh giá độ chính xác, đầy đủ và tuân thủ chuẩn mực.",
+        "Xử lý hoá đơn để thanh toán.",
+        "Rà soát tài khoản để tìm chênh lệch và đối chiếu.",
+        "Tính thuế phải nộp và lập tờ khai thuế, bảo đảm tuân thủ yêu cầu nộp và báo cáo thuế.",
+        "Lập bút toán điều chỉnh."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+          "name": "Bút toán kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "name": "Quy trình phòng kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+          "name": "Lập tờ khai thuế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+          "name": "Bút toán kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "name": "Quy trình phòng kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+          "name": "Lập tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/880c54f9-866e-4f37-b5fa-25ef8a7d49b6",
+          "name": "Kỹ thuật kế toán",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kiểm toán viên hành nghề / chủ nhiệm kiểm toán",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Lập, kiểm tra hoặc phân tích sổ sách, báo cáo tài chính để đánh giá độ chính xác, đầy đủ và tuân thủ chuẩn mực.",
+        "Xử lý hoá đơn để thanh toán.",
+        "Rà soát tài khoản để tìm chênh lệch và đối chiếu.",
+        "Tính thuế phải nộp và lập tờ khai thuế, bảo đảm tuân thủ yêu cầu nộp và báo cáo thuế.",
+        "Lập bút toán điều chỉnh."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+          "name": "Bút toán kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "name": "Quy trình phòng kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+          "name": "Lập tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/880c54f9-866e-4f37-b5fa-25ef8a7d49b6",
+          "name": "Kỹ thuật kế toán",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+          "name": "Bút toán kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "name": "Quy trình phòng kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+          "name": "Lập tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/880c54f9-866e-4f37-b5fa-25ef8a7d49b6",
+          "name": "Kỹ thuật kế toán",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng tài chính – kế toán",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Lập, kiểm tra hoặc phân tích sổ sách, báo cáo tài chính để đánh giá độ chính xác, đầy đủ và tuân thủ chuẩn mực.",
+        "Xử lý hoá đơn để thanh toán.",
+        "Rà soát tài khoản để tìm chênh lệch và đối chiếu.",
+        "Tính thuế phải nộp và lập tờ khai thuế, bảo đảm tuân thủ yêu cầu nộp và báo cáo thuế.",
+        "Lập bút toán điều chỉnh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+          "name": "Bút toán kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "name": "Quy trình phòng kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+          "name": "Lập tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/880c54f9-866e-4f37-b5fa-25ef8a7d49b6",
+          "name": "Kỹ thuật kế toán",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+          "name": "Bút toán kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "name": "Quy trình phòng kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+          "name": "Lập tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/880c54f9-866e-4f37-b5fa-25ef8a7d49b6",
+          "name": "Kỹ thuật kế toán",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc tài chính (CFO)",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Lập, kiểm tra hoặc phân tích sổ sách, báo cáo tài chính để đánh giá độ chính xác, đầy đủ và tuân thủ chuẩn mực.",
+        "Xử lý hoá đơn để thanh toán.",
+        "Rà soát tài khoản để tìm chênh lệch và đối chiếu.",
+        "Tính thuế phải nộp và lập tờ khai thuế, bảo đảm tuân thủ yêu cầu nộp và báo cáo thuế.",
+        "Lập bút toán điều chỉnh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+          "name": "Bút toán kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "name": "Quy trình phòng kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+          "name": "Lập tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/880c54f9-866e-4f37-b5fa-25ef8a7d49b6",
+          "name": "Kỹ thuật kế toán",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+          "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+          "name": "Đọc báo cáo tài chính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+          "name": "Lập bảng cân đối kế toán",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+          "name": "Khấu hao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "name": "Lập báo cáo tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+          "name": "Bút toán kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "name": "Quy trình phòng kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+          "name": "Lập tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/880c54f9-866e-4f37-b5fa-25ef8a7d49b6",
+          "name": "Kỹ thuật kế toán",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-13-2011.00",
+          "name": "Kế toán, kiểm toán viên"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-11-3031.00",
+          "name": "Giám đốc tài chính, trưởng phòng tài chính"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-13-2072.00",
+      "name": "Chuyên viên tín dụng ngân hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2052.00",
+      "name": "Chuyên viên tư vấn tài chính và đầu tư",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-3071.00",
+      "name": "Giao dịch viên ngân hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1041.00",
+      "name": "Chuyên viên tuân thủ và quản lý rủi ro",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10000000,
+    "median": 12500000,
+    "high": 15000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 3036,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/8a43795b-bb38-4f29-91df-a6c92ad4643c",
+      "name": "Phân tích hiệu quả tài chính doanh nghiệp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5f1d1319-7954-4a9b-90c7-57668e3a0d4b",
+      "name": "Đọc báo cáo tài chính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/585ed991-fdab-4f3c-9187-a32bfb7ab822",
+      "name": "Lập bảng cân đối kế toán",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+      "name": "Pháp luật thuế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/64be6a06-52e8-4f5c-b64d-caa516cfa291",
+      "name": "Khấu hao",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+      "name": "Lập báo cáo tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/99b163e8-7815-43e2-83f3-a47f3076354c",
+      "name": "Bút toán kế toán",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+      "name": "Quy trình phòng kế toán",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/22a173f5-868c-4d82-87e6-beed500ce070",
+      "name": "Lập tờ khai thuế",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/880c54f9-866e-4f37-b5fa-25ef8a7d49b6",
+      "name": "Kỹ thuật kế toán",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.557
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.107
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.024
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.118
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.271
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.379
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.553
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

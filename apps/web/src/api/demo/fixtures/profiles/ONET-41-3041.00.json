@@ -1,0 +1,810 @@
+{
+  "code": "ONET-41-3041.00",
+  "name": "Nhân viên kinh doanh tour du lịch",
+  "nameEn": "Travel Agents",
+  "group": "Bán hàng",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Lên kế hoạch và bán dịch vụ đi lại, lưu trú cho khách. Xác định điểm đến, phương tiện, ngày đi, chi phí và chỗ ở cần có. Có thể giới thiệu, lên lịch trình và bán tour trọn gói. Có thể hỗ trợ giải quyết sự cố khi khách đi du lịch. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Môi trường cạnh tranh cao.",
+    "Thu nhập thường gắn với doanh số, áp lực chỉ tiêu theo tháng hoặc quý."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "48% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "15% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty lữ hành",
+      "weight": 80
+    },
+    {
+      "name": "Khách sạn, resort 4–5 sao",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Du lịch"],
+    "vocational": ["Điều hành tour du lịch", "Quản trị lữ hành"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh kinh doanh lữ hành",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền đi lại và lưu trú của khách.",
+        "Lên kế hoạch, giới thiệu, sắp xếp và bán tour trọn gói và các chương trình khuyến mãi của hãng vận chuyển.",
+        "Trao đổi với khách để xác định điểm đến, phương tiện, ngày đi, ngân sách và chỗ ở.",
+        "Tính chi phí đi lại và lưu trú bằng máy tính, bảng giá hãng vận chuyển và bảng giá khách sạn, hoặc báo giá tour trọn gói.",
+        "Ghi chép và lưu thông tin về khách, nhà cung cấp và các gói du lịch."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên kinh doanh tour",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền đi lại và lưu trú của khách.",
+        "Lên kế hoạch, giới thiệu, sắp xếp và bán tour trọn gói và các chương trình khuyến mãi của hãng vận chuyển.",
+        "Trao đổi với khách để xác định điểm đến, phương tiện, ngày đi, ngân sách và chỗ ở.",
+        "Tính chi phí đi lại và lưu trú bằng máy tính, bảng giá hãng vận chuyển và bảng giá khách sạn, hoặc báo giá tour trọn gói.",
+        "Ghi chép và lưu thông tin về khách, nhà cung cấp và các gói du lịch."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+          "name": "Làm sản phẩm theo yêu cầu khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+          "name": "Bảo đảm riêng tư cho khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên kinh doanh/điều hành tour",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền đi lại và lưu trú của khách.",
+        "Lên kế hoạch, giới thiệu, sắp xếp và bán tour trọn gói và các chương trình khuyến mãi của hãng vận chuyển.",
+        "Trao đổi với khách để xác định điểm đến, phương tiện, ngày đi, ngân sách và chỗ ở.",
+        "Tính chi phí đi lại và lưu trú bằng máy tính, bảng giá hãng vận chuyển và bảng giá khách sạn, hoặc báo giá tour trọn gói.",
+        "Ghi chép và lưu thông tin về khách, nhà cung cấp và các gói du lịch."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+          "name": "Làm sản phẩm theo yêu cầu khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+          "name": "Bảo đảm riêng tư cho khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+          "name": "Làm sản phẩm theo yêu cầu khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+          "name": "Bảo đảm riêng tư cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32b02bd1-6bf2-497a-bb16-94aeeafaf44f",
+          "name": "Báo giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Trưởng nhóm kinh doanh/điều hành tour",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền đi lại và lưu trú của khách.",
+        "Lên kế hoạch, giới thiệu, sắp xếp và bán tour trọn gói và các chương trình khuyến mãi của hãng vận chuyển.",
+        "Trao đổi với khách để xác định điểm đến, phương tiện, ngày đi, ngân sách và chỗ ở.",
+        "Tính chi phí đi lại và lưu trú bằng máy tính, bảng giá hãng vận chuyển và bảng giá khách sạn, hoặc báo giá tour trọn gói.",
+        "Ghi chép và lưu thông tin về khách, nhà cung cấp và các gói du lịch."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+          "name": "Làm sản phẩm theo yêu cầu khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+          "name": "Bảo đảm riêng tư cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32b02bd1-6bf2-497a-bb16-94aeeafaf44f",
+          "name": "Báo giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+          "name": "Làm sản phẩm theo yêu cầu khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+          "name": "Bảo đảm riêng tư cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32b02bd1-6bf2-497a-bb16-94aeeafaf44f",
+          "name": "Báo giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng kinh doanh lữ hành",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền đi lại và lưu trú của khách.",
+        "Lên kế hoạch, giới thiệu, sắp xếp và bán tour trọn gói và các chương trình khuyến mãi của hãng vận chuyển.",
+        "Trao đổi với khách để xác định điểm đến, phương tiện, ngày đi, ngân sách và chỗ ở.",
+        "Tính chi phí đi lại và lưu trú bằng máy tính, bảng giá hãng vận chuyển và bảng giá khách sạn, hoặc báo giá tour trọn gói.",
+        "Ghi chép và lưu thông tin về khách, nhà cung cấp và các gói du lịch."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+          "name": "Làm sản phẩm theo yêu cầu khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+          "name": "Bảo đảm riêng tư cho khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32b02bd1-6bf2-497a-bb16-94aeeafaf44f",
+          "name": "Báo giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+          "name": "Làm sản phẩm theo yêu cầu khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+          "name": "Bảo đảm riêng tư cho khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32b02bd1-6bf2-497a-bb16-94aeeafaf44f",
+          "name": "Báo giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc kinh doanh lữ hành/giám đốc chi nhánh",
+      "years": "9+",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền đi lại và lưu trú của khách.",
+        "Lên kế hoạch, giới thiệu, sắp xếp và bán tour trọn gói và các chương trình khuyến mãi của hãng vận chuyển.",
+        "Trao đổi với khách để xác định điểm đến, phương tiện, ngày đi, ngân sách và chỗ ở.",
+        "Tính chi phí đi lại và lưu trú bằng máy tính, bảng giá hãng vận chuyển và bảng giá khách sạn, hoặc báo giá tour trọn gói.",
+        "Ghi chép và lưu thông tin về khách, nhà cung cấp và các gói du lịch."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+          "name": "Làm sản phẩm theo yêu cầu khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+          "name": "Bảo đảm riêng tư cho khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32b02bd1-6bf2-497a-bb16-94aeeafaf44f",
+          "name": "Báo giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+          "name": "Xử lý đặt chỗ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+          "name": "Cung cấp thông tin du lịch",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+          "name": "Viết nội dung tờ rơi du lịch",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+          "name": "Làm sản phẩm theo yêu cầu khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "name": "Lưu hồ sơ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+          "name": "Bảo đảm riêng tư cho khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32b02bd1-6bf2-497a-bb16-94aeeafaf44f",
+          "name": "Báo giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+          "name": "Bán thêm sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-43-4081.00",
+      "name": "Lễ tân khách sạn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-7011.00",
+      "name": "Hướng dẫn viên du lịch",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-2031.00",
+      "name": "Nhân viên bán hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-4012.00",
+      "name": "Nhân viên kinh doanh (sales B2B)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10500000,
+    "median": 13000000,
+    "high": 17500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 271,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/345486f3-f265-4fc8-8ed0-5e96e768e333",
+      "name": "Xử lý đặt chỗ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/350c932d-f9b3-4adb-a5cc-cd5cff4a1912",
+      "name": "Cung cấp thông tin du lịch",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/10dd298f-3fb7-4306-9ecc-45905877ab61",
+      "name": "Viết nội dung tờ rơi du lịch",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+      "name": "Duy trì dịch vụ khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/acd11c45-8590-4465-91e3-5ef017c9554a",
+      "name": "Làm sản phẩm theo yêu cầu khách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+      "name": "Lưu hồ sơ khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a8244907-37a4-4a6d-afa4-85051926672f",
+      "name": "Bảo đảm riêng tư cho khách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+      "name": "Xử lý thanh toán",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/32b02bd1-6bf2-497a-bb16-94aeeafaf44f",
+      "name": "Báo giá",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/306a1555-9fa2-47af-b996-a0a8833cbe81",
+      "name": "Bán thêm sản phẩm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.498
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.473
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.131
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.05
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.24
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.342
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.554
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

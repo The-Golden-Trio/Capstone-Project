@@ -1,0 +1,949 @@
+{
+  "code": "ONET-17-2141.00",
+  "name": "Kỹ sư cơ khí",
+  "nameEn": "Mechanical Engineers",
+  "group": "Kiến trúc và kỹ thuật",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Lập kế hoạch và thiết kế dụng cụ, động cơ, máy móc và thiết bị cơ khí. Giám sát lắp đặt, vận hành, bảo trì và sửa chữa thiết bị như hệ thống nhiệt, khí, nước và hơi trung tâm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc.",
+    "Ngồi gần như cả ngày."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "61% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "22% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 40
+    },
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 35
+    },
+    {
+      "name": "Văn phòng thiết kế, R&D kỹ thuật",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật cơ khí", "Công nghệ kỹ thuật cơ khí"],
+    "vocational": ["Công nghệ kỹ thuật cơ khí"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh kỹ thuật cơ khí",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc và hiểu bản vẽ kỹ thuật, sơ đồ hoặc báo cáo từ máy tính.",
+        "Nghiên cứu, thiết kế, đánh giá, lắp đặt, vận hành hoặc bảo trì sản phẩm, thiết bị, hệ thống, quy trình cơ khí cho đúng yêu cầu.",
+        "Chọn bộ phận của hệ thống hoặc chỉ đạo sửa đổi sản phẩm để đúng thiết kế, thông số và quy định môi trường.",
+        "Trao đổi với kỹ sư và nhân viên khác để triển khai quy trình vận hành, xử lý hỏng hóc hoặc cung cấp thông tin kỹ thuật.",
+        "Điều tra hỏng hóc thiết bị để chẩn đoán lỗi và đề xuất cách khắc phục."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ sư cơ khí mới ra trường",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc và hiểu bản vẽ kỹ thuật, sơ đồ hoặc báo cáo từ máy tính.",
+        "Nghiên cứu, thiết kế, đánh giá, lắp đặt, vận hành hoặc bảo trì sản phẩm, thiết bị, hệ thống, quy trình cơ khí cho đúng yêu cầu.",
+        "Chọn bộ phận của hệ thống hoặc chỉ đạo sửa đổi sản phẩm để đúng thiết kế, thông số và quy định môi trường.",
+        "Trao đổi với kỹ sư và nhân viên khác để triển khai quy trình vận hành, xử lý hỏng hóc hoặc cung cấp thông tin kỹ thuật.",
+        "Điều tra hỏng hóc thiết bị để chẩn đoán lỗi và đề xuất cách khắc phục."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ sư cơ khí (Junior)",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc và hiểu bản vẽ kỹ thuật, sơ đồ hoặc báo cáo từ máy tính.",
+        "Nghiên cứu, thiết kế, đánh giá, lắp đặt, vận hành hoặc bảo trì sản phẩm, thiết bị, hệ thống, quy trình cơ khí cho đúng yêu cầu.",
+        "Chọn bộ phận của hệ thống hoặc chỉ đạo sửa đổi sản phẩm để đúng thiết kế, thông số và quy định môi trường.",
+        "Trao đổi với kỹ sư và nhân viên khác để triển khai quy trình vận hành, xử lý hỏng hóc hoặc cung cấp thông tin kỹ thuật.",
+        "Điều tra hỏng hóc thiết bị để chẩn đoán lỗi và đề xuất cách khắc phục."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+          "name": "Cơ học vật rắn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+          "name": "Soạn đặc tả thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+          "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư cơ khí (Middle)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc và hiểu bản vẽ kỹ thuật, sơ đồ hoặc báo cáo từ máy tính.",
+        "Nghiên cứu, thiết kế, đánh giá, lắp đặt, vận hành hoặc bảo trì sản phẩm, thiết bị, hệ thống, quy trình cơ khí cho đúng yêu cầu.",
+        "Chọn bộ phận của hệ thống hoặc chỉ đạo sửa đổi sản phẩm để đúng thiết kế, thông số và quy định môi trường.",
+        "Trao đổi với kỹ sư và nhân viên khác để triển khai quy trình vận hành, xử lý hỏng hóc hoặc cung cấp thông tin kỹ thuật.",
+        "Điều tra hỏng hóc thiết bị để chẩn đoán lỗi và đề xuất cách khắc phục."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+          "name": "Cơ học vật rắn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+          "name": "Soạn đặc tả thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+          "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+          "name": "Cơ học vật rắn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+          "name": "Soạn đặc tả thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+          "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82313e12-9d39-47d1-b7c9-78bbd6bb50e2",
+          "name": "Phần mềm CAE",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ sư cơ khí cao cấp (Senior)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc và hiểu bản vẽ kỹ thuật, sơ đồ hoặc báo cáo từ máy tính.",
+        "Nghiên cứu, thiết kế, đánh giá, lắp đặt, vận hành hoặc bảo trì sản phẩm, thiết bị, hệ thống, quy trình cơ khí cho đúng yêu cầu.",
+        "Chọn bộ phận của hệ thống hoặc chỉ đạo sửa đổi sản phẩm để đúng thiết kế, thông số và quy định môi trường.",
+        "Trao đổi với kỹ sư và nhân viên khác để triển khai quy trình vận hành, xử lý hỏng hóc hoặc cung cấp thông tin kỹ thuật.",
+        "Điều tra hỏng hóc thiết bị để chẩn đoán lỗi và đề xuất cách khắc phục."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+          "name": "Cơ học vật rắn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+          "name": "Soạn đặc tả thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+          "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82313e12-9d39-47d1-b7c9-78bbd6bb50e2",
+          "name": "Phần mềm CAE",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+          "name": "Cơ học vật rắn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+          "name": "Soạn đặc tả thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+          "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82313e12-9d39-47d1-b7c9-78bbd6bb50e2",
+          "name": "Phần mềm CAE",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm kỹ thuật cơ khí (Lead)",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc và hiểu bản vẽ kỹ thuật, sơ đồ hoặc báo cáo từ máy tính.",
+        "Nghiên cứu, thiết kế, đánh giá, lắp đặt, vận hành hoặc bảo trì sản phẩm, thiết bị, hệ thống, quy trình cơ khí cho đúng yêu cầu.",
+        "Chọn bộ phận của hệ thống hoặc chỉ đạo sửa đổi sản phẩm để đúng thiết kế, thông số và quy định môi trường.",
+        "Trao đổi với kỹ sư và nhân viên khác để triển khai quy trình vận hành, xử lý hỏng hóc hoặc cung cấp thông tin kỹ thuật.",
+        "Điều tra hỏng hóc thiết bị để chẩn đoán lỗi và đề xuất cách khắc phục."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+          "name": "Cơ học vật rắn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+          "name": "Soạn đặc tả thiết kế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+          "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82313e12-9d39-47d1-b7c9-78bbd6bb50e2",
+          "name": "Phần mềm CAE",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+          "name": "Cơ học vật rắn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+          "name": "Soạn đặc tả thiết kế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+          "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82313e12-9d39-47d1-b7c9-78bbd6bb50e2",
+          "name": "Phần mềm CAE",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng kỹ thuật cơ khí",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc và hiểu bản vẽ kỹ thuật, sơ đồ hoặc báo cáo từ máy tính.",
+        "Nghiên cứu, thiết kế, đánh giá, lắp đặt, vận hành hoặc bảo trì sản phẩm, thiết bị, hệ thống, quy trình cơ khí cho đúng yêu cầu.",
+        "Chọn bộ phận của hệ thống hoặc chỉ đạo sửa đổi sản phẩm để đúng thiết kế, thông số và quy định môi trường.",
+        "Trao đổi với kỹ sư và nhân viên khác để triển khai quy trình vận hành, xử lý hỏng hóc hoặc cung cấp thông tin kỹ thuật.",
+        "Điều tra hỏng hóc thiết bị để chẩn đoán lỗi và đề xuất cách khắc phục."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+          "name": "Cơ học vật rắn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+          "name": "Soạn đặc tả thiết kế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+          "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82313e12-9d39-47d1-b7c9-78bbd6bb50e2",
+          "name": "Phần mềm CAE",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+          "name": "Thiết kế hệ thống sưởi và làm mát",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+          "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+          "name": "Thiết kế mẫu thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+          "name": "Cơ học vật rắn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+          "name": "Soạn đặc tả thiết kế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+          "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82313e12-9d39-47d1-b7c9-78bbd6bb50e2",
+          "name": "Phần mềm CAE",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-17-2141.00",
+          "name": "Kỹ sư cơ khí"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-17-2071.00",
+      "name": "Kỹ sư điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2199.05",
+      "name": "Kỹ sư cơ điện tử, robot",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2112.00",
+      "name": "Kỹ sư công nghiệp, quản lý sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2141.02",
+      "name": "Kỹ sư ô tô",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2072.00",
+      "name": "Kỹ sư điện tử, viễn thông",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 12500000,
+    "median": 15000000,
+    "high": 17500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 160,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+      "name": "Phê duyệt thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+      "name": "Điều chỉnh thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d80ebb29-7b20-4343-b7c9-0e3ef9f2e1f2",
+      "name": "Thiết kế hệ thống sưởi và làm mát",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+      "name": "Dùng phần mềm vẽ kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1e3222fa-724d-41f0-9b0a-e88d1003cd35",
+      "name": "Nghiên cứu khả thi làm lạnh hấp thụ năng lượng mặt trời",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bacbfc27-4b5d-47de-8bfd-af5fa27562a2",
+      "name": "Thiết kế mẫu thử",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a4557e97-d7f9-4669-88b0-c57591acce80",
+      "name": "Cơ học vật rắn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a8d41cca-3bc9-4d2a-ae09-436dabe86e21",
+      "name": "Soạn đặc tả thiết kế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6561f116-70de-47d8-80b8-f0e2a1d2cf11",
+      "name": "Nghiên cứu khả thi sưởi bằng năng lượng mặt trời",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/82313e12-9d39-47d1-b7c9-78bbd6bb50e2",
+      "name": "Phần mềm CAE",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.665
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.257
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.228
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.137
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.121
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.251
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.652
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

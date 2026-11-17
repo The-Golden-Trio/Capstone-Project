@@ -1,0 +1,797 @@
+{
+  "code": "ONET-53-5021.00",
+  "name": "Thuyền viên, sĩ quan hàng hải",
+  "nameEn": "Captains, Mates, and Pilots of Water Vessels",
+  "group": "Vận tải và bốc dỡ hàng hoá",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Chỉ huy hoặc giám sát hoạt động của tàu thuyền như tàu kéo, phà. Cần giấy phép do cơ quan hàng hải cấp. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Được tự quyết nhiều trong công việc.",
+    "65% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "53% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trên xe, tàu, máy bay", "Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Hãng tàu biển",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Khoa học hàng hải"],
+    "vocational": ["Điều khiển tàu biển", "Khai thác máy tàu biển"],
+    "licence": "Giấy chứng nhận khả năng chuyên môn thuyền viên — Bộ luật Hàng hải Việt Nam 2015"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên thực tập sĩ quan (cadet)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hướng đi và tốc độ tàu dựa trên hiểu biết về gió, thời tiết, độ sâu, thuỷ triều, dòng chảy và mối nguy ở vùng nước.",
+        "Ngăn tàu đang dẫn đường hoạt động thiếu an toàn.",
+        "Chỉ huy cập cầu khi tàu tới cảng hoặc bến.",
+        "Tra bản đồ, hải đồ, bản tin thời tiết hoặc thiết bị hàng hải để quyết định và chỉ đạo hành trình.",
+        "Lái và điều khiển tàu bằng vô tuyến, máy đo sâu, radar, đèn, phao tiêu hoặc hải đăng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thủy thủ trực ca (OS/AB)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hướng đi và tốc độ tàu dựa trên hiểu biết về gió, thời tiết, độ sâu, thuỷ triều, dòng chảy và mối nguy ở vùng nước.",
+        "Ngăn tàu đang dẫn đường hoạt động thiếu an toàn.",
+        "Chỉ huy cập cầu khi tàu tới cảng hoặc bến.",
+        "Tra bản đồ, hải đồ, bản tin thời tiết hoặc thiết bị hàng hải để quyết định và chỉ đạo hành trình.",
+        "Lái và điều khiển tàu bằng vô tuyến, máy đo sâu, radar, đèn, phao tiêu hoặc hải đăng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Sĩ quan boong (sĩ quan trực ca, phó ba/phó hai)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hướng đi và tốc độ tàu dựa trên hiểu biết về gió, thời tiết, độ sâu, thuỷ triều, dòng chảy và mối nguy ở vùng nước.",
+        "Ngăn tàu đang dẫn đường hoạt động thiếu an toàn.",
+        "Chỉ huy cập cầu khi tàu tới cảng hoặc bến.",
+        "Tra bản đồ, hải đồ, bản tin thời tiết hoặc thiết bị hàng hải để quyết định và chỉ đạo hành trình.",
+        "Lái và điều khiển tàu bằng vô tuyến, máy đo sâu, radar, đèn, phao tiêu hoặc hải đăng."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+          "name": "Vạch hải trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+          "name": "Lái tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Đại phó",
+      "years": "4–8",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hướng đi và tốc độ tàu dựa trên hiểu biết về gió, thời tiết, độ sâu, thuỷ triều, dòng chảy và mối nguy ở vùng nước.",
+        "Ngăn tàu đang dẫn đường hoạt động thiếu an toàn.",
+        "Chỉ huy cập cầu khi tàu tới cảng hoặc bến.",
+        "Tra bản đồ, hải đồ, bản tin thời tiết hoặc thiết bị hàng hải để quyết định và chỉ đạo hành trình.",
+        "Lái và điều khiển tàu bằng vô tuyến, máy đo sâu, radar, đèn, phao tiêu hoặc hải đăng."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+          "name": "Vạch hải trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+          "name": "Lái tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+          "name": "Vạch hải trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+          "name": "Lái tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefc2c7-d5a6-4340-9277-d908e4e0e1bd",
+          "name": "Bảo đảm an ninh tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Thuyền trưởng",
+      "years": "7–12",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hướng đi và tốc độ tàu dựa trên hiểu biết về gió, thời tiết, độ sâu, thuỷ triều, dòng chảy và mối nguy ở vùng nước.",
+        "Ngăn tàu đang dẫn đường hoạt động thiếu an toàn.",
+        "Chỉ huy cập cầu khi tàu tới cảng hoặc bến.",
+        "Tra bản đồ, hải đồ, bản tin thời tiết hoặc thiết bị hàng hải để quyết định và chỉ đạo hành trình.",
+        "Lái và điều khiển tàu bằng vô tuyến, máy đo sâu, radar, đèn, phao tiêu hoặc hải đăng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+          "name": "Vạch hải trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+          "name": "Lái tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefc2c7-d5a6-4340-9277-d908e4e0e1bd",
+          "name": "Bảo đảm an ninh tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+          "name": "Vạch hải trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+          "name": "Lái tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefc2c7-d5a6-4340-9277-d908e4e0e1bd",
+          "name": "Bảo đảm an ninh tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Thuyền trưởng tàu lớn/giám sát hàng hải (superintendent)",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hướng đi và tốc độ tàu dựa trên hiểu biết về gió, thời tiết, độ sâu, thuỷ triều, dòng chảy và mối nguy ở vùng nước.",
+        "Ngăn tàu đang dẫn đường hoạt động thiếu an toàn.",
+        "Chỉ huy cập cầu khi tàu tới cảng hoặc bến.",
+        "Tra bản đồ, hải đồ, bản tin thời tiết hoặc thiết bị hàng hải để quyết định và chỉ đạo hành trình.",
+        "Lái và điều khiển tàu bằng vô tuyến, máy đo sâu, radar, đèn, phao tiêu hoặc hải đăng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+          "name": "Vạch hải trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+          "name": "Lái tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefc2c7-d5a6-4340-9277-d908e4e0e1bd",
+          "name": "Bảo đảm an ninh tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+          "name": "Vạch hải trình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+          "name": "Lái tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefc2c7-d5a6-4340-9277-d908e4e0e1bd",
+          "name": "Bảo đảm an ninh tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc khai thác tàu/quản lý thuyền viên",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo hướng đi và tốc độ tàu dựa trên hiểu biết về gió, thời tiết, độ sâu, thuỷ triều, dòng chảy và mối nguy ở vùng nước.",
+        "Ngăn tàu đang dẫn đường hoạt động thiếu an toàn.",
+        "Chỉ huy cập cầu khi tàu tới cảng hoặc bến.",
+        "Tra bản đồ, hải đồ, bản tin thời tiết hoặc thiết bị hàng hải để quyết định và chỉ đạo hành trình.",
+        "Lái và điều khiển tàu bằng vô tuyến, máy đo sâu, radar, đèn, phao tiêu hoặc hải đăng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+          "name": "Vạch hải trình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+          "name": "Lái tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefc2c7-d5a6-4340-9277-d908e4e0e1bd",
+          "name": "Bảo đảm an ninh tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+          "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+          "name": "Dùng thiết bị dẫn đường trên biển",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+          "name": "Hỗ trợ điều hướng trên mặt nước",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+          "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+          "name": "Vạch hải trình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+          "name": "Lái tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3eefc2c7-d5a6-4340-9277-d908e4e0e1bd",
+          "name": "Bảo đảm an ninh tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-49-9041.00",
+      "name": "Thợ bảo trì máy công nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-2011.00",
+      "name": "Phi công",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7051.00",
+      "name": "Người vận hành xe nâng, cần cẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-3052.00",
+      "name": "Thợ sửa xe máy",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-8013.00",
+      "name": "Vận hành nhà máy điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 7000000,
+    "median": null,
+    "high": 50000000,
+    "byYears": [],
+    "source": "CareerViet, \"Thuyền viên\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e93acbe5-535a-4927-9e7c-3b2e06ddfee8",
+      "name": "Hệ thống an toàn và cứu nạn hàng hải toàn cầu (GMDSS)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/224423a6-ac6a-4b3e-be7c-e38b41f82116",
+      "name": "Dùng thiết bị dẫn đường trên biển",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6210f756-7d6a-4ae3-b326-b5504aae05a5",
+      "name": "Hỗ trợ điều hướng trên mặt nước",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2b57ba73-7fe3-4410-bda4-a3429e4ddab7",
+      "name": "Quy tắc quốc tế phòng ngừa va chạm trên biển",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+      "name": "Sơ cứu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e842ed4c-23c1-4c29-b1b1-b490889db735",
+      "name": "Vạch hải trình",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/938973e2-c084-4c34-9dd4-382128caee6d",
+      "name": "Lái tàu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3eefc2c7-d5a6-4340-9277-d908e4e0e1bd",
+      "name": "Bảo đảm an ninh tàu",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.385
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.154
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.064
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.003
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.107
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.26
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.532
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

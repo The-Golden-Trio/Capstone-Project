@@ -1,0 +1,947 @@
+{
+  "code": "ONET-19-1029.04",
+  "name": "Nhà sinh học, chuyên viên công nghệ sinh học",
+  "nameEn": "Biologists",
+  "group": "Khoa học tự nhiên và xã hội",
+  "regionId": "cong_nghe",
+  "isIt": false,
+  "summary": "Nghiên cứu các nguyên lý cơ bản của sự sống ở thực vật và động vật, như nguồn gốc, quan hệ, sự phát triển, giải phẫu và chức năng. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Môi trường cạnh tranh cao.",
+    "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc."
+  ],
+  "workFacts": [
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "58% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "30% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Phòng thí nghiệm"],
+  "environments": [
+    {
+      "name": "Viện nghiên cứu, trung tâm khoa học nhà nước",
+      "weight": 50
+    },
+    {
+      "name": "Trung tâm kiểm nghiệm, phòng thí nghiệm dịch vụ",
+      "weight": 30
+    },
+    {
+      "name": "Trang trại, doanh nghiệp nông nghiệp công nghệ cao",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Công nghệ sinh học", "Sinh học"],
+    "vocational": ["Công nghệ sinh học"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên nghiên cứu / thực tập sinh học",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Lập trình và dùng máy tính để lưu, xử lý và phân tích dữ liệu.",
+        "Soạn báo cáo kỹ thuật và nghiên cứu, như báo cáo đánh giá tác động môi trường, và truyền đạt kết quả cho doanh nghiệp, cơ quan nhà nước hoặc công chúng.",
+        "Giám sát kỹ thuật viên sinh học và các nhà khoa học khác.",
+        "Xây dựng quan hệ làm việc hiệu quả với các nhóm, cá nhân, cơ quan và công chúng để thúc đẩy hợp tác quản lý hoặc phát triển và diễn giải thông tin.",
+        "Nhận dạng, phân loại và nghiên cứu cấu tạo, tập tính, sinh thái, sinh lý, dinh dưỡng, nuôi cấy và phân bố của các loài thực vật, động vật."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ lý nghiên cứu sinh học (hạng IV)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Lập trình và dùng máy tính để lưu, xử lý và phân tích dữ liệu.",
+        "Soạn báo cáo kỹ thuật và nghiên cứu, như báo cáo đánh giá tác động môi trường, và truyền đạt kết quả cho doanh nghiệp, cơ quan nhà nước hoặc công chúng.",
+        "Giám sát kỹ thuật viên sinh học và các nhà khoa học khác.",
+        "Xây dựng quan hệ làm việc hiệu quả với các nhóm, cá nhân, cơ quan và công chúng để thúc đẩy hợp tác quản lý hoặc phát triển và diễn giải thông tin.",
+        "Nhận dạng, phân loại và nghiên cứu cấu tạo, tập tính, sinh thái, sinh lý, dinh dưỡng, nuôi cấy và phân bố của các loài thực vật, động vật."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Nghiên cứu viên sinh học (hạng III)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Lập trình và dùng máy tính để lưu, xử lý và phân tích dữ liệu.",
+        "Soạn báo cáo kỹ thuật và nghiên cứu, như báo cáo đánh giá tác động môi trường, và truyền đạt kết quả cho doanh nghiệp, cơ quan nhà nước hoặc công chúng.",
+        "Giám sát kỹ thuật viên sinh học và các nhà khoa học khác.",
+        "Xây dựng quan hệ làm việc hiệu quả với các nhóm, cá nhân, cơ quan và công chúng để thúc đẩy hợp tác quản lý hoặc phát triển và diễn giải thông tin.",
+        "Nhận dạng, phân loại và nghiên cứu cấu tạo, tập tính, sinh thái, sinh lý, dinh dưỡng, nuôi cấy và phân bố của các loài thực vật, động vật."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+          "name": "Virus học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+          "name": "Khoa học sự sống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+          "name": "Quản lý hệ sinh thái",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Nghiên cứu viên sinh học chủ trì đề tài cấp cơ sở",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Lập trình và dùng máy tính để lưu, xử lý và phân tích dữ liệu.",
+        "Soạn báo cáo kỹ thuật và nghiên cứu, như báo cáo đánh giá tác động môi trường, và truyền đạt kết quả cho doanh nghiệp, cơ quan nhà nước hoặc công chúng.",
+        "Giám sát kỹ thuật viên sinh học và các nhà khoa học khác.",
+        "Xây dựng quan hệ làm việc hiệu quả với các nhóm, cá nhân, cơ quan và công chúng để thúc đẩy hợp tác quản lý hoặc phát triển và diễn giải thông tin.",
+        "Nhận dạng, phân loại và nghiên cứu cấu tạo, tập tính, sinh thái, sinh lý, dinh dưỡng, nuôi cấy và phân bố của các loài thực vật, động vật."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+          "name": "Virus học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+          "name": "Khoa học sự sống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+          "name": "Quản lý hệ sinh thái",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+          "name": "Virus học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+          "name": "Khoa học sự sống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+          "name": "Quản lý hệ sinh thái",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a58e994-74b9-4211-85ac-cfb409a9b667",
+          "name": "Thực vật học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Nghiên cứu viên sinh học chủ nhiệm đề tài cấp bộ, tỉnh",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Lập trình và dùng máy tính để lưu, xử lý và phân tích dữ liệu.",
+        "Soạn báo cáo kỹ thuật và nghiên cứu, như báo cáo đánh giá tác động môi trường, và truyền đạt kết quả cho doanh nghiệp, cơ quan nhà nước hoặc công chúng.",
+        "Giám sát kỹ thuật viên sinh học và các nhà khoa học khác.",
+        "Xây dựng quan hệ làm việc hiệu quả với các nhóm, cá nhân, cơ quan và công chúng để thúc đẩy hợp tác quản lý hoặc phát triển và diễn giải thông tin.",
+        "Nhận dạng, phân loại và nghiên cứu cấu tạo, tập tính, sinh thái, sinh lý, dinh dưỡng, nuôi cấy và phân bố của các loài thực vật, động vật."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+          "name": "Virus học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+          "name": "Khoa học sự sống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+          "name": "Quản lý hệ sinh thái",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a58e994-74b9-4211-85ac-cfb409a9b667",
+          "name": "Thực vật học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+          "name": "Virus học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+          "name": "Khoa học sự sống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+          "name": "Quản lý hệ sinh thái",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a58e994-74b9-4211-85ac-cfb409a9b667",
+          "name": "Thực vật học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Nghiên cứu viên chính sinh học (hạng II)",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Lập trình và dùng máy tính để lưu, xử lý và phân tích dữ liệu.",
+        "Soạn báo cáo kỹ thuật và nghiên cứu, như báo cáo đánh giá tác động môi trường, và truyền đạt kết quả cho doanh nghiệp, cơ quan nhà nước hoặc công chúng.",
+        "Giám sát kỹ thuật viên sinh học và các nhà khoa học khác.",
+        "Xây dựng quan hệ làm việc hiệu quả với các nhóm, cá nhân, cơ quan và công chúng để thúc đẩy hợp tác quản lý hoặc phát triển và diễn giải thông tin.",
+        "Nhận dạng, phân loại và nghiên cứu cấu tạo, tập tính, sinh thái, sinh lý, dinh dưỡng, nuôi cấy và phân bố của các loài thực vật, động vật."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+          "name": "Virus học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+          "name": "Khoa học sự sống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+          "name": "Quản lý hệ sinh thái",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a58e994-74b9-4211-85ac-cfb409a9b667",
+          "name": "Thực vật học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+          "name": "Virus học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+          "name": "Khoa học sự sống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+          "name": "Quản lý hệ sinh thái",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a58e994-74b9-4211-85ac-cfb409a9b667",
+          "name": "Thực vật học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Nghiên cứu viên cao cấp sinh học (hạng I)",
+      "years": "16+",
+      "coreOutput": null,
+      "tasks": [
+        "Lập trình và dùng máy tính để lưu, xử lý và phân tích dữ liệu.",
+        "Soạn báo cáo kỹ thuật và nghiên cứu, như báo cáo đánh giá tác động môi trường, và truyền đạt kết quả cho doanh nghiệp, cơ quan nhà nước hoặc công chúng.",
+        "Giám sát kỹ thuật viên sinh học và các nhà khoa học khác.",
+        "Xây dựng quan hệ làm việc hiệu quả với các nhóm, cá nhân, cơ quan và công chúng để thúc đẩy hợp tác quản lý hoặc phát triển và diễn giải thông tin.",
+        "Nhận dạng, phân loại và nghiên cứu cấu tạo, tập tính, sinh thái, sinh lý, dinh dưỡng, nuôi cấy và phân bố của các loài thực vật, động vật."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+          "name": "Virus học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+          "name": "Khoa học sự sống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+          "name": "Quản lý hệ sinh thái",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a58e994-74b9-4211-85ac-cfb409a9b667",
+          "name": "Thực vật học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+          "name": "Sinh học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+          "name": "Nghiên cứu hệ thực vật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+          "name": "Kỹ thuật phòng thí nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+          "name": "Nghiên cứu hệ động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+          "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+          "name": "Virus học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+          "name": "Khoa học sự sống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+          "name": "Quản lý hệ sinh thái",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a58e994-74b9-4211-85ac-cfb409a9b667",
+          "name": "Thực vật học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-19-1029.04",
+          "name": "Nhà sinh học, chuyên viên công nghệ sinh học"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-2011.00",
+      "name": "Kỹ thuật viên xét nghiệm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-1041.00",
+      "name": "Nhà nghiên cứu y sinh, dịch tễ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-2031.00",
+      "name": "Nhà hoá học, chuyên viên kiểm nghiệm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2031.00",
+      "name": "Kỹ sư y sinh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-1031.00",
+      "name": "Chuyên viên lâm nghiệp và bảo tồn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 7000000,
+    "median": null,
+    "high": 40000000,
+    "byYears": [],
+    "source": "CareerLink, \"Học công nghệ sinh học ra làm gì\"",
+    "dataYear": "2025",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 12,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/9433da85-70fa-4a25-8f96-71fa59dd1989",
+      "name": "Sinh học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+      "name": "Tài liệu khoa học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0058526a-11e9-40a1-ab33-7c5ffdf5da05",
+      "name": "Nghiên cứu hệ thực vật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8259c2c0-2749-41e2-a4a8-4a64a76eab37",
+      "name": "Kỹ thuật phòng thí nghiệm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/eecbbdd5-5c07-41a4-9486-c0373de7fbab",
+      "name": "Nghiên cứu hệ động vật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0bc42cda-a6f0-4cac-9b34-7911faba0bd4",
+      "name": "Vi sinh – vi khuẩn học (chuyên khoa y)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/641bc86f-42ca-44e9-af8b-4f9e1f284e41",
+      "name": "Virus học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/055192dc-f16c-4855-835d-19cac6ff20aa",
+      "name": "Khoa học sự sống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/270c4de9-97f9-4a7a-95d1-63670f1ec3bc",
+      "name": "Quản lý hệ sinh thái",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2a58e994-74b9-4211-85ac-cfb409a9b667",
+      "name": "Thực vật học",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 1.093
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.602
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.567
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.472
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.344
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.028
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.359
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

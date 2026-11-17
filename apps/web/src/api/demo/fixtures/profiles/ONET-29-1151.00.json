@@ -1,0 +1,827 @@
+{
+  "code": "ONET-29-1151.00",
+  "name": "Kỹ thuật viên gây mê hồi sức",
+  "nameEn": "Nurse Anesthetists",
+  "group": "Y tế chuyên môn và kỹ thuật y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Gây mê, theo dõi dấu hiệu sinh tồn và giám sát người bệnh hồi tỉnh sau gây mê. Có thể hỗ trợ bác sĩ gây mê, phẫu thuật viên, bác sĩ khác hoặc nha sĩ. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có tiếp xúc với bức xạ.",
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Phải mặc đồ bảo hộ chuyên dụng như mặt nạ thở, đai an toàn hoặc đồ chống bức xạ.",
+    "Sai sót có thể gây hậu quả nghiêm trọng."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Được tự quyết nhiều trong công việc.",
+    "48% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "29% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Bệnh viện công",
+      "weight": 70
+    },
+    {
+      "name": "Bệnh viện tư, quốc tế",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật gây mê hồi sức"],
+    "vocational": [],
+    "licence": "Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực) — Luật Khám bệnh, chữa bệnh số 15/2023/QH15, hiệu lực 01/01/2024"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên gây mê hồi sức thực tập lâm sàng",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm soát đường thở và hô hấp của người bệnh bằng kỹ thuật như đặt nội khí quản, thở máy, thuốc hỗ trợ, trị liệu hô hấp và rút ống.",
+        "Xử lý tình huống cấp cứu bằng kiểm soát đường thở, truyền dịch, thuốc cấp cứu hoặc hồi sinh tim phổi cơ bản và nâng cao.",
+        "Theo dõi phản ứng của người bệnh như màu da, đồng tử, mạch, nhịp tim, huyết áp, nhịp thở, thông khí hoặc lượng nước tiểu.",
+        "Chọn, yêu cầu hoặc cho dùng thuốc mê, thuốc hỗ trợ, dịch truyền hoặc chế phẩm máu khi cần.",
+        "Chọn, chuẩn bị hoặc dùng thiết bị, máy theo dõi, vật tư và thuốc cho việc gây mê."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ thuật y gây mê hồi sức thực hành (chưa có giấy phép)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm soát đường thở và hô hấp của người bệnh bằng kỹ thuật như đặt nội khí quản, thở máy, thuốc hỗ trợ, trị liệu hô hấp và rút ống.",
+        "Xử lý tình huống cấp cứu bằng kiểm soát đường thở, truyền dịch, thuốc cấp cứu hoặc hồi sinh tim phổi cơ bản và nâng cao.",
+        "Theo dõi phản ứng của người bệnh như màu da, đồng tử, mạch, nhịp tim, huyết áp, nhịp thở, thông khí hoặc lượng nước tiểu.",
+        "Chọn, yêu cầu hoặc cho dùng thuốc mê, thuốc hỗ trợ, dịch truyền hoặc chế phẩm máu khi cần.",
+        "Chọn, chuẩn bị hoặc dùng thiết bị, máy theo dõi, vật tư và thuốc cho việc gây mê."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+          "name": "Tin học y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+          "name": "Hồi sức tích cực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+          "name": "Giải phẫu người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+          "name": "Vô khuẩn phẫu thuật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ thuật y gây mê hồi sức hạng III (có giấy phép hành nghề)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm soát đường thở và hô hấp của người bệnh bằng kỹ thuật như đặt nội khí quản, thở máy, thuốc hỗ trợ, trị liệu hô hấp và rút ống.",
+        "Xử lý tình huống cấp cứu bằng kiểm soát đường thở, truyền dịch, thuốc cấp cứu hoặc hồi sinh tim phổi cơ bản và nâng cao.",
+        "Theo dõi phản ứng của người bệnh như màu da, đồng tử, mạch, nhịp tim, huyết áp, nhịp thở, thông khí hoặc lượng nước tiểu.",
+        "Chọn, yêu cầu hoặc cho dùng thuốc mê, thuốc hỗ trợ, dịch truyền hoặc chế phẩm máu khi cần.",
+        "Chọn, chuẩn bị hoặc dùng thiết bị, máy theo dõi, vật tư và thuốc cho việc gây mê."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+          "name": "Tin học y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+          "name": "Hồi sức tích cực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+          "name": "Giải phẫu người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+          "name": "Vô khuẩn phẫu thuật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+          "name": "Tin học y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+          "name": "Hồi sức tích cực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+          "name": "Giải phẫu người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+          "name": "Vô khuẩn phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e53aff-6f8a-42ca-9cb9-47335130f4d7",
+          "name": "Sinh lý người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6af2f535-433b-4c38-b31b-ab14a8bac266",
+          "name": "Thăm khám trước phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ thuật y gây mê hồi sức chính",
+      "years": "3–7",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm soát đường thở và hô hấp của người bệnh bằng kỹ thuật như đặt nội khí quản, thở máy, thuốc hỗ trợ, trị liệu hô hấp và rút ống.",
+        "Xử lý tình huống cấp cứu bằng kiểm soát đường thở, truyền dịch, thuốc cấp cứu hoặc hồi sinh tim phổi cơ bản và nâng cao.",
+        "Theo dõi phản ứng của người bệnh như màu da, đồng tử, mạch, nhịp tim, huyết áp, nhịp thở, thông khí hoặc lượng nước tiểu.",
+        "Chọn, yêu cầu hoặc cho dùng thuốc mê, thuốc hỗ trợ, dịch truyền hoặc chế phẩm máu khi cần.",
+        "Chọn, chuẩn bị hoặc dùng thiết bị, máy theo dõi, vật tư và thuốc cho việc gây mê."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+          "name": "Tin học y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+          "name": "Hồi sức tích cực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+          "name": "Giải phẫu người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+          "name": "Vô khuẩn phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e53aff-6f8a-42ca-9cb9-47335130f4d7",
+          "name": "Sinh lý người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6af2f535-433b-4c38-b31b-ab14a8bac266",
+          "name": "Thăm khám trước phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+          "name": "Tin học y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+          "name": "Hồi sức tích cực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+          "name": "Giải phẫu người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+          "name": "Vô khuẩn phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e53aff-6f8a-42ca-9cb9-47335130f4d7",
+          "name": "Sinh lý người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6af2f535-433b-4c38-b31b-ab14a8bac266",
+          "name": "Thăm khám trước phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ thuật y gây mê hồi sức hạng II",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm soát đường thở và hô hấp của người bệnh bằng kỹ thuật như đặt nội khí quản, thở máy, thuốc hỗ trợ, trị liệu hô hấp và rút ống.",
+        "Xử lý tình huống cấp cứu bằng kiểm soát đường thở, truyền dịch, thuốc cấp cứu hoặc hồi sinh tim phổi cơ bản và nâng cao.",
+        "Theo dõi phản ứng của người bệnh như màu da, đồng tử, mạch, nhịp tim, huyết áp, nhịp thở, thông khí hoặc lượng nước tiểu.",
+        "Chọn, yêu cầu hoặc cho dùng thuốc mê, thuốc hỗ trợ, dịch truyền hoặc chế phẩm máu khi cần.",
+        "Chọn, chuẩn bị hoặc dùng thiết bị, máy theo dõi, vật tư và thuốc cho việc gây mê."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+          "name": "Tin học y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+          "name": "Hồi sức tích cực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+          "name": "Giải phẫu người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+          "name": "Vô khuẩn phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e53aff-6f8a-42ca-9cb9-47335130f4d7",
+          "name": "Sinh lý người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6af2f535-433b-4c38-b31b-ab14a8bac266",
+          "name": "Thăm khám trước phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+          "name": "Tin học y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+          "name": "Hồi sức tích cực",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+          "name": "Giải phẫu người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+          "name": "Vô khuẩn phẫu thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e53aff-6f8a-42ca-9cb9-47335130f4d7",
+          "name": "Sinh lý người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6af2f535-433b-4c38-b31b-ab14a8bac266",
+          "name": "Thăm khám trước phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Kỹ thuật y gây mê hồi sức hạng I / kỹ thuật viên trưởng khoa",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm soát đường thở và hô hấp của người bệnh bằng kỹ thuật như đặt nội khí quản, thở máy, thuốc hỗ trợ, trị liệu hô hấp và rút ống.",
+        "Xử lý tình huống cấp cứu bằng kiểm soát đường thở, truyền dịch, thuốc cấp cứu hoặc hồi sinh tim phổi cơ bản và nâng cao.",
+        "Theo dõi phản ứng của người bệnh như màu da, đồng tử, mạch, nhịp tim, huyết áp, nhịp thở, thông khí hoặc lượng nước tiểu.",
+        "Chọn, yêu cầu hoặc cho dùng thuốc mê, thuốc hỗ trợ, dịch truyền hoặc chế phẩm máu khi cần.",
+        "Chọn, chuẩn bị hoặc dùng thiết bị, máy theo dõi, vật tư và thuốc cho việc gây mê."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+          "name": "Tin học y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+          "name": "Hồi sức tích cực",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+          "name": "Giải phẫu người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+          "name": "Vô khuẩn phẫu thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e53aff-6f8a-42ca-9cb9-47335130f4d7",
+          "name": "Sinh lý người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6af2f535-433b-4c38-b31b-ab14a8bac266",
+          "name": "Thăm khám trước phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+          "name": "Quản lý dữ liệu người bệnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+          "name": "Lý sinh học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+          "name": "Tin học y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+          "name": "Hồi sức tích cực",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+          "name": "Giải phẫu người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+          "name": "Vô khuẩn phẫu thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e53aff-6f8a-42ca-9cb9-47335130f4d7",
+          "name": "Sinh lý người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6af2f535-433b-4c38-b31b-ab14a8bac266",
+          "name": "Thăm khám trước phẫu thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-29-1151.00",
+          "name": "Kỹ thuật viên gây mê hồi sức"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1215.00",
+      "name": "Bác sĩ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2034.00",
+      "name": "Kỹ thuật viên chẩn đoán hình ảnh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2043.00",
+      "name": "Nhân viên cấp cứu ngoại viện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 5313000,
+    "median": null,
+    "high": 17153000,
+    "byYears": [],
+    "source": "Thông tư 02/2025/TT-BYT; xếp lương theo hướng dẫn của Bộ Y tế ngày 05/6/2025; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Điều dưỡng, hộ sinh, kỹ thuật y hạng IV đến hạng II",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+      "name": "Đồng cảm với người bệnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2",
+      "name": "Quản lý dữ liệu người bệnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/81d1da98-f00d-45f0-a908-327b50a631b9",
+      "name": "Lý sinh học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b21e2984-c6b2-4352-bbe8-8f3b03bd50f6",
+      "name": "Tin học y tế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e862fb43-5acd-4d37-a4a2-63684c164932",
+      "name": "Hồi sức tích cực",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9ec4252d-cbe8-4134-88fa-549dee1883f3",
+      "name": "Giải phẫu người",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3d395072-95d7-4706-986f-a7d29ddbd547",
+      "name": "Vô khuẩn phẫu thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51e53aff-6f8a-42ca-9cb9-47335130f4d7",
+      "name": "Sinh lý người",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6af2f535-433b-4c38-b31b-ab14a8bac266",
+      "name": "Thăm khám trước phẫu thuật",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+      "name": "Xử lý tình huống cấp cứu",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 1.181
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.022
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.993
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.888
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.667
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.661
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.25
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

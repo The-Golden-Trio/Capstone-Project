@@ -1,0 +1,942 @@
+{
+  "code": "ONET-33-3051.00",
+  "name": "Cảnh sát (công an)",
+  "nameEn": "Police and Sheriff's Patrol Officers",
+  "group": "Dịch vụ bảo vệ an ninh và an toàn",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Giữ trật tự, bảo vệ tính mạng và tài sản bằng cách thực thi pháp luật. Kết hợp các việc: tuần tra một khu vực, điều tiết giao thông, lập biên bản vi phạm giao thông, điều tra tai nạn, truy bắt nghi phạm hoặc tống đạt văn bản của toà. Gồm cả cảnh sát làm việc tại cơ sở giáo dục. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có thể phải đối mặt với người hung hăng hoặc bạo lực.",
+    "Thường xuyên gặp tình huống xung đột với người khác.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "39% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "37% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công an (đồn, phòng nghiệp vụ)",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Trinh sát cảnh sát", "Quản lý trật tự an toàn giao thông"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Cán bộ, chiến sĩ công an cấp hàm Thiếu úy",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm an toàn công cộng: giữ trật tự, ứng phó khẩn cấp, bảo vệ người và tài sản, thực thi luật giao thông và luật hình sự, xây dựng quan hệ tốt với cộng đồng.",
+        "Xác định, truy đuổi và bắt giữ nghi phạm và người phạm tội.",
+        "Xác minh tội danh đã được xác định đúng với người vi phạm.",
+        "Sơ cứu cho nạn nhân tai nạn và người bị thương.",
+        "Ghi lại tình tiết để lập báo cáo về vụ việc và hoạt động."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Cán bộ công an cấp hàm Trung úy – Thượng úy",
+      "years": "2–8",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm an toàn công cộng: giữ trật tự, ứng phó khẩn cấp, bảo vệ người và tài sản, thực thi luật giao thông và luật hình sự, xây dựng quan hệ tốt với cộng đồng.",
+        "Xác định, truy đuổi và bắt giữ nghi phạm và người phạm tội.",
+        "Xác minh tội danh đã được xác định đúng với người vi phạm.",
+        "Sơ cứu cho nạn nhân tai nạn và người bị thương.",
+        "Ghi lại tình tiết để lập báo cáo về vụ việc và hoạt động."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Cán bộ nghiệp vụ chính, cấp hàm Đại úy",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm an toàn công cộng: giữ trật tự, ứng phó khẩn cấp, bảo vệ người và tài sản, thực thi luật giao thông và luật hình sự, xây dựng quan hệ tốt với cộng đồng.",
+        "Xác định, truy đuổi và bắt giữ nghi phạm và người phạm tội.",
+        "Xác minh tội danh đã được xác định đúng với người vi phạm.",
+        "Sơ cứu cho nạn nhân tai nạn và người bị thương.",
+        "Ghi lại tình tiết để lập báo cáo về vụ việc và hoạt động."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "name": "Thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+          "name": "Tạm giữ người vi phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+          "name": "Tuân thủ quy định về các loại vũ khí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Phó đội trưởng/phó trưởng công an xã, phường (Đại úy – Thiếu tá)",
+      "years": "10–16",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm an toàn công cộng: giữ trật tự, ứng phó khẩn cấp, bảo vệ người và tài sản, thực thi luật giao thông và luật hình sự, xây dựng quan hệ tốt với cộng đồng.",
+        "Xác định, truy đuổi và bắt giữ nghi phạm và người phạm tội.",
+        "Xác minh tội danh đã được xác định đúng với người vi phạm.",
+        "Sơ cứu cho nạn nhân tai nạn và người bị thương.",
+        "Ghi lại tình tiết để lập báo cáo về vụ việc và hoạt động."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "name": "Thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+          "name": "Tạm giữ người vi phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+          "name": "Tuân thủ quy định về các loại vũ khí",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "name": "Thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+          "name": "Tạm giữ người vi phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+          "name": "Tuân thủ quy định về các loại vũ khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42645b84-0699-4072-b9cf-335512434b67",
+          "name": "Sử dụng vũ lực hợp pháp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Đội trưởng/trưởng công an xã, phường (Thiếu tá – Trung tá)",
+      "years": "12–20",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm an toàn công cộng: giữ trật tự, ứng phó khẩn cấp, bảo vệ người và tài sản, thực thi luật giao thông và luật hình sự, xây dựng quan hệ tốt với cộng đồng.",
+        "Xác định, truy đuổi và bắt giữ nghi phạm và người phạm tội.",
+        "Xác minh tội danh đã được xác định đúng với người vi phạm.",
+        "Sơ cứu cho nạn nhân tai nạn và người bị thương.",
+        "Ghi lại tình tiết để lập báo cáo về vụ việc và hoạt động."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "name": "Thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+          "name": "Tạm giữ người vi phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+          "name": "Tuân thủ quy định về các loại vũ khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42645b84-0699-4072-b9cf-335512434b67",
+          "name": "Sử dụng vũ lực hợp pháp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "name": "Thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+          "name": "Tạm giữ người vi phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+          "name": "Tuân thủ quy định về các loại vũ khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42645b84-0699-4072-b9cf-335512434b67",
+          "name": "Sử dụng vũ lực hợp pháp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng nghiệp vụ công an tỉnh (Trung tá – Thượng tá)",
+      "years": "16–25",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm an toàn công cộng: giữ trật tự, ứng phó khẩn cấp, bảo vệ người và tài sản, thực thi luật giao thông và luật hình sự, xây dựng quan hệ tốt với cộng đồng.",
+        "Xác định, truy đuổi và bắt giữ nghi phạm và người phạm tội.",
+        "Xác minh tội danh đã được xác định đúng với người vi phạm.",
+        "Sơ cứu cho nạn nhân tai nạn và người bị thương.",
+        "Ghi lại tình tiết để lập báo cáo về vụ việc và hoạt động."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "name": "Thực thi pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+          "name": "Tạm giữ người vi phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+          "name": "Tuân thủ quy định về các loại vũ khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42645b84-0699-4072-b9cf-335512434b67",
+          "name": "Sử dụng vũ lực hợp pháp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "name": "Thực thi pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+          "name": "Tạm giữ người vi phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+          "name": "Tuân thủ quy định về các loại vũ khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42645b84-0699-4072-b9cf-335512434b67",
+          "name": "Sử dụng vũ lực hợp pháp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L8",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc/phó giám đốc công an tỉnh (Đại tá – Thiếu tướng)",
+      "years": "25+",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm an toàn công cộng: giữ trật tự, ứng phó khẩn cấp, bảo vệ người và tài sản, thực thi luật giao thông và luật hình sự, xây dựng quan hệ tốt với cộng đồng.",
+        "Xác định, truy đuổi và bắt giữ nghi phạm và người phạm tội.",
+        "Xác minh tội danh đã được xác định đúng với người vi phạm.",
+        "Sơ cứu cho nạn nhân tai nạn và người bị thương.",
+        "Ghi lại tình tiết để lập báo cáo về vụ việc và hoạt động."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tri_tue_cam_xuc": 4,
+        "giao_tiep_hop_tac": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tu_duy_giai_quyet_van_de": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "name": "Thực thi pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+          "name": "Tạm giữ người vi phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+          "name": "Tuân thủ quy định về các loại vũ khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42645b84-0699-4072-b9cf-335512434b67",
+          "name": "Sử dụng vũ lực hợp pháp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+          "name": "Luật giao thông đường bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+          "name": "Bảo đảm thực thi pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "name": "Thực thi pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+          "name": "Tạm giữ người vi phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+          "name": "Tuân thủ quy định về các loại vũ khí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42645b84-0699-4072-b9cf-335512434b67",
+          "name": "Sử dụng vũ lực hợp pháp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-33-3051.00",
+          "name": "Cảnh sát (công an)"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-33-1012.00",
+          "name": "Chỉ huy cảnh sát và điều tra viên"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-33-3021.00",
+      "name": "Điều tra viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-9032.00",
+      "name": "Nhân viên bảo vệ, an ninh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-3012.00",
+      "name": "Cán bộ quản giáo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7062.00",
+      "name": "Công nhân bốc xếp, đóng gói",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-4011.00",
+      "name": "Lái tàu hoả, tàu điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 10626000,
+    "median": null,
+    "high": 18469000,
+    "byYears": [],
+    "source": "Nghị định 204/2004/NĐ-CP, Bảng 6; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Sĩ quan công an từ Thiếu úy đến Thượng tá",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+      "name": "Nhận diện mối đe doạ an ninh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+      "name": "Tuần tra",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+      "name": "Sơ cứu ban đầu tại hiện trường",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+      "name": "Tuân thủ nguyên tắc phòng vệ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/48f480aa-c9a8-4552-b1c5-e94330912257",
+      "name": "Luật giao thông đường bộ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f0153530-9ff3-4fe6-8f9e-012d06ac5b89",
+      "name": "Bảo đảm thực thi pháp luật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+      "name": "Thực thi pháp luật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d43dc4ac-e316-44cb-939d-ecf200895e0f",
+      "name": "Tạm giữ người vi phạm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/734fc996-03ed-40c2-b502-b1ba44e3b867",
+      "name": "Tuân thủ quy định về các loại vũ khí",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/42645b84-0699-4072-b9cf-335512434b67",
+      "name": "Sử dụng vũ lực hợp pháp",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.909
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.759
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.728
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.465
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.266
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.165
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.012
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

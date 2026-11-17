@@ -1,0 +1,637 @@
+{
+  "code": "ONET-39-9032.00",
+  "name": "Nhân viên tổ chức hoạt động vui chơi giải trí",
+  "nameEn": "Recreation Workers",
+  "group": "Chăm sóc và dịch vụ cá nhân",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Tổ chức hoạt động giải trí cho nhóm ở cơ quan công, tư, tổ chức tình nguyện hoặc cơ sở vui chơi. Tổ chức và quảng bá các hoạt động như thủ công mỹ nghệ, thể thao, trò chơi, âm nhạc, kịch, sinh hoạt tập thể, cắm trại và sở thích, có tính tới nhu cầu và mối quan tâm của từng người. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần giúp đỡ, dạy bảo và chăm sóc người khác, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Phải đi lại hoặc chạy nhiều.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Phải đứng trong phần lớn thời gian làm việc."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "15% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "26% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Khu vui chơi, công viên giải trí",
+      "weight": 60
+    },
+    {
+      "name": "Khách sạn, resort 4–5 sao",
+      "weight": 25
+    },
+    {
+      "name": "Agency marketing, quảng cáo, sự kiện",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Quản lý thể dục thể thao", "Du lịch"],
+    "vocational": ["Văn hóa, văn nghệ quần chúng", "Tổ chức sự kiện"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Cộng tác viên hoạt náo, trại hè",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Thực thi nội quy của cơ sở để giữ kỷ luật và an toàn.",
+        "Tổ chức, dẫn dắt và tạo hứng thú cho các hoạt động như mỹ thuật, thủ công, thể thao, trò chơi, cắm trại và sở thích.",
+        "Đánh giá nhu cầu và mối quan tâm của cá nhân, nhóm và lên kế hoạch hoạt động phù hợp với thiết bị, cơ sở sẵn có.",
+        "Quản lý hoạt động hằng ngày của cơ sở vui chơi.",
+        "Sơ cứu theo quy trình và gọi nhân viên cấp cứu khi cần."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên hoạt náo, tổ chức vui chơi (animator)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Thực thi nội quy của cơ sở để giữ kỷ luật và an toàn.",
+        "Tổ chức, dẫn dắt và tạo hứng thú cho các hoạt động như mỹ thuật, thủ công, thể thao, trò chơi, cắm trại và sở thích.",
+        "Đánh giá nhu cầu và mối quan tâm của cá nhân, nhóm và lên kế hoạch hoạt động phù hợp với thiết bị, cơ sở sẵn có.",
+        "Quản lý hoạt động hằng ngày của cơ sở vui chơi.",
+        "Sơ cứu theo quy trình và gọi nhân viên cấp cứu khi cần."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+          "name": "Giám sát an toàn công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+          "name": "Vệ sinh công viên giải trí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên tổ chức hoạt động giải trí, ngoại khóa",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Thực thi nội quy của cơ sở để giữ kỷ luật và an toàn.",
+        "Tổ chức, dẫn dắt và tạo hứng thú cho các hoạt động như mỹ thuật, thủ công, thể thao, trò chơi, cắm trại và sở thích.",
+        "Đánh giá nhu cầu và mối quan tâm của cá nhân, nhóm và lên kế hoạch hoạt động phù hợp với thiết bị, cơ sở sẵn có.",
+        "Quản lý hoạt động hằng ngày của cơ sở vui chơi.",
+        "Sơ cứu theo quy trình và gọi nhân viên cấp cứu khi cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+          "name": "Giám sát an toàn công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+          "name": "Vệ sinh công viên giải trí",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+          "name": "Giám sát an toàn công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+          "name": "Vệ sinh công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aa12602b-ba4c-4b6c-ae0b-9a6ec798316d",
+          "name": "Soát vé ở cổng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82d83fd3-bd6b-4e09-8291-2e0f83e323f9",
+          "name": "Bảo trì trò chơi công viên giải trí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Trưởng nhóm hoạt náo/tổ chức sự kiện",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Thực thi nội quy của cơ sở để giữ kỷ luật và an toàn.",
+        "Tổ chức, dẫn dắt và tạo hứng thú cho các hoạt động như mỹ thuật, thủ công, thể thao, trò chơi, cắm trại và sở thích.",
+        "Đánh giá nhu cầu và mối quan tâm của cá nhân, nhóm và lên kế hoạch hoạt động phù hợp với thiết bị, cơ sở sẵn có.",
+        "Quản lý hoạt động hằng ngày của cơ sở vui chơi.",
+        "Sơ cứu theo quy trình và gọi nhân viên cấp cứu khi cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+          "name": "Giám sát an toàn công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+          "name": "Vệ sinh công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aa12602b-ba4c-4b6c-ae0b-9a6ec798316d",
+          "name": "Soát vé ở cổng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82d83fd3-bd6b-4e09-8291-2e0f83e323f9",
+          "name": "Bảo trì trò chơi công viên giải trí",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+          "name": "Giám sát an toàn công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+          "name": "Vệ sinh công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aa12602b-ba4c-4b6c-ae0b-9a6ec798316d",
+          "name": "Soát vé ở cổng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82d83fd3-bd6b-4e09-8291-2e0f83e323f9",
+          "name": "Bảo trì trò chơi công viên giải trí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Quản lý bộ phận giải trí (resort, khu vui chơi)",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Thực thi nội quy của cơ sở để giữ kỷ luật và an toàn.",
+        "Tổ chức, dẫn dắt và tạo hứng thú cho các hoạt động như mỹ thuật, thủ công, thể thao, trò chơi, cắm trại và sở thích.",
+        "Đánh giá nhu cầu và mối quan tâm của cá nhân, nhóm và lên kế hoạch hoạt động phù hợp với thiết bị, cơ sở sẵn có.",
+        "Quản lý hoạt động hằng ngày của cơ sở vui chơi.",
+        "Sơ cứu theo quy trình và gọi nhân viên cấp cứu khi cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+          "name": "Giám sát an toàn công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+          "name": "Vệ sinh công viên giải trí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aa12602b-ba4c-4b6c-ae0b-9a6ec798316d",
+          "name": "Soát vé ở cổng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82d83fd3-bd6b-4e09-8291-2e0f83e323f9",
+          "name": "Bảo trì trò chơi công viên giải trí",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+          "name": "Giám sát an toàn công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+          "name": "Vệ sinh công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aa12602b-ba4c-4b6c-ae0b-9a6ec798316d",
+          "name": "Soát vé ở cổng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82d83fd3-bd6b-4e09-8291-2e0f83e323f9",
+          "name": "Bảo trì trò chơi công viên giải trí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc vận hành khu vui chơi giải trí",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Thực thi nội quy của cơ sở để giữ kỷ luật và an toàn.",
+        "Tổ chức, dẫn dắt và tạo hứng thú cho các hoạt động như mỹ thuật, thủ công, thể thao, trò chơi, cắm trại và sở thích.",
+        "Đánh giá nhu cầu và mối quan tâm của cá nhân, nhóm và lên kế hoạch hoạt động phù hợp với thiết bị, cơ sở sẵn có.",
+        "Quản lý hoạt động hằng ngày của cơ sở vui chơi.",
+        "Sơ cứu theo quy trình và gọi nhân viên cấp cứu khi cần."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+          "name": "Giám sát an toàn công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+          "name": "Vệ sinh công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aa12602b-ba4c-4b6c-ae0b-9a6ec798316d",
+          "name": "Soát vé ở cổng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82d83fd3-bd6b-4e09-8291-2e0f83e323f9",
+          "name": "Bảo trì trò chơi công viên giải trí",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+          "name": "Hỗ trợ khách công viên giải trí",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+          "name": "Hướng dẫn khách công viên giải trí",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+          "name": "Giám sát an toàn công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+          "name": "Vệ sinh công viên giải trí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aa12602b-ba4c-4b6c-ae0b-9a6ec798316d",
+          "name": "Soát vé ở cổng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82d83fd3-bd6b-4e09-8291-2e0f83e323f9",
+          "name": "Bảo trì trò chơi công viên giải trí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-39-9032.00",
+          "name": "Nhân viên tổ chức hoạt động vui chơi giải trí"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-39-1014.00",
+          "name": "Giám sát nhân viên giải trí và vui chơi"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-43-4081.00",
+      "name": "Lễ tân khách sạn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-2031.00",
+      "name": "Nhân viên bán hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-35-3031.00",
+      "name": "Nhân viên phục vụ nhà hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1123.00",
+      "name": "Kỹ thuật viên, chuyên viên phục hồi chức năng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-21-1021.00",
+      "name": "Nhân viên công tác xã hội",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 6000000,
+    "median": null,
+    "high": 9000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Nhân Viên Khu Vui Chơi\"",
+    "dataYear": "2026",
+    "note": "35 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 6–9tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 7.700.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 21,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/38efd8de-d313-4aa5-abc0-cefa5ec64002",
+      "name": "Hỗ trợ khách công viên giải trí",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3b031e83-b561-4a67-ae70-70c3c8808674",
+      "name": "Hướng dẫn khách công viên giải trí",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7df446fb-7e76-4a7e-9954-88706be77c27",
+      "name": "Giám sát an toàn công viên giải trí",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b9a9459c-befa-4b30-95b8-25b5dc83d8f1",
+      "name": "Vệ sinh công viên giải trí",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/aa12602b-ba4c-4b6c-ae0b-9a6ec798316d",
+      "name": "Soát vé ở cổng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/82d83fd3-bd6b-4e09-8291-2e0f83e323f9",
+      "name": "Bảo trì trò chơi công viên giải trí",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.554
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.125
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.169
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.243
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.539
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.751
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.998
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

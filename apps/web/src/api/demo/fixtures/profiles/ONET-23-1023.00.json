@@ -1,0 +1,737 @@
+{
+  "code": "ONET-23-1023.00",
+  "name": "Thẩm phán",
+  "nameEn": "Judges, Magistrate Judges, and Magistrates",
+  "group": "Pháp lý",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Phân xử, tư vấn, xét xử hoặc thực thi công lý tại toà án. Có thể tuyên án bị cáo trong vụ án hình sự theo luật và khung hình phạt. Có thể xác định trách nhiệm của bị đơn trong vụ án dân sự. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Thường xuyên gặp tình huống xung đột với người khác.",
+    "Thường xuyên phải làm gấp cho kịp hạn."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "42% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Toà án",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Luật"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thư ký Tòa án",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Tuyên án bị cáo trong vụ án hình sự khi bị kết tội, theo quy định của pháp luật.",
+        "Giám sát phiên toà để bảo đảm mọi quy tắc và thủ tục được tuân thủ.",
+        "Hướng dẫn bồi thẩm đoàn về luật áp dụng, yêu cầu họ suy ra tình tiết từ chứng cứ và nghe phán quyết của họ.",
+        "Viết bản án cho các vụ việc.",
+        "Đọc hồ sơ đơn từ và kiến nghị để nắm tình tiết và vấn đề."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thẩm tra viên Tòa án",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Tuyên án bị cáo trong vụ án hình sự khi bị kết tội, theo quy định của pháp luật.",
+        "Giám sát phiên toà để bảo đảm mọi quy tắc và thủ tục được tuân thủ.",
+        "Hướng dẫn bồi thẩm đoàn về luật áp dụng, yêu cầu họ suy ra tình tiết từ chứng cứ và nghe phán quyết của họ.",
+        "Viết bản án cho các vụ việc.",
+        "Đọc hồ sơ đơn từ và kiến nghị để nắm tình tiết và vấn đề."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Thẩm phán Tòa án nhân dân bậc 1",
+      "years": "5–10",
+      "coreOutput": null,
+      "tasks": [
+        "Tuyên án bị cáo trong vụ án hình sự khi bị kết tội, theo quy định của pháp luật.",
+        "Giám sát phiên toà để bảo đảm mọi quy tắc và thủ tục được tuân thủ.",
+        "Hướng dẫn bồi thẩm đoàn về luật áp dụng, yêu cầu họ suy ra tình tiết từ chứng cứ và nghe phán quyết của họ.",
+        "Viết bản án cho các vụ việc.",
+        "Đọc hồ sơ đơn từ và kiến nghị để nắm tình tiết và vấn đề."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+          "name": "Thuật ngữ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Thẩm phán Tòa án nhân dân bậc 2",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Tuyên án bị cáo trong vụ án hình sự khi bị kết tội, theo quy định của pháp luật.",
+        "Giám sát phiên toà để bảo đảm mọi quy tắc và thủ tục được tuân thủ.",
+        "Hướng dẫn bồi thẩm đoàn về luật áp dụng, yêu cầu họ suy ra tình tiết từ chứng cứ và nghe phán quyết của họ.",
+        "Viết bản án cho các vụ việc.",
+        "Đọc hồ sơ đơn từ và kiến nghị để nắm tình tiết và vấn đề."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+          "name": "Thuật ngữ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+          "name": "Thuật ngữ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Thẩm phán Tòa án nhân dân bậc 3",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Tuyên án bị cáo trong vụ án hình sự khi bị kết tội, theo quy định của pháp luật.",
+        "Giám sát phiên toà để bảo đảm mọi quy tắc và thủ tục được tuân thủ.",
+        "Hướng dẫn bồi thẩm đoàn về luật áp dụng, yêu cầu họ suy ra tình tiết từ chứng cứ và nghe phán quyết của họ.",
+        "Viết bản án cho các vụ việc.",
+        "Đọc hồ sơ đơn từ và kiến nghị để nắm tình tiết và vấn đề."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+          "name": "Thuật ngữ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+          "name": "Thuật ngữ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Chánh án Tòa án nhân dân cấp tỉnh",
+      "years": "18+",
+      "coreOutput": null,
+      "tasks": [
+        "Tuyên án bị cáo trong vụ án hình sự khi bị kết tội, theo quy định của pháp luật.",
+        "Giám sát phiên toà để bảo đảm mọi quy tắc và thủ tục được tuân thủ.",
+        "Hướng dẫn bồi thẩm đoàn về luật áp dụng, yêu cầu họ suy ra tình tiết từ chứng cứ và nghe phán quyết của họ.",
+        "Viết bản án cho các vụ việc.",
+        "Đọc hồ sơ đơn từ và kiến nghị để nắm tình tiết và vấn đề."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 4,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+          "name": "Thuật ngữ pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+          "name": "Thuật ngữ pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L8",
+      "bandEquivalent": "L9",
+      "title": "Thẩm phán Tòa án nhân dân tối cao",
+      "years": "20+",
+      "coreOutput": null,
+      "tasks": [
+        "Tuyên án bị cáo trong vụ án hình sự khi bị kết tội, theo quy định của pháp luật.",
+        "Giám sát phiên toà để bảo đảm mọi quy tắc và thủ tục được tuân thủ.",
+        "Hướng dẫn bồi thẩm đoàn về luật áp dụng, yêu cầu họ suy ra tình tiết từ chứng cứ và nghe phán quyết của họ.",
+        "Viết bản án cho các vụ việc.",
+        "Đọc hồ sơ đơn từ và kiến nghị để nắm tình tiết và vấn đề."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 5,
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+          "name": "Thuật ngữ pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+          "name": "Thủ tục toà án",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+          "name": "Diễn giải pháp luật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+          "name": "Thủ tục tố tụng dân sự",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+          "name": "Giữ bí mật thông tin",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+          "name": "Thuật ngữ pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+          "name": "Luật tư",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-23-1011.00",
+      "name": "Luật sư",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1031.00",
+      "name": "Chuyên viên thẩm định và bồi thường bảo hiểm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-23-2011.00",
+      "name": "Trợ lý pháp lý, chuyên viên pháp chế",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 5920000,
+    "median": 11132000,
+    "high": 20240000,
+    "byYears": [],
+    "source": "Bảng lương cán bộ, công chức 2026 (LuatVietnam) × lương cơ sở 2,53tr",
+    "dataYear": "2026",
+    "note": "Xếp ngạch theo cấp tòa lấy từ nguồn thứ cấp.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/db10b60e-efd2-4ba9-a873-d1e2ec37620f",
+      "name": "Thủ tục toà án",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5b71cb01-0f37-47e0-a617-abcf08c8aa64",
+      "name": "Diễn giải pháp luật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f85bb847-febe-4853-9dbf-7d25424e5921",
+      "name": "Thủ tục tố tụng dân sự",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8d202e22-85e9-47b1-a1e0-3296d17244cd",
+      "name": "Giữ bí mật thông tin",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c7e686a1-d03e-4641-a229-68247fdc5887",
+      "name": "Thuật ngữ pháp lý",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+      "name": "Luật dân sự",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3586cb90-3fff-48ae-847b-e28a6680a87a",
+      "name": "Luật tư",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 1.12
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.515
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.424
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.161
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.125
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.209
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -1.029
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

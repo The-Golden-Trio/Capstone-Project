@@ -1,0 +1,719 @@
+{
+  "code": "ONET-47-2073.00",
+  "name": "Người vận hành máy thi công",
+  "nameEn": "Operating Engineers and Other Construction Equipment Operators",
+  "group": "Xây dựng và khai khoáng",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Vận hành một hoặc nhiều loại máy thi công như máy san, máy ủi, máy cạp, máy nén khí, máy bơm, cần trục, máy xúc, máy kéo hoặc máy xúc lật để đào, chuyển và san đất, dựng công trình hoặc đổ bê tông, mặt đường. Có thể sửa chữa và bảo dưỡng máy. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Chịu rung lắc toàn thân khi vận hành máy hoặc xe.",
+    "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Làm cạnh máy móc hoặc dụng cụ nguy hiểm, có nguy cơ tai nạn."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "33% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "69% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 80
+    },
+    {
+      "name": "Mỏ than, mỏ khoáng sản",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [
+      "Vận hành máy xây dựng",
+      "Vận hành máy xúc thủy lực",
+      "Vận hành máy thi công nền"
+    ],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Phụ máy thi công",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Học và tuân thủ quy định an toàn.",
+        "Chủ động tránh mối nguy và vật cản như đường điện, máy khác, người làm việc hoặc vật rơi.",
+        "Khởi động máy, điều khiển ga, công tắc, cần gạt hoặc bàn đạp để vận hành máy ủi, máy đào rãnh, máy san hoặc máy xúc đào.",
+        "Phối hợp thao tác máy với các hoạt động khác, di chuyển tải theo tín hiệu tay hoặc âm thanh của tổ đội.",
+        "Căn chỉnh máy, đầu cắt hoặc thước đo độ sâu theo cọc mốc và đường căn, hoặc định vị máy theo tín hiệu tay của người khác."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+          "name": "Vận hành máy xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+          "name": "Đào rãnh cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+          "name": "Bảo quản máy xây dựng hạng nặng",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ vận hành máy thi công bậc 1–2",
+      "years": "0–4",
+      "coreOutput": null,
+      "tasks": [
+        "Học và tuân thủ quy định an toàn.",
+        "Chủ động tránh mối nguy và vật cản như đường điện, máy khác, người làm việc hoặc vật rơi.",
+        "Khởi động máy, điều khiển ga, công tắc, cần gạt hoặc bàn đạp để vận hành máy ủi, máy đào rãnh, máy san hoặc máy xúc đào.",
+        "Phối hợp thao tác máy với các hoạt động khác, di chuyển tải theo tín hiệu tay hoặc âm thanh của tổ đội.",
+        "Căn chỉnh máy, đầu cắt hoặc thước đo độ sâu theo cọc mốc và đường căn, hoặc định vị máy theo tín hiệu tay của người khác."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+          "name": "Vận hành máy xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+          "name": "Đào rãnh cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+          "name": "Bảo quản máy xây dựng hạng nặng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+          "name": "Vận hành máy xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+          "name": "Đào rãnh cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+          "name": "Bảo quản máy xây dựng hạng nặng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4aeba43-dab5-47fa-89ba-f957ecc86657",
+          "name": "San phẳng mặt đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f9f0410-5db0-4b3b-8de3-1ded1600c719",
+          "name": "Kiểm tra công trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/907039e2-5b33-4ea5-96ca-b6082711b491",
+          "name": "Nhận biết nguy cơ của hàng nguy hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b8c1e014-1f54-480a-bf0f-2ef3d2d275e8",
+          "name": "Lái máy thi công hạng nặng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ vận hành máy bậc 3",
+      "years": "4–8",
+      "coreOutput": null,
+      "tasks": [
+        "Học và tuân thủ quy định an toàn.",
+        "Chủ động tránh mối nguy và vật cản như đường điện, máy khác, người làm việc hoặc vật rơi.",
+        "Khởi động máy, điều khiển ga, công tắc, cần gạt hoặc bàn đạp để vận hành máy ủi, máy đào rãnh, máy san hoặc máy xúc đào.",
+        "Phối hợp thao tác máy với các hoạt động khác, di chuyển tải theo tín hiệu tay hoặc âm thanh của tổ đội.",
+        "Căn chỉnh máy, đầu cắt hoặc thước đo độ sâu theo cọc mốc và đường căn, hoặc định vị máy theo tín hiệu tay của người khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+          "name": "Vận hành máy xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+          "name": "Đào rãnh cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+          "name": "Bảo quản máy xây dựng hạng nặng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4aeba43-dab5-47fa-89ba-f957ecc86657",
+          "name": "San phẳng mặt đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f9f0410-5db0-4b3b-8de3-1ded1600c719",
+          "name": "Kiểm tra công trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/907039e2-5b33-4ea5-96ca-b6082711b491",
+          "name": "Nhận biết nguy cơ của hàng nguy hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b8c1e014-1f54-480a-bf0f-2ef3d2d275e8",
+          "name": "Lái máy thi công hạng nặng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+          "name": "Vận hành máy xúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+          "name": "Đào rãnh cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+          "name": "Bảo quản máy xây dựng hạng nặng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4aeba43-dab5-47fa-89ba-f957ecc86657",
+          "name": "San phẳng mặt đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f9f0410-5db0-4b3b-8de3-1ded1600c719",
+          "name": "Kiểm tra công trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/907039e2-5b33-4ea5-96ca-b6082711b491",
+          "name": "Nhận biết nguy cơ của hàng nguy hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b8c1e014-1f54-480a-bf0f-2ef3d2d275e8",
+          "name": "Lái máy thi công hạng nặng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f5148bb-1eb0-473d-a312-50e4ed24159f",
+          "name": "Cấp dụng cụ và vật tư phù hợp cho máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bece91-c806-42ad-bde4-db28c7f8fc4b",
+          "name": "Hệ thống cơ khí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thợ vận hành máy bậc 4 (máy lớn, máy chuyên dụng)",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Học và tuân thủ quy định an toàn.",
+        "Chủ động tránh mối nguy và vật cản như đường điện, máy khác, người làm việc hoặc vật rơi.",
+        "Khởi động máy, điều khiển ga, công tắc, cần gạt hoặc bàn đạp để vận hành máy ủi, máy đào rãnh, máy san hoặc máy xúc đào.",
+        "Phối hợp thao tác máy với các hoạt động khác, di chuyển tải theo tín hiệu tay hoặc âm thanh của tổ đội.",
+        "Căn chỉnh máy, đầu cắt hoặc thước đo độ sâu theo cọc mốc và đường căn, hoặc định vị máy theo tín hiệu tay của người khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+          "name": "Vận hành máy xúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+          "name": "Đào rãnh cống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+          "name": "Bảo quản máy xây dựng hạng nặng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4aeba43-dab5-47fa-89ba-f957ecc86657",
+          "name": "San phẳng mặt đất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f9f0410-5db0-4b3b-8de3-1ded1600c719",
+          "name": "Kiểm tra công trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/907039e2-5b33-4ea5-96ca-b6082711b491",
+          "name": "Nhận biết nguy cơ của hàng nguy hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b8c1e014-1f54-480a-bf0f-2ef3d2d275e8",
+          "name": "Lái máy thi công hạng nặng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f5148bb-1eb0-473d-a312-50e4ed24159f",
+          "name": "Cấp dụng cụ và vật tư phù hợp cho máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bece91-c806-42ad-bde4-db28c7f8fc4b",
+          "name": "Hệ thống cơ khí",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+          "name": "Vận hành máy xúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+          "name": "Đào rãnh cống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+          "name": "Bảo quản máy xây dựng hạng nặng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4aeba43-dab5-47fa-89ba-f957ecc86657",
+          "name": "San phẳng mặt đất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f9f0410-5db0-4b3b-8de3-1ded1600c719",
+          "name": "Kiểm tra công trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/907039e2-5b33-4ea5-96ca-b6082711b491",
+          "name": "Nhận biết nguy cơ của hàng nguy hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b8c1e014-1f54-480a-bf0f-2ef3d2d275e8",
+          "name": "Lái máy thi công hạng nặng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f5148bb-1eb0-473d-a312-50e4ed24159f",
+          "name": "Cấp dụng cụ và vật tư phù hợp cho máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bece91-c806-42ad-bde4-db28c7f8fc4b",
+          "name": "Hệ thống cơ khí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Tổ trưởng/đội trưởng cơ giới",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Học và tuân thủ quy định an toàn.",
+        "Chủ động tránh mối nguy và vật cản như đường điện, máy khác, người làm việc hoặc vật rơi.",
+        "Khởi động máy, điều khiển ga, công tắc, cần gạt hoặc bàn đạp để vận hành máy ủi, máy đào rãnh, máy san hoặc máy xúc đào.",
+        "Phối hợp thao tác máy với các hoạt động khác, di chuyển tải theo tín hiệu tay hoặc âm thanh của tổ đội.",
+        "Căn chỉnh máy, đầu cắt hoặc thước đo độ sâu theo cọc mốc và đường căn, hoặc định vị máy theo tín hiệu tay của người khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+          "name": "Vận hành máy xúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+          "name": "Đào rãnh cống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+          "name": "Bảo quản máy xây dựng hạng nặng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4aeba43-dab5-47fa-89ba-f957ecc86657",
+          "name": "San phẳng mặt đất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f9f0410-5db0-4b3b-8de3-1ded1600c719",
+          "name": "Kiểm tra công trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/907039e2-5b33-4ea5-96ca-b6082711b491",
+          "name": "Nhận biết nguy cơ của hàng nguy hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b8c1e014-1f54-480a-bf0f-2ef3d2d275e8",
+          "name": "Lái máy thi công hạng nặng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f5148bb-1eb0-473d-a312-50e4ed24159f",
+          "name": "Cấp dụng cụ và vật tư phù hợp cho máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bece91-c806-42ad-bde4-db28c7f8fc4b",
+          "name": "Hệ thống cơ khí",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+          "name": "Vận hành máy xúc",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+          "name": "Đào rãnh cống",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+          "name": "Bảo quản máy xây dựng hạng nặng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f4aeba43-dab5-47fa-89ba-f957ecc86657",
+          "name": "San phẳng mặt đất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f9f0410-5db0-4b3b-8de3-1ded1600c719",
+          "name": "Kiểm tra công trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/907039e2-5b33-4ea5-96ca-b6082711b491",
+          "name": "Nhận biết nguy cơ của hàng nguy hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b8c1e014-1f54-480a-bf0f-2ef3d2d275e8",
+          "name": "Lái máy thi công hạng nặng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f5148bb-1eb0-473d-a312-50e4ed24159f",
+          "name": "Cấp dụng cụ và vật tư phù hợp cho máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69bece91-c806-42ad-bde4-db28c7f8fc4b",
+          "name": "Hệ thống cơ khí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-47-2073.00",
+          "name": "Người vận hành máy thi công"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9021.00",
+          "name": "Quản lý xây dựng (chỉ huy trưởng công trình)"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-47-5041.00",
+      "name": "Công nhân khai thác mỏ, dầu khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7051.00",
+      "name": "Người vận hành xe nâng, cần cẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2021.00",
+      "name": "Thợ xây, ốp lát",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-3042.00",
+      "name": "Thợ sửa máy công trình, máy nông nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-9041.00",
+      "name": "Thợ bảo trì máy công nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 11000000,
+    "median": null,
+    "high": 16000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Lái Máy Công Trình\"",
+    "dataYear": "2026",
+    "note": "10 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 11–16tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 13.300.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+      "name": "Vận hành hệ thống GPS",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/978a76ca-0d14-43b5-a69d-1996dfeb22de",
+      "name": "Vận hành máy xúc",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/58d09a47-a3d3-487c-b315-7f78acc72c19",
+      "name": "Đào rãnh cống",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0c04d0af-af50-4463-8ce3-e9968e229237",
+      "name": "Bảo quản máy xây dựng hạng nặng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f4aeba43-dab5-47fa-89ba-f957ecc86657",
+      "name": "San phẳng mặt đất",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4f9f0410-5db0-4b3b-8de3-1ded1600c719",
+      "name": "Kiểm tra công trường",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/907039e2-5b33-4ea5-96ca-b6082711b491",
+      "name": "Nhận biết nguy cơ của hàng nguy hiểm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b8c1e014-1f54-480a-bf0f-2ef3d2d275e8",
+      "name": "Lái máy thi công hạng nặng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1f5148bb-1eb0-473d-a312-50e4ed24159f",
+      "name": "Cấp dụng cụ và vật tư phù hợp cho máy",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/69bece91-c806-42ad-bde4-db28c7f8fc4b",
+      "name": "Hệ thống cơ khí",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.132
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.349
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.541
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.563
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.574
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.637
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.947
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,725 @@
+{
+  "code": "ONET-53-7051.00",
+  "name": "Người vận hành xe nâng, cần cẩu",
+  "nameEn": "Industrial Truck and Tractor Operators",
+  "group": "Vận tải và bốc dỡ hàng hoá",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Vận hành xe nâng, xe kéo công nghiệp để chuyển vật liệu trong kho, bãi, nhà máy, công trường hoặc nơi tương tự. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Phải làm việc trên cao.",
+    "Nhịp làm việc do tốc độ máy móc quyết định.",
+    "Tiếp xúc với nhiệt độ rất nóng hoặc rất lạnh."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ít làm việc qua email.",
+    "71% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "44% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trên xe, tàu, máy bay", "Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Cảng biển, cảng cạn",
+      "weight": 40
+    },
+    {
+      "name": "Kho vận, trung tâm phân loại hàng",
+      "weight": 35
+    },
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Vận hành cần, cầu trục", "Xếp dỡ cơ giới tổng hợp"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Phụ cẩu, người ra tín hiệu (xi nhan)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Điều khiển cần gạt của thiết bị nâng như xe nâng, dầm nâng có móc xoay, palăng hoặc sàn nâng để bốc dỡ, chuyển hoặc xếp vật liệu.",
+        "Lái xe nâng, xe kéo chạy xăng hoặc điện để chuyển vật liệu giữa khu bốc xếp, sản xuất và lưu kho.",
+        "Bốc dỡ vật liệu bằng tay hoặc máy từ pallet, sàn, toa, thiết bị nâng hoặc phương tiện vận chuyển khác.",
+        "Đưa càng nâng vào dưới, trên hoặc quanh pallet, kiện hàng và cố định hàng để chuyển tới nơi quy định.",
+        "Kiểm tra độ chính xác của hàng và di chuyển an toàn trong kho, nhà máy để giao kịp và đủ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+          "name": "Vận hành thiết bị vô tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+          "name": "Đạt chuẩn lấy hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+          "name": "Kiểm soát chất độc hại cho sức khoẻ",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Người vận hành xe nâng (có chứng chỉ vận hành)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Điều khiển cần gạt của thiết bị nâng như xe nâng, dầm nâng có móc xoay, palăng hoặc sàn nâng để bốc dỡ, chuyển hoặc xếp vật liệu.",
+        "Lái xe nâng, xe kéo chạy xăng hoặc điện để chuyển vật liệu giữa khu bốc xếp, sản xuất và lưu kho.",
+        "Bốc dỡ vật liệu bằng tay hoặc máy từ pallet, sàn, toa, thiết bị nâng hoặc phương tiện vận chuyển khác.",
+        "Đưa càng nâng vào dưới, trên hoặc quanh pallet, kiện hàng và cố định hàng để chuyển tới nơi quy định.",
+        "Kiểm tra độ chính xác của hàng và di chuyển an toàn trong kho, nhà máy để giao kịp và đủ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+          "name": "Vận hành thiết bị vô tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+          "name": "Đạt chuẩn lấy hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+          "name": "Kiểm soát chất độc hại cho sức khoẻ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+          "name": "Vận hành thiết bị vô tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+          "name": "Đạt chuẩn lấy hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+          "name": "Kiểm soát chất độc hại cho sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7991b413-8e71-415d-bb6a-923ea154abc5",
+          "name": "Xếp pallet rỗng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089ee650-297e-4716-87d1-440743b70a0d",
+          "name": "Tuân thủ luật môi trường",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ vận hành cần cẩu bậc 2–3",
+      "years": "2–6",
+      "coreOutput": null,
+      "tasks": [
+        "Điều khiển cần gạt của thiết bị nâng như xe nâng, dầm nâng có móc xoay, palăng hoặc sàn nâng để bốc dỡ, chuyển hoặc xếp vật liệu.",
+        "Lái xe nâng, xe kéo chạy xăng hoặc điện để chuyển vật liệu giữa khu bốc xếp, sản xuất và lưu kho.",
+        "Bốc dỡ vật liệu bằng tay hoặc máy từ pallet, sàn, toa, thiết bị nâng hoặc phương tiện vận chuyển khác.",
+        "Đưa càng nâng vào dưới, trên hoặc quanh pallet, kiện hàng và cố định hàng để chuyển tới nơi quy định.",
+        "Kiểm tra độ chính xác của hàng và di chuyển an toàn trong kho, nhà máy để giao kịp và đủ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+          "name": "Vận hành thiết bị vô tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+          "name": "Đạt chuẩn lấy hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+          "name": "Kiểm soát chất độc hại cho sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7991b413-8e71-415d-bb6a-923ea154abc5",
+          "name": "Xếp pallet rỗng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089ee650-297e-4716-87d1-440743b70a0d",
+          "name": "Tuân thủ luật môi trường",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+          "name": "Vận hành thiết bị vô tuyến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+          "name": "Đạt chuẩn lấy hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+          "name": "Kiểm soát chất độc hại cho sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7991b413-8e71-415d-bb6a-923ea154abc5",
+          "name": "Xếp pallet rỗng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089ee650-297e-4716-87d1-440743b70a0d",
+          "name": "Tuân thủ luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e883d55a-75ae-460b-ba0a-47fecf14f1b3",
+          "name": "Lưu kho hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thợ vận hành cẩu bậc 4 (cẩu cảng, cẩu lớn)",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Điều khiển cần gạt của thiết bị nâng như xe nâng, dầm nâng có móc xoay, palăng hoặc sàn nâng để bốc dỡ, chuyển hoặc xếp vật liệu.",
+        "Lái xe nâng, xe kéo chạy xăng hoặc điện để chuyển vật liệu giữa khu bốc xếp, sản xuất và lưu kho.",
+        "Bốc dỡ vật liệu bằng tay hoặc máy từ pallet, sàn, toa, thiết bị nâng hoặc phương tiện vận chuyển khác.",
+        "Đưa càng nâng vào dưới, trên hoặc quanh pallet, kiện hàng và cố định hàng để chuyển tới nơi quy định.",
+        "Kiểm tra độ chính xác của hàng và di chuyển an toàn trong kho, nhà máy để giao kịp và đủ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+          "name": "Vận hành thiết bị vô tuyến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+          "name": "Đạt chuẩn lấy hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+          "name": "Kiểm soát chất độc hại cho sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7991b413-8e71-415d-bb6a-923ea154abc5",
+          "name": "Xếp pallet rỗng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089ee650-297e-4716-87d1-440743b70a0d",
+          "name": "Tuân thủ luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e883d55a-75ae-460b-ba0a-47fecf14f1b3",
+          "name": "Lưu kho hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+          "name": "Vận hành thiết bị vô tuyến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+          "name": "Đạt chuẩn lấy hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+          "name": "Kiểm soát chất độc hại cho sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7991b413-8e71-415d-bb6a-923ea154abc5",
+          "name": "Xếp pallet rỗng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089ee650-297e-4716-87d1-440743b70a0d",
+          "name": "Tuân thủ luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e883d55a-75ae-460b-ba0a-47fecf14f1b3",
+          "name": "Lưu kho hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Tổ trưởng vận hành thiết bị nâng",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Điều khiển cần gạt của thiết bị nâng như xe nâng, dầm nâng có móc xoay, palăng hoặc sàn nâng để bốc dỡ, chuyển hoặc xếp vật liệu.",
+        "Lái xe nâng, xe kéo chạy xăng hoặc điện để chuyển vật liệu giữa khu bốc xếp, sản xuất và lưu kho.",
+        "Bốc dỡ vật liệu bằng tay hoặc máy từ pallet, sàn, toa, thiết bị nâng hoặc phương tiện vận chuyển khác.",
+        "Đưa càng nâng vào dưới, trên hoặc quanh pallet, kiện hàng và cố định hàng để chuyển tới nơi quy định.",
+        "Kiểm tra độ chính xác của hàng và di chuyển an toàn trong kho, nhà máy để giao kịp và đủ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+          "name": "Vận hành thiết bị vô tuyến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+          "name": "Đạt chuẩn lấy hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+          "name": "Kiểm soát chất độc hại cho sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7991b413-8e71-415d-bb6a-923ea154abc5",
+          "name": "Xếp pallet rỗng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089ee650-297e-4716-87d1-440743b70a0d",
+          "name": "Tuân thủ luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e883d55a-75ae-460b-ba0a-47fecf14f1b3",
+          "name": "Lưu kho hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+          "name": "Vận hành thiết bị vô tuyến",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+          "name": "Đạt chuẩn lấy hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+          "name": "Kiểm soát chất độc hại cho sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7991b413-8e71-415d-bb6a-923ea154abc5",
+          "name": "Xếp pallet rỗng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089ee650-297e-4716-87d1-440743b70a0d",
+          "name": "Tuân thủ luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e883d55a-75ae-460b-ba0a-47fecf14f1b3",
+          "name": "Lưu kho hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-53-7051.00",
+          "name": "Người vận hành xe nâng, cần cẩu"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-53-7021.00",
+          "name": "Người vận hành cần cẩu, cẩu tháp"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-53-1041.00",
+          "name": "Tổ trưởng bốc xếp hàng hoá hàng không"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-47-5041.00",
+      "name": "Công nhân khai thác mỏ, dầu khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2073.00",
+      "name": "Người vận hành máy thi công",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7062.00",
+      "name": "Công nhân bốc xếp, đóng gói",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-3042.00",
+      "name": "Thợ sửa máy công trình, máy nông nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-9041.00",
+      "name": "Thợ bảo trì máy công nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 8000000,
+    "median": null,
+    "high": 11000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Lái Xe Nâng\"",
+    "dataYear": "2026",
+    "note": "Chưa có số riêng cho lái cần cẩu. 36 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 8–11tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 9.500.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 22,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+      "name": "Xếp chồng hàng hoá",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0256f6b0-f4a9-4c5e-9cfd-96d58a2a70fe",
+      "name": "Vận hành thiết bị vô tuyến",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b01c93a8-43b0-4cf6-81c8-68a4f2ed93d9",
+      "name": "Đạt chuẩn lấy hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678",
+      "name": "Kiểm soát chất độc hại cho sức khoẻ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+      "name": "Vận hành thiết bị xử lý bưu kiện",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+      "name": "Vận hành vật tư kho",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7991b413-8e71-415d-bb6a-923ea154abc5",
+      "name": "Xếp pallet rỗng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/089ee650-297e-4716-87d1-440743b70a0d",
+      "name": "Tuân thủ luật môi trường",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e883d55a-75ae-460b-ba0a-47fecf14f1b3",
+      "name": "Lưu kho hàng hoá",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+      "name": "Áp dụng chính sách công ty",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.107
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.274
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.586
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.623
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.766
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.79
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -1.037
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

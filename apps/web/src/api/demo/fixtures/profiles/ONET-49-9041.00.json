@@ -1,0 +1,820 @@
+{
+  "code": "ONET-49-9041.00",
+  "name": "Thợ bảo trì máy công nghiệp",
+  "nameEn": "Industrial Machinery Mechanics",
+  "group": "Lắp đặt, bảo trì và sửa chữa",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Sửa chữa, lắp đặt, điều chỉnh hoặc bảo trì máy sản xuất, chế biến công nghiệp hoặc hệ thống phân phối của nhà máy lọc dầu và đường ống. Có thể lắp đặt, tháo dỡ hoặc di chuyển máy và thiết bị nặng theo phương án. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Phải làm việc trên cao.",
+    "Làm trong không gian chật hoặc tư thế khó.",
+    "Hay phải quỳ, cúi, khom hoặc bò."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Đứng phần lớn thời gian làm việc.",
+    "61% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "38% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 50
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 35
+    },
+    {
+      "name": "Nhà máy chế biến thực phẩm, thuỷ sản",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [
+      "Bảo trì hệ thống thiết bị công nghiệp",
+      "Bảo dưỡng công nghiệp"
+    ],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thợ phụ/học việc bảo trì máy công nghiệp",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Sửa chữa hoặc giữ tình trạng hoạt động của máy móc, thiết bị sản xuất, chế biến.",
+        "Sửa hoặc thay bộ phận gãy, hỏng của máy móc, thiết bị.",
+        "Làm sạch, bôi trơn hoặc chỉnh bộ phận, thiết bị, máy móc.",
+        "Tháo máy, thiết bị để lấy bộ phận ra sửa.",
+        "Lắp lại thiết bị sau khi kiểm tra, thử nghiệm hoặc sửa xong."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ bảo trì máy công nghiệp bậc 1",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Sửa chữa hoặc giữ tình trạng hoạt động của máy móc, thiết bị sản xuất, chế biến.",
+        "Sửa hoặc thay bộ phận gãy, hỏng của máy móc, thiết bị.",
+        "Làm sạch, bôi trơn hoặc chỉnh bộ phận, thiết bị, máy móc.",
+        "Tháo máy, thiết bị để lấy bộ phận ra sửa.",
+        "Lắp lại thiết bị sau khi kiểm tra, thử nghiệm hoặc sửa xong."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+          "name": "Kiểm tra máy định kỳ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ bảo trì máy công nghiệp bậc 2",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Sửa chữa hoặc giữ tình trạng hoạt động của máy móc, thiết bị sản xuất, chế biến.",
+        "Sửa hoặc thay bộ phận gãy, hỏng của máy móc, thiết bị.",
+        "Làm sạch, bôi trơn hoặc chỉnh bộ phận, thiết bị, máy móc.",
+        "Tháo máy, thiết bị để lấy bộ phận ra sửa.",
+        "Lắp lại thiết bị sau khi kiểm tra, thử nghiệm hoặc sửa xong."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+          "name": "Kiểm tra máy định kỳ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+          "name": "Kiểm tra máy định kỳ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87",
+          "name": "Sơ đồ đi dây điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thợ bảo trì máy công nghiệp bậc 3",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Sửa chữa hoặc giữ tình trạng hoạt động của máy móc, thiết bị sản xuất, chế biến.",
+        "Sửa hoặc thay bộ phận gãy, hỏng của máy móc, thiết bị.",
+        "Làm sạch, bôi trơn hoặc chỉnh bộ phận, thiết bị, máy móc.",
+        "Tháo máy, thiết bị để lấy bộ phận ra sửa.",
+        "Lắp lại thiết bị sau khi kiểm tra, thử nghiệm hoặc sửa xong."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+          "name": "Kiểm tra máy định kỳ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87",
+          "name": "Sơ đồ đi dây điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+          "name": "Kiểm tra máy định kỳ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87",
+          "name": "Sơ đồ đi dây điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Thợ cả bảo trì máy công nghiệp bậc 4",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Sửa chữa hoặc giữ tình trạng hoạt động của máy móc, thiết bị sản xuất, chế biến.",
+        "Sửa hoặc thay bộ phận gãy, hỏng của máy móc, thiết bị.",
+        "Làm sạch, bôi trơn hoặc chỉnh bộ phận, thiết bị, máy móc.",
+        "Tháo máy, thiết bị để lấy bộ phận ra sửa.",
+        "Lắp lại thiết bị sau khi kiểm tra, thử nghiệm hoặc sửa xong."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+          "name": "Kiểm tra máy định kỳ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87",
+          "name": "Sơ đồ đi dây điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+          "name": "Kiểm tra máy định kỳ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87",
+          "name": "Sơ đồ đi dây điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Tổ trưởng/trưởng ca bảo trì",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Sửa chữa hoặc giữ tình trạng hoạt động của máy móc, thiết bị sản xuất, chế biến.",
+        "Sửa hoặc thay bộ phận gãy, hỏng của máy móc, thiết bị.",
+        "Làm sạch, bôi trơn hoặc chỉnh bộ phận, thiết bị, máy móc.",
+        "Tháo máy, thiết bị để lấy bộ phận ra sửa.",
+        "Lắp lại thiết bị sau khi kiểm tra, thử nghiệm hoặc sửa xong."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+          "name": "Kiểm tra máy định kỳ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87",
+          "name": "Sơ đồ đi dây điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+          "name": "Ghi phiếu sửa chữa",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+          "name": "Các loại dầu bôi trơn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+          "name": "Kiểm tra máy định kỳ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87",
+          "name": "Sơ đồ đi dây điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-51-2092.00",
+      "name": "Công nhân lắp ráp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-3042.00",
+      "name": "Thợ sửa máy công trình, máy nông nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-2094.00",
+      "name": "Thợ sửa chữa điện, điện tử",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4041.00",
+      "name": "Thợ cơ khí, tiện phay CNC",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2152.00",
+      "name": "Thợ ống nước, đường ống",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10000000,
+    "median": 11500000,
+    "high": 13000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 336,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+      "name": "Cơ học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708",
+      "name": "Ghi phiếu sửa chữa",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3364034e-78b0-4faf-8dab-6b40bec41159",
+      "name": "Các loại dầu bôi trơn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/65a3a184-7d11-4db9-9b85-281961d1514b",
+      "name": "Kiểm tra máy định kỳ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+      "name": "Kiểm tra thiết bị công nghiệp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+      "name": "Dùng thiết bị thử nghiệm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+      "name": "Giải quyết vấn đề kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87",
+      "name": "Sơ đồ đi dây điện",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+      "name": "Rào chắn khu vực làm việc",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+      "name": "Thuỷ lực",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.111
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.248
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.279
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.421
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.457
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.568
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.605
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

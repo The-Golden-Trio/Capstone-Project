@@ -1,0 +1,989 @@
+{
+  "code": "ONET-11-9021.00",
+  "name": "Quản lý xây dựng (chỉ huy trưởng công trình)",
+  "nameEn": "Construction Managers",
+  "group": "Quản lý",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Lập kế hoạch, chỉ đạo và điều phối, thường qua các giám sát cấp dưới, việc xây dựng và bảo trì công trình, cơ sở và hệ thống. Tham gia từ ý tưởng dự án và giám sát tổ chức, tiến độ, ngân sách, thi công. Gồm cả quản lý các mảng chuyên biệt như mộc hay cấp thoát nước. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "Phải làm việc trên cao.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "74% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "60% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 75
+    },
+    {
+      "name": "Chủ đầu tư, ban quản lý dự án",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Quản lý xây dựng", "Kỹ thuật xây dựng"],
+    "vocational": ["Quản lý xây dựng"],
+    "licence": "Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát) — Luật Xây dựng số 135/2025/QH15, Điều 88"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư giám sát thi công / cán bộ kỹ thuật hiện trường",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra dự án để bảo đảm tuân thủ quy chuẩn xây dựng, an toàn và các quy định khác.",
+        "Xây dựng hoặc thực hiện chương trình quản lý chất lượng.",
+        "Lên kế hoạch, tiến độ và điều phối hoạt động của dự án xây dựng để kịp thời hạn.",
+        "Lập và nộp dự toán ngân sách, báo cáo tiến độ hoặc báo cáo theo dõi chi phí.",
+        "Chỉ đạo và giám sát công nhân xây dựng và nhân sự liên quan."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp L3 ở một nghề đi trước: Kỹ sư xây dựng, Kiến trúc sư, Kỹ sư dự toán (QS), Kỹ sư trắc địa, bản đồ",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chỉ huy trưởng công trường hạng III",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra dự án để bảo đảm tuân thủ quy chuẩn xây dựng, an toàn và các quy định khác.",
+        "Xây dựng hoặc thực hiện chương trình quản lý chất lượng.",
+        "Lên kế hoạch, tiến độ và điều phối hoạt động của dự án xây dựng để kịp thời hạn.",
+        "Lập và nộp dự toán ngân sách, báo cáo tiến độ hoặc báo cáo theo dõi chi phí.",
+        "Chỉ đạo và giám sát công nhân xây dựng và nhân sự liên quan."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Chỉ huy trưởng công trường hạng II",
+      "years": "4–8",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra dự án để bảo đảm tuân thủ quy chuẩn xây dựng, an toàn và các quy định khác.",
+        "Xây dựng hoặc thực hiện chương trình quản lý chất lượng.",
+        "Lên kế hoạch, tiến độ và điều phối hoạt động của dự án xây dựng để kịp thời hạn.",
+        "Lập và nộp dự toán ngân sách, báo cáo tiến độ hoặc báo cáo theo dõi chi phí.",
+        "Chỉ đạo và giám sát công nhân xây dựng và nhân sự liên quan."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Chỉ huy trưởng công trường hạng I",
+      "years": "7–12",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra dự án để bảo đảm tuân thủ quy chuẩn xây dựng, an toàn và các quy định khác.",
+        "Xây dựng hoặc thực hiện chương trình quản lý chất lượng.",
+        "Lên kế hoạch, tiến độ và điều phối hoạt động của dự án xây dựng để kịp thời hạn.",
+        "Lập và nộp dự toán ngân sách, báo cáo tiến độ hoặc báo cáo theo dõi chi phí.",
+        "Chỉ đạo và giám sát công nhân xây dựng và nhân sự liên quan."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L8",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc dự án / giám đốc thi công",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra dự án để bảo đảm tuân thủ quy chuẩn xây dựng, an toàn và các quy định khác.",
+        "Xây dựng hoặc thực hiện chương trình quản lý chất lượng.",
+        "Lên kế hoạch, tiến độ và điều phối hoạt động của dự án xây dựng để kịp thời hạn.",
+        "Lập và nộp dự toán ngân sách, báo cáo tiến độ hoặc báo cáo theo dõi chi phí.",
+        "Chỉ đạo và giám sát công nhân xây dựng và nhân sự liên quan."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "tu_quan_ly_ap_luc": 4,
+        "giao_tiep_hop_tac": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L9",
+      "bandEquivalent": "L9",
+      "title": "Tổng giám đốc doanh nghiệp xây dựng",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra dự án để bảo đảm tuân thủ quy chuẩn xây dựng, an toàn và các quy định khác.",
+        "Xây dựng hoặc thực hiện chương trình quản lý chất lượng.",
+        "Lên kế hoạch, tiến độ và điều phối hoạt động của dự án xây dựng để kịp thời hạn.",
+        "Lập và nộp dự toán ngân sách, báo cáo tiến độ hoặc báo cáo theo dõi chi phí.",
+        "Chỉ đạo và giám sát công nhân xây dựng và nhân sự liên quan."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 5,
+        "tu_quan_ly_ap_luc": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+          "name": "Xác định vật liệu xây dựng từ bản vẽ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+          "name": "Lập kế hoạch xây nhà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "name": "Tuân thủ yêu cầu pháp lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+          "name": "Kiểm tra tuân thủ trong xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+          "name": "Thực hành công trình xanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2021.00",
+      "name": "Thợ xây, ốp lát",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 21500000,
+    "median": 22500000,
+    "high": 27500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 71,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+      "name": "Quản lý dự án",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+      "name": "Quản lý chi phí",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/82e8931a-ba6c-4c14-9611-e56fca33a2b9",
+      "name": "Xác định vật liệu xây dựng từ bản vẽ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+      "name": "Tiêu chuẩn chất lượng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d7a67428-3afb-4bbd-932b-f6718ca489c5",
+      "name": "Lập kế hoạch xây nhà",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+      "name": "Tuân thủ yêu cầu pháp lý",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+      "name": "Lập hồ sơ thi công",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1b71f0d0-8e57-44dc-aaa0-3ee6fbb59991",
+      "name": "Kiểm tra tuân thủ trong xây dựng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+      "name": "Đọc hiểu yêu cầu kỹ thuật",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c3ac5c4c-b4b9-4842-b871-43e12cfc0442",
+      "name": "Thực hành công trình xanh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 1.672
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 1.191
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.685
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.678
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.666
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.46
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.236
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "PREREQUISITE",
+    "band": "L3",
+    "roles": [
+      {
+        "code": "ONET-17-2051.00",
+        "name": "Kỹ sư xây dựng"
+      },
+      {
+        "code": "ONET-17-1011.00",
+        "name": "Kiến trúc sư"
+      },
+      {
+        "code": "ONET-13-1051.00",
+        "name": "Kỹ sư dự toán (QS)"
+      },
+      {
+        "code": "ONET-17-1022.00",
+        "name": "Kỹ sư trắc địa, bản đồ"
+      }
+    ]
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

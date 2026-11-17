@@ -1,0 +1,965 @@
+{
+  "code": "SWE_FRONTEND",
+  "name": "Lập trình viên Front-end",
+  "nameEn": "Frontend Developer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Lập trình viên Front-end xây phần giao diện mà người dùng nhìn thấy và bấm vào trên web: màn hình, nút, biểu mẫu, hiệu ứng. Việc hằng ngày là biến bản thiết kế thành mã chạy được trên nhiều trình duyệt và thiết bị, nối giao diện với dữ liệu từ máy chủ, và giữ cho trang tải nhanh. Kết quả hiện ngay trên màn hình nên dễ thấy mình đã làm được gì.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Thường phải dung hoà giữa bản thiết kế đẹp và giới hạn kỹ thuật thật, như hiệu ứng không chạy mượt trên máy yếu hay trình duyệt cũ.",
+    "Công nghệ front-end đổi nhanh, phải tự học liên tục để không bị tụt lại.",
+    "Nhiều nơi tuyển, nhất là công ty gia công, đòi tiếng Anh ngay từ cấp thực tập.",
+    "Trong khảo sát của ITviec, ít cơ hội thăng chức và tăng lương là hai lý do nghỉ việc hay gặp."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Được tự quyết nhiều trong công việc.",
+    "62% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "25% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 45
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 40
+    },
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật phần mềm",
+      "Công nghệ thông tin",
+      "Khoa học máy tính"
+    ],
+    "vocational": ["Lập trình máy tính", "Thiết kế trang web"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Frontend Engineer Intern",
+      "years": "0",
+      "coreOutput": "Hiện thực component giao diện và tính năng nhỏ bằng React hoặc Vue dưới sự kèm cặp trực tiếp của kỹ sư có kinh nghiệm, tham gia code review với vai trò người học, và chưa chịu trách nhiệm về chất lượng sản phẩm cuối.",
+      "tasks": [
+        "Hiện thực và bảo trì component giao diện theo coding standard có sẵn",
+        "Viết và kiểm thử tính năng mới trong phạm vi task được giao",
+        "Hỗ trợ debug và tinh chỉnh hoạt động của ứng dụng",
+        "Chuyển wireframe và bản thiết kế thành prototype chạy được",
+        "Tham gia buổi thiết kế và code review với vai trò quan sát, đóng góp ý kiến",
+        "Dựng nhanh prototype để thử ý tưởng và thu phản hồi người dùng"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Fresher Frontend Engineer",
+      "years": "0-1",
+      "coreOutput": "Được phân vào một đội thật và làm tính năng có người dùng dưới sự kèm cặp sát của mentor được chỉ định, tự hoàn thành được phạm vi nhỏ đã giao và biết escalate sớm khi vượt tầm, nhưng chưa tự chịu trách nhiệm về kết quả cuối.",
+      "tasks": [
+        "Xây ứng dụng hướng người dùng trên nền React trong phạm vi tính năng được giao",
+        "Hiện thực giao diện, tạo component tái sử dụng, xử lý trạng thái loading/empty/error",
+        "Viết kiểm thử tự động cho luồng nghiệp vụ quan trọng",
+        "Tham gia đẩy sản phẩm lên staging và production, theo dõi log"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Junior Frontend Engineer",
+      "years": "1-3",
+      "coreOutput": "Tự hiện thực trọn vẹn một tính năng frontend trong phạm vi đã được xác định bằng ReactJS hoặc Vue, tham gia code review hai chiều với đồng nghiệp, nhưng quyết định về kiến trúc và lựa chọn thư viện vẫn do người khác đưa ra.",
+      "tasks": [
+        "Hiện thực end-to-end một tính năng giao diện, phối hợp trực tiếp với Product và Design",
+        "Tham gia code review và buổi thiết kế kiến trúc",
+        "Tích hợp API, quản lý state, xử lý debug trên trình duyệt",
+        "Đảm bảo code đạt chuẩn chất lượng và hiệu năng của team"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+          "name": "Hệ thống tên miền (DNS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+          "name": "Quy trình phát triển nội dung",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle Frontend Engineer",
+      "years": "3-5",
+      "coreOutput": "Chịu trách nhiệm end-to-end một luồng tính năng frontend, tự quyết định cách hiện thực và cấu trúc component trong khung kiến trúc tổng thể do người khác đặt ra, review code cho đồng nghiệp và tối ưu hiệu năng ứng dụng.",
+      "tasks": [
+        "Thiết kế và xây dựng dịch vụ frontend cho sản phẩm, viết code tối ưu và tái sử dụng được",
+        "Review code và đưa phản hồi về vấn đề tiềm ẩn cho đồng nghiệp",
+        "Phân tích, debug và xử lý lỗi phức tạp",
+        "Tối ưu ứng dụng về tốc độ và khả năng mở rộng",
+        "Ra quyết định kiến trúc ở cấp component, dựa trên kiến trúc tổng thể đã được cung cấp",
+        "Viết tài liệu kỹ thuật",
+        "Hướng dẫn kỹ sư cấp dưới trong squad",
+        "Đào tạo lập trình viên fresher/junior trong đội"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+          "name": "Hệ thống tên miền (DNS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+          "name": "Quy trình phát triển nội dung",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+          "name": "Hệ thống tên miền (DNS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+          "name": "Quy trình phát triển nội dung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior Frontend Engineer",
+      "years": "3-8 (rất phân tán: FinX 3+, NAB 4+ và 5+, Xenith 5+, DataXight 5+, Employment Hero 5+)",
+      "coreOutput": "Định hình chuẩn kỹ thuật frontend cho cả một sản phẩm — design system, kiến trúc component, chiến lược kiểm thử — và mentor kỹ sư cấp dưới thông qua code review, nhưng không quản lý con người.",
+      "tasks": [
+        "Định hình chuẩn UI, hệ thống component và thực hành kỹ thuật frontend của tổ chức",
+        "Chịu trách nhiệm thiết kế kỹ thuật và tối ưu hiệu năng cho sản phẩm của team",
+        "Xây dựng và đóng góp vào design system dùng chung",
+        "Hiện thực giao diện phức tạp hướng dữ liệu: dashboard, công cụ trực quan hoá",
+        "Tối ưu hiệu năng với tập dữ liệu lớn",
+        "Mentor kỹ sư cấp dưới qua code review và chia sẻ kiến thức, không quản lý trực tiếp",
+        "Phối hợp với PM ở khâu nghiên cứu và cải thiện UX/UI"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+          "name": "Hệ thống tên miền (DNS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+          "name": "Quy trình phát triển nội dung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+          "name": "Hệ thống tên miền (DNS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+          "name": "Quy trình phát triển nội dung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Lead Frontend Engineer",
+      "years": "7-10 (kèm 2+ năm ở vai trò dẫn dắt)",
+      "coreOutput": "Tự do ra quyết định kiến trúc và code ở phạm vi component mình phụ trách trong khung kiến trúc giải pháp do cấp trên đưa xuống, phản biện được quyết định của kỹ sư khác qua peer review, và đã từng dẫn dắt cùng coaching ít nhất một đội kỹ sư.",
+      "tasks": [
+        "Phối hợp với các technology leader để cải thiện và hiện thực định hướng kỹ thuật của tổ chức",
+        "Thiết kế, phát triển, review và quản lý code frontend cho môi trường production",
+        "Thiết kế và quản lý continuous integration, build management và deployment script",
+        "Ra quyết định kiến trúc và code ở cấp component mình phụ trách",
+        "Peer review code của người khác, đề xuất thay đổi và phản biện quyết định",
+        "Dẫn dắt và coaching một đội kỹ sư phần mềm qua nhiều dự án"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+          "name": "Hệ thống tên miền (DNS)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+          "name": "Quy trình phát triển nội dung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+          "name": "Hệ thống tên miền (DNS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+          "name": "Quy trình phát triển nội dung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Principal Frontend Engineer",
+      "years": "5-12 (ANDPAD 8+, Money Forward 5+ kèm 2+ năm leadership, Axon 10+)",
+      "coreOutput": "Đặt định hướng kỹ thuật frontend xuyên nhiều đội, review thiết kế và code của kỹ sư khác, và tham gia định nghĩa yêu cầu cùng product manager thay vì chỉ hiện thực yêu cầu đã có.",
+      "tasks": [
+        "Thiết kế và hiện thực phần chức năng phụ trách của sản phẩm bằng ReactJS",
+        "Định nghĩa yêu cầu và đặc tả kỹ thuật cùng product manager và designer",
+        "Review thiết kế và code của các kỹ sư khác trong tổ chức",
+        "Đặt và duy trì chuẩn kỹ thuật cao thông qua architecture design review",
+        "Mentor kỹ sư senior ở nhiều đội khác nhau",
+        "Xây dựng chuẩn phát triển cho toàn công ty và thực hiện technical audit định kỳ",
+        "Kiến trúc và phát triển thư viện dùng chung xử lý thiết kế và tương tác phức tạp"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+          "name": "Hệ thống tên miền (DNS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+          "name": "Quy trình phát triển nội dung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+          "name": "Dựng giao diện front-end cho website",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+          "name": "Hệ thống tên miền (DNS)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+          "name": "Quy trình phát triển nội dung",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "SWE_FRONTEND",
+          "name": "Lập trình viên Front-end"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "SWE_TECHLEAD",
+          "name": "Trưởng nhóm kỹ thuật"
+        },
+        {
+          "code": "SWE_ARCH_SOL",
+          "name": "Kiến trúc sư giải pháp"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "SWE_UIUX",
+      "name": "Chuyên viên thiết kế UI/UX",
+      "why": "Cùng làm phần người dùng nhìn thấy: UI/UX thiết kế, Frontend hiện thực"
+    },
+    {
+      "code": "SWE_MOBILE",
+      "name": "Lập trình viên Mobile / Kỹ sư ứng dụng di động",
+      "why": "Cùng làm giao diện; React Native khiến hai nghề chồng lấn mạnh"
+    },
+    {
+      "code": "SWE_BACKEND",
+      "name": "Lập trình viên Back-end / Kỹ sư Back-end",
+      "why": "Hai nửa của một ứng dụng web, thường làm việc cặp với nhau"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": 34800000,
+    "high": null,
+    "byYears": [
+      {
+        "years": "3-4 năm",
+        "median": 30800000
+      },
+      {
+        "years": "5-8 năm",
+        "median": 41800000
+      },
+      {
+        "years": ">8 năm",
+        "median": 46300000
+      }
+    ],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 15,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+      "name": "Lập trình máy tính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+      "name": "Gỡ lỗi phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c4b1f326-224a-420a-b8b3-814a8f13b6cb",
+      "name": "Dựng giao diện front-end cho website",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+      "name": "Dùng giao diện riêng của ứng dụng (như API)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+      "name": "Dịch vụ web",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+      "name": "Làm bản mẫu phần mềm (prototype)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/071233c4-ad2b-4f50-b79f-768d2231163e",
+      "name": "Hệ thống tên miền (DNS)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+      "name": "Phân tích đặc tả phần mềm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e74f4f21-8d45-412c-b5c3-652e6167ee32",
+      "name": "Quy trình phát triển nội dung",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+      "name": "Môi trường phát triển tích hợp (IDE)",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.921
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.562
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.388
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.21
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.355
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.586
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.697
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

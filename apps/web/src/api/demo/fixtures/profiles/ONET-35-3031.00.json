@@ -1,0 +1,812 @@
+{
+  "code": "ONET-35-3031.00",
+  "name": "Nhân viên phục vụ nhà hàng",
+  "nameEn": "Waiters and Waitresses",
+  "group": "Chế biến và phục vụ ăn uống",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Nhận gọi món và phục vụ đồ ăn, đồ uống cho khách tại bàn trong nhà hàng. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Phải đi lại hoặc chạy nhiều.",
+    "Phải đứng trong phần lớn thời gian làm việc.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Lặp đi lặp lại cùng một động tác."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "11% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "26% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Chuỗi nhà hàng, cà phê, đồ ăn nhanh",
+      "weight": 45
+    },
+    {
+      "name": "Nhà hàng, quán cà phê, bar độc lập",
+      "weight": 35
+    },
+    {
+      "name": "Khách sạn, resort 4–5 sao",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Quản trị nhà hàng"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Nhân viên phục vụ part-time/runner",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền của khách.",
+        "Kiểm tra giấy tờ tuỳ thân để bảo đảm khách đủ tuổi dùng đồ uống có cồn.",
+        "Ghi món khách gọi vào phiếu, ghi nhớ hoặc nhập vào máy để chuyển cho bếp.",
+        "Hỏi thăm khách có hài lòng với bữa ăn không và xử lý khi có vấn đề.",
+        "Nhận gọi đồ ăn, đồ uống của khách."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên phục vụ nhà hàng",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền của khách.",
+        "Kiểm tra giấy tờ tuỳ thân để bảo đảm khách đủ tuổi dùng đồ uống có cồn.",
+        "Ghi món khách gọi vào phiếu, ghi nhớ hoặc nhập vào máy để chuyển cho bếp.",
+        "Hỏi thăm khách có hài lòng với bữa ăn không và xử lý khi có vấn đề.",
+        "Nhận gọi đồ ăn, đồ uống của khách."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+          "name": "Phục vụ rượu vang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+          "name": "Giới thiệu thực đơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+          "name": "Hỗ trợ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+          "name": "Chú ý chi tiết món ăn, đồ uống",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Phục vụ chính/trưởng dãy (captain)",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền của khách.",
+        "Kiểm tra giấy tờ tuỳ thân để bảo đảm khách đủ tuổi dùng đồ uống có cồn.",
+        "Ghi món khách gọi vào phiếu, ghi nhớ hoặc nhập vào máy để chuyển cho bếp.",
+        "Hỏi thăm khách có hài lòng với bữa ăn không và xử lý khi có vấn đề.",
+        "Nhận gọi đồ ăn, đồ uống của khách."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+          "name": "Phục vụ rượu vang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+          "name": "Giới thiệu thực đơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+          "name": "Hỗ trợ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+          "name": "Chú ý chi tiết món ăn, đồ uống",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+          "name": "Phục vụ rượu vang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+          "name": "Giới thiệu thực đơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+          "name": "Hỗ trợ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+          "name": "Chú ý chi tiết món ăn, đồ uống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9895150-fbb5-42ec-8087-8e5d7ed5fcf3",
+          "name": "Pha đồ uống có cồn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Giám sát nhà hàng",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền của khách.",
+        "Kiểm tra giấy tờ tuỳ thân để bảo đảm khách đủ tuổi dùng đồ uống có cồn.",
+        "Ghi món khách gọi vào phiếu, ghi nhớ hoặc nhập vào máy để chuyển cho bếp.",
+        "Hỏi thăm khách có hài lòng với bữa ăn không và xử lý khi có vấn đề.",
+        "Nhận gọi đồ ăn, đồ uống của khách."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+          "name": "Phục vụ rượu vang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+          "name": "Giới thiệu thực đơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+          "name": "Hỗ trợ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+          "name": "Chú ý chi tiết món ăn, đồ uống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9895150-fbb5-42ec-8087-8e5d7ed5fcf3",
+          "name": "Pha đồ uống có cồn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+          "name": "Phục vụ rượu vang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+          "name": "Giới thiệu thực đơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+          "name": "Hỗ trợ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+          "name": "Chú ý chi tiết món ăn, đồ uống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9895150-fbb5-42ec-8087-8e5d7ed5fcf3",
+          "name": "Pha đồ uống có cồn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Quản lý nhà hàng",
+      "years": "4+",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền của khách.",
+        "Kiểm tra giấy tờ tuỳ thân để bảo đảm khách đủ tuổi dùng đồ uống có cồn.",
+        "Ghi món khách gọi vào phiếu, ghi nhớ hoặc nhập vào máy để chuyển cho bếp.",
+        "Hỏi thăm khách có hài lòng với bữa ăn không và xử lý khi có vấn đề.",
+        "Nhận gọi đồ ăn, đồ uống của khách."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+          "name": "Phục vụ rượu vang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+          "name": "Giới thiệu thực đơn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+          "name": "Hỗ trợ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+          "name": "Chú ý chi tiết món ăn, đồ uống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9895150-fbb5-42ec-8087-8e5d7ed5fcf3",
+          "name": "Pha đồ uống có cồn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+          "name": "Phục vụ rượu vang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+          "name": "Giới thiệu thực đơn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+          "name": "Hỗ trợ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+          "name": "Chú ý chi tiết món ăn, đồ uống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9895150-fbb5-42ec-8087-8e5d7ed5fcf3",
+          "name": "Pha đồ uống có cồn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Giám đốc ẩm thực (F&B manager) khách sạn",
+      "years": "7+",
+      "coreOutput": null,
+      "tasks": [
+        "Thu tiền của khách.",
+        "Kiểm tra giấy tờ tuỳ thân để bảo đảm khách đủ tuổi dùng đồ uống có cồn.",
+        "Ghi món khách gọi vào phiếu, ghi nhớ hoặc nhập vào máy để chuyển cho bếp.",
+        "Hỏi thăm khách có hài lòng với bữa ăn không và xử lý khi có vấn đề.",
+        "Nhận gọi đồ ăn, đồ uống của khách."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+          "name": "Phục vụ rượu vang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+          "name": "Giới thiệu thực đơn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+          "name": "Hỗ trợ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+          "name": "Chú ý chi tiết món ăn, đồ uống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9895150-fbb5-42ec-8087-8e5d7ed5fcf3",
+          "name": "Pha đồ uống có cồn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+          "name": "Nhận gọi món",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+          "name": "Chế độ ăn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+          "name": "Phục vụ rượu vang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+          "name": "Giới thiệu thực đơn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+          "name": "Hỗ trợ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+          "name": "Chú ý chi tiết món ăn, đồ uống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d9895150-fbb5-42ec-8087-8e5d7ed5fcf3",
+          "name": "Pha đồ uống có cồn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+          "name": "Pha đồ uống nóng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-35-3031.00",
+          "name": "Nhân viên phục vụ nhà hàng"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9051.00",
+          "name": "Quản lý nhà hàng"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-35-2014.00",
+      "name": "Đầu bếp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-35-3023.01",
+      "name": "Nhân viên pha chế (barista, bartender)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4081.00",
+      "name": "Lễ tân khách sạn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 7500000,
+    "median": 8500000,
+    "high": 11000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 71,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/704bed2c-737a-4585-b840-1d28bbcab9b4",
+      "name": "Nhận gọi món",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+      "name": "Duy trì dịch vụ khách hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/655d3d08-680a-40ea-8ffd-7e66916272fb",
+      "name": "Chế độ ăn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/44773391-78b7-4500-b421-96a9ca622a99",
+      "name": "Phục vụ rượu vang",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b7553d1b-31b4-42e6-b6be-2a90189ef7d6",
+      "name": "Giới thiệu thực đơn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/61970f8b-099c-4e7e-82e0-9ccdced0baf3",
+      "name": "Hỗ trợ khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5ef6d0cf-1ce3-487e-97e6-90670353d030",
+      "name": "Chú ý chi tiết món ăn, đồ uống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d9895150-fbb5-42ec-8087-8e5d7ed5fcf3",
+      "name": "Pha đồ uống có cồn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+      "name": "Phục vụ bàn",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e4fb4f26-1c0c-45e4-9250-5be32cee2a48",
+      "name": "Pha đồ uống nóng",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.477
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.456
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.582
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.948
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -1.053
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -1.286
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -1.396
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

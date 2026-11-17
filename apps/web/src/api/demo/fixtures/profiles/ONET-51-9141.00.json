@@ -1,0 +1,711 @@
+{
+  "code": "ONET-51-9141.00",
+  "name": "Kỹ thuật viên sản xuất bán dẫn",
+  "nameEn": "Semiconductor Processing Technicians",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Làm một hoặc nhiều công đoạn trong sản xuất linh kiện bán dẫn: nạp vật liệu bán dẫn vào lò; cưa thỏi thành đoạn; nạp đoạn vào buồng nuôi tinh thể và theo dõi; xác định trục tinh thể bằng máy X-quang và cưa thỏi thành tấm wafer; làm sạch, đánh bóng và nạp wafer vào các lò, bể hoá chất và thiết bị dùng để tạo mạch và thay đổi tính dẫn điện. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc.",
+    "Thường xuyên phải làm gấp cho kịp hạn.",
+    "Lặp đi lặp lại cùng một động tác.",
+    "Nhịp làm việc do tốc độ máy móc quyết định."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "22% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Nhà máy công nghệ cao, phòng sạch",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": ["Công nghệ bán dẫn"],
+    "vocational": [
+      "Công nghệ sản xuất chip bán dẫn",
+      "Kiểm thử và đóng gói vi mạch"
+    ],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học viên kỹ thuật phòng sạch",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra vật liệu, linh kiện, sản phẩm để tìm lỗi bề mặt và đo mạch bằng thiết bị thử điện tử, dụng cụ đo chính xác, kính hiển vi theo quy trình chuẩn.",
+        "Đọc lệnh sản xuất, hướng dẫn, công thức và sơ đồ quy trình để nắm yêu cầu và trình tự công đoạn.",
+        "Làm sạch tấm wafer bằng bể hoá chất, máy làm sạch tự động hoặc súng thổi khí.",
+        "Lưu thông tin và báo cáo về gia công, sản xuất và kiểm tra.",
+        "Đặt tấm wafer vào hộp hoặc giá giữ của thiết bị bằng que hút chân không hoặc nhíp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+          "name": "Đọc bản vẽ lắp ráp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+          "name": "Bảo đảm đúng thông số kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+          "name": "Linh kiện chiếu sáng LED",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ thuật viên vận hành máy (Operator)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra vật liệu, linh kiện, sản phẩm để tìm lỗi bề mặt và đo mạch bằng thiết bị thử điện tử, dụng cụ đo chính xác, kính hiển vi theo quy trình chuẩn.",
+        "Đọc lệnh sản xuất, hướng dẫn, công thức và sơ đồ quy trình để nắm yêu cầu và trình tự công đoạn.",
+        "Làm sạch tấm wafer bằng bể hoá chất, máy làm sạch tự động hoặc súng thổi khí.",
+        "Lưu thông tin và báo cáo về gia công, sản xuất và kiểm tra.",
+        "Đặt tấm wafer vào hộp hoặc giá giữ của thiết bị bằng que hút chân không hoặc nhíp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+          "name": "Đọc bản vẽ lắp ráp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+          "name": "Bảo đảm đúng thông số kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+          "name": "Linh kiện chiếu sáng LED",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+          "name": "Đọc bản vẽ lắp ráp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+          "name": "Bảo đảm đúng thông số kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+          "name": "Linh kiện chiếu sáng LED",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cd87d80-9718-47e1-9ed4-cd85cbfebd0a",
+          "name": "Vi lắp ráp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a349fbfc-8b65-44f2-a112-761be2218cbc",
+          "name": "Báo cáo nguyên liệu sản xuất lỗi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5e17773-3a63-40c5-99e4-10e036cf7b99",
+          "name": "Chất bán dẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36cf8d2c-3463-4147-8ea3-c423280087ab",
+          "name": "Loại bỏ sản phẩm lỗi",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ thuật viên thiết bị (Technician)",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra vật liệu, linh kiện, sản phẩm để tìm lỗi bề mặt và đo mạch bằng thiết bị thử điện tử, dụng cụ đo chính xác, kính hiển vi theo quy trình chuẩn.",
+        "Đọc lệnh sản xuất, hướng dẫn, công thức và sơ đồ quy trình để nắm yêu cầu và trình tự công đoạn.",
+        "Làm sạch tấm wafer bằng bể hoá chất, máy làm sạch tự động hoặc súng thổi khí.",
+        "Lưu thông tin và báo cáo về gia công, sản xuất và kiểm tra.",
+        "Đặt tấm wafer vào hộp hoặc giá giữ của thiết bị bằng que hút chân không hoặc nhíp."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+          "name": "Đọc bản vẽ lắp ráp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+          "name": "Bảo đảm đúng thông số kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+          "name": "Linh kiện chiếu sáng LED",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cd87d80-9718-47e1-9ed4-cd85cbfebd0a",
+          "name": "Vi lắp ráp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a349fbfc-8b65-44f2-a112-761be2218cbc",
+          "name": "Báo cáo nguyên liệu sản xuất lỗi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5e17773-3a63-40c5-99e4-10e036cf7b99",
+          "name": "Chất bán dẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36cf8d2c-3463-4147-8ea3-c423280087ab",
+          "name": "Loại bỏ sản phẩm lỗi",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+          "name": "Đọc bản vẽ lắp ráp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+          "name": "Bảo đảm đúng thông số kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+          "name": "Linh kiện chiếu sáng LED",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cd87d80-9718-47e1-9ed4-cd85cbfebd0a",
+          "name": "Vi lắp ráp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a349fbfc-8b65-44f2-a112-761be2218cbc",
+          "name": "Báo cáo nguyên liệu sản xuất lỗi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5e17773-3a63-40c5-99e4-10e036cf7b99",
+          "name": "Chất bán dẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36cf8d2c-3463-4147-8ea3-c423280087ab",
+          "name": "Loại bỏ sản phẩm lỗi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b9f4584-da2e-44e2-a2fb-4dd4fc64c1a2",
+          "name": "Mạch tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36aa8d72-84b2-4abc-a30b-cdee19363cb3",
+          "name": "Đo chi tiết sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ thuật viên cao cấp (Senior Technician)",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra vật liệu, linh kiện, sản phẩm để tìm lỗi bề mặt và đo mạch bằng thiết bị thử điện tử, dụng cụ đo chính xác, kính hiển vi theo quy trình chuẩn.",
+        "Đọc lệnh sản xuất, hướng dẫn, công thức và sơ đồ quy trình để nắm yêu cầu và trình tự công đoạn.",
+        "Làm sạch tấm wafer bằng bể hoá chất, máy làm sạch tự động hoặc súng thổi khí.",
+        "Lưu thông tin và báo cáo về gia công, sản xuất và kiểm tra.",
+        "Đặt tấm wafer vào hộp hoặc giá giữ của thiết bị bằng que hút chân không hoặc nhíp."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+          "name": "Đọc bản vẽ lắp ráp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+          "name": "Bảo đảm đúng thông số kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+          "name": "Linh kiện chiếu sáng LED",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cd87d80-9718-47e1-9ed4-cd85cbfebd0a",
+          "name": "Vi lắp ráp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a349fbfc-8b65-44f2-a112-761be2218cbc",
+          "name": "Báo cáo nguyên liệu sản xuất lỗi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5e17773-3a63-40c5-99e4-10e036cf7b99",
+          "name": "Chất bán dẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36cf8d2c-3463-4147-8ea3-c423280087ab",
+          "name": "Loại bỏ sản phẩm lỗi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b9f4584-da2e-44e2-a2fb-4dd4fc64c1a2",
+          "name": "Mạch tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36aa8d72-84b2-4abc-a30b-cdee19363cb3",
+          "name": "Đo chi tiết sản phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+          "name": "Đọc bản vẽ lắp ráp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+          "name": "Bảo đảm đúng thông số kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+          "name": "Linh kiện chiếu sáng LED",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cd87d80-9718-47e1-9ed4-cd85cbfebd0a",
+          "name": "Vi lắp ráp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a349fbfc-8b65-44f2-a112-761be2218cbc",
+          "name": "Báo cáo nguyên liệu sản xuất lỗi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5e17773-3a63-40c5-99e4-10e036cf7b99",
+          "name": "Chất bán dẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36cf8d2c-3463-4147-8ea3-c423280087ab",
+          "name": "Loại bỏ sản phẩm lỗi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b9f4584-da2e-44e2-a2fb-4dd4fc64c1a2",
+          "name": "Mạch tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36aa8d72-84b2-4abc-a30b-cdee19363cb3",
+          "name": "Đo chi tiết sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng ca kỹ thuật",
+      "years": "6+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra vật liệu, linh kiện, sản phẩm để tìm lỗi bề mặt và đo mạch bằng thiết bị thử điện tử, dụng cụ đo chính xác, kính hiển vi theo quy trình chuẩn.",
+        "Đọc lệnh sản xuất, hướng dẫn, công thức và sơ đồ quy trình để nắm yêu cầu và trình tự công đoạn.",
+        "Làm sạch tấm wafer bằng bể hoá chất, máy làm sạch tự động hoặc súng thổi khí.",
+        "Lưu thông tin và báo cáo về gia công, sản xuất và kiểm tra.",
+        "Đặt tấm wafer vào hộp hoặc giá giữ của thiết bị bằng que hút chân không hoặc nhíp."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+          "name": "Đọc bản vẽ lắp ráp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+          "name": "Bảo đảm đúng thông số kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+          "name": "Linh kiện chiếu sáng LED",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cd87d80-9718-47e1-9ed4-cd85cbfebd0a",
+          "name": "Vi lắp ráp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a349fbfc-8b65-44f2-a112-761be2218cbc",
+          "name": "Báo cáo nguyên liệu sản xuất lỗi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5e17773-3a63-40c5-99e4-10e036cf7b99",
+          "name": "Chất bán dẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36cf8d2c-3463-4147-8ea3-c423280087ab",
+          "name": "Loại bỏ sản phẩm lỗi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b9f4584-da2e-44e2-a2fb-4dd4fc64c1a2",
+          "name": "Mạch tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36aa8d72-84b2-4abc-a30b-cdee19363cb3",
+          "name": "Đo chi tiết sản phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+          "name": "Đọc bản vẽ lắp ráp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+          "name": "Bảo đảm đúng thông số kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+          "name": "Linh kiện chiếu sáng LED",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9cd87d80-9718-47e1-9ed4-cd85cbfebd0a",
+          "name": "Vi lắp ráp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a349fbfc-8b65-44f2-a112-761be2218cbc",
+          "name": "Báo cáo nguyên liệu sản xuất lỗi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5e17773-3a63-40c5-99e4-10e036cf7b99",
+          "name": "Chất bán dẫn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36cf8d2c-3463-4147-8ea3-c423280087ab",
+          "name": "Loại bỏ sản phẩm lỗi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2b9f4584-da2e-44e2-a2fb-4dd4fc64c1a2",
+          "name": "Mạch tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/36aa8d72-84b2-4abc-a30b-cdee19363cb3",
+          "name": "Đo chi tiết sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-9141.00",
+          "name": "Kỹ thuật viên sản xuất bán dẫn"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-4041.00",
+      "name": "Thợ cơ khí, tiện phay CNC",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-8091.00",
+      "name": "Vận hành nhà máy hoá chất, lọc dầu, khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-2092.00",
+      "name": "Công nhân lắp ráp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-6031.00",
+      "name": "Công nhân may mặc, da giày",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 7000000,
+    "median": null,
+    "high": 30000000,
+    "byYears": [],
+    "source": "Sài Gòn Giải Phóng, dẫn khảo sát Hội Vi mạch bán dẫn TP.HCM",
+    "dataYear": "2024",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 5,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/2feeef46-05cf-445c-9ca1-c96a30e10106",
+      "name": "Đọc bản vẽ lắp ráp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/efc5534d-3631-4564-a7b0-f6ae558f3c03",
+      "name": "Bảo đảm đúng thông số kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/80d8e893-44ef-442a-a796-f1660acd570e",
+      "name": "Linh kiện chiếu sáng LED",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+      "name": "Điện tử",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9cd87d80-9718-47e1-9ed4-cd85cbfebd0a",
+      "name": "Vi lắp ráp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a349fbfc-8b65-44f2-a112-761be2218cbc",
+      "name": "Báo cáo nguyên liệu sản xuất lỗi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e5e17773-3a63-40c5-99e4-10e036cf7b99",
+      "name": "Chất bán dẫn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/36cf8d2c-3463-4147-8ea3-c423280087ab",
+      "name": "Loại bỏ sản phẩm lỗi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2b9f4584-da2e-44e2-a2fb-4dd4fc64c1a2",
+      "name": "Mạch tích hợp",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/36aa8d72-84b2-4abc-a30b-cdee19363cb3",
+      "name": "Đo chi tiết sản phẩm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.087
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.067
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.078
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.157
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.43
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.698
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.704
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

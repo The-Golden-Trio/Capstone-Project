@@ -1,9 +1,15 @@
 import nx from '@nx/eslint-plugin';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
+  {
+    // Staff có chỉ thị exhaustive-deps trong hook; đăng ký plugin để ESLint đọc được.
+    files: ['apps/staff/**/*.{ts,tsx}'],
+    plugins: { 'react-hooks': reactHooks },
+  },
   {
     ignores: [
       '**/dist',

@@ -1,5 +1,6 @@
+import { Button, Dialog } from '@datn/ui';
 import { useState } from 'react';
-import { Button, Dialog, TextArea } from '../../components/ui';
+import { TextArea } from '../../components/ui';
 
 /** Yêu cầu AI sửa một phần (`requestRevision`, SD-05 vòng sửa). */
 export function RevisionDialog({
@@ -21,10 +22,12 @@ export function RevisionDialog({
       title={`Sửa bằng AI: ${label}`}
       footer={
         <>
-          <Button onClick={onClose}>Huỷ</Button>
+          <Button variant="subtle" onClick={onClose}>
+            Huỷ
+          </Button>
           <Button
             variant="primary"
-            busy={busy}
+            loading={busy}
             disabled={!request.trim()}
             onClick={() => onSubmit(request)}
           >
@@ -33,7 +36,7 @@ export function RevisionDialog({
         </>
       }
     >
-      <p className="mb-2 text-[13px] text-muted">
+      <p className="mb-2 text-[13px] text-ink-faint">
         AI sửa phần đã lưu gần nhất. Kết quả hiện vào trình soạn để bạn xem; chỉ
         ghi khi bạn bấm Lưu.
       </p>

@@ -1,0 +1,883 @@
+{
+  "code": "ONET-11-1021.00",
+  "name": "Giám đốc điều hành, quản lý vận hành",
+  "nameEn": "General and Operations Managers",
+  "group": "Quản lý",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Lập kế hoạch, điều hành và điều phối hoạt động của tổ chức nhà nước hoặc tư nhân, giám sát nhiều phòng ban hoặc chi nhánh. Xây dựng chính sách, quản lý vận hành hằng ngày và lên kế hoạch sử dụng vật tư, nhân lực; phạm vi rộng, không gói trong một mảng chức năng như nhân sự hay mua hàng. Thường quản lý thông qua các trưởng bộ phận. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Chịu trách nhiệm trực tiếp về sức khoẻ và an toàn của người khác.",
+    "Thường xuyên gặp tình huống xung đột với người khác."
+  ],
+  "workFacts": [
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Được tự quyết nhiều trong công việc.",
+    "70% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "16% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Văn phòng doanh nghiệp vừa và nhỏ trong nước",
+      "weight": 50
+    },
+    {
+      "name": "Văn phòng tập đoàn lớn trong nước",
+      "weight": 30
+    },
+    {
+      "name": "Văn phòng công ty nước ngoài, đa quốc gia",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Quản trị kinh doanh", "Khoa học quản lý", "Kinh tế học"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Giám sát vận hành (Supervisor)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Xem báo cáo tài chính, doanh số, hoạt động và các số liệu kết quả để đo năng suất, mức đạt mục tiêu, hoặc tìm chỗ cần cắt giảm chi phí, cải tiến.",
+        "Chỉ đạo và điều phối các bộ phận liên quan đến sản xuất, định giá, bán hàng hoặc phân phối sản phẩm.",
+        "Chỉ đạo các hoạt động hành chính gắn trực tiếp với việc làm ra sản phẩm hoặc cung cấp dịch vụ.",
+        "Lập lịch làm việc và phân công nhiệm vụ cho nhân viên.",
+        "Chỉ đạo hoặc điều phối tài chính, ngân sách để có vốn hoạt động, tối đa hoá đầu tư hoặc tăng hiệu quả."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp L4 ở một nghề đi trước: Quản lý sản xuất, Quản lý hành chính, Quản lý nhà hàng, Quản lý khách sạn, khu nghỉ dưỡng, Quản lý bất động sản, toà nhà, Chủ trang trại, quản lý nông nghiệp, Chuyên viên logistics và xuất nhập khẩu, Chuyên viên quản lý dự án, Kỹ sư công nghiệp, quản lý sản xuất",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng bộ phận vận hành",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Xem báo cáo tài chính, doanh số, hoạt động và các số liệu kết quả để đo năng suất, mức đạt mục tiêu, hoặc tìm chỗ cần cắt giảm chi phí, cải tiến.",
+        "Chỉ đạo và điều phối các bộ phận liên quan đến sản xuất, định giá, bán hàng hoặc phân phối sản phẩm.",
+        "Chỉ đạo các hoạt động hành chính gắn trực tiếp với việc làm ra sản phẩm hoặc cung cấp dịch vụ.",
+        "Lập lịch làm việc và phân công nhiệm vụ cho nhân viên.",
+        "Chỉ đạo hoặc điều phối tài chính, ngân sách để có vốn hoạt động, tối đa hoá đầu tư hoặc tăng hiệu quả."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Quản lý vận hành (Operations Manager)",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Xem báo cáo tài chính, doanh số, hoạt động và các số liệu kết quả để đo năng suất, mức đạt mục tiêu, hoặc tìm chỗ cần cắt giảm chi phí, cải tiến.",
+        "Chỉ đạo và điều phối các bộ phận liên quan đến sản xuất, định giá, bán hàng hoặc phân phối sản phẩm.",
+        "Chỉ đạo các hoạt động hành chính gắn trực tiếp với việc làm ra sản phẩm hoặc cung cấp dịch vụ.",
+        "Lập lịch làm việc và phân công nhiệm vụ cho nhân viên.",
+        "Chỉ đạo hoặc điều phối tài chính, ngân sách để có vốn hoạt động, tối đa hoá đầu tư hoặc tăng hiệu quả."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L8",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc vận hành (COO)",
+      "years": "12–18",
+      "coreOutput": null,
+      "tasks": [
+        "Xem báo cáo tài chính, doanh số, hoạt động và các số liệu kết quả để đo năng suất, mức đạt mục tiêu, hoặc tìm chỗ cần cắt giảm chi phí, cải tiến.",
+        "Chỉ đạo và điều phối các bộ phận liên quan đến sản xuất, định giá, bán hàng hoặc phân phối sản phẩm.",
+        "Chỉ đạo các hoạt động hành chính gắn trực tiếp với việc làm ra sản phẩm hoặc cung cấp dịch vụ.",
+        "Lập lịch làm việc và phân công nhiệm vụ cho nhân viên.",
+        "Chỉ đạo hoặc điều phối tài chính, ngân sách để có vốn hoạt động, tối đa hoá đầu tư hoặc tăng hiệu quả."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L9",
+      "bandEquivalent": "L9",
+      "title": "Tổng giám đốc (CEO)",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Xem báo cáo tài chính, doanh số, hoạt động và các số liệu kết quả để đo năng suất, mức đạt mục tiêu, hoặc tìm chỗ cần cắt giảm chi phí, cải tiến.",
+        "Chỉ đạo và điều phối các bộ phận liên quan đến sản xuất, định giá, bán hàng hoặc phân phối sản phẩm.",
+        "Chỉ đạo các hoạt động hành chính gắn trực tiếp với việc làm ra sản phẩm hoặc cung cấp dịch vụ.",
+        "Lập lịch làm việc và phân công nhiệm vụ cho nhân viên.",
+        "Chỉ đạo hoặc điều phối tài chính, ngân sách để có vốn hoạt động, tối đa hoá đầu tư hoặc tăng hiệu quả."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+          "name": "Quản lý chuỗi cung ứng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+          "name": "Quản trị vận hành",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+          "name": "Tuân thủ tiêu chuẩn công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+          "name": "Quản lý lợi nhuận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+          "name": "Trách nhiệm xã hội doanh nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+          "name": "Tiết kiệm năng lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-11-3012.00",
+      "name": "Quản lý hành chính",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-3051.00",
+      "name": "Quản lý sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-4012.00",
+      "name": "Nhân viên kinh doanh (sales B2B)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 14500000,
+    "median": 20000000,
+    "high": 43100000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 110,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f929c89e-c363-4132-a918-e021d57b307c",
+      "name": "Quản lý chuỗi cung ứng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+      "name": "Quản lý ngân sách",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2d140a3a-45a6-4248-80dd-b3760ebc9cc6",
+      "name": "Quản trị vận hành",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f5f5b244-6cea-4fbc-8a50-8f712791bc09",
+      "name": "Tuân thủ tiêu chuẩn công ty",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4cfc7ef6-e251-4c93-bd5e-fd6936dee11c",
+      "name": "Quản lý lợi nhuận",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+      "name": "Quản lý dự án",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+      "name": "Quản lý thay đổi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/66db424f-2abe-420d-8e5b-186607266b61",
+      "name": "Trách nhiệm xã hội doanh nghiệp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44",
+      "name": "Tiết kiệm năng lượng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+      "name": "Bảo đảm thiết bị sẵn sàng",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 1.641
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.934
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.793
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.641
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.627
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.536
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.261
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "PREREQUISITE",
+    "band": "L4",
+    "roles": [
+      {
+        "code": "ONET-11-3051.00",
+        "name": "Quản lý sản xuất"
+      },
+      {
+        "code": "ONET-11-3012.00",
+        "name": "Quản lý hành chính"
+      },
+      {
+        "code": "ONET-11-9051.00",
+        "name": "Quản lý nhà hàng"
+      },
+      {
+        "code": "ONET-11-9081.00",
+        "name": "Quản lý khách sạn, khu nghỉ dưỡng"
+      },
+      {
+        "code": "ONET-11-9141.00",
+        "name": "Quản lý bất động sản, toà nhà"
+      },
+      {
+        "code": "ONET-11-9013.00",
+        "name": "Chủ trang trại, quản lý nông nghiệp"
+      },
+      {
+        "code": "ONET-13-1081.00",
+        "name": "Chuyên viên logistics và xuất nhập khẩu"
+      },
+      {
+        "code": "ONET-13-1082.00",
+        "name": "Chuyên viên quản lý dự án"
+      },
+      {
+        "code": "ONET-17-2112.00",
+        "name": "Kỹ sư công nghiệp, quản lý sản xuất"
+      }
+    ]
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

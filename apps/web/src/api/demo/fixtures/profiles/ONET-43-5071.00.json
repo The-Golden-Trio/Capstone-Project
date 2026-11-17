@@ -1,0 +1,680 @@
+{
+  "code": "ONET-43-5071.00",
+  "name": "Nhân viên kho và kế hoạch vật tư",
+  "nameEn": "Shipping, Receiving, and Inventory Clerks",
+  "group": "Văn phòng và hỗ trợ hành chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Kiểm tra và ghi chép hàng nhập, hàng xuất liên quan đến tồn kho. Xác nhận, ghi nhận hàng hoá, vật tư nhập về và thu xếp vận chuyển sản phẩm. Có thể chuẩn bị hàng để gửi đi. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhịp làm việc do tốc độ máy móc quyết định.",
+    "Thường xuyên phải làm gấp cho kịp hạn.",
+    "Công việc lặp lại nhiều."
+  ],
+  "workFacts": [
+    "48% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "7% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Kho vận, trung tâm phân loại hàng",
+      "weight": 40
+    },
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 35
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": ["Logistics và Quản lý chuỗi cung ứng"],
+    "vocational": ["Quản lý kho hàng", "Quản trị kho vận"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Nhân viên kho thời vụ",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hàng trong lô và đối chiếu với chứng từ như bảng kê, hoá đơn hoặc đơn hàng.",
+        "Đề nghị cấp và cất giữ vật tư đóng gói để duy trì tồn kho.",
+        "Lập chứng từ như lệnh sản xuất, vận đơn hoặc lệnh xuất hàng để điều chuyển vật tư.",
+        "Đóng gói, niêm phong, dán nhãn hoặc dán tem để chuẩn bị gửi hàng bằng dụng cụ cầm tay, dụng cụ điện hoặc máy in cước.",
+        "Ghi dữ liệu lô hàng như trọng lượng, cước phí, chỗ trống, hư hỏng hoặc chênh lệch để báo cáo và kế toán."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên kho",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hàng trong lô và đối chiếu với chứng từ như bảng kê, hoá đơn hoặc đơn hàng.",
+        "Đề nghị cấp và cất giữ vật tư đóng gói để duy trì tồn kho.",
+        "Lập chứng từ như lệnh sản xuất, vận đơn hoặc lệnh xuất hàng để điều chuyển vật tư.",
+        "Đóng gói, niêm phong, dán nhãn hoặc dán tem để chuẩn bị gửi hàng bằng dụng cụ cầm tay, dụng cụ điện hoặc máy in cước.",
+        "Ghi dữ liệu lô hàng như trọng lượng, cước phí, chỗ trống, hư hỏng hoặc chênh lệch để báo cáo và kế toán."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+          "name": "Duy trì hệ thống kiểm soát kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+          "name": "Kiểm tra hàng hư hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "name": "Theo dõi mức tồn kho",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thủ kho/nhân viên kế hoạch vật tư",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hàng trong lô và đối chiếu với chứng từ như bảng kê, hoá đơn hoặc đơn hàng.",
+        "Đề nghị cấp và cất giữ vật tư đóng gói để duy trì tồn kho.",
+        "Lập chứng từ như lệnh sản xuất, vận đơn hoặc lệnh xuất hàng để điều chuyển vật tư.",
+        "Đóng gói, niêm phong, dán nhãn hoặc dán tem để chuẩn bị gửi hàng bằng dụng cụ cầm tay, dụng cụ điện hoặc máy in cước.",
+        "Ghi dữ liệu lô hàng như trọng lượng, cước phí, chỗ trống, hư hỏng hoặc chênh lệch để báo cáo và kế toán."
+      ],
+      "focus": ["giao_tiep_hop_tac", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+          "name": "Duy trì hệ thống kiểm soát kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+          "name": "Kiểm tra hàng hư hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "name": "Theo dõi mức tồn kho",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+          "name": "Duy trì hệ thống kiểm soát kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+          "name": "Kiểm tra hàng hư hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "name": "Theo dõi mức tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6",
+          "name": "Kiểm soát độ chính xác tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Giám sát kho/trưởng ca kho",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hàng trong lô và đối chiếu với chứng từ như bảng kê, hoá đơn hoặc đơn hàng.",
+        "Đề nghị cấp và cất giữ vật tư đóng gói để duy trì tồn kho.",
+        "Lập chứng từ như lệnh sản xuất, vận đơn hoặc lệnh xuất hàng để điều chuyển vật tư.",
+        "Đóng gói, niêm phong, dán nhãn hoặc dán tem để chuẩn bị gửi hàng bằng dụng cụ cầm tay, dụng cụ điện hoặc máy in cước.",
+        "Ghi dữ liệu lô hàng như trọng lượng, cước phí, chỗ trống, hư hỏng hoặc chênh lệch để báo cáo và kế toán."
+      ],
+      "focus": ["giao_tiep_hop_tac", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+          "name": "Duy trì hệ thống kiểm soát kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+          "name": "Kiểm tra hàng hư hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "name": "Theo dõi mức tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6",
+          "name": "Kiểm soát độ chính xác tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+          "name": "Duy trì hệ thống kiểm soát kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+          "name": "Kiểm tra hàng hư hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "name": "Theo dõi mức tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6",
+          "name": "Kiểm soát độ chính xác tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng kho (warehouse manager)",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hàng trong lô và đối chiếu với chứng từ như bảng kê, hoá đơn hoặc đơn hàng.",
+        "Đề nghị cấp và cất giữ vật tư đóng gói để duy trì tồn kho.",
+        "Lập chứng từ như lệnh sản xuất, vận đơn hoặc lệnh xuất hàng để điều chuyển vật tư.",
+        "Đóng gói, niêm phong, dán nhãn hoặc dán tem để chuẩn bị gửi hàng bằng dụng cụ cầm tay, dụng cụ điện hoặc máy in cước.",
+        "Ghi dữ liệu lô hàng như trọng lượng, cước phí, chỗ trống, hư hỏng hoặc chênh lệch để báo cáo và kế toán."
+      ],
+      "focus": ["giao_tiep_hop_tac", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+          "name": "Duy trì hệ thống kiểm soát kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+          "name": "Kiểm tra hàng hư hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "name": "Theo dõi mức tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6",
+          "name": "Kiểm soát độ chính xác tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+          "name": "Duy trì hệ thống kiểm soát kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+          "name": "Kiểm tra hàng hư hỏng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "name": "Theo dõi mức tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6",
+          "name": "Kiểm soát độ chính xác tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng kho vận/kế hoạch vật tư",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra hàng trong lô và đối chiếu với chứng từ như bảng kê, hoá đơn hoặc đơn hàng.",
+        "Đề nghị cấp và cất giữ vật tư đóng gói để duy trì tồn kho.",
+        "Lập chứng từ như lệnh sản xuất, vận đơn hoặc lệnh xuất hàng để điều chuyển vật tư.",
+        "Đóng gói, niêm phong, dán nhãn hoặc dán tem để chuẩn bị gửi hàng bằng dụng cụ cầm tay, dụng cụ điện hoặc máy in cước.",
+        "Ghi dữ liệu lô hàng như trọng lượng, cước phí, chỗ trống, hư hỏng hoặc chênh lệch để báo cáo và kế toán."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+          "name": "Duy trì hệ thống kiểm soát kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+          "name": "Kiểm tra hàng hư hỏng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "name": "Theo dõi mức tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6",
+          "name": "Kiểm soát độ chính xác tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "name": "Quản lý hàng tồn kho",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "name": "Dùng bảng tính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+          "name": "Duy trì hệ thống kiểm soát kho",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+          "name": "Kiểm tra hàng hư hỏng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "name": "Theo dõi mức tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6",
+          "name": "Kiểm soát độ chính xác tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-43-5071.00",
+          "name": "Nhân viên kho và kế hoạch vật tư"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3012.00",
+          "name": "Quản lý hành chính"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-53-7062.00",
+      "name": "Công nhân bốc xếp, đóng gói",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-5051.00",
+      "name": "Nhân viên bưu chính",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1081.00",
+      "name": "Chuyên viên logistics và xuất nhập khẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9061.00",
+      "name": "Nhân viên kiểm tra chất lượng sản xuất (QC)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1082.00",
+      "name": "Chuyên viên quản lý dự án",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 8500000,
+    "median": 9000000,
+    "high": 11000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 545,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+      "name": "Quản lý hàng tồn kho",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+      "name": "Dùng bảng tính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/de804504-bd5c-465d-b54f-9da299d8ee90",
+      "name": "Duy trì hệ thống kiểm soát kho",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8269dc3d-50ee-46b5-a742-a7d2cb7d90bb",
+      "name": "Kiểm tra hàng hư hỏng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+      "name": "Theo dõi mức tồn kho",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6",
+      "name": "Kiểm soát độ chính xác tồn kho",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+      "name": "Hệ thống mã sản phẩm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.111
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.199
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.289
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.484
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.488
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.631
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.723
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

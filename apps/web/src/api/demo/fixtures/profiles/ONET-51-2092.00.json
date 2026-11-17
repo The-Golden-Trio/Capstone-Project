@@ -1,0 +1,728 @@
+{
+  "code": "ONET-51-2092.00",
+  "name": "Công nhân lắp ráp",
+  "nameEn": "Team Assemblers",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Làm việc trong một tổ chịu trách nhiệm lắp ráp toàn bộ sản phẩm hoặc một cụm của sản phẩm. Công nhân làm được mọi việc của tổ trong quy trình lắp ráp và luân chuyển qua hầu hết các vị trí thay vì cố định một việc. Có thể tham gia quyết định về công việc. Gồm cả tổ trưởng cùng làm trong tổ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu.",
+    "Nhịp làm việc do tốc độ máy móc quyết định.",
+    "Làm cạnh máy móc hoặc dụng cụ nguy hiểm, có nguy cơ tai nạn."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Ít làm việc qua email.",
+    "36% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "21% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 75
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Công nhân học việc lắp ráp",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra chất lượng sản phẩm và chi tiết.",
+        "Xem lệnh sản xuất và bản vẽ để làm đúng yêu cầu kỹ thuật.",
+        "Luân chuyển qua mọi công đoạn của quy trình sản xuất.",
+        "Phân công công việc và quy trình làm.",
+        "Giám sát công nhân lắp ráp và đào tạo quy trình làm việc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+          "name": "Lắp đặt máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công nhân lắp ráp",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra chất lượng sản phẩm và chi tiết.",
+        "Xem lệnh sản xuất và bản vẽ để làm đúng yêu cầu kỹ thuật.",
+        "Luân chuyển qua mọi công đoạn của quy trình sản xuất.",
+        "Phân công công việc và quy trình làm.",
+        "Giám sát công nhân lắp ráp và đào tạo quy trình làm việc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+          "name": "Lắp đặt máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+          "name": "Lắp đặt máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87a0c0e6-c114-4ea1-b2d0-933bce1f3c5f",
+          "name": "Lắp ráp máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79aa4ec0-399d-432e-aae8-7a390ce89bcc",
+          "name": "Bảo trì thiết bị đã lắp đặt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Công nhân lắp ráp lành nghề",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra chất lượng sản phẩm và chi tiết.",
+        "Xem lệnh sản xuất và bản vẽ để làm đúng yêu cầu kỹ thuật.",
+        "Luân chuyển qua mọi công đoạn của quy trình sản xuất.",
+        "Phân công công việc và quy trình làm.",
+        "Giám sát công nhân lắp ráp và đào tạo quy trình làm việc."
+      ],
+      "focus": ["tri_tue_cam_xuc", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+          "name": "Lắp đặt máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87a0c0e6-c114-4ea1-b2d0-933bce1f3c5f",
+          "name": "Lắp ráp máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79aa4ec0-399d-432e-aae8-7a390ce89bcc",
+          "name": "Bảo trì thiết bị đã lắp đặt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+          "name": "Lắp đặt máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87a0c0e6-c114-4ea1-b2d0-933bce1f3c5f",
+          "name": "Lắp ráp máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79aa4ec0-399d-432e-aae8-7a390ce89bcc",
+          "name": "Bảo trì thiết bị đã lắp đặt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e4cdaee-740c-4754-9135-466362bbd22e",
+          "name": "Bảo dưỡng thiết bị công nghiệp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Công nhân kỹ thuật chuyền",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra chất lượng sản phẩm và chi tiết.",
+        "Xem lệnh sản xuất và bản vẽ để làm đúng yêu cầu kỹ thuật.",
+        "Luân chuyển qua mọi công đoạn của quy trình sản xuất.",
+        "Phân công công việc và quy trình làm.",
+        "Giám sát công nhân lắp ráp và đào tạo quy trình làm việc."
+      ],
+      "focus": ["tri_tue_cam_xuc", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+          "name": "Lắp đặt máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87a0c0e6-c114-4ea1-b2d0-933bce1f3c5f",
+          "name": "Lắp ráp máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79aa4ec0-399d-432e-aae8-7a390ce89bcc",
+          "name": "Bảo trì thiết bị đã lắp đặt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e4cdaee-740c-4754-9135-466362bbd22e",
+          "name": "Bảo dưỡng thiết bị công nghiệp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+          "name": "Lắp đặt máy móc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87a0c0e6-c114-4ea1-b2d0-933bce1f3c5f",
+          "name": "Lắp ráp máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79aa4ec0-399d-432e-aae8-7a390ce89bcc",
+          "name": "Bảo trì thiết bị đã lắp đặt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e4cdaee-740c-4754-9135-466362bbd22e",
+          "name": "Bảo dưỡng thiết bị công nghiệp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Tổ trưởng chuyền lắp ráp",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra chất lượng sản phẩm và chi tiết.",
+        "Xem lệnh sản xuất và bản vẽ để làm đúng yêu cầu kỹ thuật.",
+        "Luân chuyển qua mọi công đoạn của quy trình sản xuất.",
+        "Phân công công việc và quy trình làm.",
+        "Giám sát công nhân lắp ráp và đào tạo quy trình làm việc."
+      ],
+      "focus": ["tri_tue_cam_xuc", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+          "name": "Lắp đặt máy móc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87a0c0e6-c114-4ea1-b2d0-933bce1f3c5f",
+          "name": "Lắp ráp máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79aa4ec0-399d-432e-aae8-7a390ce89bcc",
+          "name": "Bảo trì thiết bị đã lắp đặt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e4cdaee-740c-4754-9135-466362bbd22e",
+          "name": "Bảo dưỡng thiết bị công nghiệp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+          "name": "Lắp đặt máy móc",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+          "name": "Chạy thử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+          "name": "Kiểm tra thiết bị công nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87a0c0e6-c114-4ea1-b2d0-933bce1f3c5f",
+          "name": "Lắp ráp máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79aa4ec0-399d-432e-aae8-7a390ce89bcc",
+          "name": "Bảo trì thiết bị đã lắp đặt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+          "name": "Bảo dưỡng máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+          "name": "Rào chắn khu vực làm việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e4cdaee-740c-4754-9135-466362bbd22e",
+          "name": "Bảo dưỡng thiết bị công nghiệp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-2092.00",
+          "name": "Công nhân lắp ráp"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-51-1011.00",
+          "name": "Tổ trưởng sản xuất"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-49-2094.00",
+      "name": "Thợ sửa chữa điện, điện tử",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4041.00",
+      "name": "Thợ cơ khí, tiện phay CNC",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-9041.00",
+      "name": "Thợ bảo trì máy công nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4121.00",
+      "name": "Thợ hàn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 8500000,
+    "median": 10000000,
+    "high": 11500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 41,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+      "name": "Vận hành thiết bị hàn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+      "name": "Cơ học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b1f71b18-4ccb-4334-bdd7-32b60c2aa272",
+      "name": "Lắp đặt máy móc",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/465ff64a-1271-4064-8ed1-e969cb68d8b4",
+      "name": "Chạy thử",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/94747ff4-603d-47d4-9780-bf53be41e190",
+      "name": "Kiểm tra thiết bị công nghiệp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/87a0c0e6-c114-4ea1-b2d0-933bce1f3c5f",
+      "name": "Lắp ráp máy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/79aa4ec0-399d-432e-aae8-7a390ce89bcc",
+      "name": "Bảo trì thiết bị đã lắp đặt",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8a4e99e0-f259-4931-888f-604cfdc15b31",
+      "name": "Bảo dưỡng máy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6ed2fb8d-3580-497f-8a21-30a0ada5caae",
+      "name": "Rào chắn khu vực làm việc",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3e4cdaee-740c-4754-9135-466362bbd22e",
+      "name": "Bảo dưỡng thiết bị công nghiệp",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.485
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.526
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.713
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.748
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.788
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.955
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.987
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

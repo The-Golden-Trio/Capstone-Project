@@ -1,16 +1,14 @@
+import {
+  Textarea,
+  Button,
+  LoadingBlock as Loading,
+  PageHeader,
+} from '@datn/ui';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { isProblem } from '../../api/client';
 import { staffApi } from '../../api/endpoints';
-import {
-  Button,
-  Card,
-  Loading,
-  Notice,
-  PageHeader,
-  ProblemAlert,
-  inputClass,
-} from '../../components/ui';
+import { Card, Notice, ProblemAlert } from '../../components/ui';
 import { cx } from '../../lib/cx';
 import { useLoad } from '../../hooks/useLoad';
 
@@ -61,26 +59,26 @@ export function ReviewCriteriaPage() {
     <>
       <PageHeader
         title="Tiêu chí duyệt"
-        subtitle={
+        description={
           current.data
             ? `Đang dùng phiên bản ${current.data.versionNo}. Lưu sẽ tạo phiên bản mới.`
             : 'Nghề chưa có tiêu chí — chưa duyệt được scenario nào (FR-32).'
         }
       />
       <ProblemAlert error={current.error ?? error} />
-      {saved && <Notice tone="good">Đã lưu phiên bản mới.</Notice>}
+      {saved && <Notice tone="success">Đã lưu phiên bản mới.</Notice>}
       {current.loading && current.data === undefined ? (
         <Loading />
-      ) : (
-        <Card>
+      ) : current.error ? null : (
+        <Card className="staff-paper paper">
           <ol className="space-y-2">
             {texts.map((t, i) => (
               <li key={i} className="flex items-start gap-2">
-                <span className="mt-1.5 w-5 text-muted">{i + 1}.</span>
-                <textarea
+                <span className="mt-1.5 w-5 text-ink-faint">{i + 1}.</span>
+                <Textarea
                   aria-label={`Tiêu chí ${i + 1}`}
                   rows={2}
-                  className={cx(inputClass, 'flex-1 resize-y')}
+                  className={cx('flex-1 resize-y')}
                   value={t}
                   onChange={(e) =>
                     setTexts(
@@ -99,13 +97,13 @@ export function ReviewCriteriaPage() {
               </li>
             ))}
           </ol>
-          <div className="mt-3 flex gap-2">
-            <Button onClick={() => setTexts([...texts, ''])}>
+          <div className="staff-action-bar mt-3">
+            <Button variant="subtle" onClick={() => setTexts([...texts, ''])}>
               + Thêm tiêu chí
             </Button>
             <Button
               variant="primary"
-              busy={busy}
+              loading={busy}
               disabled={!texts.some((t) => t.trim())}
               onClick={save}
             >

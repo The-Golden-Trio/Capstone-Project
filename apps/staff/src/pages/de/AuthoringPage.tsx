@@ -1,3 +1,13 @@
+import {
+  TabPanel,
+  Badge,
+  EmptyState,
+  Button,
+  Dialog,
+  LoadingBlock as Loading,
+  PageHeader,
+  Tabs,
+} from '@datn/ui';
 import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { isProblem } from '../../api/client';
@@ -9,17 +19,7 @@ import type {
   ScenarioDetail,
   StreamEvent,
 } from '../../api/types';
-import {
-  Badge,
-  Button,
-  Card,
-  Dialog,
-  Loading,
-  Notice,
-  PageHeader,
-  ProblemAlert,
-  Tabs,
-} from '../../components/ui';
+import { Card, Notice, ProblemAlert } from '../../components/ui';
 import { ContextForm } from '../../features/authoring/ContextForm';
 import { setAtPath } from '../../features/authoring/draft';
 import { ReferenceAnswers } from '../../features/authoring/ReferenceAnswers';
@@ -199,20 +199,21 @@ export function AuthoringPage() {
     <>
       <PageHeader
         title={d.taskTitle}
-        subtitle={
+        description={
           <span className="flex flex-wrap items-center gap-2">
             <StatusBadge status={d.status} />
             <span>L{d.levelNo}</span>
             <span>· phiên bản {d.version}</span>
             {d.reviewerName && <span>· người duyệt {d.reviewerName}</span>}
-            {dirty && <Badge tone="warn">Chưa lưu</Badge>}
+            {dirty && <Badge tone="warning">Chưa lưu</Badge>}
           </span>
         }
+        className="staff-sticky-header"
         actions={
           !readOnly && (
             <>
               <Button
-                busy={busy === 'save'}
+                loading={busy === 'save'}
                 disabled={!dirty || !content}
                 variant="primary"
                 onClick={save}
@@ -220,14 +221,16 @@ export function AuthoringPage() {
                 Lưu
               </Button>
               <Button
-                busy={busy === 'check'}
+                variant="subtle"
+                loading={busy === 'check'}
                 disabled={dirty || !d.content}
                 onClick={check}
               >
                 Kiểm tra
               </Button>
               <Button
-                busy={busy === 'submit'}
+                variant="subtle"
+                loading={busy === 'submit'}
                 disabled={
                   dirty || !d.content || !d.allowedActions.includes('SUBMIT')
                 }
@@ -246,7 +249,7 @@ export function AuthoringPage() {
             : 'Scenario đã nộp hoặc đã qua duyệt, nội dung chỉ đọc.'}
         </Notice>
       )}
-      {notice && <Notice tone="good">{notice}</Notice>}
+      {notice && <Notice tone="success">{notice}</Notice>}
       {pending && (
         <Notice>
           <span className="flex items-center gap-2">
@@ -261,130 +264,151 @@ export function AuthoringPage() {
       <ProblemAlert error={error} />
 
       <Tabs
+        idBase="authoring"
         label="Bước soạn"
         value={currentTab}
         onChange={setTab}
-        tabs={[
-          { id: 'context', label: 'Ngữ cảnh & sinh' },
-          { id: 'content', label: 'Nội dung' },
-          { id: 'references', label: 'Câu mẫu' },
+        items={[
+          { key: 'context', label: 'Ngữ cảnh & sinh' },
+          { key: 'content', label: 'Nội dung' },
+          { key: 'references', label: 'Câu mẫu' },
           {
-            id: 'checks',
+            key: 'checks',
             label: report
               ? `Kiểm tra ${report.passed ? '✓' : `(${report.failedRules.length})`}`
               : 'Kiểm tra',
           },
-          { id: 'history', label: 'Lịch sử' },
+          { key: 'history', label: 'Lịch sử' },
         ]}
       />
 
-      {currentTab === 'context' &&
-        (options.data ? (
-          <Card title="Ngữ cảnh và lựa chọn tình huống">
-            {d.content && !readOnly && (
-              <Notice tone="warn">
-                Sinh lại sẽ thay toàn bộ bản đang soạn khi bạn lưu kết quả mới.
-              </Notice>
-            )}
-            <ContextForm
-              options={options.data}
-              initial={{
-                context: d.authorContext,
-                archetype: d.archetype,
-                companyType: d.companyType,
-                competencyIds: d.skillIds,
-              }}
-              busy={busy === 'generate' || pending?.kind === 'generate'}
-              disabled={readOnly}
-              onGenerate={generate}
-            />
-          </Card>
-        ) : (
-          <ProblemAlert error={options.error} />
-        ))}
-
-      {currentTab === 'content' &&
-        (content ? (
-          <ScenarioEditor
-            content={content}
-            readOnly={readOnly}
-            skills={skills}
-            onChange={(next) => {
-              setDraft(next);
-              setDirty(true);
-            }}
-            onRevise={
-              dirty ? undefined : (part, label) => setRevising({ part, label })
-            }
-          />
-        ) : (
-          <Notice>
-            Chưa có nội dung. Viết ngữ cảnh ở bước đầu và để AI sinh bản nháp.
-          </Notice>
-        ))}
-
-      {currentTab === 'references' && content && (
-        <ReferenceAnswers
-          scenarioId={scenarioId}
-          content={content}
-          skills={skills}
-          readOnly={readOnly}
-          dirty={dirty}
-        />
-      )}
-
-      {currentTab === 'checks' && (
-        <Card title="Kiểm tra tự động">
-          {!report ? (
-            <p className="text-muted">
-              Bấm “Kiểm tra” để chạy luật trên bản đã lưu.
-            </p>
-          ) : report.passed ? (
-            <Notice tone="good">Đạt mọi luật. Có thể nộp duyệt.</Notice>
+      <TabPanel active idBase="authoring" tabKey={currentTab}>
+        {currentTab === 'context' &&
+          (options.data ? (
+            <Card title="Ngữ cảnh và lựa chọn tình huống">
+              {d.content && !readOnly && (
+                <Notice tone="warning">
+                  Sinh lại sẽ thay toàn bộ bản đang soạn khi bạn lưu kết quả
+                  mới.
+                </Notice>
+              )}
+              <ContextForm
+                options={options.data}
+                initial={{
+                  context: d.authorContext,
+                  archetype: d.archetype,
+                  companyType: d.companyType,
+                  competencyIds: d.skillIds,
+                }}
+                busy={busy === 'generate' || pending?.kind === 'generate'}
+                disabled={readOnly}
+                onGenerate={generate}
+              />
+            </Card>
           ) : (
-            <ul className="space-y-1">
-              {report.failedRules.map((f, i) => (
-                <li
-                  key={i}
-                  className="rounded-lg bg-bad-soft px-3 py-1.5 text-[13px] text-bad"
-                >
-                  <code className="font-mono text-[12px]">{f.rule}</code> ·{' '}
-                  {f.path}: {f.message}
-                </li>
-              ))}
-            </ul>
-          )}
-        </Card>
-      )}
+            <ProblemAlert error={options.error} />
+          ))}
 
-      {currentTab === 'history' && (
-        <div className="grid gap-4 lg:grid-cols-2">
-          <Card title="Vòng đời">
-            <HistoryTimeline scenarioId={scenarioId} refreshKey={historyKey} />
-          </Card>
-          <Card title="Các lần sinh bằng AI">
-            <ul className="space-y-2">
-              {(generations.data ?? []).map((g) => (
-                <li key={g.id} className="text-[13px]">
-                  <span className="font-medium">
-                    {g.kind === 'GENERATE' ? 'Sinh' : 'Sửa'}
-                  </span>{' '}
-                  · {formatDateTime(g.createdAt)} · {g.model || '—'} · $
-                  {g.costUsd.toFixed(4)}{' '}
-                  {g.checkPassed === true && (
-                    <Badge tone="good">qua kiểm</Badge>
-                  )}
-                  {g.checkPassed === false && (
-                    <Badge tone="warn">chưa qua kiểm</Badge>
-                  )}
-                  {g.status === 'FAILED' && <Badge tone="bad">lỗi</Badge>}
-                </li>
-              ))}
-            </ul>
-          </Card>
-        </div>
-      )}
+        {currentTab === 'content' &&
+          (content ? (
+            <ScenarioEditor
+              content={content}
+              readOnly={readOnly}
+              skills={skills}
+              onChange={(next) => {
+                setDraft(next);
+                setDirty(true);
+              }}
+              onRevise={
+                dirty
+                  ? undefined
+                  : (part, label) => setRevising({ part, label })
+              }
+            />
+          ) : (
+            <Notice>
+              Chưa có nội dung. Viết ngữ cảnh ở bước đầu và để AI sinh bản nháp.
+            </Notice>
+          ))}
 
+        {currentTab === 'references' && !content && (
+          <Notice>
+            Chưa có nội dung để viết câu mẫu. Sinh bản nháp ở bước Ngữ cảnh
+            &amp; sinh trước.
+          </Notice>
+        )}
+        {currentTab === 'references' && content && (
+          <ReferenceAnswers
+            scenarioId={scenarioId}
+            content={content}
+            skills={skills}
+            readOnly={readOnly}
+            dirty={dirty}
+          />
+        )}
+
+        {currentTab === 'checks' && (
+          <Card title="Kiểm tra tự động">
+            {!report ? (
+              <p className="text-ink-faint">
+                Bấm “Kiểm tra” để chạy luật trên bản đã lưu.
+              </p>
+            ) : report.passed ? (
+              <Notice tone="success">Đạt mọi luật. Có thể nộp duyệt.</Notice>
+            ) : (
+              <ul className="space-y-1">
+                {report.failedRules.map((f, i) => (
+                  <li
+                    key={i}
+                    className="rounded-lg bg-danger/10 px-3 py-1.5 text-[13px] text-danger"
+                  >
+                    <code className="font-mono text-[12px]">{f.rule}</code> ·{' '}
+                    {f.path}: {f.message}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </Card>
+        )}
+
+        {currentTab === 'history' && (
+          <div className="grid gap-4 lg:grid-cols-2">
+            <Card title="Vòng đời">
+              <HistoryTimeline
+                scenarioId={scenarioId}
+                refreshKey={historyKey}
+              />
+            </Card>
+            <Card title="Các lần sinh bằng AI">
+              <ProblemAlert error={generations.error} />
+              {generations.loading && <Loading />}
+              {!generations.loading &&
+                !generations.error &&
+                !generations.data?.length && (
+                  <EmptyState title="Chưa có lần sinh hoặc sửa bằng AI." />
+                )}
+              <ul className="space-y-2">
+                {(generations.data ?? []).map((g) => (
+                  <li key={g.id} className="text-[13px]">
+                    <span className="font-medium">
+                      {g.kind === 'GENERATE' ? 'Sinh' : 'Sửa'}
+                    </span>{' '}
+                    · {formatDateTime(g.createdAt)} · {g.model || '—'} · $
+                    {g.costUsd.toFixed(4)}{' '}
+                    {g.checkPassed === true && (
+                      <Badge tone="success">qua kiểm</Badge>
+                    )}
+                    {g.checkPassed === false && (
+                      <Badge tone="warning">chưa qua kiểm</Badge>
+                    )}
+                    {g.status === 'FAILED' && <Badge tone="danger">lỗi</Badge>}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </div>
+        )}
+      </TabPanel>
       {revising && (
         <RevisionDialog
           label={revising.label}
@@ -414,7 +438,9 @@ export function AuthoringPage() {
         title="Scenario vừa được lưu ở nơi khác"
         footer={
           <>
-            <Button onClick={() => setConflict(false)}>Ở lại sửa tiếp</Button>
+            <Button variant="subtle" onClick={() => setConflict(false)}>
+              Ở lại sửa tiếp
+            </Button>
             <Button
               variant="danger"
               onClick={async () => {

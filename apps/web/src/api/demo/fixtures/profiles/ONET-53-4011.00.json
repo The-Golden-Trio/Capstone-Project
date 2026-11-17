@@ -1,0 +1,799 @@
+{
+  "code": "ONET-53-4011.00",
+  "name": "Lái tàu hoả, tàu điện",
+  "nameEn": "Locomotive Engineers",
+  "group": "Vận tải và bốc dỡ hàng hoá",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Lái đầu máy điện, diesel-điện, hơi nước hoặc tua-bin khí để chở khách hoặc hàng. Hiểu lệnh chạy tàu, tín hiệu điện tử hoặc thủ công và quy định đường sắt. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Sai sót có thể gây hậu quả nghiêm trọng.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Làm trong môi trường ồn, gây khó chịu hoặc mất tập trung."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "56% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "47% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trên xe, tàu, máy bay", "Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Đường sắt, metro",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Lái tàu diesel đường sắt", "Lái tàu đường sắt đô thị"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học viên lái tàu",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận tín hiệu xuất phát từ trưởng tàu và dùng tay ga, phanh hơi để lái đầu máy.",
+        "Theo dõi đồng hồ đo tốc độ, dòng điện, ắc quy hoặc áp suất khí trong đường phanh và bình chứa chính.",
+        "Hiểu lệnh chạy tàu, tín hiệu và quy định đường sắt về vận hành đầu máy.",
+        "Quan sát đường ray để phát hiện chướng ngại.",
+        "Liên lạc với trưởng tàu hoặc trung tâm điều độ qua bộ đàm về điểm dừng, chậm trễ hoặc tàu ngược chiều."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Phụ lái tàu",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận tín hiệu xuất phát từ trưởng tàu và dùng tay ga, phanh hơi để lái đầu máy.",
+        "Theo dõi đồng hồ đo tốc độ, dòng điện, ắc quy hoặc áp suất khí trong đường phanh và bình chứa chính.",
+        "Hiểu lệnh chạy tàu, tín hiệu và quy định đường sắt về vận hành đầu máy.",
+        "Quan sát đường ray để phát hiện chướng ngại.",
+        "Liên lạc với trưởng tàu hoặc trung tâm điều độ qua bộ đàm về điểm dừng, chậm trễ hoặc tàu ngược chiều."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+          "name": "Dồn toa trong ga lập tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+          "name": "Hình học đường ray",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+          "name": "Điều khiển chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+          "name": "Phanh đầu máy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Lái tàu (có giấy phép lái tàu)",
+      "years": "2–6",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận tín hiệu xuất phát từ trưởng tàu và dùng tay ga, phanh hơi để lái đầu máy.",
+        "Theo dõi đồng hồ đo tốc độ, dòng điện, ắc quy hoặc áp suất khí trong đường phanh và bình chứa chính.",
+        "Hiểu lệnh chạy tàu, tín hiệu và quy định đường sắt về vận hành đầu máy.",
+        "Quan sát đường ray để phát hiện chướng ngại.",
+        "Liên lạc với trưởng tàu hoặc trung tâm điều độ qua bộ đàm về điểm dừng, chậm trễ hoặc tàu ngược chiều."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+          "name": "Dồn toa trong ga lập tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+          "name": "Hình học đường ray",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+          "name": "Điều khiển chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+          "name": "Phanh đầu máy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+          "name": "Dồn toa trong ga lập tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+          "name": "Hình học đường ray",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+          "name": "Điều khiển chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+          "name": "Phanh đầu máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2391008a-88f9-486c-90f2-8cbc1597964f",
+          "name": "Giám sát lịch chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1fe532-70b3-40e4-8bb3-2cad8dc2d517",
+          "name": "Phân bổ tải trọng hàng theo sức chở của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/008a0e0d-7380-4b31-abe5-0195e700f8c0",
+          "name": "Kiểm tra đầu máy tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Lái tàu chính tuyến khách đường dài, lái tàu hướng dẫn",
+      "years": "6–12",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận tín hiệu xuất phát từ trưởng tàu và dùng tay ga, phanh hơi để lái đầu máy.",
+        "Theo dõi đồng hồ đo tốc độ, dòng điện, ắc quy hoặc áp suất khí trong đường phanh và bình chứa chính.",
+        "Hiểu lệnh chạy tàu, tín hiệu và quy định đường sắt về vận hành đầu máy.",
+        "Quan sát đường ray để phát hiện chướng ngại.",
+        "Liên lạc với trưởng tàu hoặc trung tâm điều độ qua bộ đàm về điểm dừng, chậm trễ hoặc tàu ngược chiều."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+          "name": "Dồn toa trong ga lập tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+          "name": "Hình học đường ray",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+          "name": "Điều khiển chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+          "name": "Phanh đầu máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2391008a-88f9-486c-90f2-8cbc1597964f",
+          "name": "Giám sát lịch chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1fe532-70b3-40e4-8bb3-2cad8dc2d517",
+          "name": "Phân bổ tải trọng hàng theo sức chở của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/008a0e0d-7380-4b31-abe5-0195e700f8c0",
+          "name": "Kiểm tra đầu máy tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+          "name": "Dồn toa trong ga lập tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+          "name": "Hình học đường ray",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+          "name": "Điều khiển chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+          "name": "Phanh đầu máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2391008a-88f9-486c-90f2-8cbc1597964f",
+          "name": "Giám sát lịch chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1fe532-70b3-40e4-8bb3-2cad8dc2d517",
+          "name": "Phân bổ tải trọng hàng theo sức chở của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/008a0e0d-7380-4b31-abe5-0195e700f8c0",
+          "name": "Kiểm tra đầu máy tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Lái tàu giáo viên/đội trưởng đội lái máy",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận tín hiệu xuất phát từ trưởng tàu và dùng tay ga, phanh hơi để lái đầu máy.",
+        "Theo dõi đồng hồ đo tốc độ, dòng điện, ắc quy hoặc áp suất khí trong đường phanh và bình chứa chính.",
+        "Hiểu lệnh chạy tàu, tín hiệu và quy định đường sắt về vận hành đầu máy.",
+        "Quan sát đường ray để phát hiện chướng ngại.",
+        "Liên lạc với trưởng tàu hoặc trung tâm điều độ qua bộ đàm về điểm dừng, chậm trễ hoặc tàu ngược chiều."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+          "name": "Dồn toa trong ga lập tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+          "name": "Hình học đường ray",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+          "name": "Điều khiển chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+          "name": "Phanh đầu máy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2391008a-88f9-486c-90f2-8cbc1597964f",
+          "name": "Giám sát lịch chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1fe532-70b3-40e4-8bb3-2cad8dc2d517",
+          "name": "Phân bổ tải trọng hàng theo sức chở của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/008a0e0d-7380-4b31-abe5-0195e700f8c0",
+          "name": "Kiểm tra đầu máy tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+          "name": "Dồn toa trong ga lập tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+          "name": "Hình học đường ray",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+          "name": "Điều khiển chạy tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+          "name": "Phanh đầu máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2391008a-88f9-486c-90f2-8cbc1597964f",
+          "name": "Giám sát lịch chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1fe532-70b3-40e4-8bb3-2cad8dc2d517",
+          "name": "Phân bổ tải trọng hàng theo sức chở của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/008a0e0d-7380-4b31-abe5-0195e700f8c0",
+          "name": "Kiểm tra đầu máy tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc xí nghiệp đầu máy",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận tín hiệu xuất phát từ trưởng tàu và dùng tay ga, phanh hơi để lái đầu máy.",
+        "Theo dõi đồng hồ đo tốc độ, dòng điện, ắc quy hoặc áp suất khí trong đường phanh và bình chứa chính.",
+        "Hiểu lệnh chạy tàu, tín hiệu và quy định đường sắt về vận hành đầu máy.",
+        "Quan sát đường ray để phát hiện chướng ngại.",
+        "Liên lạc với trưởng tàu hoặc trung tâm điều độ qua bộ đàm về điểm dừng, chậm trễ hoặc tàu ngược chiều."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+          "name": "Dồn toa trong ga lập tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+          "name": "Hình học đường ray",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+          "name": "Điều khiển chạy tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+          "name": "Phanh đầu máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2391008a-88f9-486c-90f2-8cbc1597964f",
+          "name": "Giám sát lịch chạy tàu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1fe532-70b3-40e4-8bb3-2cad8dc2d517",
+          "name": "Phân bổ tải trọng hàng theo sức chở của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/008a0e0d-7380-4b31-abe5-0195e700f8c0",
+          "name": "Kiểm tra đầu máy tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+          "name": "Dồn toa hàng đi",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "name": "Dồn toa hàng đến",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+          "name": "Dạy nguyên tắc lái tàu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+          "name": "Dồn toa trong ga lập tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+          "name": "Hình học đường ray",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+          "name": "Điều khiển chạy tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+          "name": "Phanh đầu máy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2391008a-88f9-486c-90f2-8cbc1597964f",
+          "name": "Giám sát lịch chạy tàu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b1fe532-70b3-40e4-8bb3-2cad8dc2d517",
+          "name": "Phân bổ tải trọng hàng theo sức chở của xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/008a0e0d-7380-4b31-abe5-0195e700f8c0",
+          "name": "Kiểm tra đầu máy tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-49-3023.00",
+      "name": "Thợ sửa chữa ô tô",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2073.00",
+      "name": "Người vận hành máy thi công",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7051.00",
+      "name": "Người vận hành xe nâng, cần cẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-5032.00",
+      "name": "Điều phối viên vận tải và khẩn cấp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-3052.00",
+      "name": "Tài xế xe khách, xe buýt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 13000000,
+    "median": null,
+    "high": 15000000,
+    "byYears": [],
+    "source": "Sài Gòn Giải Phóng, đợt tuyển lái tàu Metro Hà Nội",
+    "dataYear": "2022",
+    "note": "Chưa gồm ăn trưa và thưởng.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/28e0aa60-f11d-4c55-b866-155eff99f344",
+      "name": "Dồn toa hàng đi",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+      "name": "Dồn toa hàng đến",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3b927416-da82-43ff-9e27-8233e467edb6",
+      "name": "Dạy nguyên tắc lái tàu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51787098-5f3a-40b3-ae24-dcc790dd01e4",
+      "name": "Dồn toa trong ga lập tàu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d0f01be9-5672-446d-aadd-eccbff1de14a",
+      "name": "Hình học đường ray",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ffc69c38-ce70-4d08-85ac-54036ca80a87",
+      "name": "Điều khiển chạy tàu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0b2de99d-e762-4b15-ac4c-0e0063329b23",
+      "name": "Phanh đầu máy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2391008a-88f9-486c-90f2-8cbc1597964f",
+      "name": "Giám sát lịch chạy tàu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5b1fe532-70b3-40e4-8bb3-2cad8dc2d517",
+      "name": "Phân bổ tải trọng hàng theo sức chở của xe",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/008a0e0d-7380-4b31-abe5-0195e700f8c0",
+      "name": "Kiểm tra đầu máy tàu",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.482
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.362
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.375
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.448
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.491
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.503
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.745
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

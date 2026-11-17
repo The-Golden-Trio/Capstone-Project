@@ -1,0 +1,719 @@
+{
+  "code": "ONET-51-9111.00",
+  "name": "Công nhân vận hành máy sản xuất",
+  "nameEn": "Packaging and Filling Machine Operators and Tenders",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Vận hành hoặc trông máy để chuẩn bị sản phẩm công nghiệp hoặc tiêu dùng cho lưu kho hoặc vận chuyển. Gồm cả công nhân nhà máy đồ hộp đóng gói thực phẩm. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Nhịp làm việc do tốc độ máy móc quyết định.",
+    "Phải đứng trong phần lớn thời gian làm việc.",
+    "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu.",
+    "Làm trong môi trường ồn, gây khó chịu hoặc mất tập trung."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "31% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "24% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 55
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 45
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Công nhân học việc đóng gói",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Dán nhãn nhận dạng lên sản phẩm đã đóng gói hoặc in thông tin như số lô, nơi đến lên thùng.",
+        "Phân loại, phân hạng, cân và kiểm tra sản phẩm, xác nhận và chỉnh khối lượng hoặc kích thước cho đúng yêu cầu.",
+        "Dừng hoặc khởi động lại máy khi trục trặc, gỡ kẹt và báo hỏng hóc cho cấp trên.",
+        "Quan sát máy chạy để bảo đảm sản phẩm chiết rót, đóng gói đạt chất lượng và tiêu chuẩn.",
+        "Lấy sản phẩm đã đóng gói ra khỏi máy và tách sản phẩm lỗi."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+          "name": "Kiểm tra chất lượng trên dây chuyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+          "name": "Làm việc trên băng chuyền thực phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+          "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công nhân vận hành máy đóng gói",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Dán nhãn nhận dạng lên sản phẩm đã đóng gói hoặc in thông tin như số lô, nơi đến lên thùng.",
+        "Phân loại, phân hạng, cân và kiểm tra sản phẩm, xác nhận và chỉnh khối lượng hoặc kích thước cho đúng yêu cầu.",
+        "Dừng hoặc khởi động lại máy khi trục trặc, gỡ kẹt và báo hỏng hóc cho cấp trên.",
+        "Quan sát máy chạy để bảo đảm sản phẩm chiết rót, đóng gói đạt chất lượng và tiêu chuẩn.",
+        "Lấy sản phẩm đã đóng gói ra khỏi máy và tách sản phẩm lỗi."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+          "name": "Kiểm tra chất lượng trên dây chuyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+          "name": "Làm việc trên băng chuyền thực phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+          "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+          "name": "Kiểm tra chất lượng trên dây chuyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+          "name": "Làm việc trên băng chuyền thực phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+          "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54bbf5e8-596f-4698-a451-06b3f1339722",
+          "name": "Kiểm soát chất lượng đóng gói",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7a45c4-0d72-4e6e-9da7-127b2b6656b7",
+          "name": "Áp dụng GMP",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e17b9-be48-48c8-a72f-a489988eaf74",
+          "name": "Xác định yếu tố làm thực phẩm biến đổi khi bảo quản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01",
+          "name": "Xử lý rác không phải thực phẩm trong ngành thực phẩm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Công nhân vận hành máy lành nghề",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Dán nhãn nhận dạng lên sản phẩm đã đóng gói hoặc in thông tin như số lô, nơi đến lên thùng.",
+        "Phân loại, phân hạng, cân và kiểm tra sản phẩm, xác nhận và chỉnh khối lượng hoặc kích thước cho đúng yêu cầu.",
+        "Dừng hoặc khởi động lại máy khi trục trặc, gỡ kẹt và báo hỏng hóc cho cấp trên.",
+        "Quan sát máy chạy để bảo đảm sản phẩm chiết rót, đóng gói đạt chất lượng và tiêu chuẩn.",
+        "Lấy sản phẩm đã đóng gói ra khỏi máy và tách sản phẩm lỗi."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+          "name": "Kiểm tra chất lượng trên dây chuyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+          "name": "Làm việc trên băng chuyền thực phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+          "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54bbf5e8-596f-4698-a451-06b3f1339722",
+          "name": "Kiểm soát chất lượng đóng gói",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7a45c4-0d72-4e6e-9da7-127b2b6656b7",
+          "name": "Áp dụng GMP",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e17b9-be48-48c8-a72f-a489988eaf74",
+          "name": "Xác định yếu tố làm thực phẩm biến đổi khi bảo quản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01",
+          "name": "Xử lý rác không phải thực phẩm trong ngành thực phẩm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+          "name": "Kiểm tra chất lượng trên dây chuyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+          "name": "Làm việc trên băng chuyền thực phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+          "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54bbf5e8-596f-4698-a451-06b3f1339722",
+          "name": "Kiểm soát chất lượng đóng gói",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7a45c4-0d72-4e6e-9da7-127b2b6656b7",
+          "name": "Áp dụng GMP",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e17b9-be48-48c8-a72f-a489988eaf74",
+          "name": "Xác định yếu tố làm thực phẩm biến đổi khi bảo quản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01",
+          "name": "Xử lý rác không phải thực phẩm trong ngành thực phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d18408c1-c2ba-4835-9ee0-352705d807d0",
+          "name": "Vận hành cân",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01fec851-b5f4-419b-940a-3b4c835adfa8",
+          "name": "Đứng máy đóng gói",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Công nhân vận hành chính (đứng nhiều máy)",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Dán nhãn nhận dạng lên sản phẩm đã đóng gói hoặc in thông tin như số lô, nơi đến lên thùng.",
+        "Phân loại, phân hạng, cân và kiểm tra sản phẩm, xác nhận và chỉnh khối lượng hoặc kích thước cho đúng yêu cầu.",
+        "Dừng hoặc khởi động lại máy khi trục trặc, gỡ kẹt và báo hỏng hóc cho cấp trên.",
+        "Quan sát máy chạy để bảo đảm sản phẩm chiết rót, đóng gói đạt chất lượng và tiêu chuẩn.",
+        "Lấy sản phẩm đã đóng gói ra khỏi máy và tách sản phẩm lỗi."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+          "name": "Kiểm tra chất lượng trên dây chuyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+          "name": "Làm việc trên băng chuyền thực phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+          "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54bbf5e8-596f-4698-a451-06b3f1339722",
+          "name": "Kiểm soát chất lượng đóng gói",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7a45c4-0d72-4e6e-9da7-127b2b6656b7",
+          "name": "Áp dụng GMP",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e17b9-be48-48c8-a72f-a489988eaf74",
+          "name": "Xác định yếu tố làm thực phẩm biến đổi khi bảo quản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01",
+          "name": "Xử lý rác không phải thực phẩm trong ngành thực phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d18408c1-c2ba-4835-9ee0-352705d807d0",
+          "name": "Vận hành cân",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01fec851-b5f4-419b-940a-3b4c835adfa8",
+          "name": "Đứng máy đóng gói",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+          "name": "Kiểm tra chất lượng trên dây chuyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+          "name": "Làm việc trên băng chuyền thực phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+          "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54bbf5e8-596f-4698-a451-06b3f1339722",
+          "name": "Kiểm soát chất lượng đóng gói",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7a45c4-0d72-4e6e-9da7-127b2b6656b7",
+          "name": "Áp dụng GMP",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e17b9-be48-48c8-a72f-a489988eaf74",
+          "name": "Xác định yếu tố làm thực phẩm biến đổi khi bảo quản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01",
+          "name": "Xử lý rác không phải thực phẩm trong ngành thực phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d18408c1-c2ba-4835-9ee0-352705d807d0",
+          "name": "Vận hành cân",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01fec851-b5f4-419b-940a-3b4c835adfa8",
+          "name": "Đứng máy đóng gói",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng ca đóng gói",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Dán nhãn nhận dạng lên sản phẩm đã đóng gói hoặc in thông tin như số lô, nơi đến lên thùng.",
+        "Phân loại, phân hạng, cân và kiểm tra sản phẩm, xác nhận và chỉnh khối lượng hoặc kích thước cho đúng yêu cầu.",
+        "Dừng hoặc khởi động lại máy khi trục trặc, gỡ kẹt và báo hỏng hóc cho cấp trên.",
+        "Quan sát máy chạy để bảo đảm sản phẩm chiết rót, đóng gói đạt chất lượng và tiêu chuẩn.",
+        "Lấy sản phẩm đã đóng gói ra khỏi máy và tách sản phẩm lỗi."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+          "name": "Kiểm tra chất lượng trên dây chuyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+          "name": "Làm việc trên băng chuyền thực phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+          "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54bbf5e8-596f-4698-a451-06b3f1339722",
+          "name": "Kiểm soát chất lượng đóng gói",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7a45c4-0d72-4e6e-9da7-127b2b6656b7",
+          "name": "Áp dụng GMP",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e17b9-be48-48c8-a72f-a489988eaf74",
+          "name": "Xác định yếu tố làm thực phẩm biến đổi khi bảo quản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01",
+          "name": "Xử lý rác không phải thực phẩm trong ngành thực phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d18408c1-c2ba-4835-9ee0-352705d807d0",
+          "name": "Vận hành cân",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01fec851-b5f4-419b-940a-3b4c835adfa8",
+          "name": "Đứng máy đóng gói",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+          "name": "Kiểm tra chất lượng trên dây chuyền",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+          "name": "Làm việc trên băng chuyền thực phẩm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+          "name": "Vận hành thiết bị xử lý bưu kiện",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+          "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54bbf5e8-596f-4698-a451-06b3f1339722",
+          "name": "Kiểm soát chất lượng đóng gói",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bf7a45c4-0d72-4e6e-9da7-127b2b6656b7",
+          "name": "Áp dụng GMP",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e17b9-be48-48c8-a72f-a489988eaf74",
+          "name": "Xác định yếu tố làm thực phẩm biến đổi khi bảo quản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01",
+          "name": "Xử lý rác không phải thực phẩm trong ngành thực phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d18408c1-c2ba-4835-9ee0-352705d807d0",
+          "name": "Vận hành cân",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01fec851-b5f4-419b-940a-3b4c835adfa8",
+          "name": "Đứng máy đóng gói",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-9111.00",
+          "name": "Công nhân vận hành máy sản xuất"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-4041.00",
+      "name": "Thợ cơ khí, tiện phay CNC",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-7011.00",
+      "name": "Thợ mộc đồ gỗ nội thất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7062.00",
+      "name": "Công nhân bốc xếp, đóng gói",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-6031.00",
+      "name": "Công nhân may mặc, da giày",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-8091.00",
+      "name": "Vận hành nhà máy hoá chất, lọc dầu, khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 9000000,
+    "median": 11000000,
+    "high": 12500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 201,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/5d05068e-7ae7-4ff6-8fa3-e35ea03b48b1",
+      "name": "Kiểm tra chất lượng trên dây chuyền",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/77d83989-fe69-4e2c-a04a-bf1207918ac3",
+      "name": "Làm việc trên băng chuyền thực phẩm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f8cd217b-b870-42aa-9bbe-d36b672cbb65",
+      "name": "Vận hành thiết bị xử lý bưu kiện",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bc250150-3372-42c9-834a-a1b65f89ca0b",
+      "name": "Áp dụng yêu cầu sản xuất thực phẩm, đồ uống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/54bbf5e8-596f-4698-a451-06b3f1339722",
+      "name": "Kiểm soát chất lượng đóng gói",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bf7a45c4-0d72-4e6e-9da7-127b2b6656b7",
+      "name": "Áp dụng GMP",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ee5e17b9-be48-48c8-a72f-a489988eaf74",
+      "name": "Xác định yếu tố làm thực phẩm biến đổi khi bảo quản",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01",
+      "name": "Xử lý rác không phải thực phẩm trong ngành thực phẩm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d18408c1-c2ba-4835-9ee0-352705d807d0",
+      "name": "Vận hành cân",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/01fec851-b5f4-419b-940a-3b4c835adfa8",
+      "name": "Đứng máy đóng gói",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.618
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.788
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.856
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.905
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.959
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -1.033
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -1.25
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

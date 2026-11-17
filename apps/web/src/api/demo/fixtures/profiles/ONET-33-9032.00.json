@@ -1,0 +1,711 @@
+{
+  "code": "ONET-33-9032.00",
+  "name": "Nhân viên bảo vệ, an ninh",
+  "nameEn": "Security Guards",
+  "group": "Dịch vụ bảo vệ an ninh và an toàn",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Canh gác, tuần tra hoặc giám sát khu vực để ngăn trộm cắp, bạo lực hoặc vi phạm nội quy. Có thể vận hành máy soi chiếu và máy dò kim loại. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Thường xuyên gặp tình huống xung đột với người khác.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Chịu trách nhiệm trực tiếp về sức khoẻ và an toàn của người khác."
+  ],
+  "workFacts": [
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "24% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "19% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Công ty dịch vụ vệ sinh, bảo vệ",
+      "weight": 70
+    },
+    {
+      "name": "Ban quản lý toà nhà, chung cư, khu đô thị",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Nhân viên bảo vệ tập sự (đang học nghiệp vụ)",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá cửa, cổng ra vào để bảo vệ toà nhà.",
+        "Tuần tra khu công nghiệp hoặc thương mại để ngăn chặn, phát hiện dấu hiệu đột nhập và bảo đảm cửa, cổng an toàn.",
+        "Xử lý cấp cứu y tế bằng sơ cứu cơ bản hoặc gọi nhân viên cấp cứu.",
+        "Phản ứng khi có báo động và kiểm tra sự việc bất thường.",
+        "Đi lại trong khu vực có khách hoặc nhân viên để giữ trật tự và bảo vệ tài sản."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+          "name": "Xử lý hành vi hung hăng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+          "name": "Đi kiểm tra theo tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên bảo vệ (đã có chứng chỉ nghiệp vụ bảo vệ)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá cửa, cổng ra vào để bảo vệ toà nhà.",
+        "Tuần tra khu công nghiệp hoặc thương mại để ngăn chặn, phát hiện dấu hiệu đột nhập và bảo đảm cửa, cổng an toàn.",
+        "Xử lý cấp cứu y tế bằng sơ cứu cơ bản hoặc gọi nhân viên cấp cứu.",
+        "Phản ứng khi có báo động và kiểm tra sự việc bất thường.",
+        "Đi lại trong khu vực có khách hoặc nhân viên để giữ trật tự và bảo vệ tài sản."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+          "name": "Xử lý hành vi hung hăng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+          "name": "Đi kiểm tra theo tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+          "name": "Xử lý hành vi hung hăng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+          "name": "Đi kiểm tra theo tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2da41c6a-3ce4-4583-b77c-d0d692fa9569",
+          "name": "Khám xét người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bee9f92-221e-44e8-81b8-20edcd741077",
+          "name": "Bảo trì hệ thống an ninh cơ sở",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Tổ trưởng/ca trưởng bảo vệ",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá cửa, cổng ra vào để bảo vệ toà nhà.",
+        "Tuần tra khu công nghiệp hoặc thương mại để ngăn chặn, phát hiện dấu hiệu đột nhập và bảo đảm cửa, cổng an toàn.",
+        "Xử lý cấp cứu y tế bằng sơ cứu cơ bản hoặc gọi nhân viên cấp cứu.",
+        "Phản ứng khi có báo động và kiểm tra sự việc bất thường.",
+        "Đi lại trong khu vực có khách hoặc nhân viên để giữ trật tự và bảo vệ tài sản."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+          "name": "Xử lý hành vi hung hăng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+          "name": "Đi kiểm tra theo tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2da41c6a-3ce4-4583-b77c-d0d692fa9569",
+          "name": "Khám xét người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bee9f92-221e-44e8-81b8-20edcd741077",
+          "name": "Bảo trì hệ thống an ninh cơ sở",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+          "name": "Xử lý hành vi hung hăng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+          "name": "Đi kiểm tra theo tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2da41c6a-3ce4-4583-b77c-d0d692fa9569",
+          "name": "Khám xét người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bee9f92-221e-44e8-81b8-20edcd741077",
+          "name": "Bảo trì hệ thống an ninh cơ sở",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65c4ee04-319d-417c-8f45-8594408d0d24",
+          "name": "Giám sát thiết bị camera an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Chỉ huy mục tiêu/đội trưởng bảo vệ",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá cửa, cổng ra vào để bảo vệ toà nhà.",
+        "Tuần tra khu công nghiệp hoặc thương mại để ngăn chặn, phát hiện dấu hiệu đột nhập và bảo đảm cửa, cổng an toàn.",
+        "Xử lý cấp cứu y tế bằng sơ cứu cơ bản hoặc gọi nhân viên cấp cứu.",
+        "Phản ứng khi có báo động và kiểm tra sự việc bất thường.",
+        "Đi lại trong khu vực có khách hoặc nhân viên để giữ trật tự và bảo vệ tài sản."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+          "name": "Xử lý hành vi hung hăng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+          "name": "Đi kiểm tra theo tuyến",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2da41c6a-3ce4-4583-b77c-d0d692fa9569",
+          "name": "Khám xét người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bee9f92-221e-44e8-81b8-20edcd741077",
+          "name": "Bảo trì hệ thống an ninh cơ sở",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65c4ee04-319d-417c-8f45-8594408d0d24",
+          "name": "Giám sát thiết bị camera an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+          "name": "Xử lý hành vi hung hăng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+          "name": "Đi kiểm tra theo tuyến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2da41c6a-3ce4-4583-b77c-d0d692fa9569",
+          "name": "Khám xét người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bee9f92-221e-44e8-81b8-20edcd741077",
+          "name": "Bảo trì hệ thống an ninh cơ sở",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65c4ee04-319d-417c-8f45-8594408d0d24",
+          "name": "Giám sát thiết bị camera an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Giám sát vùng/quản lý khu vực dịch vụ bảo vệ",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Khoá cửa, cổng ra vào để bảo vệ toà nhà.",
+        "Tuần tra khu công nghiệp hoặc thương mại để ngăn chặn, phát hiện dấu hiệu đột nhập và bảo đảm cửa, cổng an toàn.",
+        "Xử lý cấp cứu y tế bằng sơ cứu cơ bản hoặc gọi nhân viên cấp cứu.",
+        "Phản ứng khi có báo động và kiểm tra sự việc bất thường.",
+        "Đi lại trong khu vực có khách hoặc nhân viên để giữ trật tự và bảo vệ tài sản."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+          "name": "Xử lý hành vi hung hăng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+          "name": "Đi kiểm tra theo tuyến",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2da41c6a-3ce4-4583-b77c-d0d692fa9569",
+          "name": "Khám xét người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bee9f92-221e-44e8-81b8-20edcd741077",
+          "name": "Bảo trì hệ thống an ninh cơ sở",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65c4ee04-319d-417c-8f45-8594408d0d24",
+          "name": "Giám sát thiết bị camera an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+          "name": "Xử lý hành vi hung hăng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+          "name": "Đi kiểm tra theo tuyến",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2da41c6a-3ce4-4583-b77c-d0d692fa9569",
+          "name": "Khám xét người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "name": "Nhận diện mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5bee9f92-221e-44e8-81b8-20edcd741077",
+          "name": "Bảo trì hệ thống an ninh cơ sở",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "name": "Tuần tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65c4ee04-319d-417c-8f45-8594408d0d24",
+          "name": "Giám sát thiết bị camera an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+          "name": "Tuân thủ nguyên tắc phòng vệ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-33-9032.00",
+          "name": "Nhân viên bảo vệ, an ninh"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-33-1091.00",
+          "name": "Đội trưởng bảo vệ"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-33-3051.00",
+      "name": "Cảnh sát (công an)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-3012.00",
+      "name": "Quản lý hành chính",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-2031.00",
+      "name": "Tiếp viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-4011.00",
+      "name": "Lái tàu hoả, tàu điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-3052.00",
+      "name": "Tài xế xe khách, xe buýt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 8000000,
+    "median": 9500000,
+    "high": 14500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 45,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+      "name": "Cảnh giác",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f6c12779-bd4c-4908-a766-dd0db556c63b",
+      "name": "Xử lý hành vi hung hăng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f13bcfba-84b9-44a0-974f-a3d5b470ea9a",
+      "name": "Đi kiểm tra theo tuyến",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+      "name": "Bảo đảm an toàn, an ninh công cộng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2da41c6a-3ce4-4583-b77c-d0d692fa9569",
+      "name": "Khám xét người",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+      "name": "Nhận diện mối đe doạ an ninh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5bee9f92-221e-44e8-81b8-20edcd741077",
+      "name": "Bảo trì hệ thống an ninh cơ sở",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+      "name": "Tuần tra",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/65c4ee04-319d-417c-8f45-8594408d0d24",
+      "name": "Giám sát thiết bị camera an ninh",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/574a76ad-b283-4138-8386-fa079e52fcee",
+      "name": "Tuân thủ nguyên tắc phòng vệ",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.71
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.293
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.085
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.075
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.14
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.204
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.441
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

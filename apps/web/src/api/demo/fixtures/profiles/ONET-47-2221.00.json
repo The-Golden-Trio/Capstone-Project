@@ -1,0 +1,717 @@
+{
+  "code": "ONET-47-2221.00",
+  "name": "Thợ kết cấu thép, nhôm kính",
+  "nameEn": "Structural Iron and Steel Workers",
+  "group": "Xây dựng và khai khoáng",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Nâng, đặt và liên kết dầm, cột thép và các cấu kiện khác để tạo thành công trình hoặc khung kết cấu. Có thể dựng bồn chứa kim loại và lắp nhà thép tiền chế. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Phải làm việc trên cao.",
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt.",
+    "Hay phải quỳ, cúi, khom hoặc bò.",
+    "Phải mặc đồ bảo hộ chuyên dụng như mặt nạ thở, đai an toàn hoặc đồ chống bức xạ."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Ít làm việc qua email.",
+    "28% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "35% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 55
+    },
+    {
+      "name": "Xưởng nhỏ, cơ sở gia đình, làng nghề",
+      "weight": 45
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Cốt thép - Hàn", "Hàn"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thợ phụ lắp dựng kết cấu",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc yêu cầu kỹ thuật hoặc bản vẽ để xác định vị trí, số lượng, kích thước vật liệu cần dùng.",
+        "Kiểm tra độ thẳng đứng, nằm ngang của cấu kiện thép bằng dây dọi, máy laser, máy kinh vĩ hoặc thước thuỷ.",
+        "Lắp dựng cấu kiện kim loại hoặc bê tông đúc sẵn cho nhà, cầu, đập, tháp, bồn chứa, hàng rào hoặc lan can đường.",
+        "Bắt bu lông tạm các cấu kiện thép đã căn chỉnh để tán, bắt bu lông hoặc hàn cố định.",
+        "Lắp hoặc kiểm tra thiết bị nâng, dây chằng như cáp, ròng rọc, móc để di chuyển thiết bị, vật liệu nặng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+          "name": "Công nghệ ghép nối kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+          "name": "Buộc cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ lắp dựng kết cấu thép, nhôm kính bậc 1–2",
+      "years": "1–5",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc yêu cầu kỹ thuật hoặc bản vẽ để xác định vị trí, số lượng, kích thước vật liệu cần dùng.",
+        "Kiểm tra độ thẳng đứng, nằm ngang của cấu kiện thép bằng dây dọi, máy laser, máy kinh vĩ hoặc thước thuỷ.",
+        "Lắp dựng cấu kiện kim loại hoặc bê tông đúc sẵn cho nhà, cầu, đập, tháp, bồn chứa, hàng rào hoặc lan can đường.",
+        "Bắt bu lông tạm các cấu kiện thép đã căn chỉnh để tán, bắt bu lông hoặc hàn cố định.",
+        "Lắp hoặc kiểm tra thiết bị nâng, dây chằng như cáp, ròng rọc, móc để di chuyển thiết bị, vật liệu nặng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+          "name": "Công nghệ ghép nối kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+          "name": "Buộc cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+          "name": "Công nghệ ghép nối kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+          "name": "Buộc cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc8481d-1855-4c49-a711-f8dd3b0332c7",
+          "name": "Lắp đặt cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9227266e-36c5-4e34-99da-caba3bd44d02",
+          "name": "Tẩy gỉ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3d9b3ab-9dc8-415b-b450-f3ecfbef684a",
+          "name": "Các loại đinh tán",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ lắp dựng chính bậc 3, có chứng chỉ làm việc trên cao",
+      "years": "5–10",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc yêu cầu kỹ thuật hoặc bản vẽ để xác định vị trí, số lượng, kích thước vật liệu cần dùng.",
+        "Kiểm tra độ thẳng đứng, nằm ngang của cấu kiện thép bằng dây dọi, máy laser, máy kinh vĩ hoặc thước thuỷ.",
+        "Lắp dựng cấu kiện kim loại hoặc bê tông đúc sẵn cho nhà, cầu, đập, tháp, bồn chứa, hàng rào hoặc lan can đường.",
+        "Bắt bu lông tạm các cấu kiện thép đã căn chỉnh để tán, bắt bu lông hoặc hàn cố định.",
+        "Lắp hoặc kiểm tra thiết bị nâng, dây chằng như cáp, ròng rọc, móc để di chuyển thiết bị, vật liệu nặng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+          "name": "Công nghệ ghép nối kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+          "name": "Buộc cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc8481d-1855-4c49-a711-f8dd3b0332c7",
+          "name": "Lắp đặt cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9227266e-36c5-4e34-99da-caba3bd44d02",
+          "name": "Tẩy gỉ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3d9b3ab-9dc8-415b-b450-f3ecfbef684a",
+          "name": "Các loại đinh tán",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+          "name": "Công nghệ ghép nối kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+          "name": "Buộc cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc8481d-1855-4c49-a711-f8dd3b0332c7",
+          "name": "Lắp đặt cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9227266e-36c5-4e34-99da-caba3bd44d02",
+          "name": "Tẩy gỉ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3d9b3ab-9dc8-415b-b450-f3ecfbef684a",
+          "name": "Các loại đinh tán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71041c1c-a894-4cf7-81fe-4acb08545e51",
+          "name": "Vận hành súng phun chống gỉ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Thợ cả lắp dựng bậc 4–5",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc yêu cầu kỹ thuật hoặc bản vẽ để xác định vị trí, số lượng, kích thước vật liệu cần dùng.",
+        "Kiểm tra độ thẳng đứng, nằm ngang của cấu kiện thép bằng dây dọi, máy laser, máy kinh vĩ hoặc thước thuỷ.",
+        "Lắp dựng cấu kiện kim loại hoặc bê tông đúc sẵn cho nhà, cầu, đập, tháp, bồn chứa, hàng rào hoặc lan can đường.",
+        "Bắt bu lông tạm các cấu kiện thép đã căn chỉnh để tán, bắt bu lông hoặc hàn cố định.",
+        "Lắp hoặc kiểm tra thiết bị nâng, dây chằng như cáp, ròng rọc, móc để di chuyển thiết bị, vật liệu nặng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+          "name": "Công nghệ ghép nối kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+          "name": "Buộc cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc8481d-1855-4c49-a711-f8dd3b0332c7",
+          "name": "Lắp đặt cốt thép",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9227266e-36c5-4e34-99da-caba3bd44d02",
+          "name": "Tẩy gỉ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3d9b3ab-9dc8-415b-b450-f3ecfbef684a",
+          "name": "Các loại đinh tán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71041c1c-a894-4cf7-81fe-4acb08545e51",
+          "name": "Vận hành súng phun chống gỉ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+          "name": "Công nghệ ghép nối kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+          "name": "Buộc cốt thép",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc8481d-1855-4c49-a711-f8dd3b0332c7",
+          "name": "Lắp đặt cốt thép",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9227266e-36c5-4e34-99da-caba3bd44d02",
+          "name": "Tẩy gỉ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3d9b3ab-9dc8-415b-b450-f3ecfbef684a",
+          "name": "Các loại đinh tán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71041c1c-a894-4cf7-81fe-4acb08545e51",
+          "name": "Vận hành súng phun chống gỉ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Tổ trưởng/đội trưởng lắp dựng",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Đọc yêu cầu kỹ thuật hoặc bản vẽ để xác định vị trí, số lượng, kích thước vật liệu cần dùng.",
+        "Kiểm tra độ thẳng đứng, nằm ngang của cấu kiện thép bằng dây dọi, máy laser, máy kinh vĩ hoặc thước thuỷ.",
+        "Lắp dựng cấu kiện kim loại hoặc bê tông đúc sẵn cho nhà, cầu, đập, tháp, bồn chứa, hàng rào hoặc lan can đường.",
+        "Bắt bu lông tạm các cấu kiện thép đã căn chỉnh để tán, bắt bu lông hoặc hàn cố định.",
+        "Lắp hoặc kiểm tra thiết bị nâng, dây chằng như cáp, ròng rọc, móc để di chuyển thiết bị, vật liệu nặng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+          "name": "Công nghệ ghép nối kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+          "name": "Buộc cốt thép",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc8481d-1855-4c49-a711-f8dd3b0332c7",
+          "name": "Lắp đặt cốt thép",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9227266e-36c5-4e34-99da-caba3bd44d02",
+          "name": "Tẩy gỉ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3d9b3ab-9dc8-415b-b450-f3ecfbef684a",
+          "name": "Các loại đinh tán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71041c1c-a894-4cf7-81fe-4acb08545e51",
+          "name": "Vận hành súng phun chống gỉ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+          "name": "Công nghệ ghép nối kim loại",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+          "name": "Buộc cốt thép",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffc8481d-1855-4c49-a711-f8dd3b0332c7",
+          "name": "Lắp đặt cốt thép",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9227266e-36c5-4e34-99da-caba3bd44d02",
+          "name": "Tẩy gỉ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3d9b3ab-9dc8-415b-b450-f3ecfbef684a",
+          "name": "Các loại đinh tán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/71041c1c-a894-4cf7-81fe-4acb08545e51",
+          "name": "Vận hành súng phun chống gỉ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-47-2221.00",
+          "name": "Thợ kết cấu thép, nhôm kính"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9021.00",
+          "name": "Quản lý xây dựng (chỉ huy trưởng công trình)"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-47-2021.00",
+      "name": "Thợ xây, ốp lát",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4121.00",
+      "name": "Thợ hàn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2031.00",
+      "name": "Thợ mộc",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2141.00",
+      "name": "Thợ sơn, thạch cao và hoàn thiện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-9041.00",
+      "name": "Thợ bảo trì máy công nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 9000000,
+    "median": null,
+    "high": 17000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Thợ Nhôm Kính\"",
+    "dataYear": "2026",
+    "note": "Chưa có số riêng cho thợ kết cấu thép. 30 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 9–17tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 13.200.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 17,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+      "name": "Các loại kim loại",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/306ca6bc-bacd-434e-91d9-249a518ec71e",
+      "name": "Công nghệ ghép nối kim loại",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e9b19e2f-7ee7-4a6c-9ca9-639e02252824",
+      "name": "Buộc cốt thép",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+      "name": "Hàn hồ quang",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ffc8481d-1855-4c49-a711-f8dd3b0332c7",
+      "name": "Lắp đặt cốt thép",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+      "name": "Làm việc an toàn trên cao",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9227266e-36c5-4e34-99da-caba3bd44d02",
+      "name": "Tẩy gỉ xe",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d3d9b3ab-9dc8-415b-b450-f3ecfbef684a",
+      "name": "Các loại đinh tán",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/71041c1c-a894-4cf7-81fe-4acb08545e51",
+      "name": "Vận hành súng phun chống gỉ",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+      "name": "Độ dẫn nhiệt của kim loại",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.232
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.317
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.326
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.348
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.478
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.684
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.891
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

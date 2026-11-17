@@ -1,5 +1,5 @@
 /// <reference types='vitest' />
-import { defineConfig } from 'vite';
+import { defineConfig, defaultClientConditions } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -11,6 +11,10 @@ export default defineConfig(() => ({
   root: import.meta.dirname,
   base: '/staff/',
   cacheDir: '../../node_modules/.vite/apps/staff',
+  resolve: {
+    // Đọc thẳng mã nguồn package trong workspace (@datn/ui, @datn/game-core).
+    conditions: ['@datn/source', ...defaultClientConditions],
+  },
   server: {
     port: 4300,
     host: 'localhost',

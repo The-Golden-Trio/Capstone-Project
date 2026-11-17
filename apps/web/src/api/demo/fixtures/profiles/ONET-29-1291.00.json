@@ -1,0 +1,818 @@
+{
+  "code": "ONET-29-1291.00",
+  "name": "Y học cổ truyền, châm cứu",
+  "nameEn": "Acupuncturists",
+  "group": "Y tế chuyên môn và kỹ thuật y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Chẩn đoán, điều trị và phòng bệnh bằng cách kích thích các huyệt trên cơ thể bằng kim châm cứu. Có thể dùng giác hơi, thực phẩm bổ sung, xoa bóp trị liệu, bấm huyệt và các liệu pháp thay thế khác. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Phải đứng trong phần lớn thời gian làm việc.",
+    "Sai sót có thể ảnh hưởng tới sức khoẻ hoặc tính mạng người bệnh."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "4% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "21% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Bệnh viện công",
+      "weight": 50
+    },
+    {
+      "name": "Phòng khám tư, chuyên khoa",
+      "weight": 50
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Y học cổ truyền"],
+    "vocational": ["Y sỹ y học cổ truyền"],
+    "licence": "Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực) — Luật Khám bệnh, chữa bệnh số 15/2023/QH15, hiệu lực 01/01/2024"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên y học cổ truyền thực tập",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Tuân thủ quy trình chuẩn về chất lượng, an toàn, môi trường và kiểm soát nhiễm khuẩn.",
+        "Điều trị bằng dụng cụ như kim, giác, viên dán nhĩ châm, hạt hoặc thực phẩm bổ sung.",
+        "Tuân thủ luật và quy định liên quan.",
+        "Xác định đúng vị trí huyệt theo giải phẫu và tư thế người bệnh, các chống chỉ định và lưu ý khi dùng kim trong da, cứu ngải, điện châm, cạo gió hoặc chích máu.",
+        "Xây dựng kế hoạch và chiến lược điều trị riêng cho từng người."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Bác sĩ y học cổ truyền thực hành",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Tuân thủ quy trình chuẩn về chất lượng, an toàn, môi trường và kiểm soát nhiễm khuẩn.",
+        "Điều trị bằng dụng cụ như kim, giác, viên dán nhĩ châm, hạt hoặc thực phẩm bổ sung.",
+        "Tuân thủ luật và quy định liên quan.",
+        "Xác định đúng vị trí huyệt theo giải phẫu và tư thế người bệnh, các chống chỉ định và lưu ý khi dùng kim trong da, cứu ngải, điện châm, cạo gió hoặc chích máu.",
+        "Xây dựng kế hoạch và chiến lược điều trị riêng cho từng người."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+          "name": "Y học cổ truyền Trung Hoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Bác sĩ y học cổ truyền (có giấy phép hành nghề)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Tuân thủ quy trình chuẩn về chất lượng, an toàn, môi trường và kiểm soát nhiễm khuẩn.",
+        "Điều trị bằng dụng cụ như kim, giác, viên dán nhĩ châm, hạt hoặc thực phẩm bổ sung.",
+        "Tuân thủ luật và quy định liên quan.",
+        "Xác định đúng vị trí huyệt theo giải phẫu và tư thế người bệnh, các chống chỉ định và lưu ý khi dùng kim trong da, cứu ngải, điện châm, cạo gió hoặc chích máu.",
+        "Xây dựng kế hoạch và chiến lược điều trị riêng cho từng người."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+          "name": "Y học cổ truyền Trung Hoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+          "name": "Y học cổ truyền Trung Hoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/104f5817-978e-419a-a32b-5b5ccfc0f3bb",
+          "name": "Y học bổ trợ và thay thế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Bác sĩ chuyên khoa I y học cổ truyền",
+      "years": "3–7",
+      "coreOutput": null,
+      "tasks": [
+        "Tuân thủ quy trình chuẩn về chất lượng, an toàn, môi trường và kiểm soát nhiễm khuẩn.",
+        "Điều trị bằng dụng cụ như kim, giác, viên dán nhĩ châm, hạt hoặc thực phẩm bổ sung.",
+        "Tuân thủ luật và quy định liên quan.",
+        "Xác định đúng vị trí huyệt theo giải phẫu và tư thế người bệnh, các chống chỉ định và lưu ý khi dùng kim trong da, cứu ngải, điện châm, cạo gió hoặc chích máu.",
+        "Xây dựng kế hoạch và chiến lược điều trị riêng cho từng người."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+          "name": "Y học cổ truyền Trung Hoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/104f5817-978e-419a-a32b-5b5ccfc0f3bb",
+          "name": "Y học bổ trợ và thay thế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+          "name": "Y học cổ truyền Trung Hoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/104f5817-978e-419a-a32b-5b5ccfc0f3bb",
+          "name": "Y học bổ trợ và thay thế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Bác sĩ chính y học cổ truyền (hạng II)",
+      "years": "10–14",
+      "coreOutput": null,
+      "tasks": [
+        "Tuân thủ quy trình chuẩn về chất lượng, an toàn, môi trường và kiểm soát nhiễm khuẩn.",
+        "Điều trị bằng dụng cụ như kim, giác, viên dán nhĩ châm, hạt hoặc thực phẩm bổ sung.",
+        "Tuân thủ luật và quy định liên quan.",
+        "Xác định đúng vị trí huyệt theo giải phẫu và tư thế người bệnh, các chống chỉ định và lưu ý khi dùng kim trong da, cứu ngải, điện châm, cạo gió hoặc chích máu.",
+        "Xây dựng kế hoạch và chiến lược điều trị riêng cho từng người."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+          "name": "Y học cổ truyền Trung Hoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/104f5817-978e-419a-a32b-5b5ccfc0f3bb",
+          "name": "Y học bổ trợ và thay thế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+          "name": "Y học cổ truyền Trung Hoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/104f5817-978e-419a-a32b-5b5ccfc0f3bb",
+          "name": "Y học bổ trợ và thay thế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng khoa y học cổ truyền",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Tuân thủ quy trình chuẩn về chất lượng, an toàn, môi trường và kiểm soát nhiễm khuẩn.",
+        "Điều trị bằng dụng cụ như kim, giác, viên dán nhĩ châm, hạt hoặc thực phẩm bổ sung.",
+        "Tuân thủ luật và quy định liên quan.",
+        "Xác định đúng vị trí huyệt theo giải phẫu và tư thế người bệnh, các chống chỉ định và lưu ý khi dùng kim trong da, cứu ngải, điện châm, cạo gió hoặc chích máu.",
+        "Xây dựng kế hoạch và chiến lược điều trị riêng cho từng người."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+          "name": "Y học cổ truyền Trung Hoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/104f5817-978e-419a-a32b-5b5ccfc0f3bb",
+          "name": "Y học bổ trợ và thay thế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+          "name": "Chọn huyệt châm cứu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+          "name": "Y học cổ truyền Trung Hoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+          "name": "Khám sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/104f5817-978e-419a-a32b-5b5ccfc0f3bb",
+          "name": "Y học bổ trợ và thay thế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-29-1291.00",
+          "name": "Y học cổ truyền, châm cứu"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1215.00",
+      "name": "Bác sĩ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-9011.00",
+      "name": "Chuyên viên xoa bóp trị liệu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 5500000,
+    "median": null,
+    "high": 50000000,
+    "byYears": [],
+    "source": "CareerLink, \"Có nên học ngành Y học cổ truyền\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 6,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+      "name": "Năng lực lâm sàng theo bối cảnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+      "name": "Giáo dục sức khoẻ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0c5240b1-bf34-4dfe-be9b-52a6a3357fbe",
+      "name": "Chọn huyệt châm cứu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+      "name": "Tuân thủ hướng dẫn lâm sàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/26f0eeee-512b-4357-84f7-17d11b16007e",
+      "name": "Y học cổ truyền Trung Hoa",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+      "name": "Tương tác với người bệnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/721419a7-f1b6-454c-80f4-2a84ad90dd33",
+      "name": "Khám sức khoẻ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+      "name": "Đồng cảm với người bệnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/104f5817-978e-419a-a32b-5b5ccfc0f3bb",
+      "name": "Y học bổ trợ và thay thế",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+      "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.015
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.701
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.346
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.065
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.042
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.038
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.411
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

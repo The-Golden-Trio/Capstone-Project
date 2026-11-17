@@ -1,0 +1,803 @@
+{
+  "code": "ONET-53-6051.00",
+  "name": "Đăng kiểm viên, thanh tra giao thông",
+  "nameEn": "Transportation Inspectors",
+  "group": "Vận tải và bốc dỡ hàng hoá",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Kiểm tra thiết bị hoặc hàng hoá liên quan đến an toàn vận chuyển hàng và người. Gồm cả thanh tra vận tải đường sắt như kiểm tra hàng, kiểm tra đường ray và thanh tra phương tiện vận tải khác. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Sai sót có thể gây hậu quả nghiêm trọng.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "29% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "21% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trên xe, tàu, máy bay", "Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Trung tâm đăng kiểm xe cơ giới",
+      "weight": 75
+    },
+    {
+      "name": "Cơ quan hành chính nhà nước",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật ô tô", "Kỹ thuật cơ khí động lực"],
+    "vocational": ["Công nghệ kỹ thuật ô tô"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học viên thực tập nghiệp vụ đăng kiểm viên",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Lập và nộp báo cáo sau khi hoàn tất chuyến hàng.",
+        "Kiểm tra lô hàng để bảo đảm được chèn, chằng chắc chắn.",
+        "Ghi chi tiết về tình trạng hàng, cách xử lý hàng và sự cố gặp phải.",
+        "Hướng dẫn tổ bốc xếp kỹ thuật xếp hàng nguy hiểm và hàng nặng.",
+        "Theo dõi việc bốc hàng để bảo đảm tổ bốc xếp làm đúng quy trình."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Đăng kiểm viên xe cơ giới",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Lập và nộp báo cáo sau khi hoàn tất chuyến hàng.",
+        "Kiểm tra lô hàng để bảo đảm được chèn, chằng chắc chắn.",
+        "Ghi chi tiết về tình trạng hàng, cách xử lý hàng và sự cố gặp phải.",
+        "Hướng dẫn tổ bốc xếp kỹ thuật xếp hàng nguy hiểm và hàng nặng.",
+        "Theo dõi việc bốc hàng để bảo đảm tổ bốc xếp làm đúng quy trình."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+          "name": "Dùng thiết bị chẩn đoán ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+          "name": "Đánh giá hiệu suất động cơ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L4",
+      "title": "Đăng kiểm viên phụ trách dây chuyền",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Lập và nộp báo cáo sau khi hoàn tất chuyến hàng.",
+        "Kiểm tra lô hàng để bảo đảm được chèn, chằng chắc chắn.",
+        "Ghi chi tiết về tình trạng hàng, cách xử lý hàng và sự cố gặp phải.",
+        "Hướng dẫn tổ bốc xếp kỹ thuật xếp hàng nguy hiểm và hàng nặng.",
+        "Theo dõi việc bốc hàng để bảo đảm tổ bốc xếp làm đúng quy trình."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+          "name": "Dùng thiết bị chẩn đoán ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+          "name": "Đánh giá hiệu suất động cơ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+          "name": "Dùng thiết bị chẩn đoán ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+          "name": "Đánh giá hiệu suất động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bbd57056-80e0-45bb-a2c1-658ed99a1251",
+          "name": "Thử nghiệm hiệu năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Đăng kiểm viên xe cơ giới bậc cao",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Lập và nộp báo cáo sau khi hoàn tất chuyến hàng.",
+        "Kiểm tra lô hàng để bảo đảm được chèn, chằng chắc chắn.",
+        "Ghi chi tiết về tình trạng hàng, cách xử lý hàng và sự cố gặp phải.",
+        "Hướng dẫn tổ bốc xếp kỹ thuật xếp hàng nguy hiểm và hàng nặng.",
+        "Theo dõi việc bốc hàng để bảo đảm tổ bốc xếp làm đúng quy trình."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+          "name": "Dùng thiết bị chẩn đoán ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+          "name": "Đánh giá hiệu suất động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bbd57056-80e0-45bb-a2c1-658ed99a1251",
+          "name": "Thử nghiệm hiệu năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+          "name": "Dùng thiết bị chẩn đoán ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+          "name": "Đánh giá hiệu suất động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bbd57056-80e0-45bb-a2c1-658ed99a1251",
+          "name": "Thử nghiệm hiệu năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Giám đốc/phó giám đốc trung tâm đăng kiểm",
+      "years": "7+",
+      "coreOutput": null,
+      "tasks": [
+        "Lập và nộp báo cáo sau khi hoàn tất chuyến hàng.",
+        "Kiểm tra lô hàng để bảo đảm được chèn, chằng chắc chắn.",
+        "Ghi chi tiết về tình trạng hàng, cách xử lý hàng và sự cố gặp phải.",
+        "Hướng dẫn tổ bốc xếp kỹ thuật xếp hàng nguy hiểm và hàng nặng.",
+        "Theo dõi việc bốc hàng để bảo đảm tổ bốc xếp làm đúng quy trình."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+          "name": "Dùng thiết bị chẩn đoán ô tô",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+          "name": "Đánh giá hiệu suất động cơ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bbd57056-80e0-45bb-a2c1-658ed99a1251",
+          "name": "Thử nghiệm hiệu năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+          "name": "Dùng thiết bị chẩn đoán ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+          "name": "Đánh giá hiệu suất động cơ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bbd57056-80e0-45bb-a2c1-658ed99a1251",
+          "name": "Thử nghiệm hiệu năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng nghiệp vụ cơ quan đăng kiểm/thanh tra giao thông",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Lập và nộp báo cáo sau khi hoàn tất chuyến hàng.",
+        "Kiểm tra lô hàng để bảo đảm được chèn, chằng chắc chắn.",
+        "Ghi chi tiết về tình trạng hàng, cách xử lý hàng và sự cố gặp phải.",
+        "Hướng dẫn tổ bốc xếp kỹ thuật xếp hàng nguy hiểm và hàng nặng.",
+        "Theo dõi việc bốc hàng để bảo đảm tổ bốc xếp làm đúng quy trình."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+          "name": "Dùng thiết bị chẩn đoán ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+          "name": "Đánh giá hiệu suất động cơ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bbd57056-80e0-45bb-a2c1-658ed99a1251",
+          "name": "Thử nghiệm hiệu năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+          "name": "Đọc bản vẽ kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+          "name": "Dùng thiết bị thử nghiệm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+          "name": "Giám sát sản xuất ô tô",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+          "name": "Dùng thiết bị chẩn đoán ô tô",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+          "name": "Đánh giá hiệu suất động cơ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+          "name": "Đọc bản vẽ tiêu chuẩn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bbd57056-80e0-45bb-a2c1-658ed99a1251",
+          "name": "Thử nghiệm hiệu năng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-4011.00",
+      "name": "Lái tàu hoả, tàu điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7051.00",
+      "name": "Người vận hành xe nâng, cần cẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-5021.00",
+      "name": "Thuyền viên, sĩ quan hàng hải",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2141.00",
+      "name": "Kỹ sư cơ khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 5313000,
+    "median": null,
+    "high": 20240000,
+    "byYears": [],
+    "source": "Thông tư 45/2022/TT-BGTVT × lương cơ sở 2,53tr",
+    "dataYear": "2026",
+    "note": "Đơn vị đăng kiểm công lập.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/b07daddc-8625-4360-946e-ad2b0e56ebf6",
+      "name": "Đọc bản vẽ kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/74374d09-7a54-4a05-ae78-d5940423de7c",
+      "name": "Dùng thiết bị thử nghiệm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/09d79759-316b-48fe-b95d-a7b5954fb74f",
+      "name": "Giám sát sản xuất ô tô",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+      "name": "Cơ học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4",
+      "name": "Dùng thiết bị chẩn đoán ô tô",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+      "name": "Viết biên bản kiểm tra",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0",
+      "name": "Đánh giá hiệu suất động cơ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/68b6ef08-d823-489d-a95c-752ae6f6e6a7",
+      "name": "Đọc bản vẽ tiêu chuẩn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bbd57056-80e0-45bb-a2c1-658ed99a1251",
+      "name": "Thử nghiệm hiệu năng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+      "name": "Quy trình bảo đảm chất lượng",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.593
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.066
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.197
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.272
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.34
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.424
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.519
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

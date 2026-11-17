@@ -1,0 +1,996 @@
+{
+  "code": "SWE_BACKEND",
+  "name": "Lập trình viên Back-end / Kỹ sư Back-end",
+  "nameEn": "Backend Developer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Lập trình viên Back-end viết phần chạy phía máy chủ: xử lý nghiệp vụ, lưu và truy vấn dữ liệu, cung cấp API cho ứng dụng web và mobile. Người dùng không nhìn thấy phần này, nhưng mọi thao tác như đăng nhập, đặt hàng hay thanh toán đều đi qua nó. Càng lên cao, việc chuyển từ viết tính năng sang thiết kế hệ thống chịu tải lớn và chạy ổn định.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Kết quả khó nhìn thấy: làm tốt thì ít ai để ý, làm sai thì cả ứng dụng phía trước bị ảnh hưởng.",
+    "Hay phải sửa mã cũ không có tài liệu, người viết đã nghỉ.",
+    "Ước lượng thời gian thường bị ép ngắn lại vì áp lực từ khách hàng hoặc quản lý sản phẩm.",
+    "Trong khảo sát của ITviec, lương thấp hơn kỳ vọng là lý do nghỉ việc hay gặp nhất."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc theo nhóm là chính.",
+    "8% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 40
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 40
+    },
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật phần mềm",
+      "Công nghệ thông tin",
+      "Khoa học máy tính"
+    ],
+    "vocational": ["Lập trình máy tính"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Backend Engineer Intern",
+      "years": "0",
+      "coreOutput": "Hiện thực logic nghiệp vụ đơn giản và viết API endpoint theo mẫu có sẵn dưới sự giám sát trực tiếp của kỹ sư cấp cao, chưa tự quyết định về schema dữ liệu hay lựa chọn thư viện.",
+      "tasks": [
+        "Viết và kiểm thử API cho một tính năng nhỏ dưới hướng dẫn của kỹ sư senior",
+        "Tham gia review code của team để học chuẩn code",
+        "Viết unit test cho phần code của mình"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Fresher Backend Engineer",
+      "years": "0-1",
+      "coreOutput": "Tự hoàn thành một endpoint hoặc một luồng xử lý nghiệp vụ nhỏ trong phạm vi được giao, viết được truy vấn CSDL cơ bản, mọi thay đổi schema đều cần review.",
+      "tasks": [
+        "Viết các API endpoint cơ bản",
+        "Viết unit test cho code của mình",
+        "Tham gia fix các bug mức độ ưu tiên thấp"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Junior Backend Engineer",
+      "years": "1-2",
+      "coreOutput": "Tự hiện thực trọn vẹn một tính năng backend đã được xác định rõ — API, xử lý nghiệp vụ, truy vấn CSDL — tham gia code review hai chiều, nhưng chưa tự quyết định kiến trúc service hay chọn công nghệ mới.",
+      "tasks": [
+        "Phân tích yêu cầu và thiết kế DB schema cho module nhỏ",
+        "Triển khai các luồng nghiệp vụ phức tạp",
+        "Tối ưu hóa các API bị chậm"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+          "name": "Xác định yêu cầu của khách hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 1
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle Backend Engineer",
+      "years": "2-4",
+      "coreOutput": "Chịu trách nhiệm end-to-end một service hoặc module nghiệp vụ: thiết kế schema, viết migration, tối ưu truy vấn, review code cho đồng nghiệp, trong khung kiến trúc hệ thống do người khác đặt ra.",
+      "tasks": [
+        "Thiết kế kiến trúc cho microservices mới",
+        "Review code và mentor cho junior",
+        "Xử lý các bài toán concurrency và caching"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+          "name": "Xác định yêu cầu của khách hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+          "name": "Xác định yêu cầu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior Backend Engineer",
+      "years": "4-7",
+      "coreOutput": "Tự chủ thiết kế kiến trúc cho một domain nghiệp vụ hoặc một nhóm service, chịu trách nhiệm về hiệu năng và độ tin cậy ở quy mô production, mentor kỹ sư cấp dưới qua code review — không quản lý con người.",
+      "tasks": [
+        "Định hướng chuẩn code và best practices",
+        "Xử lý sự cố hệ thống nghiêm trọng trên production",
+        "Tối ưu hiệu năng hệ thống chịu tải cao"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+          "name": "Xác định yêu cầu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+          "name": "Xác định yêu cầu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Lead Backend Engineer",
+      "years": "6-9 (kèm 2+ năm dẫn dắt)",
+      "coreOutput": "Tự quyết kiến trúc và công nghệ ở phạm vi hệ thống mình phụ trách trong khung kiến trúc tổng thể do cấp trên cung cấp, coaching một đội kỹ sư — chưa có line management.",
+      "tasks": [
+        "Định nghĩa chiến lược công nghệ backend",
+        "Thiết kế hệ thống core banking phân tán lớn",
+        "Mentorship toàn team"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+          "name": "Xác định yêu cầu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+          "name": "Xác định yêu cầu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Principal Backend Engineer / Staff Engineer",
+      "years": "8-12",
+      "coreOutput": "Đặt định hướng kỹ thuật xuyên nhiều đội, xây chuẩn kỹ thuật cho tổ chức, review thiết kế của kỹ sư khác — thuần IC, không có direct report.",
+      "tasks": [
+        "Thiết kế kiến trúc backend chịu tải lớn, ổn định và dễ bảo trì",
+        "Tìm và gỡ điểm nghẽn hiệu năng, dẫn xử lý sự cố production nghiêm trọng",
+        "Chọn công nghệ và cố vấn kỹ thuật cho các team kỹ sư"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+          "name": "Xác định yêu cầu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+          "name": "Dịch vụ web",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+          "name": "Đọc hiểu yêu cầu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+          "name": "Xác định yêu cầu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "SWE_BACKEND",
+          "name": "Lập trình viên Back-end / Kỹ sư Back-end"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "SWE_TECHLEAD",
+          "name": "Trưởng nhóm kỹ thuật"
+        },
+        {
+          "code": "SWE_ARCH_SOL",
+          "name": "Kiến trúc sư giải pháp"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_ngang",
+      "label": "Chuyển ngang",
+      "roles": [
+        {
+          "code": "DATA_AI",
+          "name": "Kỹ sư trí tuệ nhân tạo"
+        },
+        {
+          "code": "DATA_DE",
+          "name": "Kỹ sư dữ liệu"
+        },
+        {
+          "code": "CLOUD_DEVOPS",
+          "name": "Kỹ sư DevOps"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "DATA_DE",
+      "name": "Kỹ sư dữ liệu",
+      "why": "Data Engineer phần lớn đi lên từ Backend, chia sẻ kỹ năng hệ thống"
+    },
+    {
+      "code": "CLOUD_DEVOPS",
+      "name": "Kỹ sư DevOps",
+      "why": "DevOps là hướng đi tự nhiên của Backend quan tâm vận hành"
+    },
+    {
+      "code": "DATA_AI",
+      "name": "Kỹ sư trí tuệ nhân tạo",
+      "why": "Đưa mô hình vào sản phẩm cần kỹ năng backend"
+    },
+    {
+      "code": "SWE_MOBILE",
+      "name": "Lập trình viên Mobile / Kỹ sư ứng dụng di động",
+      "why": "Mobile cần backend; chia sẻ tư duy API và dữ liệu"
+    },
+    {
+      "code": "SEC_ENG",
+      "name": "Kỹ sư an ninh mạng / Kỹ sư bảo mật",
+      "why": "Application Security cần đọc hiểu code để tìm lỗ hổng"
+    },
+    {
+      "code": "SWE_FRONTEND",
+      "name": "Lập trình viên Front-end",
+      "why": "Hai nửa của một ứng dụng web, thường làm việc cặp với nhau"
+    },
+    {
+      "code": "QA_MANUAL",
+      "name": "Kỹ sư kiểm thử thủ công / Tester",
+      "why": "Automation QA cần kỹ năng lập trình thật"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": 37800000,
+    "high": null,
+    "byYears": [
+      {
+        "years": "<1 năm",
+        "median": 12400000
+      },
+      {
+        "years": "1-2 năm",
+        "median": 25350000
+      },
+      {
+        "years": "3-4 năm",
+        "median": 30100000
+      },
+      {
+        "years": "5-8 năm",
+        "median": 39900000
+      },
+      {
+        "years": ">8 năm",
+        "median": 54900000
+      }
+    ],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+    "publicSector": {
+      "label": "Viên chức công nghệ thông tin hạng IV đến hạng II",
+      "low": 4706000,
+      "high": 17153000,
+      "source": "Thông tư 08/2022/TT-BTTTT, Điều 15 (áp dụng Bảng 3 Nghị định 204/2004/NĐ-CP); lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)"
+    }
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 91,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+      "name": "Lập trình máy tính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+      "name": "Gỡ lỗi phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f84a433f-34f1-4083-b0a3-24802623509c",
+      "name": "Dịch vụ web",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+      "name": "Dùng giao diện riêng của ứng dụng (như API)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/be48353d-25c7-4f86-bea9-7b9e248fbc6e",
+      "name": "Đọc hiểu yêu cầu kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+      "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+      "name": "Quản lý dự án kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+      "name": "Làm bản mẫu phần mềm (prototype)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0e0c9c11-b39e-43cf-ba95-2fe646f5de64",
+      "name": "Xác định yêu cầu của khách hàng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+      "name": "Phân tích đặc tả phần mềm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.98
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.669
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.539
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.038
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.036
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.67
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.691
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": true,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

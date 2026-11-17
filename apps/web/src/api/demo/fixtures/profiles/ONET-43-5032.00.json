@@ -1,0 +1,558 @@
+{
+  "code": "ONET-43-5032.00",
+  "name": "Điều phối viên vận tải và khẩn cấp",
+  "nameEn": "Dispatchers, Except Police, Fire, and Ambulance",
+  "group": "Văn phòng và hỗ trợ hành chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Xếp lịch và điều người, đội, thiết bị hoặc xe dịch vụ để chở vật tư, hàng hoá, hành khách, hoặc đi lắp đặt, bảo dưỡng, sửa chữa khẩn cấp bên ngoài. Có thể dùng bộ đàm, điện thoại hoặc máy tính để giao việc và tổng hợp số liệu, báo cáo tiến độ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Thường xuyên gặp tình huống xung đột với người khác.",
+    "Công việc lặp lại nhiều."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Được tự quyết nhiều trong công việc.",
+    "63% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "29% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Doanh nghiệp vận tải hàng hoá đường bộ",
+      "weight": 50
+    },
+    {
+      "name": "Công ty logistics, giao nhận, xuất nhập khẩu",
+      "weight": 30
+    },
+    {
+      "name": "Trung tâm cấp cứu 115",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": ["Khai thác vận tải", "Logistics và Quản lý chuỗi cung ứng"],
+    "vocational": [
+      "Quản lý vận tải và dịch vụ logistics",
+      "Khai thác vận tải đường bộ"
+    ],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh điều phối",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Xếp lịch hoặc điều người, đội, thiết bị, xe dịch vụ tới đúng nơi theo yêu cầu của khách qua bộ đàm hoặc điện thoại.",
+        "Lập lịch làm việc và lịch chạy xe hằng ngày.",
+        "Trao đổi với khách hoặc cấp trên để giải quyết câu hỏi, vấn đề hay yêu cầu dịch vụ, thiết bị.",
+        "Chuyển lệnh làm việc, lời nhắn hoặc thông tin giữa các đội, cấp trên và nhân viên kiểm tra hiện trường qua điện thoại hoặc bộ đàm.",
+        "Nhận hoặc lập lệnh làm việc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+          "name": "Luật vận tải đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên điều phối (dispatcher)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Xếp lịch hoặc điều người, đội, thiết bị, xe dịch vụ tới đúng nơi theo yêu cầu của khách qua bộ đàm hoặc điện thoại.",
+        "Lập lịch làm việc và lịch chạy xe hằng ngày.",
+        "Trao đổi với khách hoặc cấp trên để giải quyết câu hỏi, vấn đề hay yêu cầu dịch vụ, thiết bị.",
+        "Chuyển lệnh làm việc, lời nhắn hoặc thông tin giữa các đội, cấp trên và nhân viên kiểm tra hiện trường qua điện thoại hoặc bộ đàm.",
+        "Nhận hoặc lập lệnh làm việc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+          "name": "Luật vận tải đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+          "name": "Luật vận tải đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ee39fb7-8b46-490e-ae21-6e8b32854dd6",
+          "name": "Quản lý phần mềm điều phối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0db1a833-e4b7-4cae-9c6f-ddcdd4326e85",
+          "name": "Hiểu biết địa lý khu vực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a16e3fc6-c77d-46e3-aa18-c691fed47fd1",
+          "name": "Phương thức vận tải hàng hoá",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Điều phối viên chính",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Xếp lịch hoặc điều người, đội, thiết bị, xe dịch vụ tới đúng nơi theo yêu cầu của khách qua bộ đàm hoặc điện thoại.",
+        "Lập lịch làm việc và lịch chạy xe hằng ngày.",
+        "Trao đổi với khách hoặc cấp trên để giải quyết câu hỏi, vấn đề hay yêu cầu dịch vụ, thiết bị.",
+        "Chuyển lệnh làm việc, lời nhắn hoặc thông tin giữa các đội, cấp trên và nhân viên kiểm tra hiện trường qua điện thoại hoặc bộ đàm.",
+        "Nhận hoặc lập lệnh làm việc."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+          "name": "Luật vận tải đường bộ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ee39fb7-8b46-490e-ae21-6e8b32854dd6",
+          "name": "Quản lý phần mềm điều phối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0db1a833-e4b7-4cae-9c6f-ddcdd4326e85",
+          "name": "Hiểu biết địa lý khu vực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a16e3fc6-c77d-46e3-aa18-c691fed47fd1",
+          "name": "Phương thức vận tải hàng hoá",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+          "name": "Luật vận tải đường bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ee39fb7-8b46-490e-ae21-6e8b32854dd6",
+          "name": "Quản lý phần mềm điều phối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0db1a833-e4b7-4cae-9c6f-ddcdd4326e85",
+          "name": "Hiểu biết địa lý khu vực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a16e3fc6-c77d-46e3-aa18-c691fed47fd1",
+          "name": "Phương thức vận tải hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f365cf9-4f68-4a25-affc-75de20bcdc09",
+          "name": "Phân tích dữ liệu tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Trưởng ca điều phối",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Xếp lịch hoặc điều người, đội, thiết bị, xe dịch vụ tới đúng nơi theo yêu cầu của khách qua bộ đàm hoặc điện thoại.",
+        "Lập lịch làm việc và lịch chạy xe hằng ngày.",
+        "Trao đổi với khách hoặc cấp trên để giải quyết câu hỏi, vấn đề hay yêu cầu dịch vụ, thiết bị.",
+        "Chuyển lệnh làm việc, lời nhắn hoặc thông tin giữa các đội, cấp trên và nhân viên kiểm tra hiện trường qua điện thoại hoặc bộ đàm.",
+        "Nhận hoặc lập lệnh làm việc."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+          "name": "Luật vận tải đường bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ee39fb7-8b46-490e-ae21-6e8b32854dd6",
+          "name": "Quản lý phần mềm điều phối",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0db1a833-e4b7-4cae-9c6f-ddcdd4326e85",
+          "name": "Hiểu biết địa lý khu vực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a16e3fc6-c77d-46e3-aa18-c691fed47fd1",
+          "name": "Phương thức vận tải hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f365cf9-4f68-4a25-affc-75de20bcdc09",
+          "name": "Phân tích dữ liệu tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+          "name": "Luật vận tải đường bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ee39fb7-8b46-490e-ae21-6e8b32854dd6",
+          "name": "Quản lý phần mềm điều phối",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0db1a833-e4b7-4cae-9c6f-ddcdd4326e85",
+          "name": "Hiểu biết địa lý khu vực",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a16e3fc6-c77d-46e3-aa18-c691fed47fd1",
+          "name": "Phương thức vận tải hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f365cf9-4f68-4a25-affc-75de20bcdc09",
+          "name": "Phân tích dữ liệu tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng bộ phận điều hành vận tải/trung tâm điều phối",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Xếp lịch hoặc điều người, đội, thiết bị, xe dịch vụ tới đúng nơi theo yêu cầu của khách qua bộ đàm hoặc điện thoại.",
+        "Lập lịch làm việc và lịch chạy xe hằng ngày.",
+        "Trao đổi với khách hoặc cấp trên để giải quyết câu hỏi, vấn đề hay yêu cầu dịch vụ, thiết bị.",
+        "Chuyển lệnh làm việc, lời nhắn hoặc thông tin giữa các đội, cấp trên và nhân viên kiểm tra hiện trường qua điện thoại hoặc bộ đàm.",
+        "Nhận hoặc lập lệnh làm việc."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+          "name": "Luật vận tải đường bộ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ee39fb7-8b46-490e-ae21-6e8b32854dd6",
+          "name": "Quản lý phần mềm điều phối",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0db1a833-e4b7-4cae-9c6f-ddcdd4326e85",
+          "name": "Hiểu biết địa lý khu vực",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a16e3fc6-c77d-46e3-aa18-c691fed47fd1",
+          "name": "Phương thức vận tải hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f365cf9-4f68-4a25-affc-75de20bcdc09",
+          "name": "Phân tích dữ liệu tàu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+          "name": "Luật vận tải đường bộ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ee39fb7-8b46-490e-ae21-6e8b32854dd6",
+          "name": "Quản lý phần mềm điều phối",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0db1a833-e4b7-4cae-9c6f-ddcdd4326e85",
+          "name": "Hiểu biết địa lý khu vực",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a16e3fc6-c77d-46e3-aa18-c691fed47fd1",
+          "name": "Phương thức vận tải hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0f365cf9-4f68-4a25-affc-75de20bcdc09",
+          "name": "Phân tích dữ liệu tàu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-43-5032.00",
+          "name": "Điều phối viên vận tải và khẩn cấp"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3012.00",
+          "name": "Quản lý hành chính"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-53-2031.00",
+      "name": "Tiếp viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-3032.00",
+      "name": "Tài xế xe tải",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-4011.00",
+      "name": "Lái tàu hoả, tàu điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-5071.00",
+      "name": "Nhân viên kho và kế hoạch vật tư",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10000000,
+    "median": 12000000,
+    "high": 14000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 61,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/509ff122-3546-40a7-ae02-3ee7395b3a76",
+      "name": "Luật vận tải đường bộ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+      "name": "Ghi nhật ký công việc",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8ee39fb7-8b46-490e-ae21-6e8b32854dd6",
+      "name": "Quản lý phần mềm điều phối",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0db1a833-e4b7-4cae-9c6f-ddcdd4326e85",
+      "name": "Hiểu biết địa lý khu vực",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a16e3fc6-c77d-46e3-aa18-c691fed47fd1",
+      "name": "Phương thức vận tải hàng hoá",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0f365cf9-4f68-4a25-affc-75de20bcdc09",
+      "name": "Phân tích dữ liệu tàu",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.72
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.489
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.484
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.304
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.27
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.181
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.03
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

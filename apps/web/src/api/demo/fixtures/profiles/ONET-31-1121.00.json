@@ -1,0 +1,607 @@
+{
+  "code": "ONET-31-1121.00",
+  "name": "Nhân viên chăm sóc tại nhà",
+  "nameEn": "Home Health Aides",
+  "group": "Hỗ trợ y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Theo dõi sức khoẻ của người khuyết tật hoặc người bệnh và đáp ứng nhu cầu y tế của họ, như thay băng, chăm sóc vết thương hoặc cho uống thuốc, dưới sự chỉ đạo của điều dưỡng có chứng chỉ. Hỗ trợ các việc chăm sóc thường ngày như ăn uống, tắm rửa, vệ sinh, đi lại. Tuỳ khả năng của người bệnh, có thể nấu ăn, dọn dẹp nhẹ và giặt giũ. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Hay phải quỳ, cúi, khom hoặc bò.",
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Phải đi lại hoặc chạy nhiều.",
+    "Hay phải cúi hoặc vặn người."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "17% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "24% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Làm tại nhà khách (giúp việc, bảo mẫu, chăm sóc)",
+      "weight": 50
+    },
+    {
+      "name": "Viện dưỡng lão, chăm sóc tại nhà",
+      "weight": 50
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Chăm sóc người cao tuổi", "Dịch vụ chăm sóc gia đình"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học viên chăm sóc người bệnh, người cao tuổi",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Lên thực đơn, mua sắm, nấu và dọn bữa cho người bệnh hoặc người nhà theo chế độ ăn được chỉ định.",
+        "Chăm sóc người bệnh bằng cách thay ga giường, giặt là, dọn dẹp hoặc hỗ trợ vệ sinh cá nhân.",
+        "Tắm cho người bệnh.",
+        "Ghi chép việc chăm sóc, tình trạng, tiến triển và vấn đề của người bệnh để báo cáo với cấp trên hoặc người quản lý ca.",
+        "Giúp người bệnh lên xuống giường, bồn tắm, xe lăn, ô tô, mặc quần áo và chải chuốt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297",
+          "name": "Các dạng khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf",
+          "name": "Rửa bát đĩa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b",
+          "name": "Nhu cầu của người cao tuổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff939984-b1a6-4d57-88bd-e453262433c4",
+          "name": "Làm bạn đồng hành",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên chăm sóc tại nhà (caregiver)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Lên thực đơn, mua sắm, nấu và dọn bữa cho người bệnh hoặc người nhà theo chế độ ăn được chỉ định.",
+        "Chăm sóc người bệnh bằng cách thay ga giường, giặt là, dọn dẹp hoặc hỗ trợ vệ sinh cá nhân.",
+        "Tắm cho người bệnh.",
+        "Ghi chép việc chăm sóc, tình trạng, tiến triển và vấn đề của người bệnh để báo cáo với cấp trên hoặc người quản lý ca.",
+        "Giúp người bệnh lên xuống giường, bồn tắm, xe lăn, ô tô, mặc quần áo và chải chuốt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297",
+          "name": "Các dạng khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf",
+          "name": "Rửa bát đĩa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b",
+          "name": "Nhu cầu của người cao tuổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff939984-b1a6-4d57-88bd-e453262433c4",
+          "name": "Làm bạn đồng hành",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297",
+          "name": "Các dạng khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf",
+          "name": "Rửa bát đĩa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b",
+          "name": "Nhu cầu của người cao tuổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff939984-b1a6-4d57-88bd-e453262433c4",
+          "name": "Làm bạn đồng hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04838ae5-a737-48a0-a782-3d1b6b6cb75b",
+          "name": "Giặt đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab89ad86-1098-44bb-9465-05af5624557c",
+          "name": "Đưa đón, đi cùng khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e0c6fdd1-336a-4e2f-91d1-ab4a2f9c385d",
+          "name": "Dọn giường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/261e740b-d32d-4356-94a8-3ea29128b70b",
+          "name": "Chăm sóc người cao tuổi",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L4",
+      "title": "Nhân viên chăm sóc chính/trưởng nhóm",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Lên thực đơn, mua sắm, nấu và dọn bữa cho người bệnh hoặc người nhà theo chế độ ăn được chỉ định.",
+        "Chăm sóc người bệnh bằng cách thay ga giường, giặt là, dọn dẹp hoặc hỗ trợ vệ sinh cá nhân.",
+        "Tắm cho người bệnh.",
+        "Ghi chép việc chăm sóc, tình trạng, tiến triển và vấn đề của người bệnh để báo cáo với cấp trên hoặc người quản lý ca.",
+        "Giúp người bệnh lên xuống giường, bồn tắm, xe lăn, ô tô, mặc quần áo và chải chuốt."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297",
+          "name": "Các dạng khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf",
+          "name": "Rửa bát đĩa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b",
+          "name": "Nhu cầu của người cao tuổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff939984-b1a6-4d57-88bd-e453262433c4",
+          "name": "Làm bạn đồng hành",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04838ae5-a737-48a0-a782-3d1b6b6cb75b",
+          "name": "Giặt đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab89ad86-1098-44bb-9465-05af5624557c",
+          "name": "Đưa đón, đi cùng khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e0c6fdd1-336a-4e2f-91d1-ab4a2f9c385d",
+          "name": "Dọn giường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/261e740b-d32d-4356-94a8-3ea29128b70b",
+          "name": "Chăm sóc người cao tuổi",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297",
+          "name": "Các dạng khuyết tật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf",
+          "name": "Rửa bát đĩa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b",
+          "name": "Nhu cầu của người cao tuổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff939984-b1a6-4d57-88bd-e453262433c4",
+          "name": "Làm bạn đồng hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04838ae5-a737-48a0-a782-3d1b6b6cb75b",
+          "name": "Giặt đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab89ad86-1098-44bb-9465-05af5624557c",
+          "name": "Đưa đón, đi cùng khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e0c6fdd1-336a-4e2f-91d1-ab4a2f9c385d",
+          "name": "Dọn giường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/261e740b-d32d-4356-94a8-3ea29128b70b",
+          "name": "Chăm sóc người cao tuổi",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Điều phối viên dịch vụ chăm sóc tại nhà",
+      "years": "4+",
+      "coreOutput": null,
+      "tasks": [
+        "Lên thực đơn, mua sắm, nấu và dọn bữa cho người bệnh hoặc người nhà theo chế độ ăn được chỉ định.",
+        "Chăm sóc người bệnh bằng cách thay ga giường, giặt là, dọn dẹp hoặc hỗ trợ vệ sinh cá nhân.",
+        "Tắm cho người bệnh.",
+        "Ghi chép việc chăm sóc, tình trạng, tiến triển và vấn đề của người bệnh để báo cáo với cấp trên hoặc người quản lý ca.",
+        "Giúp người bệnh lên xuống giường, bồn tắm, xe lăn, ô tô, mặc quần áo và chải chuốt."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297",
+          "name": "Các dạng khuyết tật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf",
+          "name": "Rửa bát đĩa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b",
+          "name": "Nhu cầu của người cao tuổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff939984-b1a6-4d57-88bd-e453262433c4",
+          "name": "Làm bạn đồng hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04838ae5-a737-48a0-a782-3d1b6b6cb75b",
+          "name": "Giặt đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab89ad86-1098-44bb-9465-05af5624557c",
+          "name": "Đưa đón, đi cùng khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e0c6fdd1-336a-4e2f-91d1-ab4a2f9c385d",
+          "name": "Dọn giường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/261e740b-d32d-4356-94a8-3ea29128b70b",
+          "name": "Chăm sóc người cao tuổi",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297",
+          "name": "Các dạng khuyết tật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf",
+          "name": "Rửa bát đĩa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b",
+          "name": "Nhu cầu của người cao tuổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff939984-b1a6-4d57-88bd-e453262433c4",
+          "name": "Làm bạn đồng hành",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/04838ae5-a737-48a0-a782-3d1b6b6cb75b",
+          "name": "Giặt đồ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab89ad86-1098-44bb-9465-05af5624557c",
+          "name": "Đưa đón, đi cùng khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e0c6fdd1-336a-4e2f-91d1-ab4a2f9c385d",
+          "name": "Dọn giường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/261e740b-d32d-4356-94a8-3ea29128b70b",
+          "name": "Chăm sóc người cao tuổi",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-31-1121.00",
+          "name": "Nhân viên chăm sóc tại nhà"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-31-1131.00",
+      "name": "Hộ lý, trợ lý điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-21-1021.00",
+      "name": "Nhân viên công tác xã hội",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2043.00",
+      "name": "Nhân viên cấp cứu ngoại viện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1123.00",
+      "name": "Kỹ thuật viên, chuyên viên phục hồi chức năng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 6000000,
+    "median": null,
+    "high": 15000000,
+    "byYears": [],
+    "source": "CareerLink, \"Nghề chăm sóc người cao tuổi\"",
+    "dataYear": "2026",
+    "note": "Bài không có số riêng cho người chăm sóc; khoảng này ghép từ số hộ lý và điều dưỡng.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+      "name": "Chăm sóc người khuyết tật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297",
+      "name": "Các dạng khuyết tật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c662be22-f17a-4ba0-894f-d720b20c44cf",
+      "name": "Rửa bát đĩa",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b",
+      "name": "Nhu cầu của người cao tuổi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ff939984-b1a6-4d57-88bd-e453262433c4",
+      "name": "Làm bạn đồng hành",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/04838ae5-a737-48a0-a782-3d1b6b6cb75b",
+      "name": "Giặt đồ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ab89ad86-1098-44bb-9465-05af5624557c",
+      "name": "Đưa đón, đi cùng khách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+      "name": "Sơ cứu ban đầu tại hiện trường",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e0c6fdd1-336a-4e2f-91d1-ab4a2f9c385d",
+      "name": "Dọn giường",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/261e740b-d32d-4356-94a8-3ea29128b70b",
+      "name": "Chăm sóc người cao tuổi",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.423
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.639
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.61
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.575
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.451
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.102
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.018
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

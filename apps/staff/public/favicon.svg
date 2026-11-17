@@ -1,0 +1,90 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 200 200"
+  width="200"
+  height="200"
+  role="img"
+  aria-labelledby="_R_0_-logo-title"
+  focusable="false"
+  class="shrink-0"
+>
+  <title id="_R_0_-logo-title">JobQuest</title>
+  <circle
+    cx="100"
+    cy="100"
+    r="90"
+    fill="#102b49"
+    stroke="#e6c56e"
+    stroke-width="5"
+  ></circle>
+  <g fill="none" stroke="#d6b661" stroke-width="1.2">
+    <path
+      d="M107 21A79.3 79.3 0 0 1 179 93M179 107A79.3 79.3 0 0 1 107 179M93 179A79.3 79.3 0 0 1 21 107M21 93A79.3 79.3 0 0 1 93 21"
+    ></path>
+    <path
+      d="m43 43 5 5m104 104 5 5M43 157l5-5m104-104 5-5"
+      stroke-width="2"
+    ></path>
+  </g>
+  <g fill="#f6d775">
+    <path
+      d="m100 16 1.5 2.5L104 20l-2.5 1.5L100 24l-1.5-2.5L96 20l2.5-1.5ZM100 176l1.5 2.5 2.5 1.5-2.5 1.5-1.5 2.5-1.5-2.5-2.5-1.5 2.5-1.5ZM20 96l1.5 2.5L24 100l-2.5 1.5L20 104l-1.5-2.5L16 100l2.5-1.5ZM180 96l1.5 2.5 2.5 1.5-2.5 1.5-1.5 2.5-1.5-2.5-2.5-1.5 2.5-1.5Z"
+    ></path>
+    <path
+      d="m79 36 .7 3.3L82 40l-2.3.7L79 44l-.7-3.3L76 40l2.3-.7ZM45 70l.6 2.4L48 73l-2.4.6L45 76l-.6-2.4L42 73l2.4-.6ZM154 82l.6 2.4 2.4.6-2.4.6-.6 2.4-.6-2.4-2.4-.6 2.4-.6ZM75 150l.6 2.4 2.4.6-2.4.6-.6 2.4-.6-2.4-2.4-.6 2.4-.6Z"
+    ></path>
+    <circle cx="122" cy="43" r="1.2"></circle>
+    <circle cx="54" cy="117" r="1.1"></circle>
+    <circle cx="159" cy="121" r="1"></circle>
+    <circle cx="132" cy="149" r="1"></circle>
+  </g>
+  <g fill="#90bddc">
+    <circle cx="59" cy="56" r="1.2"></circle>
+    <circle cx="138" cy="53" r=".7"></circle>
+    <circle cx="36" cy="91" r=".8"></circle>
+    <circle cx="136" cy="85" r=".8"></circle>
+    <circle cx="153" cy="137" r="1.2"></circle>
+    <path
+      d="M72 59v1.5m51 81v1m-14 19v1.5"
+      stroke="#90bddc"
+      stroke-width=".8"
+    ></path>
+  </g>
+  <ellipse
+    cx="100"
+    cy="100"
+    rx="74"
+    ry="28"
+    transform="rotate(-24 100 100)"
+    fill="none"
+    stroke="#e6c56e"
+    stroke-width="1.6"
+    stroke-dasharray="3.4 3.4"
+  ></ellipse>
+  <circle
+    cx="42"
+    cy="133"
+    r="6.3"
+    fill="#78b4df"
+    stroke="#3f689e"
+    stroke-width="2"
+  ></circle>
+  <path
+    d="m74 74 26 15 26-15-15 26 15 26-26-15-26 15 15-26Z"
+    fill="#4c79b7"
+  ></path>
+  <path
+    d="m100 34 11 54 29 12-29 12-11 38-11-38-29-12 29-12Z"
+    fill="#f6d775"
+  ></path>
+  <path d="m89 112 11 38 11-38Z" fill="#ef6f5e"></path>
+  <circle
+    cx="100"
+    cy="100"
+    r="7.5"
+    fill="#102b49"
+    stroke="#d6b04c"
+    stroke-width="2.5"
+  ></circle>
+  <circle cx="100" cy="100" r="2.6" fill="#fffaf0"></circle>
+</svg>

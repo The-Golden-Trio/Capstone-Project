@@ -1,0 +1,92 @@
+import { useState, type FormEvent } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { LogIn, Mail } from 'lucide-react';
+import { ToonButton, ToonField, ToonInput } from '@datn/ui';
+import { errorText, useSignIn } from '../../api/hooks';
+import { AuthLayout, AuthNotice, AuthPassword } from './AuthLayout';
+import { GoogleButton } from './GoogleButton';
+
+export default function SignInPage() {
+  const signIn = useSignIn();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = (location.state as { from?: string } | null)?.from ?? '/galaxy';
+  const [identifier, setIdentifier] = useState('');
+  const [password, setPassword] = useState('');
+  const [touched, setTouched] = useState(false);
+
+  const idError =
+    touched && !identifier.trim()
+      ? 'Bạn nhập email hoặc tên đăng nhập nhé.'
+      : undefined;
+  const pwError = touched && !password ? 'Bạn chưa nhập mật khẩu.' : undefined;
+
+  const submit = (e: FormEvent) => {
+    e.preventDefault();
+    setTouched(true);
+    if (!identifier.trim() || !password) return;
+    signIn.mutate(
+      { identifier: identifier.trim(), password },
+      { onSuccess: () => navigate(from, { replace: true }) },
+    );
+  };
+
+  return (
+    <AuthLayout
+      title="Chào bạn quay lại"
+      subtitle="Ngân hà vẫn giữ nguyên chỗ bạn dừng."
+      footer={
+        <>
+          Chưa có tài khoản?{' '}
+          <Link
+            to="/register"
+            className="font-semibold text-toon-ink underline decoration-2 underline-offset-4 hover:text-toon-maroon"
+          >
+            Tạo tài khoản mới
+          </Link>
+        </>
+      }
+    >
+      <form onSubmit={submit} noValidate className="flex flex-col gap-5">
+        {signIn.isError && (
+          <AuthNotice tone="danger">{errorText(signIn.error)}</AuthNotice>
+        )}
+        <ToonField label="Email hoặc tên đăng nhập" error={idError}>
+          <ToonInput
+            autoComplete="username"
+            leftIcon={<Mail size={16} />}
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
+            placeholder="ban@vidu.com"
+          />
+        </ToonField>
+        <ToonField label="Mật khẩu" error={pwError}>
+          <AuthPassword
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </ToonField>
+        <div className="-mt-2 text-right">
+          <Link
+            to="/forgot-password"
+            className="text-sm text-toon-ink-soft underline underline-offset-4"
+          >
+            Quên mật khẩu?
+          </Link>
+        </div>
+        <ToonButton
+          type="submit"
+          size="lg"
+          block
+          loading={signIn.isPending}
+          loadingText="Đang đăng nhập…"
+          leftIcon={<LogIn size={18} />}
+        >
+          Đăng nhập
+        </ToonButton>
+        <GoogleButton onDone={() => navigate(from, { replace: true })} />
+      </form>
+    </AuthLayout>
+  );
+}

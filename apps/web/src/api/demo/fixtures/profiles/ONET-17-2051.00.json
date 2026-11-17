@@ -1,0 +1,956 @@
+{
+  "code": "ONET-17-2051.00",
+  "name": "Kỹ sư xây dựng",
+  "nameEn": "Civil Engineers",
+  "group": "Kiến trúc và kỹ thuật",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Lập kế hoạch, thiết kế và giám sát xây dựng, bảo trì các công trình như đường bộ, đường sắt, sân bay, cầu, cảng, kênh, đập, thuỷ lợi, đường ống, nhà máy điện và hệ thống cấp thoát nước. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Sai sót trong thiết kế có thể gây nguy hiểm cho người dùng và tốn kém rất lớn."
+  ],
+  "workFacts": [
+    "Làm cả trong văn phòng lẫn ngoài hiện trường.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "32% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "19% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 55
+    },
+    {
+      "name": "Công ty tư vấn thiết kế, giám sát",
+      "weight": 30
+    },
+    {
+      "name": "Chủ đầu tư, ban quản lý dự án",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật xây dựng",
+      "Kỹ thuật xây dựng công trình giao thông"
+    ],
+    "vocational": ["Công nghệ kỹ thuật xây dựng"],
+    "licence": "Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát) — Luật Xây dựng số 135/2025/QH15, Điều 88"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh xây dựng",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo công tác kỹ thuật, bảo đảm tuân thủ quy định về môi trường, an toàn và các quy định của nhà nước.",
+        "Quản lý và chỉ đạo thi công, vận hành hoặc bảo trì tại công trường.",
+        "Kiểm tra công trường để theo dõi tiến độ và bảo đảm đúng thiết kế, tiêu chuẩn an toàn, vệ sinh.",
+        "Tính tải trọng, độ dốc, lưu lượng nước hoặc ứng suất vật liệu để xác định thông số thiết kế.",
+        "Lập phương án và thiết kế hệ thống, công trình giao thông hoặc thuỷ lợi bằng phần mềm thiết kế."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ sư xây dựng mới ra trường",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo công tác kỹ thuật, bảo đảm tuân thủ quy định về môi trường, an toàn và các quy định của nhà nước.",
+        "Quản lý và chỉ đạo thi công, vận hành hoặc bảo trì tại công trường.",
+        "Kiểm tra công trường để theo dõi tiến độ và bảo đảm đúng thiết kế, tiêu chuẩn an toàn, vệ sinh.",
+        "Tính tải trọng, độ dốc, lưu lượng nước hoặc ứng suất vật liệu để xác định thông số thiết kế.",
+        "Lập phương án và thiết kế hệ thống, công trình giao thông hoặc thuỷ lợi bằng phần mềm thiết kế."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ sư xây dựng",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo công tác kỹ thuật, bảo đảm tuân thủ quy định về môi trường, an toàn và các quy định của nhà nước.",
+        "Quản lý và chỉ đạo thi công, vận hành hoặc bảo trì tại công trường.",
+        "Kiểm tra công trường để theo dõi tiến độ và bảo đảm đúng thiết kế, tiêu chuẩn an toàn, vệ sinh.",
+        "Tính tải trọng, độ dốc, lưu lượng nước hoặc ứng suất vật liệu để xác định thông số thiết kế.",
+        "Lập phương án và thiết kế hệ thống, công trình giao thông hoặc thuỷ lợi bằng phần mềm thiết kế."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+          "name": "Thiết kế tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư xây dựng hạng III (có chứng chỉ hành nghề)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo công tác kỹ thuật, bảo đảm tuân thủ quy định về môi trường, an toàn và các quy định của nhà nước.",
+        "Quản lý và chỉ đạo thi công, vận hành hoặc bảo trì tại công trường.",
+        "Kiểm tra công trường để theo dõi tiến độ và bảo đảm đúng thiết kế, tiêu chuẩn an toàn, vệ sinh.",
+        "Tính tải trọng, độ dốc, lưu lượng nước hoặc ứng suất vật liệu để xác định thông số thiết kế.",
+        "Lập phương án và thiết kế hệ thống, công trình giao thông hoặc thuỷ lợi bằng phần mềm thiết kế."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+          "name": "Thiết kế tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+          "name": "Thiết kế tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ sư xây dựng hạng II",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo công tác kỹ thuật, bảo đảm tuân thủ quy định về môi trường, an toàn và các quy định của nhà nước.",
+        "Quản lý và chỉ đạo thi công, vận hành hoặc bảo trì tại công trường.",
+        "Kiểm tra công trường để theo dõi tiến độ và bảo đảm đúng thiết kế, tiêu chuẩn an toàn, vệ sinh.",
+        "Tính tải trọng, độ dốc, lưu lượng nước hoặc ứng suất vật liệu để xác định thông số thiết kế.",
+        "Lập phương án và thiết kế hệ thống, công trình giao thông hoặc thuỷ lợi bằng phần mềm thiết kế."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+          "name": "Thiết kế tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+          "name": "Thiết kế tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Kỹ sư xây dựng hạng I",
+      "years": "7–10",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo công tác kỹ thuật, bảo đảm tuân thủ quy định về môi trường, an toàn và các quy định của nhà nước.",
+        "Quản lý và chỉ đạo thi công, vận hành hoặc bảo trì tại công trường.",
+        "Kiểm tra công trường để theo dõi tiến độ và bảo đảm đúng thiết kế, tiêu chuẩn an toàn, vệ sinh.",
+        "Tính tải trọng, độ dốc, lưu lượng nước hoặc ứng suất vật liệu để xác định thông số thiết kế.",
+        "Lập phương án và thiết kế hệ thống, công trình giao thông hoặc thuỷ lợi bằng phần mềm thiết kế."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+          "name": "Thiết kế tích hợp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+          "name": "Thiết kế tích hợp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng / Giám đốc kỹ thuật xây dựng",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo công tác kỹ thuật, bảo đảm tuân thủ quy định về môi trường, an toàn và các quy định của nhà nước.",
+        "Quản lý và chỉ đạo thi công, vận hành hoặc bảo trì tại công trường.",
+        "Kiểm tra công trường để theo dõi tiến độ và bảo đảm đúng thiết kế, tiêu chuẩn an toàn, vệ sinh.",
+        "Tính tải trọng, độ dốc, lưu lượng nước hoặc ứng suất vật liệu để xác định thông số thiết kế.",
+        "Lập phương án và thiết kế hệ thống, công trình giao thông hoặc thuỷ lợi bằng phần mềm thiết kế."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+          "name": "Thiết kế tích hợp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+          "name": "Lập kế hoạch công việc kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+          "name": "Vẽ bản vẽ CAD",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+          "name": "Quản lý dự án kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+          "name": "Thiết kế tích hợp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+          "name": "Tuân thủ luật an toàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+          "name": "Nghiên cứu khả thi",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-17-2051.00",
+          "name": "Kỹ sư xây dựng"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-53-6051.00",
+      "name": "Đăng kiểm viên, thanh tra giao thông",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2141.00",
+      "name": "Kỹ sư cơ khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-9021.00",
+      "name": "Quản lý xây dựng (chỉ huy trưởng công trình)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2072.00",
+      "name": "Kỹ sư điện tử, viễn thông",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-3051.00",
+      "name": "Chuyên viên quy hoạch đô thị",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 14000000,
+    "median": 16500000,
+    "high": 18500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 333,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+      "name": "Phê duyệt thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+      "name": "Điều chỉnh thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/267b9417-9d05-4731-a877-bfb978fb50eb",
+      "name": "Lập kế hoạch công việc kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+      "name": "Dùng phần mềm vẽ kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76415d7f-0fde-4364-b45f-5c044580d2aa",
+      "name": "Vẽ bản vẽ CAD",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6a899482-8bcf-40ca-ae67-579a1cc467ab",
+      "name": "Quản lý dự án kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f03a3387-c4a7-41e3-a5d4-dd4577147940",
+      "name": "Thiết kế tích hợp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/233be639-bdb5-4099-ab40-96d537d6c1f3",
+      "name": "Tuân thủ luật an toàn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+      "name": "Dự toán và quản lý chi phí xây dựng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d74df140-eb69-43e2-bac9-1cafc824d702",
+      "name": "Nghiên cứu khả thi",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.478
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.473
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.371
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.348
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.216
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.073
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.196
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

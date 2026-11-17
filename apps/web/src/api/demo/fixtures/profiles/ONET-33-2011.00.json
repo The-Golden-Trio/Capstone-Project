@@ -1,0 +1,835 @@
+{
+  "code": "ONET-33-2011.00",
+  "name": "Lính cứu hoả, cứu nạn",
+  "nameEn": "Firefighters",
+  "group": "Dịch vụ bảo vệ an ninh và an toàn",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Kiểm soát và dập tắt đám cháy hoặc ứng phó tình huống khẩn cấp đe doạ tính mạng, tài sản hay môi trường. Có thể gồm phòng cháy, cấp cứu, xử lý chất nguy hại, tìm kiếm cứu nạn và cứu trợ thiên tai. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Phải mặc đồ bảo hộ chuyên dụng như mặt nạ thở, đai an toàn hoặc đồ chống bức xạ.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió.",
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Được tự quyết nhiều trong công việc.",
+    "56% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "33% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Cảnh sát phòng cháy chữa cháy và cứu nạn",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": ["Phòng cháy chữa cháy và cứu nạn cứu hộ"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Chiến sĩ nghĩa vụ chữa cháy và cứu nạn, cứu hộ",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Cứu người khỏi toà nhà đang cháy, hiện trường tai nạn và vùng nước nguy hiểm.",
+        "Sơ cứu, hồi sức tim phổi hoặc cấp cứu y tế cơ bản và nâng cao cho người bị thương.",
+        "Mặc đồ chống cháy và đeo bình thở.",
+        "Tiến về nguồn lửa, dựa trên hiểu biết về loại đám cháy, kết cấu, vật liệu và bố trí công trình.",
+        "Lái và vận hành xe, thiết bị chữa cháy."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Cán bộ chữa cháy và cứu nạn, cứu hộ (Thiếu úy – Trung úy)",
+      "years": "0–5",
+      "coreOutput": null,
+      "tasks": [
+        "Cứu người khỏi toà nhà đang cháy, hiện trường tai nạn và vùng nước nguy hiểm.",
+        "Sơ cứu, hồi sức tim phổi hoặc cấp cứu y tế cơ bản và nâng cao cho người bị thương.",
+        "Mặc đồ chống cháy và đeo bình thở.",
+        "Tiến về nguồn lửa, dựa trên hiểu biết về loại đám cháy, kết cấu, vật liệu và bố trí công trình.",
+        "Lái và vận hành xe, thiết bị chữa cháy."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+          "name": "Quy trình phòng cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+          "name": "Tìm kiếm cứu nạn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+          "name": "Hệ thống chữa cháy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L4",
+      "title": "Tổ trưởng/tiểu đội trưởng chữa cháy",
+      "years": "4–8",
+      "coreOutput": null,
+      "tasks": [
+        "Cứu người khỏi toà nhà đang cháy, hiện trường tai nạn và vùng nước nguy hiểm.",
+        "Sơ cứu, hồi sức tim phổi hoặc cấp cứu y tế cơ bản và nâng cao cho người bị thương.",
+        "Mặc đồ chống cháy và đeo bình thở.",
+        "Tiến về nguồn lửa, dựa trên hiểu biết về loại đám cháy, kết cấu, vật liệu và bố trí công trình.",
+        "Lái và vận hành xe, thiết bị chữa cháy."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+          "name": "Quy trình phòng cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+          "name": "Tìm kiếm cứu nạn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+          "name": "Hệ thống chữa cháy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+          "name": "Quy trình phòng cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+          "name": "Tìm kiếm cứu nạn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+          "name": "Hệ thống chữa cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/992b79df-dc2b-4c64-ab1c-c43e610e62f8",
+          "name": "Sơ tán người khỏi toà nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab27ebf6-3738-4785-b030-02d81e8808ee",
+          "name": "Dùng các loại bình chữa cháy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Phó đội trưởng đội chữa cháy và cứu nạn, cứu hộ (Đại úy)",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Cứu người khỏi toà nhà đang cháy, hiện trường tai nạn và vùng nước nguy hiểm.",
+        "Sơ cứu, hồi sức tim phổi hoặc cấp cứu y tế cơ bản và nâng cao cho người bị thương.",
+        "Mặc đồ chống cháy và đeo bình thở.",
+        "Tiến về nguồn lửa, dựa trên hiểu biết về loại đám cháy, kết cấu, vật liệu và bố trí công trình.",
+        "Lái và vận hành xe, thiết bị chữa cháy."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+          "name": "Quy trình phòng cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+          "name": "Tìm kiếm cứu nạn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+          "name": "Hệ thống chữa cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/992b79df-dc2b-4c64-ab1c-c43e610e62f8",
+          "name": "Sơ tán người khỏi toà nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab27ebf6-3738-4785-b030-02d81e8808ee",
+          "name": "Dùng các loại bình chữa cháy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+          "name": "Quy trình phòng cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+          "name": "Tìm kiếm cứu nạn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+          "name": "Hệ thống chữa cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/992b79df-dc2b-4c64-ab1c-c43e610e62f8",
+          "name": "Sơ tán người khỏi toà nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab27ebf6-3738-4785-b030-02d81e8808ee",
+          "name": "Dùng các loại bình chữa cháy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Đội trưởng đội chữa cháy và cứu nạn, cứu hộ khu vực (Thiếu tá – Trung tá)",
+      "years": "12–18",
+      "coreOutput": null,
+      "tasks": [
+        "Cứu người khỏi toà nhà đang cháy, hiện trường tai nạn và vùng nước nguy hiểm.",
+        "Sơ cứu, hồi sức tim phổi hoặc cấp cứu y tế cơ bản và nâng cao cho người bị thương.",
+        "Mặc đồ chống cháy và đeo bình thở.",
+        "Tiến về nguồn lửa, dựa trên hiểu biết về loại đám cháy, kết cấu, vật liệu và bố trí công trình.",
+        "Lái và vận hành xe, thiết bị chữa cháy."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+          "name": "Quy trình phòng cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+          "name": "Tìm kiếm cứu nạn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+          "name": "Hệ thống chữa cháy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/992b79df-dc2b-4c64-ab1c-c43e610e62f8",
+          "name": "Sơ tán người khỏi toà nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab27ebf6-3738-4785-b030-02d81e8808ee",
+          "name": "Dùng các loại bình chữa cháy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+          "name": "Quy trình phòng cháy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+          "name": "Tìm kiếm cứu nạn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+          "name": "Hệ thống chữa cháy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/992b79df-dc2b-4c64-ab1c-c43e610e62f8",
+          "name": "Sơ tán người khỏi toà nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab27ebf6-3738-4785-b030-02d81e8808ee",
+          "name": "Dùng các loại bình chữa cháy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng Cảnh sát PCCC và CNCH công an tỉnh",
+      "years": "16+",
+      "coreOutput": null,
+      "tasks": [
+        "Cứu người khỏi toà nhà đang cháy, hiện trường tai nạn và vùng nước nguy hiểm.",
+        "Sơ cứu, hồi sức tim phổi hoặc cấp cứu y tế cơ bản và nâng cao cho người bị thương.",
+        "Mặc đồ chống cháy và đeo bình thở.",
+        "Tiến về nguồn lửa, dựa trên hiểu biết về loại đám cháy, kết cấu, vật liệu và bố trí công trình.",
+        "Lái và vận hành xe, thiết bị chữa cháy."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+          "name": "Quy trình phòng cháy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+          "name": "Tìm kiếm cứu nạn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+          "name": "Hệ thống chữa cháy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/992b79df-dc2b-4c64-ab1c-c43e610e62f8",
+          "name": "Sơ tán người khỏi toà nhà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab27ebf6-3738-4785-b030-02d81e8808ee",
+          "name": "Dùng các loại bình chữa cháy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+          "name": "Bảo đảm an toàn, an ninh công cộng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+          "name": "Dập lửa",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+          "name": "Sơ cứu ban đầu tại hiện trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+          "name": "Quy trình phòng cháy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+          "name": "Tìm kiếm cứu nạn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+          "name": "Hệ thống chữa cháy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/992b79df-dc2b-4c64-ab1c-c43e610e62f8",
+          "name": "Sơ tán người khỏi toà nhà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+          "name": "Thuỷ lực",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ab27ebf6-3738-4785-b030-02d81e8808ee",
+          "name": "Dùng các loại bình chữa cháy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-33-2011.00",
+          "name": "Lính cứu hoả, cứu nạn"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-33-2021.00",
+          "name": "Thanh tra và điều tra viên phòng cháy"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-33-1021.00",
+          "name": "Chỉ huy đội phòng cháy chữa cháy"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-33-2022.00",
+      "name": "Kiểm lâm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-5011.00",
+      "name": "Chuyên viên an toàn lao động (HSE)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-9092.00",
+      "name": "Nhân viên cứu hộ bể bơi, bãi biển",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-9032.00",
+      "name": "Nhân viên bảo vệ, an ninh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 10626000,
+    "median": null,
+    "high": 18469000,
+    "byYears": [],
+    "source": "Nghị định 204/2004/NĐ-CP, Bảng 6; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Sĩ quan công an từ Thiếu úy đến Thượng tá",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/499c05a2-6f36-4407-83c1-dc3448d35818",
+      "name": "Bảo đảm an toàn, an ninh công cộng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+      "name": "Sơ cứu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/301a6581-e983-4bb6-8b31-b3ee2cbc2392",
+      "name": "Dập lửa",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0dcea846-04b4-4ffc-8c75-a35c991454b1",
+      "name": "Sơ cứu ban đầu tại hiện trường",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/861009ea-4d15-4e80-a8dc-7db41ecaf49b",
+      "name": "Quy trình phòng cháy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a7774bdc-de0f-423e-b527-ef1409fbee6a",
+      "name": "Tìm kiếm cứu nạn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ccde26f3-e822-4b6a-94a1-39af4ae41fed",
+      "name": "Hệ thống chữa cháy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/992b79df-dc2b-4c64-ab1c-c43e610e62f8",
+      "name": "Sơ tán người khỏi toà nhà",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4",
+      "name": "Thuỷ lực",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ab27ebf6-3738-4785-b030-02d81e8808ee",
+      "name": "Dùng các loại bình chữa cháy",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.919
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.905
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.858
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.754
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.712
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.634
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.023
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

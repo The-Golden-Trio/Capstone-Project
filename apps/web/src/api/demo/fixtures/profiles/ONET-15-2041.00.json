@@ -1,0 +1,943 @@
+{
+  "code": "ONET-15-2041.00",
+  "name": "Chuyên viên thống kê và toán ứng dụng",
+  "nameEn": "Statisticians",
+  "group": "Toán học và thống kê",
+  "regionId": "cong_nghe",
+  "isIt": false,
+  "summary": "Phát triển hoặc áp dụng lý thuyết và phương pháp toán học, thống kê để thu thập, sắp xếp, diễn giải và tóm tắt dữ liệu số thành thông tin dùng được. Có thể chuyên về thống kê sinh học, nông nghiệp, kinh doanh hoặc kinh tế. Gồm cả nhà thống kê toán học và thống kê điều tra. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Công việc trừu tượng, kết quả khó giải thích cho người không có nền toán.",
+    "Thường cần bằng cấp cao và nhiều năm học."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "43% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "18% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Hội sở ngân hàng",
+      "weight": 35
+    },
+    {
+      "name": "Viện nghiên cứu, trung tâm khoa học nhà nước",
+      "weight": 35
+    },
+    {
+      "name": "Cơ quan hành chính nhà nước",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Thống kê", "Thống kê kinh tế", "Toán ứng dụng"],
+    "vocational": ["Thống kê"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Cộng tác viên điều tra thống kê/thực tập sinh",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu thống kê để tìm khác biệt đáng kể trong quan hệ giữa các nguồn thông tin.",
+        "Đánh giá phương pháp và quy trình thu thập dữ liệu để bảo đảm tính hợp lệ, phù hợp, hiệu quả và chính xác.",
+        "Báo cáo kết quả phân tích thống kê bằng đồ thị, biểu đồ và bảng.",
+        "Xác định phương pháp thống kê nào phù hợp với nhu cầu người dùng hoặc câu hỏi nghiên cứu.",
+        "Chuẩn bị dữ liệu để xử lý: sắp xếp, kiểm tra sai sót, điều chỉnh và gán trọng số cho dữ liệu thô."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thống kê viên (tương đương chuyên viên)",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu thống kê để tìm khác biệt đáng kể trong quan hệ giữa các nguồn thông tin.",
+        "Đánh giá phương pháp và quy trình thu thập dữ liệu để bảo đảm tính hợp lệ, phù hợp, hiệu quả và chính xác.",
+        "Báo cáo kết quả phân tích thống kê bằng đồ thị, biểu đồ và bảng.",
+        "Xác định phương pháp thống kê nào phù hợp với nhu cầu người dùng hoặc câu hỏi nghiên cứu.",
+        "Chuẩn bị dữ liệu để xử lý: sắp xếp, kiểm tra sai sót, điều chỉnh và gán trọng số cho dữ liệu thô."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L4",
+      "title": "Thống kê viên phụ trách chuyên đề/cuộc điều tra",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu thống kê để tìm khác biệt đáng kể trong quan hệ giữa các nguồn thông tin.",
+        "Đánh giá phương pháp và quy trình thu thập dữ liệu để bảo đảm tính hợp lệ, phù hợp, hiệu quả và chính xác.",
+        "Báo cáo kết quả phân tích thống kê bằng đồ thị, biểu đồ và bảng.",
+        "Xác định phương pháp thống kê nào phù hợp với nhu cầu người dùng hoặc câu hỏi nghiên cứu.",
+        "Chuẩn bị dữ liệu để xử lý: sắp xếp, kiểm tra sai sót, điều chỉnh và gán trọng số cho dữ liệu thô."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+          "name": "Mô hình hoá toán học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+          "name": "Khoa học dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Thống kê viên chính",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu thống kê để tìm khác biệt đáng kể trong quan hệ giữa các nguồn thông tin.",
+        "Đánh giá phương pháp và quy trình thu thập dữ liệu để bảo đảm tính hợp lệ, phù hợp, hiệu quả và chính xác.",
+        "Báo cáo kết quả phân tích thống kê bằng đồ thị, biểu đồ và bảng.",
+        "Xác định phương pháp thống kê nào phù hợp với nhu cầu người dùng hoặc câu hỏi nghiên cứu.",
+        "Chuẩn bị dữ liệu để xử lý: sắp xếp, kiểm tra sai sót, điều chỉnh và gán trọng số cho dữ liệu thô."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+          "name": "Mô hình hoá toán học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+          "name": "Khoa học dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+          "name": "Mô hình hoá toán học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+          "name": "Khoa học dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a",
+          "name": "Xử lý dữ liệu số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng thống kê chuyên ngành",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu thống kê để tìm khác biệt đáng kể trong quan hệ giữa các nguồn thông tin.",
+        "Đánh giá phương pháp và quy trình thu thập dữ liệu để bảo đảm tính hợp lệ, phù hợp, hiệu quả và chính xác.",
+        "Báo cáo kết quả phân tích thống kê bằng đồ thị, biểu đồ và bảng.",
+        "Xác định phương pháp thống kê nào phù hợp với nhu cầu người dùng hoặc câu hỏi nghiên cứu.",
+        "Chuẩn bị dữ liệu để xử lý: sắp xếp, kiểm tra sai sót, điều chỉnh và gán trọng số cho dữ liệu thô."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+          "name": "Mô hình hoá toán học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+          "name": "Khoa học dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a",
+          "name": "Xử lý dữ liệu số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+          "name": "Mô hình hoá toán học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+          "name": "Khoa học dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a",
+          "name": "Xử lý dữ liệu số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Thống kê viên cao cấp",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu thống kê để tìm khác biệt đáng kể trong quan hệ giữa các nguồn thông tin.",
+        "Đánh giá phương pháp và quy trình thu thập dữ liệu để bảo đảm tính hợp lệ, phù hợp, hiệu quả và chính xác.",
+        "Báo cáo kết quả phân tích thống kê bằng đồ thị, biểu đồ và bảng.",
+        "Xác định phương pháp thống kê nào phù hợp với nhu cầu người dùng hoặc câu hỏi nghiên cứu.",
+        "Chuẩn bị dữ liệu để xử lý: sắp xếp, kiểm tra sai sót, điều chỉnh và gán trọng số cho dữ liệu thô."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+          "name": "Mô hình hoá toán học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+          "name": "Khoa học dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a",
+          "name": "Xử lý dữ liệu số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+          "name": "Mô hình hoá toán học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+          "name": "Khoa học dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a",
+          "name": "Xử lý dữ liệu số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Lãnh đạo cơ quan thống kê (cục, vụ)",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu thống kê để tìm khác biệt đáng kể trong quan hệ giữa các nguồn thông tin.",
+        "Đánh giá phương pháp và quy trình thu thập dữ liệu để bảo đảm tính hợp lệ, phù hợp, hiệu quả và chính xác.",
+        "Báo cáo kết quả phân tích thống kê bằng đồ thị, biểu đồ và bảng.",
+        "Xác định phương pháp thống kê nào phù hợp với nhu cầu người dùng hoặc câu hỏi nghiên cứu.",
+        "Chuẩn bị dữ liệu để xử lý: sắp xếp, kiểm tra sai sót, điều chỉnh và gán trọng số cho dữ liệu thô."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+          "name": "Mô hình hoá toán học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+          "name": "Khoa học dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a",
+          "name": "Xử lý dữ liệu số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+          "name": "Phân tích định lượng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+          "name": "Thống kê",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+          "name": "Phần mềm thống kê SAS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "name": "Xử lý dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+          "name": "Kỹ thuật mô hình thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+          "name": "Mô hình hoá toán học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+          "name": "Khoa học dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+          "name": "Tài liệu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a",
+          "name": "Xử lý dữ liệu số",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-15-2041.00",
+          "name": "Chuyên viên thống kê và toán ứng dụng"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-15-2051.02",
+          "name": "Chuyên viên quản lý dữ liệu lâm sàng"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "DATA_AI",
+      "name": "Kỹ sư trí tuệ nhân tạo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-1029.04",
+      "name": "Nhà sinh học, chuyên viên công nghệ sinh học",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-2012.00",
+      "name": "Nhà vật lý",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-1081.00",
+      "name": "Giảng viên đại học, cao đẳng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-9111.00",
+      "name": "Quản lý bệnh viện, cơ sở y tế",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 8000000,
+    "median": null,
+    "high": 12000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Nhân Viên Thống Kê\"",
+    "dataYear": "2026",
+    "note": "118 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 8–12tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 10.000.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 19,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/6360a934-cc87-4954-9656-b32db20592e3",
+      "name": "Phân tích định lượng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7ee4c2ea-b349-4bd2-81a3-ec31475d4833",
+      "name": "Thống kê",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+      "name": "Thu thập dữ liệu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ad59afe4-6f8a-4bc4-acfd-0f228277508a",
+      "name": "Phần mềm thống kê SAS",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+      "name": "Xử lý dữ liệu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/68ef0e4d-5542-4e64-84f4-752cce5a3c22",
+      "name": "Kỹ thuật mô hình thống kê",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0760bfac-9a03-427a-ad84-ccd33a2f2ae8",
+      "name": "Mô hình hoá toán học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/edebd83d-35f6-4ed5-a940-6c203d178c01",
+      "name": "Khoa học dữ liệu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/74e49482-75e8-4637-bdb1-fff868d02f7a",
+      "name": "Tài liệu khoa học",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a",
+      "name": "Xử lý dữ liệu số",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.971
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.326
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.221
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.176
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.084
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.376
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.795
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

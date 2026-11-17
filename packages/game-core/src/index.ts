@@ -44,6 +44,9 @@ export * as authoring from './authoring/index.js';
 /* ── Ca làm (seed v2, Game Design W45) ── */
 export * as shift from './shift/index.js';
 
+/* ── Hồ sơ người chơi: soft skill, bậc, chòm sao, RIASEC ── */
+export * as profile from './profile/index.js';
+
 /* ── Chấm điểm ── */
 export * from './domain/grading/types.js';
 export * from './domain/grading/structuredGrading.js';

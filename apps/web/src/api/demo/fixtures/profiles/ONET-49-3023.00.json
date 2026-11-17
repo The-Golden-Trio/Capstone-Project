@@ -1,0 +1,947 @@
+{
+  "code": "ONET-49-3023.00",
+  "name": "Thợ sửa chữa ô tô",
+  "nameEn": "Automotive Service Technicians and Mechanics",
+  "group": "Lắp đặt, bảo trì và sửa chữa",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Chẩn đoán, điều chỉnh, sửa chữa hoặc đại tu ô tô. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Hay phải quỳ, cúi, khom hoặc bò.",
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Làm trong không gian chật hoặc tư thế khó.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít làm việc qua email.",
+    "50% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "23% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Xưởng dịch vụ đại lý ô tô, xe máy chính hãng",
+      "weight": 55
+    },
+    {
+      "name": "Tiệm sửa chữa nhỏ, garage tư",
+      "weight": 45
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Bảo trì và sửa chữa ô tô", "Công nghệ kỹ thuật ô tô"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Kỹ thuật viên tập sự xưởng ô tô",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra theo danh mục để không bỏ sót bộ phận quan trọng như dây curoa, ống dẫn, hệ thống lái, bugi, phanh, nhiên liệu, ổ bi bánh xe và các điểm hay hỏng.",
+        "Thử và chỉnh các hệ thống đã sửa cho đạt thông số của nhà sản xuất.",
+        "Bảo dưỡng định kỳ như thay dầu, bôi trơn và chỉnh máy.",
+        "Kiểm tra hư hỏng của xe và ghi lại để sửa chữa.",
+        "Cân chỉnh bánh xe, cầu, khung, thanh xoắn và cơ cấu lái bằng thiết bị cân chỉnh và máy cân bằng bánh xe."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ thuật viên sửa chữa ô tô bậc 1",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra theo danh mục để không bỏ sót bộ phận quan trọng như dây curoa, ống dẫn, hệ thống lái, bugi, phanh, nhiên liệu, ổ bi bánh xe và các điểm hay hỏng.",
+        "Thử và chỉnh các hệ thống đã sửa cho đạt thông số của nhà sản xuất.",
+        "Bảo dưỡng định kỳ như thay dầu, bôi trơn và chỉnh máy.",
+        "Kiểm tra hư hỏng của xe và ghi lại để sửa chữa.",
+        "Cân chỉnh bánh xe, cầu, khung, thanh xoắn và cơ cấu lái bằng thiết bị cân chỉnh và máy cân bằng bánh xe."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ thuật viên sửa chữa ô tô bậc 2",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra theo danh mục để không bỏ sót bộ phận quan trọng như dây curoa, ống dẫn, hệ thống lái, bugi, phanh, nhiên liệu, ổ bi bánh xe và các điểm hay hỏng.",
+        "Thử và chỉnh các hệ thống đã sửa cho đạt thông số của nhà sản xuất.",
+        "Bảo dưỡng định kỳ như thay dầu, bôi trơn và chỉnh máy.",
+        "Kiểm tra hư hỏng của xe và ghi lại để sửa chữa.",
+        "Cân chỉnh bánh xe, cầu, khung, thanh xoắn và cơ cấu lái bằng thiết bị cân chỉnh và máy cân bằng bánh xe."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+          "name": "Chạy thử xe trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+          "name": "Tự làm việc tay chân độc lập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+          "name": "Tiêu chuẩn khí thải",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ thuật viên chẩn đoán bậc 3",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra theo danh mục để không bỏ sót bộ phận quan trọng như dây curoa, ống dẫn, hệ thống lái, bugi, phanh, nhiên liệu, ổ bi bánh xe và các điểm hay hỏng.",
+        "Thử và chỉnh các hệ thống đã sửa cho đạt thông số của nhà sản xuất.",
+        "Bảo dưỡng định kỳ như thay dầu, bôi trơn và chỉnh máy.",
+        "Kiểm tra hư hỏng của xe và ghi lại để sửa chữa.",
+        "Cân chỉnh bánh xe, cầu, khung, thanh xoắn và cơ cấu lái bằng thiết bị cân chỉnh và máy cân bằng bánh xe."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+          "name": "Chạy thử xe trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+          "name": "Tự làm việc tay chân độc lập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+          "name": "Tiêu chuẩn khí thải",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+          "name": "Chạy thử xe trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+          "name": "Tự làm việc tay chân độc lập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+          "name": "Tiêu chuẩn khí thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5598739b-6718-4cff-8402-91d7f65b1505",
+          "name": "Giữ sạch khu vực làm việc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ thuật viên trưởng (thợ cả bậc 4)",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra theo danh mục để không bỏ sót bộ phận quan trọng như dây curoa, ống dẫn, hệ thống lái, bugi, phanh, nhiên liệu, ổ bi bánh xe và các điểm hay hỏng.",
+        "Thử và chỉnh các hệ thống đã sửa cho đạt thông số của nhà sản xuất.",
+        "Bảo dưỡng định kỳ như thay dầu, bôi trơn và chỉnh máy.",
+        "Kiểm tra hư hỏng của xe và ghi lại để sửa chữa.",
+        "Cân chỉnh bánh xe, cầu, khung, thanh xoắn và cơ cấu lái bằng thiết bị cân chỉnh và máy cân bằng bánh xe."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+          "name": "Chạy thử xe trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+          "name": "Tự làm việc tay chân độc lập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+          "name": "Tiêu chuẩn khí thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5598739b-6718-4cff-8402-91d7f65b1505",
+          "name": "Giữ sạch khu vực làm việc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+          "name": "Chạy thử xe trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+          "name": "Tự làm việc tay chân độc lập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+          "name": "Tiêu chuẩn khí thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5598739b-6718-4cff-8402-91d7f65b1505",
+          "name": "Giữ sạch khu vực làm việc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Tổ trưởng/quản đốc xưởng dịch vụ",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra theo danh mục để không bỏ sót bộ phận quan trọng như dây curoa, ống dẫn, hệ thống lái, bugi, phanh, nhiên liệu, ổ bi bánh xe và các điểm hay hỏng.",
+        "Thử và chỉnh các hệ thống đã sửa cho đạt thông số của nhà sản xuất.",
+        "Bảo dưỡng định kỳ như thay dầu, bôi trơn và chỉnh máy.",
+        "Kiểm tra hư hỏng của xe và ghi lại để sửa chữa.",
+        "Cân chỉnh bánh xe, cầu, khung, thanh xoắn và cơ cấu lái bằng thiết bị cân chỉnh và máy cân bằng bánh xe."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 3,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+          "name": "Chạy thử xe trên đường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+          "name": "Tự làm việc tay chân độc lập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+          "name": "Tiêu chuẩn khí thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5598739b-6718-4cff-8402-91d7f65b1505",
+          "name": "Giữ sạch khu vực làm việc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+          "name": "Chạy thử xe trên đường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+          "name": "Tự làm việc tay chân độc lập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+          "name": "Tiêu chuẩn khí thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5598739b-6718-4cff-8402-91d7f65b1505",
+          "name": "Giữ sạch khu vực làm việc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc dịch vụ đại lý ô tô",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra theo danh mục để không bỏ sót bộ phận quan trọng như dây curoa, ống dẫn, hệ thống lái, bugi, phanh, nhiên liệu, ổ bi bánh xe và các điểm hay hỏng.",
+        "Thử và chỉnh các hệ thống đã sửa cho đạt thông số của nhà sản xuất.",
+        "Bảo dưỡng định kỳ như thay dầu, bôi trơn và chỉnh máy.",
+        "Kiểm tra hư hỏng của xe và ghi lại để sửa chữa.",
+        "Cân chỉnh bánh xe, cầu, khung, thanh xoắn và cơ cấu lái bằng thiết bị cân chỉnh và máy cân bằng bánh xe."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+          "name": "Chạy thử xe trên đường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+          "name": "Tự làm việc tay chân độc lập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+          "name": "Tiêu chuẩn khí thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5598739b-6718-4cff-8402-91d7f65b1505",
+          "name": "Giữ sạch khu vực làm việc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+          "name": "Cơ học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "name": "Lưu hồ sơ xe",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+          "name": "Bộ phận hệ thống điều hoà",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+          "name": "Làm việc kỹ thuật cẩn thận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+          "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+          "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+          "name": "Chạy thử xe trên đường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+          "name": "Tự làm việc tay chân độc lập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+          "name": "Tiêu chuẩn khí thải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5598739b-6718-4cff-8402-91d7f65b1505",
+          "name": "Giữ sạch khu vực làm việc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-49-3023.00",
+          "name": "Thợ sửa chữa ô tô"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-49-1011.00",
+          "name": "Tổ trưởng thợ sửa chữa, lắp đặt"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-49-3052.00",
+      "name": "Thợ sửa xe máy",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-2094.00",
+      "name": "Thợ sửa chữa điện, điện tử",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-3042.00",
+      "name": "Thợ sửa máy công trình, máy nông nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-2092.00",
+      "name": "Công nhân lắp ráp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 8600000,
+    "median": 12000000,
+    "high": 15000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 26,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669",
+      "name": "Cơ học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+      "name": "Lưu hồ sơ xe",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b",
+      "name": "Bộ phận hệ thống điều hoà",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5b394ba8-5d40-40d9-b771-5df6ea9ac436",
+      "name": "Làm việc kỹ thuật cẩn thận",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b1084057-66a7-4ab6-8162-41c4e74d00cb",
+      "name": "Sửa chữa và bảo dưỡng thân vỏ xe",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1b1c2d44-c487-4121-a2ed-dcda651f4d59",
+      "name": "Bộ phận điều khiển của ô tô (ly hợp, ga, phanh…)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/923dc3f7-5e76-4159-a736-402be592fbfe",
+      "name": "Chạy thử xe trên đường",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e97733e8-5bf1-4c21-93c4-8bebbdabc394",
+      "name": "Tự làm việc tay chân độc lập",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae",
+      "name": "Tiêu chuẩn khí thải",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5598739b-6718-4cff-8402-91d7f65b1505",
+      "name": "Giữ sạch khu vực làm việc",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.373
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.401
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.425
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.439
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.542
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.613
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.688
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

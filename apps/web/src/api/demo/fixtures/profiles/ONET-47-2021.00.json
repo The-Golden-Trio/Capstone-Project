@@ -1,0 +1,720 @@
+{
+  "code": "ONET-47-2021.00",
+  "name": "Thợ xây, ốp lát",
+  "nameEn": "Brickmasons and Blockmasons",
+  "group": "Xây dựng và khai khoáng",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Xây và liên kết vật liệu như gạch, gạch block, bê tông, gạch kính, gạch nung bằng vữa và chất kết dính để xây hoặc sửa tường, vách ngăn, vòm, cống và công trình khác. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "Hay phải quỳ, cúi, khom hoặc bò.",
+    "Hay phải cúi hoặc vặn người.",
+    "Làm cạnh máy móc hoặc dụng cụ nguy hiểm, có nguy cơ tai nạn."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "27% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "62% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Tổ đội thợ, nhà thầu phụ, thợ tự do",
+      "weight": 60
+    },
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 40
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Nề - Hoàn thiện"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Phụ hồ",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Đo khoảng cách từ mốc và vạch đường căn để định vị, dùng dây dọi và thước thuỷ.",
+        "Xây góc bằng cách dựng cọc góc thẳng đứng hoặc xây chân góc, rồi xây phần giữa theo dây căng giữa hai góc cho từng lớp gạch.",
+        "Trát và làm phẳng vữa hoặc hỗn hợp khác lên bề mặt.",
+        "Tính góc, số lớp và căn độ thẳng đứng, nằm ngang của các lớp gạch.",
+        "Chặt hoặc cắt gạch, đá, block cho vừa kích thước bằng bay, búa hoặc máy cắt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+          "name": "Xây gạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ xây, ốp lát bậc 1–2",
+      "years": "1–5",
+      "coreOutput": null,
+      "tasks": [
+        "Đo khoảng cách từ mốc và vạch đường căn để định vị, dùng dây dọi và thước thuỷ.",
+        "Xây góc bằng cách dựng cọc góc thẳng đứng hoặc xây chân góc, rồi xây phần giữa theo dây căng giữa hai góc cho từng lớp gạch.",
+        "Trát và làm phẳng vữa hoặc hỗn hợp khác lên bề mặt.",
+        "Tính góc, số lớp và căn độ thẳng đứng, nằm ngang của các lớp gạch.",
+        "Chặt hoặc cắt gạch, đá, block cho vừa kích thước bằng bay, búa hoặc máy cắt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+          "name": "Xây gạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+          "name": "Xây gạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca309d1f-e080-42a3-b828-1c16e74aa9e7",
+          "name": "Miết mạch vữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb949305-6aee-46c0-9b6f-f0ab693cde5b",
+          "name": "Xả xi măng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ xây chính bậc 3",
+      "years": "5–10",
+      "coreOutput": null,
+      "tasks": [
+        "Đo khoảng cách từ mốc và vạch đường căn để định vị, dùng dây dọi và thước thuỷ.",
+        "Xây góc bằng cách dựng cọc góc thẳng đứng hoặc xây chân góc, rồi xây phần giữa theo dây căng giữa hai góc cho từng lớp gạch.",
+        "Trát và làm phẳng vữa hoặc hỗn hợp khác lên bề mặt.",
+        "Tính góc, số lớp và căn độ thẳng đứng, nằm ngang của các lớp gạch.",
+        "Chặt hoặc cắt gạch, đá, block cho vừa kích thước bằng bay, búa hoặc máy cắt."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+          "name": "Xây gạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca309d1f-e080-42a3-b828-1c16e74aa9e7",
+          "name": "Miết mạch vữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb949305-6aee-46c0-9b6f-f0ab693cde5b",
+          "name": "Xả xi măng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+          "name": "Xây gạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca309d1f-e080-42a3-b828-1c16e74aa9e7",
+          "name": "Miết mạch vữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb949305-6aee-46c0-9b6f-f0ab693cde5b",
+          "name": "Xả xi măng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bfd96453-f2fd-43ea-afc1-fb2dc0d7367d",
+          "name": "Trộn vữa xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Thợ cả bậc 4–5",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Đo khoảng cách từ mốc và vạch đường căn để định vị, dùng dây dọi và thước thuỷ.",
+        "Xây góc bằng cách dựng cọc góc thẳng đứng hoặc xây chân góc, rồi xây phần giữa theo dây căng giữa hai góc cho từng lớp gạch.",
+        "Trát và làm phẳng vữa hoặc hỗn hợp khác lên bề mặt.",
+        "Tính góc, số lớp và căn độ thẳng đứng, nằm ngang của các lớp gạch.",
+        "Chặt hoặc cắt gạch, đá, block cho vừa kích thước bằng bay, búa hoặc máy cắt."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+          "name": "Xây gạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca309d1f-e080-42a3-b828-1c16e74aa9e7",
+          "name": "Miết mạch vữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb949305-6aee-46c0-9b6f-f0ab693cde5b",
+          "name": "Xả xi măng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bfd96453-f2fd-43ea-afc1-fb2dc0d7367d",
+          "name": "Trộn vữa xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+          "name": "Xây gạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca309d1f-e080-42a3-b828-1c16e74aa9e7",
+          "name": "Miết mạch vữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb949305-6aee-46c0-9b6f-f0ab693cde5b",
+          "name": "Xả xi măng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bfd96453-f2fd-43ea-afc1-fb2dc0d7367d",
+          "name": "Trộn vữa xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Cai thầu/tổ trưởng thợ xây",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Đo khoảng cách từ mốc và vạch đường căn để định vị, dùng dây dọi và thước thuỷ.",
+        "Xây góc bằng cách dựng cọc góc thẳng đứng hoặc xây chân góc, rồi xây phần giữa theo dây căng giữa hai góc cho từng lớp gạch.",
+        "Trát và làm phẳng vữa hoặc hỗn hợp khác lên bề mặt.",
+        "Tính góc, số lớp và căn độ thẳng đứng, nằm ngang của các lớp gạch.",
+        "Chặt hoặc cắt gạch, đá, block cho vừa kích thước bằng bay, búa hoặc máy cắt."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+          "name": "Xây gạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca309d1f-e080-42a3-b828-1c16e74aa9e7",
+          "name": "Miết mạch vữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb949305-6aee-46c0-9b6f-f0ab693cde5b",
+          "name": "Xả xi măng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bfd96453-f2fd-43ea-afc1-fb2dc0d7367d",
+          "name": "Trộn vữa xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+          "name": "Kiểm tra vật tư xây dựng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+          "name": "Làm việc an toàn trên cao",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+          "name": "Xây gạch",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+          "name": "Dùng dụng cụ đo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ca309d1f-e080-42a3-b828-1c16e74aa9e7",
+          "name": "Miết mạch vữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+          "name": "Vận chuyển vật tư xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb949305-6aee-46c0-9b6f-f0ab693cde5b",
+          "name": "Xả xi măng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+          "name": "Đọc bản vẽ 2D",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bfd96453-f2fd-43ea-afc1-fb2dc0d7367d",
+          "name": "Trộn vữa xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+          "name": "Đọc bản vẽ 3D",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-47-2021.00",
+          "name": "Thợ xây, ốp lát"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-47-1011.00",
+          "name": "Đốc công xây dựng và khai thác"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9021.00",
+          "name": "Quản lý xây dựng (chỉ huy trưởng công trình)"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-47-2141.00",
+      "name": "Thợ sơn, thạch cao và hoàn thiện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2031.00",
+      "name": "Thợ mộc",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2221.00",
+      "name": "Thợ kết cấu thép, nhôm kính",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-1013.00",
+      "name": "Hoạ sĩ, nghệ nhân",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2073.00",
+      "name": "Người vận hành máy thi công",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 8970000,
+    "median": null,
+    "high": 10816000,
+    "byYears": [],
+    "source": "Sở Xây dựng Hà Nội, Quyết định 3461/QĐ-SXD (đơn giá nhân công xây dựng)",
+    "dataYear": "2025",
+    "note": "Đơn giá dự toán, nhân 26 ngày công; không phải lương trả thực tế.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205",
+      "name": "Kiểm tra vật tư xây dựng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266",
+      "name": "Làm việc an toàn trên cao",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/13e1c0a2-b90d-46f4-be51-11730360b38d",
+      "name": "Xây gạch",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b92758d4-4591-4df1-9ceb-f907aa71ebd9",
+      "name": "Dùng dụng cụ đo",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ca309d1f-e080-42a3-b828-1c16e74aa9e7",
+      "name": "Miết mạch vữa",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4af56376-7b2f-4ced-ac58-0c3967bd1e83",
+      "name": "Vận chuyển vật tư xây dựng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cb949305-6aee-46c0-9b6f-f0ab693cde5b",
+      "name": "Xả xi măng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2",
+      "name": "Đọc bản vẽ 2D",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bfd96453-f2fd-43ea-afc1-fb2dc0d7367d",
+      "name": "Trộn vữa xây dựng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/aafbb139-02c6-4f35-bc62-ff73faf97d6d",
+      "name": "Đọc bản vẽ 3D",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.122
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.561
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.647
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.739
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.782
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.806
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -1.072
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

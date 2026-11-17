@@ -1,0 +1,810 @@
+{
+  "code": "ONET-49-2094.00",
+  "name": "Thợ sửa chữa điện, điện tử",
+  "nameEn": "Electrical and Electronics Repairers, Commercial and Industrial Equipment",
+  "group": "Lắp đặt, bảo trì và sửa chữa",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Sửa chữa, thử nghiệm, điều chỉnh hoặc lắp đặt thiết bị điện tử như bộ điều khiển công nghiệp, máy phát sóng và ăng-ten. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Làm trong không gian chật hoặc tư thế khó.",
+    "Làm trong điều kiện nguy hiểm như điện cao thế, chất dễ cháy nổ hoặc hoá chất độc.",
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt."
+  ],
+  "workFacts": [
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "36% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "29% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Tiệm sửa chữa nhỏ, garage tư",
+      "weight": 55
+    },
+    {
+      "name": "Nhà cung cấp, bảo trì thiết bị",
+      "weight": 45
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Điện tử dân dụng", "Điện tử công nghiệp và dân dụng"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thợ phụ/học việc sửa chữa điện, điện tử công nghiệp",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Thử thiết bị hỏng để chẩn đoán lỗi bằng thiết bị đo hoặc phần mềm, dựa trên hiểu biết về nguyên lý hoạt động của khối và hệ thống điện tử.",
+        "Ghi nhật ký thiết bị về sự cố, sửa chữa, hiệu chuẩn và thử nghiệm.",
+        "Lắp đặt và thử thiết bị công nghiệp để bảo đảm hoạt động đúng.",
+        "Kiểm tra bộ phận của thiết bị công nghiệp về độ chính xác khi lắp hoặc tìm lỗi như mối nối lỏng, dây sờn.",
+        "Lắp lại thiết bị đã sửa ở cơ sở công nghiệp hoặc quân sự."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ sửa chữa điện, điện tử công nghiệp bậc 1",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Thử thiết bị hỏng để chẩn đoán lỗi bằng thiết bị đo hoặc phần mềm, dựa trên hiểu biết về nguyên lý hoạt động của khối và hệ thống điện tử.",
+        "Ghi nhật ký thiết bị về sự cố, sửa chữa, hiệu chuẩn và thử nghiệm.",
+        "Lắp đặt và thử thiết bị công nghiệp để bảo đảm hoạt động đúng.",
+        "Kiểm tra bộ phận của thiết bị công nghiệp về độ chính xác khi lắp hoặc tìm lỗi như mối nối lỏng, dây sờn.",
+        "Lắp lại thiết bị đã sửa ở cơ sở công nghiệp hoặc quân sự."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+          "name": "Sửa thiết bị tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+          "name": "Thay linh kiện hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ sửa chữa điện, điện tử công nghiệp bậc 2",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Thử thiết bị hỏng để chẩn đoán lỗi bằng thiết bị đo hoặc phần mềm, dựa trên hiểu biết về nguyên lý hoạt động của khối và hệ thống điện tử.",
+        "Ghi nhật ký thiết bị về sự cố, sửa chữa, hiệu chuẩn và thử nghiệm.",
+        "Lắp đặt và thử thiết bị công nghiệp để bảo đảm hoạt động đúng.",
+        "Kiểm tra bộ phận của thiết bị công nghiệp về độ chính xác khi lắp hoặc tìm lỗi như mối nối lỏng, dây sờn.",
+        "Lắp lại thiết bị đã sửa ở cơ sở công nghiệp hoặc quân sự."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+          "name": "Sửa thiết bị tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+          "name": "Thay linh kiện hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+          "name": "Sửa thiết bị tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+          "name": "Thay linh kiện hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thợ sửa chữa điện, điện tử công nghiệp bậc 3",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Thử thiết bị hỏng để chẩn đoán lỗi bằng thiết bị đo hoặc phần mềm, dựa trên hiểu biết về nguyên lý hoạt động của khối và hệ thống điện tử.",
+        "Ghi nhật ký thiết bị về sự cố, sửa chữa, hiệu chuẩn và thử nghiệm.",
+        "Lắp đặt và thử thiết bị công nghiệp để bảo đảm hoạt động đúng.",
+        "Kiểm tra bộ phận của thiết bị công nghiệp về độ chính xác khi lắp hoặc tìm lỗi như mối nối lỏng, dây sờn.",
+        "Lắp lại thiết bị đã sửa ở cơ sở công nghiệp hoặc quân sự."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+          "name": "Sửa thiết bị tại chỗ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+          "name": "Thay linh kiện hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+          "name": "Sửa thiết bị tại chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+          "name": "Thay linh kiện hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Thợ cả sửa chữa điện, điện tử công nghiệp bậc 4",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Thử thiết bị hỏng để chẩn đoán lỗi bằng thiết bị đo hoặc phần mềm, dựa trên hiểu biết về nguyên lý hoạt động của khối và hệ thống điện tử.",
+        "Ghi nhật ký thiết bị về sự cố, sửa chữa, hiệu chuẩn và thử nghiệm.",
+        "Lắp đặt và thử thiết bị công nghiệp để bảo đảm hoạt động đúng.",
+        "Kiểm tra bộ phận của thiết bị công nghiệp về độ chính xác khi lắp hoặc tìm lỗi như mối nối lỏng, dây sờn.",
+        "Lắp lại thiết bị đã sửa ở cơ sở công nghiệp hoặc quân sự."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+          "name": "Sửa thiết bị tại chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+          "name": "Thay linh kiện hỏng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+          "name": "Sửa thiết bị tại chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+          "name": "Thay linh kiện hỏng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Tổ trưởng bảo trì điện, điện tử",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Thử thiết bị hỏng để chẩn đoán lỗi bằng thiết bị đo hoặc phần mềm, dựa trên hiểu biết về nguyên lý hoạt động của khối và hệ thống điện tử.",
+        "Ghi nhật ký thiết bị về sự cố, sửa chữa, hiệu chuẩn và thử nghiệm.",
+        "Lắp đặt và thử thiết bị công nghiệp để bảo đảm hoạt động đúng.",
+        "Kiểm tra bộ phận của thiết bị công nghiệp về độ chính xác khi lắp hoặc tìm lỗi như mối nối lỏng, dây sờn.",
+        "Lắp lại thiết bị đã sửa ở cơ sở công nghiệp hoặc quân sự."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+          "name": "Sửa thiết bị tại chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+          "name": "Thay linh kiện hỏng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+          "name": "Dùng sổ tay sửa chữa",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+          "name": "Điện tử",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+          "name": "Điện tử tiêu dùng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+          "name": "Sửa thiết bị tại chỗ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "name": "Giải quyết vấn đề kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+          "name": "Thay linh kiện hỏng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+          "name": "Áp dụng chính sách công ty",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+          "name": "Bảo dưỡng thiết bị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-51-2092.00",
+      "name": "Công nhân lắp ráp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2071.00",
+      "name": "Kỹ sư điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-9041.00",
+      "name": "Thợ bảo trì máy công nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2141.00",
+      "name": "Kỹ sư cơ khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2199.05",
+      "name": "Kỹ sư cơ điện tử, robot",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10000000,
+    "median": 11000000,
+    "high": 13200000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 22,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/6561c8e7-3851-4878-bcf4-d2ffd63d835e",
+      "name": "Dùng sổ tay sửa chữa",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08",
+      "name": "Điện tử",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6c153605-d62c-4970-81a9-49646ab32032",
+      "name": "Điện tử tiêu dùng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b928ae44-b19f-49c7-a823-b09094de1063",
+      "name": "Sửa thiết bị tại chỗ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+      "name": "Giải quyết vấn đề kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589",
+      "name": "Thay linh kiện hỏng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+      "name": "Chăm sóc khách hàng sau dịch vụ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0a43729f-2a79-4dae-9faa-95520daae79f",
+      "name": "Áp dụng chính sách công ty",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c",
+      "name": "Bảo dưỡng thiết bị",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+      "name": "Duy trì dịch vụ khách hàng",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.205
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.221
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.241
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.546
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.711
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.835
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.86
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

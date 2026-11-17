@@ -1,0 +1,848 @@
+{
+  "code": "ONET-35-2014.00",
+  "name": "Đầu bếp",
+  "nameEn": "Cooks, Restaurant",
+  "group": "Chế biến và phục vụ ăn uống",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Chế biến, nêm nếm và nấu các món như súp, thịt, rau hoặc tráng miệng ở nhà hàng. Có thể đặt hàng nguyên liệu, giữ sổ sách, định giá món hoặc lên thực đơn. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Phải đứng trong phần lớn thời gian làm việc.",
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt.",
+    "Phải đi lại hoặc chạy nhiều."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "24% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "22% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Chuỗi nhà hàng, cà phê, đồ ăn nhanh",
+      "weight": 40
+    },
+    {
+      "name": "Nhà hàng, quán cà phê, bar độc lập",
+      "weight": 30
+    },
+    {
+      "name": "Khách sạn, resort 4–5 sao",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Kỹ thuật chế biến món ăn"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Phụ bếp (commis)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm thực phẩm được bảo quản và nấu đúng nhiệt độ bằng cách điều chỉnh lò nướng, bếp nướng và lò quay.",
+        "Kiểm tra và làm sạch khu chế biến như thiết bị, mặt bàn và khu ra món để bảo đảm an toàn vệ sinh thực phẩm.",
+        "Chia phần, bày và trang trí món, chuyển cho phục vụ hoặc khách.",
+        "Bảo đảm thực phẩm và nguyên liệu tươi bằng cách kiểm tra chất lượng, theo dõi hàng cũ và mới, dùng hàng cũ trước.",
+        "Nêm nếm và nấu theo công thức hoặc theo kinh nghiệm, phán đoán của bản thân."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Đầu bếp (cook/demi chef)",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm thực phẩm được bảo quản và nấu đúng nhiệt độ bằng cách điều chỉnh lò nướng, bếp nướng và lò quay.",
+        "Kiểm tra và làm sạch khu chế biến như thiết bị, mặt bàn và khu ra món để bảo đảm an toàn vệ sinh thực phẩm.",
+        "Chia phần, bày và trang trí món, chuyển cho phục vụ hoặc khách.",
+        "Bảo đảm thực phẩm và nguyên liệu tươi bằng cách kiểm tra chất lượng, theo dõi hàng cũ và mới, dùng hàng cũ trước.",
+        "Nêm nếm và nấu theo công thức hoặc theo kinh nghiệm, phán đoán của bản thân."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+          "name": "Kỹ thuật nấu ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+          "name": "Kỹ thuật hoàn thiện món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+          "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Đầu bếp phụ trách khu (chef de partie)",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm thực phẩm được bảo quản và nấu đúng nhiệt độ bằng cách điều chỉnh lò nướng, bếp nướng và lò quay.",
+        "Kiểm tra và làm sạch khu chế biến như thiết bị, mặt bàn và khu ra món để bảo đảm an toàn vệ sinh thực phẩm.",
+        "Chia phần, bày và trang trí món, chuyển cho phục vụ hoặc khách.",
+        "Bảo đảm thực phẩm và nguyên liệu tươi bằng cách kiểm tra chất lượng, theo dõi hàng cũ và mới, dùng hàng cũ trước.",
+        "Nêm nếm và nấu theo công thức hoặc theo kinh nghiệm, phán đoán của bản thân."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+          "name": "Kỹ thuật nấu ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+          "name": "Kỹ thuật hoàn thiện món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+          "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+          "name": "Kỹ thuật nấu ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+          "name": "Kỹ thuật hoàn thiện món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+          "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292",
+          "name": "Giữ sạch khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ccd8da7-733b-4aff-a49f-94c390aeb618",
+          "name": "Bàn giao khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c42d2a2a-2f55-45ac-beb1-0a8a76412457",
+          "name": "Dùng dao cụ chế biến",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Bếp phó (sous chef)",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm thực phẩm được bảo quản và nấu đúng nhiệt độ bằng cách điều chỉnh lò nướng, bếp nướng và lò quay.",
+        "Kiểm tra và làm sạch khu chế biến như thiết bị, mặt bàn và khu ra món để bảo đảm an toàn vệ sinh thực phẩm.",
+        "Chia phần, bày và trang trí món, chuyển cho phục vụ hoặc khách.",
+        "Bảo đảm thực phẩm và nguyên liệu tươi bằng cách kiểm tra chất lượng, theo dõi hàng cũ và mới, dùng hàng cũ trước.",
+        "Nêm nếm và nấu theo công thức hoặc theo kinh nghiệm, phán đoán của bản thân."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+          "name": "Kỹ thuật nấu ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+          "name": "Kỹ thuật hoàn thiện món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+          "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292",
+          "name": "Giữ sạch khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ccd8da7-733b-4aff-a49f-94c390aeb618",
+          "name": "Bàn giao khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c42d2a2a-2f55-45ac-beb1-0a8a76412457",
+          "name": "Dùng dao cụ chế biến",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+          "name": "Kỹ thuật nấu ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+          "name": "Kỹ thuật hoàn thiện món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+          "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292",
+          "name": "Giữ sạch khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ccd8da7-733b-4aff-a49f-94c390aeb618",
+          "name": "Bàn giao khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c42d2a2a-2f55-45ac-beb1-0a8a76412457",
+          "name": "Dùng dao cụ chế biến",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Bếp trưởng (head chef)",
+      "years": "7+",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm thực phẩm được bảo quản và nấu đúng nhiệt độ bằng cách điều chỉnh lò nướng, bếp nướng và lò quay.",
+        "Kiểm tra và làm sạch khu chế biến như thiết bị, mặt bàn và khu ra món để bảo đảm an toàn vệ sinh thực phẩm.",
+        "Chia phần, bày và trang trí món, chuyển cho phục vụ hoặc khách.",
+        "Bảo đảm thực phẩm và nguyên liệu tươi bằng cách kiểm tra chất lượng, theo dõi hàng cũ và mới, dùng hàng cũ trước.",
+        "Nêm nếm và nấu theo công thức hoặc theo kinh nghiệm, phán đoán của bản thân."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+          "name": "Kỹ thuật nấu ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+          "name": "Kỹ thuật hoàn thiện món ăn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+          "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292",
+          "name": "Giữ sạch khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ccd8da7-733b-4aff-a49f-94c390aeb618",
+          "name": "Bàn giao khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c42d2a2a-2f55-45ac-beb1-0a8a76412457",
+          "name": "Dùng dao cụ chế biến",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+          "name": "Kỹ thuật nấu ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+          "name": "Kỹ thuật hoàn thiện món ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+          "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292",
+          "name": "Giữ sạch khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ccd8da7-733b-4aff-a49f-94c390aeb618",
+          "name": "Bàn giao khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c42d2a2a-2f55-45ac-beb1-0a8a76412457",
+          "name": "Dùng dao cụ chế biến",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Bếp trưởng điều hành (executive chef)",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo đảm thực phẩm được bảo quản và nấu đúng nhiệt độ bằng cách điều chỉnh lò nướng, bếp nướng và lò quay.",
+        "Kiểm tra và làm sạch khu chế biến như thiết bị, mặt bàn và khu ra món để bảo đảm an toàn vệ sinh thực phẩm.",
+        "Chia phần, bày và trang trí món, chuyển cho phục vụ hoặc khách.",
+        "Bảo đảm thực phẩm và nguyên liệu tươi bằng cách kiểm tra chất lượng, theo dõi hàng cũ và mới, dùng hàng cũ trước.",
+        "Nêm nếm và nấu theo công thức hoặc theo kinh nghiệm, phán đoán của bản thân."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+          "name": "Kỹ thuật nấu ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+          "name": "Kỹ thuật hoàn thiện món ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+          "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292",
+          "name": "Giữ sạch khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ccd8da7-733b-4aff-a49f-94c390aeb618",
+          "name": "Bàn giao khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c42d2a2a-2f55-45ac-beb1-0a8a76412457",
+          "name": "Dùng dao cụ chế biến",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+          "name": "Đặt mua vật tư",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+          "name": "Kỹ thuật sơ chế món ăn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+          "name": "Nhận hàng cho bếp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+          "name": "Kỹ thuật nấu ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+          "name": "Kỹ thuật hoàn thiện món ăn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+          "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292",
+          "name": "Giữ sạch khu sơ chế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ccd8da7-733b-4aff-a49f-94c390aeb618",
+          "name": "Bàn giao khu sơ chế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c42d2a2a-2f55-45ac-beb1-0a8a76412457",
+          "name": "Dùng dao cụ chế biến",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-35-2014.00",
+          "name": "Đầu bếp"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-35-1011.00",
+          "name": "Bếp trưởng"
+        },
+        {
+          "code": "ONET-35-2013.00",
+          "name": "Đầu bếp gia đình"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9051.00",
+          "name": "Quản lý nhà hàng"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-3011.00",
+      "name": "Thợ làm bánh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-35-3031.00",
+      "name": "Nhân viên phục vụ nhà hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-37-2011.00",
+      "name": "Nhân viên vệ sinh và buồng phòng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-9051.00",
+      "name": "Quản lý nhà hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-3092.00",
+      "name": "Công nhân chế biến thực phẩm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 8000000,
+    "median": 10000000,
+    "high": 15000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 162,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/210827e3-3129-45a2-8683-70399f3f561f",
+      "name": "Đặt mua vật tư",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4b15a965-9bb4-42f1-8e44-1024aeb0b08c",
+      "name": "Kỹ thuật sơ chế món ăn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/341cf309-746c-4437-ad14-e0a0ee13eacc",
+      "name": "Nhận hàng cho bếp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f3934441-4bff-4076-9945-e6c51a01c467",
+      "name": "Kỹ thuật nấu ăn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bb84d739-1b06-477b-9195-251650bb3c14",
+      "name": "Kỹ thuật hoàn thiện món ăn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+      "name": "Kiểm soát chi phí",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e265e4e2-f031-4012-a7bf-54cac48fb846",
+      "name": "Giữ nhiệt độ đúng cho thiết bị bếp",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292",
+      "name": "Giữ sạch khu sơ chế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9ccd8da7-733b-4aff-a49f-94c390aeb618",
+      "name": "Bàn giao khu sơ chế",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c42d2a2a-2f55-45ac-beb1-0a8a76412457",
+      "name": "Dùng dao cụ chế biến",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.347
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.428
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.635
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.731
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.771
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -1.16
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -1.223
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

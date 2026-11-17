@@ -1,0 +1,841 @@
+{
+  "code": "ONET-11-9111.00",
+  "name": "Quản lý bệnh viện, cơ sở y tế",
+  "nameEn": "Medical and Health Services Managers",
+  "group": "Quản lý",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Lập kế hoạch, chỉ đạo và điều phối dịch vụ y tế ở bệnh viện, phòng khám, tổ chức bảo hiểm y tế, cơ quan y tế công cộng hoặc tổ chức tương tự. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Công việc lặp lại nhiều.",
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Ngồi gần như cả ngày."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "46% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "7% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Bệnh viện công",
+      "weight": 65
+    },
+    {
+      "name": "Bệnh viện tư, quốc tế",
+      "weight": 35
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Quản lý y tế", "Y tế công cộng"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Phó trưởng phòng chức năng bệnh viện",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo, giám sát và đánh giá công việc của nhân viên y tế, điều dưỡng, kỹ thuật, văn thư, dịch vụ, bảo trì và các nhân sự khác.",
+        "Xây dựng và duy trì hệ thống quản lý hồ sơ điện tử để lưu, xử lý dữ liệu như thông tin nhân sự và lập báo cáo.",
+        "Lập kế hoạch, triển khai và quản lý chương trình, dịch vụ ở cơ sở y tế, gồm quản lý nhân sự, đào tạo và điều phối đội ngũ y tế, điều dưỡng, cơ sở vật chất.",
+        "Điều hành hoạt động tài chính, gồm kế toán, lập ngân sách, duyệt chi, đặt giá dịch vụ và điều phối báo cáo tài chính.",
+        "Theo dõi tiến bộ y học, thiết bị chẩn đoán và điều trị, công nghệ xử lý dữ liệu, quy định nhà nước, thay đổi về bảo hiểm y tế và các phương án tài chính."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp L3 ở một nghề đi trước: Bác sĩ răng hàm mặt (nha sĩ), Chuyên viên dinh dưỡng, Kỹ thuật viên khúc xạ, nhãn khoa, Dược sĩ, Kỹ thuật viên, chuyên viên phục hồi chức năng, Bác sĩ thú y, Điều dưỡng, Kỹ thuật viên gây mê hồi sức, Hộ sinh, Bác sĩ, Y học cổ truyền, châm cứu, Kỹ thuật viên xét nghiệm, Kỹ thuật viên chẩn đoán hình ảnh, Nhân viên cấp cứu ngoại viện, Chuyên viên hồ sơ bệnh án",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng phòng chức năng (quản lý chất lượng, kế hoạch tổng hợp)",
+      "years": "5–9",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo, giám sát và đánh giá công việc của nhân viên y tế, điều dưỡng, kỹ thuật, văn thư, dịch vụ, bảo trì và các nhân sự khác.",
+        "Xây dựng và duy trì hệ thống quản lý hồ sơ điện tử để lưu, xử lý dữ liệu như thông tin nhân sự và lập báo cáo.",
+        "Lập kế hoạch, triển khai và quản lý chương trình, dịch vụ ở cơ sở y tế, gồm quản lý nhân sự, đào tạo và điều phối đội ngũ y tế, điều dưỡng, cơ sở vật chất.",
+        "Điều hành hoạt động tài chính, gồm kế toán, lập ngân sách, duyệt chi, đặt giá dịch vụ và điều phối báo cáo tài chính.",
+        "Theo dõi tiến bộ y học, thiết bị chẩn đoán và điều trị, công nghệ xử lý dữ liệu, quy định nhà nước, thay đổi về bảo hiểm y tế và các phương án tài chính."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng khoa",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo, giám sát và đánh giá công việc của nhân viên y tế, điều dưỡng, kỹ thuật, văn thư, dịch vụ, bảo trì và các nhân sự khác.",
+        "Xây dựng và duy trì hệ thống quản lý hồ sơ điện tử để lưu, xử lý dữ liệu như thông tin nhân sự và lập báo cáo.",
+        "Lập kế hoạch, triển khai và quản lý chương trình, dịch vụ ở cơ sở y tế, gồm quản lý nhân sự, đào tạo và điều phối đội ngũ y tế, điều dưỡng, cơ sở vật chất.",
+        "Điều hành hoạt động tài chính, gồm kế toán, lập ngân sách, duyệt chi, đặt giá dịch vụ và điều phối báo cáo tài chính.",
+        "Theo dõi tiến bộ y học, thiết bị chẩn đoán và điều trị, công nghệ xử lý dữ liệu, quy định nhà nước, thay đổi về bảo hiểm y tế và các phương án tài chính."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tri_tue_cam_xuc": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Phó giám đốc bệnh viện",
+      "years": "12–18",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo, giám sát và đánh giá công việc của nhân viên y tế, điều dưỡng, kỹ thuật, văn thư, dịch vụ, bảo trì và các nhân sự khác.",
+        "Xây dựng và duy trì hệ thống quản lý hồ sơ điện tử để lưu, xử lý dữ liệu như thông tin nhân sự và lập báo cáo.",
+        "Lập kế hoạch, triển khai và quản lý chương trình, dịch vụ ở cơ sở y tế, gồm quản lý nhân sự, đào tạo và điều phối đội ngũ y tế, điều dưỡng, cơ sở vật chất.",
+        "Điều hành hoạt động tài chính, gồm kế toán, lập ngân sách, duyệt chi, đặt giá dịch vụ và điều phối báo cáo tài chính.",
+        "Theo dõi tiến bộ y học, thiết bị chẩn đoán và điều trị, công nghệ xử lý dữ liệu, quy định nhà nước, thay đổi về bảo hiểm y tế và các phương án tài chính."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L8",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc bệnh viện / người chịu trách nhiệm chuyên môn kỹ thuật",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo, giám sát và đánh giá công việc của nhân viên y tế, điều dưỡng, kỹ thuật, văn thư, dịch vụ, bảo trì và các nhân sự khác.",
+        "Xây dựng và duy trì hệ thống quản lý hồ sơ điện tử để lưu, xử lý dữ liệu như thông tin nhân sự và lập báo cáo.",
+        "Lập kế hoạch, triển khai và quản lý chương trình, dịch vụ ở cơ sở y tế, gồm quản lý nhân sự, đào tạo và điều phối đội ngũ y tế, điều dưỡng, cơ sở vật chất.",
+        "Điều hành hoạt động tài chính, gồm kế toán, lập ngân sách, duyệt chi, đặt giá dịch vụ và điều phối báo cáo tài chính.",
+        "Theo dõi tiến bộ y học, thiết bị chẩn đoán và điều trị, công nghệ xử lý dữ liệu, quy định nhà nước, thay đổi về bảo hiểm y tế và các phương án tài chính."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L9",
+      "bandEquivalent": "L9",
+      "title": "Tổng giám đốc hệ thống bệnh viện / Giám đốc Sở Y tế",
+      "years": "18+",
+      "coreOutput": null,
+      "tasks": [
+        "Chỉ đạo, giám sát và đánh giá công việc của nhân viên y tế, điều dưỡng, kỹ thuật, văn thư, dịch vụ, bảo trì và các nhân sự khác.",
+        "Xây dựng và duy trì hệ thống quản lý hồ sơ điện tử để lưu, xử lý dữ liệu như thông tin nhân sự và lập báo cáo.",
+        "Lập kế hoạch, triển khai và quản lý chương trình, dịch vụ ở cơ sở y tế, gồm quản lý nhân sự, đào tạo và điều phối đội ngũ y tế, điều dưỡng, cơ sở vật chất.",
+        "Điều hành hoạt động tài chính, gồm kế toán, lập ngân sách, duyệt chi, đặt giá dịch vụ và điều phối báo cáo tài chính.",
+        "Theo dõi tiến bộ y học, thiết bị chẩn đoán và điều trị, công nghệ xử lý dữ liệu, quy định nhà nước, thay đổi về bảo hiểm y tế và các phương án tài chính."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 5,
+        "tu_quan_ly_ap_luc": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+          "name": "Phân tích tiến độ mục tiêu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "name": "Ghi nhật ký công việc",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+          "name": "Quản trị y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+          "name": "Quản lý nhân viên y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+          "name": "Hệ thống y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+          "name": "Pháp luật y tế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-1081.00",
+      "name": "Giảng viên đại học, cao đẳng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-21-1094.00",
+      "name": "Nhân viên y tế cộng đồng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-21-1021.00",
+      "name": "Nhân viên công tác xã hội",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-15-2041.00",
+      "name": "Chuyên viên thống kê và toán ứng dụng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 9679000,
+    "median": null,
+    "high": 25429000,
+    "byYears": [],
+    "source": "WageIndicator Việt Nam, \"Quản lý các dịch vụ sức khỏe\"",
+    "dataYear": "2026",
+    "note": "Số mô hình.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+      "name": "Quản lý ngân sách",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/dbfb9dda-48d9-4a10-9821-3237f868071b",
+      "name": "Phân tích tiến độ mục tiêu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+      "name": "Ghi nhật ký công việc",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6ec33857-420a-411b-a313-e8946de36357",
+      "name": "Quản trị y tế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/add39442-b8ca-4412-8156-391db53b0c5d",
+      "name": "Quản lý nhân viên y tế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9b63d92b-5a3a-46b0-b2ba-c98b39ea5aaf",
+      "name": "Hệ thống y tế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b",
+      "name": "Pháp luật y tế",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 1.163
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 1.067
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.894
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.786
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.772
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.639
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.521
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "PREREQUISITE",
+    "band": "L3",
+    "roles": [
+      {
+        "code": "ONET-29-1021.00",
+        "name": "Bác sĩ răng hàm mặt (nha sĩ)"
+      },
+      {
+        "code": "ONET-29-1031.00",
+        "name": "Chuyên viên dinh dưỡng"
+      },
+      {
+        "code": "ONET-29-1041.00",
+        "name": "Kỹ thuật viên khúc xạ, nhãn khoa"
+      },
+      {
+        "code": "ONET-29-1051.00",
+        "name": "Dược sĩ"
+      },
+      {
+        "code": "ONET-29-1123.00",
+        "name": "Kỹ thuật viên, chuyên viên phục hồi chức năng"
+      },
+      {
+        "code": "ONET-29-1131.00",
+        "name": "Bác sĩ thú y"
+      },
+      {
+        "code": "ONET-29-1141.00",
+        "name": "Điều dưỡng"
+      },
+      {
+        "code": "ONET-29-1151.00",
+        "name": "Kỹ thuật viên gây mê hồi sức"
+      },
+      {
+        "code": "ONET-29-1161.00",
+        "name": "Hộ sinh"
+      },
+      {
+        "code": "ONET-29-1215.00",
+        "name": "Bác sĩ"
+      },
+      {
+        "code": "ONET-29-1291.00",
+        "name": "Y học cổ truyền, châm cứu"
+      },
+      {
+        "code": "ONET-29-2011.00",
+        "name": "Kỹ thuật viên xét nghiệm"
+      },
+      {
+        "code": "ONET-29-2034.00",
+        "name": "Kỹ thuật viên chẩn đoán hình ảnh"
+      },
+      {
+        "code": "ONET-29-2043.00",
+        "name": "Nhân viên cấp cứu ngoại viện"
+      },
+      {
+        "code": "ONET-29-2072.00",
+        "name": "Chuyên viên hồ sơ bệnh án"
+      }
+    ]
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

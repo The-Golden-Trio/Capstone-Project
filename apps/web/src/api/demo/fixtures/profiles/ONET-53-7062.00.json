@@ -1,0 +1,605 @@
+{
+  "code": "ONET-53-7062.00",
+  "name": "Công nhân bốc xếp, đóng gói",
+  "nameEn": "Laborers and Freight, Stock, and Material Movers, Hand",
+  "group": "Vận tải và bốc dỡ hàng hoá",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Chuyển hàng hoá, hành lý hoặc vật liệu bằng tay, hoặc làm lao động phổ thông khác. Gồm mọi lao động chân tay chưa được phân loại ở nghề khác. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Tiếp xúc với nhiệt độ rất nóng hoặc rất lạnh.",
+    "Hay phải cúi hoặc vặn người.",
+    "Phải đi lại hoặc chạy nhiều.",
+    "Lặp đi lặp lại cùng một động tác."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "47% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "22% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trên xe, tàu, máy bay", "Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Kho vận, trung tâm phân loại hàng",
+      "weight": 60
+    },
+    {
+      "name": "Cảng biển, cảng cạn",
+      "weight": 25
+    },
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Lao động bốc xếp thời vụ",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Giữ khu cất thiết bị gọn gàng để bảo vệ hàng tồn.",
+        "Đọc phiếu công việc hoặc nghe hướng dẫn để biết việc được giao và vật tư, thiết bị cần dùng.",
+        "Chuyển hàng hoá, vật liệu tới và rời kho, khu sản xuất, sân bốc xếp, xe giao hàng, tàu hoặc container, bằng tay hoặc xe đẩy, xe kéo và thiết bị khác."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c",
+          "name": "Xử lý đơn hàng xuất kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1",
+          "name": "Xếp hàng nặng lên pallet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda",
+          "name": "Dùng dụng cụ đánh dấu kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba",
+          "name": "Quy tắc quản lý tồn kho",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công nhân bốc xếp, đóng gói",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Giữ khu cất thiết bị gọn gàng để bảo vệ hàng tồn.",
+        "Đọc phiếu công việc hoặc nghe hướng dẫn để biết việc được giao và vật tư, thiết bị cần dùng.",
+        "Chuyển hàng hoá, vật liệu tới và rời kho, khu sản xuất, sân bốc xếp, xe giao hàng, tàu hoặc container, bằng tay hoặc xe đẩy, xe kéo và thiết bị khác."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c",
+          "name": "Xử lý đơn hàng xuất kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1",
+          "name": "Xếp hàng nặng lên pallet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda",
+          "name": "Dùng dụng cụ đánh dấu kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba",
+          "name": "Quy tắc quản lý tồn kho",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c",
+          "name": "Xử lý đơn hàng xuất kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1",
+          "name": "Xếp hàng nặng lên pallet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda",
+          "name": "Dùng dụng cụ đánh dấu kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba",
+          "name": "Quy tắc quản lý tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e2297-39cc-4ed6-89e5-d58016118a7f",
+          "name": "Soạn hàng để xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da",
+          "name": "Vận hành hệ thống ghi chép kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23db1cab-e565-4a90-89f8-3a8685a20029",
+          "name": "Giữ kho trong tình trạng tốt",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Công nhân bốc xếp lành nghề",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Giữ khu cất thiết bị gọn gàng để bảo vệ hàng tồn.",
+        "Đọc phiếu công việc hoặc nghe hướng dẫn để biết việc được giao và vật tư, thiết bị cần dùng.",
+        "Chuyển hàng hoá, vật liệu tới và rời kho, khu sản xuất, sân bốc xếp, xe giao hàng, tàu hoặc container, bằng tay hoặc xe đẩy, xe kéo và thiết bị khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c",
+          "name": "Xử lý đơn hàng xuất kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1",
+          "name": "Xếp hàng nặng lên pallet",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda",
+          "name": "Dùng dụng cụ đánh dấu kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba",
+          "name": "Quy tắc quản lý tồn kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e2297-39cc-4ed6-89e5-d58016118a7f",
+          "name": "Soạn hàng để xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da",
+          "name": "Vận hành hệ thống ghi chép kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23db1cab-e565-4a90-89f8-3a8685a20029",
+          "name": "Giữ kho trong tình trạng tốt",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c",
+          "name": "Xử lý đơn hàng xuất kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1",
+          "name": "Xếp hàng nặng lên pallet",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda",
+          "name": "Dùng dụng cụ đánh dấu kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba",
+          "name": "Quy tắc quản lý tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e2297-39cc-4ed6-89e5-d58016118a7f",
+          "name": "Soạn hàng để xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da",
+          "name": "Vận hành hệ thống ghi chép kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23db1cab-e565-4a90-89f8-3a8685a20029",
+          "name": "Giữ kho trong tình trạng tốt",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Tổ trưởng bốc xếp/trưởng ca kho",
+      "years": "4+",
+      "coreOutput": null,
+      "tasks": [
+        "Giữ khu cất thiết bị gọn gàng để bảo vệ hàng tồn.",
+        "Đọc phiếu công việc hoặc nghe hướng dẫn để biết việc được giao và vật tư, thiết bị cần dùng.",
+        "Chuyển hàng hoá, vật liệu tới và rời kho, khu sản xuất, sân bốc xếp, xe giao hàng, tàu hoặc container, bằng tay hoặc xe đẩy, xe kéo và thiết bị khác."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c",
+          "name": "Xử lý đơn hàng xuất kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1",
+          "name": "Xếp hàng nặng lên pallet",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda",
+          "name": "Dùng dụng cụ đánh dấu kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba",
+          "name": "Quy tắc quản lý tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e2297-39cc-4ed6-89e5-d58016118a7f",
+          "name": "Soạn hàng để xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da",
+          "name": "Vận hành hệ thống ghi chép kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23db1cab-e565-4a90-89f8-3a8685a20029",
+          "name": "Giữ kho trong tình trạng tốt",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+          "name": "Xếp chồng hàng hoá",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c",
+          "name": "Xử lý đơn hàng xuất kho",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1",
+          "name": "Xếp hàng nặng lên pallet",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda",
+          "name": "Dùng dụng cụ đánh dấu kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba",
+          "name": "Quy tắc quản lý tồn kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ee5e2297-39cc-4ed6-89e5-d58016118a7f",
+          "name": "Soạn hàng để xuất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+          "name": "Hệ thống mã sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da",
+          "name": "Vận hành hệ thống ghi chép kho",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "name": "Vận hành vật tư kho",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23db1cab-e565-4a90-89f8-3a8685a20029",
+          "name": "Giữ kho trong tình trạng tốt",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-53-7062.00",
+          "name": "Công nhân bốc xếp, đóng gói"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-53-1042.00",
+          "name": "Tổ trưởng bốc xếp"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-9111.00",
+      "name": "Công nhân vận hành máy sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7051.00",
+      "name": "Người vận hành xe nâng, cần cẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-2031.00",
+      "name": "Nhân viên bán hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-5071.00",
+      "name": "Nhân viên kho và kế hoạch vật tư",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-37-2011.00",
+      "name": "Nhân viên vệ sinh và buồng phòng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 7200000,
+    "median": 8000000,
+    "high": 9200000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 36,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/3d086228-d7fc-4c23-972a-22b7d44a6173",
+      "name": "Xếp chồng hàng hoá",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c",
+      "name": "Xử lý đơn hàng xuất kho",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5f6c74c9-c49c-400d-bdd9-314e8bf348a1",
+      "name": "Xếp hàng nặng lên pallet",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9685849e-f2b4-490f-85b5-20fc6fff9fda",
+      "name": "Dùng dụng cụ đánh dấu kho",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba",
+      "name": "Quy tắc quản lý tồn kho",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ee5e2297-39cc-4ed6-89e5-d58016118a7f",
+      "name": "Soạn hàng để xuất",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/af582ee4-bbc8-436c-96f2-df0cb2049f5d",
+      "name": "Hệ thống mã sản phẩm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da",
+      "name": "Vận hành hệ thống ghi chép kho",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+      "name": "Vận hành vật tư kho",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/23db1cab-e565-4a90-89f8-3a8685a20029",
+      "name": "Giữ kho trong tình trạng tốt",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.375
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.497
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.71
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.778
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.947
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -1.021
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -1.158
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

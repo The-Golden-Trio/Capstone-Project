@@ -1,0 +1,929 @@
+{
+  "code": "ONET-13-1051.00",
+  "name": "Kỹ sư dự toán (QS)",
+  "nameEn": "Cost Estimators",
+  "group": "Kinh doanh và tài chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Lập dự toán chi phí cho sản xuất sản phẩm, dự án xây dựng hoặc dịch vụ để ban quản lý dự thầu hoặc định giá. Có thể chuyên một loại dịch vụ hoặc sản phẩm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Nhiều việc phải chính xác tuyệt đối; một sai sót nhỏ về số liệu hay quy định có thể gây hậu quả lớn.",
+    "Áp lực cao vào các kỳ chốt sổ, quyết toán hoặc hạn nộp báo cáo."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "45% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "36% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty tư vấn thiết kế, giám sát",
+      "weight": 50
+    },
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 30
+    },
+    {
+      "name": "Chủ đầu tư, ban quản lý dự án",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật xây dựng", "Quản lý xây dựng"],
+    "vocational": ["Kế toán xây dựng"],
+    "licence": "Chứng chỉ hành nghề hoạt động xây dựng hạng I, II, III (thiết kế, giám sát, khảo sát) — Luật Xây dựng số 135/2025/QH15, Điều 88"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh dự toán (QS)",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích bản vẽ và hồ sơ để dự toán thời gian, chi phí, vật liệu và nhân công.",
+        "Trao đổi với kỹ sư, kiến trúc sư, chủ đầu tư, nhà thầu và thầu phụ về thay đổi, điều chỉnh dự toán.",
+        "Thu thập dữ liệu chi phí cũ để dự toán cho sản phẩm hiện tại hoặc tương lai.",
+        "Đánh giá hiệu quả chi phí của sản phẩm, dự án hoặc dịch vụ, theo dõi chi phí thực tế so với giá dự thầu trong quá trình thực hiện.",
+        "Trao đổi với khách, nhà cung cấp, các phòng ban khác hoặc đốc công để lập dự toán và xử lý vướng mắc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ sư dự toán mới",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích bản vẽ và hồ sơ để dự toán thời gian, chi phí, vật liệu và nhân công.",
+        "Trao đổi với kỹ sư, kiến trúc sư, chủ đầu tư, nhà thầu và thầu phụ về thay đổi, điều chỉnh dự toán.",
+        "Thu thập dữ liệu chi phí cũ để dự toán cho sản phẩm hiện tại hoặc tương lai.",
+        "Đánh giá hiệu quả chi phí của sản phẩm, dự án hoặc dịch vụ, theo dõi chi phí thực tế so với giá dự thầu trong quá trình thực hiện.",
+        "Trao đổi với khách, nhà cung cấp, các phòng ban khác hoặc đốc công để lập dự toán và xử lý vướng mắc."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ sư dự toán",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích bản vẽ và hồ sơ để dự toán thời gian, chi phí, vật liệu và nhân công.",
+        "Trao đổi với kỹ sư, kiến trúc sư, chủ đầu tư, nhà thầu và thầu phụ về thay đổi, điều chỉnh dự toán.",
+        "Thu thập dữ liệu chi phí cũ để dự toán cho sản phẩm hiện tại hoặc tương lai.",
+        "Đánh giá hiệu quả chi phí của sản phẩm, dự án hoặc dịch vụ, theo dõi chi phí thực tế so với giá dự thầu trong quá trình thực hiện.",
+        "Trao đổi với khách, nhà cung cấp, các phòng ban khác hoặc đốc công để lập dự toán và xử lý vướng mắc."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+          "name": "Kế toán chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+          "name": "Luật quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư định giá xây dựng hạng III",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích bản vẽ và hồ sơ để dự toán thời gian, chi phí, vật liệu và nhân công.",
+        "Trao đổi với kỹ sư, kiến trúc sư, chủ đầu tư, nhà thầu và thầu phụ về thay đổi, điều chỉnh dự toán.",
+        "Thu thập dữ liệu chi phí cũ để dự toán cho sản phẩm hiện tại hoặc tương lai.",
+        "Đánh giá hiệu quả chi phí của sản phẩm, dự án hoặc dịch vụ, theo dõi chi phí thực tế so với giá dự thầu trong quá trình thực hiện.",
+        "Trao đổi với khách, nhà cung cấp, các phòng ban khác hoặc đốc công để lập dự toán và xử lý vướng mắc."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+          "name": "Kế toán chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+          "name": "Luật quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+          "name": "Kế toán chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+          "name": "Luật quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ sư định giá xây dựng hạng II",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích bản vẽ và hồ sơ để dự toán thời gian, chi phí, vật liệu và nhân công.",
+        "Trao đổi với kỹ sư, kiến trúc sư, chủ đầu tư, nhà thầu và thầu phụ về thay đổi, điều chỉnh dự toán.",
+        "Thu thập dữ liệu chi phí cũ để dự toán cho sản phẩm hiện tại hoặc tương lai.",
+        "Đánh giá hiệu quả chi phí của sản phẩm, dự án hoặc dịch vụ, theo dõi chi phí thực tế so với giá dự thầu trong quá trình thực hiện.",
+        "Trao đổi với khách, nhà cung cấp, các phòng ban khác hoặc đốc công để lập dự toán và xử lý vướng mắc."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+          "name": "Kế toán chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+          "name": "Luật quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+          "name": "Kế toán chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+          "name": "Luật quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Kỹ sư định giá xây dựng hạng I",
+      "years": "7–10",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích bản vẽ và hồ sơ để dự toán thời gian, chi phí, vật liệu và nhân công.",
+        "Trao đổi với kỹ sư, kiến trúc sư, chủ đầu tư, nhà thầu và thầu phụ về thay đổi, điều chỉnh dự toán.",
+        "Thu thập dữ liệu chi phí cũ để dự toán cho sản phẩm hiện tại hoặc tương lai.",
+        "Đánh giá hiệu quả chi phí của sản phẩm, dự án hoặc dịch vụ, theo dõi chi phí thực tế so với giá dự thầu trong quá trình thực hiện.",
+        "Trao đổi với khách, nhà cung cấp, các phòng ban khác hoặc đốc công để lập dự toán và xử lý vướng mắc."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+          "name": "Kế toán chi phí",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+          "name": "Luật quy hoạch đô thị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+          "name": "Kế toán chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+          "name": "Luật quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng quản lý chi phí (QS Manager)",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích bản vẽ và hồ sơ để dự toán thời gian, chi phí, vật liệu và nhân công.",
+        "Trao đổi với kỹ sư, kiến trúc sư, chủ đầu tư, nhà thầu và thầu phụ về thay đổi, điều chỉnh dự toán.",
+        "Thu thập dữ liệu chi phí cũ để dự toán cho sản phẩm hiện tại hoặc tương lai.",
+        "Đánh giá hiệu quả chi phí của sản phẩm, dự án hoặc dịch vụ, theo dõi chi phí thực tế so với giá dự thầu trong quá trình thực hiện.",
+        "Trao đổi với khách, nhà cung cấp, các phòng ban khác hoặc đốc công để lập dự toán và xử lý vướng mắc."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+          "name": "Kế toán chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+          "name": "Luật quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+          "name": "Quản lý chi phí",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+          "name": "Xác định mục tiêu của khách hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+          "name": "Tư vấn vật liệu xây dựng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+          "name": "Lập hồ sơ thi công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+          "name": "Kiểm soát chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+          "name": "Kế toán chi phí",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+          "name": "Luật quy hoạch đô thị",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+          "name": "Quy chuẩn xây dựng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+          "name": "Dự toán và quản lý chi phí xây dựng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-13-1081.00",
+      "name": "Chuyên viên logistics và xuất nhập khẩu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-9021.00",
+      "name": "Quản lý xây dựng (chỉ huy trưởng công trình)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2112.00",
+      "name": "Kỹ sư công nghiệp, quản lý sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-11-9041.00",
+      "name": "Quản lý kỹ thuật và nghiên cứu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 13500000,
+    "median": 16000000,
+    "high": 18500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 253,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+      "name": "Quản lý ngân sách",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7d35602d-bc94-4975-aa7c-f4e8e05ce8e0",
+      "name": "Quản lý chi phí",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4a84caca-4423-4a73-aeb4-47986173922b",
+      "name": "Xác định mục tiêu của khách hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/01c03003-516d-43c6-8477-45c472413521",
+      "name": "Tư vấn vật liệu xây dựng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/80274731-15ce-490a-8d5b-f55a36b976b0",
+      "name": "Lập hồ sơ thi công",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e1f5c539-7c93-49ee-917d-a24e0d887686",
+      "name": "Kiểm soát chi phí",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c5b90c0c-3af0-4c8c-a06c-cc3ced02242c",
+      "name": "Kế toán chi phí",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1f632076-fd9b-4b18-a9a2-b59a59181d3e",
+      "name": "Luật quy hoạch đô thị",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/615cfc39-797f-4229-8e92-159fcf8f3030",
+      "name": "Quy chuẩn xây dựng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9be758b6-a45d-403c-8943-68390ee2c961",
+      "name": "Dự toán và quản lý chi phí xây dựng",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.709
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.516
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.429
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.244
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.214
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.105
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.438
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

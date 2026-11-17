@@ -1,0 +1,882 @@
+{
+  "code": "ONET-25-1081.00",
+  "name": "Giảng viên đại học, cao đẳng",
+  "nameEn": "Education Teachers, Postsecondary",
+  "group": "Giáo dục và thư viện",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Giảng dạy một hoặc nhiều môn ở trường đại học, cao đẳng: soạn đề cương và bài giảng, lên lớp, hướng dẫn sinh viên làm đồ án, luận văn, chấm thi. Đồng thời nghiên cứu khoa học, viết bài báo và tham gia công việc của khoa. Môn dạy là biến thể của nghề: kinh tế, kỹ thuật, khoa học tự nhiên, xã hội, y, luật, nghệ thuật, ngoại ngữ. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Môi trường cạnh tranh cao.",
+    "Ngồi gần như cả ngày."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "65% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "21% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trường học, trung tâm", "Văn phòng"],
+  "environments": [
+    {
+      "name": "Trường đại học, cao đẳng công lập",
+      "weight": 65
+    },
+    {
+      "name": "Trường đại học tư thục",
+      "weight": 35
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [],
+    "licence": "Đạt chuẩn trình độ đào tạo theo cấp học; người không học sư phạm cần chứng chỉ nghiệp vụ sư phạm — Luật Nhà giáo số 73/2025/QH15, hiệu lực 01/01/2026"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ giảng đại học",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn tài liệu môn học như đề cương, bài tập về nhà và tài liệu phát tay.",
+        "Nghiên cứu trong một lĩnh vực và công bố kết quả trên tạp chí, sách hoặc ấn phẩm điện tử.",
+        "Soạn đề, coi và chấm thi, hoặc giao việc này cho người khác.",
+        "Cập nhật tiến bộ của ngành qua đọc tài liệu mới, trao đổi với đồng nghiệp và dự hội thảo chuyên môn.",
+        "Hướng dẫn sinh viên đi thực địa, thực tập và nghiên cứu."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Giảng viên (bậc 3, tương đương hạng III cũ)",
+      "years": "2–9",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn tài liệu môn học như đề cương, bài tập về nhà và tài liệu phát tay.",
+        "Nghiên cứu trong một lĩnh vực và công bố kết quả trên tạp chí, sách hoặc ấn phẩm điện tử.",
+        "Soạn đề, coi và chấm thi, hoặc giao việc này cho người khác.",
+        "Cập nhật tiến bộ của ngành qua đọc tài liệu mới, trao đổi với đồng nghiệp và dự hội thảo chuyên môn.",
+        "Hướng dẫn sinh viên đi thực địa, thực tập và nghiên cứu."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Giảng viên chính (bậc 4, tương đương hạng II cũ)",
+      "years": "9–15",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn tài liệu môn học như đề cương, bài tập về nhà và tài liệu phát tay.",
+        "Nghiên cứu trong một lĩnh vực và công bố kết quả trên tạp chí, sách hoặc ấn phẩm điện tử.",
+        "Soạn đề, coi và chấm thi, hoặc giao việc này cho người khác.",
+        "Cập nhật tiến bộ của ngành qua đọc tài liệu mới, trao đổi với đồng nghiệp và dự hội thảo chuyên môn.",
+        "Hướng dẫn sinh viên đi thực địa, thực tập và nghiên cứu."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng bộ môn",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn tài liệu môn học như đề cương, bài tập về nhà và tài liệu phát tay.",
+        "Nghiên cứu trong một lĩnh vực và công bố kết quả trên tạp chí, sách hoặc ấn phẩm điện tử.",
+        "Soạn đề, coi và chấm thi, hoặc giao việc này cho người khác.",
+        "Cập nhật tiến bộ của ngành qua đọc tài liệu mới, trao đổi với đồng nghiệp và dự hội thảo chuyên môn.",
+        "Hướng dẫn sinh viên đi thực địa, thực tập và nghiên cứu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Phó giáo sư/giảng viên cao cấp (bậc 5, tương đương hạng I cũ), phó trưởng khoa",
+      "years": "12–20",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn tài liệu môn học như đề cương, bài tập về nhà và tài liệu phát tay.",
+        "Nghiên cứu trong một lĩnh vực và công bố kết quả trên tạp chí, sách hoặc ấn phẩm điện tử.",
+        "Soạn đề, coi và chấm thi, hoặc giao việc này cho người khác.",
+        "Cập nhật tiến bộ của ngành qua đọc tài liệu mới, trao đổi với đồng nghiệp và dự hội thảo chuyên môn.",
+        "Hướng dẫn sinh viên đi thực địa, thực tập và nghiên cứu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Giáo sư, trưởng khoa",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn tài liệu môn học như đề cương, bài tập về nhà và tài liệu phát tay.",
+        "Nghiên cứu trong một lĩnh vực và công bố kết quả trên tạp chí, sách hoặc ấn phẩm điện tử.",
+        "Soạn đề, coi và chấm thi, hoặc giao việc này cho người khác.",
+        "Cập nhật tiến bộ của ngành qua đọc tài liệu mới, trao đổi với đồng nghiệp và dự hội thảo chuyên môn.",
+        "Hướng dẫn sinh viên đi thực địa, thực tập và nghiên cứu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 4,
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "tri_tue_cam_xuc": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L8",
+      "bandEquivalent": "L9",
+      "title": "Hiệu trưởng/giám đốc đại học",
+      "years": "20+",
+      "coreOutput": null,
+      "tasks": [
+        "Soạn tài liệu môn học như đề cương, bài tập về nhà và tài liệu phát tay.",
+        "Nghiên cứu trong một lĩnh vực và công bố kết quả trên tạp chí, sách hoặc ấn phẩm điện tử.",
+        "Soạn đề, coi và chấm thi, hoặc giao việc này cho người khác.",
+        "Cập nhật tiến bộ của ngành qua đọc tài liệu mới, trao đổi với đồng nghiệp và dự hội thảo chuyên môn.",
+        "Hướng dẫn sinh viên đi thực địa, thực tập và nghiên cứu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 5,
+        "tu_duy_giai_quyet_van_de": 5,
+        "giao_tiep_hop_tac": 4,
+        "thich_ung_hoc_hoi": 4,
+        "tri_tue_cam_xuc": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "dao_duc_chuyen_nghiep": 3
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+          "name": "Quy trình đại học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+          "name": "Quy trình đánh giá",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+          "name": "Viết báo cáo công việc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "name": "Hỗ trợ học sinh học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+          "name": "Mục tiêu chương trình học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+          "name": "Dạy học liên văn hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+          "name": "Áp dụng chiến lược giảng dạy",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-25-1081.00",
+          "name": "Giảng viên đại học, cao đẳng"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9032.00",
+          "name": "Quản lý giáo dục (hiệu trưởng, trưởng khoa)"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-25-2031.00",
+      "name": "Giáo viên trung học (THCS, THPT)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-9031.00",
+      "name": "Chuyên viên phát triển chương trình đào tạo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-3041.00",
+      "name": "Gia sư, giáo viên trung tâm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-3041.00",
+      "name": "Nhà nghiên cứu khoa học xã hội",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 5920000,
+    "median": null,
+    "high": 20240000,
+    "byYears": [],
+    "source": "Thông tư 31/2026/TT-BGDĐT, Điều 14; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Giảng viên, giảng viên chính, giảng viên cao cấp",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 34,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/d4e9055e-597f-42ca-98ac-a5e3d8e881e1",
+      "name": "Quy trình đại học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/31b67516-af16-4b97-8430-a8a8e0f84190",
+      "name": "Quy trình đánh giá",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+      "name": "Thiết kế nghiên cứu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+      "name": "Soạn bài giảng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/918f5211-b99f-4b29-9a34-6e475583ef55",
+      "name": "Viết báo cáo công việc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+      "name": "Hỗ trợ học sinh học tập",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/edff6d20-660d-4d33-b412-9a5b664a14be",
+      "name": "Mục tiêu chương trình học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e3ef4981-2cba-4b34-b273-728c3a33d04f",
+      "name": "Dạy học liên văn hoá",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/59eb177a-2f30-4943-8b30-5f87dd51a80d",
+      "name": "Áp dụng chiến lược giảng dạy",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.786
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.766
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.547
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.522
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.416
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.346
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.215
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,946 @@
+{
+  "code": "ONET-17-2071.00",
+  "name": "Kỹ sư điện",
+  "nameEn": "Electrical Engineers",
+  "group": "Kiến trúc và kỹ thuật",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Nghiên cứu, thiết kế, phát triển, thử nghiệm hoặc giám sát sản xuất và lắp đặt thiết bị, linh kiện, hệ thống điện cho thương mại, công nghiệp, quốc phòng hoặc khoa học. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió.",
+    "Sai sót trong thiết kế có thể gây nguy hiểm cho người dùng và tốn kém rất lớn.",
+    "Nhiều vị trí phải đi công trường hoặc nhà máy, chịu thời tiết và tiếng ồn."
+  ],
+  "workFacts": [
+    "39% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "22% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 35
+    },
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 35
+    },
+    {
+      "name": "Truyền tải, phân phối điện",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật điện", "Kỹ thuật điều khiển và tự động hóa"],
+    "vocational": ["Công nghệ kỹ thuật điện, điện tử"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh điện",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, triển khai, bảo trì hoặc cải tiến thiết bị, công trình, linh kiện, sản phẩm hay hệ thống điện cho thương mại, công nghiệp hoặc dân dụng.",
+        "Giám sát tiến độ sản xuất của dự án để hoàn thành đúng hạn, đúng ngân sách.",
+        "Chỉ đạo hoặc điều phối sản xuất, xây lắp, bảo trì, hỗ trợ, lập tài liệu hoặc thử nghiệm để đáp ứng yêu cầu kỹ thuật, quy chuẩn và khách hàng.",
+        "Tính toán chi tiết để xây dựng tiêu chuẩn, thông số sản xuất, xây dựng hoặc lắp đặt.",
+        "Dùng phần mềm, thiết bị hỗ trợ kỹ thuật và thiết kế để làm công việc kỹ thuật."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ sư điện mới ra trường",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, triển khai, bảo trì hoặc cải tiến thiết bị, công trình, linh kiện, sản phẩm hay hệ thống điện cho thương mại, công nghiệp hoặc dân dụng.",
+        "Giám sát tiến độ sản xuất của dự án để hoàn thành đúng hạn, đúng ngân sách.",
+        "Chỉ đạo hoặc điều phối sản xuất, xây lắp, bảo trì, hỗ trợ, lập tài liệu hoặc thử nghiệm để đáp ứng yêu cầu kỹ thuật, quy chuẩn và khách hàng.",
+        "Tính toán chi tiết để xây dựng tiêu chuẩn, thông số sản xuất, xây dựng hoặc lắp đặt.",
+        "Dùng phần mềm, thiết bị hỗ trợ kỹ thuật và thiết kế để làm công việc kỹ thuật."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ sư điện",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, triển khai, bảo trì hoặc cải tiến thiết bị, công trình, linh kiện, sản phẩm hay hệ thống điện cho thương mại, công nghiệp hoặc dân dụng.",
+        "Giám sát tiến độ sản xuất của dự án để hoàn thành đúng hạn, đúng ngân sách.",
+        "Chỉ đạo hoặc điều phối sản xuất, xây lắp, bảo trì, hỗ trợ, lập tài liệu hoặc thử nghiệm để đáp ứng yêu cầu kỹ thuật, quy chuẩn và khách hàng.",
+        "Tính toán chi tiết để xây dựng tiêu chuẩn, thông số sản xuất, xây dựng hoặc lắp đặt.",
+        "Dùng phần mềm, thiết bị hỗ trợ kỹ thuật và thiết kế để làm công việc kỹ thuật."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+          "name": "Mô phỏng năng lượng công trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+          "name": "Thiết kế lưới điện thông minh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ sư điện hạng III (có chứng chỉ hành nghề)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, triển khai, bảo trì hoặc cải tiến thiết bị, công trình, linh kiện, sản phẩm hay hệ thống điện cho thương mại, công nghiệp hoặc dân dụng.",
+        "Giám sát tiến độ sản xuất của dự án để hoàn thành đúng hạn, đúng ngân sách.",
+        "Chỉ đạo hoặc điều phối sản xuất, xây lắp, bảo trì, hỗ trợ, lập tài liệu hoặc thử nghiệm để đáp ứng yêu cầu kỹ thuật, quy chuẩn và khách hàng.",
+        "Tính toán chi tiết để xây dựng tiêu chuẩn, thông số sản xuất, xây dựng hoặc lắp đặt.",
+        "Dùng phần mềm, thiết bị hỗ trợ kỹ thuật và thiết kế để làm công việc kỹ thuật."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+          "name": "Mô phỏng năng lượng công trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+          "name": "Thiết kế lưới điện thông minh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+          "name": "Mô phỏng năng lượng công trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+          "name": "Thiết kế lưới điện thông minh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ sư điện hạng II",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, triển khai, bảo trì hoặc cải tiến thiết bị, công trình, linh kiện, sản phẩm hay hệ thống điện cho thương mại, công nghiệp hoặc dân dụng.",
+        "Giám sát tiến độ sản xuất của dự án để hoàn thành đúng hạn, đúng ngân sách.",
+        "Chỉ đạo hoặc điều phối sản xuất, xây lắp, bảo trì, hỗ trợ, lập tài liệu hoặc thử nghiệm để đáp ứng yêu cầu kỹ thuật, quy chuẩn và khách hàng.",
+        "Tính toán chi tiết để xây dựng tiêu chuẩn, thông số sản xuất, xây dựng hoặc lắp đặt.",
+        "Dùng phần mềm, thiết bị hỗ trợ kỹ thuật và thiết kế để làm công việc kỹ thuật."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+          "name": "Mô phỏng năng lượng công trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+          "name": "Thiết kế lưới điện thông minh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+          "name": "Mô phỏng năng lượng công trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+          "name": "Thiết kế lưới điện thông minh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Kỹ sư điện hạng I",
+      "years": "7–10",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, triển khai, bảo trì hoặc cải tiến thiết bị, công trình, linh kiện, sản phẩm hay hệ thống điện cho thương mại, công nghiệp hoặc dân dụng.",
+        "Giám sát tiến độ sản xuất của dự án để hoàn thành đúng hạn, đúng ngân sách.",
+        "Chỉ đạo hoặc điều phối sản xuất, xây lắp, bảo trì, hỗ trợ, lập tài liệu hoặc thử nghiệm để đáp ứng yêu cầu kỹ thuật, quy chuẩn và khách hàng.",
+        "Tính toán chi tiết để xây dựng tiêu chuẩn, thông số sản xuất, xây dựng hoặc lắp đặt.",
+        "Dùng phần mềm, thiết bị hỗ trợ kỹ thuật và thiết kế để làm công việc kỹ thuật."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+          "name": "Mô phỏng năng lượng công trình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+          "name": "Thiết kế lưới điện thông minh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+          "name": "Mô phỏng năng lượng công trình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+          "name": "Thiết kế lưới điện thông minh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng / Giám đốc kỹ thuật điện",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế, triển khai, bảo trì hoặc cải tiến thiết bị, công trình, linh kiện, sản phẩm hay hệ thống điện cho thương mại, công nghiệp hoặc dân dụng.",
+        "Giám sát tiến độ sản xuất của dự án để hoàn thành đúng hạn, đúng ngân sách.",
+        "Chỉ đạo hoặc điều phối sản xuất, xây lắp, bảo trì, hỗ trợ, lập tài liệu hoặc thử nghiệm để đáp ứng yêu cầu kỹ thuật, quy chuẩn và khách hàng.",
+        "Tính toán chi tiết để xây dựng tiêu chuẩn, thông số sản xuất, xây dựng hoặc lắp đặt.",
+        "Dùng phần mềm, thiết bị hỗ trợ kỹ thuật và thiết kế để làm công việc kỹ thuật."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+          "name": "Mô phỏng năng lượng công trình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+          "name": "Thiết kế lưới điện thông minh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+          "name": "Dùng phần mềm vẽ kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+          "name": "Phê duyệt thiết kế kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+          "name": "Linh kiện thiết bị điện",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+          "name": "Nguyên lý điện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+          "name": "Thiết kế bảng mạch",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+          "name": "Tuân thủ quy định vật liệu cấm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+          "name": "Mô phỏng năng lượng công trình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+          "name": "Điều chỉnh thiết kế kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+          "name": "Thiết kế lưới điện thông minh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+          "name": "Điện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-17-2071.00",
+          "name": "Kỹ sư điện"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-17-2141.00",
+      "name": "Kỹ sư cơ khí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2072.00",
+      "name": "Kỹ sư điện tử, viễn thông",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-2094.00",
+      "name": "Thợ sửa chữa điện, điện tử",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-2012.00",
+      "name": "Nhà vật lý",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2199.05",
+      "name": "Kỹ sư cơ điện tử, robot",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 13500000,
+    "median": 16000000,
+    "high": 20000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 210,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/541561bc-510c-4a99-881c-2d8bf5a85462",
+      "name": "Dùng phần mềm vẽ kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f54c10e4-630d-4e50-95e9-4e9e268e8f12",
+      "name": "Phê duyệt thiết kế kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e5ad0cce-e3d5-4c60-8504-5d1c7e3b55b9",
+      "name": "Linh kiện thiết bị điện",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1fea0bc2-a6fa-4fe8-b36f-7a3194f8ed1c",
+      "name": "Nguyên lý điện",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/77bf865e-6360-424f-9d77-ce03918c7dcf",
+      "name": "Thiết kế bảng mạch",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c0ccbd15-36f3-4515-ae0b-b4062d225ee2",
+      "name": "Tuân thủ quy định vật liệu cấm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ffa1d58b-ba09-49bd-a982-e743b2237006",
+      "name": "Mô phỏng năng lượng công trình",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/42b23922-1c40-4dbe-9e0c-7a568dfdf06b",
+      "name": "Điều chỉnh thiết kế kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4e0a7f6e-b546-4cc6-9f8b-53e4fa31a426",
+      "name": "Thiết kế lưới điện thông minh",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c8ac1986-38fa-43b2-89dc-50a4beeb420e",
+      "name": "Điện",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.755
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.606
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.492
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.382
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.265
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.021
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.528
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

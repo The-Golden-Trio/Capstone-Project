@@ -1,0 +1,855 @@
+{
+  "code": "ONET-41-3021.00",
+  "name": "Tư vấn viên bảo hiểm",
+  "nameEn": "Insurance Sales Agents",
+  "group": "Bán hàng",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Bán bảo hiểm nhân thọ, tài sản, tai nạn, sức khoẻ, xe cơ giới hoặc các loại khác. Có thể giới thiệu khách cho môi giới độc lập, tự làm môi giới hoặc làm cho công ty bảo hiểm. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Ngồi gần như cả ngày.",
+    "Môi trường cạnh tranh cao.",
+    "Thường xuyên phải làm gấp cho kịp hạn."
+  ],
+  "workFacts": [
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "82% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "38% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty bảo hiểm",
+      "weight": 70
+    },
+    {
+      "name": "Chi nhánh, phòng giao dịch ngân hàng",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Bảo hiểm"],
+    "vocational": ["Bảo hiểm"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Ứng viên đại lý bảo hiểm (học và thi chứng chỉ)",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế gói bảo hiểm phù hợp từng khách, thường bao gồm nhiều loại rủi ro.",
+        "Bán nhiều loại hợp đồng bảo hiểm cho doanh nghiệp và cá nhân thay mặt công ty bảo hiểm, như xe cơ giới, cháy nổ, nhân thọ, tài sản, y tế, nha khoa hoặc các sản phẩm chuyên biệt.",
+        "Giải thích đặc điểm, ưu và nhược điểm của các hợp đồng để thúc đẩy bán hàng.",
+        "Làm việc hành chính như lưu hồ sơ và xử lý tái tục hợp đồng.",
+        "Tìm khách mới và phát triển mạng lưới khách hàng tiềm năng qua các mối quan hệ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Tư vấn viên bảo hiểm (đại lý có chứng chỉ)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế gói bảo hiểm phù hợp từng khách, thường bao gồm nhiều loại rủi ro.",
+        "Bán nhiều loại hợp đồng bảo hiểm cho doanh nghiệp và cá nhân thay mặt công ty bảo hiểm, như xe cơ giới, cháy nổ, nhân thọ, tài sản, y tế, nha khoa hoặc các sản phẩm chuyên biệt.",
+        "Giải thích đặc điểm, ưu và nhược điểm của các hợp đồng để thúc đẩy bán hàng.",
+        "Làm việc hành chính như lưu hồ sơ và xử lý tái tục hợp đồng.",
+        "Tìm khách mới và phát triển mạng lưới khách hàng tiềm năng qua các mối quan hệ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Tư vấn viên tài chính cấp cao",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế gói bảo hiểm phù hợp từng khách, thường bao gồm nhiều loại rủi ro.",
+        "Bán nhiều loại hợp đồng bảo hiểm cho doanh nghiệp và cá nhân thay mặt công ty bảo hiểm, như xe cơ giới, cháy nổ, nhân thọ, tài sản, y tế, nha khoa hoặc các sản phẩm chuyên biệt.",
+        "Giải thích đặc điểm, ưu và nhược điểm của các hợp đồng để thúc đẩy bán hàng.",
+        "Làm việc hành chính như lưu hồ sơ và xử lý tái tục hợp đồng.",
+        "Tìm khách mới và phát triển mạng lưới khách hàng tiềm năng qua các mối quan hệ."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Trưởng nhóm kinh doanh (UM)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế gói bảo hiểm phù hợp từng khách, thường bao gồm nhiều loại rủi ro.",
+        "Bán nhiều loại hợp đồng bảo hiểm cho doanh nghiệp và cá nhân thay mặt công ty bảo hiểm, như xe cơ giới, cháy nổ, nhân thọ, tài sản, y tế, nha khoa hoặc các sản phẩm chuyên biệt.",
+        "Giải thích đặc điểm, ưu và nhược điểm của các hợp đồng để thúc đẩy bán hàng.",
+        "Làm việc hành chính như lưu hồ sơ và xử lý tái tục hợp đồng.",
+        "Tìm khách mới và phát triển mạng lưới khách hàng tiềm năng qua các mối quan hệ."
+      ],
+      "focus": ["tu_quan_ly_ap_luc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3dde5918-f4c6-4d46-9d6f-c7b2865f594f",
+          "name": "Phân tích nhu cầu bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng ban/trưởng phòng kinh doanh đại lý (SM/DM)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế gói bảo hiểm phù hợp từng khách, thường bao gồm nhiều loại rủi ro.",
+        "Bán nhiều loại hợp đồng bảo hiểm cho doanh nghiệp và cá nhân thay mặt công ty bảo hiểm, như xe cơ giới, cháy nổ, nhân thọ, tài sản, y tế, nha khoa hoặc các sản phẩm chuyên biệt.",
+        "Giải thích đặc điểm, ưu và nhược điểm của các hợp đồng để thúc đẩy bán hàng.",
+        "Làm việc hành chính như lưu hồ sơ và xử lý tái tục hợp đồng.",
+        "Tìm khách mới và phát triển mạng lưới khách hàng tiềm năng qua các mối quan hệ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3dde5918-f4c6-4d46-9d6f-c7b2865f594f",
+          "name": "Phân tích nhu cầu bảo hiểm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3dde5918-f4c6-4d46-9d6f-c7b2865f594f",
+          "name": "Phân tích nhu cầu bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc kinh doanh khu vực",
+      "years": "7+",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế gói bảo hiểm phù hợp từng khách, thường bao gồm nhiều loại rủi ro.",
+        "Bán nhiều loại hợp đồng bảo hiểm cho doanh nghiệp và cá nhân thay mặt công ty bảo hiểm, như xe cơ giới, cháy nổ, nhân thọ, tài sản, y tế, nha khoa hoặc các sản phẩm chuyên biệt.",
+        "Giải thích đặc điểm, ưu và nhược điểm của các hợp đồng để thúc đẩy bán hàng.",
+        "Làm việc hành chính như lưu hồ sơ và xử lý tái tục hợp đồng.",
+        "Tìm khách mới và phát triển mạng lưới khách hàng tiềm năng qua các mối quan hệ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3dde5918-f4c6-4d46-9d6f-c7b2865f594f",
+          "name": "Phân tích nhu cầu bảo hiểm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3dde5918-f4c6-4d46-9d6f-c7b2865f594f",
+          "name": "Phân tích nhu cầu bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc văn phòng tổng đại lý/giám đốc kênh đại lý vùng",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế gói bảo hiểm phù hợp từng khách, thường bao gồm nhiều loại rủi ro.",
+        "Bán nhiều loại hợp đồng bảo hiểm cho doanh nghiệp và cá nhân thay mặt công ty bảo hiểm, như xe cơ giới, cháy nổ, nhân thọ, tài sản, y tế, nha khoa hoặc các sản phẩm chuyên biệt.",
+        "Giải thích đặc điểm, ưu và nhược điểm của các hợp đồng để thúc đẩy bán hàng.",
+        "Làm việc hành chính như lưu hồ sơ và xử lý tái tục hợp đồng.",
+        "Tìm khách mới và phát triển mạng lưới khách hàng tiềm năng qua các mối quan hệ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 4,
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3dde5918-f4c6-4d46-9d6f-c7b2865f594f",
+          "name": "Phân tích nhu cầu bảo hiểm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+          "name": "Tính phí bảo hiểm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+          "name": "Bán bảo hiểm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+          "name": "Thủ tục bồi thường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+          "name": "Soạn hợp đồng bảo hiểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+          "name": "Tư vấn tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3dde5918-f4c6-4d46-9d6f-c7b2865f594f",
+          "name": "Phân tích nhu cầu bảo hiểm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-41-4012.00",
+      "name": "Nhân viên kinh doanh (sales B2B)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1031.00",
+      "name": "Chuyên viên thẩm định và bồi thường bảo hiểm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2052.00",
+      "name": "Chuyên viên tư vấn tài chính và đầu tư",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-3031.00",
+      "name": "Nhân viên môi giới chứng khoán",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 5000000,
+    "median": null,
+    "high": 60000000,
+    "byYears": [],
+    "source": "CareerLink, \"Chuyên viên tư vấn bảo hiểm là gì\"",
+    "dataYear": "2026",
+    "note": "Thu nhập chủ yếu từ hoa hồng.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 8,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+      "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0a53f6b2-9205-4505-93fb-480e163cdc2f",
+      "name": "Tính phí bảo hiểm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d6e800ae-bbbb-453f-8ac6-19973a8ecea9",
+      "name": "Bán bảo hiểm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e1dc3eab-4d66-4ae5-a089-b9d884fd4e5a",
+      "name": "Thủ tục bồi thường",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+      "name": "Kỹ thuật khuyến mãi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c5f8613b-5546-4295-8b26-7bf977d401f0",
+      "name": "Soạn hợp đồng bảo hiểm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/79c36c91-28a5-44b7-ab9b-7093b2d4b21e",
+      "name": "Tư vấn tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+      "name": "Xử lý giao dịch tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3dde5918-f4c6-4d46-9d6f-c7b2865f594f",
+      "name": "Phân tích nhu cầu bảo hiểm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.607
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.525
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.224
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.139
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.329
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.355
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.568
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

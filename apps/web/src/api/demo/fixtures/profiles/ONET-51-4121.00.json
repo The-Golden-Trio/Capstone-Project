@@ -1,0 +1,823 @@
+{
+  "code": "ONET-51-4121.00",
+  "name": "Thợ hàn",
+  "nameEn": "Welders, Cutters, Solderers, and Brazers",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Dùng thiết bị hàn tay, cắt bằng lửa, hàn thiếc hoặc hàn vảy để hàn, nối chi tiết kim loại hoặc lấp lỗ, vết lõm, đường nối trên sản phẩm kim loại. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió.",
+    "Làm trong môi trường ồn, gây khó chịu hoặc mất tập trung.",
+    "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "49% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "19% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 40
+    },
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 35
+    },
+    {
+      "name": "Xưởng nhỏ, cơ sở gia đình, làng nghề",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Hàn", "Công nghệ hàn"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thợ phụ hàn",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng thiết bị an toàn và làm việc đúng quy tắc an toàn.",
+        "Kiểm tra phôi để phát hiện lỗi và đo bằng thước thẳng hoặc dưỡng để bảo đảm đúng yêu cầu.",
+        "Hàn chi tiết ở tư thế hàn bằng, hàn đứng hoặc hàn trần.",
+        "Phát hiện thiết bị chạy sai hoặc vật liệu lỗi và báo cấp trên.",
+        "Nhận biết, cài đặt và sử dụng dụng cụ cầm tay, dụng cụ điện thông dụng của nghề hàn như máy hàn hồ quang que và hàn khí bảo vệ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thợ hàn bậc 1",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng thiết bị an toàn và làm việc đúng quy tắc an toàn.",
+        "Kiểm tra phôi để phát hiện lỗi và đo bằng thước thẳng hoặc dưỡng để bảo đảm đúng yêu cầu.",
+        "Hàn chi tiết ở tư thế hàn bằng, hàn đứng hoặc hàn trần.",
+        "Phát hiện thiết bị chạy sai hoặc vật liệu lỗi và báo cấp trên.",
+        "Nhận biết, cài đặt và sử dụng dụng cụ cầm tay, dụng cụ điện thông dụng của nghề hàn như máy hàn hồ quang que và hàn khí bảo vệ."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+          "name": "Làm nhẵn bavia",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+          "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+          "name": "Xử lý nhiên liệu",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thợ hàn bậc 2",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng thiết bị an toàn và làm việc đúng quy tắc an toàn.",
+        "Kiểm tra phôi để phát hiện lỗi và đo bằng thước thẳng hoặc dưỡng để bảo đảm đúng yêu cầu.",
+        "Hàn chi tiết ở tư thế hàn bằng, hàn đứng hoặc hàn trần.",
+        "Phát hiện thiết bị chạy sai hoặc vật liệu lỗi và báo cấp trên.",
+        "Nhận biết, cài đặt và sử dụng dụng cụ cầm tay, dụng cụ điện thông dụng của nghề hàn như máy hàn hồ quang que và hàn khí bảo vệ."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+          "name": "Làm nhẵn bavia",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+          "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+          "name": "Xử lý nhiên liệu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+          "name": "Làm nhẵn bavia",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+          "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+          "name": "Xử lý nhiên liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/285cac9e-dad3-4b7b-848f-9bd2860ae345",
+          "name": "Theo dõi đồng hồ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Thợ hàn bậc 3 (hàn ống 6G)",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng thiết bị an toàn và làm việc đúng quy tắc an toàn.",
+        "Kiểm tra phôi để phát hiện lỗi và đo bằng thước thẳng hoặc dưỡng để bảo đảm đúng yêu cầu.",
+        "Hàn chi tiết ở tư thế hàn bằng, hàn đứng hoặc hàn trần.",
+        "Phát hiện thiết bị chạy sai hoặc vật liệu lỗi và báo cấp trên.",
+        "Nhận biết, cài đặt và sử dụng dụng cụ cầm tay, dụng cụ điện thông dụng của nghề hàn như máy hàn hồ quang que và hàn khí bảo vệ."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+          "name": "Làm nhẵn bavia",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+          "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+          "name": "Xử lý nhiên liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/285cac9e-dad3-4b7b-848f-9bd2860ae345",
+          "name": "Theo dõi đồng hồ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+          "name": "Làm nhẵn bavia",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+          "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+          "name": "Xử lý nhiên liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/285cac9e-dad3-4b7b-848f-9bd2860ae345",
+          "name": "Theo dõi đồng hồ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Thợ hàn bậc 4",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng thiết bị an toàn và làm việc đúng quy tắc an toàn.",
+        "Kiểm tra phôi để phát hiện lỗi và đo bằng thước thẳng hoặc dưỡng để bảo đảm đúng yêu cầu.",
+        "Hàn chi tiết ở tư thế hàn bằng, hàn đứng hoặc hàn trần.",
+        "Phát hiện thiết bị chạy sai hoặc vật liệu lỗi và báo cấp trên.",
+        "Nhận biết, cài đặt và sử dụng dụng cụ cầm tay, dụng cụ điện thông dụng của nghề hàn như máy hàn hồ quang que và hàn khí bảo vệ."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+          "name": "Làm nhẵn bavia",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+          "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+          "name": "Xử lý nhiên liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/285cac9e-dad3-4b7b-848f-9bd2860ae345",
+          "name": "Theo dõi đồng hồ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+          "name": "Làm nhẵn bavia",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+          "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+          "name": "Xử lý nhiên liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/285cac9e-dad3-4b7b-848f-9bd2860ae345",
+          "name": "Theo dõi đồng hồ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Thợ hàn bậc 5 / giám sát hàn",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Dùng thiết bị an toàn và làm việc đúng quy tắc an toàn.",
+        "Kiểm tra phôi để phát hiện lỗi và đo bằng thước thẳng hoặc dưỡng để bảo đảm đúng yêu cầu.",
+        "Hàn chi tiết ở tư thế hàn bằng, hàn đứng hoặc hàn trần.",
+        "Phát hiện thiết bị chạy sai hoặc vật liệu lỗi và báo cấp trên.",
+        "Nhận biết, cài đặt và sử dụng dụng cụ cầm tay, dụng cụ điện thông dụng của nghề hàn như máy hàn hồ quang que và hàn khí bảo vệ."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+          "name": "Làm nhẵn bavia",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+          "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+          "name": "Xử lý nhiên liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/285cac9e-dad3-4b7b-848f-9bd2860ae345",
+          "name": "Theo dõi đồng hồ đo",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+          "name": "Các loại kim loại",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+          "name": "Vận hành thiết bị hàn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+          "name": "Hàn TIG",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+          "name": "Làm nhẵn bavia",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+          "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+          "name": "Hàn hồ quang",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+          "name": "Xử lý nhiên liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/285cac9e-dad3-4b7b-848f-9bd2860ae345",
+          "name": "Theo dõi đồng hồ đo",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+          "name": "Độ dẫn nhiệt của kim loại",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+          "name": "Bảo đảm thiết bị sẵn sàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-4121.00",
+          "name": "Thợ hàn"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-2092.00",
+      "name": "Công nhân lắp ráp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-4041.00",
+      "name": "Thợ cơ khí, tiện phay CNC",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2221.00",
+      "name": "Thợ kết cấu thép, nhôm kính",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-47-2152.00",
+      "name": "Thợ ống nước, đường ống",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 6000000,
+    "median": null,
+    "high": 20000000,
+    "byYears": [],
+    "source": "CareerLink, \"Thợ hàn là gì\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 13,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/7f107a85-d6ac-410f-a995-d635c5aa418b",
+      "name": "Các loại kim loại",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2fcd95a4-1f9a-41cf-95a9-4701bde476b4",
+      "name": "Vận hành thiết bị hàn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a51adea8-bf02-488a-a0d8-b0961caca5b0",
+      "name": "Hàn TIG",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b713a540-54d8-4648-809f-6304450579f5",
+      "name": "Làm nhẵn bavia",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/46f2796e-e1b8-4210-95e2-d9a89af956e7",
+      "name": "Nhiệt độ ngọn lửa trong gia công kim loại",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/27d26fd6-5795-4f0a-884e-112df7c68314",
+      "name": "Hàn hồ quang",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2035c565-f0df-4efa-99fc-09a42f18c158",
+      "name": "Xử lý nhiên liệu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/285cac9e-dad3-4b7b-848f-9bd2860ae345",
+      "name": "Theo dõi đồng hồ đo",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bc28e22e-f1e1-4f60-a9a4-df26c38338dc",
+      "name": "Độ dẫn nhiệt của kim loại",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/69f23426-9279-4fe6-a283-24c2aa4c855d",
+      "name": "Bảo đảm thiết bị sẵn sàng",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.586
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.737
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.853
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.869
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -1.132
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -1.173
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -1.225
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

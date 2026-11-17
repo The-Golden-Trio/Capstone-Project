@@ -1,0 +1,835 @@
+{
+  "code": "ONET-29-1041.00",
+  "name": "Kỹ thuật viên khúc xạ, nhãn khoa",
+  "nameEn": "Optometrists",
+  "group": "Y tế chuyên môn và kỹ thuật y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Chẩn đoán, quản lý và điều trị các tình trạng, bệnh của mắt và hệ thị giác. Khám mắt, phát hiện vấn đề hoặc suy giảm thị lực, kê kính điều chỉnh và điều trị. Có thể kê thuốc điều trị một số bệnh mắt. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần giúp đỡ, dạy bảo và chăm sóc người khác, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Sai sót có thể ảnh hưởng tới sức khoẻ hoặc tính mạng người bệnh."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Được tự quyết nhiều trong công việc.",
+    "15% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "6% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Phòng khám tư, chuyên khoa",
+      "weight": 60
+    },
+    {
+      "name": "Bệnh viện công",
+      "weight": 40
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Khúc xạ nhãn khoa"],
+    "vocational": [],
+    "licence": "Giấy phép hành nghề khám bệnh, chữa bệnh (có kỳ kiểm tra đánh giá năng lực) — Luật Khám bệnh, chữa bệnh số 15/2023/QH15, hiệu lực 01/01/2024"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên khúc xạ nhãn khoa thực tập lâm sàng",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Khám mắt bằng quan sát, dụng cụ và thuốc để đánh giá thị lực, khả năng điều tiết, phối hợp và chẩn đoán bệnh, bất thường như tăng nhãn áp hay mù màu.",
+        "Phân tích kết quả đo và lập kế hoạch điều trị.",
+        "Kê đơn, cung cấp, lắp và chỉnh kính gọng, kính áp tròng và dụng cụ hỗ trợ thị lực khác.",
+        "Kê thuốc điều trị bệnh mắt trong phạm vi pháp luật cho phép.",
+        "Hướng dẫn và tư vấn người bệnh về chăm sóc kính áp tròng, vệ sinh thị giác, bố trí ánh sáng và an toàn mắt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ thuật y khúc xạ nhãn khoa thực hành (chưa có giấy phép)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Khám mắt bằng quan sát, dụng cụ và thuốc để đánh giá thị lực, khả năng điều tiết, phối hợp và chẩn đoán bệnh, bất thường như tăng nhãn áp hay mù màu.",
+        "Phân tích kết quả đo và lập kế hoạch điều trị.",
+        "Kê đơn, cung cấp, lắp và chỉnh kính gọng, kính áp tròng và dụng cụ hỗ trợ thị lực khác.",
+        "Kê thuốc điều trị bệnh mắt trong phạm vi pháp luật cho phép.",
+        "Hướng dẫn và tư vấn người bệnh về chăm sóc kính áp tròng, vệ sinh thị giác, bố trí ánh sáng và an toàn mắt."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+          "name": "Dùng dụng cụ nhãn khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+          "name": "Tư vấn bảo quản dụng cụ quang học",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ thuật y khúc xạ nhãn khoa hạng III (có giấy phép hành nghề)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Khám mắt bằng quan sát, dụng cụ và thuốc để đánh giá thị lực, khả năng điều tiết, phối hợp và chẩn đoán bệnh, bất thường như tăng nhãn áp hay mù màu.",
+        "Phân tích kết quả đo và lập kế hoạch điều trị.",
+        "Kê đơn, cung cấp, lắp và chỉnh kính gọng, kính áp tròng và dụng cụ hỗ trợ thị lực khác.",
+        "Kê thuốc điều trị bệnh mắt trong phạm vi pháp luật cho phép.",
+        "Hướng dẫn và tư vấn người bệnh về chăm sóc kính áp tròng, vệ sinh thị giác, bố trí ánh sáng và an toàn mắt."
+      ],
+      "focus": ["tri_tue_cam_xuc", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+          "name": "Dùng dụng cụ nhãn khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+          "name": "Tư vấn bảo quản dụng cụ quang học",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+          "name": "Dùng dụng cụ nhãn khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+          "name": "Tư vấn bảo quản dụng cụ quang học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32bfacd9-51b7-4757-952e-7f2be2671632",
+          "name": "Xác định tiến triển bệnh mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ thuật y khúc xạ nhãn khoa chính",
+      "years": "3–7",
+      "coreOutput": null,
+      "tasks": [
+        "Khám mắt bằng quan sát, dụng cụ và thuốc để đánh giá thị lực, khả năng điều tiết, phối hợp và chẩn đoán bệnh, bất thường như tăng nhãn áp hay mù màu.",
+        "Phân tích kết quả đo và lập kế hoạch điều trị.",
+        "Kê đơn, cung cấp, lắp và chỉnh kính gọng, kính áp tròng và dụng cụ hỗ trợ thị lực khác.",
+        "Kê thuốc điều trị bệnh mắt trong phạm vi pháp luật cho phép.",
+        "Hướng dẫn và tư vấn người bệnh về chăm sóc kính áp tròng, vệ sinh thị giác, bố trí ánh sáng và an toàn mắt."
+      ],
+      "focus": ["tri_tue_cam_xuc", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+          "name": "Dùng dụng cụ nhãn khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+          "name": "Tư vấn bảo quản dụng cụ quang học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32bfacd9-51b7-4757-952e-7f2be2671632",
+          "name": "Xác định tiến triển bệnh mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+          "name": "Dùng dụng cụ nhãn khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+          "name": "Tư vấn bảo quản dụng cụ quang học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32bfacd9-51b7-4757-952e-7f2be2671632",
+          "name": "Xác định tiến triển bệnh mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kỹ thuật y khúc xạ nhãn khoa hạng II",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Khám mắt bằng quan sát, dụng cụ và thuốc để đánh giá thị lực, khả năng điều tiết, phối hợp và chẩn đoán bệnh, bất thường như tăng nhãn áp hay mù màu.",
+        "Phân tích kết quả đo và lập kế hoạch điều trị.",
+        "Kê đơn, cung cấp, lắp và chỉnh kính gọng, kính áp tròng và dụng cụ hỗ trợ thị lực khác.",
+        "Kê thuốc điều trị bệnh mắt trong phạm vi pháp luật cho phép.",
+        "Hướng dẫn và tư vấn người bệnh về chăm sóc kính áp tròng, vệ sinh thị giác, bố trí ánh sáng và an toàn mắt."
+      ],
+      "focus": ["tri_tue_cam_xuc", "lanh_dao_kinh_doanh"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+          "name": "Dùng dụng cụ nhãn khoa",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+          "name": "Tư vấn bảo quản dụng cụ quang học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32bfacd9-51b7-4757-952e-7f2be2671632",
+          "name": "Xác định tiến triển bệnh mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+          "name": "Dùng dụng cụ nhãn khoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+          "name": "Tư vấn bảo quản dụng cụ quang học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32bfacd9-51b7-4757-952e-7f2be2671632",
+          "name": "Xác định tiến triển bệnh mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Kỹ thuật y khúc xạ nhãn khoa hạng I / kỹ thuật viên trưởng khoa",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Khám mắt bằng quan sát, dụng cụ và thuốc để đánh giá thị lực, khả năng điều tiết, phối hợp và chẩn đoán bệnh, bất thường như tăng nhãn áp hay mù màu.",
+        "Phân tích kết quả đo và lập kế hoạch điều trị.",
+        "Kê đơn, cung cấp, lắp và chỉnh kính gọng, kính áp tròng và dụng cụ hỗ trợ thị lực khác.",
+        "Kê thuốc điều trị bệnh mắt trong phạm vi pháp luật cho phép.",
+        "Hướng dẫn và tư vấn người bệnh về chăm sóc kính áp tròng, vệ sinh thị giác, bố trí ánh sáng và an toàn mắt."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+          "name": "Dùng dụng cụ nhãn khoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+          "name": "Tư vấn bảo quản dụng cụ quang học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32bfacd9-51b7-4757-952e-7f2be2671632",
+          "name": "Xác định tiến triển bệnh mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+          "name": "Năng lực lâm sàng theo bối cảnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+          "name": "Quy định bảo vệ mắt",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+          "name": "Dùng dụng cụ nhãn khoa",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+          "name": "Tư vấn bảo quản dụng cụ quang học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/32bfacd9-51b7-4757-952e-7f2be2671632",
+          "name": "Xác định tiến triển bệnh mắt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-29-1041.00",
+          "name": "Kỹ thuật viên khúc xạ, nhãn khoa"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1215.00",
+      "name": "Bác sĩ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2034.00",
+      "name": "Kỹ thuật viên chẩn đoán hình ảnh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1123.00",
+      "name": "Kỹ thuật viên, chuyên viên phục hồi chức năng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-51-9081.00",
+      "name": "Kỹ thuật viên phục hình, chỉnh hình",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 10000000,
+    "median": null,
+    "high": 17000000,
+    "byYears": [],
+    "source": "JobsGO, tra cứu lương \"Kỹ Thuật Viên Khúc Xạ\"",
+    "dataYear": "2026",
+    "note": "23 mẫu lương trong 12 tháng gần nhất, khoảng phổ biến 10–17tr. Đọc trên Chrome ngày 21/10/2026. Số bình quân tham khảo: 13.900.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 9,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e18a6a3c-4f26-4141-8c72-4b4f01d77914",
+      "name": "Năng lực lâm sàng theo bối cảnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+      "name": "Tuân thủ hướng dẫn lâm sàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8fd5cc16-8d8a-4ae4-b557-9847207e9483",
+      "name": "Quy định bảo vệ mắt",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+      "name": "Tương tác với người bệnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/12a105f9-8288-48b5-91e3-ac886c5f77fe",
+      "name": "Dùng dụng cụ nhãn khoa",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+      "name": "Xử lý tình huống cấp cứu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/886f4899-872a-4100-94ac-d331e827a99d",
+      "name": "Tư vấn bảo quản dụng cụ quang học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+      "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/32bfacd9-51b7-4757-952e-7f2be2671632",
+      "name": "Xác định tiến triển bệnh mắt",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+      "name": "Đồng cảm với người bệnh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.959
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.552
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.431
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.342
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.254
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.179
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.022
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

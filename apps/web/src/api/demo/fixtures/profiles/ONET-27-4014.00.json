@@ -1,0 +1,708 @@
+{
+  "code": "ONET-27-4014.00",
+  "name": "Kỹ thuật viên âm thanh, ánh sáng, phát sóng",
+  "nameEn": "Sound Engineering Technicians",
+  "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+  "regionId": "sang_tao",
+  "isIt": false,
+  "summary": "Lắp ráp và vận hành thiết bị để thu, đồng bộ, trộn, dựng hoặc tái tạo âm thanh, gồm nhạc, giọng nói và hiệu ứng, cho sân khấu, video, phim, truyền hình, podcast, sự kiện thể thao và sản phẩm khác. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "Ngồi gần như cả ngày.",
+    "Công việc lặp lại nhiều."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "32% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "54% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Phòng thu, sân khấu, trường quay", "Văn phòng"],
+  "environments": [
+    {
+      "name": "Toà soạn báo, đài phát thanh truyền hình",
+      "weight": 40
+    },
+    {
+      "name": "Công ty giải trí, quản lý nghệ sĩ, sự kiện",
+      "weight": 40
+    },
+    {
+      "name": "Công ty sản xuất phim, TVC, MV",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Thiết kế âm thanh, ánh sáng", "Công nghệ âm nhạc"],
+    "vocational": [
+      "Thiết kế âm thanh, ánh sáng",
+      "Kỹ sư âm thanh",
+      "Kỹ thuật sản xuất chương trình truyền hình"
+    ],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kỹ thuật viên âm thanh, ánh sáng tập sự",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Trao đổi với nhà sản xuất, người biểu diễn và các bên để xác định và đạt âm thanh mong muốn cho sản phẩm như bản thu âm hoặc phim.",
+        "Điều chỉnh âm lượng và chất lượng âm thanh trong buổi thu bằng bàn điều khiển.",
+        "Thu lời nói, nhạc và âm thanh khác bằng thiết bị ghi âm.",
+        "Tách nhạc cụ, giọng hát và âm thanh khác, rồi kết hợp lại ở khâu trộn hoặc hậu kỳ.",
+        "Lắp đặt, thử và chỉnh thiết bị thu cho buổi thu âm và biểu diễn trực tiếp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+          "name": "Hiểu ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+          "name": "Phòng cháy nơi biểu diễn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+          "name": "Lắp đặt hệ thống tăng âm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+          "name": "Làm việc an toàn với hệ thống điện lưu động",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kỹ thuật viên vận hành âm thanh, ánh sáng",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Trao đổi với nhà sản xuất, người biểu diễn và các bên để xác định và đạt âm thanh mong muốn cho sản phẩm như bản thu âm hoặc phim.",
+        "Điều chỉnh âm lượng và chất lượng âm thanh trong buổi thu bằng bàn điều khiển.",
+        "Thu lời nói, nhạc và âm thanh khác bằng thiết bị ghi âm.",
+        "Tách nhạc cụ, giọng hát và âm thanh khác, rồi kết hợp lại ở khâu trộn hoặc hậu kỳ.",
+        "Lắp đặt, thử và chỉnh thiết bị thu cho buổi thu âm và biểu diễn trực tiếp."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+          "name": "Hiểu ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+          "name": "Phòng cháy nơi biểu diễn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+          "name": "Lắp đặt hệ thống tăng âm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+          "name": "Làm việc an toàn với hệ thống điện lưu động",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+          "name": "Hiểu ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+          "name": "Phòng cháy nơi biểu diễn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+          "name": "Lắp đặt hệ thống tăng âm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+          "name": "Làm việc an toàn với hệ thống điện lưu động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31587950-8b69-4a15-91c2-74dae22d38a4",
+          "name": "Hỗ trợ lắp đặt hệ thống âm thanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66509193-f1ce-44a6-8c4e-db24dcd19cdd",
+          "name": "Chuẩn bị chỗ làm việc cá nhân",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc461d64-ef74-43d5-8fc1-e1d1943e5bc5",
+          "name": "Chỉnh hệ thống âm thanh không dây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083",
+          "name": "Làm việc an toàn với máy móc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Âm thanh viên hạng III",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Trao đổi với nhà sản xuất, người biểu diễn và các bên để xác định và đạt âm thanh mong muốn cho sản phẩm như bản thu âm hoặc phim.",
+        "Điều chỉnh âm lượng và chất lượng âm thanh trong buổi thu bằng bàn điều khiển.",
+        "Thu lời nói, nhạc và âm thanh khác bằng thiết bị ghi âm.",
+        "Tách nhạc cụ, giọng hát và âm thanh khác, rồi kết hợp lại ở khâu trộn hoặc hậu kỳ.",
+        "Lắp đặt, thử và chỉnh thiết bị thu cho buổi thu âm và biểu diễn trực tiếp."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+          "name": "Hiểu ý tưởng nghệ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+          "name": "Phòng cháy nơi biểu diễn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+          "name": "Lắp đặt hệ thống tăng âm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+          "name": "Làm việc an toàn với hệ thống điện lưu động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31587950-8b69-4a15-91c2-74dae22d38a4",
+          "name": "Hỗ trợ lắp đặt hệ thống âm thanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66509193-f1ce-44a6-8c4e-db24dcd19cdd",
+          "name": "Chuẩn bị chỗ làm việc cá nhân",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc461d64-ef74-43d5-8fc1-e1d1943e5bc5",
+          "name": "Chỉnh hệ thống âm thanh không dây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083",
+          "name": "Làm việc an toàn với máy móc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+          "name": "Hiểu ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+          "name": "Phòng cháy nơi biểu diễn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+          "name": "Lắp đặt hệ thống tăng âm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+          "name": "Làm việc an toàn với hệ thống điện lưu động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31587950-8b69-4a15-91c2-74dae22d38a4",
+          "name": "Hỗ trợ lắp đặt hệ thống âm thanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66509193-f1ce-44a6-8c4e-db24dcd19cdd",
+          "name": "Chuẩn bị chỗ làm việc cá nhân",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc461d64-ef74-43d5-8fc1-e1d1943e5bc5",
+          "name": "Chỉnh hệ thống âm thanh không dây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083",
+          "name": "Làm việc an toàn với máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4bd3cd7d-b061-4cc2-ba8d-3262065ebbf0",
+          "name": "Chuẩn bị thiết bị âm thanh trên sân khấu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Âm thanh viên hạng II",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Trao đổi với nhà sản xuất, người biểu diễn và các bên để xác định và đạt âm thanh mong muốn cho sản phẩm như bản thu âm hoặc phim.",
+        "Điều chỉnh âm lượng và chất lượng âm thanh trong buổi thu bằng bàn điều khiển.",
+        "Thu lời nói, nhạc và âm thanh khác bằng thiết bị ghi âm.",
+        "Tách nhạc cụ, giọng hát và âm thanh khác, rồi kết hợp lại ở khâu trộn hoặc hậu kỳ.",
+        "Lắp đặt, thử và chỉnh thiết bị thu cho buổi thu âm và biểu diễn trực tiếp."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+          "name": "Hiểu ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+          "name": "Phòng cháy nơi biểu diễn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+          "name": "Lắp đặt hệ thống tăng âm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+          "name": "Làm việc an toàn với hệ thống điện lưu động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31587950-8b69-4a15-91c2-74dae22d38a4",
+          "name": "Hỗ trợ lắp đặt hệ thống âm thanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66509193-f1ce-44a6-8c4e-db24dcd19cdd",
+          "name": "Chuẩn bị chỗ làm việc cá nhân",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc461d64-ef74-43d5-8fc1-e1d1943e5bc5",
+          "name": "Chỉnh hệ thống âm thanh không dây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083",
+          "name": "Làm việc an toàn với máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4bd3cd7d-b061-4cc2-ba8d-3262065ebbf0",
+          "name": "Chuẩn bị thiết bị âm thanh trên sân khấu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+          "name": "Hiểu ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+          "name": "Phòng cháy nơi biểu diễn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+          "name": "Lắp đặt hệ thống tăng âm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+          "name": "Làm việc an toàn với hệ thống điện lưu động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31587950-8b69-4a15-91c2-74dae22d38a4",
+          "name": "Hỗ trợ lắp đặt hệ thống âm thanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66509193-f1ce-44a6-8c4e-db24dcd19cdd",
+          "name": "Chuẩn bị chỗ làm việc cá nhân",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc461d64-ef74-43d5-8fc1-e1d1943e5bc5",
+          "name": "Chỉnh hệ thống âm thanh không dây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083",
+          "name": "Làm việc an toàn với máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4bd3cd7d-b061-4cc2-ba8d-3262065ebbf0",
+          "name": "Chuẩn bị thiết bị âm thanh trên sân khấu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Âm thanh viên hạng I / Kỹ sư âm thanh trưởng",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Trao đổi với nhà sản xuất, người biểu diễn và các bên để xác định và đạt âm thanh mong muốn cho sản phẩm như bản thu âm hoặc phim.",
+        "Điều chỉnh âm lượng và chất lượng âm thanh trong buổi thu bằng bàn điều khiển.",
+        "Thu lời nói, nhạc và âm thanh khác bằng thiết bị ghi âm.",
+        "Tách nhạc cụ, giọng hát và âm thanh khác, rồi kết hợp lại ở khâu trộn hoặc hậu kỳ.",
+        "Lắp đặt, thử và chỉnh thiết bị thu cho buổi thu âm và biểu diễn trực tiếp."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+          "name": "Hiểu ý tưởng nghệ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+          "name": "Phòng cháy nơi biểu diễn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+          "name": "Lắp đặt hệ thống tăng âm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+          "name": "Làm việc an toàn với hệ thống điện lưu động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31587950-8b69-4a15-91c2-74dae22d38a4",
+          "name": "Hỗ trợ lắp đặt hệ thống âm thanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66509193-f1ce-44a6-8c4e-db24dcd19cdd",
+          "name": "Chuẩn bị chỗ làm việc cá nhân",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc461d64-ef74-43d5-8fc1-e1d1943e5bc5",
+          "name": "Chỉnh hệ thống âm thanh không dây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083",
+          "name": "Làm việc an toàn với máy móc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4bd3cd7d-b061-4cc2-ba8d-3262065ebbf0",
+          "name": "Chuẩn bị thiết bị âm thanh trên sân khấu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+          "name": "Hiểu ý tưởng nghệ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+          "name": "Phòng cháy nơi biểu diễn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+          "name": "Lắp đặt hệ thống tăng âm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+          "name": "Làm việc an toàn với hệ thống điện lưu động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31587950-8b69-4a15-91c2-74dae22d38a4",
+          "name": "Hỗ trợ lắp đặt hệ thống âm thanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66509193-f1ce-44a6-8c4e-db24dcd19cdd",
+          "name": "Chuẩn bị chỗ làm việc cá nhân",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc461d64-ef74-43d5-8fc1-e1d1943e5bc5",
+          "name": "Chỉnh hệ thống âm thanh không dây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083",
+          "name": "Làm việc an toàn với máy móc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4bd3cd7d-b061-4cc2-ba8d-3262065ebbf0",
+          "name": "Chuẩn bị thiết bị âm thanh trên sân khấu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-17-2071.00",
+      "name": "Kỹ sư điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-9052.00",
+      "name": "Kỹ thuật viên lắp đặt viễn thông",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-4031.00",
+      "name": "Nhiếp ảnh, quay phim và dựng phim",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-2094.00",
+      "name": "Thợ sửa chữa điện, điện tử",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2199.05",
+      "name": "Kỹ sư cơ điện tử, robot",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 8000000,
+    "median": null,
+    "high": 12000000,
+    "byYears": [],
+    "source": "Tin tuyển kỹ thuật viên âm thanh ánh sáng, 123job",
+    "dataYear": "2026",
+    "note": "1 tin.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 15,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/1633770e-5606-4422-b293-6c8c551fe663",
+      "name": "Hiểu ý tưởng nghệ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5f08605b-aa03-45ed-bc49-395477783a38",
+      "name": "Phòng cháy nơi biểu diễn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/dfc63948-4423-4be0-9b32-8e532f90f2ed",
+      "name": "Lắp đặt hệ thống tăng âm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b69cb255-e939-4928-b3fd-9557087dce52",
+      "name": "Làm việc an toàn với hệ thống điện lưu động",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/31587950-8b69-4a15-91c2-74dae22d38a4",
+      "name": "Hỗ trợ lắp đặt hệ thống âm thanh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/66509193-f1ce-44a6-8c4e-db24dcd19cdd",
+      "name": "Chuẩn bị chỗ làm việc cá nhân",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fc461d64-ef74-43d5-8fc1-e1d1943e5bc5",
+      "name": "Chỉnh hệ thống âm thanh không dây",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083",
+      "name": "Làm việc an toàn với máy móc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4bd3cd7d-b061-4cc2-ba8d-3262065ebbf0",
+      "name": "Chuẩn bị thiết bị âm thanh trên sân khấu",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+      "name": "Bắt kịp xu hướng",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.541
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.342
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.123
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.018
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.334
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.35
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.368
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,947 @@
+{
+  "code": "ONET-41-4012.00",
+  "name": "Nhân viên kinh doanh (sales B2B)",
+  "nameEn": "Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products",
+  "group": "Bán hàng",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Bán hàng của nhà bán buôn hoặc nhà sản xuất cho doanh nghiệp hoặc nhóm khách, không thuộc sản phẩm kỹ thuật và khoa học. Cần hiểu biết sâu về hàng mình bán. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Môi trường cạnh tranh cao.",
+    "Ngồi gần như cả ngày."
+  ],
+  "workFacts": [
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "51% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "19% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Văn phòng doanh nghiệp vừa và nhỏ trong nước",
+      "weight": 50
+    },
+    {
+      "name": "Văn phòng công ty nước ngoài, đa quốc gia",
+      "weight": 25
+    },
+    {
+      "name": "Công ty logistics, giao nhận, xuất nhập khẩu",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Quản trị kinh doanh", "Kinh doanh thương mại", "Marketing"],
+    "vocational": ["Quản trị bán hàng", "Kinh doanh thương mại"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh kinh doanh",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Trả lời câu hỏi của khách về sản phẩm, giá, khả năng cung cấp, công dụng và điều kiện tín dụng.",
+        "Gợi ý sản phẩm theo nhu cầu và mối quan tâm của khách.",
+        "Ước tính hoặc báo giá, điều kiện tín dụng, hợp đồng, bảo hành và ngày giao hàng.",
+        "Làm việc với khách sau khi bán hoặc ký hợp đồng để giải quyết vấn đề và hỗ trợ lâu dài.",
+        "Soạn hợp đồng mua bán và đơn đặt hàng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên kinh doanh",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Trả lời câu hỏi của khách về sản phẩm, giá, khả năng cung cấp, công dụng và điều kiện tín dụng.",
+        "Gợi ý sản phẩm theo nhu cầu và mối quan tâm của khách.",
+        "Ước tính hoặc báo giá, điều kiện tín dụng, hợp đồng, bảo hành và ngày giao hàng.",
+        "Làm việc với khách sau khi bán hoặc ký hợp đồng để giải quyết vấn đề và hỗ trợ lâu dài.",
+        "Soạn hợp đồng mua bán và đơn đặt hàng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên kinh doanh",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Trả lời câu hỏi của khách về sản phẩm, giá, khả năng cung cấp, công dụng và điều kiện tín dụng.",
+        "Gợi ý sản phẩm theo nhu cầu và mối quan tâm của khách.",
+        "Ước tính hoặc báo giá, điều kiện tín dụng, hợp đồng, bảo hành và ngày giao hàng.",
+        "Làm việc với khách sau khi bán hoặc ký hợp đồng để giải quyết vấn đề và hỗ trợ lâu dài.",
+        "Soạn hợp đồng mua bán và đơn đặt hàng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+          "name": "Ghi chép tương tác với khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+          "name": "Ghi thông tin cá nhân của khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chuyên viên kinh doanh cao cấp/quản lý khách hàng lớn (key account)",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Trả lời câu hỏi của khách về sản phẩm, giá, khả năng cung cấp, công dụng và điều kiện tín dụng.",
+        "Gợi ý sản phẩm theo nhu cầu và mối quan tâm của khách.",
+        "Ước tính hoặc báo giá, điều kiện tín dụng, hợp đồng, bảo hành và ngày giao hàng.",
+        "Làm việc với khách sau khi bán hoặc ký hợp đồng để giải quyết vấn đề và hỗ trợ lâu dài.",
+        "Soạn hợp đồng mua bán và đơn đặt hàng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+          "name": "Ghi chép tương tác với khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+          "name": "Ghi thông tin cá nhân của khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+          "name": "Ghi chép tương tác với khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+          "name": "Ghi thông tin cá nhân của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6ae7a34-5a5c-48dd-9b82-8beccca63e3c",
+          "name": "Tuân thủ quy định mua sắm, hợp đồng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm/giám sát kinh doanh",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Trả lời câu hỏi của khách về sản phẩm, giá, khả năng cung cấp, công dụng và điều kiện tín dụng.",
+        "Gợi ý sản phẩm theo nhu cầu và mối quan tâm của khách.",
+        "Ước tính hoặc báo giá, điều kiện tín dụng, hợp đồng, bảo hành và ngày giao hàng.",
+        "Làm việc với khách sau khi bán hoặc ký hợp đồng để giải quyết vấn đề và hỗ trợ lâu dài.",
+        "Soạn hợp đồng mua bán và đơn đặt hàng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+          "name": "Ghi chép tương tác với khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+          "name": "Ghi thông tin cá nhân của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6ae7a34-5a5c-48dd-9b82-8beccca63e3c",
+          "name": "Tuân thủ quy định mua sắm, hợp đồng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+          "name": "Ghi chép tương tác với khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+          "name": "Ghi thông tin cá nhân của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6ae7a34-5a5c-48dd-9b82-8beccca63e3c",
+          "name": "Tuân thủ quy định mua sắm, hợp đồng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng kinh doanh/quản lý vùng",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Trả lời câu hỏi của khách về sản phẩm, giá, khả năng cung cấp, công dụng và điều kiện tín dụng.",
+        "Gợi ý sản phẩm theo nhu cầu và mối quan tâm của khách.",
+        "Ước tính hoặc báo giá, điều kiện tín dụng, hợp đồng, bảo hành và ngày giao hàng.",
+        "Làm việc với khách sau khi bán hoặc ký hợp đồng để giải quyết vấn đề và hỗ trợ lâu dài.",
+        "Soạn hợp đồng mua bán và đơn đặt hàng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 3,
+        "tri_tue_cam_xuc": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+          "name": "Ghi chép tương tác với khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+          "name": "Ghi thông tin cá nhân của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6ae7a34-5a5c-48dd-9b82-8beccca63e3c",
+          "name": "Tuân thủ quy định mua sắm, hợp đồng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+          "name": "Ghi chép tương tác với khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+          "name": "Ghi thông tin cá nhân của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6ae7a34-5a5c-48dd-9b82-8beccca63e3c",
+          "name": "Tuân thủ quy định mua sắm, hợp đồng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc kinh doanh",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Trả lời câu hỏi của khách về sản phẩm, giá, khả năng cung cấp, công dụng và điều kiện tín dụng.",
+        "Gợi ý sản phẩm theo nhu cầu và mối quan tâm của khách.",
+        "Ước tính hoặc báo giá, điều kiện tín dụng, hợp đồng, bảo hành và ngày giao hàng.",
+        "Làm việc với khách sau khi bán hoặc ký hợp đồng để giải quyết vấn đề và hỗ trợ lâu dài.",
+        "Soạn hợp đồng mua bán và đơn đặt hàng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 4,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+          "name": "Ghi chép tương tác với khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+          "name": "Ghi thông tin cá nhân của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6ae7a34-5a5c-48dd-9b82-8beccca63e3c",
+          "name": "Tuân thủ quy định mua sắm, hợp đồng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+          "name": "Chiến lược bán hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+          "name": "Hiểu sản phẩm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "name": "Tư vấn đặc điểm hàng hoá",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "name": "Tin học cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "name": "Chăm sóc khách hàng sau bán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+          "name": "Ngành hàng tiêu dùng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+          "name": "Ghi chép tương tác với khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+          "name": "Kỹ thuật khuyến mãi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+          "name": "Ghi thông tin cá nhân của khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6ae7a34-5a5c-48dd-9b82-8beccca63e3c",
+          "name": "Tuân thủ quy định mua sắm, hợp đồng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-41-4012.00",
+          "name": "Nhân viên kinh doanh (sales B2B)"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-41-1012.00",
+          "name": "Tổ trưởng kinh doanh (ngoài bán lẻ)"
+        },
+        {
+          "code": "ONET-11-2022.00",
+          "name": "Trưởng phòng kinh doanh"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-13-1161.00",
+      "name": "Chuyên viên marketing và nghiên cứu thị trường",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1023.00",
+      "name": "Chuyên viên mua hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-9031.00",
+      "name": "Kỹ sư kinh doanh (sales kỹ thuật)",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 12500000,
+    "median": 15000000,
+    "high": 20000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 3511,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e7219848-a27a-4bf4-8775-d367707be7c9",
+      "name": "Chiến lược bán hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d6d3fee7-47e2-47f4-a0ec-6c75f28c6abd",
+      "name": "Hiểu sản phẩm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+      "name": "Tư vấn đặc điểm hàng hoá",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+      "name": "Tin học cơ bản",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+      "name": "Chăm sóc khách hàng sau bán",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0dd4d328-f015-463d-9a7e-06b7041f0b26",
+      "name": "Ngành hàng tiêu dùng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8b7409b0-e18e-4dfc-9ad9-8ddbcce38849",
+      "name": "Ghi chép tương tác với khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/756ae350-9e1f-4cb9-9c27-6bd99806dadc",
+      "name": "Kỹ thuật khuyến mãi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7f783956-f734-4d56-85de-10f0c1706f8a",
+      "name": "Ghi thông tin cá nhân của khách",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a6ae7a34-5a5c-48dd-9b82-8beccca63e3c",
+      "name": "Tuân thủ quy định mua sắm, hợp đồng",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.764
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.717
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.611
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.42
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.382
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.303
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.901
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

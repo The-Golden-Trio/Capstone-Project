@@ -1,0 +1,936 @@
+{
+  "code": "ONET-19-2012.00",
+  "name": "Nhà vật lý",
+  "nameEn": "Physicists",
+  "group": "Khoa học tự nhiên và xã hội",
+  "regionId": "cong_nghe",
+  "isIt": false,
+  "summary": "Nghiên cứu các hiện tượng vật lý, xây dựng lý thuyết dựa trên quan sát và thí nghiệm, và tìm cách ứng dụng các định luật, lý thuyết vật lý. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Có tiếp xúc với bức xạ.",
+    "Phải mặc đồ bảo hộ chuyên dụng như mặt nạ thở, đai an toàn hoặc đồ chống bức xạ."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "65% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "28% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Phòng thí nghiệm"],
+  "environments": [
+    {
+      "name": "Viện nghiên cứu, trung tâm khoa học nhà nước",
+      "weight": 60
+    },
+    {
+      "name": "Trường đại học, cao đẳng công lập",
+      "weight": 40
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Vật lý học", "Vật lý kỹ thuật"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên nghiên cứu / thực tập vật lý",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu nghiên cứu để phát hiện và đo các hiện tượng vật lý.",
+        "Báo cáo kết quả thí nghiệm bằng bài báo khoa học hoặc trình bày tại hội nghị.",
+        "Thực hiện tính toán phức tạp trên máy tính để phân tích và đánh giá dữ liệu.",
+        "Mô tả và diễn đạt quan sát, kết luận bằng ngôn ngữ toán học.",
+        "Phối hợp với nhà khoa học khác thiết kế, phát triển và thử nghiệm thiết bị, dụng cụ và quy trình thí nghiệm, công nghiệp hoặc y tế."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ lý nghiên cứu vật lý (hạng IV)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu nghiên cứu để phát hiện và đo các hiện tượng vật lý.",
+        "Báo cáo kết quả thí nghiệm bằng bài báo khoa học hoặc trình bày tại hội nghị.",
+        "Thực hiện tính toán phức tạp trên máy tính để phân tích và đánh giá dữ liệu.",
+        "Mô tả và diễn đạt quan sát, kết luận bằng ngôn ngữ toán học.",
+        "Phối hợp với nhà khoa học khác thiết kế, phát triển và thử nghiệm thiết bị, dụng cụ và quy trình thí nghiệm, công nghiệp hoặc y tế."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Nghiên cứu viên vật lý (hạng III)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu nghiên cứu để phát hiện và đo các hiện tượng vật lý.",
+        "Báo cáo kết quả thí nghiệm bằng bài báo khoa học hoặc trình bày tại hội nghị.",
+        "Thực hiện tính toán phức tạp trên máy tính để phân tích và đánh giá dữ liệu.",
+        "Mô tả và diễn đạt quan sát, kết luận bằng ngôn ngữ toán học.",
+        "Phối hợp với nhà khoa học khác thiết kế, phát triển và thử nghiệm thiết bị, dụng cụ và quy trình thí nghiệm, công nghiệp hoặc y tế."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+          "name": "Công nghệ lượng tử",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Nghiên cứu viên vật lý chủ trì đề tài cấp cơ sở",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu nghiên cứu để phát hiện và đo các hiện tượng vật lý.",
+        "Báo cáo kết quả thí nghiệm bằng bài báo khoa học hoặc trình bày tại hội nghị.",
+        "Thực hiện tính toán phức tạp trên máy tính để phân tích và đánh giá dữ liệu.",
+        "Mô tả và diễn đạt quan sát, kết luận bằng ngôn ngữ toán học.",
+        "Phối hợp với nhà khoa học khác thiết kế, phát triển và thử nghiệm thiết bị, dụng cụ và quy trình thí nghiệm, công nghiệp hoặc y tế."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+          "name": "Công nghệ lượng tử",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+          "name": "Công nghệ lượng tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b917c3e-e49f-40d9-8f95-3bc8e9c06fd2",
+          "name": "Làm xét nghiệm trong phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Nghiên cứu viên vật lý chủ nhiệm đề tài cấp bộ, tỉnh",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu nghiên cứu để phát hiện và đo các hiện tượng vật lý.",
+        "Báo cáo kết quả thí nghiệm bằng bài báo khoa học hoặc trình bày tại hội nghị.",
+        "Thực hiện tính toán phức tạp trên máy tính để phân tích và đánh giá dữ liệu.",
+        "Mô tả và diễn đạt quan sát, kết luận bằng ngôn ngữ toán học.",
+        "Phối hợp với nhà khoa học khác thiết kế, phát triển và thử nghiệm thiết bị, dụng cụ và quy trình thí nghiệm, công nghiệp hoặc y tế."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+          "name": "Công nghệ lượng tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b917c3e-e49f-40d9-8f95-3bc8e9c06fd2",
+          "name": "Làm xét nghiệm trong phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+          "name": "Công nghệ lượng tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b917c3e-e49f-40d9-8f95-3bc8e9c06fd2",
+          "name": "Làm xét nghiệm trong phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Nghiên cứu viên chính vật lý (hạng II)",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu nghiên cứu để phát hiện và đo các hiện tượng vật lý.",
+        "Báo cáo kết quả thí nghiệm bằng bài báo khoa học hoặc trình bày tại hội nghị.",
+        "Thực hiện tính toán phức tạp trên máy tính để phân tích và đánh giá dữ liệu.",
+        "Mô tả và diễn đạt quan sát, kết luận bằng ngôn ngữ toán học.",
+        "Phối hợp với nhà khoa học khác thiết kế, phát triển và thử nghiệm thiết bị, dụng cụ và quy trình thí nghiệm, công nghiệp hoặc y tế."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+          "name": "Công nghệ lượng tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b917c3e-e49f-40d9-8f95-3bc8e9c06fd2",
+          "name": "Làm xét nghiệm trong phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+          "name": "Công nghệ lượng tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b917c3e-e49f-40d9-8f95-3bc8e9c06fd2",
+          "name": "Làm xét nghiệm trong phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Nghiên cứu viên cao cấp vật lý (hạng I)",
+      "years": "16+",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích dữ liệu nghiên cứu để phát hiện và đo các hiện tượng vật lý.",
+        "Báo cáo kết quả thí nghiệm bằng bài báo khoa học hoặc trình bày tại hội nghị.",
+        "Thực hiện tính toán phức tạp trên máy tính để phân tích và đánh giá dữ liệu.",
+        "Mô tả và diễn đạt quan sát, kết luận bằng ngôn ngữ toán học.",
+        "Phối hợp với nhà khoa học khác thiết kế, phát triển và thử nghiệm thiết bị, dụng cụ và quy trình thí nghiệm, công nghiệp hoặc y tế."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+          "name": "Công nghệ lượng tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b917c3e-e49f-40d9-8f95-3bc8e9c06fd2",
+          "name": "Làm xét nghiệm trong phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+          "name": "Áp dụng phương pháp khoa học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+          "name": "Siêu máy tính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+          "name": "Vận hành thiết bị đo khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+          "name": "Vật lý tính toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+          "name": "Vật lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+          "name": "Quang phổ học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+          "name": "Tính toán toán học phân tích",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+          "name": "Công nghệ lượng tử",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0b917c3e-e49f-40d9-8f95-3bc8e9c06fd2",
+          "name": "Làm xét nghiệm trong phòng thí nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-19-2012.00",
+          "name": "Nhà vật lý"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-8013.00",
+      "name": "Vận hành nhà máy điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-15-2041.00",
+      "name": "Chuyên viên thống kê và toán ứng dụng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-1081.00",
+      "name": "Giảng viên đại học, cao đẳng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-1029.04",
+      "name": "Nhà sinh học, chuyên viên công nghệ sinh học",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "DATA_AI",
+      "name": "Kỹ sư trí tuệ nhân tạo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 8780000,
+    "median": null,
+    "high": 21140000,
+    "byYears": [],
+    "source": "WageIndicator Việt Nam, \"Nhà vật lý và nhà thiên văn\"",
+    "dataYear": "2026",
+    "note": "Số mô hình.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/7a34b3d9-bd3b-4f4e-a0f6-f97439901cb7",
+      "name": "Áp dụng phương pháp khoa học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+      "name": "Phân tích thống kê",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4503c65f-2bd0-4aa5-91cd-4188c7e5e31b",
+      "name": "Siêu máy tính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cb1a2fbf-242d-4a4e-a466-588378f124c1",
+      "name": "Vận hành thiết bị đo khoa học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/896c43c3-0af9-41e3-867b-56b1ffda0b3e",
+      "name": "Vật lý tính toán",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/692ace70-7f97-4214-92bd-88f7637d8a44",
+      "name": "Vật lý",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9ce18534-9fa6-49af-9521-42c1e10fe07c",
+      "name": "Quang phổ học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/31c69100-b612-4a61-8db5-fd314318854c",
+      "name": "Tính toán toán học phân tích",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/89839842-a111-411f-b64a-94354d6118e0",
+      "name": "Công nghệ lượng tử",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0b917c3e-e49f-40d9-8f95-3bc8e9c06fd2",
+      "name": "Làm xét nghiệm trong phòng thí nghiệm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.757
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.435
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.344
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.19
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.122
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.04
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.444
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,907 @@
+{
+  "code": "ONET-13-2072.00",
+  "name": "Chuyên viên tín dụng ngân hàng",
+  "nameEn": "Loan Officers",
+  "group": "Kinh doanh và tài chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Đánh giá, phê duyệt hoặc đề xuất duyệt các khoản vay thương mại, bất động sản hoặc tín dụng. Tư vấn cho người vay về tình hình tài chính và cách trả nợ. Gồm cả chuyên viên vay thế chấp, thu hồi nợ, quản lý khoản vay và thẩm định khoản vay. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Công việc lặp lại nhiều.",
+    "Môi trường cạnh tranh cao."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "37% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "8% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Chi nhánh, phòng giao dịch ngân hàng",
+      "weight": 70
+    },
+    {
+      "name": "Hội sở ngân hàng",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Tài chính - Ngân hàng"],
+    "vocational": ["Tài chính tín dụng", "Tài chính - Ngân hàng"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh ngân hàng",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Gặp người vay để lấy thông tin cho hồ sơ vay và trả lời thắc mắc về quy trình.",
+        "Phân tích tình hình tài chính, lịch sử tín dụng và định giá tài sản của người vay để xem có cho vay được không.",
+        "Duyệt khoản vay trong hạn mức được giao và chuyển hồ sơ vượt hạn mức lên cấp trên.",
+        "Giải thích cho khách các loại khoản vay, hình thức tín dụng và điều khoản đi kèm.",
+        "Chuyển hồ sơ cho chuyên viên phân tích tín dụng xác minh và đề xuất."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Chuyên viên hỗ trợ tín dụng",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Gặp người vay để lấy thông tin cho hồ sơ vay và trả lời thắc mắc về quy trình.",
+        "Phân tích tình hình tài chính, lịch sử tín dụng và định giá tài sản của người vay để xem có cho vay được không.",
+        "Duyệt khoản vay trong hạn mức được giao và chuyển hồ sơ vượt hạn mức lên cấp trên.",
+        "Giải thích cho khách các loại khoản vay, hình thức tín dụng và điều khoản đi kèm.",
+        "Chuyển hồ sơ cho chuyên viên phân tích tín dụng xác minh và đề xuất."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên quan hệ khách hàng (RM)",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Gặp người vay để lấy thông tin cho hồ sơ vay và trả lời thắc mắc về quy trình.",
+        "Phân tích tình hình tài chính, lịch sử tín dụng và định giá tài sản của người vay để xem có cho vay được không.",
+        "Duyệt khoản vay trong hạn mức được giao và chuyển hồ sơ vượt hạn mức lên cấp trên.",
+        "Giải thích cho khách các loại khoản vay, hình thức tín dụng và điều khoản đi kèm.",
+        "Chuyển hồ sơ cho chuyên viên phân tích tín dụng xác minh và đề xuất."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+          "name": "Phần mềm ngân hàng lõi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+          "name": "Xem xét xếp hạng tín dụng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chuyên viên quan hệ khách hàng cấp cao (SRM)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Gặp người vay để lấy thông tin cho hồ sơ vay và trả lời thắc mắc về quy trình.",
+        "Phân tích tình hình tài chính, lịch sử tín dụng và định giá tài sản của người vay để xem có cho vay được không.",
+        "Duyệt khoản vay trong hạn mức được giao và chuyển hồ sơ vượt hạn mức lên cấp trên.",
+        "Giải thích cho khách các loại khoản vay, hình thức tín dụng và điều khoản đi kèm.",
+        "Chuyển hồ sơ cho chuyên viên phân tích tín dụng xác minh và đề xuất."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+          "name": "Phần mềm ngân hàng lõi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+          "name": "Xem xét xếp hạng tín dụng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+          "name": "Phần mềm ngân hàng lõi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+          "name": "Xem xét xếp hạng tín dụng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12d93356-78e7-4857-99a6-f00b4ae2ec77",
+          "name": "Phân tích khoản vay",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chuyên gia quan hệ khách hàng (SERM)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Gặp người vay để lấy thông tin cho hồ sơ vay và trả lời thắc mắc về quy trình.",
+        "Phân tích tình hình tài chính, lịch sử tín dụng và định giá tài sản của người vay để xem có cho vay được không.",
+        "Duyệt khoản vay trong hạn mức được giao và chuyển hồ sơ vượt hạn mức lên cấp trên.",
+        "Giải thích cho khách các loại khoản vay, hình thức tín dụng và điều khoản đi kèm.",
+        "Chuyển hồ sơ cho chuyên viên phân tích tín dụng xác minh và đề xuất."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_quan_ly_ap_luc"],
+      "requirement": {
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+          "name": "Phần mềm ngân hàng lõi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+          "name": "Xem xét xếp hạng tín dụng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12d93356-78e7-4857-99a6-f00b4ae2ec77",
+          "name": "Phân tích khoản vay",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+          "name": "Phần mềm ngân hàng lõi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+          "name": "Xem xét xếp hạng tín dụng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12d93356-78e7-4857-99a6-f00b4ae2ec77",
+          "name": "Phân tích khoản vay",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Phó phòng / Trưởng nhóm khách hàng",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Gặp người vay để lấy thông tin cho hồ sơ vay và trả lời thắc mắc về quy trình.",
+        "Phân tích tình hình tài chính, lịch sử tín dụng và định giá tài sản của người vay để xem có cho vay được không.",
+        "Duyệt khoản vay trong hạn mức được giao và chuyển hồ sơ vượt hạn mức lên cấp trên.",
+        "Giải thích cho khách các loại khoản vay, hình thức tín dụng và điều khoản đi kèm.",
+        "Chuyển hồ sơ cho chuyên viên phân tích tín dụng xác minh và đề xuất."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+          "name": "Phần mềm ngân hàng lõi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+          "name": "Xem xét xếp hạng tín dụng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12d93356-78e7-4857-99a6-f00b4ae2ec77",
+          "name": "Phân tích khoản vay",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+          "name": "Phần mềm ngân hàng lõi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+          "name": "Xem xét xếp hạng tín dụng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12d93356-78e7-4857-99a6-f00b4ae2ec77",
+          "name": "Phân tích khoản vay",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng khách hàng / Giám đốc phòng giao dịch",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Gặp người vay để lấy thông tin cho hồ sơ vay và trả lời thắc mắc về quy trình.",
+        "Phân tích tình hình tài chính, lịch sử tín dụng và định giá tài sản của người vay để xem có cho vay được không.",
+        "Duyệt khoản vay trong hạn mức được giao và chuyển hồ sơ vượt hạn mức lên cấp trên.",
+        "Giải thích cho khách các loại khoản vay, hình thức tín dụng và điều khoản đi kèm.",
+        "Chuyển hồ sơ cho chuyên viên phân tích tín dụng xác minh và đề xuất."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+          "name": "Phần mềm ngân hàng lõi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+          "name": "Xem xét xếp hạng tín dụng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12d93356-78e7-4857-99a6-f00b4ae2ec77",
+          "name": "Phân tích khoản vay",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+          "name": "Thu thập thông tin tài chính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+          "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+          "name": "Tư vấn lãi suất",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "name": "Phân tích rủi ro tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+          "name": "Theo dõi danh mục cho vay",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+          "name": "Phần mềm ngân hàng lõi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+          "name": "Xem xét xếp hạng tín dụng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+          "name": "Duy trì lịch sử tín dụng khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/12d93356-78e7-4857-99a6-f00b4ae2ec77",
+          "name": "Phân tích khoản vay",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-43-3071.00",
+      "name": "Giao dịch viên ngân hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2052.00",
+      "name": "Chuyên viên tư vấn tài chính và đầu tư",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 15000000,
+    "median": 22500000,
+    "high": 25000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 51,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/71ae4f64-6505-4b6f-91b9-5acfa5721798",
+      "name": "Thu thập thông tin tài chính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c9f4efcd-e16a-4515-a0cb-60c6c479853d",
+      "name": "Toán tính rủi ro (bảo hiểm, tài chính)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d5ac6a93-7fba-49d4-93fd-b38d23b556e8",
+      "name": "Tư vấn lãi suất",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+      "name": "Phân tích rủi ro tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c35b19ad-b06f-44e8-be9f-c20c68750346",
+      "name": "Theo dõi danh mục cho vay",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+      "name": "Nghiệp vụ ngân hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/84f583f4-f32a-4202-9b92-e25f0c978410",
+      "name": "Phần mềm ngân hàng lõi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/68babd52-64d1-4904-a476-173828217fd2",
+      "name": "Xem xét xếp hạng tín dụng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/95fc86de-8e74-4753-9344-281179aa74b0",
+      "name": "Duy trì lịch sử tín dụng khách hàng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/12d93356-78e7-4857-99a6-f00b4ae2ec77",
+      "name": "Phân tích khoản vay",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.752
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.397
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.386
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.296
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.278
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.037
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.127
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

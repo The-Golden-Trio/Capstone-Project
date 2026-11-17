@@ -1,0 +1,950 @@
+{
+  "code": "ONET-25-2031.00",
+  "name": "Giáo viên trung học (THCS, THPT)",
+  "nameEn": "Secondary School Teachers, Except Special and Career/Technical Education",
+  "group": "Giáo dục và thư viện",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Dạy một hoặc nhiều môn cho học sinh bậc trung học. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Thường xuyên gặp tình huống xung đột với người khác."
+  ],
+  "workFacts": [
+    "59% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "12% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trường học, trung tâm"],
+  "environments": [
+    {
+      "name": "Trường công lập (mầm non đến THPT)",
+      "weight": 75
+    },
+    {
+      "name": "Trường tư thục, quốc tế, song ngữ",
+      "weight": 15
+    },
+    {
+      "name": "Trung tâm ngoại ngữ, luyện thi, kỹ năng",
+      "weight": 10
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Sư phạm Toán học",
+      "Sư phạm Ngữ văn",
+      "Sư phạm Khoa học tự nhiên"
+    ],
+    "vocational": [],
+    "licence": "Đạt chuẩn trình độ đào tạo theo cấp học; người không học sư phạm cần chứng chỉ nghiệp vụ sư phạm — Luật Nhà giáo số 73/2025/QH15, hiệu lực 01/01/2026"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên thực tập sư phạm trung học",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị cho học sinh lên lớp trên bằng cách khuyến khích các em tìm cơ hội học tập và kiên trì với bài khó.",
+        "Giảng dạy một hoặc nhiều môn như ngữ văn, toán hay xã hội qua thuyết giảng, thảo luận và làm mẫu.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự lớp.",
+        "Chuẩn bị tài liệu và lớp học cho các hoạt động.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của học sinh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Giáo viên trung học mới (bậc nghề nghiệp 3, tương đương hạng III cũ)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị cho học sinh lên lớp trên bằng cách khuyến khích các em tìm cơ hội học tập và kiên trì với bài khó.",
+        "Giảng dạy một hoặc nhiều môn như ngữ văn, toán hay xã hội qua thuyết giảng, thảo luận và làm mẫu.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự lớp.",
+        "Chuẩn bị tài liệu và lớp học cho các hoạt động.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của học sinh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L4",
+      "title": "Giáo viên trung học (bậc 3, đạt chuẩn nghề nghiệp mức khá/tốt)",
+      "years": "2–8",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị cho học sinh lên lớp trên bằng cách khuyến khích các em tìm cơ hội học tập và kiên trì với bài khó.",
+        "Giảng dạy một hoặc nhiều môn như ngữ văn, toán hay xã hội qua thuyết giảng, thảo luận và làm mẫu.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự lớp.",
+        "Chuẩn bị tài liệu và lớp học cho các hoạt động.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của học sinh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+          "name": "Chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "name": "Dạy học theo năng lực học sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Giáo viên trung học bậc 4 (tương đương hạng II–I cũ), giáo viên cốt cán",
+      "years": "8–15",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị cho học sinh lên lớp trên bằng cách khuyến khích các em tìm cơ hội học tập và kiên trì với bài khó.",
+        "Giảng dạy một hoặc nhiều môn như ngữ văn, toán hay xã hội qua thuyết giảng, thảo luận và làm mẫu.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự lớp.",
+        "Chuẩn bị tài liệu và lớp học cho các hoạt động.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của học sinh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+          "name": "Chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "name": "Dạy học theo năng lực học sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+          "name": "Chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "name": "Dạy học theo năng lực học sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23ac233d-84ad-4517-b0f5-8ca19ba2614e",
+          "name": "Cập nhật chuyên môn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Tổ trưởng chuyên môn",
+      "years": "6–12",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị cho học sinh lên lớp trên bằng cách khuyến khích các em tìm cơ hội học tập và kiên trì với bài khó.",
+        "Giảng dạy một hoặc nhiều môn như ngữ văn, toán hay xã hội qua thuyết giảng, thảo luận và làm mẫu.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự lớp.",
+        "Chuẩn bị tài liệu và lớp học cho các hoạt động.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của học sinh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+          "name": "Chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "name": "Dạy học theo năng lực học sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23ac233d-84ad-4517-b0f5-8ca19ba2614e",
+          "name": "Cập nhật chuyên môn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+          "name": "Chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "name": "Dạy học theo năng lực học sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23ac233d-84ad-4517-b0f5-8ca19ba2614e",
+          "name": "Cập nhật chuyên môn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Phó hiệu trưởng trường trung học",
+      "years": "10–18",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị cho học sinh lên lớp trên bằng cách khuyến khích các em tìm cơ hội học tập và kiên trì với bài khó.",
+        "Giảng dạy một hoặc nhiều môn như ngữ văn, toán hay xã hội qua thuyết giảng, thảo luận và làm mẫu.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự lớp.",
+        "Chuẩn bị tài liệu và lớp học cho các hoạt động.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của học sinh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+          "name": "Chiến lược giảng dạy",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "name": "Dạy học theo năng lực học sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23ac233d-84ad-4517-b0f5-8ca19ba2614e",
+          "name": "Cập nhật chuyên môn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+          "name": "Chiến lược giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "name": "Dạy học theo năng lực học sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23ac233d-84ad-4517-b0f5-8ca19ba2614e",
+          "name": "Cập nhật chuyên môn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Hiệu trưởng trường THCS/THPT",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Chuẩn bị cho học sinh lên lớp trên bằng cách khuyến khích các em tìm cơ hội học tập và kiên trì với bài khó.",
+        "Giảng dạy một hoặc nhiều môn như ngữ văn, toán hay xã hội qua thuyết giảng, thảo luận và làm mẫu.",
+        "Đặt và thực thi nội quy về hành vi và quy trình giữ trật tự lớp.",
+        "Chuẩn bị tài liệu và lớp học cho các hoạt động.",
+        "Điều chỉnh phương pháp và tài liệu dạy cho phù hợp nhu cầu, sở thích khác nhau của học sinh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 4,
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+          "name": "Chiến lược giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "name": "Dạy học theo năng lực học sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23ac233d-84ad-4517-b0f5-8ca19ba2614e",
+          "name": "Cập nhật chuyên môn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+          "name": "Quy trình giáo dục sau phổ thông",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+          "name": "Quy trình trường trung học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+          "name": "Hỗ trợ học tập",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+          "name": "Soạn tài liệu khoá học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "name": "Sư phạm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+          "name": "Theo dõi tiến bộ giáo dục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+          "name": "Chiến lược giảng dạy",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "name": "Dạy học theo năng lực học sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+          "name": "Soạn bài giảng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/23ac233d-84ad-4517-b0f5-8ca19ba2614e",
+          "name": "Cập nhật chuyên môn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-25-2031.00",
+          "name": "Giáo viên trung học (THCS, THPT)"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9032.00",
+          "name": "Quản lý giáo dục (hiệu trưởng, trưởng khoa)"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-25-3041.00",
+      "name": "Gia sư, giáo viên trung tâm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-2051.00",
+      "name": "Giáo viên giáo dục đặc biệt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-2021.00",
+      "name": "Giáo viên tiểu học",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-2011.00",
+      "name": "Giáo viên mầm non",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-1081.00",
+      "name": "Giảng viên đại học, cao đẳng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 5920000,
+    "median": null,
+    "high": 17153000,
+    "byYears": [],
+    "source": "Thông tư 31/2026/TT-BGDĐT ngày 14/4/2026; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Giáo viên tiểu học, THCS, THPT hạng III đến hạng I",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 11,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/9cdec88a-fe17-4f9a-9247-1f1802ab7408",
+      "name": "Quy trình giáo dục sau phổ thông",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d04e4bde-05fa-499c-9237-1fe5e4560525",
+      "name": "Quy trình trường trung học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5a676421-d33a-490f-8043-4f81224d3f47",
+      "name": "Hỗ trợ học tập",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2f0a426f-3b95-455b-a872-ef6dee168114",
+      "name": "Soạn tài liệu khoá học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+      "name": "Sư phạm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5de0599a-8fca-4cdd-a72d-f5d21af8eeb3",
+      "name": "Theo dõi tiến bộ giáo dục",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893",
+      "name": "Chiến lược giảng dạy",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+      "name": "Dạy học theo năng lực học sinh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/20f57a7f-b90e-4403-8c77-5ddd89b5835b",
+      "name": "Soạn bài giảng",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/23ac233d-84ad-4517-b0f5-8ca19ba2614e",
+      "name": "Cập nhật chuyên môn",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.062
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 1.009
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.599
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.347
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.33
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.275
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.098
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

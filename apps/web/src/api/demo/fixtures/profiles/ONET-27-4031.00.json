@@ -1,0 +1,721 @@
+{
+  "code": "ONET-27-4031.00",
+  "name": "Nhiếp ảnh, quay phim và dựng phim",
+  "nameEn": "Camera Operators, Television, Video, and Film",
+  "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+  "regionId": "sang_tao",
+  "isIt": false,
+  "summary": "Vận hành máy quay truyền hình, video hoặc phim để ghi hình ảnh, cảnh quay cho sản phẩm truyền hình, video hoặc điện ảnh. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích sáng tạo và tự do thể hiện ý tưởng. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Môi trường cạnh tranh cao.",
+    "Thường xuyên phải làm gấp cho kịp hạn.",
+    "Thu nhập bấp bênh, nhiều người làm theo dự án hoặc tự do."
+  ],
+  "workFacts": [
+    "40% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "42% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Phòng thu, sân khấu, trường quay"],
+  "environments": [
+    {
+      "name": "Công ty sản xuất phim, TVC, MV",
+      "weight": 45
+    },
+    {
+      "name": "Agency marketing, quảng cáo, sự kiện",
+      "weight": 30
+    },
+    {
+      "name": "Freelance sáng tạo theo show, dự án",
+      "weight": 25
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Quay phim", "Nhiếp ảnh", "Công nghệ điện ảnh, truyền hình"],
+    "vocational": ["Quay phim", "Dựng ảnh", "Nhiếp ảnh"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ lý quay phim / dựng phim",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Bố cục và lấy khuôn hình từng cảnh, vận dụng kỹ thuật về ánh sáng, ống kính, phim, kính lọc và cài đặt máy để đạt hiệu quả đạo diễn muốn.",
+        "Vận hành máy quay truyền hình hoặc điện ảnh để ghi cảnh cho chương trình truyền hình, quảng cáo hoặc phim.",
+        "Chỉnh vị trí và điều khiển máy quay, máy in phim và thiết bị liên quan để thay đổi nét, độ phơi sáng và ánh sáng.",
+        "Trao đổi với đạo diễn, kỹ thuật âm thanh, ánh sáng, thợ điện và ê-kíp về nhiệm vụ, thứ tự quay, hiệu ứng, chuyển động máy và yêu cầu ánh sáng.",
+        "Vận hành ống kính zoom, thay đổi hình theo yêu cầu và hướng dẫn khi tập."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+          "name": "Thiết bị nghe nhìn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+          "name": "Xác định ý tưởng hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+          "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Quay phim, dựng phim viên",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Bố cục và lấy khuôn hình từng cảnh, vận dụng kỹ thuật về ánh sáng, ống kính, phim, kính lọc và cài đặt máy để đạt hiệu quả đạo diễn muốn.",
+        "Vận hành máy quay truyền hình hoặc điện ảnh để ghi cảnh cho chương trình truyền hình, quảng cáo hoặc phim.",
+        "Chỉnh vị trí và điều khiển máy quay, máy in phim và thiết bị liên quan để thay đổi nét, độ phơi sáng và ánh sáng.",
+        "Trao đổi với đạo diễn, kỹ thuật âm thanh, ánh sáng, thợ điện và ê-kíp về nhiệm vụ, thứ tự quay, hiệu ứng, chuyển động máy và yêu cầu ánh sáng.",
+        "Vận hành ống kính zoom, thay đổi hình theo yêu cầu và hướng dẫn khi tập."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+          "name": "Thiết bị nghe nhìn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+          "name": "Xác định ý tưởng hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+          "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+          "name": "Thiết bị nghe nhìn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+          "name": "Xác định ý tưởng hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+          "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d76ed44-f022-4a1f-a6bd-5f0686a2ae3c",
+          "name": "Chọn khẩu độ máy ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e039fe9-e7d3-4d9b-82e5-381269a38ceb",
+          "name": "Lắp đặt máy quay",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Quay phim / dựng phim hạng III",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Bố cục và lấy khuôn hình từng cảnh, vận dụng kỹ thuật về ánh sáng, ống kính, phim, kính lọc và cài đặt máy để đạt hiệu quả đạo diễn muốn.",
+        "Vận hành máy quay truyền hình hoặc điện ảnh để ghi cảnh cho chương trình truyền hình, quảng cáo hoặc phim.",
+        "Chỉnh vị trí và điều khiển máy quay, máy in phim và thiết bị liên quan để thay đổi nét, độ phơi sáng và ánh sáng.",
+        "Trao đổi với đạo diễn, kỹ thuật âm thanh, ánh sáng, thợ điện và ê-kíp về nhiệm vụ, thứ tự quay, hiệu ứng, chuyển động máy và yêu cầu ánh sáng.",
+        "Vận hành ống kính zoom, thay đổi hình theo yêu cầu và hướng dẫn khi tập."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+          "name": "Thiết bị nghe nhìn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+          "name": "Xác định ý tưởng hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+          "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d76ed44-f022-4a1f-a6bd-5f0686a2ae3c",
+          "name": "Chọn khẩu độ máy ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e039fe9-e7d3-4d9b-82e5-381269a38ceb",
+          "name": "Lắp đặt máy quay",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+          "name": "Thiết bị nghe nhìn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+          "name": "Xác định ý tưởng hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+          "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d76ed44-f022-4a1f-a6bd-5f0686a2ae3c",
+          "name": "Chọn khẩu độ máy ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e039fe9-e7d3-4d9b-82e5-381269a38ceb",
+          "name": "Lắp đặt máy quay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65030093-f22d-486e-a978-ae7825829af1",
+          "name": "Phối hợp với đạo diễn hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10cade4f-df4d-4408-8924-5994976fc798",
+          "name": "Vận hành máy quay",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Quay phim / dựng phim hạng II",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Bố cục và lấy khuôn hình từng cảnh, vận dụng kỹ thuật về ánh sáng, ống kính, phim, kính lọc và cài đặt máy để đạt hiệu quả đạo diễn muốn.",
+        "Vận hành máy quay truyền hình hoặc điện ảnh để ghi cảnh cho chương trình truyền hình, quảng cáo hoặc phim.",
+        "Chỉnh vị trí và điều khiển máy quay, máy in phim và thiết bị liên quan để thay đổi nét, độ phơi sáng và ánh sáng.",
+        "Trao đổi với đạo diễn, kỹ thuật âm thanh, ánh sáng, thợ điện và ê-kíp về nhiệm vụ, thứ tự quay, hiệu ứng, chuyển động máy và yêu cầu ánh sáng.",
+        "Vận hành ống kính zoom, thay đổi hình theo yêu cầu và hướng dẫn khi tập."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+          "name": "Thiết bị nghe nhìn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+          "name": "Xác định ý tưởng hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+          "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d76ed44-f022-4a1f-a6bd-5f0686a2ae3c",
+          "name": "Chọn khẩu độ máy ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e039fe9-e7d3-4d9b-82e5-381269a38ceb",
+          "name": "Lắp đặt máy quay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65030093-f22d-486e-a978-ae7825829af1",
+          "name": "Phối hợp với đạo diễn hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10cade4f-df4d-4408-8924-5994976fc798",
+          "name": "Vận hành máy quay",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+          "name": "Thiết bị nghe nhìn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+          "name": "Xác định ý tưởng hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+          "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d76ed44-f022-4a1f-a6bd-5f0686a2ae3c",
+          "name": "Chọn khẩu độ máy ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e039fe9-e7d3-4d9b-82e5-381269a38ceb",
+          "name": "Lắp đặt máy quay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65030093-f22d-486e-a978-ae7825829af1",
+          "name": "Phối hợp với đạo diễn hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10cade4f-df4d-4408-8924-5994976fc798",
+          "name": "Vận hành máy quay",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Quay phim hạng I / Đạo diễn hình ảnh",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Bố cục và lấy khuôn hình từng cảnh, vận dụng kỹ thuật về ánh sáng, ống kính, phim, kính lọc và cài đặt máy để đạt hiệu quả đạo diễn muốn.",
+        "Vận hành máy quay truyền hình hoặc điện ảnh để ghi cảnh cho chương trình truyền hình, quảng cáo hoặc phim.",
+        "Chỉnh vị trí và điều khiển máy quay, máy in phim và thiết bị liên quan để thay đổi nét, độ phơi sáng và ánh sáng.",
+        "Trao đổi với đạo diễn, kỹ thuật âm thanh, ánh sáng, thợ điện và ê-kíp về nhiệm vụ, thứ tự quay, hiệu ứng, chuyển động máy và yêu cầu ánh sáng.",
+        "Vận hành ống kính zoom, thay đổi hình theo yêu cầu và hướng dẫn khi tập."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 3,
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+          "name": "Thiết bị nghe nhìn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+          "name": "Xác định ý tưởng hình ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+          "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d76ed44-f022-4a1f-a6bd-5f0686a2ae3c",
+          "name": "Chọn khẩu độ máy ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e039fe9-e7d3-4d9b-82e5-381269a38ceb",
+          "name": "Lắp đặt máy quay",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65030093-f22d-486e-a978-ae7825829af1",
+          "name": "Phối hợp với đạo diễn hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10cade4f-df4d-4408-8924-5994976fc798",
+          "name": "Vận hành máy quay",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+          "name": "Thiết bị nghe nhìn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+          "name": "Dùng tài liệu kỹ thuật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+          "name": "Xác định ý tưởng hình ảnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+          "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5d76ed44-f022-4a1f-a6bd-5f0686a2ae3c",
+          "name": "Chọn khẩu độ máy ảnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "name": "Bắt kịp xu hướng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4e039fe9-e7d3-4d9b-82e5-381269a38ceb",
+          "name": "Lắp đặt máy quay",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65030093-f22d-486e-a978-ae7825829af1",
+          "name": "Phối hợp với đạo diễn hình ảnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/10cade4f-df4d-4408-8924-5994976fc798",
+          "name": "Vận hành máy quay",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-27-4031.00",
+          "name": "Nhiếp ảnh, quay phim và dựng phim"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-27-4032.00",
+          "name": "Biên tập dựng phim và video"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-27-2012.00",
+      "name": "Đạo diễn, nhà sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-1024.00",
+      "name": "Nhà thiết kế đồ hoạ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-4014.00",
+      "name": "Kỹ thuật viên âm thanh, ánh sáng, phát sóng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-1014.00",
+      "name": "Hoạ sĩ hoạt hình, kỹ xảo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2199.05",
+      "name": "Kỹ sư cơ điện tử, robot",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 11000000,
+    "median": 12500000,
+    "high": 15000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 715,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e6262391-ffda-4b8e-9f5c-89cf1a0e7384",
+      "name": "Thiết bị nghe nhìn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3",
+      "name": "Dùng tài liệu kỹ thuật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8a18f41b-70e2-4a03-986f-95b52d2ca39c",
+      "name": "Xác định ý tưởng hình ảnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9",
+      "name": "Điều chỉnh kế hoạch nghệ thuật theo địa điểm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5d76ed44-f022-4a1f-a6bd-5f0686a2ae3c",
+      "name": "Chọn khẩu độ máy ảnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+      "name": "Bắt kịp xu hướng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+      "name": "Tạo hình ảnh động",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4e039fe9-e7d3-4d9b-82e5-381269a38ceb",
+      "name": "Lắp đặt máy quay",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/65030093-f22d-486e-a978-ae7825829af1",
+      "name": "Phối hợp với đạo diễn hình ảnh",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/10cade4f-df4d-4408-8924-5994976fc798",
+      "name": "Vận hành máy quay",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.55
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.493
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.157
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.118
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.006
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.101
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.95
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

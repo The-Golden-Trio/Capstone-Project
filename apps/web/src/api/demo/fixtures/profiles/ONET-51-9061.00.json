@@ -1,0 +1,617 @@
+{
+  "code": "ONET-51-9061.00",
+  "name": "Nhân viên kiểm tra chất lượng sản xuất (QC)",
+  "nameEn": "Inspectors, Testers, Sorters, Samplers, and Weighers",
+  "group": "Sản xuất",
+  "regionId": "ky_thuat",
+  "isIt": false,
+  "summary": "Kiểm tra, thử nghiệm, phân loại, lấy mẫu hoặc cân nguyên liệu và sản phẩm đã gia công, chế tạo, lắp ráp để phát hiện lỗi, mòn và sai lệch so với yêu cầu. Có thể dùng dụng cụ đo chính xác và thiết bị thử phức tạp. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió.",
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Tiếp xúc với khói, bụi, hoá chất, dầu mỡ hoặc mùi khó chịu.",
+    "Nhịp làm việc do tốc độ máy móc quyết định."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "51% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "26% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Nhà máy, xưởng, kho bãi"],
+  "environments": [
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 55
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 30
+    },
+    {
+      "name": "Nhà máy chế biến thực phẩm, thuỷ sản",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [
+      "Kiểm nghiệm chất lượng lương thực, thực phẩm",
+      "Công nghệ kỹ thuật đo lường"
+    ],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh QC",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Loại bỏ sản phẩm, vật liệu hoặc thiết bị không đạt yêu cầu.",
+        "Đánh dấu thông tin lên sản phẩm như hạng hoặc trạng thái đạt, không đạt.",
+        "Đo kích thước sản phẩm để xác nhận đúng yêu cầu bằng thước, thước cặp, calip hoặc panme.",
+        "Báo cho cấp trên hoặc người liên quan về sự cố sản xuất.",
+        "Kiểm tra, thử hoặc đo vật liệu, sản phẩm, công trình lắp đặt hoặc công việc về sự phù hợp yêu cầu."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên QC (IPQC)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Loại bỏ sản phẩm, vật liệu hoặc thiết bị không đạt yêu cầu.",
+        "Đánh dấu thông tin lên sản phẩm như hạng hoặc trạng thái đạt, không đạt.",
+        "Đo kích thước sản phẩm để xác nhận đúng yêu cầu bằng thước, thước cặp, calip hoặc panme.",
+        "Báo cho cấp trên hoặc người liên quan về sự cố sản xuất.",
+        "Kiểm tra, thử hoặc đo vật liệu, sản phẩm, công trình lắp đặt hoặc công việc về sự phù hợp yêu cầu."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+          "name": "Theo dõi chỉ số KPI",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Nhân viên QC chính (IQC/OQC)",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Loại bỏ sản phẩm, vật liệu hoặc thiết bị không đạt yêu cầu.",
+        "Đánh dấu thông tin lên sản phẩm như hạng hoặc trạng thái đạt, không đạt.",
+        "Đo kích thước sản phẩm để xác nhận đúng yêu cầu bằng thước, thước cặp, calip hoặc panme.",
+        "Báo cho cấp trên hoặc người liên quan về sự cố sản xuất.",
+        "Kiểm tra, thử hoặc đo vật liệu, sản phẩm, công trình lắp đặt hoặc công việc về sự phù hợp yêu cầu."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+          "name": "Theo dõi chỉ số KPI",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+          "name": "Theo dõi chỉ số KPI",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a022bb4b-6ee0-470a-829d-10ca30284edb",
+          "name": "Giám sát dây chuyền sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/987a848a-01ec-4938-9f31-1af1c7bef651",
+          "name": "Bảo dưỡng thiết bị thử nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kỹ thuật viên chất lượng",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Loại bỏ sản phẩm, vật liệu hoặc thiết bị không đạt yêu cầu.",
+        "Đánh dấu thông tin lên sản phẩm như hạng hoặc trạng thái đạt, không đạt.",
+        "Đo kích thước sản phẩm để xác nhận đúng yêu cầu bằng thước, thước cặp, calip hoặc panme.",
+        "Báo cho cấp trên hoặc người liên quan về sự cố sản xuất.",
+        "Kiểm tra, thử hoặc đo vật liệu, sản phẩm, công trình lắp đặt hoặc công việc về sự phù hợp yêu cầu."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+          "name": "Theo dõi chỉ số KPI",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a022bb4b-6ee0-470a-829d-10ca30284edb",
+          "name": "Giám sát dây chuyền sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/987a848a-01ec-4938-9f31-1af1c7bef651",
+          "name": "Bảo dưỡng thiết bị thử nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+          "name": "Theo dõi chỉ số KPI",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a022bb4b-6ee0-470a-829d-10ca30284edb",
+          "name": "Giám sát dây chuyền sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/987a848a-01ec-4938-9f31-1af1c7bef651",
+          "name": "Bảo dưỡng thiết bị thử nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Giám sát QC",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Loại bỏ sản phẩm, vật liệu hoặc thiết bị không đạt yêu cầu.",
+        "Đánh dấu thông tin lên sản phẩm như hạng hoặc trạng thái đạt, không đạt.",
+        "Đo kích thước sản phẩm để xác nhận đúng yêu cầu bằng thước, thước cặp, calip hoặc panme.",
+        "Báo cho cấp trên hoặc người liên quan về sự cố sản xuất.",
+        "Kiểm tra, thử hoặc đo vật liệu, sản phẩm, công trình lắp đặt hoặc công việc về sự phù hợp yêu cầu."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+          "name": "Theo dõi chỉ số KPI",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a022bb4b-6ee0-470a-829d-10ca30284edb",
+          "name": "Giám sát dây chuyền sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/987a848a-01ec-4938-9f31-1af1c7bef651",
+          "name": "Bảo dưỡng thiết bị thử nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+          "name": "Theo dõi chỉ số KPI",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a022bb4b-6ee0-470a-829d-10ca30284edb",
+          "name": "Giám sát dây chuyền sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/987a848a-01ec-4938-9f31-1af1c7bef651",
+          "name": "Bảo dưỡng thiết bị thử nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng QA/QC",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Loại bỏ sản phẩm, vật liệu hoặc thiết bị không đạt yêu cầu.",
+        "Đánh dấu thông tin lên sản phẩm như hạng hoặc trạng thái đạt, không đạt.",
+        "Đo kích thước sản phẩm để xác nhận đúng yêu cầu bằng thước, thước cặp, calip hoặc panme.",
+        "Báo cho cấp trên hoặc người liên quan về sự cố sản xuất.",
+        "Kiểm tra, thử hoặc đo vật liệu, sản phẩm, công trình lắp đặt hoặc công việc về sự phù hợp yêu cầu."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+          "name": "Theo dõi chỉ số KPI",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a022bb4b-6ee0-470a-829d-10ca30284edb",
+          "name": "Giám sát dây chuyền sản xuất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/987a848a-01ec-4938-9f31-1af1c7bef651",
+          "name": "Bảo dưỡng thiết bị thử nghiệm",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "name": "Quy trình bảo đảm chất lượng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+          "name": "Viết biên bản kiểm tra",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+          "name": "Theo dõi chỉ số KPI",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a022bb4b-6ee0-470a-829d-10ca30284edb",
+          "name": "Giám sát dây chuyền sản xuất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/987a848a-01ec-4938-9f31-1af1c7bef651",
+          "name": "Bảo dưỡng thiết bị thử nghiệm",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-51-9061.00",
+          "name": "Nhân viên kiểm tra chất lượng sản xuất (QC)"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3051.00",
+          "name": "Quản lý sản xuất"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-51-2092.00",
+      "name": "Công nhân lắp ráp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-9041.00",
+      "name": "Thợ bảo trì máy công nghiệp",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 10000000,
+    "median": 12000000,
+    "high": 14000000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 335,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+      "name": "Quy trình bảo đảm chất lượng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3",
+      "name": "Viết biên bản kiểm tra",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+      "name": "Tiêu chuẩn chất lượng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8dcbcabe-09f7-4d11-940d-125af57bbc40",
+      "name": "Theo dõi chỉ số KPI",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a022bb4b-6ee0-470a-829d-10ca30284edb",
+      "name": "Giám sát dây chuyền sản xuất",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/987a848a-01ec-4938-9f31-1af1c7bef651",
+      "name": "Bảo dưỡng thiết bị thử nghiệm",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.251
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.473
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.494
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.581
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.725
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.784
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -1.141
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

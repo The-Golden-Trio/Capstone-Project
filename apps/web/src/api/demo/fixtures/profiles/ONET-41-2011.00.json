@@ -1,0 +1,597 @@
+{
+  "code": "ONET-41-2011.00",
+  "name": "Thu ngân",
+  "nameEn": "Cashiers",
+  "group": "Bán hàng",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Thu và chi tiền ở các cơ sở không phải tổ chức tài chính. Có thể dùng máy quét mã, máy tính tiền hoặc thiết bị liên quan. Có thể xử lý giao dịch thẻ tín dụng, thẻ ghi nợ và xác thực séc. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Phải đứng trong phần lớn thời gian làm việc.",
+    "Lặp đi lặp lại cùng một động tác."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "13% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "14% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Cửa hàng, nhà hàng, khách sạn, cơ sở dịch vụ"],
+  "environments": [
+    {
+      "name": "Siêu thị, chuỗi bán lẻ, trung tâm thương mại",
+      "weight": 65
+    },
+    {
+      "name": "Chuỗi nhà hàng, cà phê, đồ ăn nhanh",
+      "weight": 35
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Bán hàng trong siêu thị"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thu ngân part-time/thời vụ",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận thanh toán bằng tiền mặt, séc, thẻ, phiếu mua hàng hoặc trừ tiền tự động.",
+        "Chào khách khi vào cửa hàng.",
+        "Xuất hoá đơn, hoàn tiền, ghi có hoặc trả tiền thừa cho khách.",
+        "Hỗ trợ khách bằng cách cung cấp thông tin và giải quyết khiếu nại.",
+        "Theo dõi các quầy thanh toán để bảo đảm đủ tiền lẻ và đủ người."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+          "name": "Vận hành máy tính tiền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+          "name": "Phòng chống trộm cắp",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên thu ngân",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận thanh toán bằng tiền mặt, séc, thẻ, phiếu mua hàng hoặc trừ tiền tự động.",
+        "Chào khách khi vào cửa hàng.",
+        "Xuất hoá đơn, hoàn tiền, ghi có hoặc trả tiền thừa cho khách.",
+        "Hỗ trợ khách bằng cách cung cấp thông tin và giải quyết khiếu nại.",
+        "Theo dõi các quầy thanh toán để bảo đảm đủ tiền lẻ và đủ người."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+          "name": "Vận hành máy tính tiền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+          "name": "Phòng chống trộm cắp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+          "name": "Vận hành máy tính tiền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+          "name": "Phòng chống trộm cắp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5dd01a1e-7ba0-4b7f-a76c-ed811c12bfde",
+          "name": "Kỹ năng tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4",
+          "name": "Hướng tới khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6d697d1-80ba-4175-82d4-43440ed04270",
+          "name": "Xử lý hoàn tiền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3e42d54-78bd-4337-aa87-bb31a7670c9a",
+          "name": "Xuất hoá đơn bán hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Thu ngân chính/trưởng quầy thu ngân",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận thanh toán bằng tiền mặt, séc, thẻ, phiếu mua hàng hoặc trừ tiền tự động.",
+        "Chào khách khi vào cửa hàng.",
+        "Xuất hoá đơn, hoàn tiền, ghi có hoặc trả tiền thừa cho khách.",
+        "Hỗ trợ khách bằng cách cung cấp thông tin và giải quyết khiếu nại.",
+        "Theo dõi các quầy thanh toán để bảo đảm đủ tiền lẻ và đủ người."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+          "name": "Vận hành máy tính tiền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+          "name": "Phòng chống trộm cắp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5dd01a1e-7ba0-4b7f-a76c-ed811c12bfde",
+          "name": "Kỹ năng tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4",
+          "name": "Hướng tới khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6d697d1-80ba-4175-82d4-43440ed04270",
+          "name": "Xử lý hoàn tiền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3e42d54-78bd-4337-aa87-bb31a7670c9a",
+          "name": "Xuất hoá đơn bán hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+          "name": "Vận hành máy tính tiền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+          "name": "Phòng chống trộm cắp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5dd01a1e-7ba0-4b7f-a76c-ed811c12bfde",
+          "name": "Kỹ năng tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4",
+          "name": "Hướng tới khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6d697d1-80ba-4175-82d4-43440ed04270",
+          "name": "Xử lý hoàn tiền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3e42d54-78bd-4337-aa87-bb31a7670c9a",
+          "name": "Xuất hoá đơn bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Trưởng ca/cửa hàng phó",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận thanh toán bằng tiền mặt, séc, thẻ, phiếu mua hàng hoặc trừ tiền tự động.",
+        "Chào khách khi vào cửa hàng.",
+        "Xuất hoá đơn, hoàn tiền, ghi có hoặc trả tiền thừa cho khách.",
+        "Hỗ trợ khách bằng cách cung cấp thông tin và giải quyết khiếu nại.",
+        "Theo dõi các quầy thanh toán để bảo đảm đủ tiền lẻ và đủ người."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+          "name": "Vận hành máy tính tiền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+          "name": "Phòng chống trộm cắp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5dd01a1e-7ba0-4b7f-a76c-ed811c12bfde",
+          "name": "Kỹ năng tính toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4",
+          "name": "Hướng tới khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6d697d1-80ba-4175-82d4-43440ed04270",
+          "name": "Xử lý hoàn tiền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3e42d54-78bd-4337-aa87-bb31a7670c9a",
+          "name": "Xuất hoá đơn bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+          "name": "Vận hành máy tính tiền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+          "name": "Phòng chống trộm cắp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5dd01a1e-7ba0-4b7f-a76c-ed811c12bfde",
+          "name": "Kỹ năng tính toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4",
+          "name": "Hướng tới khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6d697d1-80ba-4175-82d4-43440ed04270",
+          "name": "Xử lý hoàn tiền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3e42d54-78bd-4337-aa87-bb31a7670c9a",
+          "name": "Xuất hoá đơn bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Cửa hàng trưởng",
+      "years": "3+",
+      "coreOutput": null,
+      "tasks": [
+        "Nhận thanh toán bằng tiền mặt, séc, thẻ, phiếu mua hàng hoặc trừ tiền tự động.",
+        "Chào khách khi vào cửa hàng.",
+        "Xuất hoá đơn, hoàn tiền, ghi có hoặc trả tiền thừa cho khách.",
+        "Hỗ trợ khách bằng cách cung cấp thông tin và giải quyết khiếu nại.",
+        "Theo dõi các quầy thanh toán để bảo đảm đủ tiền lẻ và đủ người."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+          "name": "Vận hành máy tính tiền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+          "name": "Phòng chống trộm cắp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5dd01a1e-7ba0-4b7f-a76c-ed811c12bfde",
+          "name": "Kỹ năng tính toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4",
+          "name": "Hướng tới khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6d697d1-80ba-4175-82d4-43440ed04270",
+          "name": "Xử lý hoàn tiền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3e42d54-78bd-4337-aa87-bb31a7670c9a",
+          "name": "Xuất hoá đơn bán hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "name": "Chăm sóc khách hàng sau dịch vụ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+          "name": "Vận hành máy tính tiền",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+          "name": "Phòng chống trộm cắp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5dd01a1e-7ba0-4b7f-a76c-ed811c12bfde",
+          "name": "Kỹ năng tính toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4",
+          "name": "Hướng tới khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a6d697d1-80ba-4175-82d4-43440ed04270",
+          "name": "Xử lý hoàn tiền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3e42d54-78bd-4337-aa87-bb31a7670c9a",
+          "name": "Xuất hoá đơn bán hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-41-2031.00",
+      "name": "Nhân viên bán hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-3071.00",
+      "name": "Giao dịch viên ngân hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 7000000,
+    "median": 8500000,
+    "high": 9500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 126,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+      "name": "Chăm sóc khách hàng sau dịch vụ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82",
+      "name": "Vận hành máy tính tiền",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/efe5d94c-2249-4a50-8c44-6e77331c698d",
+      "name": "Phòng chống trộm cắp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5dd01a1e-7ba0-4b7f-a76c-ed811c12bfde",
+      "name": "Kỹ năng tính toán",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4",
+      "name": "Hướng tới khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a6d697d1-80ba-4175-82d4-43440ed04270",
+      "name": "Xử lý hoàn tiền",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e3e42d54-78bd-4337-aa87-bb31a7670c9a",
+      "name": "Xuất hoá đơn bán hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+      "name": "Xử lý thanh toán",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.266
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.004
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.726
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.78
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -1.035
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -1.129
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -1.367
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

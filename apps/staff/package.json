@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@datn/game-core": "workspace:*"
+    "@datn/game-core": "workspace:*",
+    "@datn/ui": "workspace:*"
   }
 }

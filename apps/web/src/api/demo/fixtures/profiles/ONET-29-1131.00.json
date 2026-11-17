@@ -1,0 +1,834 @@
+{
+  "code": "ONET-29-1131.00",
+  "name": "Bác sĩ thú y",
+  "nameEn": "Veterinarians",
+  "group": "Y tế chuyên môn và kỹ thuật y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Chẩn đoán, điều trị hoặc nghiên cứu bệnh và chấn thương ở động vật. Gồm cả bác sĩ thú y làm nghiên cứu, kiểm dịch vật nuôi hoặc chăm sóc thú cưng. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có tiếp xúc với bức xạ.",
+    "Phải mặc đồ bảo hộ chuyên dụng như mặt nạ thở, đai an toàn hoặc đồ chống bức xạ.",
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Dễ bị bỏng nhẹ, đứt tay, bị cắn hoặc đốt."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "24% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "16% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Phòng khám, bệnh viện thú y",
+      "weight": 70
+    },
+    {
+      "name": "Trang trại, doanh nghiệp nông nghiệp công nghệ cao",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Thú y"],
+    "vocational": ["Thú y", "Dịch vụ thú y"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên thú y thực tập",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Chữa trị động vật bị bệnh hoặc bị thương bằng kê đơn, nắn xương, băng bó vết thương hoặc phẫu thuật.",
+        "Tiêm phòng cho động vật các bệnh như dại hoặc care.",
+        "Khám động vật để phát hiện và xác định bệnh hoặc chấn thương.",
+        "Lấy mô, phân, máu, nước tiểu hoặc dịch cơ thể khác để xét nghiệm.",
+        "Vận hành thiết bị chẩn đoán như máy X-quang, siêu âm và đọc kết quả hình ảnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Bác sĩ thú y mới / trợ lý phòng khám",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Chữa trị động vật bị bệnh hoặc bị thương bằng kê đơn, nắn xương, băng bó vết thương hoặc phẫu thuật.",
+        "Tiêm phòng cho động vật các bệnh như dại hoặc care.",
+        "Khám động vật để phát hiện và xác định bệnh hoặc chấn thương.",
+        "Lấy mô, phân, máu, nước tiểu hoặc dịch cơ thể khác để xét nghiệm.",
+        "Vận hành thiết bị chẩn đoán như máy X-quang, siêu âm và đọc kết quả hình ảnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+          "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+          "name": "Kiểm tra quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+          "name": "Quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+          "name": "Tuân thủ quy tắc nghề thú y",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chẩn đoán viên bệnh động vật hạng III / bác sĩ thú y hành nghề",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Chữa trị động vật bị bệnh hoặc bị thương bằng kê đơn, nắn xương, băng bó vết thương hoặc phẫu thuật.",
+        "Tiêm phòng cho động vật các bệnh như dại hoặc care.",
+        "Khám động vật để phát hiện và xác định bệnh hoặc chấn thương.",
+        "Lấy mô, phân, máu, nước tiểu hoặc dịch cơ thể khác để xét nghiệm.",
+        "Vận hành thiết bị chẩn đoán như máy X-quang, siêu âm và đọc kết quả hình ảnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+          "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+          "name": "Kiểm tra quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+          "name": "Quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+          "name": "Tuân thủ quy tắc nghề thú y",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+          "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+          "name": "Kiểm tra quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+          "name": "Quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+          "name": "Tuân thủ quy tắc nghề thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d10030a4-f49c-4125-8646-6b091efe5089",
+          "name": "Theo dõi phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15e2a323-7cfd-4a40-ba44-a693b70f7d02",
+          "name": "Xác nhận thủ thuật thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Bác sĩ thú y chính",
+      "years": "3–7",
+      "coreOutput": null,
+      "tasks": [
+        "Chữa trị động vật bị bệnh hoặc bị thương bằng kê đơn, nắn xương, băng bó vết thương hoặc phẫu thuật.",
+        "Tiêm phòng cho động vật các bệnh như dại hoặc care.",
+        "Khám động vật để phát hiện và xác định bệnh hoặc chấn thương.",
+        "Lấy mô, phân, máu, nước tiểu hoặc dịch cơ thể khác để xét nghiệm.",
+        "Vận hành thiết bị chẩn đoán như máy X-quang, siêu âm và đọc kết quả hình ảnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+          "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+          "name": "Kiểm tra quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+          "name": "Quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+          "name": "Tuân thủ quy tắc nghề thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d10030a4-f49c-4125-8646-6b091efe5089",
+          "name": "Theo dõi phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15e2a323-7cfd-4a40-ba44-a693b70f7d02",
+          "name": "Xác nhận thủ thuật thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+          "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+          "name": "Kiểm tra quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+          "name": "Quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+          "name": "Tuân thủ quy tắc nghề thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d10030a4-f49c-4125-8646-6b091efe5089",
+          "name": "Theo dõi phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15e2a323-7cfd-4a40-ba44-a693b70f7d02",
+          "name": "Xác nhận thủ thuật thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chẩn đoán viên bệnh động vật hạng II",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Chữa trị động vật bị bệnh hoặc bị thương bằng kê đơn, nắn xương, băng bó vết thương hoặc phẫu thuật.",
+        "Tiêm phòng cho động vật các bệnh như dại hoặc care.",
+        "Khám động vật để phát hiện và xác định bệnh hoặc chấn thương.",
+        "Lấy mô, phân, máu, nước tiểu hoặc dịch cơ thể khác để xét nghiệm.",
+        "Vận hành thiết bị chẩn đoán như máy X-quang, siêu âm và đọc kết quả hình ảnh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tri_tue_cam_xuc"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 3,
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+          "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+          "name": "Kiểm tra quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+          "name": "Quản lý phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+          "name": "Tuân thủ quy tắc nghề thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d10030a4-f49c-4125-8646-6b091efe5089",
+          "name": "Theo dõi phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15e2a323-7cfd-4a40-ba44-a693b70f7d02",
+          "name": "Xác nhận thủ thuật thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+          "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+          "name": "Kiểm tra quản lý phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+          "name": "Quản lý phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+          "name": "Tuân thủ quy tắc nghề thú y",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d10030a4-f49c-4125-8646-6b091efe5089",
+          "name": "Theo dõi phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15e2a323-7cfd-4a40-ba44-a693b70f7d02",
+          "name": "Xác nhận thủ thuật thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng khám / giám đốc kỹ thuật thú y",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Chữa trị động vật bị bệnh hoặc bị thương bằng kê đơn, nắn xương, băng bó vết thương hoặc phẫu thuật.",
+        "Tiêm phòng cho động vật các bệnh như dại hoặc care.",
+        "Khám động vật để phát hiện và xác định bệnh hoặc chấn thương.",
+        "Lấy mô, phân, máu, nước tiểu hoặc dịch cơ thể khác để xét nghiệm.",
+        "Vận hành thiết bị chẩn đoán như máy X-quang, siêu âm và đọc kết quả hình ảnh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+          "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+          "name": "Kiểm tra quản lý phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+          "name": "Quản lý phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+          "name": "Tuân thủ quy tắc nghề thú y",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d10030a4-f49c-4125-8646-6b091efe5089",
+          "name": "Theo dõi phúc lợi động vật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15e2a323-7cfd-4a40-ba44-a693b70f7d02",
+          "name": "Xác nhận thủ thuật thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+          "name": "Tư vấn phúc lợi động vật",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+          "name": "An toàn sinh học cho vật nuôi",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+          "name": "Khám tư vấn thú y",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+          "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+          "name": "Kiểm tra quản lý phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+          "name": "Quản lý phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+          "name": "Tuân thủ quy tắc nghề thú y",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d10030a4-f49c-4125-8646-6b091efe5089",
+          "name": "Theo dõi phúc lợi động vật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/15e2a323-7cfd-4a40-ba44-a693b70f7d02",
+          "name": "Xác nhận thủ thuật thú y",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-29-1131.00",
+          "name": "Bác sĩ thú y"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1215.00",
+      "name": "Bác sĩ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-9092.00",
+      "name": "Trợ lý y khoa",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2034.00",
+      "name": "Kỹ thuật viên chẩn đoán hình ảnh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-2021.00",
+      "name": "Nhân viên chăm sóc thú cưng và động vật",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 7000000,
+    "median": null,
+    "high": 30000000,
+    "byYears": [],
+    "source": "CareerLink, \"Ngành thú y là gì\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 7,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f2711363-fced-40af-837e-5cea0c7f0604",
+      "name": "Tư vấn phúc lợi động vật",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1fc580ca-9adc-46af-8a88-61e871273b49",
+      "name": "An toàn sinh học cho vật nuôi",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6be60dda-a0d8-490e-9d24-df7c7003d41f",
+      "name": "Khám tư vấn thú y",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/912f7556-6b75-4d73-9658-4e710050199d",
+      "name": "Giữ vệ sinh phòng bệnh khi làm việc với động vật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c178e14b-c76c-42bd-9e00-4db4e4d4ead2",
+      "name": "Kiểm tra quản lý phúc lợi động vật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/66dbdb89-74ca-45b7-b8af-2479fc0e22c0",
+      "name": "Quản lý phúc lợi động vật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3e42adbb-8089-49b7-bdfe-b9cd7247b26b",
+      "name": "Tuân thủ quy tắc nghề thú y",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d10030a4-f49c-4125-8646-6b091efe5089",
+      "name": "Theo dõi phúc lợi động vật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/15e2a323-7cfd-4a40-ba44-a693b70f7d02",
+      "name": "Xác nhận thủ thuật thú y",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+      "name": "Xử lý cấp cứu thú y",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.869
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.617
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.46
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.436
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.314
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.005
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.019
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

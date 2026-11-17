@@ -1,17 +1,20 @@
+import {
+  TabPanel,
+  Button,
+  Checkbox,
+  EmptyState,
+  LoadingBlock as Loading,
+  PageHeader,
+  Tabs,
+} from '@datn/ui';
 import { useState, type FormEvent } from 'react';
 import { staffApi } from '../../api/endpoints';
 import type { AssetKind } from '../../api/types';
 import {
-  Button,
   Card,
-  Checkbox,
-  EmptyState,
-  Loading,
   Notice,
-  PageHeader,
   ProblemAlert,
   SelectField,
-  Tabs,
   TextField,
 } from '../../components/ui';
 import { KIND_LABEL } from '../../features/gamify/AssetPicker';
@@ -65,49 +68,52 @@ export function AssetLibraryPage() {
     <>
       <PageHeader
         title="Thư viện asset"
-        subtitle="Ảnh dùng cho nền, cảnh và avatar NPC khi thiết kế trình bày."
+        description="Ảnh dùng cho nền, cảnh và avatar NPC khi thiết kế trình bày."
       />
       <div className="grid gap-4 lg:grid-cols-[1fr_340px]">
         <div>
           <Tabs
+            idBase="assets"
             label="Loại asset"
             value={kind}
             onChange={setKind}
-            tabs={KINDS.map((k) => ({ id: k, label: KIND_LABEL[k] }))}
+            items={KINDS.map((k) => ({ key: k, label: KIND_LABEL[k] }))}
           />
-          <ProblemAlert error={assets.error} />
-          {assets.loading ? (
-            <Loading />
-          ) : (assets.data ?? []).length === 0 ? (
-            <EmptyState>
-              Chưa có {KIND_LABEL[kind].toLowerCase()} nào.
-            </EmptyState>
-          ) : (
-            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-              {(assets.data ?? []).map((a) => (
-                <li
-                  key={a.id}
-                  className="overflow-hidden rounded-xl border border-line-gold bg-panel"
-                >
-                  <img
-                    src={a.url}
-                    alt={a.sourceNote}
-                    className="aspect-square w-full bg-inset object-cover"
-                  />
-                  <p
-                    className="truncate px-2 py-1 text-[12px] text-muted"
-                    title={a.sourceNote}
+          <TabPanel active idBase="assets" tabKey={kind}>
+            <ProblemAlert error={assets.error} />
+            {assets.loading ? (
+              <Loading />
+            ) : assets.error ? null : (assets.data ?? []).length === 0 ? (
+              <EmptyState
+                title={<>Chưa có {KIND_LABEL[kind].toLowerCase()} nào.</>}
+              />
+            ) : (
+              <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+                {(assets.data ?? []).map((a) => (
+                  <li
+                    key={a.id}
+                    className="overflow-hidden rounded-xl border border-line-gold bg-night-850"
                   >
-                    {a.sourceNote}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          )}
+                    <img
+                      src={a.url}
+                      alt={a.sourceNote}
+                      className="aspect-square w-full bg-surface-sunken object-cover"
+                    />
+                    <p
+                      className="truncate px-2 py-1 text-[12px] text-ink-faint"
+                      title={a.sourceNote}
+                    >
+                      {a.sourceNote}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </TabPanel>
         </div>
-        <Card title="Tải ảnh lên">
+        <Card title="Tải ảnh lên" className="lg:sticky lg:top-20 lg:self-start">
           <form onSubmit={upload}>
-            {done && <Notice tone="good">Đã tải lên.</Notice>}
+            {done && <Notice tone="success">Đã tải lên.</Notice>}
             <ProblemAlert error={error} />
             <SelectField
               label="Loại"
@@ -118,7 +124,7 @@ export function AssetLibraryPage() {
             <div className="mb-3">
               <label
                 htmlFor="asset-file"
-                className="mb-1.5 block text-[12.5px] font-semibold tracking-[0.02em] text-ink-2"
+                className="mb-1.5 block text-[12.5px] font-semibold tracking-[0.02em] text-ink-muted"
               >
                 File PNG (tối đa 5 MB)
               </label>
@@ -128,7 +134,7 @@ export function AssetLibraryPage() {
                 accept="image/png"
                 required
                 onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-                className="block w-full text-[13px] text-ink-2 file:mr-3 file:cursor-pointer file:rounded-full file:border file:border-solid file:border-ink/35 file:bg-transparent file:px-3.5 file:py-1.5 file:text-[12.5px] file:font-semibold file:text-ink hover:file:border-brand hover:file:text-brand-2"
+                className="block w-full text-[13px] text-ink-muted file:mr-3 file:cursor-pointer file:rounded-full file:border file:border-solid file:border-ink/35 file:bg-transparent file:px-3.5 file:py-1.5 file:text-[12.5px] file:font-semibold file:text-ink hover:file:border-info hover:file:text-info"
               />
             </div>
             <TextField
@@ -148,7 +154,7 @@ export function AssetLibraryPage() {
             <Button
               type="submit"
               variant="primary"
-              busy={busy}
+              loading={busy}
               disabled={!file || !note.trim() || !checked}
             >
               Tải lên

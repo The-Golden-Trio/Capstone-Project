@@ -1,0 +1,682 @@
+{
+  "code": "ONET-53-3052.00",
+  "name": "Tài xế xe khách, xe buýt",
+  "nameEn": "Bus Drivers, Transit and Intercity",
+  "group": "Vận tải và bốc dỡ hàng hoá",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Lái xe buýt hoặc xe khách, gồm chạy tuyến cố định, xe hợp đồng và xe riêng. Có thể giúp hành khách mang hành lý. Có thể thu tiền vé. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Làm ngoài trời, chịu mọi điều kiện thời tiết.",
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Sai sót có thể gây hậu quả nghiêm trọng.",
+    "Làm trong môi trường ồn, gây khó chịu hoặc mất tập trung."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Ít làm việc qua email.",
+    "39% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "17% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trên xe, tàu, máy bay", "Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Doanh nghiệp xe khách, xe buýt",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [],
+    "licence": "Giấy phép lái xe hạng D1, D2 hoặc D — Luật Trật tự, an toàn giao thông đường bộ số 36/2024/QH15"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Phụ xe khách, nhân viên bán vé",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Lái xe theo tuyến hoặc tới điểm đến đúng lịch, chấp hành luật giao thông để hành khách đi êm và an toàn.",
+        "Đỗ xe ở điểm đón để hành khách lên xe.",
+        "Kiểm tra xe, mức nhiên liệu, dầu và nước trước khi xuất bến.",
+        "Thông báo điểm dừng cho hành khách.",
+        "Giúp hành khách như người già, người khuyết tật lên xuống xe, ngồi đúng chỗ, mang hành lý và trả lời về lịch, tuyến xe."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+          "name": "Lùi và rẽ xe buýt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+          "name": "Biện pháp an toàn trong vận tải",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Tài xế hạng D1 (xe khách cỡ nhỏ)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Lái xe theo tuyến hoặc tới điểm đến đúng lịch, chấp hành luật giao thông để hành khách đi êm và an toàn.",
+        "Đỗ xe ở điểm đón để hành khách lên xe.",
+        "Kiểm tra xe, mức nhiên liệu, dầu và nước trước khi xuất bến.",
+        "Thông báo điểm dừng cho hành khách.",
+        "Giúp hành khách như người già, người khuyết tật lên xuống xe, ngồi đúng chỗ, mang hành lý và trả lời về lịch, tuyến xe."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+          "name": "Lùi và rẽ xe buýt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+          "name": "Biện pháp an toàn trong vận tải",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+          "name": "Lùi và rẽ xe buýt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+          "name": "Biện pháp an toàn trong vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8b5b67b-d8d9-4857-bb26-1e35faf2ce22",
+          "name": "Rửa xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6eae917f-7ff1-4ef5-9cdf-82a0d0d83593",
+          "name": "Ngồi làm việc lâu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe490139-ccc4-4b82-ab55-5c6708cb0e30",
+          "name": "Lái xe phòng vệ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Tài xế xe buýt hạng D2",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Lái xe theo tuyến hoặc tới điểm đến đúng lịch, chấp hành luật giao thông để hành khách đi êm và an toàn.",
+        "Đỗ xe ở điểm đón để hành khách lên xe.",
+        "Kiểm tra xe, mức nhiên liệu, dầu và nước trước khi xuất bến.",
+        "Thông báo điểm dừng cho hành khách.",
+        "Giúp hành khách như người già, người khuyết tật lên xuống xe, ngồi đúng chỗ, mang hành lý và trả lời về lịch, tuyến xe."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+          "name": "Lùi và rẽ xe buýt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+          "name": "Biện pháp an toàn trong vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8b5b67b-d8d9-4857-bb26-1e35faf2ce22",
+          "name": "Rửa xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6eae917f-7ff1-4ef5-9cdf-82a0d0d83593",
+          "name": "Ngồi làm việc lâu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe490139-ccc4-4b82-ab55-5c6708cb0e30",
+          "name": "Lái xe phòng vệ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+          "name": "Lùi và rẽ xe buýt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+          "name": "Biện pháp an toàn trong vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8b5b67b-d8d9-4857-bb26-1e35faf2ce22",
+          "name": "Rửa xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6eae917f-7ff1-4ef5-9cdf-82a0d0d83593",
+          "name": "Ngồi làm việc lâu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe490139-ccc4-4b82-ab55-5c6708cb0e30",
+          "name": "Lái xe phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7de3b70e-2568-420a-8528-69523d323e7a",
+          "name": "Giữ đúng thời gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/710c37e5-a6df-4755-9482-2e87db91f593",
+          "name": "Bảo đảm xe vận hành được",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Tài xế xe khách hạng D (xe trên 29 chỗ, giường nằm)",
+      "years": "4+",
+      "coreOutput": null,
+      "tasks": [
+        "Lái xe theo tuyến hoặc tới điểm đến đúng lịch, chấp hành luật giao thông để hành khách đi êm và an toàn.",
+        "Đỗ xe ở điểm đón để hành khách lên xe.",
+        "Kiểm tra xe, mức nhiên liệu, dầu và nước trước khi xuất bến.",
+        "Thông báo điểm dừng cho hành khách.",
+        "Giúp hành khách như người già, người khuyết tật lên xuống xe, ngồi đúng chỗ, mang hành lý và trả lời về lịch, tuyến xe."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+          "name": "Lùi và rẽ xe buýt",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+          "name": "Biện pháp an toàn trong vận tải",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8b5b67b-d8d9-4857-bb26-1e35faf2ce22",
+          "name": "Rửa xe",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6eae917f-7ff1-4ef5-9cdf-82a0d0d83593",
+          "name": "Ngồi làm việc lâu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe490139-ccc4-4b82-ab55-5c6708cb0e30",
+          "name": "Lái xe phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7de3b70e-2568-420a-8528-69523d323e7a",
+          "name": "Giữ đúng thời gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/710c37e5-a6df-4755-9482-2e87db91f593",
+          "name": "Bảo đảm xe vận hành được",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+          "name": "Lùi và rẽ xe buýt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+          "name": "Biện pháp an toàn trong vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8b5b67b-d8d9-4857-bb26-1e35faf2ce22",
+          "name": "Rửa xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6eae917f-7ff1-4ef5-9cdf-82a0d0d83593",
+          "name": "Ngồi làm việc lâu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe490139-ccc4-4b82-ab55-5c6708cb0e30",
+          "name": "Lái xe phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7de3b70e-2568-420a-8528-69523d323e7a",
+          "name": "Giữ đúng thời gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/710c37e5-a6df-4755-9482-2e87db91f593",
+          "name": "Bảo đảm xe vận hành được",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Đội trưởng đội xe/điều hành tuyến",
+      "years": "6+",
+      "coreOutput": null,
+      "tasks": [
+        "Lái xe theo tuyến hoặc tới điểm đến đúng lịch, chấp hành luật giao thông để hành khách đi êm và an toàn.",
+        "Đỗ xe ở điểm đón để hành khách lên xe.",
+        "Kiểm tra xe, mức nhiên liệu, dầu và nước trước khi xuất bến.",
+        "Thông báo điểm dừng cho hành khách.",
+        "Giúp hành khách như người già, người khuyết tật lên xuống xe, ngồi đúng chỗ, mang hành lý và trả lời về lịch, tuyến xe."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+          "name": "Lùi và rẽ xe buýt",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+          "name": "Biện pháp an toàn trong vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8b5b67b-d8d9-4857-bb26-1e35faf2ce22",
+          "name": "Rửa xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6eae917f-7ff1-4ef5-9cdf-82a0d0d83593",
+          "name": "Ngồi làm việc lâu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe490139-ccc4-4b82-ab55-5c6708cb0e30",
+          "name": "Lái xe phòng vệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7de3b70e-2568-420a-8528-69523d323e7a",
+          "name": "Giữ đúng thời gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/710c37e5-a6df-4755-9482-2e87db91f593",
+          "name": "Bảo đảm xe vận hành được",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+          "name": "Vận hành hệ thống GPS",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+          "name": "Địa hình tuyến vận tải",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+          "name": "Lùi và rẽ xe buýt",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+          "name": "Biện pháp an toàn trong vận tải",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c8b5b67b-d8d9-4857-bb26-1e35faf2ce22",
+          "name": "Rửa xe",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+          "name": "Đọc bản đồ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6eae917f-7ff1-4ef5-9cdf-82a0d0d83593",
+          "name": "Ngồi làm việc lâu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fe490139-ccc4-4b82-ab55-5c6708cb0e30",
+          "name": "Lái xe phòng vệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7de3b70e-2568-420a-8528-69523d323e7a",
+          "name": "Giữ đúng thời gian",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/710c37e5-a6df-4755-9482-2e87db91f593",
+          "name": "Bảo đảm xe vận hành được",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-53-4011.00",
+      "name": "Lái tàu hoả, tàu điện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-9032.00",
+      "name": "Nhân viên bảo vệ, an ninh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-3032.00",
+      "name": "Tài xế xe tải",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-1131.00",
+      "name": "Hộ lý, trợ lý điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-7062.00",
+      "name": "Công nhân bốc xếp, đóng gói",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 12000000,
+    "median": null,
+    "high": 18000000,
+    "byYears": [],
+    "source": "CareerViet, \"Tài xế\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/97fb21db-a4e5-4b03-af21-03b9d510d872",
+      "name": "Vận hành hệ thống GPS",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a1be36ca-a753-4143-98c3-09ede5e60057",
+      "name": "Địa hình tuyến vận tải",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4f8f9d1e-6672-4e58-abb2-258e8b1c700f",
+      "name": "Lùi và rẽ xe buýt",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8",
+      "name": "Biện pháp an toàn trong vận tải",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c8b5b67b-d8d9-4857-bb26-1e35faf2ce22",
+      "name": "Rửa xe",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3172f001-a4dd-4e7e-9f74-9707b2e7c6e1",
+      "name": "Đọc bản đồ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6eae917f-7ff1-4ef5-9cdf-82a0d0d83593",
+      "name": "Ngồi làm việc lâu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fe490139-ccc4-4b82-ab55-5c6708cb0e30",
+      "name": "Lái xe phòng vệ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7de3b70e-2568-420a-8528-69523d323e7a",
+      "name": "Giữ đúng thời gian",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/710c37e5-a6df-4755-9482-2e87db91f593",
+      "name": "Bảo đảm xe vận hành được",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.676
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.458
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.051
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.083
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.553
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.606
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.937
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

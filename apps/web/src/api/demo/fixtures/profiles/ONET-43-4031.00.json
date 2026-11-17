@@ -1,0 +1,505 @@
+{
+  "code": "ONET-43-4031.00",
+  "name": "Cán bộ tiếp nhận hồ sơ hành chính công",
+  "nameEn": "Court, Municipal, and License Clerks",
+  "group": "Văn phòng và hỗ trợ hành chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Làm việc văn thư cho toà án, chính quyền địa phương hoặc cơ quan cấp phép. Có thể lập danh sách vụ việc đưa ra xét xử, tìm thông tin cho thẩm phán và toà án, soạn dự thảo chương trình họp, trả lời công văn, giữ sổ sách tài chính, cấp giấy phép, ghi dữ liệu, tổ chức kiểm tra hoặc thu phí. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Công việc lặp lại nhiều.",
+    "Ngồi gần như cả ngày.",
+    "Thường xuyên phải làm gấp cho kịp hạn."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "5% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Trung tâm phục vụ hành chính công, bộ phận một cửa",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": ["Quản lý nhà nước", "Luật"],
+    "vocational": ["Pháp luật về quản lý hành chính công"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Nhân viên hỗ trợ bộ phận một cửa (hợp đồng)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Lên kế hoạch hoặc chỉ đạo việc lưu giữ, bảo quản và số hoá toàn bộ văn bản của chính quyền địa phương.",
+        "Kiểm tra văn bản pháp lý nộp cho toà án về sự tuân thủ luật và thủ tục.",
+        "Ghi kết quả giải quyết vụ việc, lệnh của toà hoặc thoả thuận nộp án phí.",
+        "Trả lời người dân về thủ tục tư pháp, lịch ra toà, ngày xét xử, hoãn phiên, lệnh, giấy triệu tập hoặc nộp phạt.",
+        "Làm việc văn phòng chung như ghi chép, đánh máy, đọc soát công văn, phát và lưu biểu mẫu, đặt lịch hẹn."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Công chức tiếp nhận và trả kết quả (cán sự/chuyên viên)",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Lên kế hoạch hoặc chỉ đạo việc lưu giữ, bảo quản và số hoá toàn bộ văn bản của chính quyền địa phương.",
+        "Kiểm tra văn bản pháp lý nộp cho toà án về sự tuân thủ luật và thủ tục.",
+        "Ghi kết quả giải quyết vụ việc, lệnh của toà hoặc thoả thuận nộp án phí.",
+        "Trả lời người dân về thủ tục tư pháp, lịch ra toà, ngày xét xử, hoãn phiên, lệnh, giấy triệu tập hoặc nộp phạt.",
+        "Làm việc văn phòng chung như ghi chép, đánh máy, đọc soát công văn, phát và lưu biểu mẫu, đặt lịch hẹn."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10",
+          "name": "Thích ứng với tình huống thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1bb3a4b7-c0e4-434a-850d-0d2874a9c251",
+          "name": "Kiên nhẫn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên một cửa phụ trách lĩnh vực",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Lên kế hoạch hoặc chỉ đạo việc lưu giữ, bảo quản và số hoá toàn bộ văn bản của chính quyền địa phương.",
+        "Kiểm tra văn bản pháp lý nộp cho toà án về sự tuân thủ luật và thủ tục.",
+        "Ghi kết quả giải quyết vụ việc, lệnh của toà hoặc thoả thuận nộp án phí.",
+        "Trả lời người dân về thủ tục tư pháp, lịch ra toà, ngày xét xử, hoãn phiên, lệnh, giấy triệu tập hoặc nộp phạt.",
+        "Làm việc văn phòng chung như ghi chép, đánh máy, đọc soát công văn, phát và lưu biểu mẫu, đặt lịch hẹn."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10",
+          "name": "Thích ứng với tình huống thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1bb3a4b7-c0e4-434a-850d-0d2874a9c251",
+          "name": "Kiên nhẫn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10",
+          "name": "Thích ứng với tình huống thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1bb3a4b7-c0e4-434a-850d-0d2874a9c251",
+          "name": "Kiên nhẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a82241a-216e-44d8-bb50-6b9a0ef82084",
+          "name": "Lái xe",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Tổ trưởng bộ phận một cửa/chuyên viên chính",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Lên kế hoạch hoặc chỉ đạo việc lưu giữ, bảo quản và số hoá toàn bộ văn bản của chính quyền địa phương.",
+        "Kiểm tra văn bản pháp lý nộp cho toà án về sự tuân thủ luật và thủ tục.",
+        "Ghi kết quả giải quyết vụ việc, lệnh của toà hoặc thoả thuận nộp án phí.",
+        "Trả lời người dân về thủ tục tư pháp, lịch ra toà, ngày xét xử, hoãn phiên, lệnh, giấy triệu tập hoặc nộp phạt.",
+        "Làm việc văn phòng chung như ghi chép, đánh máy, đọc soát công văn, phát và lưu biểu mẫu, đặt lịch hẹn."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10",
+          "name": "Thích ứng với tình huống thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1bb3a4b7-c0e4-434a-850d-0d2874a9c251",
+          "name": "Kiên nhẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a82241a-216e-44d8-bb50-6b9a0ef82084",
+          "name": "Lái xe",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10",
+          "name": "Thích ứng với tình huống thay đổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1bb3a4b7-c0e4-434a-850d-0d2874a9c251",
+          "name": "Kiên nhẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a82241a-216e-44d8-bb50-6b9a0ef82084",
+          "name": "Lái xe",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Lãnh đạo trung tâm phục vụ hành chính công",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Lên kế hoạch hoặc chỉ đạo việc lưu giữ, bảo quản và số hoá toàn bộ văn bản của chính quyền địa phương.",
+        "Kiểm tra văn bản pháp lý nộp cho toà án về sự tuân thủ luật và thủ tục.",
+        "Ghi kết quả giải quyết vụ việc, lệnh của toà hoặc thoả thuận nộp án phí.",
+        "Trả lời người dân về thủ tục tư pháp, lịch ra toà, ngày xét xử, hoãn phiên, lệnh, giấy triệu tập hoặc nộp phạt.",
+        "Làm việc văn phòng chung như ghi chép, đánh máy, đọc soát công văn, phát và lưu biểu mẫu, đặt lịch hẹn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10",
+          "name": "Thích ứng với tình huống thay đổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1bb3a4b7-c0e4-434a-850d-0d2874a9c251",
+          "name": "Kiên nhẫn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a82241a-216e-44d8-bb50-6b9a0ef82084",
+          "name": "Lái xe",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+          "name": "Kiểm tra giấy tờ chính thức",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "name": "Luật dân sự",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10",
+          "name": "Thích ứng với tình huống thay đổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1bb3a4b7-c0e4-434a-850d-0d2874a9c251",
+          "name": "Kiên nhẫn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2a82241a-216e-44d8-bb50-6b9a0ef82084",
+          "name": "Lái xe",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-43-4031.00",
+          "name": "Cán bộ tiếp nhận hồ sơ hành chính công"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-43-4061.00",
+          "name": "Cán bộ xét duyệt hồ sơ chính sách"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3012.00",
+          "name": "Quản lý hành chính"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-13-1071.00",
+      "name": "Chuyên viên nhân sự",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-23-2011.00",
+      "name": "Trợ lý pháp lý, chuyên viên pháp chế",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1041.00",
+      "name": "Chuyên viên tuân thủ và quản lý rủi ro",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 5920000,
+    "median": null,
+    "high": 17153000,
+    "byYears": [],
+    "source": "Thông tư 02/2021/TT-BNV, sửa đổi bởi Thông tư 06/2022/TT-BNV; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Công chức chuyên viên đến chuyên viên chính",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/a1efea8f-62a8-4f9e-bd07-7d0c193f725e",
+      "name": "Kiểm tra giấy tờ chính thức",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+      "name": "Luật dân sự",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10",
+      "name": "Thích ứng với tình huống thay đổi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1bb3a4b7-c0e4-434a-850d-0d2874a9c251",
+      "name": "Kiên nhẫn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2a82241a-216e-44d8-bb50-6b9a0ef82084",
+      "name": "Lái xe",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.728
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.508
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.314
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.166
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.336
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.351
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.926
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

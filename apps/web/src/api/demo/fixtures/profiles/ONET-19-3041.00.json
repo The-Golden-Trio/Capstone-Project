@@ -1,0 +1,875 @@
+{
+  "code": "ONET-19-3041.00",
+  "name": "Nhà nghiên cứu khoa học xã hội",
+  "nameEn": "Sociologists",
+  "group": "Khoa học tự nhiên và xã hội",
+  "regionId": "cong_nghe",
+  "isIt": false,
+  "summary": "Nghiên cứu xã hội loài người và hành vi xã hội qua các nhóm và thiết chế xã hội mà con người tạo ra, cũng như các tổ chức xã hội, tôn giáo, chính trị và kinh doanh. Có thể nghiên cứu hành vi, tương tác của các nhóm, nguồn gốc, sự phát triển và ảnh hưởng của hoạt động nhóm lên từng thành viên. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần thuyết phục, dẫn dắt người khác và kinh doanh.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Môi trường cạnh tranh cao.",
+    "Kết quả nghiên cứu đến chậm, nhiều thí nghiệm thất bại."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "45% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "24% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Viện nghiên cứu, trung tâm khoa học nhà nước",
+      "weight": 50
+    },
+    {
+      "name": "Trường đại học, cao đẳng công lập",
+      "weight": 30
+    },
+    {
+      "name": "Tổ chức phi chính phủ, dự án phát triển",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Xã hội học", "Nhân học"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên nghiên cứu / thực tập xã hội học",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu để hiểu rõ hơn hành vi xã hội của con người.",
+        "Soạn ấn phẩm và báo cáo kết quả nghiên cứu.",
+        "Xây dựng, triển khai và đánh giá phương pháp thu thập dữ liệu như bảng hỏi hoặc phỏng vấn.",
+        "Thu thập dữ liệu về thái độ, giá trị và hành vi của con người trong nhóm bằng quan sát, phỏng vấn và xem tài liệu.",
+        "Giảng dạy xã hội học."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ lý nghiên cứu xã hội học (hạng IV)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu để hiểu rõ hơn hành vi xã hội của con người.",
+        "Soạn ấn phẩm và báo cáo kết quả nghiên cứu.",
+        "Xây dựng, triển khai và đánh giá phương pháp thu thập dữ liệu như bảng hỏi hoặc phỏng vấn.",
+        "Thu thập dữ liệu về thái độ, giá trị và hành vi của con người trong nhóm bằng quan sát, phỏng vấn và xem tài liệu.",
+        "Giảng dạy xã hội học."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Nghiên cứu viên xã hội học (hạng III)",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu để hiểu rõ hơn hành vi xã hội của con người.",
+        "Soạn ấn phẩm và báo cáo kết quả nghiên cứu.",
+        "Xây dựng, triển khai và đánh giá phương pháp thu thập dữ liệu như bảng hỏi hoặc phỏng vấn.",
+        "Thu thập dữ liệu về thái độ, giá trị và hành vi của con người trong nhóm bằng quan sát, phỏng vấn và xem tài liệu.",
+        "Giảng dạy xã hội học."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+          "name": "Quan sát hành vi con người",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Nghiên cứu viên xã hội học chủ trì đề tài cấp cơ sở",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu để hiểu rõ hơn hành vi xã hội của con người.",
+        "Soạn ấn phẩm và báo cáo kết quả nghiên cứu.",
+        "Xây dựng, triển khai và đánh giá phương pháp thu thập dữ liệu như bảng hỏi hoặc phỏng vấn.",
+        "Thu thập dữ liệu về thái độ, giá trị và hành vi của con người trong nhóm bằng quan sát, phỏng vấn và xem tài liệu.",
+        "Giảng dạy xã hội học."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+          "name": "Quan sát hành vi con người",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+          "name": "Quan sát hành vi con người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf9c8e73-105d-419e-86dd-4304cc6cd718",
+          "name": "Địa lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Nghiên cứu viên xã hội học chủ nhiệm đề tài cấp bộ, tỉnh",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu để hiểu rõ hơn hành vi xã hội của con người.",
+        "Soạn ấn phẩm và báo cáo kết quả nghiên cứu.",
+        "Xây dựng, triển khai và đánh giá phương pháp thu thập dữ liệu như bảng hỏi hoặc phỏng vấn.",
+        "Thu thập dữ liệu về thái độ, giá trị và hành vi của con người trong nhóm bằng quan sát, phỏng vấn và xem tài liệu.",
+        "Giảng dạy xã hội học."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+          "name": "Quan sát hành vi con người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf9c8e73-105d-419e-86dd-4304cc6cd718",
+          "name": "Địa lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+          "name": "Quan sát hành vi con người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf9c8e73-105d-419e-86dd-4304cc6cd718",
+          "name": "Địa lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Nghiên cứu viên chính xã hội học (hạng II)",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu để hiểu rõ hơn hành vi xã hội của con người.",
+        "Soạn ấn phẩm và báo cáo kết quả nghiên cứu.",
+        "Xây dựng, triển khai và đánh giá phương pháp thu thập dữ liệu như bảng hỏi hoặc phỏng vấn.",
+        "Thu thập dữ liệu về thái độ, giá trị và hành vi của con người trong nhóm bằng quan sát, phỏng vấn và xem tài liệu.",
+        "Giảng dạy xã hội học."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+          "name": "Quan sát hành vi con người",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf9c8e73-105d-419e-86dd-4304cc6cd718",
+          "name": "Địa lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+          "name": "Quan sát hành vi con người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf9c8e73-105d-419e-86dd-4304cc6cd718",
+          "name": "Địa lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Nghiên cứu viên cao cấp xã hội học (hạng I)",
+      "years": "16+",
+      "coreOutput": null,
+      "tasks": [
+        "Phân tích và diễn giải dữ liệu để hiểu rõ hơn hành vi xã hội của con người.",
+        "Soạn ấn phẩm và báo cáo kết quả nghiên cứu.",
+        "Xây dựng, triển khai và đánh giá phương pháp thu thập dữ liệu như bảng hỏi hoặc phỏng vấn.",
+        "Thu thập dữ liệu về thái độ, giá trị và hành vi của con người trong nhóm bằng quan sát, phỏng vấn và xem tài liệu.",
+        "Giảng dạy xã hội học."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "giao_tiep_hop_tac": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+          "name": "Quan sát hành vi con người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf9c8e73-105d-419e-86dd-4304cc6cd718",
+          "name": "Địa lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+          "name": "Thiết kế nghiên cứu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+          "name": "Nghiên cứu xã hội loài người",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+          "name": "Xã hội học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+          "name": "Phân tích dữ liệu cập nhật nhất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+          "name": "Phân tích thống kê",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "name": "Thu thập dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+          "name": "Quan sát hành vi con người",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cf9c8e73-105d-419e-86dd-4304cc6cd718",
+          "name": "Địa lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-19-3041.00",
+          "name": "Nhà nghiên cứu khoa học xã hội"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-25-1081.00",
+      "name": "Giảng viên đại học, cao đẳng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-15-2041.00",
+      "name": "Chuyên viên thống kê và toán ứng dụng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "DATA_AI",
+      "name": "Kỹ sư trí tuệ nhân tạo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-4022.00",
+      "name": "Thủ thư, chuyên viên lưu trữ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-4012.00",
+      "name": "Chuyên viên bảo tàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 7538000,
+    "median": null,
+    "high": 25972000,
+    "byYears": [],
+    "source": "WageIndicator Việt Nam, \"Chuyên viên xã hội học, nhà nhân loại học\"",
+    "dataYear": "2026",
+    "note": "Số mô hình.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+      "name": "Phương pháp nghiên cứu khoa học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7159e587-c7cb-4ec0-a662-03e1dee2cccb",
+      "name": "Thiết kế nghiên cứu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f5019d58-1f9a-4c1d-9a68-6ed7b8ec3eca",
+      "name": "Nghiên cứu xã hội loài người",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8881a9c2-bd07-4954-bf27-c1f8acca9af0",
+      "name": "Xã hội học",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1e77e42a-181f-4b48-8e74-201ce50ffc29",
+      "name": "Phân tích dữ liệu cập nhật nhất",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/382c11ed-20d5-4ae7-b60e-15fec527fa6c",
+      "name": "Phân tích thống kê",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+      "name": "Thu thập dữ liệu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/744add42-681e-4cfb-8e43-af1d16794238",
+      "name": "Quan sát hành vi con người",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cf9c8e73-105d-419e-86dd-4304cc6cd718",
+      "name": "Địa lý",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.962
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.515
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.471
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.093
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.025
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.199
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.497
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

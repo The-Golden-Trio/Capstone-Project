@@ -1,0 +1,609 @@
+{
+  "code": "ONET-31-1131.00",
+  "name": "Hộ lý, trợ lý điều dưỡng",
+  "nameEn": "Nursing Assistants",
+  "group": "Hỗ trợ y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Chăm sóc hoặc hỗ trợ chăm sóc cơ bản dưới sự chỉ đạo của điều dưỡng có chứng chỉ tại chỗ. Theo dõi sức khoẻ, cho ăn, tắm rửa, mặc quần áo, chải chuốt, vệ sinh và hỗ trợ đi lại cho người bệnh ở cơ sở y tế hoặc viện dưỡng lão. Có thể cho uống thuốc và làm các việc y tế khác. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần giúp đỡ, dạy bảo và chăm sóc người khác, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Phải đi lại hoặc chạy nhiều.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Hay phải cúi hoặc vặn người."
+  ],
+  "workFacts": [
+    "Đứng phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "Ít làm việc qua email.",
+    "17% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "15% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Bệnh viện công",
+      "weight": 55
+    },
+    {
+      "name": "Bệnh viện tư, quốc tế",
+      "weight": 25
+    },
+    {
+      "name": "Viện dưỡng lão, chăm sóc tại nhà",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Điều dưỡng"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Hộ lý thử việc",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Trở mình hoặc đổi tư thế cho người bệnh nằm liệt giường.",
+        "Trả lời chuông gọi, đèn báo hoặc hệ thống liên lạc để biết người bệnh cần gì.",
+        "Cho người bệnh ăn hoặc giúp họ ăn uống.",
+        "Đo và ghi lượng ăn uống, lượng nước tiểu và phân, báo thay đổi cho nhân viên y tế.",
+        "Đỡ người bệnh trong sinh hoạt hằng ngày như ra khỏi giường, tắm, mặc quần áo, đi vệ sinh, đứng, đi lại hoặc tập luyện."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064",
+          "name": "Theo dõi dấu hiệu sinh tồn cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24f980ba-b44f-4739-b563-205104c3190d",
+          "name": "Hỗ trợ cơ bản cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d",
+          "name": "Điều dưỡng chăm sóc dài hạn",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Hộ lý",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Trở mình hoặc đổi tư thế cho người bệnh nằm liệt giường.",
+        "Trả lời chuông gọi, đèn báo hoặc hệ thống liên lạc để biết người bệnh cần gì.",
+        "Cho người bệnh ăn hoặc giúp họ ăn uống.",
+        "Đo và ghi lượng ăn uống, lượng nước tiểu và phân, báo thay đổi cho nhân viên y tế.",
+        "Đỡ người bệnh trong sinh hoạt hằng ngày như ra khỏi giường, tắm, mặc quần áo, đi vệ sinh, đứng, đi lại hoặc tập luyện."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064",
+          "name": "Theo dõi dấu hiệu sinh tồn cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24f980ba-b44f-4739-b563-205104c3190d",
+          "name": "Hỗ trợ cơ bản cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d",
+          "name": "Điều dưỡng chăm sóc dài hạn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064",
+          "name": "Theo dõi dấu hiệu sinh tồn cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24f980ba-b44f-4739-b563-205104c3190d",
+          "name": "Hỗ trợ cơ bản cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d",
+          "name": "Điều dưỡng chăm sóc dài hạn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f98e06f5-a09a-4356-b6a8-d55a7d3c5356",
+          "name": "Thực hiện chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f",
+          "name": "Chăm sóc điều dưỡng chuyên nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Hộ lý chính/nhân viên chăm sóc người bệnh",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Trở mình hoặc đổi tư thế cho người bệnh nằm liệt giường.",
+        "Trả lời chuông gọi, đèn báo hoặc hệ thống liên lạc để biết người bệnh cần gì.",
+        "Cho người bệnh ăn hoặc giúp họ ăn uống.",
+        "Đo và ghi lượng ăn uống, lượng nước tiểu và phân, báo thay đổi cho nhân viên y tế.",
+        "Đỡ người bệnh trong sinh hoạt hằng ngày như ra khỏi giường, tắm, mặc quần áo, đi vệ sinh, đứng, đi lại hoặc tập luyện."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064",
+          "name": "Theo dõi dấu hiệu sinh tồn cơ bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24f980ba-b44f-4739-b563-205104c3190d",
+          "name": "Hỗ trợ cơ bản cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d",
+          "name": "Điều dưỡng chăm sóc dài hạn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f98e06f5-a09a-4356-b6a8-d55a7d3c5356",
+          "name": "Thực hiện chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f",
+          "name": "Chăm sóc điều dưỡng chuyên nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064",
+          "name": "Theo dõi dấu hiệu sinh tồn cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24f980ba-b44f-4739-b563-205104c3190d",
+          "name": "Hỗ trợ cơ bản cho người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d",
+          "name": "Điều dưỡng chăm sóc dài hạn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f98e06f5-a09a-4356-b6a8-d55a7d3c5356",
+          "name": "Thực hiện chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f",
+          "name": "Chăm sóc điều dưỡng chuyên nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Tổ trưởng hộ lý của khoa",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Trở mình hoặc đổi tư thế cho người bệnh nằm liệt giường.",
+        "Trả lời chuông gọi, đèn báo hoặc hệ thống liên lạc để biết người bệnh cần gì.",
+        "Cho người bệnh ăn hoặc giúp họ ăn uống.",
+        "Đo và ghi lượng ăn uống, lượng nước tiểu và phân, báo thay đổi cho nhân viên y tế.",
+        "Đỡ người bệnh trong sinh hoạt hằng ngày như ra khỏi giường, tắm, mặc quần áo, đi vệ sinh, đứng, đi lại hoặc tập luyện."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064",
+          "name": "Theo dõi dấu hiệu sinh tồn cơ bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24f980ba-b44f-4739-b563-205104c3190d",
+          "name": "Hỗ trợ cơ bản cho người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d",
+          "name": "Điều dưỡng chăm sóc dài hạn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f98e06f5-a09a-4356-b6a8-d55a7d3c5356",
+          "name": "Thực hiện chăm sóc điều dưỡng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f",
+          "name": "Chăm sóc điều dưỡng chuyên nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064",
+          "name": "Theo dõi dấu hiệu sinh tồn cơ bản",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24f980ba-b44f-4739-b563-205104c3190d",
+          "name": "Hỗ trợ cơ bản cho người bệnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+          "name": "Phát triển bền vững trong y tế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d",
+          "name": "Điều dưỡng chăm sóc dài hạn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f98e06f5-a09a-4356-b6a8-d55a7d3c5356",
+          "name": "Thực hiện chăm sóc điều dưỡng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+          "name": "Chăm sóc người khuyết tật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f",
+          "name": "Chăm sóc điều dưỡng chuyên nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+          "name": "Đồng cảm với người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-31-1131.00",
+          "name": "Hộ lý, trợ lý điều dưỡng"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1123.00",
+      "name": "Kỹ thuật viên, chuyên viên phục hồi chức năng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-1121.00",
+      "name": "Nhân viên chăm sóc tại nhà",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2011.00",
+      "name": "Kỹ thuật viên xét nghiệm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2043.00",
+      "name": "Nhân viên cấp cứu ngoại viện",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 6000000,
+    "median": null,
+    "high": 8000000,
+    "byYears": [],
+    "source": "CareerLink, \"Hộ lý là gì\"",
+    "dataYear": "2025",
+    "note": "Bệnh viện công.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064",
+      "name": "Theo dõi dấu hiệu sinh tồn cơ bản",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/24f980ba-b44f-4739-b563-205104c3190d",
+      "name": "Hỗ trợ cơ bản cho người bệnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac",
+      "name": "Phát triển bền vững trong y tế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+      "name": "Tương tác với người bệnh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d",
+      "name": "Điều dưỡng chăm sóc dài hạn",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+      "name": "Tuân thủ hướng dẫn lâm sàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f98e06f5-a09a-4356-b6a8-d55a7d3c5356",
+      "name": "Thực hiện chăm sóc điều dưỡng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8",
+      "name": "Chăm sóc người khuyết tật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f",
+      "name": "Chăm sóc điều dưỡng chuyên nghiệp",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba",
+      "name": "Đồng cảm với người bệnh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.811
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.534
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.179
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.095
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.228
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.317
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.569
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

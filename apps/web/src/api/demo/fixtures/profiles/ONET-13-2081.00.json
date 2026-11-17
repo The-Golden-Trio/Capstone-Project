@@ -1,0 +1,797 @@
+{
+  "code": "ONET-13-2081.00",
+  "name": "Cán bộ thuế",
+  "nameEn": "Tax Examiners and Collectors, and Revenue Agents",
+  "group": "Kinh doanh và tài chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Xác định nghĩa vụ thuế hoặc thu thuế của cá nhân, doanh nghiệp theo luật và quy định. Mức chuẩn bị: cần chuẩn bị ở mức vừa. Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Công việc lặp lại nhiều.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "31% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "14% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Cơ quan thuế",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": ["Kế toán", "Tài chính - Ngân hàng", "Luật kinh tế"],
+    "vocational": ["Kế toán thuế"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Kiểm tra viên trung cấp thuế",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Gửi thông báo cho người nộp thuế khi chậm nộp.",
+        "Trao đổi với người nộp thuế hoặc người đại diện về vấn đề, luật và quy định liên quan đến tờ khai, giải quyết sai sót.",
+        "Báo cho người nộp thuế khoản nộp thừa hoặc thiếu, hoàn tiền hoặc yêu cầu nộp thêm.",
+        "Lưu hồ sơ từng trường hợp, gồm thông tin liên hệ và các việc đã làm.",
+        "Liên hệ người nộp thuế bằng thư hoặc điện thoại để xử lý chênh lệch và yêu cầu giấy tờ chứng minh."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Kiểm tra viên thuế",
+      "years": "1–4",
+      "coreOutput": null,
+      "tasks": [
+        "Gửi thông báo cho người nộp thuế khi chậm nộp.",
+        "Trao đổi với người nộp thuế hoặc người đại diện về vấn đề, luật và quy định liên quan đến tờ khai, giải quyết sai sót.",
+        "Báo cho người nộp thuế khoản nộp thừa hoặc thiếu, hoàn tiền hoặc yêu cầu nộp thêm.",
+        "Lưu hồ sơ từng trường hợp, gồm thông tin liên hệ và các việc đã làm.",
+        "Liên hệ người nộp thuế bằng thư hoặc điện thoại để xử lý chênh lệch và yêu cầu giấy tờ chứng minh."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+          "name": "Thu thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+          "name": "Quy định về sổ sách kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+          "name": "Kiểm tra tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+          "name": "Luật công",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kiểm tra viên thuế phụ trách nhóm doanh nghiệp",
+      "years": "3–7",
+      "coreOutput": null,
+      "tasks": [
+        "Gửi thông báo cho người nộp thuế khi chậm nộp.",
+        "Trao đổi với người nộp thuế hoặc người đại diện về vấn đề, luật và quy định liên quan đến tờ khai, giải quyết sai sót.",
+        "Báo cho người nộp thuế khoản nộp thừa hoặc thiếu, hoàn tiền hoặc yêu cầu nộp thêm.",
+        "Lưu hồ sơ từng trường hợp, gồm thông tin liên hệ và các việc đã làm.",
+        "Liên hệ người nộp thuế bằng thư hoặc điện thoại để xử lý chênh lệch và yêu cầu giấy tờ chứng minh."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+          "name": "Thu thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+          "name": "Quy định về sổ sách kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+          "name": "Kiểm tra tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+          "name": "Luật công",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+          "name": "Thu thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+          "name": "Quy định về sổ sách kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+          "name": "Kiểm tra tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+          "name": "Luật công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9efc4b5-0266-43e3-a7e3-064d09bcf90a",
+          "name": "Kiểm tra hồ sơ thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ecf90f1-c511-464b-b26f-598d69182c70",
+          "name": "Tính thuế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Kiểm tra viên chính thuế",
+      "years": "7–12",
+      "coreOutput": null,
+      "tasks": [
+        "Gửi thông báo cho người nộp thuế khi chậm nộp.",
+        "Trao đổi với người nộp thuế hoặc người đại diện về vấn đề, luật và quy định liên quan đến tờ khai, giải quyết sai sót.",
+        "Báo cho người nộp thuế khoản nộp thừa hoặc thiếu, hoàn tiền hoặc yêu cầu nộp thêm.",
+        "Lưu hồ sơ từng trường hợp, gồm thông tin liên hệ và các việc đã làm.",
+        "Liên hệ người nộp thuế bằng thư hoặc điện thoại để xử lý chênh lệch và yêu cầu giấy tờ chứng minh."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+          "name": "Thu thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+          "name": "Quy định về sổ sách kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+          "name": "Kiểm tra tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+          "name": "Luật công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9efc4b5-0266-43e3-a7e3-064d09bcf90a",
+          "name": "Kiểm tra hồ sơ thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ecf90f1-c511-464b-b26f-598d69182c70",
+          "name": "Tính thuế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+          "name": "Thu thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+          "name": "Quy định về sổ sách kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+          "name": "Kiểm tra tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+          "name": "Luật công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9efc4b5-0266-43e3-a7e3-064d09bcf90a",
+          "name": "Kiểm tra hồ sơ thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ecf90f1-c511-464b-b26f-598d69182c70",
+          "name": "Tính thuế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Phó trưởng phòng / trưởng nhóm kiểm tra thuế",
+      "years": "10–15",
+      "coreOutput": null,
+      "tasks": [
+        "Gửi thông báo cho người nộp thuế khi chậm nộp.",
+        "Trao đổi với người nộp thuế hoặc người đại diện về vấn đề, luật và quy định liên quan đến tờ khai, giải quyết sai sót.",
+        "Báo cho người nộp thuế khoản nộp thừa hoặc thiếu, hoàn tiền hoặc yêu cầu nộp thêm.",
+        "Lưu hồ sơ từng trường hợp, gồm thông tin liên hệ và các việc đã làm.",
+        "Liên hệ người nộp thuế bằng thư hoặc điện thoại để xử lý chênh lệch và yêu cầu giấy tờ chứng minh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+          "name": "Thu thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+          "name": "Quy định về sổ sách kế toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+          "name": "Kiểm tra tờ khai thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+          "name": "Luật công",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9efc4b5-0266-43e3-a7e3-064d09bcf90a",
+          "name": "Kiểm tra hồ sơ thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ecf90f1-c511-464b-b26f-598d69182c70",
+          "name": "Tính thuế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+          "name": "Thu thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+          "name": "Quy định về sổ sách kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+          "name": "Kiểm tra tờ khai thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+          "name": "Luật công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9efc4b5-0266-43e3-a7e3-064d09bcf90a",
+          "name": "Kiểm tra hồ sơ thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ecf90f1-c511-464b-b26f-598d69182c70",
+          "name": "Tính thuế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Kiểm tra viên cao cấp thuế",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Gửi thông báo cho người nộp thuế khi chậm nộp.",
+        "Trao đổi với người nộp thuế hoặc người đại diện về vấn đề, luật và quy định liên quan đến tờ khai, giải quyết sai sót.",
+        "Báo cho người nộp thuế khoản nộp thừa hoặc thiếu, hoàn tiền hoặc yêu cầu nộp thêm.",
+        "Lưu hồ sơ từng trường hợp, gồm thông tin liên hệ và các việc đã làm.",
+        "Liên hệ người nộp thuế bằng thư hoặc điện thoại để xử lý chênh lệch và yêu cầu giấy tờ chứng minh."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+          "name": "Thu thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+          "name": "Quy định về sổ sách kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+          "name": "Kiểm tra tờ khai thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+          "name": "Luật công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9efc4b5-0266-43e3-a7e3-064d09bcf90a",
+          "name": "Kiểm tra hồ sơ thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ecf90f1-c511-464b-b26f-598d69182c70",
+          "name": "Tính thuế",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+          "name": "Phát hiện gian lận",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+          "name": "Theo dõi tài khoản tài chính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+          "name": "Thu thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+          "name": "Quy định về sổ sách kế toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+          "name": "Kiểm tra tờ khai thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+          "name": "Luật công",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b9efc4b5-0266-43e3-a7e3-064d09bcf90a",
+          "name": "Kiểm tra hồ sơ thuế",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "name": "Pháp luật thuế",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2ecf90f1-c511-464b-b26f-598d69182c70",
+          "name": "Tính thuế",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-13-2011.00",
+      "name": "Kế toán, kiểm toán viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-3071.00",
+      "name": "Giao dịch viên ngân hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo thang nhà nước",
+    "low": 5920000,
+    "median": null,
+    "high": 17153000,
+    "byYears": [],
+    "source": "Thông tư 02/2021/TT-BNV, sửa đổi bởi Thông tư 06/2022/TT-BNV; lương cơ sở 2.530.000 đ (Nghị định 161/2026/NĐ-CP ngày 15/5/2026, hiệu lực 01/7/2026, Điều 3)",
+    "dataYear": "2026",
+    "note": "Công chức chuyên viên đến chuyên viên chính",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/541cdc23-1eec-4520-81fc-3392eaf538ed",
+      "name": "Phát hiện gian lận",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+      "name": "Xử lý giao dịch tài chính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2ada2f9d-77f7-4ba0-9096-89ae285a65c5",
+      "name": "Theo dõi tài khoản tài chính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7c86c1b1-4a06-4804-afbc-7e857145b6a5",
+      "name": "Thu thuế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2ff405ec-f59c-4a7b-84b6-9776a49582c4",
+      "name": "Quy định về sổ sách kế toán",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1883a1f5-f190-4ef3-8521-36d8cc6dbb47",
+      "name": "Kiểm tra tờ khai thuế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/efb523d0-c998-440d-8639-cd14ba841c4c",
+      "name": "Luật công",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b9efc4b5-0266-43e3-a7e3-064d09bcf90a",
+      "name": "Kiểm tra hồ sơ thuế",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+      "name": "Pháp luật thuế",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2ecf90f1-c511-464b-b26f-598d69182c70",
+      "name": "Tính thuế",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.803
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.591
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.517
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.237
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.181
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.408
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.662
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,857 @@
+{
+  "code": "CLOUD_DEVOPS",
+  "name": "Kỹ sư DevOps",
+  "nameEn": "DevOps Engineer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Kỹ sư DevOps làm cho phần mềm được kiểm, đóng gói và đưa lên chạy thật một cách tự động, rồi giữ hệ thống chạy ổn định. Việc gồm dựng pipeline CI/CD, quản lý hạ tầng bằng mã (Infrastructure as Code), giám sát, xử lý sự cố và kiểm soát chi phí cloud. Thường không tuyển thẳng người mới; người làm nghề hay chuyển sang từ Back-end hoặc quản trị hệ thống sau vài năm.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có ca trực và có thể bị gọi dậy giữa đêm khi hệ thống ngừng chạy.",
+    "Bị kẹp giữa: đội phát triển muốn đưa lên nhanh, còn mình chịu trách nhiệm khi có sự cố.",
+    "Chi phí cloud tăng bất thường thường đổ về đội DevOps tìm nguyên nhân.",
+    "Phải giải thích nhu cầu hạ tầng cho cấp trên không có nền kỹ thuật."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "24% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "7% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 50
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 30
+    },
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị ở mức vừa",
+    "note": "Thường cần học nghề, cao đẳng hoặc chứng chỉ chuyên môn. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật phần mềm",
+      "Mạng máy tính và truyền thông dữ liệu",
+      "Công nghệ thông tin"
+    ],
+    "vocational": ["Quản trị hệ thống"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "DevOps Engineer (mới chuyển ngang)",
+      "years": "1-3 (thường kèm nền tảng Backend hoặc SysAdmin trước đó)",
+      "coreOutput": "Tự vận hành pipeline CI/CD có sẵn, viết script tự động hoá cho tác vụ lặp lại, học cách quản lý hạ tầng cloud dưới sự hướng dẫn của kỹ sư senior hơn.",
+      "tasks": [
+        "Bảo trì và chạy các pipeline CI/CD hiện có",
+        "Triển khai mã nguồn lên môi trường test",
+        "Giám sát tài nguyên server cơ bản"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp L2 ở một nghề đi trước: Lập trình viên Back-end / Kỹ sư Back-end, Nhân viên hỗ trợ kỹ thuật / IT Support, Kỹ sư hệ thống mạng",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle DevOps Engineer",
+      "years": "3-5",
+      "coreOutput": "Chịu trách nhiệm một phần hạ tầng (một môi trường hoặc một cụm dịch vụ), tự thiết kế pipeline CI/CD mới, xử lý sự cố vận hành ở mức trung bình.",
+      "tasks": [
+        "Viết script Infrastructure as Code (Terraform)",
+        "Cấu hình cụm Kubernetes cho microservices",
+        "Thiết lập hệ thống logging/monitoring"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior DevOps Engineer",
+      "years": "5-8",
+      "coreOutput": "Tự chủ kiến trúc hạ tầng cho cả một hệ thống, thiết lập chuẩn Infrastructure as Code, chịu trách nhiệm chính khi có sự cố production nghiêm trọng, mentor kỹ sư cấp dưới.",
+      "tasks": [
+        "Thiết kế kiến trúc hạ tầng Cloud đảm bảo High Availability",
+        "Tối ưu chi phí hạ tầng (FinOps)",
+        "Xử lý sự cố production nghiêm trọng (On-call)"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "DevOps Lead / Platform Lead",
+      "years": "7-10",
+      "coreOutput": "Dẫn dắt đội DevOps/Platform, đặt chiến lược hạ tầng và công cụ cho toàn tổ chức, coaching đội.",
+      "tasks": [
+        "Xây dựng nền tảng Platform Engineering nội bộ",
+        "Dẫn dắt các Cloud/DevOps engineer khác",
+        "Quy hoạch hạ tầng mạng và an ninh Cloud"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Principal DevOps Engineer / Head of Infrastructure",
+      "years": "8-12",
+      "coreOutput": "Đặt định hướng hạ tầng và vận hành xuyên tổ chức, thường là người quyết định chiến lược cloud/multi-cloud cấp cao nhất về mặt kỹ thuật.",
+      "tasks": [],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+          "name": "Thiết kế kiến trúc đám mây",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+          "name": "Sao lưu hệ thống",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+          "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+          "name": "Triển khai hệ thống khôi phục CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+          "name": "Lập trình hệ thống CNTT",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+          "name": "Framework phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+          "name": "Quản lý dữ liệu và lưu trữ đám mây",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+          "name": "Triển khai tài nguyên đám mây",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+          "name": "Tái cấu trúc ứng dụng cho đám mây",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "CLOUD_DEVOPS",
+          "name": "Kỹ sư DevOps"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "SWE_ARCH_SOL",
+          "name": "Kiến trúc sư giải pháp"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "CLOUD_ENG",
+      "name": "Kỹ sư điện toán đám mây",
+      "why": "Cùng làm hạ tầng: DevOps thiên tự động hoá, Cloud Engineer thiên nền tảng"
+    },
+    {
+      "code": "SWE_BACKEND",
+      "name": "Lập trình viên Back-end / Kỹ sư Back-end",
+      "why": "DevOps là hướng đi tự nhiên của Backend quan tâm vận hành"
+    },
+    {
+      "code": "SEC_ENG",
+      "name": "Kỹ sư an ninh mạng / Kỹ sư bảo mật",
+      "why": "DevSecOps là vùng giao nhau"
+    },
+    {
+      "code": "INFRA_NETWORK",
+      "name": "Kỹ sư hệ thống mạng",
+      "why": "Cùng vận hành hạ tầng, khác tầng mạng và tầng ứng dụng"
+    }
+  ],
+  "pay": null,
+  "outlook": {
+    "level": "cao",
+    "openPostings": 69,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+      "name": "Môi trường phát triển tích hợp (IDE)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/11430d93-c835-48ed-8e70-285fa69c9ae6",
+      "name": "Thiết kế kiến trúc đám mây",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/47ca0da1-cae5-4395-ae6b-fd97b9ff48d3",
+      "name": "Sao lưu hệ thống",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7e796b51-49d7-4e73-95af-2e7323763f15",
+      "name": "Thiết kế cơ sở dữ liệu trên đám mây",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fc2f1d4f-a46f-471e-a618-cbd4d0496a53",
+      "name": "Triển khai hệ thống khôi phục CNTT",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b105ec9b-0857-41d6-8d07-a83e58b73d90",
+      "name": "Lập trình hệ thống CNTT",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/24c200e5-be20-4370-a137-ab53797f3a17",
+      "name": "Framework phần mềm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/d3286405-49f8-4e8a-8046-a4376b4e7963",
+      "name": "Quản lý dữ liệu và lưu trữ đám mây",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6195c5f7-a4fb-425d-a3dd-c4467c4471a3",
+      "name": "Triển khai tài nguyên đám mây",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/38716afc-a93b-44ab-96cc-2ecf67edcf32",
+      "name": "Tái cấu trúc ứng dụng cho đám mây",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.808
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.553
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.377
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.262
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.103
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.607
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.792
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "PREREQUISITE",
+    "band": "L2",
+    "roles": [
+      {
+        "code": "SWE_BACKEND",
+        "name": "Lập trình viên Back-end / Kỹ sư Back-end"
+      },
+      {
+        "code": "INFRA_HELPDESK",
+        "name": "Nhân viên hỗ trợ kỹ thuật / IT Support"
+      },
+      {
+        "code": "INFRA_NETWORK",
+        "name": "Kỹ sư hệ thống mạng"
+      }
+    ]
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

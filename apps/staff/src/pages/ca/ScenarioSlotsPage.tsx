@@ -1,20 +1,23 @@
+import {
+  TabPanel,
+  Badge,
+  Button,
+  Sheet,
+  EmptyState,
+  LoadingBlock as Loading,
+  PageHeader,
+  Tabs,
+} from '@datn/ui';
 import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { isProblem } from '../../api/client';
 import { staffApi } from '../../api/endpoints';
 import type { ScenarioDetail, ScenarioListItem } from '../../api/types';
 import {
-  Badge,
-  Button,
   Card,
-  Dialog,
-  EmptyState,
   LinkButton,
-  Loading,
-  PageHeader,
   ProblemAlert,
   SelectField,
-  Tabs,
   TextField,
 } from '../../components/ui';
 import { HistoryTimeline } from '../../features/shared/HistoryTimeline';
@@ -88,11 +91,11 @@ export function ScenarioSlotsPage() {
     <>
       <PageHeader
         title="Ô scenario"
-        subtitle="Mỗi task của một cấp có tối đa một scenario đang hoạt động."
+        description="Mỗi task của một cấp có tối đa một scenario đang hoạt động."
         actions={
           <LinkButton
             to={`/ca/occupations/${occupationId}/review-criteria`}
-            variant="secondary"
+            variant="subtle"
             size="sm"
           >
             Tiêu chí duyệt
@@ -100,120 +103,133 @@ export function ScenarioSlotsPage() {
         }
       />
       <Tabs
+        idBase="slots"
         label="Chế độ xem"
         value={tab}
         onChange={setTab}
-        tabs={[
-          { id: 'slots', label: 'Theo cấp và task' },
+        items={[
+          { key: 'slots', label: 'Theo cấp và task' },
           {
-            id: 'overdue',
+            key: 'overdue',
             label: `Duyệt quá hạn${overdue.data?.length ? ` (${overdue.data.length})` : ''}`,
           },
         ]}
       />
-      <ProblemAlert error={profile.error ?? scenarios.error ?? openError} />
-      {tab === 'slots' ? (
-        profile.loading || scenarios.loading ? (
-          <Loading />
-        ) : (
-          <div className="space-y-4">
-            {(profile.data?.levels ?? []).map((level) => (
-              <Card
-                key={level.levelNo}
-                title={`L${level.levelNo} · ${level.title}`}
-              >
-                {level.tasks.length === 0 ? (
-                  <EmptyState>Cấp này chưa có task.</EmptyState>
-                ) : (
-                  <table className="w-full text-left">
-                    <thead className="text-[12px] text-muted">
-                      <tr>
-                        <th className="py-1 font-medium">Task</th>
-                        <th className="py-1 font-medium">Trạng thái</th>
-                        <th className="py-1 font-medium">
-                          Tác giả · Người duyệt
-                        </th>
-                        <th className="py-1" />
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-line-2">
-                      {level.tasks.map((t) => {
-                        const s = activeByTask.get(
-                          `${level.levelNo}|${t.text}`,
-                        );
-                        return (
-                          <tr key={t.taskId}>
-                            <td className="py-2 pr-3">{t.text}</td>
-                            <td className="py-2 pr-3">
-                              {s ? (
-                                <StatusBadge status={s.status} />
-                              ) : (
-                                <Badge>Chưa mở</Badge>
-                              )}
-                            </td>
-                            <td className="py-2 pr-3 text-[13px] text-ink-2">
-                              {s
-                                ? `${s.authorName ?? '—'} · ${s.reviewerName ?? '—'}`
-                                : ''}
-                            </td>
-                            <td className="py-2 text-right">
-                              {s ? (
-                                <Button
-                                  size="sm"
-                                  onClick={() => setSelected(s.id)}
-                                >
-                                  Chi tiết
-                                </Button>
-                              ) : (
-                                <Button
-                                  size="sm"
-                                  variant="primary"
-                                  busy={opening === t.taskId}
-                                  onClick={() => open(t.taskId)}
-                                >
-                                  Mở scenario
-                                </Button>
-                              )}
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                )}
-              </Card>
-            ))}
-          </div>
-        )
-      ) : (
-        <Card title="Lượt duyệt quá hạn">
-          <ProblemAlert error={overdue.error} />
-          {overdue.loading ? (
+      <TabPanel active idBase="slots" tabKey={tab}>
+        <ProblemAlert error={profile.error ?? scenarios.error ?? openError} />
+        {tab === 'slots' ? (
+          profile.loading || scenarios.loading ? (
             <Loading />
-          ) : (overdue.data ?? []).length === 0 ? (
-            <EmptyState>Không có lượt duyệt nào quá hạn.</EmptyState>
-          ) : (
-            <ul className="divide-y divide-line-2">
-              {(overdue.data ?? []).map((a) => (
-                <li
-                  key={a.assignmentId}
-                  className="flex items-center justify-between gap-3 py-2"
+          ) : profile.error || scenarios.error ? null : (
+            <div className="space-y-4">
+              {profile.data?.levels.length === 0 && (
+                <EmptyState title="Nghề chưa có cấp và task." />
+              )}
+              {(profile.data?.levels ?? []).map((level) => (
+                <Card
+                  key={level.levelNo}
+                  title={`L${level.levelNo} · ${level.title}`}
                 >
-                  <div>
-                    <p className="font-medium">{titleOf(a.scenarioId)}</p>
-                    <p className="text-[12px] text-bad">
-                      Hạn: {formatDateTime(a.deadlineAt)}
-                    </p>
-                  </div>
-                  <Button size="sm" onClick={() => setSelected(a.scenarioId)}>
-                    Giao lại
-                  </Button>
-                </li>
+                  {level.tasks.length === 0 ? (
+                    <EmptyState title={<>Cấp này chưa có task.</>} />
+                  ) : (
+                    <div className="overflow-x-auto">
+                      <table className="w-full min-w-[620px] text-left">
+                        <thead className="text-[12px] text-ink-faint">
+                          <tr>
+                            <th className="py-1 font-medium">Task</th>
+                            <th className="py-1 font-medium">Trạng thái</th>
+                            <th className="py-1 font-medium">
+                              Tác giả · Người duyệt
+                            </th>
+                            <th className="py-1" />
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-line">
+                          {level.tasks.map((t) => {
+                            const s = activeByTask.get(
+                              `${level.levelNo}|${t.text}`,
+                            );
+                            return (
+                              <tr key={t.taskId}>
+                                <td className="py-2 pr-3">{t.text}</td>
+                                <td className="py-2 pr-3">
+                                  {s ? (
+                                    <StatusBadge status={s.status} />
+                                  ) : (
+                                    <Badge>Chưa mở</Badge>
+                                  )}
+                                </td>
+                                <td className="py-2 pr-3 text-[13px] text-ink-muted">
+                                  {s
+                                    ? `${s.authorName ?? '—'} · ${s.reviewerName ?? '—'}`
+                                    : ''}
+                                </td>
+                                <td className="py-2 text-right">
+                                  {s ? (
+                                    <Button
+                                      variant="subtle"
+                                      size="sm"
+                                      onClick={() => setSelected(s.id)}
+                                    >
+                                      Chi tiết
+                                    </Button>
+                                  ) : (
+                                    <Button
+                                      size="sm"
+                                      variant="primary"
+                                      loading={opening === t.taskId}
+                                      onClick={() => open(t.taskId)}
+                                    >
+                                      Mở scenario
+                                    </Button>
+                                  )}
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </Card>
               ))}
-            </ul>
-          )}
-        </Card>
-      )}
+            </div>
+          )
+        ) : (
+          <Card title="Lượt duyệt quá hạn">
+            <ProblemAlert error={overdue.error} />
+            {overdue.loading ? (
+              <Loading />
+            ) : overdue.error ? null : (overdue.data ?? []).length === 0 ? (
+              <EmptyState title={<>Không có lượt duyệt nào quá hạn.</>} />
+            ) : (
+              <ul className="divide-y divide-line">
+                {(overdue.data ?? []).map((a) => (
+                  <li
+                    key={a.assignmentId}
+                    className="flex items-center justify-between gap-3 py-2"
+                  >
+                    <div>
+                      <p className="font-medium">{titleOf(a.scenarioId)}</p>
+                      <p className="text-[12px] text-danger">
+                        Hạn: {formatDateTime(a.deadlineAt)}
+                      </p>
+                    </div>
+                    <Button
+                      variant="subtle"
+                      size="sm"
+                      onClick={() => setSelected(a.scenarioId)}
+                    >
+                      Giao lại
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </Card>
+        )}
+      </TabPanel>
       {selected && (
         <ScenarioDrawer
           scenarioId={selected}
@@ -246,11 +262,15 @@ function ScenarioDrawer({
     onChanged();
   };
   return (
-    <Dialog
+    <Sheet
       open
       onClose={onClose}
       title={d ? d.taskTitle : 'Scenario'}
-      footer={<Button onClick={onClose}>Đóng</Button>}
+      footer={
+        <Button variant="subtle" onClick={onClose}>
+          Đóng
+        </Button>
+      }
     >
       {detail.loading && !d ? (
         <Loading />
@@ -258,7 +278,7 @@ function ScenarioDrawer({
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <StatusBadge status={d.status} />
-            <span className="text-[13px] text-muted">
+            <span className="text-[13px] text-ink-faint">
               L{d.levelNo} · cập nhật {formatDateTime(d.updatedAt)}
             </span>
           </div>
@@ -277,7 +297,7 @@ function ScenarioDrawer({
             (d.status === 'SUBMITTED' || d.status === 'IN_REVIEW') ? (
             <ReassignForm detail={d} onSaved={refresh} />
           ) : (
-            <p className="text-[13px] text-ink-2">
+            <p className="text-[13px] text-ink-muted">
               Tác giả: {d.authorName ?? '—'} · Người duyệt:{' '}
               {d.reviewerName ?? '—'}
             </p>
@@ -290,7 +310,7 @@ function ScenarioDrawer({
       ) : (
         <ProblemAlert error={detail.error} />
       )}
-    </Dialog>
+    </Sheet>
   );
 }
 
@@ -343,7 +363,7 @@ function AssignmentForm({
       <h3 className="mb-2 font-semibold">Giao việc</h3>
       <ProblemAlert error={error} />
       {saved && (
-        <p role="status" className="mb-2 text-[13px] text-good">
+        <p role="status" className="mb-2 text-[13px] text-success">
           Đã giao và gửi thông báo.
         </p>
       )}
@@ -370,7 +390,7 @@ function AssignmentForm({
       />
       <Button
         variant="primary"
-        busy={busy}
+        loading={busy}
         disabled={!authorId || !reviewerId}
         onClick={save}
       >
@@ -420,7 +440,9 @@ function ReassignForm({
       <h3 className="mb-1 font-semibold">Người duyệt</h3>
       <p className="mb-2 text-[13px]">
         {detail.reviewerName} · hạn {formatDateTime(a.deadlineAt)}
-        {a.overdue && <span className="font-medium text-bad"> · quá hạn</span>}
+        {a.overdue && (
+          <span className="font-medium text-danger"> · quá hạn</span>
+        )}
       </p>
       <ProblemAlert error={error} />
       <SelectField
@@ -438,7 +460,7 @@ function ReassignForm({
       />
       <Button
         variant="primary"
-        busy={busy}
+        loading={busy}
         disabled={!reviewerId}
         onClick={save}
       >

@@ -1,0 +1,535 @@
+{
+  "code": "ONET-53-2031.00",
+  "name": "Tiếp viên",
+  "nameEn": "Flight Attendants",
+  "group": "Vận tải và bốc dỡ hàng hoá",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Giám sát an toàn khoang hành khách. Phục vụ hành khách, hướng dẫn thông tin an toàn, phục vụ đồ ăn, đồ uống và xử lý sự cố khẩn cấp. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Làm trong môi trường ồn, gây khó chịu hoặc mất tập trung.",
+    "Chịu trách nhiệm trực tiếp về sức khoẻ và an toàn của người khác.",
+    "Thường xuyên gặp tình huống xung đột với người khác."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "32% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "45% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Trên xe, tàu, máy bay", "Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Hãng hàng không",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": ["Dịch vụ thương mại hàng không"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học viên tiếp viên hàng không",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra túi sơ cứu và thiết bị khẩn cấp, gồm bình chữa cháy và bình ô-xy, còn hoạt động tốt.",
+        "Thông báo và làm mẫu quy trình an toàn, khẩn cấp như cách dùng mặt nạ ô-xy, dây an toàn và áo phao.",
+        "Quan sát hành vi hành khách để phát hiện mối đe doạ tới an toàn của tổ bay và hành khách khác.",
+        "Đi dọc lối đi để kiểm tra hành khách tuân thủ quy định trước khi cất và hạ cánh.",
+        "Hướng dẫn và hỗ trợ hành khách trong tình huống khẩn cấp, như thoát khỏi máy bay sau khi hạ cánh khẩn cấp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+          "name": "Hỗ trợ hành khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Tiếp viên hạng phổ thông",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra túi sơ cứu và thiết bị khẩn cấp, gồm bình chữa cháy và bình ô-xy, còn hoạt động tốt.",
+        "Thông báo và làm mẫu quy trình an toàn, khẩn cấp như cách dùng mặt nạ ô-xy, dây an toàn và áo phao.",
+        "Quan sát hành vi hành khách để phát hiện mối đe doạ tới an toàn của tổ bay và hành khách khác.",
+        "Đi dọc lối đi để kiểm tra hành khách tuân thủ quy định trước khi cất và hạ cánh.",
+        "Hướng dẫn và hỗ trợ hành khách trong tình huống khẩn cấp, như thoát khỏi máy bay sau khi hạ cánh khẩn cấp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+          "name": "Hỗ trợ hành khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+          "name": "Hỗ trợ hành khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Tiếp viên hạng thương gia",
+      "years": "2–5",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra túi sơ cứu và thiết bị khẩn cấp, gồm bình chữa cháy và bình ô-xy, còn hoạt động tốt.",
+        "Thông báo và làm mẫu quy trình an toàn, khẩn cấp như cách dùng mặt nạ ô-xy, dây an toàn và áo phao.",
+        "Quan sát hành vi hành khách để phát hiện mối đe doạ tới an toàn của tổ bay và hành khách khác.",
+        "Đi dọc lối đi để kiểm tra hành khách tuân thủ quy định trước khi cất và hạ cánh.",
+        "Hướng dẫn và hỗ trợ hành khách trong tình huống khẩn cấp, như thoát khỏi máy bay sau khi hạ cánh khẩn cấp."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+          "name": "Hỗ trợ hành khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+          "name": "Hỗ trợ hành khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84fc058f-3a38-4a87-86c1-ce906660af31",
+          "name": "Cung cấp thông tin cho hành khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Tiếp viên trưởng",
+      "years": "5–10",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra túi sơ cứu và thiết bị khẩn cấp, gồm bình chữa cháy và bình ô-xy, còn hoạt động tốt.",
+        "Thông báo và làm mẫu quy trình an toàn, khẩn cấp như cách dùng mặt nạ ô-xy, dây an toàn và áo phao.",
+        "Quan sát hành vi hành khách để phát hiện mối đe doạ tới an toàn của tổ bay và hành khách khác.",
+        "Đi dọc lối đi để kiểm tra hành khách tuân thủ quy định trước khi cất và hạ cánh.",
+        "Hướng dẫn và hỗ trợ hành khách trong tình huống khẩn cấp, như thoát khỏi máy bay sau khi hạ cánh khẩn cấp."
+      ],
+      "focus": ["tri_tue_cam_xuc", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+          "name": "Hỗ trợ hành khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84fc058f-3a38-4a87-86c1-ce906660af31",
+          "name": "Cung cấp thông tin cho hành khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+          "name": "Hỗ trợ hành khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84fc058f-3a38-4a87-86c1-ce906660af31",
+          "name": "Cung cấp thông tin cho hành khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Tiếp viên trưởng huấn luyện/đội trưởng tiếp viên",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra túi sơ cứu và thiết bị khẩn cấp, gồm bình chữa cháy và bình ô-xy, còn hoạt động tốt.",
+        "Thông báo và làm mẫu quy trình an toàn, khẩn cấp như cách dùng mặt nạ ô-xy, dây an toàn và áo phao.",
+        "Quan sát hành vi hành khách để phát hiện mối đe doạ tới an toàn của tổ bay và hành khách khác.",
+        "Đi dọc lối đi để kiểm tra hành khách tuân thủ quy định trước khi cất và hạ cánh.",
+        "Hướng dẫn và hỗ trợ hành khách trong tình huống khẩn cấp, như thoát khỏi máy bay sau khi hạ cánh khẩn cấp."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+          "name": "Hỗ trợ hành khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84fc058f-3a38-4a87-86c1-ce906660af31",
+          "name": "Cung cấp thông tin cho hành khách",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+          "name": "Hỗ trợ hành khách",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+          "name": "Phục vụ bàn",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "name": "Duy trì dịch vụ khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+          "name": "Chào đón khách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/84fc058f-3a38-4a87-86c1-ce906660af31",
+          "name": "Cung cấp thông tin cho hành khách",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-53-2031.00",
+          "name": "Tiếp viên"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-53-1044.00",
+          "name": "Tổ trưởng tiếp viên"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-43-4081.00",
+      "name": "Lễ tân khách sạn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-3052.00",
+      "name": "Tài xế xe khách, xe buýt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-2021.00",
+      "name": "Kiểm soát viên không lưu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-49-3023.00",
+      "name": "Thợ sửa chữa ô tô",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 15000000,
+    "median": null,
+    "high": 80000000,
+    "byYears": [],
+    "source": "CareerLink, \"Mức lương tiếp viên hàng không\"",
+    "dataYear": "2026",
+    "note": "Tổng thu nhập; lương cứng 8–40tr.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/8488927c-e4ba-4781-8b97-453ca50e7552",
+      "name": "Hỗ trợ hành khách",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/42a6eff0-e9d9-423d-877b-e48fe91ff26f",
+      "name": "Phục vụ bàn",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+      "name": "Duy trì dịch vụ khách hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/26a6e6d2-1c9a-4d7e-8c04-5ba16d1f53da",
+      "name": "Chào đón khách",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+      "name": "Xử lý giao dịch tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/84fc058f-3a38-4a87-86c1-ce906660af31",
+      "name": "Cung cấp thông tin cho hành khách",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.238
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.673
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.6
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.369
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.296
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.035
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.237
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

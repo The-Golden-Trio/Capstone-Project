@@ -1,0 +1,948 @@
+{
+  "code": "ONET-25-4022.00",
+  "name": "Thủ thư, chuyên viên lưu trữ",
+  "nameEn": "Librarians and Media Collections Specialists",
+  "group": "Giáo dục và thư viện",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Quản lý và duy trì thư viện hoặc kho thông tin cho người dùng tra cứu hoặc mượn. Làm việc ở trường học, bảo tàng, doanh nghiệp, với nhiều loại tài liệu như sách, tạp chí, bản ghi âm, phim và cơ sở dữ liệu. Công việc có thể gồm bổ sung, biên mục, cho mượn tài liệu, và hỗ trợ người dùng tìm, sắp xếp thông tin, hướng dẫn cách tra cứu và vận hành thiết bị nghe nhìn. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần giúp đỡ, dạy bảo và chăm sóc người khác, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Công việc lặp lại nhiều.",
+    "Ngồi gần như cả ngày.",
+    "Khối lượng việc ngoài giờ dạy lớn: soạn bài, chấm bài, họp."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "11% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "7% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Thư viện, bảo tàng, lưu trữ công lập",
+      "weight": 60
+    },
+    {
+      "name": "Trường đại học, cao đẳng công lập",
+      "weight": 20
+    },
+    {
+      "name": "Cơ quan hành chính nhà nước",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Khoa học thư viện", "Lưu trữ học"],
+    "vocational": ["Thư viện", "Văn thư - Lưu trữ"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh/cộng tác viên thư viện",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Tra tài liệu tham khảo chuẩn, kể cả nguồn trực tuyến và internet, để trả lời câu hỏi của bạn đọc.",
+        "Phân tích yêu cầu của bạn đọc để xác định thông tin cần và giúp tìm hoặc cung cấp.",
+        "Giám sát hoạt động hằng ngày của thư viện, ngân sách, kế hoạch và nhân sự như tuyển, đào tạo, xếp lịch và đánh giá.",
+        "Lên kế hoạch và dạy các lớp về kỹ năng thông tin, sử dụng thư viện và công nghệ.",
+        "Mã hoá, phân loại và biên mục sách, ấn phẩm, phim, tài liệu nghe nhìn theo chủ đề hoặc khung phân loại chuẩn."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Thư viện viên (bậc 3, tương đương hạng III cũ)",
+      "years": "0–3",
+      "coreOutput": null,
+      "tasks": [
+        "Tra tài liệu tham khảo chuẩn, kể cả nguồn trực tuyến và internet, để trả lời câu hỏi của bạn đọc.",
+        "Phân tích yêu cầu của bạn đọc để xác định thông tin cần và giúp tìm hoặc cung cấp.",
+        "Giám sát hoạt động hằng ngày của thư viện, ngân sách, kế hoạch và nhân sự như tuyển, đào tạo, xếp lịch và đánh giá.",
+        "Lên kế hoạch và dạy các lớp về kỹ năng thông tin, sử dụng thư viện và công nghệ.",
+        "Mã hoá, phân loại và biên mục sách, ấn phẩm, phim, tài liệu nghe nhìn theo chủ đề hoặc khung phân loại chuẩn."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L4",
+      "title": "Thư viện viên phụ trách mảng nghiệp vụ",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Tra tài liệu tham khảo chuẩn, kể cả nguồn trực tuyến và internet, để trả lời câu hỏi của bạn đọc.",
+        "Phân tích yêu cầu của bạn đọc để xác định thông tin cần và giúp tìm hoặc cung cấp.",
+        "Giám sát hoạt động hằng ngày của thư viện, ngân sách, kế hoạch và nhân sự như tuyển, đào tạo, xếp lịch và đánh giá.",
+        "Lên kế hoạch và dạy các lớp về kỹ năng thông tin, sử dụng thư viện và công nghệ.",
+        "Mã hoá, phân loại và biên mục sách, ấn phẩm, phim, tài liệu nghe nhìn theo chủ đề hoặc khung phân loại chuẩn."
+      ],
+      "focus": ["giao_tiep_hop_tac", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+          "name": "Mua tài liệu mới cho thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+          "name": "Nghiên cứu học thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+          "name": "Tuân thủ quản trị thông tin",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Thư viện viên chính (bậc 4, tương đương hạng II cũ)",
+      "years": "6–10",
+      "coreOutput": null,
+      "tasks": [
+        "Tra tài liệu tham khảo chuẩn, kể cả nguồn trực tuyến và internet, để trả lời câu hỏi của bạn đọc.",
+        "Phân tích yêu cầu của bạn đọc để xác định thông tin cần và giúp tìm hoặc cung cấp.",
+        "Giám sát hoạt động hằng ngày của thư viện, ngân sách, kế hoạch và nhân sự như tuyển, đào tạo, xếp lịch và đánh giá.",
+        "Lên kế hoạch và dạy các lớp về kỹ năng thông tin, sử dụng thư viện và công nghệ.",
+        "Mã hoá, phân loại và biên mục sách, ấn phẩm, phim, tài liệu nghe nhìn theo chủ đề hoặc khung phân loại chuẩn."
+      ],
+      "focus": ["giao_tiep_hop_tac", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+          "name": "Mua tài liệu mới cho thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+          "name": "Nghiên cứu học thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+          "name": "Tuân thủ quản trị thông tin",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+          "name": "Mua tài liệu mới cho thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+          "name": "Nghiên cứu học thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+          "name": "Tuân thủ quản trị thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dc3d869-2a60-425f-8557-ad40eaaefc80",
+          "name": "Phân tích yêu cầu tra cứu của bạn đọc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng nghiệp vụ thư viện/lưu trữ",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Tra tài liệu tham khảo chuẩn, kể cả nguồn trực tuyến và internet, để trả lời câu hỏi của bạn đọc.",
+        "Phân tích yêu cầu của bạn đọc để xác định thông tin cần và giúp tìm hoặc cung cấp.",
+        "Giám sát hoạt động hằng ngày của thư viện, ngân sách, kế hoạch và nhân sự như tuyển, đào tạo, xếp lịch và đánh giá.",
+        "Lên kế hoạch và dạy các lớp về kỹ năng thông tin, sử dụng thư viện và công nghệ.",
+        "Mã hoá, phân loại và biên mục sách, ấn phẩm, phim, tài liệu nghe nhìn theo chủ đề hoặc khung phân loại chuẩn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+          "name": "Mua tài liệu mới cho thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+          "name": "Nghiên cứu học thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+          "name": "Tuân thủ quản trị thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dc3d869-2a60-425f-8557-ad40eaaefc80",
+          "name": "Phân tích yêu cầu tra cứu của bạn đọc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+          "name": "Mua tài liệu mới cho thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+          "name": "Nghiên cứu học thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+          "name": "Tuân thủ quản trị thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dc3d869-2a60-425f-8557-ad40eaaefc80",
+          "name": "Phân tích yêu cầu tra cứu của bạn đọc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Thư viện viên hạng I cũ (bậc 5), chuyên gia thư viện",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Tra tài liệu tham khảo chuẩn, kể cả nguồn trực tuyến và internet, để trả lời câu hỏi của bạn đọc.",
+        "Phân tích yêu cầu của bạn đọc để xác định thông tin cần và giúp tìm hoặc cung cấp.",
+        "Giám sát hoạt động hằng ngày của thư viện, ngân sách, kế hoạch và nhân sự như tuyển, đào tạo, xếp lịch và đánh giá.",
+        "Lên kế hoạch và dạy các lớp về kỹ năng thông tin, sử dụng thư viện và công nghệ.",
+        "Mã hoá, phân loại và biên mục sách, ấn phẩm, phim, tài liệu nghe nhìn theo chủ đề hoặc khung phân loại chuẩn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+          "name": "Mua tài liệu mới cho thư viện",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+          "name": "Nghiên cứu học thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+          "name": "Tuân thủ quản trị thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dc3d869-2a60-425f-8557-ad40eaaefc80",
+          "name": "Phân tích yêu cầu tra cứu của bạn đọc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+          "name": "Mua tài liệu mới cho thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+          "name": "Nghiên cứu học thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+          "name": "Tuân thủ quản trị thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dc3d869-2a60-425f-8557-ad40eaaefc80",
+          "name": "Phân tích yêu cầu tra cứu của bạn đọc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc thư viện (tỉnh, trường đại học)",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Tra tài liệu tham khảo chuẩn, kể cả nguồn trực tuyến và internet, để trả lời câu hỏi của bạn đọc.",
+        "Phân tích yêu cầu của bạn đọc để xác định thông tin cần và giúp tìm hoặc cung cấp.",
+        "Giám sát hoạt động hằng ngày của thư viện, ngân sách, kế hoạch và nhân sự như tuyển, đào tạo, xếp lịch và đánh giá.",
+        "Lên kế hoạch và dạy các lớp về kỹ năng thông tin, sử dụng thư viện và công nghệ.",
+        "Mã hoá, phân loại và biên mục sách, ấn phẩm, phim, tài liệu nghe nhìn theo chủ đề hoặc khung phân loại chuẩn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 4,
+        "tri_tue_cam_xuc": 3,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+          "name": "Mua tài liệu mới cho thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+          "name": "Nghiên cứu học thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+          "name": "Tuân thủ quản trị thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dc3d869-2a60-425f-8557-ad40eaaefc80",
+          "name": "Phân tích yêu cầu tra cứu của bạn đọc",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+          "name": "Quản lý bộ sưu tập",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+          "name": "Quản lý khách hàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+          "name": "Cung cấp thông tin thư viện",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+          "name": "Quản lý thư viện số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+          "name": "Phân loại tài liệu thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+          "name": "Sắp xếp mượn sách liên thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+          "name": "Mua tài liệu mới cho thư viện",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+          "name": "Nghiên cứu học thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+          "name": "Tuân thủ quản trị thông tin",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7dc3d869-2a60-425f-8557-ad40eaaefc80",
+          "name": "Phân tích yêu cầu tra cứu của bạn đọc",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-25-4022.00",
+          "name": "Thủ thư, chuyên viên lưu trữ"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9032.00",
+          "name": "Quản lý giáo dục (hiệu trưởng, trưởng khoa)"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-43-6014.00",
+      "name": "Nhân viên hành chính, thư ký",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-1081.00",
+      "name": "Giảng viên đại học, cao đẳng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-9031.00",
+      "name": "Chuyên viên phát triển chương trình đào tạo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-3041.00",
+      "name": "Nhà nghiên cứu khoa học xã hội",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-25-4012.00",
+      "name": "Chuyên viên bảo tàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 4706000,
+    "median": 5920000,
+    "high": 19102000,
+    "byYears": [],
+    "source": "Thông tư 02/2022/TT-BVHTTDL × lương cơ sở 2,53tr",
+    "dataYear": "2026",
+    "note": "Thủ thư ở thư viện công lập.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 15,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/6c8ed0d1-4fc9-41a6-9587-6dbc82cabfc3",
+      "name": "Quản lý bộ sưu tập",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/91306a20-9b81-4f3d-97eb-f5368b607da7",
+      "name": "Quản lý khách hàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/87b3e2f5-ff05-489a-a13b-9e5b3aff5fee",
+      "name": "Cung cấp thông tin thư viện",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/14525f24-afb4-4a4e-80a7-facf27080cdd",
+      "name": "Quản lý thư viện số",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bcdfc41b-1fca-43ee-b07b-2b574dae763d",
+      "name": "Phân loại tài liệu thư viện",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/72e36936-3eb4-498b-8bf0-1f2cbe145447",
+      "name": "Sắp xếp mượn sách liên thư viện",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ffe9b8ef-f32a-42a9-a256-38e7967fbe23",
+      "name": "Mua tài liệu mới cho thư viện",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/485cdafb-3c7f-4104-ab1c-773e6131a39a",
+      "name": "Nghiên cứu học thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9a0d0abc-010d-440b-8242-7e31510471ba",
+      "name": "Tuân thủ quản trị thông tin",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7dc3d869-2a60-425f-8557-ad40eaaefc80",
+      "name": "Phân tích yêu cầu tra cứu của bạn đọc",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.325
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.274
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.115
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.044
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.203
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.362
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.434
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

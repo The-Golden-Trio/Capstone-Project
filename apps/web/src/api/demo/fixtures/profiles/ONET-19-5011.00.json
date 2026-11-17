@@ -1,0 +1,781 @@
+{
+  "code": "ONET-19-5011.00",
+  "name": "Chuyên viên an toàn lao động (HSE)",
+  "nameEn": "Occupational Health and Safety Specialists",
+  "group": "Khoa học tự nhiên và xã hội",
+  "regionId": "cong_nghe",
+  "isIt": false,
+  "summary": "Xem xét, đánh giá và phân tích môi trường làm việc, thiết kế chương trình và quy trình để kiểm soát, loại bỏ, phòng ngừa bệnh tật hay chấn thương do tác nhân hoá học, vật lý, sinh học hoặc yếu tố công thái học. Có thể thanh tra và buộc tuân thủ luật về an toàn, sức khoẻ. Có thể làm cho khu vực nhà nước hoặc tư nhân. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "Làm trong nhà nhưng không có kiểm soát nhiệt độ hay thông gió."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Thường ngồi trong xe hoặc cabin máy.",
+    "63% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "54% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Công trường của nhà thầu xây dựng",
+      "weight": 50
+    },
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 50
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Quản lý an toàn và sức khỏe nghề nghiệp",
+      "An toàn, vệ sinh lao động"
+    ],
+    "vocational": ["An toàn, vệ sinh lao động", "Bảo hộ lao động"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh an toàn lao động",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Đề xuất biện pháp bảo vệ người lao động khỏi cách làm, quy trình hoặc vật liệu có thể gây nguy hiểm.",
+        "Xây dựng hoặc duy trì chương trình vệ sinh lao động như khảo sát tiếng ồn, giám sát không khí liên tục, khảo sát thông gió hoặc kế hoạch quản lý amiăng.",
+        "Ra lệnh tạm dừng hoạt động đe doạ sức khoẻ hoặc an toàn của người lao động.",
+        "Điều tra tai nạn để tìm nguyên nhân và cách phòng ngừa trong tương lai.",
+        "Kiểm tra, đánh giá nơi làm việc, thiết bị và cách làm để bảo đảm tuân thủ tiêu chuẩn an toàn và quy định nhà nước."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên an toàn (HSE Officer)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Đề xuất biện pháp bảo vệ người lao động khỏi cách làm, quy trình hoặc vật liệu có thể gây nguy hiểm.",
+        "Xây dựng hoặc duy trì chương trình vệ sinh lao động như khảo sát tiếng ồn, giám sát không khí liên tục, khảo sát thông gió hoặc kế hoạch quản lý amiăng.",
+        "Ra lệnh tạm dừng hoạt động đe doạ sức khoẻ hoặc an toàn của người lao động.",
+        "Điều tra tai nạn để tìm nguyên nhân và cách phòng ngừa trong tương lai.",
+        "Kiểm tra, đánh giá nơi làm việc, thiết bị và cách làm để bảo đảm tuân thủ tiêu chuẩn an toàn và quy định nhà nước."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+          "name": "Luật an toàn, sức khoẻ và vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+          "name": "Tư vấn quản lý xung đột",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "name": "Lập đánh giá rủi ro",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên HSE",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Đề xuất biện pháp bảo vệ người lao động khỏi cách làm, quy trình hoặc vật liệu có thể gây nguy hiểm.",
+        "Xây dựng hoặc duy trì chương trình vệ sinh lao động như khảo sát tiếng ồn, giám sát không khí liên tục, khảo sát thông gió hoặc kế hoạch quản lý amiăng.",
+        "Ra lệnh tạm dừng hoạt động đe doạ sức khoẻ hoặc an toàn của người lao động.",
+        "Điều tra tai nạn để tìm nguyên nhân và cách phòng ngừa trong tương lai.",
+        "Kiểm tra, đánh giá nơi làm việc, thiết bị và cách làm để bảo đảm tuân thủ tiêu chuẩn an toàn và quy định nhà nước."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+          "name": "Luật an toàn, sức khoẻ và vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+          "name": "Tư vấn quản lý xung đột",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "name": "Lập đánh giá rủi ro",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+          "name": "Luật an toàn, sức khoẻ và vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+          "name": "Tư vấn quản lý xung đột",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "name": "Lập đánh giá rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59ea80e1-463a-4dba-82c6-d0b6d577d532",
+          "name": "Bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66ea3249-a079-45ad-b4f2-e6a79b59f10f",
+          "name": "Đồ bảo hộ cá nhân",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Chuyên viên HSE chính",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Đề xuất biện pháp bảo vệ người lao động khỏi cách làm, quy trình hoặc vật liệu có thể gây nguy hiểm.",
+        "Xây dựng hoặc duy trì chương trình vệ sinh lao động như khảo sát tiếng ồn, giám sát không khí liên tục, khảo sát thông gió hoặc kế hoạch quản lý amiăng.",
+        "Ra lệnh tạm dừng hoạt động đe doạ sức khoẻ hoặc an toàn của người lao động.",
+        "Điều tra tai nạn để tìm nguyên nhân và cách phòng ngừa trong tương lai.",
+        "Kiểm tra, đánh giá nơi làm việc, thiết bị và cách làm để bảo đảm tuân thủ tiêu chuẩn an toàn và quy định nhà nước."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "giao_tiep_hop_tac": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+          "name": "Luật an toàn, sức khoẻ và vệ sinh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+          "name": "Tư vấn quản lý xung đột",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "name": "Lập đánh giá rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59ea80e1-463a-4dba-82c6-d0b6d577d532",
+          "name": "Bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66ea3249-a079-45ad-b4f2-e6a79b59f10f",
+          "name": "Đồ bảo hộ cá nhân",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+          "name": "Luật an toàn, sức khoẻ và vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+          "name": "Tư vấn quản lý xung đột",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "name": "Lập đánh giá rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59ea80e1-463a-4dba-82c6-d0b6d577d532",
+          "name": "Bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66ea3249-a079-45ad-b4f2-e6a79b59f10f",
+          "name": "Đồ bảo hộ cá nhân",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Giám sát HSE (HSE Supervisor)",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Đề xuất biện pháp bảo vệ người lao động khỏi cách làm, quy trình hoặc vật liệu có thể gây nguy hiểm.",
+        "Xây dựng hoặc duy trì chương trình vệ sinh lao động như khảo sát tiếng ồn, giám sát không khí liên tục, khảo sát thông gió hoặc kế hoạch quản lý amiăng.",
+        "Ra lệnh tạm dừng hoạt động đe doạ sức khoẻ hoặc an toàn của người lao động.",
+        "Điều tra tai nạn để tìm nguyên nhân và cách phòng ngừa trong tương lai.",
+        "Kiểm tra, đánh giá nơi làm việc, thiết bị và cách làm để bảo đảm tuân thủ tiêu chuẩn an toàn và quy định nhà nước."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "giao_tiep_hop_tac"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "tu_duy_giai_quyet_van_de": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+          "name": "Luật an toàn, sức khoẻ và vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+          "name": "Tư vấn quản lý xung đột",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "name": "Lập đánh giá rủi ro",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59ea80e1-463a-4dba-82c6-d0b6d577d532",
+          "name": "Bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66ea3249-a079-45ad-b4f2-e6a79b59f10f",
+          "name": "Đồ bảo hộ cá nhân",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+          "name": "Luật an toàn, sức khoẻ và vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+          "name": "Tư vấn quản lý xung đột",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "name": "Lập đánh giá rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59ea80e1-463a-4dba-82c6-d0b6d577d532",
+          "name": "Bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66ea3249-a079-45ad-b4f2-e6a79b59f10f",
+          "name": "Đồ bảo hộ cá nhân",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng phòng HSE (HSE Manager)",
+      "years": "8+",
+      "coreOutput": null,
+      "tasks": [
+        "Đề xuất biện pháp bảo vệ người lao động khỏi cách làm, quy trình hoặc vật liệu có thể gây nguy hiểm.",
+        "Xây dựng hoặc duy trì chương trình vệ sinh lao động như khảo sát tiếng ồn, giám sát không khí liên tục, khảo sát thông gió hoặc kế hoạch quản lý amiăng.",
+        "Ra lệnh tạm dừng hoạt động đe doạ sức khoẻ hoặc an toàn của người lao động.",
+        "Điều tra tai nạn để tìm nguyên nhân và cách phòng ngừa trong tương lai.",
+        "Kiểm tra, đánh giá nơi làm việc, thiết bị và cách làm để bảo đảm tuân thủ tiêu chuẩn an toàn và quy định nhà nước."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "giao_tiep_hop_tac": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+          "name": "Luật an toàn, sức khoẻ và vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+          "name": "Tư vấn quản lý xung đột",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "name": "Lập đánh giá rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59ea80e1-463a-4dba-82c6-d0b6d577d532",
+          "name": "Bản vẽ kỹ thuật",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66ea3249-a079-45ad-b4f2-e6a79b59f10f",
+          "name": "Đồ bảo hộ cá nhân",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+          "name": "Luật môi trường",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+          "name": "Tư vấn quản lý rủi ro",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+          "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+          "name": "Luật an toàn, sức khoẻ và vệ sinh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+          "name": "Tư vấn quản lý xung đột",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "name": "Lập đánh giá rủi ro",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+          "name": "Tiêu chuẩn chất lượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/59ea80e1-463a-4dba-82c6-d0b6d577d532",
+          "name": "Bản vẽ kỹ thuật",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/66ea3249-a079-45ad-b4f2-e6a79b59f10f",
+          "name": "Đồ bảo hộ cá nhân",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-19-5011.00",
+          "name": "Chuyên viên an toàn lao động (HSE)"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9041.00",
+          "name": "Quản lý kỹ thuật và nghiên cứu"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-17-2081.00",
+      "name": "Kỹ sư, chuyên viên môi trường",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-2011.00",
+      "name": "Lính cứu hoả, cứu nạn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-17-2051.00",
+      "name": "Kỹ sư xây dựng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-2022.00",
+      "name": "Kiểm lâm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 12900000,
+    "median": 15000000,
+    "high": 17500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 170,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/6f5850ea-5785-4e2c-b062-743066fd5bdb",
+      "name": "Luật môi trường",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0efbe2dc-2770-47ec-b8f4-d1bdff6ac0a4",
+      "name": "Tư vấn quản lý rủi ro",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ef1b72a4-7f39-47e8-985a-a541db616dcf",
+      "name": "Hướng dẫn nhân viên về rủi ro nghề nghiệp",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2dbdd054-896a-4167-8f11-e9b9ebcf199d",
+      "name": "Luật an toàn, sức khoẻ và vệ sinh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9091c8e5-9357-4c29-bceb-ddb1792c22e8",
+      "name": "Tư vấn quản lý xung đột",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+      "name": "Lập đánh giá rủi ro",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8d4271ca-c9fd-40b3-875f-15f78332a49e",
+      "name": "Tiêu chuẩn chất lượng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/59ea80e1-463a-4dba-82c6-d0b6d577d532",
+      "name": "Bản vẽ kỹ thuật",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/66ea3249-a079-45ad-b4f2-e6a79b59f10f",
+      "name": "Đồ bảo hộ cá nhân",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 1.067
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.838
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.803
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.727
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.566
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.449
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.249
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

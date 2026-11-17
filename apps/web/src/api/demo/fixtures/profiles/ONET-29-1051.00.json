@@ -1,0 +1,951 @@
+{
+  "code": "ONET-29-1051.00",
+  "name": "Dược sĩ",
+  "nameEn": "Pharmacists",
+  "group": "Y tế chuyên môn và kỹ thuật y tế",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Cấp phát thuốc theo đơn của bác sĩ và nhân viên y tế, hướng dẫn người bệnh về thuốc và cách dùng. Có thể tư vấn cho bác sĩ về lựa chọn thuốc, liều dùng, tương tác và tác dụng phụ. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần giúp đỡ, dạy bảo và chăm sóc người khác, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Sai sót có thể gây hậu quả nghiêm trọng.",
+    "Thường xuyên gặp tình huống xung đột với người khác."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Đứng phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "18% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "9% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Bệnh viện, phòng khám, cơ sở chăm sóc"],
+  "environments": [
+    {
+      "name": "Nhà thuốc, chuỗi nhà thuốc",
+      "weight": 60
+    },
+    {
+      "name": "Bệnh viện công",
+      "weight": 25
+    },
+    {
+      "name": "Nhà máy doanh nghiệp trong nước",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Dược học"],
+    "vocational": ["Dược học", "Kỹ thuật dược"],
+    "licence": "Chứng chỉ hành nghề dược — Luật Dược số 105/2016/QH13, sửa đổi bởi Luật số 44/2024/QH15"
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Sinh viên dược thực tập",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn thuốc để bảo đảm chính xác, xác định thành phần cần và đánh giá sự phù hợp.",
+        "Phối hợp với nhân viên y tế khác để lập kế hoạch, theo dõi và đánh giá chất lượng, hiệu quả của thuốc hoặc phác đồ, tư vấn về cách dùng và đặc tính thuốc.",
+        "Làm việc ở bệnh viện, phòng khám hoặc tổ chức bảo hiểm y tế: cấp phát thuốc, tư vấn cho nhóm điều trị hoặc chuyên về một mảng điều trị như ung bướu.",
+        "Tư vấn về tương tác thuốc, tác dụng phụ, liều dùng và cách bảo quản thuốc.",
+        "Hỗ trợ chuyên sâu giúp người bệnh kiểm soát bệnh như tiểu đường, hen, cai thuốc lá hoặc tăng huyết áp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Dược sĩ mới (đang thực hành)",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn thuốc để bảo đảm chính xác, xác định thành phần cần và đánh giá sự phù hợp.",
+        "Phối hợp với nhân viên y tế khác để lập kế hoạch, theo dõi và đánh giá chất lượng, hiệu quả của thuốc hoặc phác đồ, tư vấn về cách dùng và đặc tính thuốc.",
+        "Làm việc ở bệnh viện, phòng khám hoặc tổ chức bảo hiểm y tế: cấp phát thuốc, tư vấn cho nhóm điều trị hoặc chuyên về một mảng điều trị như ung bướu.",
+        "Tư vấn về tương tác thuốc, tác dụng phụ, liều dùng và cách bảo quản thuốc.",
+        "Hỗ trợ chuyên sâu giúp người bệnh kiểm soát bệnh như tiểu đường, hen, cai thuốc lá hoặc tăng huyết áp."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Dược sĩ hạng III / dược sĩ có chứng chỉ hành nghề",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn thuốc để bảo đảm chính xác, xác định thành phần cần và đánh giá sự phù hợp.",
+        "Phối hợp với nhân viên y tế khác để lập kế hoạch, theo dõi và đánh giá chất lượng, hiệu quả của thuốc hoặc phác đồ, tư vấn về cách dùng và đặc tính thuốc.",
+        "Làm việc ở bệnh viện, phòng khám hoặc tổ chức bảo hiểm y tế: cấp phát thuốc, tư vấn cho nhóm điều trị hoặc chuyên về một mảng điều trị như ung bướu.",
+        "Tư vấn về tương tác thuốc, tác dụng phụ, liều dùng và cách bảo quản thuốc.",
+        "Hỗ trợ chuyên sâu giúp người bệnh kiểm soát bệnh như tiểu đường, hen, cai thuốc lá hoặc tăng huyết áp."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+          "name": "Lưu hồ sơ nhà thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+          "name": "Theo dõi nồng độ thuốc điều trị",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Dược sĩ phụ trách chuyên môn / dược sĩ lâm sàng",
+      "years": "3–7",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn thuốc để bảo đảm chính xác, xác định thành phần cần và đánh giá sự phù hợp.",
+        "Phối hợp với nhân viên y tế khác để lập kế hoạch, theo dõi và đánh giá chất lượng, hiệu quả của thuốc hoặc phác đồ, tư vấn về cách dùng và đặc tính thuốc.",
+        "Làm việc ở bệnh viện, phòng khám hoặc tổ chức bảo hiểm y tế: cấp phát thuốc, tư vấn cho nhóm điều trị hoặc chuyên về một mảng điều trị như ung bướu.",
+        "Tư vấn về tương tác thuốc, tác dụng phụ, liều dùng và cách bảo quản thuốc.",
+        "Hỗ trợ chuyên sâu giúp người bệnh kiểm soát bệnh như tiểu đường, hen, cai thuốc lá hoặc tăng huyết áp."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+          "name": "Lưu hồ sơ nhà thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+          "name": "Theo dõi nồng độ thuốc điều trị",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+          "name": "Lưu hồ sơ nhà thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+          "name": "Theo dõi nồng độ thuốc điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Dược sĩ chính (hạng II)",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn thuốc để bảo đảm chính xác, xác định thành phần cần và đánh giá sự phù hợp.",
+        "Phối hợp với nhân viên y tế khác để lập kế hoạch, theo dõi và đánh giá chất lượng, hiệu quả của thuốc hoặc phác đồ, tư vấn về cách dùng và đặc tính thuốc.",
+        "Làm việc ở bệnh viện, phòng khám hoặc tổ chức bảo hiểm y tế: cấp phát thuốc, tư vấn cho nhóm điều trị hoặc chuyên về một mảng điều trị như ung bướu.",
+        "Tư vấn về tương tác thuốc, tác dụng phụ, liều dùng và cách bảo quản thuốc.",
+        "Hỗ trợ chuyên sâu giúp người bệnh kiểm soát bệnh như tiểu đường, hen, cai thuốc lá hoặc tăng huyết áp."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+          "name": "Lưu hồ sơ nhà thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+          "name": "Theo dõi nồng độ thuốc điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+          "name": "Lưu hồ sơ nhà thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+          "name": "Theo dõi nồng độ thuốc điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng khoa dược / quản lý chuyên môn chuỗi nhà thuốc",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn thuốc để bảo đảm chính xác, xác định thành phần cần và đánh giá sự phù hợp.",
+        "Phối hợp với nhân viên y tế khác để lập kế hoạch, theo dõi và đánh giá chất lượng, hiệu quả của thuốc hoặc phác đồ, tư vấn về cách dùng và đặc tính thuốc.",
+        "Làm việc ở bệnh viện, phòng khám hoặc tổ chức bảo hiểm y tế: cấp phát thuốc, tư vấn cho nhóm điều trị hoặc chuyên về một mảng điều trị như ung bướu.",
+        "Tư vấn về tương tác thuốc, tác dụng phụ, liều dùng và cách bảo quản thuốc.",
+        "Hỗ trợ chuyên sâu giúp người bệnh kiểm soát bệnh như tiểu đường, hen, cai thuốc lá hoặc tăng huyết áp."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+          "name": "Lưu hồ sơ nhà thuốc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+          "name": "Theo dõi nồng độ thuốc điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+          "name": "Lưu hồ sơ nhà thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+          "name": "Theo dõi nồng độ thuốc điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Dược sĩ cao cấp (hạng I)",
+      "years": "15+",
+      "coreOutput": null,
+      "tasks": [
+        "Kiểm tra đơn thuốc để bảo đảm chính xác, xác định thành phần cần và đánh giá sự phù hợp.",
+        "Phối hợp với nhân viên y tế khác để lập kế hoạch, theo dõi và đánh giá chất lượng, hiệu quả của thuốc hoặc phác đồ, tư vấn về cách dùng và đặc tính thuốc.",
+        "Làm việc ở bệnh viện, phòng khám hoặc tổ chức bảo hiểm y tế: cấp phát thuốc, tư vấn cho nhóm điều trị hoặc chuyên về một mảng điều trị như ung bướu.",
+        "Tư vấn về tương tác thuốc, tác dụng phụ, liều dùng và cách bảo quản thuốc.",
+        "Hỗ trợ chuyên sâu giúp người bệnh kiểm soát bệnh như tiểu đường, hen, cai thuốc lá hoặc tăng huyết áp."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 4,
+        "tri_tue_cam_xuc": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+          "name": "Lưu hồ sơ nhà thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+          "name": "Theo dõi nồng độ thuốc điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+          "name": "Tuân thủ hướng dẫn lâm sàng",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+          "name": "Tương tác với người bệnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+          "name": "Tư vấn thuốc cho người bệnh",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+          "name": "Xử lý tình huống cấp cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+          "name": "Cấp phát thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+          "name": "Giáo dục sức khoẻ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+          "name": "Lưu hồ sơ nhà thuốc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+          "name": "Góp phần chăm sóc y tế liên tục",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+          "name": "Theo dõi nồng độ thuốc điều trị",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+          "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-29-1051.00",
+          "name": "Dược sĩ"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-9111.00",
+          "name": "Quản lý bệnh viện, cơ sở y tế"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-29-1215.00",
+      "name": "Bác sĩ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-31-9092.00",
+      "name": "Trợ lý y khoa",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1141.00",
+      "name": "Điều dưỡng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1131.00",
+      "name": "Bác sĩ thú y",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-2011.00",
+      "name": "Kỹ thuật viên xét nghiệm",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 11000000,
+    "median": 13500000,
+    "high": 17500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 97,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4",
+      "name": "Tuân thủ hướng dẫn lâm sàng",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf",
+      "name": "Tương tác với người bệnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1024388a-5601-4d18-bae9-4531a12b774b",
+      "name": "Tư vấn thuốc cho người bệnh",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e",
+      "name": "Xử lý tình huống cấp cứu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/46b391a6-bbd9-4e80-afb0-ad205101af59",
+      "name": "Cấp phát thuốc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113",
+      "name": "Giáo dục sức khoẻ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c2ce5a8e-7885-48b7-81fe-3e8a057c47a9",
+      "name": "Lưu hồ sơ nhà thuốc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc",
+      "name": "Góp phần chăm sóc y tế liên tục",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f83cc89f-30a3-4674-a4ce-a1be2a3c0bd2",
+      "name": "Theo dõi nồng độ thuốc điều trị",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8",
+      "name": "Tư vấn đồng thuận có hiểu biết cho người bệnh",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.986
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.808
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.523
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.294
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.058
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.184
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.188
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

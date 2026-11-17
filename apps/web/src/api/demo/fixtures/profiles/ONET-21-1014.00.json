@@ -1,0 +1,915 @@
+{
+  "code": "ONET-21-1014.00",
+  "name": "Chuyên viên tư vấn tâm lý",
+  "nameEn": "Mental Health Counselors",
+  "group": "Cộng đồng và công tác xã hội",
+  "regionId": "suc_khoe",
+  "isIt": false,
+  "summary": "Tư vấn cho cá nhân và nhóm để nâng cao sức khoẻ tâm thần và cảm xúc, chú trọng phòng ngừa. Có thể giúp người gặp nhiều vấn đề như nghiện; khó khăn gia đình, nuôi dạy con, hôn nhân; quản lý căng thẳng; lòng tự trọng hoặc tuổi già. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích giúp đỡ, dạy bảo và chăm sóc người khác. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Ngồi gần như cả ngày.",
+    "Thường xuyên gặp tình huống xung đột với người khác.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc độc lập nhiều hơn làm theo nhóm.",
+    "Được tự quyết nhiều trong công việc.",
+    "21% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "18% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Phòng tham vấn, trị liệu tâm lý tư nhân",
+      "weight": 60
+    },
+    {
+      "name": "Trung tâm công tác xã hội, bảo trợ xã hội công lập",
+      "weight": 20
+    },
+    {
+      "name": "Tổ chức phi chính phủ, dự án phát triển",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": ["Tâm lý học", "Tâm lý học lâm sàng"],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh tham vấn tâm lý (có giám sát)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo mật hồ sơ điều trị của thân chủ.",
+        "Khuyến khích thân chủ bày tỏ cảm xúc và chia sẻ những gì đang xảy ra, giúp họ hiểu rõ hơn về bản thân và các mối quan hệ.",
+        "Tư vấn cho thân chủ, theo từng người hoặc theo nhóm, để giúp họ vượt qua sự phụ thuộc, thích nghi với cuộc sống hoặc thay đổi.",
+        "Can thiệp khủng hoảng để bảo đảm an toàn cho người bệnh và người xung quanh.",
+        "Điền và lưu giữ giấy tờ liên quan đến thân chủ, gồm biểu mẫu bắt buộc, hồ sơ chẩn đoán và ghi chú tiến triển."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Chuyên viên tham vấn tâm lý mới",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo mật hồ sơ điều trị của thân chủ.",
+        "Khuyến khích thân chủ bày tỏ cảm xúc và chia sẻ những gì đang xảy ra, giúp họ hiểu rõ hơn về bản thân và các mối quan hệ.",
+        "Tư vấn cho thân chủ, theo từng người hoặc theo nhóm, để giúp họ vượt qua sự phụ thuộc, thích nghi với cuộc sống hoặc thay đổi.",
+        "Can thiệp khủng hoảng để bảo đảm an toàn cho người bệnh và người xung quanh.",
+        "Điền và lưu giữ giấy tờ liên quan đến thân chủ, gồm biểu mẫu bắt buộc, hồ sơ chẩn đoán và ghi chú tiến triển."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên tư vấn tâm lý",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo mật hồ sơ điều trị của thân chủ.",
+        "Khuyến khích thân chủ bày tỏ cảm xúc và chia sẻ những gì đang xảy ra, giúp họ hiểu rõ hơn về bản thân và các mối quan hệ.",
+        "Tư vấn cho thân chủ, theo từng người hoặc theo nhóm, để giúp họ vượt qua sự phụ thuộc, thích nghi với cuộc sống hoặc thay đổi.",
+        "Can thiệp khủng hoảng để bảo đảm an toàn cho người bệnh và người xung quanh.",
+        "Điền và lưu giữ giấy tờ liên quan đến thân chủ, gồm biểu mẫu bắt buộc, hồ sơ chẩn đoán và ghi chú tiến triển."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+          "name": "Giữ khách quan về cảm xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+          "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "name": "Giúp thân chủ ra quyết định khi tham vấn",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Người hành nghề tâm lý lâm sàng có giấy phép (nếu làm trong cơ sở khám chữa bệnh)",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo mật hồ sơ điều trị của thân chủ.",
+        "Khuyến khích thân chủ bày tỏ cảm xúc và chia sẻ những gì đang xảy ra, giúp họ hiểu rõ hơn về bản thân và các mối quan hệ.",
+        "Tư vấn cho thân chủ, theo từng người hoặc theo nhóm, để giúp họ vượt qua sự phụ thuộc, thích nghi với cuộc sống hoặc thay đổi.",
+        "Can thiệp khủng hoảng để bảo đảm an toàn cho người bệnh và người xung quanh.",
+        "Điền và lưu giữ giấy tờ liên quan đến thân chủ, gồm biểu mẫu bắt buộc, hồ sơ chẩn đoán và ghi chú tiến triển."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+          "name": "Giữ khách quan về cảm xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+          "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "name": "Giúp thân chủ ra quyết định khi tham vấn",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+          "name": "Giữ khách quan về cảm xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+          "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "name": "Giúp thân chủ ra quyết định khi tham vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f8a2712-d20c-4e5f-b34a-738f55486aa0",
+          "name": "Áp dụng chuẩn chất lượng dịch vụ xã hội",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Chuyên viên tâm lý cao cấp",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo mật hồ sơ điều trị của thân chủ.",
+        "Khuyến khích thân chủ bày tỏ cảm xúc và chia sẻ những gì đang xảy ra, giúp họ hiểu rõ hơn về bản thân và các mối quan hệ.",
+        "Tư vấn cho thân chủ, theo từng người hoặc theo nhóm, để giúp họ vượt qua sự phụ thuộc, thích nghi với cuộc sống hoặc thay đổi.",
+        "Can thiệp khủng hoảng để bảo đảm an toàn cho người bệnh và người xung quanh.",
+        "Điền và lưu giữ giấy tờ liên quan đến thân chủ, gồm biểu mẫu bắt buộc, hồ sơ chẩn đoán và ghi chú tiến triển."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+          "name": "Giữ khách quan về cảm xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+          "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "name": "Giúp thân chủ ra quyết định khi tham vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f8a2712-d20c-4e5f-b34a-738f55486aa0",
+          "name": "Áp dụng chuẩn chất lượng dịch vụ xã hội",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+          "name": "Giữ khách quan về cảm xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+          "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "name": "Giúp thân chủ ra quyết định khi tham vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f8a2712-d20c-4e5f-b34a-738f55486aa0",
+          "name": "Áp dụng chuẩn chất lượng dịch vụ xã hội",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Giám sát chuyên môn (clinical supervisor)",
+      "years": "7–10",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo mật hồ sơ điều trị của thân chủ.",
+        "Khuyến khích thân chủ bày tỏ cảm xúc và chia sẻ những gì đang xảy ra, giúp họ hiểu rõ hơn về bản thân và các mối quan hệ.",
+        "Tư vấn cho thân chủ, theo từng người hoặc theo nhóm, để giúp họ vượt qua sự phụ thuộc, thích nghi với cuộc sống hoặc thay đổi.",
+        "Can thiệp khủng hoảng để bảo đảm an toàn cho người bệnh và người xung quanh.",
+        "Điền và lưu giữ giấy tờ liên quan đến thân chủ, gồm biểu mẫu bắt buộc, hồ sơ chẩn đoán và ghi chú tiến triển."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+          "name": "Giữ khách quan về cảm xúc",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+          "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "name": "Giúp thân chủ ra quyết định khi tham vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f8a2712-d20c-4e5f-b34a-738f55486aa0",
+          "name": "Áp dụng chuẩn chất lượng dịch vụ xã hội",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+          "name": "Giữ khách quan về cảm xúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+          "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "name": "Giúp thân chủ ra quyết định khi tham vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f8a2712-d20c-4e5f-b34a-738f55486aa0",
+          "name": "Áp dụng chuẩn chất lượng dịch vụ xã hội",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Giám đốc chuyên môn/chủ phòng tham vấn tâm lý",
+      "years": "10+",
+      "coreOutput": null,
+      "tasks": [
+        "Bảo mật hồ sơ điều trị của thân chủ.",
+        "Khuyến khích thân chủ bày tỏ cảm xúc và chia sẻ những gì đang xảy ra, giúp họ hiểu rõ hơn về bản thân và các mối quan hệ.",
+        "Tư vấn cho thân chủ, theo từng người hoặc theo nhóm, để giúp họ vượt qua sự phụ thuộc, thích nghi với cuộc sống hoặc thay đổi.",
+        "Can thiệp khủng hoảng để bảo đảm an toàn cho người bệnh và người xung quanh.",
+        "Điền và lưu giữ giấy tờ liên quan đến thân chủ, gồm biểu mẫu bắt buộc, hồ sơ chẩn đoán và ghi chú tiến triển."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 4,
+        "giao_tiep_hop_tac": 3,
+        "thich_ung_hoc_hoi": 3,
+        "dao_duc_chuyen_nghiep": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+          "name": "Giữ khách quan về cảm xúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+          "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "name": "Giúp thân chủ ra quyết định khi tham vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f8a2712-d20c-4e5f-b34a-738f55486aa0",
+          "name": "Áp dụng chuẩn chất lượng dịch vụ xã hội",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+          "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+          "name": "Tham vấn xã hội",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+          "name": "Giáo dục tâm lý",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+          "name": "Làm việc theo nguyên tắc công bằng xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+          "name": "Ứng phó cảm xúc cực đoan",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+          "name": "Học tập liên tục trong công tác xã hội",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+          "name": "Giữ khách quan về cảm xúc",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+          "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "name": "Giúp thân chủ ra quyết định khi tham vấn",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2f8a2712-d20c-4e5f-b34a-738f55486aa0",
+          "name": "Áp dụng chuẩn chất lượng dịch vụ xã hội",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-21-1021.00",
+      "name": "Nhân viên công tác xã hội",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-19-3033.00",
+      "name": "Nhà tâm lý học",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-29-1123.00",
+      "name": "Kỹ thuật viên, chuyên viên phục hồi chức năng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 7000000,
+    "median": null,
+    "high": 20000000,
+    "byYears": [],
+    "source": "CareerLink, \"Ngành Tâm lý học là gì\"",
+    "dataYear": "2026",
+    "note": null,
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/e23c32a2-eff1-4d77-b2b0-724a3a600a95",
+      "name": "Giới thiệu người dùng dịch vụ sang đơn vị khác",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/09d6ed43-95a1-4492-8bd7-d01039285afa",
+      "name": "Tham vấn xã hội",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8ad984cf-6506-42ee-8d15-0ac571be0354",
+      "name": "Giáo dục tâm lý",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/bc401d18-9bea-4300-90fd-22bfa286bd77",
+      "name": "Làm việc theo nguyên tắc công bằng xã hội",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0900073c-85f9-4f81-b178-ad9a12371bc3",
+      "name": "Ứng phó cảm xúc cực đoan",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cd195aad-29dd-43f5-a5be-e6994d83215b",
+      "name": "Học tập liên tục trong công tác xã hội",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e9c8c216-3190-4581-a0a4-002d5ae7d31e",
+      "name": "Giữ khách quan về cảm xúc",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/4b5d4fe3-4280-47c0-b1d2-ab08ace85557",
+      "name": "Cung cấp dịch vụ xã hội trong cộng đồng đa văn hoá",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+      "name": "Giúp thân chủ ra quyết định khi tham vấn",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2f8a2712-d20c-4e5f-b34a-738f55486aa0",
+      "name": "Áp dụng chuẩn chất lượng dịch vụ xã hội",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 1.607
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 1.147
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 1.034
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.907
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.53
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.472
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.273
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

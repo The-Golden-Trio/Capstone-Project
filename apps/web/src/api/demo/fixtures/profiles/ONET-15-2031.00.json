@@ -1,0 +1,927 @@
+{
+  "code": "ONET-15-2031.00",
+  "name": "Chuyên viên nghiên cứu vận trù",
+  "nameEn": "Operations Research Analysts",
+  "group": "Toán học và thống kê",
+  "regionId": "cong_nghe",
+  "isIt": false,
+  "summary": "Xây dựng và áp dụng mô hình toán học cùng các phương pháp tối ưu để tạo và diễn giải thông tin, giúp ban quản lý ra quyết định và xây dựng chính sách. Có thể thu thập, phân tích dữ liệu và phát triển phần mềm hỗ trợ ra quyết định. Có thể thiết kế mạng lưới tối ưu về thời gian, chi phí hoặc hậu cần. Mức chuẩn bị: cần chuẩn bị rất nhiều. Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần làm việc bằng tay với máy móc, công cụ, vật thật.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Ngồi gần như cả ngày.",
+    "Môi trường cạnh tranh cao."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "57% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "10% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty logistics, giao nhận, xuất nhập khẩu",
+      "weight": 45
+    },
+    {
+      "name": "Văn phòng tập đoàn lớn trong nước",
+      "weight": 35
+    },
+    {
+      "name": "Nhà máy FDI trong khu công nghiệp",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị rất nhiều",
+    "note": "Thường cần bằng sau đại học, như thạc sĩ, tiến sĩ hoặc bằng chuyên ngành y, luật. Theo O*NET (Mỹ).",
+    "university": [
+      "Toán ứng dụng",
+      "Kỹ thuật hệ thống công nghiệp",
+      "Khoa học dữ liệu"
+    ],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh phân tích vận hành",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Trình bày kết quả mô hình hoá và phân tích dữ liệu cho ban quản lý hoặc người dùng cuối.",
+        "Xác định yêu cầu dữ liệu, thu thập và kiểm định thông tin bằng phán đoán và kiểm định thống kê.",
+        "Kiểm định và thử nghiệm mô hình để bảo đảm phù hợp, và điều chỉnh mô hình khi cần.",
+        "Soạn báo cáo cho ban quản lý, xác định và đánh giá vấn đề, đề xuất giải pháp.",
+        "Phối hợp với các bộ phận để triển khai thành công giải pháp đã chọn."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Chuyên viên phân tích vận trù/tối ưu hóa",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Trình bày kết quả mô hình hoá và phân tích dữ liệu cho ban quản lý hoặc người dùng cuối.",
+        "Xác định yêu cầu dữ liệu, thu thập và kiểm định thông tin bằng phán đoán và kiểm định thống kê.",
+        "Kiểm định và thử nghiệm mô hình để bảo đảm phù hợp, và điều chỉnh mô hình khi cần.",
+        "Soạn báo cáo cho ban quản lý, xác định và đánh giá vấn đề, đề xuất giải pháp.",
+        "Phối hợp với các bộ phận để triển khai thành công giải pháp đã chọn."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Chuyên viên nghiên cứu vận trù",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Trình bày kết quả mô hình hoá và phân tích dữ liệu cho ban quản lý hoặc người dùng cuối.",
+        "Xác định yêu cầu dữ liệu, thu thập và kiểm định thông tin bằng phán đoán và kiểm định thống kê.",
+        "Kiểm định và thử nghiệm mô hình để bảo đảm phù hợp, và điều chỉnh mô hình khi cần.",
+        "Soạn báo cáo cho ban quản lý, xác định và đánh giá vấn đề, đề xuất giải pháp.",
+        "Phối hợp với các bộ phận để triển khai thành công giải pháp đã chọn."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+          "name": "Phần mềm trực quan hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "name": "Phân tích dữ liệu kinh doanh",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L5",
+      "title": "Chuyên viên cao cấp/chuyên gia tối ưu hóa",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Trình bày kết quả mô hình hoá và phân tích dữ liệu cho ban quản lý hoặc người dùng cuối.",
+        "Xác định yêu cầu dữ liệu, thu thập và kiểm định thông tin bằng phán đoán và kiểm định thống kê.",
+        "Kiểm định và thử nghiệm mô hình để bảo đảm phù hợp, và điều chỉnh mô hình khi cần.",
+        "Soạn báo cáo cho ban quản lý, xác định và đánh giá vấn đề, đề xuất giải pháp.",
+        "Phối hợp với các bộ phận để triển khai thành công giải pháp đã chọn."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+          "name": "Phần mềm trực quan hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "name": "Phân tích dữ liệu kinh doanh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+          "name": "Phần mềm trực quan hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "name": "Phân tích dữ liệu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2617b44-886a-485e-8393-bc0fc6339539",
+          "name": "Tư vấn quản lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm phân tích vận hành",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Trình bày kết quả mô hình hoá và phân tích dữ liệu cho ban quản lý hoặc người dùng cuối.",
+        "Xác định yêu cầu dữ liệu, thu thập và kiểm định thông tin bằng phán đoán và kiểm định thống kê.",
+        "Kiểm định và thử nghiệm mô hình để bảo đảm phù hợp, và điều chỉnh mô hình khi cần.",
+        "Soạn báo cáo cho ban quản lý, xác định và đánh giá vấn đề, đề xuất giải pháp.",
+        "Phối hợp với các bộ phận để triển khai thành công giải pháp đã chọn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+          "name": "Phần mềm trực quan hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "name": "Phân tích dữ liệu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2617b44-886a-485e-8393-bc0fc6339539",
+          "name": "Tư vấn quản lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+          "name": "Phần mềm trực quan hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "name": "Phân tích dữ liệu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2617b44-886a-485e-8393-bc0fc6339539",
+          "name": "Tư vấn quản lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L7",
+      "title": "Trưởng phòng phân tích/kế hoạch vận hành",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Trình bày kết quả mô hình hoá và phân tích dữ liệu cho ban quản lý hoặc người dùng cuối.",
+        "Xác định yêu cầu dữ liệu, thu thập và kiểm định thông tin bằng phán đoán và kiểm định thống kê.",
+        "Kiểm định và thử nghiệm mô hình để bảo đảm phù hợp, và điều chỉnh mô hình khi cần.",
+        "Soạn báo cáo cho ban quản lý, xác định và đánh giá vấn đề, đề xuất giải pháp.",
+        "Phối hợp với các bộ phận để triển khai thành công giải pháp đã chọn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+          "name": "Phần mềm trực quan hoá dữ liệu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "name": "Phân tích dữ liệu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2617b44-886a-485e-8393-bc0fc6339539",
+          "name": "Tư vấn quản lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+          "name": "Phần mềm trực quan hoá dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "name": "Phân tích dữ liệu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2617b44-886a-485e-8393-bc0fc6339539",
+          "name": "Tư vấn quản lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L8",
+      "title": "Giám đốc phân tích/kế hoạch chuỗi cung ứng",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Trình bày kết quả mô hình hoá và phân tích dữ liệu cho ban quản lý hoặc người dùng cuối.",
+        "Xác định yêu cầu dữ liệu, thu thập và kiểm định thông tin bằng phán đoán và kiểm định thống kê.",
+        "Kiểm định và thử nghiệm mô hình để bảo đảm phù hợp, và điều chỉnh mô hình khi cần.",
+        "Soạn báo cáo cho ban quản lý, xác định và đánh giá vấn đề, đề xuất giải pháp.",
+        "Phối hợp với các bộ phận để triển khai thành công giải pháp đã chọn."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "giao_tiep_hop_tac"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 4,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+          "name": "Phần mềm trực quan hoá dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "name": "Phân tích dữ liệu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2617b44-886a-485e-8393-bc0fc6339539",
+          "name": "Tư vấn quản lý",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+          "name": "Phương pháp nghiên cứu khoa học",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+          "name": "Phân tích nghiệp vụ",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+          "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+          "name": "Tư vấn cải thiện hiệu suất",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+          "name": "Phát hiện nhu cầu ẩn của tổ chức",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "name": "Giao tiếp kinh doanh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+          "name": "Phần mềm trực quan hoá dữ liệu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+          "name": "Quản lý thay đổi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "name": "Phân tích dữ liệu kinh doanh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/c2617b44-886a-485e-8393-bc0fc6339539",
+          "name": "Tư vấn quản lý",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "DATA_AI",
+      "name": "Kỹ sư trí tuệ nhân tạo",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "INFRA_ERP",
+      "name": "Chuyên viên tư vấn giải pháp ERP",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "SWE_BACKEND",
+      "name": "Lập trình viên Back-end / Kỹ sư Back-end",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "DATA_DE",
+      "name": "Kỹ sư dữ liệu",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "PROD_BA",
+      "name": "Chuyên viên phân tích nghiệp vụ / BA",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 8780000,
+    "median": null,
+    "high": 21140000,
+    "byYears": [],
+    "source": "WageIndicator Việt Nam, \"Nhà toán học, nhà thống kê\"",
+    "dataYear": "2026",
+    "note": "Số đại diện, không riêng vận trù.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/ed3f3dba-3a35-4ed5-b113-67f4d10ef4c8",
+      "name": "Phương pháp nghiên cứu khoa học",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/633a3637-2c6b-40ae-ac38-289eb2a62aa6",
+      "name": "Phân tích nghiệp vụ",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/ff599c4c-f7bc-44fc-b75f-eea4b7178692",
+      "name": "Tiêu chuẩn hệ thống quản lý (ISO)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8bc75dce-beba-40f9-93fc-66c9708ed74b",
+      "name": "Tư vấn cải thiện hiệu suất",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/43d1d56b-ce62-4fe8-8f18-35d92ec73023",
+      "name": "Phát hiện nhu cầu ẩn của tổ chức",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+      "name": "Giao tiếp kinh doanh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/65e58886-bd1e-4c5b-8ca5-8d9b353c8aa1",
+      "name": "Phần mềm trực quan hoá dữ liệu",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3c03ee71-4a23-448f-b79e-81fd75d27dca",
+      "name": "Quản lý thay đổi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+      "name": "Phân tích dữ liệu kinh doanh",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/c2617b44-886a-485e-8393-bc0fc6339539",
+      "name": "Tư vấn quản lý",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 1.377
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.557
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.435
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.36
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.151
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.352
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.448
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

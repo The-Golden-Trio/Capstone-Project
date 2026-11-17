@@ -1,0 +1,931 @@
+{
+  "code": "SWE_GAME",
+  "name": "Lập trình viên Game",
+  "nameEn": "Game Developer",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Lập trình viên Game viết mã cho trò chơi trên engine như Unity, Unreal hay Cocos: cơ chế chơi, điều khiển, hiệu ứng, giao diện trong game, và tích hợp quảng cáo, thanh toán trong ứng dụng. Phần khó là làm game vừa vui vừa chạy mượt trên máy cấu hình thấp. Việc làm tập trung ở một số ít studio, nhiều nơi làm game di động.",
+  "fitSummary": "Hợp với người thích tìm tòi, phân tích và giải quyết vấn đề bằng tư duy. Nghề cũng cần làm việc theo quy trình, chính xác với số liệu và giấy tờ, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Trước ngày phát hành thường có giai đoạn crunch, cả đội làm muộn nhiều ngày liền.",
+    "Quyết định kinh doanh, như thêm cơ chế nạp tiền, có thể đi ngược thiết kế gameplay đã tinh chỉnh nhiều tháng.",
+    "Số công ty tuyển ít và tập trung, nên ít lựa chọn khi muốn đổi chỗ làm.",
+    "Trong khảo sát của ITviec, khó cân bằng công việc và gia đình là một lý do nghỉ việc."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc theo nhóm là chính.",
+    "54% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "13% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 70
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Kỹ thuật phần mềm", "Khoa học máy tính", "Nghệ thuật số"],
+    "vocational": ["Lập trình máy tính", "Thiết kế mỹ thuật game"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Game Developer Intern",
+      "years": "0",
+      "coreOutput": "Hiện thực tính năng gameplay đơn giản trong engine có sẵn (Unity/Unreal/Cocos2d) theo hướng dẫn sát, chưa tự thiết kế hệ thống game, tương ứng vai trò học việc, có mentor kèm sát, chưa tự quyết định gì ngoài phạm vi bài tập được giao.",
+      "tasks": [
+        "Học Unity và nền tảng làm game, có lập trình viên kinh nghiệm kèm cặp",
+        "Làm bài tập và task thật trong dự án của nhóm",
+        "Phụ dựng game 2D, 3D trên Unity",
+        "Chơi thử game đối thủ để đề xuất cải tiến"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Fresher Game Developer",
+      "years": "0-1",
+      "coreOutput": "Tự hoàn thành một tính năng gameplay nhỏ (một cơ chế, một màn chơi) trong phạm vi được giao, mọi thay đổi qua review, tương ứng vai trò task đã được chia nhỏ sẵn, mọi thay đổi đều qua review 100%.",
+      "tasks": [
+        "Dựng nhanh bản thử cơ chế game từ tài liệu thiết kế",
+        "Gắn đồ hoạ, hoạt ảnh, giao diện tới khi có bản chơi được",
+        "Nhận task theo sprint Scrum",
+        "Làm nội dung, hệ thống, giao diện trong Unity và công cụ nội bộ",
+        "Giữ bản build chạy ổn định và đủ nhanh"
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Junior Game Developer",
+      "years": "1-2",
+      "coreOutput": "Tự hiện thực trọn vẹn một hệ thống gameplay đã xác định rõ (combat, inventory, UI game), tối ưu hiệu năng cơ bản trên thiết bị di động, tương ứng vai trò tự làm được một task có phạm vi rõ ràng nhưng vẫn cần review.",
+      "tasks": [
+        "Làm tính năng game theo đặc tả cho nhiều nền tảng",
+        "Tối ưu hiệu năng, bộ nhớ, dung lượng bản build trên Android, iOS",
+        "Tích hợp SDK quảng cáo, phân tích, mua trong ứng dụng và đưa bản build lên kho ứng dụng",
+        "Bảo trì, sửa lỗi game đang chạy",
+        "Viết công cụ trong Unity Editor cho người thiết kế màn chơi"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+          "name": "Ánh sáng 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+          "name": "Kỹ thuật dựng hình 3D",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Middle Game Developer",
+      "years": "2-4",
+      "coreOutput": "Chịu trách nhiệm end-to-end một module game (một hệ thống gameplay lớn hoặc một tính năng live-ops), tích hợp SDK bên thứ ba (ads, IAP, analytics), tương ứng vai trò tự chủ trong phạm vi một module, ít cần review chi tiết.",
+      "tasks": [],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+          "name": "Ánh sáng 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+          "name": "Kỹ thuật dựng hình 3D",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+          "name": "Ánh sáng 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+          "name": "Kỹ thuật dựng hình 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Senior Game Developer",
+      "years": "4-7",
+      "coreOutput": "Tự chủ thiết kế kiến trúc kỹ thuật cho một game/dự án, tối ưu hiệu năng ở quy mô production (framerate, memory trên thiết bị thấp cấp), mentor kỹ sư cấp dưới, tương ứng vai trò tự chủ trong phạm vi một domain trọn vẹn.",
+      "tasks": [
+        "Thiết kế và làm tính năng mới, bản cập nhật cho game đang vận hành",
+        "Dựng khung kiến trúc game dùng chung, đặt chuẩn code, review code",
+        "Kèm lập trình viên junior qua review code",
+        "Phối hợp với thiết kế, marketing, sản phẩm; sửa lỗi hiệu năng trên nhiều nền tảng"
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+          "name": "Ánh sáng 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+          "name": "Kỹ thuật dựng hình 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+          "name": "Ánh sáng 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+          "name": "Kỹ thuật dựng hình 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Lead Game Developer",
+      "years": "6-9",
+      "coreOutput": "Dẫn dắt kỹ thuật cho một đội phát triển game, đặt chuẩn kiến trúc engine và quy trình live-ops cho studio, tương ứng vai trò dẫn dắt kỹ thuật cho một team hoặc hệ thống.",
+      "tasks": [
+        "Định hướng kiến trúc và quy trình phát triển phía client",
+        "Kèm junior và dẫn dắt review code",
+        "Tối ưu hiệu năng, bộ nhớ, đồ hoạ; tích hợp SDK, cầu nối native, cập nhật nóng",
+        "Nối game Unity với API, cơ sở dữ liệu, dịch vụ đám mây"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+          "name": "Ánh sáng 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+          "name": "Kỹ thuật dựng hình 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+          "name": "Ánh sáng 3D",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+          "name": "Kỹ thuật dựng hình 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Principal Game Engineer",
+      "years": "8-12",
+      "coreOutput": "Đặt định hướng công nghệ game xuyên nhiều dự án/studio, quyết định lựa chọn engine và kiến trúc kỹ thuật dài hạn, tương ứng vai trò chịu trách nhiệm cross-team, đặt định hướng và chuẩn cho nhiều đội cùng lúc.",
+      "tasks": [
+        "Đặt và giữ chuẩn code để mã nguồn dễ bảo trì",
+        "Tự viết các hệ thống lõi như mạng chơi nhiều người, vật lý",
+        "Kèm lập trình viên, cùng quản lý dự án chạy sprint hai tuần và gỡ vướng",
+        "Giải thích rủi ro kỹ thuật cho người không chuyên",
+        "Ở cấp principal: theo dõi chất lượng kỹ thuật của nhiều dự án, làm đầu mối với studio đối tác"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+          "name": "Ánh sáng 3D",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+          "name": "Kỹ thuật dựng hình 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "name": "Lập trình máy tính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+          "name": "Gỡ lỗi phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+          "name": "Thể loại game",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+          "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+          "name": "Tạo chất liệu bề mặt 3D (texturing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+          "name": "Làm bản mẫu phần mềm (prototype)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+          "name": "Ánh sáng 3D",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+          "name": "Kỹ thuật dựng hình 3D",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+          "name": "Môi trường phát triển tích hợp (IDE)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "SWE_GAME",
+          "name": "Lập trình viên Game"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "SWE_TECHLEAD",
+          "name": "Trưởng nhóm kỹ thuật"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "SWE_UIUX",
+      "name": "Chuyên viên thiết kế UI/UX",
+      "why": "Cùng quan tâm trải nghiệm và cảm giác người dùng"
+    },
+    {
+      "code": "SWE_EMBEDDED",
+      "name": "Kỹ sư phần mềm nhúng / Kỹ sư IoT",
+      "why": "Cùng phải tối ưu hiệu năng sát phần cứng"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": 33350000,
+    "high": null,
+    "byYears": [
+      {
+        "years": "1-2 năm",
+        "median": 26500000
+      },
+      {
+        "years": "3-4 năm",
+        "median": 40400000
+      },
+      {
+        "years": "5-8 năm",
+        "median": 57850000
+      }
+    ],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 7,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+      "name": "Lập trình máy tính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2522a6ce-3202-4ac8-9f5b-b9cb5a3a83a1",
+      "name": "Gỡ lỗi phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0e361e34-c563-4892-b9d3-873a6a4fef8a",
+      "name": "Thể loại game",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/172020d1-e151-445b-8173-e2a5fb16fe51",
+      "name": "Dùng công cụ hỗ trợ kỹ nghệ phần mềm (CASE)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3e7516dc-0f7c-4686-8b2f-fade4e5d21be",
+      "name": "Tạo chất liệu bề mặt 3D (texturing)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/797a4416-0b8d-44f3-8fcd-eb10bd0be6b4",
+      "name": "Làm bản mẫu phần mềm (prototype)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/6e53fd99-b646-4327-9580-ac062ab21188",
+      "name": "Ánh sáng 3D",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+      "name": "Phân tích đặc tả phần mềm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1859883d-c047-4fe1-8e74-7bb4385d6ad2",
+      "name": "Kỹ thuật dựng hình 3D",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/925463a7-d51f-4d5b-9f79-4d28cf30acde",
+      "name": "Môi trường phát triển tích hợp (IDE)",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 1.044
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.699
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.35
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.041
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.329
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.47
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.794
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

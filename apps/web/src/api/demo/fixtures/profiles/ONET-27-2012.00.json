@@ -1,0 +1,699 @@
+{
+  "code": "ONET-27-2012.00",
+  "name": "Đạo diễn, nhà sản xuất",
+  "nameEn": "Producers and Directors",
+  "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+  "regionId": "sang_tao",
+  "isIt": false,
+  "summary": "Sản xuất hoặc đạo diễn chương trình sân khấu, truyền hình, phát thanh, video hoặc phim để giải trí, thông tin hay giáo dục. Chịu trách nhiệm các quyết định sáng tạo như cách hiểu kịch bản, chọn diễn viên hoặc khách mời, thiết kế bối cảnh, âm thanh, kỹ xảo và biên đạo. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích thuyết phục, dẫn dắt người khác và kinh doanh. Nghề cũng cần sáng tạo và tự do thể hiện ý tưởng, nhưng ít cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Ngồi gần như cả ngày.",
+    "Môi trường cạnh tranh cao."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "59% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "32% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Phòng thu, sân khấu, trường quay", "Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty sản xuất phim, TVC, MV",
+      "weight": 60
+    },
+    {
+      "name": "Toà soạn báo, đài phát thanh truyền hình",
+      "weight": 25
+    },
+    {
+      "name": "Nhà hát, đoàn nghệ thuật công lập",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Nghệ thuật điện ảnh, truyền hình", "Nghệ thuật sân khấu"],
+    "vocational": ["Đạo diễn điện ảnh, truyền hình", "Sản xuất phim"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh sản xuất",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Lên chi tiết khuôn hình, bố cục, chuyển động máy quay, âm thanh và di chuyển của diễn viên cho từng cảnh quay.",
+        "Truyền đạt cho diễn viên cách tiếp cận, tính cách nhân vật và chuyển động cần có ở từng cảnh để giảm số lần tập và quay lại.",
+        "Đạo diễn chương trình trực tiếp, phim, bản ghi hoặc chương trình không phát sóng cho mục đích giải trí, giáo dục.",
+        "Tìm hiểu chủ đề sản xuất qua internet, kho lưu trữ video và nguồn thông tin khác.",
+        "Xem lại phim, bản ghi hoặc buổi tập để bảo đảm đúng tiêu chuẩn sản xuất và phát sóng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Trợ lý đạo diễn / trợ lý sản xuất",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Lên chi tiết khuôn hình, bố cục, chuyển động máy quay, âm thanh và di chuyển của diễn viên cho từng cảnh quay.",
+        "Truyền đạt cho diễn viên cách tiếp cận, tính cách nhân vật và chuyển động cần có ở từng cảnh để giảm số lần tập và quay lại.",
+        "Đạo diễn chương trình trực tiếp, phim, bản ghi hoặc chương trình không phát sóng cho mục đích giải trí, giáo dục.",
+        "Tìm hiểu chủ đề sản xuất qua internet, kho lưu trữ video và nguồn thông tin khác.",
+        "Xem lại phim, bản ghi hoặc buổi tập để bảo đảm đúng tiêu chuẩn sản xuất và phát sóng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Đạo diễn hạng III",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Lên chi tiết khuôn hình, bố cục, chuyển động máy quay, âm thanh và di chuyển của diễn viên cho từng cảnh quay.",
+        "Truyền đạt cho diễn viên cách tiếp cận, tính cách nhân vật và chuyển động cần có ở từng cảnh để giảm số lần tập và quay lại.",
+        "Đạo diễn chương trình trực tiếp, phim, bản ghi hoặc chương trình không phát sóng cho mục đích giải trí, giáo dục.",
+        "Tìm hiểu chủ đề sản xuất qua internet, kho lưu trữ video và nguồn thông tin khác.",
+        "Xem lại phim, bản ghi hoặc buổi tập để bảo đảm đúng tiêu chuẩn sản xuất và phát sóng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+          "name": "Đánh giá tính khả thi tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Đạo diễn chương trình, phim dài",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Lên chi tiết khuôn hình, bố cục, chuyển động máy quay, âm thanh và di chuyển của diễn viên cho từng cảnh quay.",
+        "Truyền đạt cho diễn viên cách tiếp cận, tính cách nhân vật và chuyển động cần có ở từng cảnh để giảm số lần tập và quay lại.",
+        "Đạo diễn chương trình trực tiếp, phim, bản ghi hoặc chương trình không phát sóng cho mục đích giải trí, giáo dục.",
+        "Tìm hiểu chủ đề sản xuất qua internet, kho lưu trữ video và nguồn thông tin khác.",
+        "Xem lại phim, bản ghi hoặc buổi tập để bảo đảm đúng tiêu chuẩn sản xuất và phát sóng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+          "name": "Đánh giá tính khả thi tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+          "name": "Đánh giá tính khả thi tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Đạo diễn hạng II",
+      "years": "7–12",
+      "coreOutput": null,
+      "tasks": [
+        "Lên chi tiết khuôn hình, bố cục, chuyển động máy quay, âm thanh và di chuyển của diễn viên cho từng cảnh quay.",
+        "Truyền đạt cho diễn viên cách tiếp cận, tính cách nhân vật và chuyển động cần có ở từng cảnh để giảm số lần tập và quay lại.",
+        "Đạo diễn chương trình trực tiếp, phim, bản ghi hoặc chương trình không phát sóng cho mục đích giải trí, giáo dục.",
+        "Tìm hiểu chủ đề sản xuất qua internet, kho lưu trữ video và nguồn thông tin khác.",
+        "Xem lại phim, bản ghi hoặc buổi tập để bảo đảm đúng tiêu chuẩn sản xuất và phát sóng."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_duy_giai_quyet_van_de": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+          "name": "Đánh giá tính khả thi tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+          "name": "Đánh giá tính khả thi tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Đạo diễn hạng I",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Lên chi tiết khuôn hình, bố cục, chuyển động máy quay, âm thanh và di chuyển của diễn viên cho từng cảnh quay.",
+        "Truyền đạt cho diễn viên cách tiếp cận, tính cách nhân vật và chuyển động cần có ở từng cảnh để giảm số lần tập và quay lại.",
+        "Đạo diễn chương trình trực tiếp, phim, bản ghi hoặc chương trình không phát sóng cho mục đích giải trí, giáo dục.",
+        "Tìm hiểu chủ đề sản xuất qua internet, kho lưu trữ video và nguồn thông tin khác.",
+        "Xem lại phim, bản ghi hoặc buổi tập để bảo đảm đúng tiêu chuẩn sản xuất và phát sóng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+          "name": "Đánh giá tính khả thi tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+          "name": "Đánh giá tính khả thi tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Nhà sản xuất điều hành / Giám đốc hãng phim",
+      "years": "12+",
+      "coreOutput": null,
+      "tasks": [
+        "Lên chi tiết khuôn hình, bố cục, chuyển động máy quay, âm thanh và di chuyển của diễn viên cho từng cảnh quay.",
+        "Truyền đạt cho diễn viên cách tiếp cận, tính cách nhân vật và chuyển động cần có ở từng cảnh để giảm số lần tập và quay lại.",
+        "Đạo diễn chương trình trực tiếp, phim, bản ghi hoặc chương trình không phát sóng cho mục đích giải trí, giáo dục.",
+        "Tìm hiểu chủ đề sản xuất qua internet, kho lưu trữ video và nguồn thông tin khác.",
+        "Xem lại phim, bản ghi hoặc buổi tập để bảo đảm đúng tiêu chuẩn sản xuất và phát sóng."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 4,
+        "lanh_dao_kinh_doanh": 3,
+        "tu_duy_giai_quyet_van_de": 3,
+        "tu_quan_ly_ap_luc": 3,
+        "giao_tiep_hop_tac": 2,
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+          "name": "Đánh giá tính khả thi tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "name": "Quản lý ngân sách",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+          "name": "Luật bản quyền",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+          "name": "Nguyên lý marketing",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+          "name": "Đánh giá tính khả thi tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "name": "Quản lý dự án",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-27-2012.00",
+          "name": "Đạo diễn, nhà sản xuất"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "ONET-27-2012.05",
+          "name": "Trưởng bộ phận kỹ thuật phát thanh, truyền hình"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-27-4031.00",
+      "name": "Nhiếp ảnh, quay phim và dựng phim",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "PROD_PM",
+      "name": "Quản lý sản phẩm / Product Manager",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-1161.00",
+      "name": "Chuyên viên marketing và nghiên cứu thị trường",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-1024.00",
+      "name": "Nhà thiết kế đồ hoạ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-2042.00",
+      "name": "Ca sĩ, nhạc công",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 7538000,
+    "median": null,
+    "high": 25972000,
+    "byYears": [],
+    "source": "WageIndicator Việt Nam, \"Giám đốc phim, cảnh quay và nhà sản xuất\"",
+    "dataYear": "2026",
+    "note": "Số mô hình.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 20,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+      "name": "Phân tích kịch bản",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+      "name": "Quản lý ngân sách",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e2103a1d-4a84-47a9-b4f7-774787573449",
+      "name": "Luật bản quyền",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/de03f4fd-c147-4477-a048-7109e5ba2d6f",
+      "name": "Nguyên lý marketing",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e95058a6-e139-42e7-a470-72038a606649",
+      "name": "Đánh giá tính khả thi tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+      "name": "Quản lý dự án",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.746
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.548
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.536
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.535
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.152
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.114
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -0.642
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

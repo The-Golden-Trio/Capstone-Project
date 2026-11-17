@@ -1,0 +1,688 @@
+{
+  "code": "ONET-33-9092.00",
+  "name": "Nhân viên cứu hộ bể bơi, bãi biển",
+  "nameEn": "Lifeguards, Ski Patrol, and Other Recreational Protective Service Workers",
+  "group": "Dịch vụ bảo vệ an ninh và an toàn",
+  "regionId": "dich_vu",
+  "isIt": false,
+  "summary": "Giám sát khu vui chơi giải trí như bể bơi, bãi biển hoặc dốc trượt tuyết để hỗ trợ và bảo vệ người tham gia. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc bằng tay với máy móc, công cụ, vật thật. Nghề cũng cần giúp đỡ, dạy bảo và chăm sóc người khác, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Có nguy cơ tiếp xúc với bệnh truyền nhiễm.",
+    "Sai sót có thể gây hậu quả nghiêm trọng.",
+    "Tiếp xúc với nhiệt độ rất nóng hoặc rất lạnh.",
+    "Chịu trách nhiệm trực tiếp về sức khoẻ và an toàn của người khác."
+  ],
+  "workFacts": [
+    "Thường làm ngoài trời, chịu thời tiết.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Làm việc theo nhóm là chính.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "18% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "22% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Hiện trường, công trường, ngoài trời"],
+  "environments": [
+    {
+      "name": "Khu vui chơi, công viên giải trí",
+      "weight": 50
+    },
+    {
+      "name": "Khách sạn, resort 4–5 sao",
+      "weight": 30
+    },
+    {
+      "name": "Phòng gym, trung tâm thể hình",
+      "weight": 20
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": [],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Học viên cứu hộ (đang học chứng nhận cứu hộ)",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Tuần tra hoặc giám sát khu vực như đường mòn, dốc trượt hoặc khu bơi bằng cách đi bộ, đi xe hoặc từ chòi canh.",
+        "Cứu người gặp nạn bằng kỹ thuật và thiết bị cứu hộ.",
+        "Gọi nhân viên cấp cứu khi có người bị thương nặng.",
+        "Kiểm tra người bị thương, sơ cứu hoặc hồi sức tim phổi khi cần.",
+        "Cảnh báo người tham gia về thời tiết xấu, khu vực nguy hiểm hoặc hành vi vi phạm."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+          "name": "Hướng dẫn an toàn bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+          "name": "Mối đe doạ an ninh",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Nhân viên cứu hộ bể bơi (có chứng nhận)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Tuần tra hoặc giám sát khu vực như đường mòn, dốc trượt hoặc khu bơi bằng cách đi bộ, đi xe hoặc từ chòi canh.",
+        "Cứu người gặp nạn bằng kỹ thuật và thiết bị cứu hộ.",
+        "Gọi nhân viên cấp cứu khi có người bị thương nặng.",
+        "Kiểm tra người bị thương, sơ cứu hoặc hồi sức tim phổi khi cần.",
+        "Cảnh báo người tham gia về thời tiết xấu, khu vực nguy hiểm hoặc hành vi vi phạm."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+          "name": "Hướng dẫn an toàn bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+          "name": "Mối đe doạ an ninh",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+          "name": "Hướng dẫn an toàn bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+          "name": "Mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/824828a8-393d-4195-8b4f-862fe1cb6da5",
+          "name": "Hỗ trợ người dùng bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e",
+          "name": "Bình tĩnh khi căng thẳng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be125781-7266-450a-945e-7a7ed94860dc",
+          "name": "Cứu người đuối nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/753f2b67-ba47-49c2-a3fd-c40c4cfb4421",
+          "name": "Kiểm soát đám đông",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Cứu hộ viên bãi biển/vùng nước mở",
+      "years": "1–3",
+      "coreOutput": null,
+      "tasks": [
+        "Tuần tra hoặc giám sát khu vực như đường mòn, dốc trượt hoặc khu bơi bằng cách đi bộ, đi xe hoặc từ chòi canh.",
+        "Cứu người gặp nạn bằng kỹ thuật và thiết bị cứu hộ.",
+        "Gọi nhân viên cấp cứu khi có người bị thương nặng.",
+        "Kiểm tra người bị thương, sơ cứu hoặc hồi sức tim phổi khi cần.",
+        "Cảnh báo người tham gia về thời tiết xấu, khu vực nguy hiểm hoặc hành vi vi phạm."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+          "name": "Hướng dẫn an toàn bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+          "name": "Mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/824828a8-393d-4195-8b4f-862fe1cb6da5",
+          "name": "Hỗ trợ người dùng bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e",
+          "name": "Bình tĩnh khi căng thẳng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be125781-7266-450a-945e-7a7ed94860dc",
+          "name": "Cứu người đuối nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/753f2b67-ba47-49c2-a3fd-c40c4cfb4421",
+          "name": "Kiểm soát đám đông",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+          "name": "Hướng dẫn an toàn bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+          "name": "Mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/824828a8-393d-4195-8b4f-862fe1cb6da5",
+          "name": "Hỗ trợ người dùng bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e",
+          "name": "Bình tĩnh khi căng thẳng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be125781-7266-450a-945e-7a7ed94860dc",
+          "name": "Cứu người đuối nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/753f2b67-ba47-49c2-a3fd-c40c4cfb4421",
+          "name": "Kiểm soát đám đông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Tổ trưởng/ca trưởng cứu hộ",
+      "years": "3–5",
+      "coreOutput": null,
+      "tasks": [
+        "Tuần tra hoặc giám sát khu vực như đường mòn, dốc trượt hoặc khu bơi bằng cách đi bộ, đi xe hoặc từ chòi canh.",
+        "Cứu người gặp nạn bằng kỹ thuật và thiết bị cứu hộ.",
+        "Gọi nhân viên cấp cứu khi có người bị thương nặng.",
+        "Kiểm tra người bị thương, sơ cứu hoặc hồi sức tim phổi khi cần.",
+        "Cảnh báo người tham gia về thời tiết xấu, khu vực nguy hiểm hoặc hành vi vi phạm."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "thich_ung_hoc_hoi": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+          "name": "Hướng dẫn an toàn bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+          "name": "Mối đe doạ an ninh",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/824828a8-393d-4195-8b4f-862fe1cb6da5",
+          "name": "Hỗ trợ người dùng bể bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e",
+          "name": "Bình tĩnh khi căng thẳng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be125781-7266-450a-945e-7a7ed94860dc",
+          "name": "Cứu người đuối nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/753f2b67-ba47-49c2-a3fd-c40c4cfb4421",
+          "name": "Kiểm soát đám đông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+          "name": "Hướng dẫn an toàn bể bơi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+          "name": "Mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/824828a8-393d-4195-8b4f-862fe1cb6da5",
+          "name": "Hỗ trợ người dùng bể bơi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e",
+          "name": "Bình tĩnh khi căng thẳng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be125781-7266-450a-945e-7a7ed94860dc",
+          "name": "Cứu người đuối nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/753f2b67-ba47-49c2-a3fd-c40c4cfb4421",
+          "name": "Kiểm soát đám đông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Đội trưởng đội cứu hộ, huấn luyện viên cứu hộ",
+      "years": "5+",
+      "coreOutput": null,
+      "tasks": [
+        "Tuần tra hoặc giám sát khu vực như đường mòn, dốc trượt hoặc khu bơi bằng cách đi bộ, đi xe hoặc từ chòi canh.",
+        "Cứu người gặp nạn bằng kỹ thuật và thiết bị cứu hộ.",
+        "Gọi nhân viên cấp cứu khi có người bị thương nặng.",
+        "Kiểm tra người bị thương, sơ cứu hoặc hồi sức tim phổi khi cần.",
+        "Cảnh báo người tham gia về thời tiết xấu, khu vực nguy hiểm hoặc hành vi vi phạm."
+      ],
+      "focus": ["tri_tue_cam_xuc", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+          "name": "Hướng dẫn an toàn bể bơi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+          "name": "Mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/824828a8-393d-4195-8b4f-862fe1cb6da5",
+          "name": "Hỗ trợ người dùng bể bơi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e",
+          "name": "Bình tĩnh khi căng thẳng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be125781-7266-450a-945e-7a7ed94860dc",
+          "name": "Cứu người đuối nước",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/753f2b67-ba47-49c2-a3fd-c40c4cfb4421",
+          "name": "Kiểm soát đám đông",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+          "name": "Cảnh giác",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+          "name": "Sơ cứu",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+          "name": "Hướng dẫn an toàn bể bơi",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+          "name": "Mối đe doạ an ninh",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/824828a8-393d-4195-8b4f-862fe1cb6da5",
+          "name": "Hỗ trợ người dùng bể bơi",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e",
+          "name": "Bình tĩnh khi căng thẳng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/be125781-7266-450a-945e-7a7ed94860dc",
+          "name": "Cứu người đuối nước",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/753f2b67-ba47-49c2-a3fd-c40c4cfb4421",
+          "name": "Kiểm soát đám đông",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+          "name": "Bơi",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+          "name": "Xử lý cấp cứu thú y",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-33-2011.00",
+      "name": "Lính cứu hoả, cứu nạn",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-53-3052.00",
+      "name": "Tài xế xe khách, xe buýt",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-39-9032.00",
+      "name": "Nhân viên tổ chức hoạt động vui chơi giải trí",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-33-9032.00",
+      "name": "Nhân viên bảo vệ, an ninh",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 7000000,
+    "median": 10000000,
+    "high": 21000000,
+    "byYears": [],
+    "source": "Tin tuyển cứu hộ bể bơi trên 123job và Joboko",
+    "dataYear": "2026",
+    "note": "5 tin.",
+    "publicSector": null
+  },
+  "outlook": null,
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/f83c245f-4aa9-484f-8fd2-4ad65dd82ae5",
+      "name": "Cảnh giác",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6",
+      "name": "Sơ cứu",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/717c792a-806a-42ca-9d19-f48f0bd6a830",
+      "name": "Hướng dẫn an toàn bể bơi",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5acf6408-e084-4202-9442-ffcf0119811c",
+      "name": "Mối đe doạ an ninh",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/824828a8-393d-4195-8b4f-862fe1cb6da5",
+      "name": "Hỗ trợ người dùng bể bơi",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e",
+      "name": "Bình tĩnh khi căng thẳng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/be125781-7266-450a-945e-7a7ed94860dc",
+      "name": "Cứu người đuối nước",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/753f2b67-ba47-49c2-a3fd-c40c4cfb4421",
+      "name": "Kiểm soát đám đông",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/eb0d83b2-3aa4-4a36-a60a-99b6746429e2",
+      "name": "Bơi",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/cde1ed83-8527-4ad1-9d26-7d8ccb2e8b03",
+      "name": "Xử lý cấp cứu thú y",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.786
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.565
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.242
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.161
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.014
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.196
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -1.059
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

@@ -1,0 +1,839 @@
+{
+  "code": "ONET-43-3071.00",
+  "name": "Giao dịch viên ngân hàng",
+  "nameEn": "Tellers",
+  "group": "Văn phòng và hỗ trợ hành chính",
+  "regionId": "kinh_doanh",
+  "isIt": false,
+  "summary": "Thu và chi tiền. Ghi chép tiền và giấy tờ có giá trong các giao dịch của tổ chức tài chính. Mức chuẩn bị: cần chuẩn bị một ít. Thường cần tốt nghiệp THPT.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần thuyết phục, dẫn dắt người khác và kinh doanh, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Công việc lặp lại nhiều.",
+    "Hay phải tiếp xúc với người khó chịu, giận dữ hoặc thiếu lịch sự.",
+    "Lặp đi lặp lại cùng một động tác."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Tiếp xúc nhiều với khách hàng hoặc người dân.",
+    "Ít được tự quyết, làm theo chỉ đạo và quy trình.",
+    "24% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Gần như ai trong nghề cũng làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Chi nhánh, phòng giao dịch ngân hàng",
+      "weight": 100
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị một ít",
+    "note": "Thường cần tốt nghiệp THPT. Theo O*NET (Mỹ).",
+    "university": ["Tài chính - Ngân hàng"],
+    "vocational": ["Tài chính - Ngân hàng", "Kế toán ngân hàng"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Giao dịch viên tập sự/thực tập sinh",
+      "years": "0–0,5",
+      "coreOutput": null,
+      "tasks": [
+        "Đối chiếu tiền giấy, tiền xu và séc trong ngăn kéo cuối ca và tính tổng giao dịch trong ngày bằng máy tính.",
+        "Nhận séc và tiền mặt để gửi, kiểm tra số tiền và độ chính xác của phiếu gửi tiền.",
+        "Theo dõi kho tiền để bảo đảm số dư đúng.",
+        "Chi tiền mặt, thanh toán séc sau khi kiểm tra chữ ký, khớp số tiền bằng chữ và bằng số và tài khoản đủ số dư.",
+        "Đếm tiền giấy, tiền xu và séc bằng tay hoặc máy đếm tiền để chuẩn bị nộp hoặc chuyển cho chi nhánh, ngân hàng trung ương."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Giao dịch viên",
+      "years": "0–2",
+      "coreOutput": null,
+      "tasks": [
+        "Đối chiếu tiền giấy, tiền xu và séc trong ngăn kéo cuối ca và tính tổng giao dịch trong ngày bằng máy tính.",
+        "Nhận séc và tiền mặt để gửi, kiểm tra số tiền và độ chính xác của phiếu gửi tiền.",
+        "Theo dõi kho tiền để bảo đảm số dư đúng.",
+        "Chi tiền mặt, thanh toán séc sau khi kiểm tra chữ ký, khớp số tiền bằng chữ và bằng số và tài khoản đủ số dư.",
+        "Đếm tiền giấy, tiền xu và séc bằng tay hoặc máy đếm tiền để chuẩn bị nộp hoặc chuyển cho chi nhánh, ngân hàng trung ương."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+          "name": "Quy đổi tiền tệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Giao dịch viên chính/cao cấp",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Đối chiếu tiền giấy, tiền xu và séc trong ngăn kéo cuối ca và tính tổng giao dịch trong ngày bằng máy tính.",
+        "Nhận séc và tiền mặt để gửi, kiểm tra số tiền và độ chính xác của phiếu gửi tiền.",
+        "Theo dõi kho tiền để bảo đảm số dư đúng.",
+        "Chi tiền mặt, thanh toán séc sau khi kiểm tra chữ ký, khớp số tiền bằng chữ và bằng số và tài khoản đủ số dư.",
+        "Đếm tiền giấy, tiền xu và séc bằng tay hoặc máy đếm tiền để chuẩn bị nộp hoặc chuyển cho chi nhánh, ngân hàng trung ương."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+          "name": "Quy đổi tiền tệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+          "name": "Quy đổi tiền tệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3c7bd87-edc1-4d9a-a3d5-36415de1aac6",
+          "name": "Cung cấp dịch vụ tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf8943c-72ff-4736-a587-25508695d6f0",
+          "name": "Lưu sổ sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Kiểm soát viên giao dịch",
+      "years": "3–6",
+      "coreOutput": null,
+      "tasks": [
+        "Đối chiếu tiền giấy, tiền xu và séc trong ngăn kéo cuối ca và tính tổng giao dịch trong ngày bằng máy tính.",
+        "Nhận séc và tiền mặt để gửi, kiểm tra số tiền và độ chính xác của phiếu gửi tiền.",
+        "Theo dõi kho tiền để bảo đảm số dư đúng.",
+        "Chi tiền mặt, thanh toán séc sau khi kiểm tra chữ ký, khớp số tiền bằng chữ và bằng số và tài khoản đủ số dư.",
+        "Đếm tiền giấy, tiền xu và séc bằng tay hoặc máy đếm tiền để chuẩn bị nộp hoặc chuyển cho chi nhánh, ngân hàng trung ương."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+          "name": "Quy đổi tiền tệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3c7bd87-edc1-4d9a-a3d5-36415de1aac6",
+          "name": "Cung cấp dịch vụ tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf8943c-72ff-4736-a587-25508695d6f0",
+          "name": "Lưu sổ sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+          "name": "Quy đổi tiền tệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3c7bd87-edc1-4d9a-a3d5-36415de1aac6",
+          "name": "Cung cấp dịch vụ tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf8943c-72ff-4736-a587-25508695d6f0",
+          "name": "Lưu sổ sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Trưởng bộ phận dịch vụ khách hàng/phó giám đốc phòng giao dịch",
+      "years": "5–8",
+      "coreOutput": null,
+      "tasks": [
+        "Đối chiếu tiền giấy, tiền xu và séc trong ngăn kéo cuối ca và tính tổng giao dịch trong ngày bằng máy tính.",
+        "Nhận séc và tiền mặt để gửi, kiểm tra số tiền và độ chính xác của phiếu gửi tiền.",
+        "Theo dõi kho tiền để bảo đảm số dư đúng.",
+        "Chi tiền mặt, thanh toán séc sau khi kiểm tra chữ ký, khớp số tiền bằng chữ và bằng số và tài khoản đủ số dư.",
+        "Đếm tiền giấy, tiền xu và séc bằng tay hoặc máy đếm tiền để chuẩn bị nộp hoặc chuyển cho chi nhánh, ngân hàng trung ương."
+      ],
+      "focus": ["dao_duc_chuyen_nghiep", "tri_tue_cam_xuc"],
+      "requirement": {
+        "tri_tue_cam_xuc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+          "name": "Quy đổi tiền tệ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3c7bd87-edc1-4d9a-a3d5-36415de1aac6",
+          "name": "Cung cấp dịch vụ tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf8943c-72ff-4736-a587-25508695d6f0",
+          "name": "Lưu sổ sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+          "name": "Quy đổi tiền tệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3c7bd87-edc1-4d9a-a3d5-36415de1aac6",
+          "name": "Cung cấp dịch vụ tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf8943c-72ff-4736-a587-25508695d6f0",
+          "name": "Lưu sổ sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Giám đốc phòng giao dịch",
+      "years": "7+",
+      "coreOutput": null,
+      "tasks": [
+        "Đối chiếu tiền giấy, tiền xu và séc trong ngăn kéo cuối ca và tính tổng giao dịch trong ngày bằng máy tính.",
+        "Nhận séc và tiền mặt để gửi, kiểm tra số tiền và độ chính xác của phiếu gửi tiền.",
+        "Theo dõi kho tiền để bảo đảm số dư đúng.",
+        "Chi tiền mặt, thanh toán séc sau khi kiểm tra chữ ký, khớp số tiền bằng chữ và bằng số và tài khoản đủ số dư.",
+        "Đếm tiền giấy, tiền xu và séc bằng tay hoặc máy đếm tiền để chuẩn bị nộp hoặc chuyển cho chi nhánh, ngân hàng trung ương."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "dao_duc_chuyen_nghiep"],
+      "requirement": {
+        "dao_duc_chuyen_nghiep": 3,
+        "tri_tue_cam_xuc": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+          "name": "Quy đổi tiền tệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3c7bd87-edc1-4d9a-a3d5-36415de1aac6",
+          "name": "Cung cấp dịch vụ tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf8943c-72ff-4736-a587-25508695d6f0",
+          "name": "Lưu sổ sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+          "name": "Xử lý thanh toán",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+          "name": "Xử lý giao dịch tài chính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+          "name": "Lập số liệu thống kê tài chính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "name": "Lưu hồ sơ giao dịch tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+          "name": "Giới thiệu sản phẩm tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+          "name": "Quy đổi tiền tệ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+          "name": "Nghiệp vụ ngân hàng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e3c7bd87-edc1-4d9a-a3d5-36415de1aac6",
+          "name": "Cung cấp dịch vụ tài chính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/faf8943c-72ff-4736-a587-25508695d6f0",
+          "name": "Lưu sổ sách tài chính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "name": "Truy vết giao dịch tài chính",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "ONET-43-3071.00",
+          "name": "Giao dịch viên ngân hàng"
+        }
+      ]
+    },
+    {
+      "stage": "chuyen_sau",
+      "label": "Chuyên sâu, cần học thêm",
+      "roles": [
+        {
+          "code": "ONET-43-4141.00",
+          "name": "Nhân viên mở tài khoản"
+        },
+        {
+          "code": "ONET-43-4131.00",
+          "name": "Nhân viên tiếp nhận hồ sơ vay"
+        },
+        {
+          "code": "ONET-43-4011.00",
+          "name": "Nhân viên nghiệp vụ chứng khoán"
+        }
+      ]
+    },
+    {
+      "stage": "quan_ly",
+      "label": "Lên quản lý",
+      "roles": [
+        {
+          "code": "ONET-11-3012.00",
+          "name": "Quản lý hành chính"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "ONET-13-2072.00",
+      "name": "Chuyên viên tín dụng ngân hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-43-4051.00",
+      "name": "Nhân viên chăm sóc khách hàng",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-13-2011.00",
+      "name": "Kế toán, kiểm toán viên",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-3031.00",
+      "name": "Nhân viên môi giới chứng khoán",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-41-2011.00",
+      "name": "Thu ngân",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương tham khảo",
+    "low": 8500000,
+    "median": null,
+    "high": 30600000,
+    "byYears": [],
+    "source": "VietnamWorks HR Insider, \"Lương nhân viên ngân hàng\"",
+    "dataYear": "2025",
+    "note": "Số bình quân tham khảo: 11.300.000 đồng/tháng (không phải trung vị).",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "thap",
+    "openPostings": 19,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/bdcac0c8-b77a-4640-9eaf-c0cf3efd1e23",
+      "name": "Xử lý thanh toán",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f7e7ccb6-fadc-4c35-935d-e1040be40dfe",
+      "name": "Xử lý giao dịch tài chính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/08ee68b2-0a6d-4bdf-a870-a36c0dc8064e",
+      "name": "Lập số liệu thống kê tài chính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+      "name": "Lưu hồ sơ giao dịch tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e92f4673-1dec-41ec-b6ec-36fef226359c",
+      "name": "Giới thiệu sản phẩm tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/98e26527-4cca-42b7-9902-5749f48e62c5",
+      "name": "Quy đổi tiền tệ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3c209873-c757-47bb-91b5-9b6dc05df116",
+      "name": "Nghiệp vụ ngân hàng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e3c7bd87-edc1-4d9a-a3d5-36415de1aac6",
+      "name": "Cung cấp dịch vụ tài chính",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/faf8943c-72ff-4736-a587-25508695d6f0",
+      "name": "Lưu sổ sách tài chính",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+      "name": "Truy vết giao dịch tài chính",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.483
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": 0.397
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.112
+    },
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": -0.238
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.257
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": -0.439
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": -0.442
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

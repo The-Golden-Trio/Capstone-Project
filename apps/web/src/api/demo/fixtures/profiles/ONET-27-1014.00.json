@@ -1,0 +1,912 @@
+{
+  "code": "ONET-27-1014.00",
+  "name": "Hoạ sĩ hoạt hình, kỹ xảo",
+  "nameEn": "Special Effects Artists and Animators",
+  "group": "Nghệ thuật, thiết kế, giải trí, thể thao và truyền thông",
+  "regionId": "sang_tao",
+  "isIt": false,
+  "summary": "Tạo kỹ xảo hoặc hoạt hình bằng phim, video, máy tính hoặc công cụ điện tử khác cho các sản phẩm như trò chơi điện tử, phim, video ca nhạc và quảng cáo. Mức chuẩn bị: cần chuẩn bị nhiều. Thường cần bằng đại học.",
+  "fitSummary": "Hợp với người thích sáng tạo và tự do thể hiện ý tưởng. Nghề cũng cần làm việc bằng tay với máy móc, công cụ, vật thật, nhưng ít cần giúp đỡ, dạy bảo và chăm sóc người khác.",
+  "downsides": [
+    "Nhiều người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "Lịch làm việc không cố định: theo ca, thay đổi hoặc theo mùa.",
+    "Ngồi gần như cả ngày.",
+    "Môi trường cạnh tranh cao."
+  ],
+  "workFacts": [
+    "Phần lớn thời gian làm trong nhà, có điều hoà.",
+    "Ngồi phần lớn thời gian làm việc.",
+    "Làm việc theo nhóm là chính.",
+    "60% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "54% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Studio thiết kế, hoạt hình, thời trang",
+      "weight": 70
+    },
+    {
+      "name": "Công ty sản xuất phim, TVC, MV",
+      "weight": 30
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": ["Nghệ thuật số", "Thiết kế đồ họa"],
+    "vocational": ["Sản xuất phim hoạt hình", "Thiết kế hình ảnh 3D"],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L1",
+      "bandEquivalent": "L1",
+      "title": "Thực tập sinh 2D/3D",
+      "years": "0",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế đồ hoạ và hoạt hình phức tạp bằng óc phán đoán, sự sáng tạo và máy tính.",
+        "Tạo thiết kế, bản vẽ và minh hoạ cơ bản cho nhãn sản phẩm, bao bì, thư quảng cáo hoặc truyền hình.",
+        "Tham gia thiết kế và sản xuất chiến dịch đa phương tiện, lo ngân sách và tiến độ, hỗ trợ điều phối sản xuất, thiết kế nền và theo dõi tiến độ.",
+        "Tạo hình ảnh 2D và 3D thể hiện vật chuyển động hoặc minh hoạ một quá trình bằng phần mềm hoạt hình, dựng hình.",
+        "Làm vật thể hoặc nhân vật trông sống động bằng cách xử lý ánh sáng, màu sắc, chất liệu, bóng đổ và độ trong suốt, hoặc xử lý ảnh tĩnh để tạo cảm giác chuyển động."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 1
+        }
+      ],
+      "access": "OPEN",
+      "lockedReason": null,
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L2",
+      "bandEquivalent": "L2",
+      "title": "Hoạ sĩ diễn hoạt mới (Junior Animator)",
+      "years": "0–1",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế đồ hoạ và hoạt hình phức tạp bằng óc phán đoán, sự sáng tạo và máy tính.",
+        "Tạo thiết kế, bản vẽ và minh hoạ cơ bản cho nhãn sản phẩm, bao bì, thư quảng cáo hoặc truyền hình.",
+        "Tham gia thiết kế và sản xuất chiến dịch đa phương tiện, lo ngân sách và tiến độ, hỗ trợ điều phối sản xuất, thiết kế nền và theo dõi tiến độ.",
+        "Tạo hình ảnh 2D và 3D thể hiện vật chuyển động hoặc minh hoạ một quá trình bằng phần mềm hoạt hình, dựng hình.",
+        "Làm vật thể hoặc nhân vật trông sống động bằng cách xử lý ánh sáng, màu sắc, chất liệu, bóng đổ và độ trong suốt, hoặc xử lý ảnh tĩnh để tạo cảm giác chuyển động."
+      ],
+      "focus": ["thich_ung_hoc_hoi", "dao_duc_chuyen_nghiep"],
+      "requirement": {},
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 3,
+      "band": "L3",
+      "bandEquivalent": "L3",
+      "title": "Hoạ sĩ diễn hoạt (Animator)",
+      "years": "1–2",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế đồ hoạ và hoạt hình phức tạp bằng óc phán đoán, sự sáng tạo và máy tính.",
+        "Tạo thiết kế, bản vẽ và minh hoạ cơ bản cho nhãn sản phẩm, bao bì, thư quảng cáo hoặc truyền hình.",
+        "Tham gia thiết kế và sản xuất chiến dịch đa phương tiện, lo ngân sách và tiến độ, hỗ trợ điều phối sản xuất, thiết kế nền và theo dõi tiến độ.",
+        "Tạo hình ảnh 2D và 3D thể hiện vật chuyển động hoặc minh hoạ một quá trình bằng phần mềm hoạt hình, dựng hình.",
+        "Làm vật thể hoặc nhân vật trông sống động bằng cách xử lý ánh sáng, màu sắc, chất liệu, bóng đổ và độ trong suốt, hoặc xử lý ảnh tĩnh để tạo cảm giác chuyển động."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "name": "Thiết kế đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+          "name": "Đồ hoạ chuyển động (motion graphics)",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 4,
+      "band": "L4",
+      "bandEquivalent": "L4",
+      "title": "Hoạ sĩ diễn hoạt chính (Mid Animator)",
+      "years": "2–4",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế đồ hoạ và hoạt hình phức tạp bằng óc phán đoán, sự sáng tạo và máy tính.",
+        "Tạo thiết kế, bản vẽ và minh hoạ cơ bản cho nhãn sản phẩm, bao bì, thư quảng cáo hoặc truyền hình.",
+        "Tham gia thiết kế và sản xuất chiến dịch đa phương tiện, lo ngân sách và tiến độ, hỗ trợ điều phối sản xuất, thiết kế nền và theo dõi tiến độ.",
+        "Tạo hình ảnh 2D và 3D thể hiện vật chuyển động hoặc minh hoạ một quá trình bằng phần mềm hoạt hình, dựng hình.",
+        "Làm vật thể hoặc nhân vật trông sống động bằng cách xử lý ánh sáng, màu sắc, chất liệu, bóng đổ và độ trong suốt, hoặc xử lý ảnh tĩnh để tạo cảm giác chuyển động."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 1,
+        "tu_quan_ly_ap_luc": 1,
+        "thich_ung_hoc_hoi": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "name": "Thiết kế đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+          "name": "Đồ hoạ chuyển động (motion graphics)",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "name": "Thiết kế đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+          "name": "Đồ hoạ chuyển động (motion graphics)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a59708e3-e654-4e37-8b8a-741c3b756eee",
+          "name": "Hệ thống đa phương tiện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 5,
+      "band": "L5",
+      "bandEquivalent": "L5",
+      "title": "Hoạ sĩ diễn hoạt cao cấp (Senior)",
+      "years": "4–7",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế đồ hoạ và hoạt hình phức tạp bằng óc phán đoán, sự sáng tạo và máy tính.",
+        "Tạo thiết kế, bản vẽ và minh hoạ cơ bản cho nhãn sản phẩm, bao bì, thư quảng cáo hoặc truyền hình.",
+        "Tham gia thiết kế và sản xuất chiến dịch đa phương tiện, lo ngân sách và tiến độ, hỗ trợ điều phối sản xuất, thiết kế nền và theo dõi tiến độ.",
+        "Tạo hình ảnh 2D và 3D thể hiện vật chuyển động hoặc minh hoạ một quá trình bằng phần mềm hoạt hình, dựng hình.",
+        "Làm vật thể hoặc nhân vật trông sống động bằng cách xử lý ánh sáng, màu sắc, chất liệu, bóng đổ và độ trong suốt, hoặc xử lý ảnh tĩnh để tạo cảm giác chuyển động."
+      ],
+      "focus": ["tu_duy_giai_quyet_van_de", "thich_ung_hoc_hoi"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 2,
+        "thich_ung_hoc_hoi": 2,
+        "giao_tiep_hop_tac": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "name": "Thiết kế đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+          "name": "Đồ hoạ chuyển động (motion graphics)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a59708e3-e654-4e37-8b8a-741c3b756eee",
+          "name": "Hệ thống đa phương tiện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "name": "Thiết kế đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+          "name": "Đồ hoạ chuyển động (motion graphics)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a59708e3-e654-4e37-8b8a-741c3b756eee",
+          "name": "Hệ thống đa phương tiện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 6,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Trưởng nhóm diễn hoạt / kỹ xảo (Lead)",
+      "years": "6–9",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế đồ hoạ và hoạt hình phức tạp bằng óc phán đoán, sự sáng tạo và máy tính.",
+        "Tạo thiết kế, bản vẽ và minh hoạ cơ bản cho nhãn sản phẩm, bao bì, thư quảng cáo hoặc truyền hình.",
+        "Tham gia thiết kế và sản xuất chiến dịch đa phương tiện, lo ngân sách và tiến độ, hỗ trợ điều phối sản xuất, thiết kế nền và theo dõi tiến độ.",
+        "Tạo hình ảnh 2D và 3D thể hiện vật chuyển động hoặc minh hoạ một quá trình bằng phần mềm hoạt hình, dựng hình.",
+        "Làm vật thể hoặc nhân vật trông sống động bằng cách xử lý ánh sáng, màu sắc, chất liệu, bóng đổ và độ trong suốt, hoặc xử lý ảnh tĩnh để tạo cảm giác chuyển động."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "tu_quan_ly_ap_luc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "name": "Thiết kế đồ hoạ",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+          "name": "Đồ hoạ chuyển động (motion graphics)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a59708e3-e654-4e37-8b8a-741c3b756eee",
+          "name": "Hệ thống đa phương tiện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "name": "Thiết kế đồ hoạ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+          "name": "Đồ hoạ chuyển động (motion graphics)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a59708e3-e654-4e37-8b8a-741c3b756eee",
+          "name": "Hệ thống đa phương tiện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 7,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Giám sát diễn hoạt / kỹ xảo (Supervisor)",
+      "years": "8–12",
+      "coreOutput": null,
+      "tasks": [
+        "Thiết kế đồ hoạ và hoạt hình phức tạp bằng óc phán đoán, sự sáng tạo và máy tính.",
+        "Tạo thiết kế, bản vẽ và minh hoạ cơ bản cho nhãn sản phẩm, bao bì, thư quảng cáo hoặc truyền hình.",
+        "Tham gia thiết kế và sản xuất chiến dịch đa phương tiện, lo ngân sách và tiến độ, hỗ trợ điều phối sản xuất, thiết kế nền và theo dõi tiến độ.",
+        "Tạo hình ảnh 2D và 3D thể hiện vật chuyển động hoặc minh hoạ một quá trình bằng phần mềm hoạt hình, dựng hình.",
+        "Làm vật thể hoặc nhân vật trông sống động bằng cách xử lý ánh sáng, màu sắc, chất liệu, bóng đổ và độ trong suốt, hoặc xử lý ảnh tĩnh để tạo cảm giác chuyển động."
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "name": "Thiết kế đồ hoạ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+          "name": "Đồ hoạ chuyển động (motion graphics)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a59708e3-e654-4e37-8b8a-741c3b756eee",
+          "name": "Hệ thống đa phương tiện",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+          "name": "Đồ hoạ máy tính",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+          "name": "Làm hoạt hình",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+          "name": "Nghệ thuật số",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+          "name": "Phân tích kịch bản",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+          "name": "Ghép lớp hình ảnh số (compositing)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+          "name": "Dựng câu chuyện hoạt hình",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+          "name": "Tạo hình ảnh động",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "name": "Thiết kế đồ hoạ",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+          "name": "Đồ hoạ chuyển động (motion graphics)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/a59708e3-e654-4e37-8b8a-741c3b756eee",
+          "name": "Hệ thống đa phương tiện",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [],
+  "similar": [
+    {
+      "code": "ONET-27-1024.00",
+      "name": "Nhà thiết kế đồ hoạ",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-4031.00",
+      "name": "Nhiếp ảnh, quay phim và dựng phim",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "SWE_GAME",
+      "name": "Lập trình viên Game",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    },
+    {
+      "code": "ONET-27-2012.00",
+      "name": "Đạo diễn, nhà sản xuất",
+      "why": "O*NET Related Occupations, tầng Primary-Short"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương rao trên tin tuyển dụng",
+    "low": 12500000,
+    "median": 15000000,
+    "high": 17500000,
+    "byYears": [],
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs)",
+    "dataYear": "trước 3/2026 (bộ dữ liệu đăng 2/3/2026, không có ngày đăng từng tin)",
+    "note": "Lương rao trên tin tuyển dụng (P25, trung vị, P75), không phải lương thực nhận.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "cao",
+    "openPostings": 324,
+    "source": "Bộ dữ liệu tin tuyển dụng VietJobs (HuggingFace dinhieufam/VietJobs) — Số tin của nghề trên 10.000 tin tuyển dụng trong bộ VietJobs; chỉ báo tương đối, nghiêng về việc văn phòng ở Hà Nội và TP.HCM."
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/afda6ca0-7aa8-41ef-ba5e-8dc607839daf",
+      "name": "Đồ hoạ máy tính",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/eee58e6d-4587-42f0-b9a0-fe055cfe2044",
+      "name": "Làm hoạt hình",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/b99c9b86-b16f-4592-8505-de3d9c99e25b",
+      "name": "Nghệ thuật số",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/97db841c-31bf-4aa0-85b9-0ddd0a77b7a5",
+      "name": "Phân tích kịch bản",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/3cc1ee94-ab2c-4f35-8171-3cf4b5b664e4",
+      "name": "Ghép lớp hình ảnh số (compositing)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/1b2889c2-154d-4e5f-b7d1-bd1f07df86ab",
+      "name": "Dựng câu chuyện hoạt hình",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/e8dd9cc1-c83d-45ec-a7b0-e3727ab90336",
+      "name": "Tạo hình ảnh động",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+      "name": "Thiết kế đồ hoạ",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/8afe68ff-b261-4fa8-ab25-bb30b0e5c292",
+      "name": "Đồ hoạ chuyển động (motion graphics)",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/a59708e3-e654-4e37-8b8a-741c3b756eee",
+      "name": "Hệ thống đa phương tiện",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.99
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.769
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.161
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": -0.182
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": -0.22
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.713
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": -1.759
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "OPEN"
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}

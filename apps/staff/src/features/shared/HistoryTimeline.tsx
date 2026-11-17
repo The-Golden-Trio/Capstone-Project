@@ -1,6 +1,7 @@
+import { EmptyState, Timeline, LoadingBlock as Loading } from '@datn/ui';
 import { staffApi } from '../../api/endpoints';
 import type { LifecycleAction } from '../../api/types';
-import { Loading, ProblemAlert } from '../../components/ui';
+import { ProblemAlert } from '../../components/ui';
 import { useLoad } from '../../hooks/useLoad';
 import { ACTION_LABEL, formatDateTime, STATUS_LABEL } from '../../lib/labels';
 
@@ -18,25 +19,16 @@ export function HistoryTimeline({
   );
   if (history.loading && !history.data) return <Loading />;
   if (history.error) return <ProblemAlert error={history.error} />;
+  if (!history.data?.length)
+    return <EmptyState title="Chưa có lịch sử thay đổi." />;
   return (
-    <ol className="space-y-2">
-      {(history.data ?? []).map((h, i) => (
-        <li key={i} className="border-l-2 border-brand/50 pl-3">
-          <p className="font-medium">
-            {ACTION_LABEL[h.action as LifecycleAction] ?? h.action}
-            <span className="font-normal text-muted">
-              {' '}
-              → {STATUS_LABEL[h.toStatus]}
-            </span>
-          </p>
-          <p className="text-[12px] text-muted">
-            {h.actor} · {formatDateTime(h.at)}
-          </p>
-          {h.note && (
-            <p className="mt-0.5 text-[13px] text-ink-2">“{h.note}”</p>
-          )}
-        </li>
-      ))}
-    </ol>
+    <Timeline
+      items={history.data.map((h) => ({
+        title: `${ACTION_LABEL[h.action as LifecycleAction] ?? h.action} → ${STATUS_LABEL[h.toStatus]}`,
+        time: `${h.actor} · ${formatDateTime(h.at)}`,
+        body: h.note,
+        tone: 'info',
+      }))}
+    />
   );
 }

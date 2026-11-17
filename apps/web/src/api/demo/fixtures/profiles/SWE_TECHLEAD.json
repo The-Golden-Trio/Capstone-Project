@@ -1,0 +1,506 @@
+{
+  "code": "SWE_TECHLEAD",
+  "name": "Trưởng nhóm kỹ thuật",
+  "nameEn": "Tech Lead",
+  "group": "Công nghệ thông tin",
+  "regionId": "cong_nghe",
+  "isIt": true,
+  "summary": "Trưởng nhóm kỹ thuật chịu trách nhiệm kỹ thuật cho một đội: quyết định cách xây phần việc của đội, review mã, gỡ những vướng mắc khó nhất và kèm cặp thành viên. Họ vẫn viết mã nhưng dành nhiều thời gian hơn cho họp và điều phối. Đây không phải vị trí tuyển người mới; thường đến sau vài năm ở cấp Senior.",
+  "fitSummary": "Hợp với người thích làm việc theo quy trình, chính xác với số liệu và giấy tờ. Nghề cũng cần tìm tòi, phân tích và giải quyết vấn đề bằng tư duy, nhưng ít cần sáng tạo và tự do thể hiện ý tưởng.",
+  "downsides": [
+    "Lịch họp dày khiến ít thời gian viết mã, trong khi phần việc kỹ thuật của mình vẫn phải xong.",
+    "Phải đứng giữa khi thành viên bất đồng gay gắt về kỹ thuật.",
+    "Người giỏi nhất đội nghỉ giữa dự án là rủi ro đè trực tiếp lên trưởng nhóm.",
+    "Quyết định kiến trúc từ trước có thể thành gánh nặng khi hệ thống lớn lên."
+  ],
+  "workFacts": [
+    "Ngồi phần lớn thời gian làm việc.",
+    "Ít tiếp xúc với khách hàng bên ngoài.",
+    "Làm việc theo nhóm là chính.",
+    "Được tự quyết nhiều trong công việc.",
+    "36% người trong nghề làm hơn 40 giờ mỗi tuần.",
+    "12% người trong nghề có lịch làm thay đổi hoặc theo mùa; còn lại làm giờ cố định."
+  ],
+  "settings": ["Văn phòng"],
+  "environments": [
+    {
+      "name": "Công ty làm sản phẩm công nghệ (product)",
+      "weight": 45
+    },
+    {
+      "name": "Công ty gia công phần mềm (outsourcing)",
+      "weight": 40
+    },
+    {
+      "name": "Khối công nghệ của ngân hàng, doanh nghiệp lớn",
+      "weight": 15
+    }
+  ],
+  "education": {
+    "preparation": "Cần chuẩn bị nhiều",
+    "note": "Thường cần bằng đại học. Theo O*NET (Mỹ).",
+    "university": [
+      "Kỹ thuật phần mềm",
+      "Khoa học máy tính",
+      "Công nghệ thông tin"
+    ],
+    "vocational": [],
+    "licence": null
+  },
+  "levels": [
+    {
+      "levelNo": 1,
+      "band": "L6",
+      "bandEquivalent": "L6",
+      "title": "Tech Lead",
+      "years": "6-9 (kèm 2+ năm dẫn dắt)",
+      "coreOutput": "Chịu trách nhiệm kỹ thuật cho phần việc của một đội: tự quyết kiến trúc ở phạm vi component hoặc module của đội trong khung kiến trúc tổng thể do cấp trên đưa xuống, review code, gỡ blocker khó nhất và kèm cặp thành viên; chưa có quyền đánh giá hiệu suất.",
+      "tasks": [
+        "Định hướng kỹ thuật, kiến trúc và thiết kế giải pháp",
+        "Kèm lập trình viên, góp ý hiệu suất, dẫn review code",
+        "Gỡ vướng kỹ thuật, dựng CI/CD",
+        "Chuyển yêu cầu của quản lý sản phẩm thành đặc tả kỹ thuật",
+        "Đặt chuẩn code, ước lượng, theo dõi rủi ro cùng quản lý dự án"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "tu_quan_ly_ap_luc": 2,
+        "giao_tiep_hop_tac": 1,
+        "tri_tue_cam_xuc": 1,
+        "lanh_dao_kinh_doanh": 1,
+        "dao_duc_chuyen_nghiep": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f",
+          "name": "Công cụ quản lý cấu hình phần mềm (Git)",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308",
+          "name": "Xác định kiến trúc phần mềm",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5be3d306-6cf1-4b49-aa1d-01651dd4ba4c",
+          "name": "Mô hình hoá hướng đối tượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fae27053-8924-4bfd-b565-c9fe502044c9",
+          "name": "Thiết kế hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f",
+          "name": "Công cụ quản lý cấu hình phần mềm (Git)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308",
+          "name": "Xác định kiến trúc phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5be3d306-6cf1-4b49-aa1d-01651dd4ba4c",
+          "name": "Mô hình hoá hướng đối tượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fae27053-8924-4bfd-b565-c9fe502044c9",
+          "name": "Thiết kế hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp L5 ở một nghề đi trước: Lập trình viên Back-end / Kỹ sư Back-end, Lập trình viên Front-end, Lập trình viên Mobile / Kỹ sư ứng dụng di động, Lập trình viên Game, Kỹ sư phần mềm nhúng / Kỹ sư IoT",
+      "enrolmentId": null,
+      "questCount": 0
+    },
+    {
+      "levelNo": 2,
+      "band": "L7",
+      "bandEquivalent": "L7",
+      "title": "Senior Tech Lead",
+      "years": "8-10",
+      "coreOutput": "Dẫn dắt kỹ thuật cho một đội lớn hoặc vài đội cùng một sản phẩm, điều phối quyết định kỹ thuật giữa các đội và cùng kiến trúc sư đặt kiến trúc tổng thể; vẫn chưa quản lý nhân sự trực tiếp.",
+      "tasks": [
+        "Tuyển người, đặt mục tiêu và theo dõi phát triển của nhóm 10–12 người",
+        "Giữ lộ trình và kiến trúc hệ thống, review thiết kế",
+        "Quản lý nhiều nhóm, chia thời gian giữa kỹ thuật và quản lý người",
+        "Quản lý phát hành và sự cố trên môi trường thật",
+        "Làm đầu mối kỹ thuật với bộ phận sản phẩm và các bên liên quan"
+      ],
+      "focus": ["lanh_dao_kinh_doanh", "tu_duy_giai_quyet_van_de"],
+      "requirement": {
+        "tu_duy_giai_quyet_van_de": 3,
+        "thich_ung_hoc_hoi": 3,
+        "giao_tiep_hop_tac": 2,
+        "lanh_dao_kinh_doanh": 2,
+        "tu_quan_ly_ap_luc": 2,
+        "dao_duc_chuyen_nghiep": 2,
+        "tri_tue_cam_xuc": 1
+      },
+      "entryKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f",
+          "name": "Công cụ quản lý cấu hình phần mềm (Git)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308",
+          "name": "Xác định kiến trúc phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5be3d306-6cf1-4b49-aa1d-01651dd4ba4c",
+          "name": "Mô hình hoá hướng đối tượng",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fae27053-8924-4bfd-b565-c9fe502044c9",
+          "name": "Thiết kế hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        }
+      ],
+      "outputKeywords": [
+        {
+          "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+          "name": "Dùng giao diện riêng của ứng dụng (như API)",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+          "name": "Phân tích đặc tả phần mềm",
+          "level": 3
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+          "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f",
+          "name": "Công cụ quản lý cấu hình phần mềm (Git)",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308",
+          "name": "Xác định kiến trúc phần mềm",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+          "name": "Vòng đời phát triển hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+          "name": "Khớp phần mềm với kiến trúc hệ thống",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/5be3d306-6cf1-4b49-aa1d-01651dd4ba4c",
+          "name": "Mô hình hoá hướng đối tượng",
+          "level": 2
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/fae27053-8924-4bfd-b565-c9fe502044c9",
+          "name": "Thiết kế hệ thống",
+          "level": 1
+        },
+        {
+          "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+          "name": "Vẽ lưu đồ",
+          "level": 1
+        }
+      ],
+      "access": "LOCKED",
+      "lockedReason": "Cần xong cấp trước",
+      "enrolmentId": null,
+      "questCount": 0
+    }
+  ],
+  "path": [
+    {
+      "stage": "nghe_chinh",
+      "label": "Nghề chính",
+      "roles": [
+        {
+          "code": "SWE_TECHLEAD",
+          "name": "Trưởng nhóm kỹ thuật"
+        }
+      ]
+    },
+    {
+      "stage": "cap_cao",
+      "label": "Cấp cao",
+      "roles": [
+        {
+          "code": "SWE_ARCH_SOL",
+          "name": "Kiến trúc sư giải pháp"
+        },
+        {
+          "code": "SWE_EM",
+          "name": "Trưởng phòng Kỹ thuật"
+        }
+      ]
+    }
+  ],
+  "similar": [
+    {
+      "code": "SWE_EM",
+      "name": "Trưởng phòng Kỹ thuật",
+      "why": "Điểm rẽ nhánh IC/Management — cùng xuất phát, khác hướng"
+    },
+    {
+      "code": "SWE_ARCH_SOL",
+      "name": "Kiến trúc sư giải pháp",
+      "why": "Cùng nhánh IC cấp cao, khác phạm vi: một đội và một hệ thống"
+    }
+  ],
+  "pay": {
+    "basisLabel": "Lương theo ITviec",
+    "low": null,
+    "median": 51800000,
+    "high": null,
+    "byYears": [
+      {
+        "years": "1-2 năm",
+        "median": 45300000
+      },
+      {
+        "years": "3-4 năm",
+        "median": 53850000
+      },
+      {
+        "years": ">8 năm",
+        "median": 68450000
+      }
+    ],
+    "source": "Báo cáo ITviec Vietnam IT Salary & Recruitment Market Report 2025-2026",
+    "dataYear": "2025–2026",
+    "note": "Trung vị lương tháng của đúng vị trí này theo số năm kinh nghiệm; trang không ghi gross hay net.",
+    "publicSector": null
+  },
+  "outlook": {
+    "level": "vua",
+    "openPostings": 32,
+    "source": "ITviec, số tin đang mở"
+  },
+  "keywords": [
+    {
+      "id": "http://data.europa.eu/esco/skill/04fe962b-4017-4eb7-9139-7d69b6922bc9",
+      "name": "Dùng giao diện riêng của ứng dụng (như API)",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f28617ad-afdd-4041-814c-216153a38998",
+      "name": "Phân tích đặc tả phần mềm",
+      "level": 3
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/7193cb6d-8334-494f-86e5-21e6d03a47c3",
+      "name": "Ngôn ngữ mô hình hoá thống nhất (UML)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f",
+      "name": "Công cụ quản lý cấu hình phần mềm (Git)",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/f7e2eb04-3e50-4561-bce1-7e51a1fec308",
+      "name": "Xác định kiến trúc phần mềm",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/09f2f811-a3fb-4de3-a70f-6420a6935575",
+      "name": "Vòng đời phát triển hệ thống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/2857540c-180b-4208-9127-e94a01871966",
+      "name": "Khớp phần mềm với kiến trúc hệ thống",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/5be3d306-6cf1-4b49-aa1d-01651dd4ba4c",
+      "name": "Mô hình hoá hướng đối tượng",
+      "level": 2
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/fae27053-8924-4bfd-b565-c9fe502044c9",
+      "name": "Thiết kế hệ thống",
+      "level": 1
+    },
+    {
+      "id": "http://data.europa.eu/esco/skill/901105f8-3a08-453e-b1dc-23619e317fd3",
+      "name": "Vẽ lưu đồ",
+      "level": 1
+    }
+  ],
+  "softEmphasis": [
+    {
+      "id": "tu_duy_giai_quyet_van_de",
+      "z": 0.956
+    },
+    {
+      "id": "tu_quan_ly_ap_luc",
+      "z": 0.713
+    },
+    {
+      "id": "thich_ung_hoc_hoi",
+      "z": 0.671
+    },
+    {
+      "id": "lanh_dao_kinh_doanh",
+      "z": 0.328
+    },
+    {
+      "id": "dao_duc_chuyen_nghiep",
+      "z": 0.22
+    },
+    {
+      "id": "giao_tiep_hop_tac",
+      "z": 0.176
+    },
+    {
+      "id": "tri_tue_cam_xuc",
+      "z": -0.294
+    }
+  ],
+  "ratings": {
+    "responseCount": 0,
+    "withheld": true,
+    "averages": {}
+  },
+  "gate": {
+    "kind": "PREREQUISITE",
+    "band": "L5",
+    "roles": [
+      {
+        "code": "SWE_BACKEND",
+        "name": "Lập trình viên Back-end / Kỹ sư Back-end"
+      },
+      {
+        "code": "SWE_FRONTEND",
+        "name": "Lập trình viên Front-end"
+      },
+      {
+        "code": "SWE_MOBILE",
+        "name": "Lập trình viên Mobile / Kỹ sư ứng dụng di động"
+      },
+      {
+        "code": "SWE_GAME",
+        "name": "Lập trình viên Game"
+      },
+      {
+        "code": "SWE_EMBEDDED",
+        "name": "Kỹ sư phần mềm nhúng / Kỹ sư IoT"
+      }
+    ]
+  },
+  "playable": false,
+  "attribution": [
+    "This page includes information from the O*NET 31.0 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).",
+    "Used under the CC BY 4.0 license.",
+    "O*NET® is a trademark of USDOL/ETA.",
+    "JobQuest has modified all or some of this information.",
+    "USDOL/ETA has not approved, endorsed, or tested these modifications."
+  ]
+}
