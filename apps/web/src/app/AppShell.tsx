@@ -38,7 +38,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const signOut = useSignOut();
   const navigate = useNavigate();
   const name = me.data?.displayName ?? '';
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   const mainRef = useRef<HTMLElement>(null);
   const first = useRef(true);
   // Đổi trang thì đưa focus về nội dung mới cho người dùng bàn phím và
@@ -62,8 +62,13 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="theme-toon-night relative isolate flex min-h-dvh flex-col">
       <NightSky scene="plain" seed="shell" />
+      {/* index.html có base href="/": "#main" trần sẽ trỏ về trang chủ, nên ghép đường dẫn hiện tại. */}
       <a
-        href="#main"
+        href={`${pathname}${search}#main`}
+        onClick={(event) => {
+          event.preventDefault();
+          mainRef.current?.focus();
+        }}
         className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-xl focus:bg-toon-star focus:px-4 focus:py-3 focus:text-toon-ink"
       >
         Bỏ qua thanh điều hướng
