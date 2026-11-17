@@ -1,11 +1,9 @@
-import type { ReactNode } from 'react';
+import { useState, type ComponentProps, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { Logo, Moon, Mountains, Sparkle, StarField } from '@datn/ui';
+import { Eye, EyeOff } from 'lucide-react';
+import { Logo, NightCard, NightSky, ToonInput } from '@datn/ui';
 
-/**
- * Khung màn đăng nhập, đăng ký: bên trái là bầu trời có câu dẫn (ẩn trên
- * điện thoại), bên phải là form trên mặt kính.
- */
+/** Thẻ giấy giữa trời đêm, cùng một form cho mọi khổ màn hình. */
 export function AuthLayout({
   title,
   subtitle,
@@ -18,49 +16,78 @@ export function AuthLayout({
   footer?: ReactNode;
 }) {
   return (
-    <div className="relative grid min-h-dvh lg:grid-cols-[1.05fr_1fr]">
-      <StarField fixed seed="auth" />
-      <aside className="relative hidden overflow-hidden border-r border-line/60 lg:flex lg:flex-col lg:justify-between lg:p-12">
+    <div className="theme-toon-night relative isolate grid min-h-dvh place-items-center px-4 py-10 sm:px-8">
+      <NightSky scene="plain" seed="auth" />
+      <main className="relative w-full max-w-md">
         <Link
           to="/"
-          className="w-fit rounded-md"
+          className="mx-auto mb-8 flex w-fit rounded-lg"
           aria-label="Về trang giới thiệu JobQuest"
         >
-          <Logo size="md" />
+          <Logo size="lg" />
         </Link>
-        <Moon size={84} className="absolute right-16 top-24 animate-float" />
-        <figure className="relative z-10 max-w-md pb-40">
-          <Sparkle size={22} className="mb-5 text-gold-300" />
-          <blockquote className="font-display text-3xl leading-snug text-ink">
-            Làm thử một ca, rồi tự cảm nhận nghề đó có phải của mình không.
-          </blockquote>
-          <figcaption className="mt-4 text-sm text-ink-faint">
-            Không trắc nghiệm tính cách, không ai chấm bạn là người thế nào. Chỉ
-            có việc thật của nghề.
-          </figcaption>
-        </figure>
-        <Mountains className="absolute inset-x-0 bottom-0 h-56" />
-      </aside>
-
-      <main className="relative flex items-center justify-center px-4 py-10 sm:px-8">
-        <div className="w-full max-w-md animate-rise">
-          <Link
-            to="/"
-            className="mb-8 inline-flex rounded-md lg:hidden"
-            aria-label="Về trang giới thiệu JobQuest"
-          >
-            <Logo size="sm" />
-          </Link>
-          <h1 className="text-3xl">{title}</h1>
-          {subtitle && <p className="mt-2 text-ink-muted">{subtitle}</p>}
-          <div className="mt-8">{children}</div>
+        <NightCard tape>
+          <h1 className="font-toon text-3xl font-extrabold leading-tight">
+            {title}
+          </h1>
+          {subtitle && (
+            <p className="mt-2 text-sm text-toon-ink-soft">{subtitle}</p>
+          )}
+          <div className="mt-7">{children}</div>
           {footer && (
-            <div className="mt-8 text-center text-sm text-ink-muted">
+            <div className="mt-7 border-t-2 border-dashed border-toon-ink/30 pt-5 text-center text-sm text-toon-ink-soft">
               {footer}
             </div>
           )}
-        </div>
+        </NightCard>
       </main>
+    </div>
+  );
+}
+
+/** Giữ khả năng hiện/ẩn mật khẩu và định danh Field khi thay giao diện. */
+export function AuthPassword({
+  id,
+  ...props
+}: Omit<ComponentProps<typeof ToonInput>, 'type'>) {
+  const [visible, setVisible] = useState(false);
+  return (
+    <div className="space-y-1">
+      <ToonInput {...props} id={id} type={visible ? 'text' : 'password'} />
+      <button
+        type="button"
+        aria-controls={id}
+        aria-pressed={visible}
+        onClick={() => setVisible(!visible)}
+        className="ml-auto flex min-h-9 items-center gap-1.5 rounded-lg px-2 text-xs font-bold text-toon-ink-soft focus-visible:shadow-toon-focus"
+      >
+        {visible ? (
+          <EyeOff size={15} aria-hidden />
+        ) : (
+          <Eye size={15} aria-hidden />
+        )}
+        {visible ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
+      </button>
+    </div>
+  );
+}
+
+export function AuthNotice({
+  tone = 'success',
+  title,
+  children,
+}: {
+  tone?: 'danger' | 'warning' | 'success';
+  title?: string;
+  children?: ReactNode;
+}) {
+  return (
+    <div
+      role={tone === 'danger' ? 'alert' : 'status'}
+      className={`rounded-xl border-[3px] border-toon-ink p-4 text-sm text-toon-ink ${tone === 'danger' ? 'bg-toon-coral-light' : tone === 'warning' ? 'bg-toon-star-soft' : 'bg-toon-mint'}`}
+    >
+      {title && <p className="font-toon text-lg font-bold">{title}</p>}
+      {children && <div className={title ? 'mt-1' : undefined}>{children}</div>}
     </div>
   );
 }

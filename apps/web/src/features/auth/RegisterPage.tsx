@@ -2,17 +2,10 @@ import { useMemo, useState, type FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Sparkles, UserRound } from 'lucide-react';
 import { profile } from '@datn/game-core';
-import {
-  Button,
-  Callout,
-  Checkbox,
-  Field,
-  Input,
-  PasswordInput,
-} from '@datn/ui';
+import { ToonButton, ToonCheckbox, ToonField, ToonInput } from '@datn/ui';
 import { errorText, useRegister } from '../../api/hooks';
 import { ApiError } from '../../api';
-import { AuthLayout } from './AuthLayout';
+import { AuthLayout, AuthNotice, AuthPassword } from './AuthLayout';
 
 const today = new Date().toISOString().slice(0, 10);
 
@@ -75,7 +68,7 @@ export default function RegisterPage() {
           Đã có tài khoản?{' '}
           <Link
             to="/sign-in"
-            className="font-semibold text-gold-300 hover:text-gold-200"
+            className="font-semibold text-toon-ink underline decoration-2 underline-offset-4 hover:text-toon-maroon"
           >
             Đăng nhập
           </Link>
@@ -84,46 +77,46 @@ export default function RegisterPage() {
     >
       <form onSubmit={submit} noValidate className="flex flex-col gap-5">
         {register.isError && !Object.keys(server).length && (
-          <Callout tone="danger">{errorText(register.error)}</Callout>
+          <AuthNotice tone="danger">{errorText(register.error)}</AuthNotice>
         )}
-        <Field
+        <ToonField
           label="Biệt danh"
           hint="Tên hiển thị trong game. Không cần tên thật."
           error={show('displayName')}
         >
-          <Input
+          <ToonInput
             autoComplete="nickname"
             leftIcon={<UserRound size={16} />}
             value={form.displayName}
             onChange={set('displayName')}
             maxLength={80}
           />
-        </Field>
-        <Field label="Email" error={show('email')}>
-          <Input
+        </ToonField>
+        <ToonField label="Email" error={show('email')}>
+          <ToonInput
             type="email"
             autoComplete="email"
             leftIcon={<Mail size={16} />}
             value={form.email}
             onChange={set('email')}
           />
-        </Field>
-        <Field
+        </ToonField>
+        <ToonField
           label="Mật khẩu"
           hint="Ít nhất 8 ký tự. Một câu dài dễ nhớ an toàn hơn ký tự lạ."
           error={show('password')}
         >
-          <PasswordInput
+          <AuthPassword
             autoComplete="new-password"
             value={form.password}
             onChange={set('password')}
           />
-        </Field>
-        <Field
+        </ToonField>
+        <ToonField
           label="Ngày sinh"
           hint={
             sign ? (
-              <span className="inline-flex items-center gap-1 text-gold-300">
+              <span className="inline-flex items-center gap-1 text-toon-ink-soft">
                 <Sparkles size={12} aria-hidden /> Chòm sao của bạn: {sign.name}
               </span>
             ) : (
@@ -132,28 +125,39 @@ export default function RegisterPage() {
           }
           error={show('dateOfBirth')}
         >
-          <Input
+          <ToonInput
             type="date"
             max={today}
             min="1900-01-01"
             value={form.dateOfBirth}
             onChange={set('dateOfBirth')}
           />
-        </Field>
+        </ToonField>
         <div>
-          <Checkbox
+          <ToonCheckbox
             checked={agree}
             onChange={(e) => setAgree(e.target.checked)}
             label="Mình hiểu màn chơi do AI dẫn dắt và chấm"
-            description="Câu bạn gõ được khử thông tin cá nhân rồi mới gửi tới nhà cung cấp mô hình. Kết quả chỉ để bạn tham khảo, không gửi cho trường hay nhà tuyển dụng."
+            description={
+              <>
+                <span className="block">
+                  Câu bạn gõ được khử thông tin cá nhân trước khi gửi tới nhà
+                  cung cấp mô hình.
+                </span>
+                <span className="mt-2 block">
+                  Kết quả chỉ để tham khảo, không gửi cho trường hay nhà tuyển
+                  dụng.
+                </span>
+              </>
+            }
           />
           {show('agree') && (
-            <p className="mt-1.5 text-xs text-danger" role="alert">
+            <p className="mt-1.5 text-xs text-toon-maroon" role="alert">
               {show('agree')}
             </p>
           )}
         </div>
-        <Button
+        <ToonButton
           type="submit"
           size="lg"
           block
@@ -161,7 +165,7 @@ export default function RegisterPage() {
           loadingText="Đang tạo tài khoản…"
         >
           Tạo tài khoản
-        </Button>
+        </ToonButton>
       </form>
     </AuthLayout>
   );

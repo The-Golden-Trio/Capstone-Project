@@ -90,3 +90,15 @@ describe('Tài khoản explorer qua API demo', () => {
     expect(screen.queryByRole('heading', { name: 'Riêng tư' })).toBeNull();
   });
 });
+
+it('giữ nhãn và giá trị khi hiện/ẩn mật khẩu cartoon', () => {
+  renderWithProviders(<SignInPage />);
+  const input = screen.getByLabelText('Mật khẩu');
+  fireEvent.change(input, { target: { value: 'mat-khau-123' } });
+  expect(input.getAttribute('type')).toBe('password');
+  fireEvent.click(screen.getByRole('button', { name: 'Hiện mật khẩu' }));
+  expect(input.getAttribute('type')).toBe('text');
+  expect((input as HTMLInputElement).value).toBe('mat-khau-123');
+  fireEvent.click(screen.getByRole('button', { name: 'Ẩn mật khẩu' }));
+  expect(input.getAttribute('type')).toBe('password');
+});

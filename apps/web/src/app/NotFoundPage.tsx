@@ -1,23 +1,38 @@
 import { Link } from 'react-router-dom';
-import { Moon, Mountains, StarField, buttonClasses } from '@datn/ui';
+import {
+  CartoonPlanet,
+  NightCard,
+  NightSky,
+  toonButtonClasses,
+} from '@datn/ui';
 
 export default function NotFoundPage() {
   return (
-    <div className="relative grid min-h-dvh place-items-center overflow-hidden px-4 text-center">
-      <StarField seed="404" />
-      <div className="relative z-10 max-w-md">
-        <Moon size={64} className="mx-auto animate-float" />
-        <p className="eyebrow mt-6">Lạc giữa ngân hà</p>
-        <h1 className="mt-2 text-4xl">Không có hành tinh nào ở đây</h1>
-        <p className="mt-3 text-ink-muted">
-          Đường dẫn này không tồn tại hoặc đã đổi. Quay về bản đồ để chọn một
-          nghề khác nhé.
-        </p>
-        <Link to="/galaxy" className={buttonClasses({ className: 'mt-6' })}>
-          Về bản đồ ngân hà
-        </Link>
-      </div>
-      <Mountains className="absolute inset-x-0 bottom-0 h-44" />
+    <div className="theme-toon-night relative isolate grid min-h-dvh place-items-center px-5 py-12 text-center">
+      <NightSky seed="404" scene="plain" />
+      <main className="relative w-full max-w-md">
+        <div aria-hidden className="mx-auto mb-6 w-fit -rotate-12">
+          <CartoonPlanet size={160} seed="lost" ring />
+        </div>
+        <NightCard tape>
+          <p className="font-toon text-lg font-bold text-toon-ink-soft">
+            Lạc giữa ngân hà · 404
+          </p>
+          <h1 className="mt-3 font-toon text-3xl font-extrabold">
+            Không có hành tinh nào ở đây
+          </h1>
+          <p className="mt-4 text-toon-ink-soft">
+            Đường dẫn không tồn tại hoặc đã đổi. Về bản đồ để chọn một nghề khác
+            nhé.
+          </p>
+          <Link
+            to="/galaxy"
+            className={toonButtonClasses({ className: 'mt-6' })}
+          >
+            Về bản đồ ngân hà
+          </Link>
+        </NightCard>
+      </main>
     </div>
   );
 }

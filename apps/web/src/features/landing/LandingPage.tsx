@@ -2,396 +2,303 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Briefcase,
-  CloudMoon,
   Compass,
   EyeOff,
   MessagesSquare,
   NotebookPen,
   ShieldCheck,
+  Clock3,
+  CloudMoon,
 } from 'lucide-react';
 import {
+  CartoonPlanet,
+  Comet,
   Logo,
-  Moon,
-  Mountains,
-  Nebula,
-  Planet,
-  Sparkle,
-  StarDivider,
-  StarField,
-  buttonClasses,
-  regionColor,
+  NightCard,
+  NightSky,
+  ToonBadge,
+  WavyDivider,
+  toonButtonClasses,
 } from '@datn/ui';
 import { useMe } from '../../api/hooks';
+import { TOON_BACKDROPS, TOON_CHARACTERS } from '../../lib/toon';
 
 const STEPS = [
   {
     icon: Compass,
     title: 'Chọn một hành tinh nghề',
-    body: 'Bản đồ ngân hà có 221 nghề trong 6 vùng. Chưa biết bắt đầu từ đâu thì làm Get to know me ba phút.',
+    body: 'Khám phá bản đồ, ghé một nghề.',
   },
   {
     icon: Briefcase,
     title: 'Nhận vai ở một cấp',
-    body: 'Từ thực tập tới trưởng nhóm. Mỗi cấp có công ty, đồng nghiệp, quy định và cả mặt không hay của vị trí đó.',
+    body: 'Gặp công ty, đồng nghiệp, quy định.',
   },
   {
     icon: MessagesSquare,
     title: 'Làm một ca thật',
-    body: 'Mười đến mười lăm phút: hỏi đồng nghiệp, mở log, giữ lời hẹn, viết email báo sếp. Đồng hồ chạy theo việc bạn làm.',
+    body: 'Hỏi, đọc dữ kiện, chọn cách xử lý.',
   },
   {
     icon: NotebookPen,
     title: 'Nhìn lại ca làm',
-    body: 'Kết quả, nhận xét về chính câu trả lời của bạn và hướng làm tốt hơn. Kỹ năng lên bậc, mở cấp tiếp theo.',
+    body: 'Kết quả, nhận xét, hướng làm tốt hơn.',
   },
-] as const;
-
+];
 const PROMISES = [
   {
     icon: EyeOff,
     title: 'Không dán nhãn bạn',
-    body: 'JobQuest không nói "bạn hợp nghề X". Bạn làm thử rồi tự cảm nhận; game chỉ chỉ ra việc bạn đã làm.',
+    body: 'Bạn làm thử rồi tự cảm nhận. Game chỉ chỉ ra việc bạn đã làm.',
   },
   {
     icon: CloudMoon,
     title: 'Có cả mặt khó của nghề',
-    body: 'Tăng ca, áp lực, việc lặp lại: mỗi nghề kể thật những điều người trong nghề hay than.',
+    body: 'Tăng ca, áp lực, việc lặp lại: nghe cả những điều người trong nghề hay than.',
   },
   {
     icon: ShieldCheck,
     title: 'Kết quả là của riêng bạn',
     body: 'Không trang công khai, không bảng xếp hạng, không gửi cho trường hay nhà tuyển dụng.',
   },
-] as const;
-
-/** Vài hành tinh trang trí ở hero, mỗi vùng nghề một màu. */
-const HERO_PLANETS = [
-  {
-    seed: 'SWE_BACKEND',
-    region: 'cong_nghe',
-    size: 92,
-    x: '8%',
-    y: '22%',
-    delay: '0s',
-  },
-  {
-    seed: 'NURSE',
-    region: 'suc_khoe',
-    size: 54,
-    x: '84%',
-    y: '58%',
-    delay: '1.2s',
-  },
-  {
-    seed: 'CHEF',
-    region: 'dich_vu',
-    size: 40,
-    x: '18%',
-    y: '70%',
-    delay: '2.1s',
-  },
-  {
-    seed: 'DESIGN',
-    region: 'sang_tao',
-    size: 64,
-    x: '76%',
-    y: '16%',
-    delay: '0.6s',
-  },
-] as const;
+];
 
 export default function LandingPage() {
   const me = useMe();
   const signedIn = Boolean(me.data);
-
+  const destination = signedIn ? '/galaxy' : '/register';
   return (
-    <div className="relative overflow-x-clip">
-      <StarField fixed seed="landing" glints={12} />
-
-      <header className="absolute inset-x-0 top-0 z-20">
-        <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
-          <Logo size="md" />
-          <nav className="flex items-center gap-2">
-            {signedIn ? (
-              <Link
-                to="/galaxy"
-                className={buttonClasses({ variant: 'secondary', size: 'sm' })}
-              >
-                Vào bản đồ
-              </Link>
-            ) : (
-              <>
-                <Link
-                  to="/sign-in"
-                  className={buttonClasses({ variant: 'ghost', size: 'sm' })}
-                >
-                  Đăng nhập
-                </Link>
-                <Link
-                  to="/register"
-                  className={buttonClasses({
-                    variant: 'secondary',
-                    size: 'sm',
-                    className: 'max-sm:hidden',
-                  })}
-                >
-                  Tạo tài khoản
-                </Link>
-              </>
-            )}
+    <div className="theme-toon-night relative isolate overflow-x-clip">
+      <header className="relative z-20 border-b-[3px] border-toon-night-deep bg-toon-night-deep">
+        <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+          <Link to="/" aria-label="JobQuest, trang chủ" className="rounded-lg">
+            <Logo size="md" />
+          </Link>
+          <nav aria-label="Tài khoản" className="flex items-center gap-3">
+            <Link
+              to={signedIn ? '/galaxy' : '/sign-in'}
+              className="rounded-lg px-2 py-2 font-toon font-bold text-toon-star underline-offset-4 hover:underline"
+            >
+              {signedIn ? 'Vào bản đồ' : 'Đăng nhập'}
+            </Link>
           </nav>
         </div>
       </header>
-
-      {/* Hero */}
-      <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 pb-48 pt-28 text-center">
-        <Nebula
-          color="#254a7a"
-          className="left-1/2 top-1/3 size-[42rem] -translate-x-1/2 -translate-y-1/2"
-        />
-        <Moon
-          size={72}
-          className="absolute right-[12%] top-28 hidden animate-float sm:block"
-        />
-        {HERO_PLANETS.map((p) => (
+      <main>
+        <section
+          aria-labelledby="hero-title"
+          className="relative isolate overflow-hidden border-b-[3px] border-toon-night-deep"
+        >
+          <NightSky scene="home" horizon="city" seed="home" />
           <div
-            key={p.seed}
             aria-hidden
-            className="absolute hidden animate-float md:block"
-            style={{ left: p.x, top: p.y, animationDelay: p.delay }}
+            className="pointer-events-none absolute right-[10%] top-12 hidden -rotate-12 lg:block"
           >
-            <Planet
-              seed={p.seed}
-              color={regionColor(p.region)}
-              size={p.size}
-              status="new"
-            />
+            <Comet size={150} />
           </div>
-        ))}
-
-        <div className="relative z-10 mx-auto max-w-3xl animate-rise">
-          <p className="eyebrow inline-flex items-center gap-2">
-            <Sparkle size={10} /> Khám phá nghề bằng cách làm thử{' '}
-            <Sparkle size={10} />
-          </p>
-          <h1 className="mt-5 text-[2.6rem] leading-[1.08] sm:text-6xl">
-            <span className="text-gilded">Thử làm một nghề</span>
-            <br />
-            trước khi chọn nghề
-          </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-ink-muted">
-            Nhận vai trong một ca làm như thật: khách hối, đồng nghiệp hỏi, sếp
-            chờ báo cáo. Bạn tự xử lý, rồi tự cảm nhận mình có muốn làm nghề đó
-            mỗi ngày không.
-          </p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              to={signedIn ? '/galaxy' : '/register'}
-              className={buttonClasses({ size: 'lg', className: 'min-w-56' })}
-            >
-              {signedIn ? 'Tiếp tục hành trình' : 'Bắt đầu hành trình'}
-              <ArrowRight size={18} aria-hidden />
-            </Link>
-            {!signedIn && (
-              <Link
-                to="/sign-in"
-                className={buttonClasses({
-                  variant: 'secondary',
-                  size: 'lg',
-                  className: 'min-w-56',
-                })}
+          <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-36 pt-14 sm:px-8 lg:min-h-[730px] lg:grid-cols-[1.25fr_1fr] lg:gap-16 lg:pb-28 lg:pt-12">
+            <div className="relative z-10">
+              <p className="mb-5 inline-block -rotate-2 rounded-lg border-[3px] border-toon-ink bg-toon-star px-3 py-1 font-toon text-sm font-bold text-toon-ink shadow-toon">
+                Khám phá nghề bằng cách làm thử
+              </p>
+              <h1
+                id="hero-title"
+                className="max-w-2xl font-toon text-[2.8rem] leading-[1.08] font-extrabold text-toon-paper sm:text-6xl lg:text-7xl"
               >
-                Mình đã có tài khoản
-              </Link>
-            )}
+                Thử làm một nghề{' '}
+                <span className="text-toon-star">trước khi chọn nghề</span>
+              </h1>
+              <p className="mt-6 max-w-md text-lg font-semibold leading-relaxed text-toon-paper">
+                Khách hối, đồng nghiệp hỏi, sếp chờ báo cáo. Bạn tự xử lý một ca
+                làm, rồi tự cảm nhận nghề.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-5">
+                <Link
+                  to={destination}
+                  className={toonButtonClasses({ size: 'lg' })}
+                >
+                  {signedIn ? 'Tiếp tục hành trình' : 'Bắt đầu hành trình'}
+                  <ArrowRight size={20} aria-hidden />
+                </Link>
+                <a
+                  href="#cach-choi"
+                  className="rounded-lg py-2 font-bold text-toon-star-soft underline underline-offset-4"
+                >
+                  Xem cách chơi
+                </a>
+              </div>
+              <p className="mt-5 text-xs text-toon-star-soft">
+                Miễn phí · Chơi trên trình duyệt, cả điện thoại
+              </p>
+            </div>
+            <div className="relative mx-auto w-full max-w-md pb-5 pt-8">
+              <div aria-hidden className="absolute -right-4 -top-5 rotate-12">
+                <CartoonPlanet
+                  size={130}
+                  seed="SWE_BACKEND"
+                  region="cong_nghe"
+                />
+              </div>
+              <NightCard
+                tape
+                className="relative rotate-2"
+                ribbon={<h2>Một ca làm đang chờ</h2>}
+              >
+                <div className="relative h-64 overflow-hidden rounded-xl border-[3px] border-toon-ink bg-toon-sky">
+                  <img
+                    src={TOON_BACKDROPS.office}
+                    alt=""
+                    className="absolute size-full object-cover"
+                  />
+                  <img
+                    src={TOON_CHARACTERS.lead.src}
+                    alt="Đồng nghiệp trong ca làm"
+                    className="absolute bottom-[-25%] left-0 h-[115%] w-auto max-w-none"
+                  />
+                  <p className="absolute right-3 top-4 max-w-[57%] -rotate-2 rounded-xl border-[3px] border-toon-ink bg-toon-mint p-3 font-semibold text-toon-ink shadow-toon-sm">
+                    API chậm. Trưa phải có hướng xử lý.
+                  </p>
+                </div>
+                <p className="mt-4 flex items-center gap-2 font-bold">
+                  <Clock3 size={18} aria-hidden />
+                  9:40 · Ca làm Back-end
+                </p>
+                <p className="mt-2 text-sm text-toon-ink-soft">
+                  Mở log hay hỏi đồng nghiệp? Bạn chọn bước tiếp theo.
+                </p>
+              </NightCard>
+            </div>
           </div>
-          <p className="mt-5 text-xs text-night-300">
-            Miễn phí · Chơi trên trình duyệt, cả điện thoại
-          </p>
-        </div>
-        <Mountains className="absolute inset-x-0 bottom-0 h-64 sm:h-80" />
-      </section>
-
-      {/* Vòng chơi */}
-      <section
-        className="relative bg-night-950/60 px-4 py-20 sm:py-28"
-        aria-labelledby="loop-title"
-      >
-        <div className="mx-auto max-w-6xl">
-          <p className="eyebrow text-center">Một vòng chơi</p>
-          <h2 id="loop-title" className="mt-3 text-center text-3xl sm:text-4xl">
-            Từ một chấm sáng tới một ngày làm việc
-          </h2>
-          <ol className="relative mt-14 grid gap-5 md:grid-cols-4">
-            <span
-              aria-hidden
-              className="absolute left-[12%] right-[12%] top-8 hidden h-px bg-[linear-gradient(90deg,transparent,rgb(212_176_106/0.6),transparent)] md:block"
-            />
-            {STEPS.map(({ icon: Icon, title, body }, i) => (
-              <li
-                key={title}
-                className="relative flex flex-col items-center text-center"
-              >
-                <span className="relative z-10 grid size-16 place-items-center rounded-full border border-line-gold bg-night-850 text-gold-300 shadow-glow">
-                  <Icon size={24} aria-hidden />
-                </span>
-                <span className="mt-4 font-wordmark text-xs tracking-[0.2em] text-gold-400">
-                  0{i + 1}
-                </span>
-                <h3 className="mt-1 text-lg">{title}</h3>
-                <p className="mt-2 text-sm text-ink-muted">{body}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* Một ca làm trông thế nào */}
-      <section
-        className="relative px-4 py-20 sm:py-28"
-        aria-labelledby="shift-title"
-      >
-        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
-          <div>
-            <p className="eyebrow">Ví dụ một ca</p>
-            <h2 id="shift-title" className="mt-3 text-3xl sm:text-4xl">
-              9:40, API chậm, trưa phải có hướng xử lý
-            </h2>
-            <p className="mt-4 text-ink-muted">
-              Bạn là kỹ sư Back-end năm hai. Chị Linh bên hỗ trợ khách hàng gọi:
-              khách sỉ dọa huỷ đơn. Bạn chọn hỏi ai trước, mở log nào, hứa gì
-              với ai, rồi viết email báo anh trưởng nhóm. Không có đáp án mẫu để
-              chép: màn chơi cho đủ dữ kiện, phần còn lại là cách bạn làm việc.
+        </section>
+        <section
+          id="cach-choi"
+          aria-labelledby="loop-title"
+          className="scroll-mt-6 px-5 py-16 sm:px-8"
+        >
+          <div className="mx-auto max-w-6xl">
+            <p className="text-center text-sm font-bold tracking-widest text-toon-star">
+              MỘT VÒNG CHƠI
             </p>
-            <ul className="mt-6 grid gap-3 text-sm">
-              {[
-                'Đồng hồ trong truyện chạy theo việc bạn làm: một cuộc gọi 5 phút, viết bản vá 25 phút.',
-                'Đồng nghiệp chỉ biết điều người đó biết, và nhớ lời bạn đã hứa.',
-                'Chấm theo cách bạn xử lý, không chấm thuộc bài.',
-              ].map((t) => (
-                <li key={t} className="flex gap-3">
-                  <Sparkle size={14} className="mt-1 text-gold-300" />
-                  <span className="text-ink-muted">{t}</span>
+            <h2
+              id="loop-title"
+              className="mt-3 text-center font-toon text-3xl font-extrabold sm:text-4xl"
+            >
+              Từ hành tinh nghề tới một ngày làm việc
+            </h2>
+            <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {STEPS.map(({ icon: Icon, title, body }, i) => (
+                <li key={title}>
+                  <NightCard className="h-full" tape={i === 1 || i === 3}>
+                    <span className="flex items-center justify-between">
+                      <Icon size={30} strokeWidth={2.5} aria-hidden />
+                      <span className="font-toon text-3xl font-extrabold text-toon-ink-faint">
+                        0{i + 1}
+                      </span>
+                    </span>
+                    <h3 className="mt-5 font-toon text-xl font-bold">
+                      {title}
+                    </h3>
+                    <p className="mt-2 text-sm text-toon-ink-soft">{body}</p>
+                  </NightCard>
                 </li>
               ))}
-            </ul>
+            </ol>
           </div>
-          <ShiftPreview />
+        </section>
+        <div aria-hidden className="mx-auto max-w-6xl px-5">
+          <WavyDivider />
         </div>
-      </section>
-
-      {/* Lời hứa */}
-      <section
-        className="relative bg-night-950/60 px-4 py-20"
-        aria-labelledby="promise-title"
-      >
-        <div className="mx-auto max-w-6xl">
-          <h2 id="promise-title" className="text-center text-3xl">
-            Ba điều JobQuest giữ
+        <section aria-labelledby="shift-title" className="px-5 py-16 sm:px-8">
+          <div className="mx-auto max-w-6xl">
+            <NightCard ribbon={<h2 id="shift-title">Ví dụ một ca</h2>}>
+              <div className="grid items-center gap-8 md:grid-cols-2">
+                <div>
+                  <ToonBadge tone="sky">Kỹ sư Back-end</ToonBadge>
+                  <h3 className="mt-4 font-toon text-3xl font-extrabold">
+                    9:40, API chậm. Trưa phải có hướng xử lý.
+                  </h3>
+                  <p className="mt-4 text-toon-ink-soft">
+                    Chị Linh bên hỗ trợ gọi: khách sỉ dọa huỷ đơn. Bạn chọn hỏi
+                    ai, mở log nào, hứa gì, rồi viết báo cáo.
+                  </p>
+                  <details className="mt-5 rounded-xl border-2 border-toon-ink bg-toon-cream p-4">
+                    <summary className="cursor-pointer font-bold">
+                      Một ca diễn ra thế nào?
+                    </summary>
+                    <ul className="mt-3 list-disc space-y-3 pl-5 text-sm text-toon-ink-soft">
+                      <li>Đồng hồ trong truyện chạy theo việc bạn làm.</li>
+                      <li>Đồng nghiệp nhớ lời bạn đã hứa.</li>
+                      <li>Chấm theo cách xử lý, không chấm thuộc bài.</li>
+                    </ul>
+                  </details>
+                </div>
+                <div className="rounded-2xl border-[3px] border-toon-ink bg-toon-sky p-5 shadow-toon">
+                  <p className="mb-3 text-xs font-bold uppercase">
+                    Chị Linh · Hỗ trợ khách hàng
+                  </p>
+                  <p className="rounded-xl border-[3px] border-toon-ink bg-toon-paper p-4 font-semibold">
+                    Chị hứa với họ trưa xong được hông em?
+                  </p>
+                  <p className="ml-5 mt-4 rounded-xl border-[3px] border-toon-ink bg-toon-star-soft p-4 font-semibold">
+                    Em chưa chắc trưa xong chị ơi. 11:30 em báo chị tình hình
+                    nha.
+                  </p>
+                  <p className="mt-4 text-xs font-bold">
+                    Minh hoạ một khung thoại trong ca
+                  </p>
+                </div>
+              </div>
+            </NightCard>
+          </div>
+        </section>
+        <section aria-labelledby="promise-title" className="px-5 pb-16 sm:px-8">
+          <div className="mx-auto max-w-6xl">
+            <h2
+              id="promise-title"
+              className="text-center font-toon text-3xl font-extrabold"
+            >
+              Ba điều JobQuest giữ
+            </h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {PROMISES.map(({ icon: Icon, title, body }) => (
+                <NightCard key={title} tone="night">
+                  <Icon size={28} className="text-toon-star" aria-hidden />
+                  <h3 className="mt-4 font-toon text-xl font-bold">{title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed">{body}</p>
+                </NightCard>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="px-5 pb-16 text-center">
+          <h2 className="font-toon text-3xl font-extrabold">
+            Một ca làm, mười lăm phút
           </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {PROMISES.map(({ icon: Icon, title, body }) => (
-              <article
-                key={title}
-                className="glass rounded-lg p-6 shadow-panel"
-              >
-                <Icon size={22} className="text-gold-300" aria-hidden />
-                <h3 className="mt-4 text-lg">{title}</h3>
-                <p className="mt-2 text-sm text-ink-muted">{body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden px-4 pb-56 pt-20 text-center">
-        <StarDivider className="mx-auto mb-12 max-w-sm" />
-        <h2 className="text-3xl sm:text-4xl">Một ca làm, mười lăm phút</h2>
-        <p className="mx-auto mt-3 max-w-md text-ink-muted">
-          Đủ để biết bạn có muốn quay lại vào ngày mai không.
-        </p>
-        <Link
-          to={signedIn ? '/galaxy' : '/register'}
-          className={buttonClasses({ size: 'lg', className: 'mt-8' })}
-        >
-          {signedIn ? 'Vào bản đồ ngân hà' : 'Tạo tài khoản miễn phí'}
-        </Link>
-        <Mountains tone="dawn" className="absolute inset-x-0 bottom-0 h-56" />
-      </section>
-
-      <footer className="relative border-t border-line/50 bg-night-950 px-4 py-8 text-center text-xs text-night-300">
+          <p className="mx-auto mt-3 max-w-md text-toon-star-soft">
+            Đủ để biết bạn có muốn quay lại vào ngày mai không.
+          </p>
+          <Link
+            to={destination}
+            className={toonButtonClasses({ size: 'lg', className: 'mt-6' })}
+          >
+            {signedIn ? 'Vào bản đồ ngân hà' : 'Tạo tài khoản miễn phí'}
+          </Link>
+        </section>
+      </main>
+      <footer className="border-t-[3px] border-toon-ink bg-toon-night-deep px-5 py-8 text-center text-xs text-toon-paper">
         <p>
           JobQuest · Đồ án tốt nghiệp nhóm Golden Trio, Trường Đại học Bách khoa
           – ĐHQG-HCM.
         </p>
-        <p className="mt-1">
-          Màn chơi do AI dẫn dắt và chấm; kết quả chỉ để tham khảo. Dữ liệu nghề
-          có dùng O*NET 31.0 (CC BY 4.0) và ESCO của Ủy ban châu Âu, đã chỉnh
-          sửa.
+        <p className="mx-auto mt-3 max-w-2xl">
+          Màn chơi do AI dẫn dắt và chấm; kết quả chỉ để tham khảo, không gửi
+          trường hay nhà tuyển dụng.
+        </p>
+        <p className="mx-auto mt-2 max-w-2xl">
+          Dữ liệu nghề có dùng O*NET 31.0 (CC BY 4.0) và ESCO của Ủy ban châu
+          Âu, đã chỉnh sửa.
         </p>
       </footer>
-    </div>
-  );
-}
-
-/** Mô phỏng tĩnh một khung thoại trong ca, để người mới hình dung màn chơi. */
-function ShiftPreview() {
-  return (
-    <div aria-hidden className="relative">
-      <div className="glass overflow-hidden rounded-xl shadow-lift">
-        <div className="flex items-center justify-between border-b border-line px-4 py-3 text-xs">
-          <span className="font-semibold text-ink">
-            API đơn hàng chậm bất thường
-          </span>
-          <span className="tabular rounded-full bg-night-950/70 px-2.5 py-1 font-semibold text-gold-200">
-            10:05 · còn 23 điểm
-          </span>
-        </div>
-        <div className="space-y-3 p-5">
-          <Bubble
-            who="Chị Linh · Hỗ trợ khách hàng"
-            text="Khách sỉ gọi chị nãy giờ á. Họ nói trưa mà còn lag là huỷ đơn luôn."
-          />
-          <Bubble
-            who="Chị Linh"
-            text="Chị hứa với họ trưa xong được hông em?"
-          />
-          <div className="ml-auto max-w-[80%] rounded-lg rounded-br-sm border border-gold-500/40 bg-gold-900/40 px-3.5 py-2.5 text-sm text-gold-100">
-            Em chưa chắc trưa xong chị ơi. 11:30 em báo chị tình hình nha.
-          </div>
-        </div>
-        <div className="grid grid-cols-2 gap-2 border-t border-line p-4 text-xs">
-          {[
-            'Mở log máy chủ · 1 điểm',
-            'Hỏi anh An · 1 điểm',
-            'Chạy thử truy vấn · 2 điểm',
-            'Chốt nguyên nhân',
-          ].map((a) => (
-            <span
-              key={a}
-              className="rounded-md border border-line bg-night-800/60 px-3 py-2 text-ink-muted"
-            >
-              {a}
-            </span>
-          ))}
-        </div>
-      </div>
-      <Sparkle
-        size={18}
-        twinkle
-        className="absolute -right-2 -top-2 text-gold-300"
-      />
-    </div>
-  );
-}
-
-function Bubble({ who, text }: { who: string; text: string }) {
-  return (
-    <div className="max-w-[85%]">
-      <p className="mb-1 text-[11px] font-semibold text-night-300">{who}</p>
-      <p className="rounded-lg rounded-bl-sm border border-line bg-night-800/80 px-3.5 py-2.5 text-sm text-ink">
-        {text}
-      </p>
     </div>
   );
 }

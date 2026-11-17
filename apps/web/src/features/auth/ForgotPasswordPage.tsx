@@ -2,10 +2,10 @@ import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import { useMutation } from '@tanstack/react-query';
-import { Button, Callout, Field, Input } from '@datn/ui';
+import { ToonButton, ToonField, ToonInput } from '@datn/ui';
 import { api } from '../../api';
 import { errorText } from '../../api/hooks';
-import { AuthLayout } from './AuthLayout';
+import { AuthLayout, AuthNotice } from './AuthLayout';
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
@@ -25,32 +25,32 @@ export default function ForgotPasswordPage() {
       footer={
         <Link
           to="/sign-in"
-          className="font-semibold text-gold-300 hover:text-gold-200"
+          className="font-semibold text-toon-ink underline decoration-2 underline-offset-4 hover:text-toon-maroon"
         >
           Quay lại đăng nhập
         </Link>
       }
     >
       {send.isSuccess ? (
-        <Callout tone="success" title="Đã gửi, bạn kiểm tra hộp thư nhé">
+        <AuthNotice tone="success" title="Đã gửi, bạn kiểm tra hộp thư nhé">
           Nếu email này có tài khoản, thư sẽ tới trong vài phút. Xem cả mục thư
           rác.
-        </Callout>
+        </AuthNotice>
       ) : (
         <form onSubmit={submit} className="flex flex-col gap-5" noValidate>
           {send.isError && (
-            <Callout tone="danger">{errorText(send.error)}</Callout>
+            <AuthNotice tone="danger">{errorText(send.error)}</AuthNotice>
           )}
-          <Field label="Email">
-            <Input
+          <ToonField label="Email">
+            <ToonInput
               type="email"
               autoComplete="email"
               leftIcon={<Mail size={16} />}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-          </Field>
-          <Button
+          </ToonField>
+          <ToonButton
             type="submit"
             size="lg"
             block
@@ -58,7 +58,7 @@ export default function ForgotPasswordPage() {
             disabled={!email.trim()}
           >
             Gửi đường dẫn
-          </Button>
+          </ToonButton>
         </form>
       )}
     </AuthLayout>

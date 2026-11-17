@@ -61,6 +61,21 @@ it('trả lời 18 thẻ bằng phím 1/2/3, bỏ kể về bạn, xem tối đa
   expect(document.body.textContent).not.toMatch(/phù hợp|hợp nhất|bạn nên|%/i);
   expect(saved?.goals).toEqual({});
   expect(saved?.interests).toEqual([]);
+  expect(screen.getByText('Bản nháp, không phải chẩn đoán.')).toBeTruthy();
+  expect(
+    screen.getByText(
+      'Chỉ để tham khảo, không gửi cho trường hay nhà tuyển dụng.',
+    ),
+  ).toBeTruthy();
+  const meters = screen.getAllByRole('meter');
+  expect(meters).toHaveLength(6);
+  for (const meter of meters) {
+    expect(meter.getAttribute('aria-valuemin')).toBe('1');
+    expect(meter.getAttribute('aria-valuemax')).toBe('3');
+    expect(Number(meter.getAttribute('aria-valuenow'))).toBeGreaterThanOrEqual(
+      1,
+    );
+  }
   const { player } = await import('../../api/demo/store');
   expect(player().me.quizDone).toBe(true);
 }, 12_000);
