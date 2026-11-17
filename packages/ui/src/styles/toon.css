@@ -43,6 +43,17 @@
   --color-toon-mint-deep: #3f8a5c;
   --color-toon-wood: #c98b4e;
 
+  /* Đêm cartoon cho các màn ngoài ca làm (bản đồ, hồ sơ, chân dung): cùng
+     nét mực, màu lấy từ logo nhóm (navy, vàng la bàn, cam mũi nam). */
+  --color-toon-night: #142650; /* nền trời */
+  --color-toon-night-deep: #0c1834; /* đáy trời, viền trên nền đêm */
+  --color-toon-night-soft: #213a73; /* mặt nổi trên nền đêm */
+  --color-toon-night-line: #3b5aa0; /* quỹ đạo, chòm sao */
+  --color-toon-star: #f6cf5e; /* sao vàng la bàn */
+  --color-toon-star-soft: #fbe6a4;
+  --color-toon-compass-red: #ef6f5e; /* mũi nam của la bàn */
+  --color-toon-planet: #6fa8dc; /* hành tinh xanh */
+
   --font-toon:
     'Baloo 2', 'Nunito Variable', ui-rounded, 'Arial Rounded MT Bold',
     system-ui, sans-serif;
@@ -144,6 +155,21 @@
   /* Vòng focus mặc định của theme; component có vòng riêng thì tự tắt outline. */
   & :focus-visible {
     outline: 3px solid var(--color-toon-sky-deep);
+    outline-offset: 3px;
+  }
+}
+
+/* Vùng theme đêm cartoon: trời navy, chữ sáng; thẻ giấy kem nổi trên nền. */
+@utility theme-toon-night {
+  font-family: var(--font-toon-body);
+  color: var(--color-toon-paper);
+  background-color: var(--color-toon-night);
+  & ::selection {
+    background: rgb(246 207 94 / 0.5);
+    color: var(--color-toon-ink);
+  }
+  & :focus-visible {
+    outline: 3px solid var(--color-toon-star);
     outline-offset: 3px;
   }
 }

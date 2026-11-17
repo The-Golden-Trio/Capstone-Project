@@ -419,7 +419,8 @@ export interface ToonTabsProps<K extends string = string> {
   onChange: (key: K) => void;
   label: string;
   idBase?: string;
-  variant?: 'underline' | 'pill';
+  /** `quiet`: tab không chọn không viền, không nền — chỉ tab đang chọn nổi. */
+  variant?: 'underline' | 'pill' | 'quiet';
   className?: string;
 }
 
@@ -433,6 +434,7 @@ export function ToonTabs<K extends string>({
   variant = 'pill',
   className,
 }: ToonTabsProps<K>) {
+  const quiet = variant === 'quiet';
   const autoId = useId();
   const base = idBase ?? autoId;
   const refs = useRef<Array<HTMLButtonElement | null>>([]);
@@ -475,10 +477,12 @@ export function ToonTabs<K extends string>({
               refs.current[next]?.focus();
             }}
             className={cn(
-              'inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-full border-[3px] border-toon-ink px-4 py-1.5 font-toon text-base font-bold text-toon-ink focus-visible:outline-none focus-visible:shadow-toon-focus',
+              'inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-full border-[3px] px-4 py-1.5 font-toon text-base font-bold focus-visible:outline-none focus-visible:shadow-toon-focus',
               active
-                ? 'bg-toon-mustard shadow-toon'
-                : 'bg-toon-paper hover:bg-toon-sand',
+                ? 'border-toon-ink bg-toon-mustard text-toon-ink shadow-toon'
+                : quiet
+                  ? 'border-transparent bg-transparent text-toon-ink-soft hover:bg-toon-sand/70 hover:text-toon-ink'
+                  : 'border-toon-ink bg-toon-paper text-toon-ink hover:bg-toon-sand',
             )}
           >
             {item.icon && (
@@ -487,11 +491,16 @@ export function ToonTabs<K extends string>({
               </span>
             )}
             <span className="min-w-0 break-words">{item.label}</span>
-            {item.count !== undefined && (
-              <span className="inline-flex min-h-5 min-w-5 shrink-0 items-center justify-center rounded-full border-2 border-toon-ink bg-toon-paper px-1 font-toon-body text-xs tabular-nums">
-                {item.count}
-              </span>
-            )}
+            {item.count !== undefined &&
+              (quiet && !active ? (
+                <span className="font-toon-body text-xs tabular-nums">
+                  {item.count}
+                </span>
+              ) : (
+                <span className="inline-flex min-h-5 min-w-5 shrink-0 items-center justify-center rounded-full border-2 border-toon-ink bg-toon-paper px-1 font-toon-body text-xs tabular-nums">
+                  {item.count}
+                </span>
+              ))}
           </button>
         );
       })}
