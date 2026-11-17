@@ -1,63 +1,12 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Lightbulb, Sparkles, Target } from 'lucide-react';
-import { IconButton, Tooltip, cn } from '@datn/ui';
+import { ToonClock, ToonIconButton, Tooltip } from '@datn/ui';
 import type { SceneView } from '../../api/types';
 
 /**
- * Đồng hồ ca làm: giờ trong truyện là chính, ngân sách điểm là phụ. Khi
- * còn khoảng 20% thì đổi màu (truyện cũng có nhịp báo, A1b).
+ * Dải HUD trên cùng: thoát, tên ca và mục tiêu, nhãn AI thường trực
+ * (NFR-07), đồng hồ ca làm (giờ trong truyện là chính, điểm là phụ), gợi ý.
  */
-export function ShiftClock({ clock }: { clock: SceneView['clock'] }) {
-  const used = Math.min(clock.budget, clock.pointsUsed);
-  const ratio = clock.budget ? used / clock.budget : 0;
-  const late = clock.remaining <= Math.ceil(clock.budget * 0.2);
-  return (
-    <div
-      className="flex items-center gap-3"
-      role="group"
-      aria-label={`Bây giờ ${clock.time}, hạn ${clock.deadline}, còn ${clock.remaining} điểm thời gian`}
-    >
-      <div className="text-right leading-none">
-        <time
-          className={cn(
-            'block font-display text-2xl font-semibold',
-            late ? 'text-warning' : 'text-gold-200',
-          )}
-        >
-          {clock.time}
-        </time>
-        <span className="mt-1 block text-[11px] text-ink-faint">
-          hạn {clock.deadline}
-        </span>
-      </div>
-      <div className="hidden w-36 sm:block">
-        <div className="relative h-2 overflow-hidden rounded-full bg-night-950/70 ring-1 ring-inset ring-line">
-          <div
-            className="h-full rounded-full transition-[width] duration-700"
-            style={{
-              width: `${ratio * 100}%`,
-              background: late
-                ? 'linear-gradient(90deg,#b08f4c,#f2a65a)'
-                : 'linear-gradient(90deg,#8f7235,#e2c47e)',
-            }}
-          />
-          <span
-            aria-hidden
-            className="absolute inset-y-0 left-[80%] w-px bg-night-50/30"
-          />
-        </div>
-        <p className="tabular mt-1 text-[11px] text-ink-faint">
-          còn{' '}
-          <b className={late ? 'text-warning' : 'text-ink'}>
-            {clock.remaining}
-          </b>
-          /{clock.budget} điểm · 1 điểm = {clock.minutesPerPoint} phút
-        </p>
-      </div>
-    </div>
-  );
-}
-
 export function Hud({
   title,
   goal,
@@ -79,42 +28,74 @@ export function Hud({
   aiLabel: string;
 }) {
   return (
-    <header className="relative z-20 border-b border-line/70 bg-night-900/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-[1500px] items-center gap-3 px-3 sm:px-5">
+    <header className="relative z-30 border-b-[3px] border-toon-ink bg-toon-paper">
+      <div className="mx-auto flex min-h-[72px] max-w-[1600px] items-center gap-3 px-3 py-2 sm:px-5">
         <Tooltip content="Thoát. Tiến độ được lưu, quay lại chơi tiếp lúc nào cũng được.">
           <Link
             to={backTo}
             aria-label="Thoát ca làm, tiến độ được lưu"
-            className="grid size-10 place-items-center rounded-full text-ink-muted hover:bg-night-800 hover:text-ink"
+            className="grid size-11 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-cream text-toon-ink shadow-toon-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:shadow-toon-focus"
           >
-            <ArrowLeft size={20} />
+            <ArrowLeft size={20} strokeWidth={2.8} />
           </Link>
         </Tooltip>
         <div className="min-w-0 flex-1">
-          <h1 className="truncate font-sans text-sm font-bold text-ink sm:text-base">
+          <h1 className="truncate font-toon text-lg font-extrabold leading-tight text-toon-ink sm:text-xl">
             {title}
           </h1>
-          <p className="flex min-w-0 items-center gap-1.5 text-xs text-gold-200/90">
-            <Target size={12} aria-hidden className="shrink-0" />
-            <span className="truncate">{goal}</span>
-          </p>
-          <p className="mt-0.5 hidden text-[10px] uppercase tracking-wider text-night-300 md:block">
-            <Sparkles size={10} aria-hidden className="mr-1 inline" />
-            {aiLabel}
+          <p className="mt-0.5 flex min-w-0 items-center gap-1.5">
+            <span className="inline-flex min-w-0 items-center gap-1.5 rounded-full border-2 border-toon-ink bg-[#ffe4a3] px-2.5 py-0.5 text-xs font-bold text-toon-ink">
+              <Target
+                size={13}
+                strokeWidth={2.6}
+                aria-hidden
+                className="shrink-0"
+              />
+              <span className="truncate">{goal}</span>
+            </span>
+            <span className="hidden shrink-0 items-center gap-1 rounded-full border-2 border-toon-ink bg-toon-lilac px-2.5 py-0.5 text-[11px] font-extrabold uppercase tracking-wide text-toon-ink md:inline-flex">
+              <Sparkles size={11} strokeWidth={2.6} aria-hidden />
+              {aiLabel}
+            </span>
           </p>
         </div>
-        {scene && <ShiftClock clock={scene.clock} />}
-        <div className="flex items-center gap-1">
-          <IconButton
+        {scene && (
+          <>
+            {/* Bọc ngoài để ẩn/hiện: `cn` không trộn class nên không truyền `hidden` vào gốc flex. */}
+            <div className="hidden sm:block">
+              <ToonClock
+                time={scene.clock.time}
+                deadline={scene.clock.deadline}
+                remaining={scene.clock.remaining}
+                budget={scene.clock.budget}
+                minutesPerPoint={scene.clock.minutesPerPoint}
+              />
+            </div>
+            <div className="sm:hidden">
+              <ToonClock
+                time={scene.clock.time}
+                deadline={scene.clock.deadline}
+                remaining={scene.clock.remaining}
+                budget={scene.clock.budget}
+                minutesPerPoint={scene.clock.minutesPerPoint}
+                compact
+              />
+            </div>
+          </>
+        )}
+        <div className="flex items-center gap-2">
+          <ToonIconButton
             label={`Gợi ý (không tốn thời gian, đã dùng ${scene?.hintsUsed ?? 0})`}
-            icon={<Lightbulb size={18} />}
+            icon={<Lightbulb size={19} strokeWidth={2.6} />}
             onClick={onHint}
             disabled={hintDisabled}
+            variant="primary"
           />
-          <IconButton
+          <ToonIconButton
             label="Mở sổ tay"
-            icon={<BookOpen size={18} />}
+            icon={<BookOpen size={19} strokeWidth={2.6} />}
             onClick={onNotebook}
+            variant="secondary"
             className="xl:hidden"
           />
         </div>

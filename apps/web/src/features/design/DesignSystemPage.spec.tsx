@@ -18,17 +18,22 @@ beforeEach(() => {
 });
 
 describe('bộ thiết kế Celestial Night', () => {
-  it('hiện đủ 16 phần, bảng màu có tương phản tính toán và bộ tranh đầy đủ', () => {
+  it('hiện đủ 17 phần, bảng màu có tương phản tính toán và bộ tranh đầy đủ', () => {
     renderWithProviders(<DesignSystemPage />, '/design');
     expect(screen.getByRole('heading', { level: 1 }).textContent).toContain(
       'Celestial Night',
     );
-    expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(16);
+    expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(17);
     expect(
       screen.getByRole<HTMLSelectElement>('combobox', {
         name: 'Đến phần trong bộ thiết kế',
       }).options,
-    ).toHaveLength(16);
+    ).toHaveLength(17);
+    expect(
+      screen
+        .getByRole('link', { name: /Game kit · Cartoon viền đen/ })
+        .getAttribute('href'),
+    ).toBe('#game-kit');
     expect(screen.getAllByText(/:1/).length).toBeGreaterThan(50);
     expect(
       screen.getAllByRole('img', { name: /Chòm sao/ }).length,

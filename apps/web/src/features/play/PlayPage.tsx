@@ -7,18 +7,23 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
-import { CirclePause, Flag, MoonStar, Users } from 'lucide-react';
 import {
-  Button,
-  Callout,
+  BookOpen,
+  CirclePause,
+  ClipboardList,
+  Flag,
+  PartyPopper,
+  Users,
+} from 'lucide-react';
+import {
+  Character,
   Dialog,
-  EmptyState,
-  LoadingBlock,
-  Portrait,
+  SceneBackdrop,
   Sheet,
-  StarField,
-  Textarea,
-  buttonClasses,
+  ToonButton,
+  ToonPanel,
+  ToonTextarea,
+  toonButtonClasses,
   useToast,
 } from '@datn/ui';
 import { api, sourceOf } from '../../api';
@@ -31,6 +36,8 @@ import { Hud } from './Hud';
 import { Notebook } from './Notebook';
 import { Stage } from './Stage';
 import { usePlaySession } from './usePlaySession';
+import { Avatar } from './Stage';
+import { TOON_BACKDROPS, castCharacters } from '../../lib/toon';
 
 type Action = SceneView['actions'][number];
 
@@ -60,42 +67,38 @@ export default function PlayPage() {
 
   if (run.isError) {
     return (
-      <div className="grid min-h-dvh place-items-center">
-        <EmptyState
-          title="Không mở được ca làm này"
-          description="Lượt chơi không tồn tại hoặc không phải của bạn."
-          action={
-            <Link to="/galaxy" className={buttonClasses()}>
-              Về bản đồ
-            </Link>
-          }
-        />
-      </div>
+      <ToonScreen
+        title="Không mở được ca làm này"
+        text="Lượt chơi không tồn tại hoặc không phải của bạn."
+      >
+        <Link to="/galaxy" className={toonButtonClasses()}>
+          Về bản đồ
+        </Link>
+      </ToonScreen>
     );
   }
   if (s.loadError) {
     return (
-      <div className="grid min-h-dvh place-items-center px-4">
-        <EmptyState
-          title="Chưa mở được ca làm"
-          description={`${s.loadError} Tiến độ đã lưu của bạn không mất.`}
-          action={
-            <div className="flex gap-2">
-              <Button onClick={s.reload}>Thử lại</Button>
-              <Link
-                to="/galaxy"
-                className={buttonClasses({ variant: 'secondary' })}
-              >
-                Về bản đồ
-              </Link>
-            </div>
-          }
-        />
-      </div>
+      <ToonScreen
+        title="Chưa mở được ca làm"
+        text={`${s.loadError} Tiến độ đã lưu của bạn không mất.`}
+      >
+        <ToonButton onClick={s.reload}>Thử lại</ToonButton>
+        <Link
+          to="/galaxy"
+          className={toonButtonClasses({ variant: 'secondary' })}
+        >
+          Về bản đồ
+        </Link>
+      </ToonScreen>
     );
   }
   if (!run.data || !s.ready || !s.scene) {
-    return <LoadingBlock text="Đang vào ca…" className="min-h-dvh" />;
+    return (
+      <ToonScreen title="Đang vào ca…" loading>
+        {null}
+      </ToonScreen>
+    );
   }
 
   const r = run.data;
@@ -118,6 +121,8 @@ export default function PlayPage() {
     else void s.send({ kind: 'action', key: a.key });
   };
 
+  const looks = castCharacters(r.cast);
+
   const actionPanel = (
     <ActionPanel
       actions={scene.actions}
@@ -128,8 +133,7 @@ export default function PlayPage() {
   );
 
   return (
-    <div className="relative flex h-dvh flex-col overflow-hidden bg-night-950">
-      <StarField seed={r.taskId} density={0.5} glints={4} />
+    <div className="theme-toon toon-dots relative flex h-dvh flex-col overflow-hidden">
       <div className="contents" inert={intro || undefined}>
         <Hud
           title={r.title}
@@ -148,30 +152,53 @@ export default function PlayPage() {
       </div>
 
       <div
-        className="relative mx-auto flex min-h-0 w-full max-w-[1500px] flex-1"
+        className="relative mx-auto flex min-h-0 w-full max-w-[1600px] flex-1 gap-4 sm:p-3 xl:p-4"
         inert={intro || undefined}
       >
         <aside
-          className="hidden w-72 shrink-0 overflow-y-auto border-r border-line/60 p-4 xl:block"
+          className="hidden w-[300px] shrink-0 xl:block"
           aria-label="Việc có thể làm"
         >
-          <h2 className="mb-3 font-sans text-sm font-bold text-ink">
-            Việc có thể làm
-          </h2>
-          {scene.suspended && (
-            <p className="mb-3 rounded-md border border-line-gold bg-gold-900/30 p-2.5 text-xs text-gold-100">
-              Đang dở: {scene.suspended.label} (còn {scene.suspended.remaining}{' '}
-              điểm)
-            </p>
-          )}
-          {actionPanel}
+          <ToonPanel
+            title="Việc có thể làm"
+            icon={<ClipboardList size={20} strokeWidth={2.6} />}
+            className="relative h-full"
+            bodyClassName="overflow-y-auto p-3.5"
+          >
+            <Clip />
+            {scene.suspended && (
+              <p className="mb-3 rounded-xl border-2 border-toon-ink bg-[#ffe4a3] p-2.5 text-sm font-bold text-toon-ink">
+                Đang dở: {scene.suspended.label} (còn{' '}
+                {scene.suspended.remaining} điểm)
+              </p>
+            )}
+            {actionPanel}
+          </ToonPanel>
         </aside>
 
-        <main className="flex min-w-0 flex-1 flex-col">
+        <main className="relative flex min-w-0 flex-1 flex-col overflow-hidden bg-toon-cream sm:rounded-[20px] sm:border-[3px] sm:border-toon-ink sm:shadow-toon">
           {scene.conversation && (
-            <div className="flex items-center justify-center gap-2 border-b border-line/50 bg-night-900/50 py-2 text-xs text-ink-muted">
-              <Users size={14} aria-hidden /> Đang trò chuyện với{' '}
-              {scene.conversation.people.map((p) => p.name).join(', ')}
+            <div className="absolute inset-x-0 top-3 z-30 flex justify-center px-3">
+              <p className="inline-flex max-w-full items-center gap-2 rounded-full border-[2.5px] border-toon-ink bg-toon-paper py-1 pl-1.5 pr-3.5 text-sm font-bold text-toon-ink shadow-toon-sm">
+                <span className="flex -space-x-2">
+                  {scene.conversation.people.map((p) => {
+                    const look = looks.get(p.slot);
+                    return look ? (
+                      <Avatar
+                        key={p.slot}
+                        src={look.src}
+                        color={look.color}
+                        size={30}
+                      />
+                    ) : null;
+                  })}
+                </span>
+                <Users size={15} strokeWidth={2.6} aria-hidden />
+                <span className="truncate">
+                  Đang trò chuyện với{' '}
+                  {scene.conversation.people.map((p) => p.name).join(', ')}
+                </span>
+              </p>
             </div>
           )}
           <Stage
@@ -180,31 +207,38 @@ export default function PlayPage() {
             current={s.current}
             queued={s.queued}
             waitingLabel={waitingLabel}
+            conversationChannel={scene.conversation?.channel ?? null}
             onAdvance={s.advance}
             onRevealAll={s.revealAll}
           />
-          <div className="border-t border-line/60 bg-night-900/70 px-3 py-3 backdrop-blur sm:px-5">
+          <div className="relative z-20 border-t-[3px] border-toon-ink bg-[#f1dcb6] px-3 py-3 sm:px-5 sm:py-4">
             <div className="mx-auto max-w-3xl">
               {s.error && (
-                <Callout tone="danger" className="mb-3">
+                <p
+                  role="alert"
+                  className="mb-3 rounded-xl border-[2.5px] border-toon-ink bg-toon-coral-light px-3 py-2 text-sm font-bold text-toon-ink"
+                >
                   {s.error}
-                </Callout>
+                </p>
               )}
               {s.paused ? (
-                <Callout tone="warning" title="Ca làm tạm dừng">
-                  <p>
+                <div className="rounded-2xl border-[3px] border-toon-ink bg-[#ffe4a3] p-4 shadow-toon-sm">
+                  <p className="font-toon text-lg font-extrabold text-toon-ink">
+                    Ca làm tạm dừng
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
                     Chưa gọi được mô hình dẫn truyện. Tiến độ của bạn vẫn được
                     giữ nguyên, không mất gì.
                   </p>
-                  <Button
+                  <ToonButton
                     size="sm"
                     className="mt-3"
-                    leftIcon={<CirclePause size={15} />}
+                    leftIcon={<CirclePause size={15} strokeWidth={2.6} />}
                     onClick={() => void s.resume()}
                   >
                     Thử tiếp tục
-                  </Button>
-                </Callout>
+                  </ToonButton>
+                </div>
               ) : scene.ended ? (
                 <EndCard onNext={() => navigate(`/play/${runId}/reflect`)} />
               ) : (
@@ -217,7 +251,7 @@ export default function PlayPage() {
                 />
               )}
               {s.queued > 0 && !s.paused && (
-                <p className="text-center text-xs text-ink-faint">
+                <p className="mt-1 text-center text-sm font-bold text-toon-ink-soft">
                   Bấm vào hộp thoại hoặc nhấn Space để nghe tiếp.
                 </p>
               )}
@@ -226,25 +260,33 @@ export default function PlayPage() {
         </main>
 
         <aside
-          className="hidden w-80 shrink-0 border-l border-line/60 xl:flex xl:flex-col"
+          className="hidden w-[340px] shrink-0 xl:block"
           aria-label="Sổ tay"
         >
-          <div className="flex items-center justify-between px-4 pt-4">
-            <h2 className="font-sans text-sm font-bold text-ink">Sổ tay</h2>
-            <button
-              type="button"
-              onClick={() => setFlagOpen(true)}
-              className="inline-flex items-center gap-1 text-[11px] text-night-300 hover:text-ink"
-            >
-              <Flag size={12} aria-hidden /> Báo nội dung sai
-            </button>
-          </div>
-          <Notebook
-            run={r}
-            scene={scene}
-            lines={s.shown}
-            className="min-h-0 flex-1"
-          />
+          <ToonPanel
+            title="Sổ tay"
+            icon={<BookOpen size={20} strokeWidth={2.6} />}
+            className="relative h-full"
+            bodyClassName="flex min-h-0 flex-col"
+            action={
+              <button
+                type="button"
+                onClick={() => setFlagOpen(true)}
+                className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold text-toon-ink-soft hover:bg-toon-sand hover:text-toon-ink"
+              >
+                <Flag size={12} strokeWidth={2.6} aria-hidden /> Báo nội dung
+                sai
+              </button>
+            }
+          >
+            <Rings />
+            <Notebook
+              run={r}
+              scene={scene}
+              lines={s.shown}
+              className="min-h-0 flex-1"
+            />
+          </ToonPanel>
         </aside>
       </div>
 
@@ -252,6 +294,7 @@ export default function PlayPage() {
         open={sheet === 'actions'}
         onClose={() => setSheet(null)}
         side="bottom"
+        theme="toon"
         title="Việc có thể làm"
       >
         {actionPanel}
@@ -260,20 +303,21 @@ export default function PlayPage() {
         open={sheet === 'notebook'}
         onClose={() => setSheet(null)}
         side="right"
+        theme="toon"
         title="Sổ tay"
       >
         <Notebook
           run={r}
           scene={scene}
           lines={s.shown}
-          className="-mx-4 h-[70dvh]"
+          className="-mx-6 -mt-2 h-[70dvh]"
         />
         <button
           type="button"
           onClick={() => setFlagOpen(true)}
-          className="mt-3 inline-flex items-center gap-1 text-xs text-night-300"
+          className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-toon-ink-soft"
         >
-          <Flag size={12} aria-hidden /> Báo nội dung sai
+          <Flag size={13} strokeWidth={2.6} aria-hidden /> Báo nội dung sai
         </button>
       </Sheet>
 
@@ -282,6 +326,7 @@ export default function PlayPage() {
         onClose={() => setWriting(null)}
         title={writing?.label ?? ''}
         size="lg"
+        theme="toon"
         description={
           writing
             ? `Tốn ${writing.points} điểm thời gian (${writing.points * scene.clock.minutesPerPoint} phút).`
@@ -331,6 +376,35 @@ export default function PlayPage() {
   );
 }
 
+/** Kẹp bìa hồ sơ trên đầu bảng việc. */
+function Clip() {
+  return (
+    <span
+      aria-hidden
+      className="absolute -top-4 right-6 h-7 w-20 rounded-lg border-[3px] border-toon-ink bg-[#b9b2a6] shadow-toon-sm"
+    >
+      <span className="absolute left-1/2 top-1.5 h-2.5 w-10 -translate-x-1/2 rounded-full border-2 border-toon-ink bg-toon-cream" />
+    </span>
+  );
+}
+
+/** Gáy lò xo trên đầu sổ tay. */
+function Rings() {
+  return (
+    <span
+      aria-hidden
+      className="pointer-events-none absolute -top-3.5 inset-x-6 flex justify-between"
+    >
+      {Array.from({ length: 9 }, (_, i) => (
+        <span
+          key={i}
+          className="h-6 w-2.5 rounded-full border-[2.5px] border-toon-ink bg-[#d9d4cb]"
+        />
+      ))}
+    </span>
+  );
+}
+
 /** Giới thiệu trước khi vào ca (FR-03): vai, bối cảnh, người sẽ gặp. */
 function IntroOverlay({
   run,
@@ -341,68 +415,119 @@ function IntroOverlay({
   scene: SceneView;
   onStart: () => void;
 }) {
+  const looks = castCharacters(run.cast);
+  const host = run.cast[0];
+  const hostLook = host ? looks.get(host.slot) : undefined;
   return (
-    <div className="absolute inset-0 z-40 grid place-items-center overflow-y-auto bg-night-950/85 p-4 backdrop-blur-md">
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="intro-title"
-        className="glass w-full max-w-xl animate-rise rounded-2xl p-6 shadow-lift sm:p-8"
-      >
-        <p className="eyebrow flex items-center gap-2">
-          <MoonStar size={14} aria-hidden /> Ca làm · {scene.clock.start}–
-          {scene.clock.deadline}
-        </p>
-        <h2 id="intro-title" className="mt-2 text-2xl sm:text-3xl">
-          {run.title}
-        </h2>
-        {run.scene && <p className="mt-3 text-ink-muted">{run.scene}</p>}
-        <div className="mt-5 rounded-lg border border-line bg-night-950/40 p-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-night-300">
-            Vai của bạn
+    <SceneBackdrop
+      src={TOON_BACKDROPS.office}
+      dim={0.9}
+      overlay
+      className="z-40 overflow-y-auto"
+    >
+      <div className="flex min-h-full items-center justify-center gap-6 p-4 sm:p-8">
+        {hostLook && host && (
+          <div className="pointer-events-none hidden h-[min(78vh,620px)] shrink-0 self-end lg:block">
+            <Character
+              src={hostLook.src}
+              name={host.name}
+              height="100%"
+              flip={hostLook.facing === 'left'}
+            />
+          </div>
+        )}
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="intro-title"
+          className="toon-card relative w-full max-w-xl animate-toon-pop p-6 pt-9 shadow-toon-lg sm:p-8 sm:pt-10"
+        >
+          <span className="absolute -top-5 left-6 inline-flex -rotate-3 items-center gap-2 rounded-xl border-[3px] border-toon-ink bg-toon-mustard px-3.5 py-1 font-toon text-base font-extrabold text-toon-ink shadow-toon-sm">
+            Ca làm · {scene.clock.start}–{scene.clock.deadline}
+          </span>
+          <h2
+            id="intro-title"
+            className="font-toon text-3xl font-extrabold leading-tight text-toon-ink sm:text-4xl"
+          >
+            {run.title}
+          </h2>
+          {run.scene && (
+            <p className="mt-3 text-base font-semibold leading-relaxed text-toon-ink-soft">
+              {run.scene}
+            </p>
+          )}
+          <div className="mt-5 rounded-2xl border-[2.5px] border-toon-ink bg-[#d6ecf7] p-4">
+            <p className="font-toon text-sm font-extrabold uppercase tracking-wide text-toon-sky-deep">
+              Vai của bạn
+            </p>
+            <p className="mt-1 font-semibold text-toon-ink">{run.role}</p>
+          </div>
+          <p className="mt-5 font-toon text-sm font-extrabold uppercase tracking-wide text-toon-ink-soft">
+            Người bạn sẽ gặp
           </p>
-          <p className="mt-1 text-sm text-ink">{run.role}</p>
+          <ul className="mt-2 grid gap-2.5 sm:grid-cols-2">
+            {run.cast.map((c) => {
+              const look = looks.get(c.slot);
+              return (
+                <li
+                  key={c.slot}
+                  className="flex items-center gap-3 rounded-2xl border-[2.5px] border-toon-ink bg-toon-paper p-2 pr-3 shadow-toon-sm"
+                >
+                  {look && (
+                    <Avatar src={look.src} color={look.color} size={52} />
+                  )}
+                  <span className="min-w-0 text-sm">
+                    <span className="block font-toon text-base font-extrabold capitalize text-toon-ink">
+                      {c.name}
+                    </span>
+                    <span className="block font-semibold text-toon-ink-soft">
+                      {c.relation}
+                    </span>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mt-5 rounded-xl border-2 border-dashed border-toon-ink/50 p-3 text-sm font-semibold text-toon-ink-soft">
+            Đồng hồ chạy theo việc bạn làm: mỗi việc ghi rõ tốn mấy điểm. Hết
+            giờ không phải thua, bạn vẫn nộp với những gì đã có. Lời nhân vật do
+            AI dẫn dắt theo kịch bản chuyên gia duyệt.
+          </p>
+          <ToonButton
+            size="lg"
+            block
+            className="mt-6"
+            onClick={onStart}
+            autoFocus
+          >
+            Vào ca
+          </ToonButton>
         </div>
-        <ul className="mt-5 flex flex-wrap gap-3">
-          {run.cast.map((c) => (
-            <li
-              key={c.slot}
-              className="flex items-center gap-2.5 rounded-full border border-line bg-night-800/50 py-1 pl-1 pr-3"
-            >
-              <Portrait seed={c.slot} size={34} framed />
-              <span className="text-xs">
-                <span className="block font-semibold capitalize text-ink">
-                  {c.name}
-                </span>
-                <span className="block text-ink-faint">{c.relation}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-5 text-xs text-ink-faint">
-          Đồng hồ chạy theo việc bạn làm: mỗi việc ghi rõ tốn mấy điểm. Hết giờ
-          không phải thua, bạn vẫn nộp với những gì đã có. Lời nhân vật do AI
-          dẫn dắt theo kịch bản chuyên gia duyệt.
-        </p>
-        <Button size="lg" block className="mt-6" onClick={onStart} autoFocus>
-          Vào ca
-        </Button>
       </div>
-    </div>
+    </SceneBackdrop>
   );
 }
 
 function EndCard({ onNext }: { onNext: () => void }) {
   return (
-    <div className="flex flex-col items-center gap-3 py-2 text-center sm:flex-row sm:text-left">
-      <MoonStar size={28} className="shrink-0 text-gold-300" aria-hidden />
+    <div className="flex flex-col items-center gap-3 rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4 text-center shadow-toon sm:flex-row sm:text-left">
+      <span
+        aria-hidden
+        className="grid size-14 shrink-0 animate-toon-hop place-items-center rounded-2xl border-[3px] border-toon-ink bg-toon-mustard"
+      >
+        <PartyPopper size={28} strokeWidth={2.4} />
+      </span>
       <div className="flex-1">
-        <p className="font-semibold text-gold-100">Ca làm đã khép lại</p>
-        <p className="text-sm text-ink-muted">
+        <p className="font-toon text-xl font-extrabold text-toon-ink">
+          Ca làm đã khép lại
+        </p>
+        <p className="text-sm font-semibold text-toon-ink-soft">
           Trước khi xem kết quả, cho game hỏi bạn một câu ngắn.
         </p>
       </div>
-      <Button onClick={onNext}>Tiếp tục</Button>
+      <ToonButton size="lg" onClick={onNext}>
+        Tiếp tục
+      </ToonButton>
     </div>
   );
 }
@@ -423,14 +548,15 @@ function FlagDialog({
     <Dialog
       open={open}
       onClose={onClose}
+      theme="toon"
       title="Báo nội dung sai"
       description="Ví dụ: số liệu không khớp, nhân vật nói sai vai, lời lẽ không phù hợp."
       footer={
         <>
-          <Button variant="ghost" onClick={onClose}>
+          <ToonButton variant="ghost" onClick={onClose}>
             Huỷ
-          </Button>
-          <Button
+          </ToonButton>
+          <ToonButton
             loading={busy}
             disabled={!reason.trim()}
             onClick={async () => {
@@ -451,21 +577,65 @@ function FlagDialog({
             }}
           >
             Gửi
-          </Button>
+          </ToonButton>
         </>
       }
     >
-      <Textarea
+      <ToonTextarea
         value={reason}
         onChange={(e) => setReason(e.target.value)}
         maxLength={1000}
         aria-label="Điều gì chưa đúng"
       />
       {failed && (
-        <p role="alert" className="mt-2 text-sm text-danger">
+        <p role="alert" className="mt-2 text-sm font-bold text-toon-coral">
           {failed}
         </p>
       )}
     </Dialog>
+  );
+}
+
+/** Màn chờ hoặc báo lỗi của ca làm: thẻ giấy giữa bối cảnh văn phòng. */
+function ToonScreen({
+  title,
+  text,
+  loading = false,
+  children,
+}: {
+  title: string;
+  text?: string;
+  loading?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <SceneBackdrop
+      src={TOON_BACKDROPS.office}
+      dim={0.9}
+      className="theme-toon grid min-h-dvh place-items-center p-4"
+    >
+      <div
+        role={loading ? 'status' : undefined}
+        className="toon-card w-full max-w-md animate-toon-pop p-6 text-center"
+      >
+        {loading && (
+          <span
+            aria-hidden
+            className="mx-auto mb-3 block size-12 animate-spin rounded-full border-[5px] border-toon-ink border-t-toon-mustard"
+          />
+        )}
+        <p className="font-toon text-2xl font-extrabold text-toon-ink">
+          {title}
+        </p>
+        {text && (
+          <p className="mt-2 font-semibold text-toon-ink-soft">{text}</p>
+        )}
+        {!loading && (
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+            {children}
+          </div>
+        )}
+      </div>
+    </SceneBackdrop>
   );
 }

@@ -2,7 +2,7 @@ import {
   renderWithProviders,
   signInDemo,
 } from '../../test/renderWithProviders';
-import { fireEvent, screen, within } from '@testing-library/react';
+import { act, fireEvent, screen, within } from '@testing-library/react';
 import { Route, Routes } from 'react-router-dom';
 import { assert, expect, it, vi } from 'vitest';
 import { api } from '../../api';
@@ -47,10 +47,13 @@ it('trả lời 18 thẻ bằng phím 1/2/3, bỏ kể về bạn, xem tối đa
     interests: [],
     goals: {},
   });
-  const saved = await api.quiz.current();
+  // Đọc dữ liệu kỳ vọng trong act để các query của màn kết quả kịp cập nhật.
+  const saved = await act(async () => api.quiz.current());
   assert(saved);
   for (const [i, suggestion] of saved.suggestions.slice(0, 3).entries()) {
-    const occupation = await api.catalogue.occupation(suggestion.code);
+    const occupation = await act(async () =>
+      api.catalogue.occupation(suggestion.code),
+    );
     for (const downside of occupation.downsides) {
       expect(await within(cards[i]).findByText(downside)).toBeTruthy();
     }

@@ -1,17 +1,31 @@
 /**
- * Sân khấu: chân dung người đang nói, hộp thoại nhịp mới nhất, và dòng
- * hội thoại đã qua. Bấm (hay Space/Enter) để qua nhịp (seed khối C3).
+ * Sân khấu ca làm theo theme "Cartoon viền đen": bối cảnh nơi làm việc phủ
+ * nền, nhân vật đang nói đứng bên trái (emote theo biểu cảm của nhịp), nhật
+ * ký thoại dạng bong bóng bên phải, hộp thoại có bảng tên ở dưới. Bấm hộp
+ * thoại (hay Space/Enter) để qua nhịp (seed khối C3).
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { MessageCircle, Phone, Users, UserRound } from 'lucide-react';
 import {
-  ChevronsRight,
-  MessageCircle,
-  Phone,
-  Users,
-  UserRound,
-} from 'lucide-react';
-import { Portrait, Sparkle, cn, type Expression } from '@datn/ui';
+  CaptionStrip,
+  Character,
+  DialogueBox,
+  EXPRESSION_MOTION,
+  Emote,
+  NameTag,
+  SceneBackdrop,
+  SpeechBubble,
+  ToonBadge,
+  cn,
+  type Expression,
+} from '@datn/ui';
 import type { ShiftRun, TranscriptLine } from '../../api/types';
+import {
+  TOON_BACKDROPS,
+  backdropFor,
+  castCharacters,
+  type ToonCharacter,
+} from '../../lib/toon';
 
 const CHANNEL = {
   chat: { label: 'Tin nhắn', icon: MessageCircle },
@@ -56,6 +70,7 @@ export function Stage({
   current,
   queued,
   waitingLabel,
+  conversationChannel,
   onAdvance,
   onRevealAll,
 }: {
@@ -64,9 +79,12 @@ export function Stage({
   current: TranscriptLine | null;
   queued: number;
   waitingLabel: string | null;
+  /** Kênh của cuộc trò chuyện đang mở (đổi bối cảnh khi gặp, họp). */
+  conversationChannel?: TranscriptLine['channel'] | null;
   onAdvance: () => void;
   onRevealAll: () => void;
 }) {
+  const cast = useMemo(() => castCharacters(run.cast), [run.cast]);
   const nameOf = useMemo(() => {
     const m = new Map(run.cast.map((c) => [c.slot, c.name]));
     return (slot: string) => m.get(slot) ?? slot;
@@ -74,10 +92,19 @@ export function Stage({
   const relationOf = (slot: string) =>
     run.cast.find((c) => c.slot === slot)?.relation;
 
-  const isNpc = current?.kind === 'npc';
-  const speaker = isNpc ? current.speaker : null;
+  // Người đứng trên sân khấu: người đang nói, hoặc người nói gần nhất.
+  const onStage = useMemo(() => {
+    for (let i = lines.length - 1; i >= 0; i--)
+      if (lines[i].kind === 'npc') return lines[i];
+    return null;
+  }, [lines]);
+  const speaking = current?.kind === 'npc' ? current : null;
+  const actor = onStage ? cast.get(onStage.speaker) : undefined;
+  const expression = (speaking?.expression ?? 'binh_thuong') as Expression;
+
   const tw = useTypewriter(current?.text ?? '', current?.seq ?? -1);
   const ch = current?.channel ? CHANNEL[current.channel] : null;
+  const backdrop = TOON_BACKDROPS[backdropFor(conversationChannel ?? null)];
 
   // Bàn phím: Space/Enter qua nhịp, trừ khi đang gõ trong ô nhập.
   useEffect(() => {
@@ -105,108 +132,118 @@ export function Stage({
   return (
     <section
       aria-label="Diễn biến ca làm"
-      className="flex min-h-0 flex-1 flex-col"
+      className="relative flex min-h-0 flex-1 flex-col"
     >
-      <History
-        lines={lines}
-        current={current}
-        nameOf={nameOf}
-        reserve={Boolean(speaker)}
-      />
+      <SceneBackdrop
+        src={backdrop}
+        dim={0.6}
+        className="flex min-h-0 flex-1 flex-col"
+      >
+        <div className="relative flex min-h-0 flex-1">
+          {/* Nhân vật: lớn trên màn rộng, ẩn trên điện thoại để nhường chỗ chữ. */}
+          {actor && onStage && (
+            <div className="pointer-events-none absolute -bottom-14 left-[2%] z-10 hidden h-[min(88%,560px)] md:block">
+              <Character
+                src={actor.src}
+                name={nameOf(onStage.speaker)}
+                height="100%"
+                dimmed={!speaking}
+                flip={actor.facing === 'left'}
+                motion={speaking ? EXPRESSION_MOTION[expression] : 'none'}
+                beat={speaking?.seq}
+                emote={
+                  speaking && expression !== 'binh_thuong' ? (
+                    <Emote expression={expression} size={64} />
+                  ) : null
+                }
+              />
+            </div>
+          )}
+          <Backlog
+            lines={lines}
+            current={current}
+            nameOf={nameOf}
+            cast={cast}
+          />
+        </div>
 
-      {/* Hộp thoại */}
-      <div className="relative px-3 pb-3 sm:px-5">
-        {speaker && (
-          <div className="pointer-events-none absolute -top-[150px] left-4 z-10 hidden sm:block">
-            <Portrait
-              seed={speaker}
-              name={nameOf(speaker)}
-              expression={current?.expression as Expression | undefined}
-              size={168}
-            />
-          </div>
-        )}
-        <button
-          type="button"
-          onClick={tap}
-          aria-live="polite"
-          className={cn(
-            'glass relative w-full rounded-xl p-4 text-left shadow-lift transition-colors focus-visible:outline-none focus-visible:shadow-focus sm:min-h-32 sm:p-5',
-            speaker && 'sm:pl-[184px]',
-            queued > 0 && 'border-line-gold',
-          )}
-        >
-          {current ? (
-            <>
-              <div className="mb-1.5 flex items-center gap-2">
-                {speaker && (
-                  <span className="sm:hidden">
-                    <Portrait
-                      seed={speaker}
-                      expression={current.expression as Expression | undefined}
-                      size={36}
-                      framed
-                    />
-                  </span>
-                )}
-                <span className="font-semibold text-gold-200">
-                  {current.kind === 'scene' ? 'Cảnh' : nameOf(current.speaker)}
-                </span>
-                {speaker && relationOf(speaker) && (
-                  <span className="hidden truncate text-xs text-ink-faint md:inline">
-                    · {relationOf(speaker)}
-                  </span>
-                )}
-                {ch && (
-                  <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-night-950/60 px-2 py-0.5 text-[11px] text-ink-faint">
-                    <ch.icon size={12} aria-hidden /> {ch.label}
-                  </span>
-                )}
-              </div>
-              <p
-                className={cn(
-                  'max-h-[30dvh] overflow-y-auto break-words text-[15px] leading-relaxed sm:text-base',
-                  current.kind === 'scene'
-                    ? 'italic text-ink-muted'
-                    : 'text-ink',
-                )}
-              >
-                {tw.visible}
-                {!tw.done && (
-                  <span className="ml-0.5 inline-block w-1.5 animate-pulse bg-gold-300/80">
-                    &nbsp;
-                  </span>
-                )}
-              </p>
-              {tw.done && queued > 0 && (
-                <span className="absolute bottom-3 right-4 inline-flex items-center gap-1 text-xs font-semibold text-gold-300">
-                  Tiếp <ChevronsRight size={14} className="animate-pulse" />
-                </span>
-              )}
-            </>
-          ) : (
-            <p className="text-sm text-ink-faint">Ca làm sắp bắt đầu.</p>
-          )}
-          {waitingLabel && !queued && (
-            <p
-              className="mt-2 inline-flex items-center gap-2 text-xs text-ink-faint"
-              role="status"
+        {/* Hộp thoại */}
+        <div className="relative z-20 px-3 pb-3 pt-5 sm:px-5 sm:pb-4">
+          {queued > 1 && (
+            <button
+              type="button"
+              onClick={onRevealAll}
+              className="absolute -top-3 right-6 z-10 rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-0.5 font-toon text-sm font-bold text-toon-ink shadow-toon-sm hover:-translate-y-px"
             >
-              <TypingDots /> {waitingLabel}
-            </p>
+              Hiện hết ({queued})
+            </button>
           )}
-        </button>
-        {queued > 1 && (
           <button
             type="button"
-            onClick={onRevealAll}
-            className="absolute -top-8 right-6 rounded-full bg-night-900/80 px-3 py-1 text-xs text-ink-muted hover:text-ink"
+            onClick={tap}
+            aria-live="polite"
+            className="block w-full rounded-[22px] text-left focus-visible:outline-none focus-visible:shadow-toon-focus"
           >
-            Hiện hết ({queued})
+            {current ? (
+              <DialogueBox
+                narration={current.kind === 'scene'}
+                more={tw.done && queued > 0}
+                tag={
+                  current.kind === 'scene' ? (
+                    <NameTag name="Cảnh" color="#fff1c9" />
+                  ) : (
+                    <NameTag
+                      name={nameOf(current.speaker)}
+                      role={relationOf(current.speaker)}
+                      color={cast.get(current.speaker)?.color}
+                    />
+                  )
+                }
+                meta={
+                  ch && (
+                    <ToonBadge tone="paper" icon={<ch.icon size={12} />}>
+                      {ch.label}
+                    </ToonBadge>
+                  )
+                }
+                className="min-h-28 sm:min-h-32"
+              >
+                <p className="max-h-[26dvh] overflow-y-auto break-words pr-6">
+                  {tw.visible}
+                  {!tw.done && (
+                    <span
+                      aria-hidden
+                      className="ml-0.5 inline-block w-2 animate-pulse bg-toon-ink/70"
+                    >
+                      &nbsp;
+                    </span>
+                  )}
+                </p>
+                {waitingLabel && !queued && (
+                  <WaitingNote label={waitingLabel} />
+                )}
+              </DialogueBox>
+            ) : (
+              <DialogueBox narration>
+                Ca làm sắp bắt đầu.
+                {waitingLabel && <WaitingNote label={waitingLabel} />}
+              </DialogueBox>
+            )}
           </button>
-        )}
-      </div>
+        </div>
+      </SceneBackdrop>
     </section>
+  );
+}
+
+function WaitingNote({ label }: { label: string }) {
+  return (
+    <span
+      role="status"
+      className="mt-2 flex items-center gap-2 text-sm font-semibold not-italic text-toon-ink-soft"
+    >
+      <TypingDots /> {label}
+    </span>
   );
 }
 
@@ -216,26 +253,28 @@ function TypingDots() {
       {[0, 1, 2].map((i) => (
         <span
           key={i}
-          className="size-1.5 animate-pulse rounded-full bg-gold-300"
-          style={{ animationDelay: `${i * 0.15}s` }}
+          className="size-2 animate-bounce rounded-full border-2 border-toon-ink bg-toon-mustard"
+          style={{ animationDelay: `${i * 0.12}s` }}
         />
       ))}
     </span>
   );
 }
 
-/** Lịch sử thoại: cuộn được, dòng mới nhất ở dưới; dòng đang ở hộp thoại không lặp lại. */
-function History({
+/**
+ * Nhật ký thoại: cuộn được, dòng mới nhất ở dưới; dòng đang ở hộp thoại
+ * không lặp lại. Trên màn rộng nằm bên phải nhân vật.
+ */
+function Backlog({
   lines,
   current,
   nameOf,
-  reserve,
+  cast,
 }: {
   lines: TranscriptLine[];
   current: TranscriptLine | null;
   nameOf: (slot: string) => string;
-  /** Chừa chỗ phía dưới cho chân dung lớn đang đứng trên hộp thoại. */
-  reserve: boolean;
+  cast: Map<string, ToonCharacter>;
 }) {
   const end = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -244,16 +283,17 @@ function History({
   const past = lines.filter((l) => l !== current);
   return (
     <div
-      className={cn(
-        'min-h-0 flex-1 overflow-y-auto px-3 pb-6 pt-4 sm:px-5',
-        reserve && 'sm:pb-40',
-      )}
+      className="relative z-0 ml-auto flex min-h-0 w-full flex-col overflow-y-auto px-3 pb-8 pt-14 [mask-image:linear-gradient(to_bottom,transparent_8px,black_64px)] sm:px-5 md:w-[min(60%,640px)] md:pr-6"
       aria-label="Lịch sử hội thoại"
     >
-      <ol className="mx-auto flex max-w-2xl flex-col gap-3">
+      <ol className="mt-auto flex flex-col gap-4">
         {past.map((l) => (
-          <li key={l.seq} className="animate-fade">
-            <Line line={l} name={l.kind === 'npc' ? nameOf(l.speaker) : ''} />
+          <li key={l.seq} className="animate-toon-slide">
+            <Line
+              line={l}
+              name={l.kind === 'npc' ? nameOf(l.speaker) : ''}
+              look={l.kind === 'npc' ? cast.get(l.speaker) : undefined}
+            />
           </li>
         ))}
       </ol>
@@ -262,25 +302,34 @@ function History({
   );
 }
 
-function Line({ line, name }: { line: TranscriptLine; name: string }) {
+function Line({
+  line,
+  name,
+  look,
+}: {
+  line: TranscriptLine;
+  name: string;
+  look?: ToonCharacter;
+}) {
   if (line.kind === 'player') {
     return (
-      <div className="ml-auto max-w-[85%] break-words rounded-lg rounded-br-sm border border-gold-500/35 bg-gold-900/35 px-3.5 py-2 text-sm text-gold-100">
-        {line.text}
+      <div className="ml-auto flex max-w-[85%] flex-col items-end">
+        <span className="mb-1 mr-2 rounded-full border-2 border-toon-ink bg-toon-paper px-2 font-toon text-xs font-extrabold leading-5 text-toon-ink">
+          Bạn
+        </span>
+        <SpeechBubble side="right" tone="mustard" className="break-words">
+          {line.text}
+        </SpeechBubble>
       </div>
     );
   }
   if (line.kind === 'scene') {
-    return (
-      <p className="mx-auto flex max-w-[90%] items-start justify-center gap-2 text-center text-sm italic text-ink-faint">
-        <Sparkle size={10} className="mt-1.5 text-gold-400/70" /> {line.text}
-      </p>
-    );
+    return <CaptionStrip>{line.text}</CaptionStrip>;
   }
   if (line.kind === 'system') {
     return (
       <p className="text-center">
-        <span className="inline-block rounded-full border border-line bg-night-900/70 px-3 py-1 text-[11px] text-ink-faint">
+        <span className="inline-block rounded-full border-2 border-toon-ink bg-toon-sand px-3 py-0.5 text-xs font-bold text-toon-ink-soft">
           {line.text}
         </span>
       </p>
@@ -288,20 +337,49 @@ function Line({ line, name }: { line: TranscriptLine; name: string }) {
   }
   return (
     <div className="flex max-w-[88%] items-end gap-2">
-      <Portrait
-        seed={line.speaker}
-        expression={line.expression as Expression | undefined}
-        size={32}
-        framed
-      />
-      <div>
-        <p className="mb-0.5 text-[11px] font-semibold text-night-300">
+      {look && <Avatar src={look.src} color={look.color} />}
+      <div className="min-w-0">
+        <span
+          className="mb-1 ml-2 inline-block rounded-full border-2 border-toon-ink px-2 font-toon text-xs font-extrabold leading-5 text-toon-ink first-letter:uppercase"
+          style={{ backgroundColor: look?.color ?? '#fffaf0' }}
+        >
           {name}
-        </p>
-        <p className="rounded-lg rounded-bl-sm border border-line bg-night-800/80 px-3.5 py-2 text-sm break-words text-ink">
+        </span>
+        <SpeechBubble tone={look?.bubble ?? 'paper'} className="break-words">
           {line.text}
-        </p>
+        </SpeechBubble>
       </div>
     </div>
+  );
+}
+
+/** Mặt nhân vật cắt tròn từ tranh đứng. */
+export function Avatar({
+  src,
+  color,
+  size = 40,
+  className,
+}: {
+  src: string;
+  color: string;
+  size?: number;
+  className?: string;
+}) {
+  return (
+    <span
+      aria-hidden
+      className={cn(
+        'relative block shrink-0 overflow-hidden rounded-full border-[2.5px] border-toon-ink shadow-toon-sm',
+        className,
+      )}
+      style={{ width: size, height: size, backgroundColor: color }}
+    >
+      <img
+        src={src}
+        alt=""
+        draggable={false}
+        className="absolute left-1/2 top-[2%] h-[260%] w-auto max-w-none -translate-x-1/2 select-none"
+      />
+    </span>
   );
 }

@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
-import { Send } from 'lucide-react';
-import { Button, Checkbox, Field, Textarea } from '@datn/ui';
+import { FileText, Send } from 'lucide-react';
+import { ToonButton, ToonCheckbox, ToonField, ToonTextarea } from '@datn/ui';
 import type { SceneView } from '../../api/types';
 
 type Form = NonNullable<SceneView['node']>['form'] & object;
@@ -45,13 +45,25 @@ export function ArtefactForm({
   };
 
   return (
-    <form onSubmit={submit} className="paper rounded-lg p-4 sm:p-5" noValidate>
-      <p className="font-display text-lg font-semibold text-paper-ink first-letter:uppercase">
-        {form.title}
+    <form
+      onSubmit={submit}
+      className="toon-card relative mt-3 bg-toon-paper p-4 pt-6 sm:p-6 sm:pt-7"
+      noValidate
+    >
+      {/* Kẹp giấy: tài liệu đang soạn trên bàn làm việc. */}
+      <span
+        aria-hidden
+        className="absolute -top-4 left-6 h-8 w-14 -rotate-3 rounded-md border-[3px] border-toon-ink bg-toon-sky shadow-toon-sm"
+      />
+      <p className="flex items-center gap-2 font-toon text-xl font-extrabold text-toon-ink">
+        <FileText size={20} strokeWidth={2.6} aria-hidden />
+        <span className="inline-block first-letter:uppercase">
+          {form.title}
+        </span>
       </p>
-      <div className="mt-3 flex flex-col gap-4 [&>div>label]:text-paper-ink/80 [&>div_span.tabular]:text-[#6b6450] [&>div_p]:text-[#6b6450]">
+      <div className="mt-4 flex flex-col gap-4">
         {form.fields.map((f) => (
-          <Field
+          <ToonField
             key={f.id}
             label={f.label}
             counter={`${(fields[f.id] ?? '').length}/4000`}
@@ -61,52 +73,51 @@ export function ArtefactForm({
                 : undefined
             }
           >
-            <Textarea
+            <ToonTextarea
               value={fields[f.id] ?? ''}
               maxLength={4000}
               onChange={(e) =>
                 setFields((v) => ({ ...v, [f.id]: e.target.value }))
               }
-              className="min-h-20 border-[#d8ccab] bg-white/70 text-paper-ink placeholder:text-[#8a7f63] focus:bg-white"
+              className="min-h-24"
             />
-          </Field>
+          </ToonField>
         ))}
         {form.ticks.length > 0 && (
-          <fieldset className="flex flex-col gap-2">
-            <legend className="mb-1 text-[13px] font-semibold text-paper-ink/80">
+          <fieldset className="flex flex-col gap-2.5">
+            <legend className="mb-2 font-toon text-base font-extrabold text-toon-ink">
               Đánh dấu
             </legend>
             {form.ticks.map((t) => (
-              <div key={t.id} className="rounded-md bg-night-900/90 px-3 py-2">
-                <Checkbox
-                  label={t.label}
-                  checked={ticks.includes(t.id)}
-                  onChange={(e) =>
-                    setTicks((v) =>
-                      e.target.checked
-                        ? [...v, t.id]
-                        : v.filter((x) => x !== t.id),
-                    )
-                  }
-                />
-              </div>
+              <ToonCheckbox
+                key={t.id}
+                label={t.label}
+                checked={ticks.includes(t.id)}
+                onChange={(e) =>
+                  setTicks((v) =>
+                    e.target.checked
+                      ? [...v, t.id]
+                      : v.filter((x) => x !== t.id),
+                  )
+                }
+              />
             ))}
           </fieldset>
         )}
       </div>
-      <div className="mt-4 flex flex-wrap justify-end gap-2">
+      <div className="mt-5 flex flex-wrap justify-end gap-3">
         {onCancel && (
-          <Button
-            variant="ghost"
-            onClick={onCancel}
-            className="text-paper-ink/70 hover:bg-black/5 hover:text-paper-ink"
-          >
+          <ToonButton variant="ghost" onClick={onCancel}>
             Để sau
-          </Button>
+          </ToonButton>
         )}
-        <Button type="submit" loading={busy} leftIcon={<Send size={16} />}>
+        <ToonButton
+          type="submit"
+          loading={busy}
+          leftIcon={<Send size={16} strokeWidth={2.6} />}
+        >
           {submitLabel}
-        </Button>
+        </ToonButton>
       </div>
     </form>
   );

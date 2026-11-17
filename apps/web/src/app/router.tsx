@@ -70,8 +70,17 @@ export const router = createBrowserRouter([
             element: page(() => import('../features/play/PlayPage')),
           },
           {
+            // Màn toàn cảnh theme cartoon, không có thanh điều hướng của app.
+            path: '/islands/:enrolmentId/onboard',
+            element: page(() => import('../features/island/OnboardPage')),
+          },
+          {
             path: '/play/:runId/reflect',
             element: page(() => import('../features/summary/ReflectPage')),
+          },
+          {
+            path: '/play/:runId/summary',
+            element: page(() => import('../features/summary/SummaryPage')),
           },
           {
             element: (
@@ -107,14 +116,6 @@ export const router = createBrowserRouter([
               {
                 path: '/islands/:enrolmentId',
                 element: page(() => import('../features/island/IslandPage')),
-              },
-              {
-                path: '/islands/:enrolmentId/onboard',
-                element: page(() => import('../features/island/OnboardPage')),
-              },
-              {
-                path: '/play/:runId/summary',
-                element: page(() => import('../features/summary/SummaryPage')),
               },
               {
                 path: '/profile',

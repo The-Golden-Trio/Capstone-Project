@@ -7,13 +7,12 @@ import { useId, useMemo, useState, type FormEvent } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Search } from 'lucide-react';
 import {
-  Badge,
-  Button,
-  Input,
-  Portrait,
-  TabPanel,
-  Tabs,
-  Textarea,
+  ToonBadge,
+  ToonButton,
+  ToonInput,
+  ToonTabPanel,
+  ToonTabs,
+  ToonTextarea,
   cn,
 } from '@datn/ui';
 import { errorText } from '../../api/hooks';
@@ -21,17 +20,19 @@ import { api } from '../../api';
 import { keys } from '../../api/hooks';
 import type { SceneView, ShiftRun, TranscriptLine } from '../../api/types';
 import { foldVi } from '../galaxy/layout';
+import { castCharacters } from '../../lib/toon';
+import { Avatar } from './Stage';
 
 type Tab = 'facts' | 'promises' | 'docs' | 'notes' | 'terms' | 'people';
 
 const PROMISE_TONE: Record<
   string,
-  { label: string; tone: 'gold' | 'success' | 'danger' | 'muted' }
+  { label: string; tone: 'mustard' | 'mint' | 'coral' | 'paper' }
 > = {
-  open: { label: 'Đang hẹn', tone: 'gold' },
-  kept: { label: 'Đã giữ', tone: 'success' },
-  late: { label: 'Trễ hẹn', tone: 'danger' },
-  carried: { label: 'Để lại cuối ca', tone: 'muted' },
+  open: { label: 'Đang hẹn', tone: 'mustard' },
+  kept: { label: 'Đã giữ', tone: 'mint' },
+  late: { label: 'Trễ hẹn', tone: 'coral' },
+  carried: { label: 'Để lại cuối ca', tone: 'paper' },
 };
 
 export function Notebook({
@@ -49,6 +50,7 @@ export function Notebook({
   const idBase = useId();
   const [query, setQuery] = useState('');
   const nb = scene.notebook;
+  const looks = useMemo(() => castCharacters(run.cast), [run.cast]);
 
   // Tìm xuyên lời thoại (tìm kiếm kiểu Her Story, khối M).
   const hits = useMemo(() => {
@@ -60,38 +62,40 @@ export function Notebook({
   return (
     <div className={cn('flex min-h-0 flex-col', className)}>
       <div className="px-4 pt-4">
-        <Input
-          leftIcon={<Search size={15} />}
+        <ToonInput
+          leftIcon={<Search size={16} strokeWidth={2.6} />}
           placeholder="Tìm trong lời thoại…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="h-9 text-sm"
+          className="h-10 text-sm"
           aria-label="Tìm trong lời thoại"
         />
       </div>
       {hits.length > 0 ? (
         <ul className="min-h-0 flex-1 space-y-2 overflow-y-auto p-4 text-sm">
           {hits.map((l) => (
-            <li key={l.seq} className="rounded-md bg-night-950/40 p-2.5">
-              <span className="text-xs font-semibold text-night-300">
+            <li
+              key={l.seq}
+              className="rounded-xl border-2 border-toon-ink bg-toon-paper p-2.5"
+            >
+              <span className="font-toon text-xs font-extrabold text-toon-ink-soft">
                 {l.kind === 'player'
                   ? 'Bạn'
                   : (run.cast.find((c) => c.slot === l.speaker)?.name ??
                     'Cảnh')}
               </span>
-              <p className="text-ink-muted">{l.text}</p>
+              <p className="font-semibold text-toon-ink">{l.text}</p>
             </li>
           ))}
         </ul>
       ) : (
         <>
-          <Tabs
+          <ToonTabs
             label="Sổ tay"
             idBase={idBase}
-            variant="pill"
             value={tab}
             onChange={setTab}
-            className="mx-3 mt-3 flex-wrap justify-start rounded-xl"
+            className="mx-4 mt-3"
             items={[
               { key: 'facts', label: 'Dữ kiện', count: nb.facts.length },
               { key: 'promises', label: 'Lời hứa', count: nb.promises.length },
@@ -101,21 +105,21 @@ export function Notebook({
               { key: 'people', label: 'Người' },
             ]}
           />
-          <TabPanel
+          <ToonTabPanel
             idBase={idBase}
             tabKey={tab}
             active
-            className="min-h-0 flex-1 overflow-y-auto p-4 text-sm break-words"
+            className="toon-ruled min-h-0 flex-1 overflow-y-auto p-4 text-sm font-semibold break-words text-toon-ink"
           >
             {tab === 'facts' &&
               (nb.facts.length ? (
                 <ol className="space-y-2.5">
                   {nb.facts.map((f) => (
                     <li key={f.id} className="flex gap-3">
-                      <time className="tabular w-11 shrink-0 text-xs text-gold-300">
+                      <time className="tabular h-fit w-12 shrink-0 rounded-md border-2 border-toon-ink bg-toon-sky px-1 text-center font-toon text-xs font-extrabold">
                         {f.time}
                       </time>
-                      <span className="text-ink-muted">{f.text}</span>
+                      <span>{f.text}</span>
                     </li>
                   ))}
                 </ol>
@@ -128,12 +132,12 @@ export function Notebook({
                   {nb.promises.map((p) => (
                     <li
                       key={p.id}
-                      className="flex items-center justify-between gap-3 rounded-md bg-night-950/40 p-2.5"
+                      className="flex items-center justify-between gap-3 rounded-xl border-2 border-toon-ink bg-toon-paper p-2.5"
                     >
-                      <span className="text-ink">{p.label}</span>
-                      <Badge tone={PROMISE_TONE[p.status]?.tone ?? 'muted'}>
+                      <span>{p.label}</span>
+                      <ToonBadge tone={PROMISE_TONE[p.status]?.tone ?? 'paper'}>
                         {PROMISE_TONE[p.status]?.label ?? p.status}
-                      </Badge>
+                      </ToonBadge>
                     </li>
                   ))}
                 </ul>
@@ -144,28 +148,31 @@ export function Notebook({
               (scene.documents.length ? (
                 <div className="space-y-3">
                   {scene.documents.map((d) => (
-                    <article key={d.id} className="paper rounded-md p-3.5">
-                      <h4 className="font-sans text-sm font-bold text-paper-ink first-letter:uppercase">
+                    <article
+                      key={d.id}
+                      className="rounded-xl border-[2.5px] border-toon-ink bg-toon-paper p-3.5 shadow-toon-sm"
+                    >
+                      <h4 className="font-toon text-base font-extrabold text-toon-ink first-letter:uppercase">
                         {d.title}
                       </h4>
                       {d.body && (
-                        <div className="mt-2 space-y-1 font-mono text-[12px] leading-relaxed text-paper-ink/85">
+                        <div className="mt-2 space-y-1 font-mono text-[12px] font-normal leading-relaxed text-toon-ink-soft">
                           {d.body.map((b, i) => (
                             <p key={i}>{b}</p>
                           ))}
                         </div>
                       )}
                       {d.lines && (
-                        <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded bg-night-900 p-2 font-mono text-[11px] text-success">
+                        <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded-lg border-2 border-toon-ink bg-[#26302b] p-2 font-mono text-[11px] font-normal text-[#b7f0c9]">
                           {d.lines.join('\n')}
                         </pre>
                       )}
                       {d.saved && (
-                        <div className="mt-2 space-y-1 text-[12px] text-paper-ink/85">
+                        <div className="mt-2 space-y-1 text-[12px] text-toon-ink-soft">
                           {Object.entries(d.saved.fields).map(([k, v]) => (
                             <p key={k}>{v}</p>
                           ))}
-                          <p className="text-[11px] uppercase tracking-wide text-paper-ink/50">
+                          <p className="text-[11px] font-extrabold uppercase tracking-wide text-toon-ink-faint">
                             {d.saved.status === 'draft' ? 'Bản nháp' : 'Đã lưu'}
                           </p>
                         </div>
@@ -182,8 +189,10 @@ export function Notebook({
                 <dl className="space-y-3">
                   {scene.glossary.map((g) => (
                     <div key={g.term}>
-                      <dt className="font-semibold text-gold-200">{g.term}</dt>
-                      <dd className="text-ink-muted">{g.plain}</dd>
+                      <dt className="font-toon text-base font-extrabold text-toon-maroon">
+                        {g.term}
+                      </dt>
+                      <dd className="text-toon-ink-soft">{g.plain}</dd>
                     </div>
                   ))}
                 </dl>
@@ -194,12 +203,18 @@ export function Notebook({
               <ul className="space-y-2.5">
                 {run.cast.map((c) => (
                   <li key={c.slot} className="flex items-center gap-3">
-                    <Portrait seed={c.slot} size={40} framed />
+                    {looks.get(c.slot) && (
+                      <Avatar
+                        src={looks.get(c.slot)?.src ?? ''}
+                        color={looks.get(c.slot)?.color ?? '#fffaf0'}
+                        size={48}
+                      />
+                    )}
                     <span>
-                      <span className="block font-semibold capitalize text-ink">
+                      <span className="block font-toon text-base font-extrabold capitalize text-toon-ink">
                         {c.name}
                       </span>
-                      <span className="block text-xs text-ink-faint">
+                      <span className="block text-xs text-toon-ink-soft">
                         {c.relation}
                       </span>
                     </span>
@@ -207,7 +222,7 @@ export function Notebook({
                 ))}
               </ul>
             )}
-          </TabPanel>
+          </ToonTabPanel>
         </>
       )}
     </div>
@@ -215,7 +230,11 @@ export function Notebook({
 }
 
 function Empty({ text }: { text: string }) {
-  return <p className="py-6 text-center text-xs text-night-300">{text}</p>;
+  return (
+    <p className="py-6 text-center text-sm font-semibold text-toon-ink-faint">
+      {text}
+    </p>
+  );
 }
 
 function Notes({ runId }: { runId: string }) {
@@ -239,7 +258,7 @@ function Notes({ runId }: { runId: string }) {
   return (
     <div className="space-y-3">
       <form onSubmit={submit} className="space-y-2">
-        <Textarea
+        <ToonTextarea
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Ghi nhanh điều bạn đang nghĩ…"
@@ -248,10 +267,10 @@ function Notes({ runId }: { runId: string }) {
           maxLength={4000}
         />
         <div className="flex items-center justify-between gap-2">
-          <span className="text-[11px] text-night-300">
+          <span className="text-xs font-semibold text-toon-ink-faint">
             Chỉ bạn thấy. Không gửi cho AI, không chấm.
           </span>
-          <Button
+          <ToonButton
             size="sm"
             type="submit"
             variant="secondary"
@@ -259,19 +278,19 @@ function Notes({ runId }: { runId: string }) {
             disabled={!text.trim()}
           >
             Ghi
-          </Button>
+          </ToonButton>
         </div>
       </form>
       {add.isError && (
-        <p role="alert" className="text-xs text-danger">
+        <p role="alert" className="text-xs font-bold text-toon-coral">
           {errorText(add.error)} Ghi chú vẫn còn trong ô, bạn bấm Ghi lại nhé.
         </p>
       )}
       {notes.isLoading && (
-        <p className="text-xs text-night-300">Đang mở ghi chú…</p>
+        <p className="text-xs text-toon-ink-faint">Đang mở ghi chú…</p>
       )}
       {notes.isError && (
-        <p className="text-xs text-danger">
+        <p className="text-xs font-bold text-toon-coral">
           Chưa tải được ghi chú.{' '}
           <button
             type="button"
@@ -283,7 +302,7 @@ function Notes({ runId }: { runId: string }) {
         </p>
       )}
       {notes.data && notes.data.length === 0 && (
-        <p className="text-xs text-night-300">
+        <p className="text-xs text-toon-ink-faint">
           Chưa có ghi chú nào. Ghi lại giả thuyết, việc cần hỏi, giờ đã hẹn…
         </p>
       )}
@@ -291,7 +310,7 @@ function Notes({ runId }: { runId: string }) {
         {(notes.data ?? []).map((n, i) => (
           <li
             key={i}
-            className="rounded-md border-l-2 border-gold-500/60 bg-night-950/40 px-3 py-2 text-ink-muted"
+            className="-rotate-[0.4deg] rounded-md border-2 border-toon-ink bg-[#fff1a8] px-3 py-2 shadow-toon-sm"
           >
             {n.text}
           </li>

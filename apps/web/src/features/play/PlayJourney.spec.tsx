@@ -209,7 +209,9 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
   );
   expect(summary.reflection.answered).toBe(true);
   expect(
-    screen.getByRole('img', { name: `Điểm màn: ${summary.grade.score}/100` }),
+    screen.getByRole('img', {
+      name: `Điểm màn: ${summary.grade.score} trên 100`,
+    }),
   ).toBeTruthy();
   for (const title of ['Kết quả', 'Nhận xét', 'Hướng cải thiện'])
     expect(screen.getByRole('heading', { name: title })).toBeTruthy();

@@ -14,44 +14,34 @@ import {
   Target,
 } from 'lucide-react';
 import { profile } from '@datn/game-core';
+import type { HTMLAttributes, ReactNode } from 'react';
 import {
-  Badge,
-  Callout,
-  EmptyState,
-  LoadingBlock,
-  Medal,
-  Panel,
-  PanelHeader,
-  RingProgress,
-  Skeleton,
-  Sparkle,
-  StarDivider,
-  Timeline,
-  buttonClasses,
+  Character,
+  SceneBackdrop,
+  SpeechBubble,
+  ToonBadge,
+  ToonPanel,
+  ToonProgress,
   cn,
+  toonButtonClasses,
   ENDING_TONES,
 } from '@datn/ui';
-import { errorText, useMe, useRunSummary } from '../../api/hooks';
+import { errorText, useMe, useRun, useRunSummary } from '../../api/hooks';
+import { castCharacters, TOON_BACKDROPS } from '../../lib/toon';
 import type { RunSummary, SoftSkillDelta } from '../../api/types';
 
 export default function SummaryPage() {
   const { runId = '' } = useParams();
   const summary = useRunSummary(runId);
   const me = useMe();
+  const run = useRun(runId);
 
   if (summary.isLoading)
+    return <SummaryNotice loading title="Đang tổng kết ca làm…" />;
+  if (!summary.data)
     return (
-      <LoadingBlock text="Đang tổng kết ca làm…" className="min-h-[60vh]" />
+      <SummaryNotice title="Chưa có tổng kết" text={errorText(summary.error)} />
     );
-  if (!summary.data) {
-    return (
-      <EmptyState
-        className="my-20"
-        title="Chưa có tổng kết"
-        description={errorText(summary.error)}
-      />
-    );
-  }
   const s = summary.data;
   const sign = profile.zodiacOf(me.data?.dateOfBirth);
   const back = s.enrolmentId
@@ -59,133 +49,222 @@ export default function SummaryPage() {
     : s.occupationCode
       ? `/occupations/${s.occupationCode}`
       : '/galaxy';
+  const host = run.data?.cast[0];
+  const hostLook = host
+    ? castCharacters(run.data?.cast ?? []).get(host.slot)
+    : undefined;
   const tierUps = s.grade.softSkills.filter((d) => d.tierAfter > d.tierBefore);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <Link
-        to={back}
-        className="inline-flex items-center gap-1.5 text-sm text-ink-faint hover:text-ink"
+    <div className="theme-toon relative isolate min-h-dvh">
+      {/* Giữ bối cảnh theo viewport, không phóng to ảnh theo chiều dài báo cáo. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 -z-10"
       >
-        <ArrowLeft size={16} aria-hidden /> Về đảo
-      </Link>
-      <header className="mt-4 text-center">
-        <p className="eyebrow">Tổng kết ca làm</p>
-        <h1 className="mt-2 text-3xl sm:text-4xl">{s.title}</h1>
-        {s.occupationName && (
-          <p className="mt-2 text-sm text-ink-faint">
-            {s.occupationName}
-            {s.levelNo ? ` · cấp ${s.levelNo}` : ''}
-          </p>
-        )}
-      </header>
-
-      <GradeBlock s={s} />
-
-      {tierUps.length > 0 && (
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          {tierUps.map((d) => (
-            <div
-              key={d.id}
-              className="glass flex animate-rise items-center gap-4 rounded-xl border-line-gold p-4 shadow-glow"
-            >
-              <span className="grid size-14 shrink-0 place-items-center rounded-full bg-gold-900/60 font-display text-2xl font-bold text-gold-200">
-                {d.tierAfter}
-              </span>
-              <p className="text-sm">
-                <span className="block text-gold-100">Lên bậc!</span>
-                <b className="text-ink">
-                  {profile.softSkillGroup(d.id).name}
-                </b>{' '}
-                lên bậc {d.tierAfter}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {s.grade.status === 'READY' && s.grade.softSkills.length > 0 && (
-        <Panel className="mt-6">
-          <PanelHeader
-            eyebrow="Kỹ năng mềm"
-            title="Điểm cộng trừ trong ca này"
-            description={
-              [
-                s.enrolmentId
-                  ? null
-                  : 'Ca xem thử: điểm chỉ để bạn thấy cách tính, không cộng vào hồ sơ.',
-                sign
-                  ? `Nhóm có ★ được chòm sao ${sign.name} cộng thêm 12% phần điểm cộng.`
-                  : null,
-              ]
-                .filter(Boolean)
-                .join(' ') || undefined
-            }
-          />
-          <ul className="divide-y divide-line/60">
-            {s.grade.softSkills.map((d) => (
-              <DeltaRow
-                key={d.id}
-                d={d}
-                starred={Boolean(sign?.buffs.includes(d.id))}
-                signName={sign?.name}
-              />
-            ))}
-          </ul>
-        </Panel>
-      )}
-
-      {s.grade.keywordsGained.length > 0 && (
-        <Panel className="mt-6" frame>
-          <PanelHeader eyebrow="Xong cấp" title="Kỹ năng nghề bạn nhận được" />
-          <ul className="flex flex-wrap gap-4">
-            {s.grade.keywordsGained.map((k) => (
-              <li key={k.id} className="flex items-center gap-2">
-                <Medal level={k.level} size={36} />
-                <span className="text-sm">
-                  <span className="block font-semibold">{k.name}</span>
-                  <span className="text-xs text-ink-faint">
-                    {['', 'Làm quen', 'Thành thạo', 'Chuyên sâu'][k.level]}
-                  </span>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </Panel>
-      )}
-
-      <StarDivider className="my-10" />
-      <Story s={s} />
-
-      <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-        <Link to={back} className={buttonClasses({ size: 'lg' })}>
-          Về đảo của cấp này
-        </Link>
-        {s.occupationCode && (
-          <Link
-            to={`/occupations/${s.occupationCode}/levels`}
-            className={buttonClasses({ variant: 'secondary', size: 'lg' })}
-          >
-            Xem lộ trình nghề
-          </Link>
-        )}
+        <SceneBackdrop
+          src={TOON_BACKDROPS.office}
+          dim={0.95}
+          className="size-full"
+        />
       </div>
+      <header className="border-b-[3px] border-toon-ink bg-toon-paper">
+        <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6">
+          <Link
+            to={back}
+            aria-label="Về đảo"
+            className="grid size-11 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-cream shadow-toon-sm focus-visible:outline-none focus-visible:shadow-toon-focus"
+          >
+            <ArrowLeft size={20} strokeWidth={2.8} aria-hidden />
+          </Link>
+          <div className="min-w-0">
+            <p className="font-toon text-xl font-extrabold text-toon-ink">
+              Tổng kết ca làm
+            </p>
+            <p className="truncate text-sm font-bold text-toon-ink-soft">
+              {s.occupationName}
+              {s.levelNo ? ` · cấp ${s.levelNo}` : ''}
+            </p>
+          </div>
+        </div>
+      </header>
+      <main className="mx-auto grid max-w-7xl items-start gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:py-12">
+        {host && hostLook ? (
+          <aside
+            aria-label="Đồng nghiệp cuối ca"
+            className="sticky top-8 hidden min-w-0 self-start lg:block"
+          >
+            {s.grade.ending && (
+              <SpeechBubble tone={hostLook.bubble}>
+                {s.grade.ending.title}
+              </SpeechBubble>
+            )}
+            <div className="mt-7 flex justify-center">
+              <Character
+                src={hostLook.src}
+                name={host.name}
+                height={320}
+                flip={hostLook.facing === 'left'}
+                motion="none"
+              />
+            </div>
+          </aside>
+        ) : (
+          <div className="hidden lg:block" />
+        )}
+        <article className="toon-card min-w-0 p-4 shadow-toon-lg sm:p-7">
+          <header className="mt-4 text-center">
+            <p className="font-toon text-sm font-extrabold uppercase tracking-widest text-toon-ink-soft">
+              Báo cáo cuối ca
+            </p>
+            <h1 className="mt-3 font-toon text-3xl font-extrabold leading-tight text-toon-ink sm:text-4xl">
+              {s.title}
+            </h1>
+            {s.occupationName && (
+              <p className="mt-2 text-sm font-bold text-toon-ink-soft">
+                {s.occupationName}
+                {s.levelNo ? ` · cấp ${s.levelNo}` : ''}
+              </p>
+            )}
+          </header>
+
+          <GradeBlock s={s} />
+
+          {tierUps.length > 0 && (
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {tierUps.map((d) => (
+                <div
+                  key={d.id}
+                  className="flex animate-toon-pop items-center gap-4 rounded-2xl border-[3px] border-toon-ink bg-toon-mint p-4 shadow-toon-sm"
+                >
+                  <span className="grid size-14 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-2xl font-extrabold text-toon-ink">
+                    {d.tierAfter}
+                  </span>
+                  <p className="text-sm">
+                    <span className="block font-toon text-lg font-extrabold text-toon-ink">
+                      Lên bậc!
+                    </span>
+                    <b className="text-toon-ink">
+                      {profile.softSkillGroup(d.id).name}
+                    </b>{' '}
+                    lên bậc {d.tierAfter}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {s.grade.status === 'READY' && s.grade.softSkills.length > 0 && (
+            <Panel className="mt-6">
+              <PanelHeader
+                eyebrow="Kỹ năng mềm"
+                title="Điểm cộng trừ trong ca này"
+                description={
+                  [
+                    s.enrolmentId
+                      ? null
+                      : 'Ca xem thử: điểm chỉ để bạn thấy cách tính, không cộng vào hồ sơ.',
+                    sign
+                      ? `Nhóm có ★ được chòm sao ${sign.name} cộng thêm 12% phần điểm cộng.`
+                      : null,
+                  ]
+                    .filter(Boolean)
+                    .join(' ') || undefined
+                }
+              />
+              <ul className="divide-y-2 divide-dashed divide-toon-ink/20">
+                {s.grade.softSkills.map((d) => (
+                  <DeltaRow
+                    key={d.id}
+                    d={d}
+                    starred={Boolean(sign?.buffs.includes(d.id))}
+                    signName={sign?.name}
+                  />
+                ))}
+              </ul>
+            </Panel>
+          )}
+
+          {s.grade.keywordsGained.length > 0 && (
+            <Panel className="mt-6">
+              <PanelHeader
+                eyebrow="Xong cấp"
+                title="Kỹ năng nghề bạn nhận được"
+              />
+              <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                {s.grade.keywordsGained.map((k) => (
+                  <li
+                    key={k.id}
+                    className="flex min-w-0 items-start gap-3 rounded-2xl border-[3px] border-toon-ink bg-toon-sky p-3 shadow-toon-sm"
+                  >
+                    <span
+                      aria-hidden
+                      className="grid size-10 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-xl font-extrabold"
+                    >
+                      {k.level}
+                    </span>
+                    <span className="min-w-0 text-sm">
+                      <span className="block font-toon text-base font-extrabold leading-tight">
+                        {k.name}
+                      </span>
+                      <span className="mt-1 block text-xs font-bold text-toon-ink-soft">
+                        {['', 'Làm quen', 'Thành thạo', 'Chuyên sâu'][k.level]}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Panel>
+          )}
+
+          <div
+            aria-hidden
+            className="my-8 border-t-[3px] border-dashed border-toon-ink/30"
+          />
+          <Story s={s} />
+
+          <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link to={back} className={toonButtonClasses({ size: 'lg' })}>
+              Về đảo của cấp này
+            </Link>
+            {s.occupationCode && (
+              <Link
+                to={`/occupations/${s.occupationCode}/levels`}
+                className={toonButtonClasses({
+                  variant: 'secondary',
+                  size: 'lg',
+                })}
+              >
+                Xem lộ trình nghề
+              </Link>
+            )}
+          </div>
+        </article>
+      </main>
     </div>
   );
 }
 
 function GradeBlock({ s }: { s: RunSummary }) {
   const g = s.grade;
-  if (g.status === 'PENDING') {
+  if (g.status === 'PENDING')
     return (
-      <Panel className="mt-8" aria-busy>
-        <div className="flex flex-col items-center gap-4 py-6 text-center sm:flex-row sm:text-left">
-          <Skeleton variant="circle" className="size-28" />
-          <div className="flex-1 space-y-2">
-            <p className="font-semibold text-gold-100">
+      <Panel className="mt-8" aria-busy="true">
+        <div
+          role="status"
+          className="flex flex-col items-center gap-4 py-4 text-center sm:flex-row sm:text-left"
+        >
+          <span
+            aria-hidden
+            className="grid size-20 shrink-0 place-items-center rounded-full border-[4px] border-toon-ink bg-toon-sand font-toon text-4xl font-extrabold"
+          >
+            …
+          </span>
+          <div>
+            <p className="font-toon text-xl font-extrabold">
               Ba giám khảo AI đang đọc câu trả lời của bạn
             </p>
-            <p className="text-sm text-ink-muted">
+            <p className="mt-2 text-sm font-semibold text-toon-ink-soft">
               Thường mất vài giây. Bạn có thể xem lại diễn biến ca bên dưới
               trong lúc chờ.
             </p>
@@ -193,75 +272,99 @@ function GradeBlock({ s }: { s: RunSummary }) {
         </div>
       </Panel>
     );
-  }
-  if (g.status === 'NOT_AVAILABLE') {
+  if (g.status === 'NOT_AVAILABLE')
     return (
-      <Callout tone="info" title="Ca này chưa có điểm" className="mt-8">
-        Bộ chấm cho dạng ca làm này chưa bật. Dưới đây là diễn biến ca của bạn;
-        điểm sẽ được tính lại từ chính những gì bạn đã làm khi bộ chấm sẵn sàng.
-      </Callout>
+      <Panel className="mt-8">
+        <PanelHeader title="Ca này chưa có điểm" />
+        <p className="text-sm font-semibold text-toon-ink-soft">
+          Bộ chấm cho dạng ca làm này chưa bật. Dưới đây là diễn biến ca của
+          bạn; điểm sẽ được tính lại từ chính những gì bạn đã làm khi bộ chấm
+          sẵn sàng.
+        </p>
+      </Panel>
     );
-  }
   const ending = g.ending ? ENDING_TONES[g.ending.type] : null;
+  const stamp =
+    g.ending?.type === 'BAD'
+      ? 'bg-toon-coral-light'
+      : g.ending?.type === 'SECRET'
+        ? 'bg-toon-lilac'
+        : g.ending?.type === 'PARTIAL'
+          ? 'bg-toon-mustard'
+          : 'bg-toon-mint';
   return (
-    <section
-      className="mt-8 grid gap-6 lg:grid-cols-[240px_1fr]"
-      aria-label="Kết quả"
-    >
-      <div className="glass flex flex-col items-center justify-center gap-3 rounded-xl p-6">
-        <RingProgress
-          value={g.score ?? 0}
-          size={150}
-          stroke={9}
-          label="Điểm màn"
-        >
-          <span>
-            <span className="block font-display text-5xl font-semibold text-gilded">
-              {g.score ?? '–'}
-            </span>
-            <span className="text-xs text-ink-faint">/ 100</span>
-          </span>
-        </RingProgress>
-        {ending && (
-          <Badge
-            tone="neutral"
-            className="border-current"
-            icon={<Sparkle size={10} />}
+    <section className="mt-7" aria-label="Kết quả">
+      <div className="grid items-center gap-6 sm:grid-cols-[180px_minmax(0,1fr)]">
+        <div className="flex flex-col items-center gap-3 py-3">
+          <div
+            role="img"
+            aria-label={`Điểm màn: ${g.score ?? 'chưa có'} trên 100`}
+            className="grid size-40 place-items-center rounded-full border-[5px] border-toon-ink bg-toon-mustard shadow-toon"
           >
-            <span style={{ color: ending.color }}>{ending.name}</span>
-          </Badge>
+            <span className="text-center">
+              <span className="block font-toon text-7xl font-extrabold leading-none text-toon-ink">
+                {g.score ?? '–'}
+              </span>
+              <span className="text-sm font-extrabold text-toon-ink-soft">
+                / 100
+              </span>
+            </span>
+          </div>
+          {ending && (
+            <span
+              className={cn(
+                '-rotate-6 rounded-xl border-[3px] border-toon-ink px-4 py-1 font-toon text-lg font-extrabold shadow-toon-sm',
+                stamp,
+              )}
+            >
+              {ending.name}
+            </span>
+          )}
+        </div>
+        {g.ending && (
+          <div className="min-w-0">
+            <h2 className="font-toon text-2xl font-extrabold leading-tight sm:text-3xl">
+              {g.ending.title}
+            </h2>
+            <p className="mt-3 font-semibold leading-relaxed text-toon-ink-soft">
+              {g.ending.text}
+            </p>
+          </div>
         )}
       </div>
-      <div className="flex flex-col gap-4">
-        {g.ending && (
-          <div>
-            <h2 className="text-xl">{g.ending.title}</h2>
-            <p className="mt-1 text-ink-muted">{g.ending.text}</p>
-          </div>
-        )}
-        {g.feedback && (
-          <div className="grid gap-3 md:grid-cols-3">
-            <FeedbackCard
-              icon={<Target size={16} />}
-              title="Kết quả"
-              text={g.feedback.result}
-            />
-            <FeedbackCard
-              icon={<MessageSquareQuote size={16} />}
-              title="Nhận xét"
-              text={g.feedback.comment}
-            />
-            <FeedbackCard
-              icon={<Lightbulb size={16} />}
-              title="Hướng cải thiện"
-              text={g.feedback.improve}
-              highlight
-            />
-          </div>
-        )}
-        <Callout tone="ai">
-          Kết quả chỉ để bạn tham khảo, không gửi cho trường hay nhà tuyển dụng.
-        </Callout>
+      {g.feedback && (
+        <div className="mt-6 grid gap-4 xl:grid-cols-3">
+          <FeedbackCard
+            icon={<Target size={20} />}
+            title="Kết quả"
+            text={g.feedback.result}
+            tone="bg-toon-sky"
+          />
+          <FeedbackCard
+            icon={<MessageSquareQuote size={20} />}
+            title="Nhận xét"
+            text={g.feedback.comment}
+            tone="bg-toon-mint"
+          />
+          <FeedbackCard
+            icon={<Lightbulb size={20} />}
+            title="Hướng cải thiện"
+            text={g.feedback.improve}
+            tone="bg-toon-mustard"
+          />
+        </div>
+      )}
+      <div className="mt-5 flex items-start gap-3 rounded-2xl border-[2.5px] border-dashed border-toon-ink bg-toon-cream p-4 text-sm font-semibold text-toon-ink-soft">
+        <Sparkles size={20} className="shrink-0" aria-hidden />
+        <div>
+          <p className="font-bold text-toon-ink">
+            Nội dung hoặc đánh giá này do AI tạo.
+          </p>
+          <p className="mt-1">
+            Kết quả chỉ để bạn tham khảo, không gửi cho trường hay nhà tuyển
+            dụng.
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -271,26 +374,27 @@ function FeedbackCard({
   icon,
   title,
   text,
-  highlight,
+  tone,
 }: {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   text: string;
-  highlight?: boolean;
+  tone: string;
 }) {
   return (
     <article
       className={cn(
-        'rounded-lg border p-4',
-        highlight
-          ? 'border-line-gold bg-gold-900/25'
-          : 'border-line bg-night-800/50',
+        'min-w-0 rounded-2xl border-[3px] border-toon-ink p-4 shadow-toon-sm',
+        tone,
       )}
     >
-      <h3 className="flex items-center gap-2 font-sans text-sm font-bold text-gold-200">
-        {icon} {title}
+      <h3 className="flex items-start gap-2 font-toon text-lg font-extrabold leading-tight">
+        <span aria-hidden className="shrink-0">
+          {icon}
+        </span>
+        {title}
       </h3>
-      <p className="mt-2 text-sm leading-relaxed text-ink-muted">{text}</p>
+      <p className="mt-3 text-sm font-semibold leading-relaxed">{text}</p>
     </article>
   );
 }
@@ -308,35 +412,35 @@ function DeltaRow({
   const prog = profile.tierProgress(d.pointsAfter, d.tierAfter);
   const up = d.delta >= 0;
   return (
-    <li className="flex flex-wrap items-center gap-x-4 gap-y-1 py-3">
-      <span className="min-w-0 flex-1 text-sm font-semibold text-ink">
-        {group.name}{' '}
-        {starred && (
-          <span className="text-gold-300" title="Được chòm sao cộng thêm">
-            ★
-          </span>
-        )}
-      </span>
-      <span
-        className={cn(
-          'tabular text-sm font-bold',
-          up ? 'text-success' : 'text-danger',
-        )}
-      >
-        {up ? '+' : '−'}
-        {Math.abs(d.delta).toLocaleString('vi-VN')}
-      </span>
-      {d.zodiacBonus > 0 && (
-        <span className="text-xs text-gold-300">
-          gồm +{d.zodiacBonus} từ {signName}
+    <li className="py-4">
+      <div className="mb-2 flex flex-wrap items-start gap-2">
+        <span className="min-w-0 flex-1 font-toon text-base font-extrabold">
+          {group.name}{' '}
+          {starred && <span title="Được chòm sao cộng thêm">★</span>}
         </span>
+        <ToonBadge tone={up ? 'mint' : 'coral'}>
+          {up ? '+' : '−'}
+          {Math.abs(d.delta).toLocaleString('vi-VN')}
+        </ToonBadge>
+      </div>
+      {d.zodiacBonus > 0 && (
+        <p className="mb-2 text-xs font-bold text-toon-ink-soft">
+          gồm +{d.zodiacBonus} từ {signName}
+        </p>
       )}
-      <span className="tabular w-full text-xs text-ink-faint sm:w-auto">
+      <ToonProgress
+        value={prog.ratio}
+        max={1}
+        tone={up ? 'mint' : 'coral'}
+        label={`Tiến độ bậc ${prog.tier} · ${group.name}`}
+        labelHidden
+      />
+      <p className="mt-2 text-xs font-bold tabular-nums text-toon-ink-soft">
         {d.pointsAfter.toLocaleString('vi-VN')} / 10.000 · Bậc {prog.tier}
         {prog.nextAt
           ? ` · bậc ${prog.tier + 1} ở ${prog.nextAt.toLocaleString('vi-VN')}`
           : ''}
-      </span>
+      </p>
     </li>
   );
 }
@@ -357,11 +461,14 @@ function Story({ s }: { s: RunSummary }) {
       className="grid gap-6 lg:grid-cols-2"
     >
       <div className="lg:col-span-2">
-        <h2 id="story-title" className="flex items-center gap-2 text-2xl">
-          <BookMarked size={22} className="text-gold-300" aria-hidden /> Nhìn
+        <h2
+          id="story-title"
+          className="flex items-center gap-2 font-toon text-2xl font-extrabold"
+        >
+          <BookMarked size={22} className="text-toon-ink" aria-hidden /> Nhìn
           lại ca làm
         </h2>
-        <p className="mt-1 text-sm text-ink-muted">
+        <p className="mt-1 text-sm text-toon-ink-soft">
           Kết thúc lúc {st.endedAt}.{' '}
           {st.hintsUsed > 0
             ? `Bạn đã dùng ${st.hintsUsed} gợi ý.`
@@ -372,17 +479,27 @@ function Story({ s }: { s: RunSummary }) {
       <Panel>
         <PanelHeader level={3} title="Việc bạn đã làm" />
         {st.actions.length ? (
-          <Timeline
-            items={st.actions.map((a) => ({
-              time: a.time,
-              title: a.label,
-              body: a.cut
-                ? 'Bị chen ngang giữa chừng'
-                : `${a.points} điểm thời gian`,
-            }))}
-          />
+          <ol className="ml-2 border-l-[3px] border-toon-ink pl-5">
+            {st.actions.map((a, i) => (
+              <li key={i} className="relative pb-5 last:pb-0">
+                <span
+                  aria-hidden
+                  className="absolute -left-[29px] top-1 size-3.5 rounded-full border-[3px] border-toon-ink bg-toon-mustard"
+                />
+                <time className="font-toon text-sm font-extrabold tabular-nums">
+                  {a.time}
+                </time>
+                <p className="mt-1 font-bold">{a.label}</p>
+                <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
+                  {a.cut
+                    ? 'Bị chen ngang giữa chừng'
+                    : `${a.points} điểm thời gian`}
+                </p>
+              </li>
+            ))}
+          </ol>
         ) : (
-          <p className="text-sm text-ink-faint">
+          <p className="text-sm text-toon-ink-soft">
             Bạn đi thẳng tới các mốc chính của ca.
           </p>
         )}
@@ -402,10 +519,10 @@ function Story({ s }: { s: RunSummary }) {
           <ul className="space-y-2 text-sm">
             {st.facts.found.map((f, i) => (
               <li key={i} className="flex gap-3">
-                <time className="tabular w-11 shrink-0 text-xs text-gold-300">
+                <time className="tabular w-11 shrink-0 text-xs text-toon-ink">
                   {f.time}
                 </time>
-                <span className="text-ink-muted">{f.text}</span>
+                <span className="text-toon-ink-soft">{f.text}</span>
               </li>
             ))}
           </ul>
@@ -417,17 +534,18 @@ function Story({ s }: { s: RunSummary }) {
               {st.promises.map((p, i) => (
                 <li key={i} className="flex items-center justify-between gap-3">
                   <span>{p.label}</span>
-                  <Badge
+                  <ToonBadge
+                    className="shrink-0 whitespace-nowrap"
                     tone={
                       p.status === 'kept'
-                        ? 'success'
+                        ? 'mint'
                         : p.status === 'late'
-                          ? 'danger'
-                          : 'muted'
+                          ? 'coral'
+                          : 'paper'
                     }
                   >
                     {PROMISE[p.status] ?? p.status}
-                  </Badge>
+                  </ToonBadge>
                 </li>
               ))}
             </ul>
@@ -441,11 +559,14 @@ function Story({ s }: { s: RunSummary }) {
                 <li key={i} className="flex items-start justify-between gap-3">
                   <span>
                     <b className="capitalize">{c.person}</b>:{' '}
-                    <span className="text-ink-muted">{c.text}</span>
+                    <span className="text-toon-ink-soft">{c.text}</span>
                   </span>
-                  <Badge tone={c.resolved ? 'success' : 'muted'}>
+                  <ToonBadge
+                    className="shrink-0 whitespace-nowrap"
+                    tone={c.resolved ? 'mint' : 'paper'}
+                  >
                     {c.resolved ? 'Đã gỡ' : 'Còn đó'}
-                  </Badge>
+                  </ToonBadge>
                 </li>
               ))}
             </ul>
@@ -455,19 +576,24 @@ function Story({ s }: { s: RunSummary }) {
 
       {st.artefacts.length > 0 && (
         <div className="lg:col-span-2">
-          <h3 className="mb-3 text-lg">Những gì bạn đã viết</h3>
+          <h3 className="mb-3 font-toon text-xl font-extrabold">
+            Những gì bạn đã viết
+          </h3>
           <div className="grid gap-4 md:grid-cols-2">
             {st.artefacts.map((a, i) => (
-              <article key={i} className="paper rounded-lg p-5">
-                <h4 className="font-display text-base font-semibold text-paper-ink first-letter:uppercase">
+              <article
+                key={i}
+                className="min-w-0 rounded-2xl border-[3px] border-toon-ink bg-toon-cream p-5 shadow-toon-sm"
+              >
+                <h4 className="font-toon text-lg font-extrabold text-toon-ink first-letter:uppercase">
                   {a.title}
                 </h4>
                 {a.fields.map((f, j) => (
                   <div key={j} className="mt-3">
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-paper-ink/55">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-toon-ink-soft">
                       {f.label}
                     </p>
-                    <p className="mt-0.5 whitespace-pre-wrap text-sm text-paper-ink">
+                    <p className="mt-0.5 whitespace-pre-wrap text-sm text-toon-ink">
                       {f.text || '—'}
                     </p>
                   </div>
@@ -484,11 +610,11 @@ function Story({ s }: { s: RunSummary }) {
           <ul className="space-y-4 text-sm">
             {st.review.map((r, i) => (
               <li key={i}>
-                <p className="text-ink-muted">
-                  <b className="capitalize text-ink">{r.person}</b>:{' '}
+                <p className="text-toon-ink-soft">
+                  <b className="capitalize text-toon-ink">{r.person}</b>:{' '}
                   {r.question}
                 </p>
-                <p className="mt-1 rounded-md border-l-2 border-gold-500/60 bg-gold-900/20 px-3 py-2 text-gold-100">
+                <p className="mt-2 rounded-xl border-[2.5px] border-toon-ink bg-toon-sky px-3 py-2 font-semibold text-toon-ink">
                   {r.answer}
                 </p>
               </li>
@@ -497,11 +623,95 @@ function Story({ s }: { s: RunSummary }) {
         </Panel>
       )}
 
-      <p className="flex items-center justify-center gap-2 text-xs text-night-300 lg:col-span-2">
+      <p className="flex items-center justify-center gap-2 text-xs text-toon-ink-soft lg:col-span-2">
         <Sparkles size={12} aria-hidden /> Chơi lại cấp này với công ty khác,
         điểm giữ kết quả cao nhất.
         <RotateCcw size={12} aria-hidden />
       </p>
     </section>
+  );
+}
+
+/** Thẻ và tiêu đề dùng thống nhất cho các phần báo cáo. */
+function Panel({ children, className, ...rest }: HTMLAttributes<HTMLElement>) {
+  return (
+    <section
+      {...rest}
+      className={cn(
+        'min-w-0 rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4 shadow-toon-sm sm:p-5',
+        className,
+      )}
+    >
+      {children}
+    </section>
+  );
+}
+function PanelHeader({
+  eyebrow,
+  title,
+  description,
+  level = 2,
+}: {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  level?: 2 | 3;
+}) {
+  const Heading = level === 3 ? 'h3' : 'h2';
+  return (
+    <header className="mb-4">
+      {eyebrow && (
+        <p className="mb-1 text-xs font-extrabold uppercase tracking-widest text-toon-ink-soft">
+          {eyebrow}
+        </p>
+      )}
+      <Heading className="font-toon text-xl font-extrabold leading-tight">
+        {title}
+      </Heading>
+      {description && (
+        <p className="mt-2 text-sm font-semibold leading-relaxed text-toon-ink-soft">
+          {description}
+        </p>
+      )}
+    </header>
+  );
+}
+function SummaryNotice({
+  title,
+  text,
+  loading = false,
+}: {
+  title: string;
+  text?: string;
+  loading?: boolean;
+}) {
+  return (
+    <SceneBackdrop
+      src={TOON_BACKDROPS.office}
+      dim={0.95}
+      className="theme-toon grid min-h-dvh place-items-center p-4"
+    >
+      <ToonPanel className="w-full max-w-md" bodyClassName="p-6 text-center">
+        <div role={loading ? 'status' : undefined}>
+          <h1 className="font-toon text-2xl font-extrabold">{title}</h1>
+          {text && (
+            <p className="mt-3 text-sm font-semibold text-toon-ink-soft">
+              {text}
+            </p>
+          )}
+          {!loading && (
+            <Link
+              to="/galaxy"
+              className={toonButtonClasses({
+                variant: 'secondary',
+                className: 'mt-5',
+              })}
+            >
+              Về bản đồ
+            </Link>
+          )}
+        </div>
+      </ToonPanel>
+    </SceneBackdrop>
   );
 }

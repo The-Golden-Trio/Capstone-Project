@@ -6,17 +6,17 @@
  */
 import { useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { Coffee } from 'lucide-react';
 import {
-  Button,
-  LikeScale,
-  LoadingBlock,
-  Mountains,
-  RadioCards,
-  Sparkle,
-  StarField,
+  Character,
+  SceneBackdrop,
+  ToonButton,
+  ToonLikeScale,
+  cn,
   type LikeValue,
 } from '@datn/ui';
 import { errorText, useReflect, useRunSummary } from '../../api/hooks';
+import { TOON_BACKDROPS, TOON_CHARACTERS } from '../../lib/toon';
 
 const REALISM = [
   { key: '1', label: 'Chưa giống lắm' },
@@ -34,7 +34,20 @@ export default function ReflectPage() {
   const toSummary = () => navigate(`/play/${runId}/summary`, { replace: true });
 
   if (summary.isLoading)
-    return <LoadingBlock text="Đang khép ca…" className="min-h-dvh" />;
+    return (
+      <SceneBackdrop
+        src={TOON_BACKDROPS.cafe}
+        dim={0.9}
+        className="theme-toon grid min-h-dvh place-items-center p-4"
+      >
+        <p
+          role="status"
+          className="toon-card px-6 py-4 font-toon text-xl font-extrabold"
+        >
+          Đang khép ca…
+        </p>
+      </SceneBackdrop>
+    );
   const prompts = summary.data?.reflection.prompts ?? [];
   if (
     !summary.data ||
@@ -45,78 +58,126 @@ export default function ReflectPage() {
   }
 
   return (
-    <div className="relative min-h-dvh overflow-hidden px-4 pb-48 pt-12">
-      <StarField seed={`reflect-${runId}`} />
-      <div className="relative z-10 mx-auto max-w-xl animate-rise">
-        <Sparkle size={20} className="mx-auto text-gold-300" />
-        <h1 className="mt-4 text-center text-3xl">Trước khi xem kết quả</h1>
-        <p className="mt-3 text-center text-ink-muted">
-          Nếu ngày nào đi làm cũng là việc như vậy, bạn thấy thế nào? Không có
-          đáp án đúng sai.
-        </p>
-
-        <ol className="mt-8 flex flex-col gap-5">
-          {prompts.map((p, i) => (
-            <li key={p.key} className="glass rounded-xl p-5">
-              <p className="mb-3 text-[15px] text-ink">
-                <span className="mr-2 font-wordmark text-xs text-gold-400">
-                  0{i + 1}
-                </span>
-                {p.recap}
-              </p>
-              <LikeScale
-                label={p.recap}
-                value={answers[p.key] ?? null}
-                onChange={(v) => setAnswers((a) => ({ ...a, [p.key]: v }))}
-              />
-            </li>
-          ))}
-        </ol>
-
-        <section className="mt-8" aria-labelledby="realism">
-          <h2
-            id="realism"
-            className="font-sans text-sm font-semibold text-ink-muted"
-          >
-            Riêng màn chơi này: có giống công việc thật không?
-          </h2>
-          <RadioCards
-            className="mt-3"
-            name="realism"
-            label="Màn chơi có giống thực tế không"
-            columns={3}
-            value={realism}
-            onChange={setRealism}
-            options={REALISM.map((r) => ({ key: r.key, label: r.label }))}
+    <SceneBackdrop
+      src={TOON_BACKDROPS.cafe}
+      dim={0.7}
+      className="theme-toon min-h-dvh"
+    >
+      <div className="mx-auto flex min-h-dvh max-w-5xl items-end gap-6 px-4 py-8 sm:px-6">
+        <div className="pointer-events-none sticky bottom-0 hidden h-[min(72vh,600px)] shrink-0 lg:block">
+          <Character
+            src={TOON_CHARACTERS.lead.src}
+            name="Người hỏi chuyện sau ca"
+            height="100%"
+            flip
           />
-        </section>
+        </div>
+        <div className="w-full max-w-xl self-center">
+          <div className="toon-card relative animate-toon-pop p-6 pt-9 shadow-toon-lg sm:p-8 sm:pt-10">
+            <span className="absolute -top-5 left-6 inline-flex -rotate-3 items-center gap-2 rounded-xl border-[3px] border-toon-ink bg-toon-mustard px-3.5 py-1 font-toon text-base font-extrabold text-toon-ink shadow-toon-sm">
+              <Coffee size={17} strokeWidth={2.6} aria-hidden /> Nghỉ một chút
+            </span>
+            <h1 className="font-toon text-3xl font-extrabold leading-tight text-toon-ink">
+              Trước khi xem kết quả
+            </h1>
+            <p className="mt-2 font-semibold text-toon-ink-soft">
+              Nếu ngày nào đi làm cũng là việc như vậy, bạn thấy thế nào? Không
+              có đáp án đúng sai.
+            </p>
 
-        {reflect.isError && (
-          <p className="mt-4 text-sm text-danger" role="alert">
-            {errorText(reflect.error)}
-          </p>
-        )}
+            <ol className="mt-6 flex flex-col gap-5">
+              {prompts.map((p, i) => (
+                <li
+                  key={p.key}
+                  className="rounded-2xl border-[2.5px] border-toon-ink bg-toon-cream p-4"
+                >
+                  <p className="mb-3 flex gap-2.5 font-semibold text-toon-ink">
+                    <span
+                      aria-hidden
+                      className="grid size-7 shrink-0 place-items-center rounded-lg border-[2.5px] border-toon-ink bg-toon-sky font-toon text-sm font-extrabold"
+                    >
+                      {i + 1}
+                    </span>
+                    {p.recap}
+                  </p>
+                  <ToonLikeScale
+                    label={p.recap}
+                    value={answers[p.key] ?? null}
+                    onChange={(v) => setAnswers((a) => ({ ...a, [p.key]: v }))}
+                  />
+                </li>
+              ))}
+            </ol>
 
-        <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-          <Button variant="ghost" onClick={toSummary}>
-            Bỏ qua
-          </Button>
-          <Button
-            size="lg"
-            loading={reflect.isPending}
-            disabled={Object.keys(answers).length === 0 && !realism}
-            onClick={() =>
-              reflect.mutate(
-                { answers, realism: realism ? Number(realism) : null },
-                { onSuccess: toSummary },
-              )
-            }
-          >
-            Xem kết quả ca làm
-          </Button>
+            <section className="mt-6" aria-labelledby="realism">
+              <h2
+                id="realism"
+                className="font-toon text-lg font-extrabold text-toon-ink"
+              >
+                Riêng màn chơi này: có giống công việc thật không?
+              </h2>
+              <div
+                role="radiogroup"
+                aria-label="Màn chơi có giống thực tế không"
+                className="mt-3 grid gap-2.5 sm:grid-cols-3"
+              >
+                {REALISM.map((r) => {
+                  const active = realism === r.key;
+                  return (
+                    <label
+                      key={r.key}
+                      className={cn(
+                        'flex cursor-pointer items-center justify-center rounded-2xl border-[3px] border-toon-ink px-3 py-2.5 text-center font-toon text-base font-extrabold text-toon-ink transition-[transform,box-shadow] has-focus-visible:shadow-toon-focus',
+                        active
+                          ? '-translate-y-0.5 bg-toon-mint shadow-toon'
+                          : 'bg-toon-paper shadow-toon-sm hover:-translate-y-0.5',
+                      )}
+                    >
+                      <input
+                        type="radio"
+                        name="realism"
+                        value={r.key}
+                        checked={active}
+                        onChange={() => setRealism(r.key)}
+                        className="sr-only"
+                      />
+                      {r.label}
+                    </label>
+                  );
+                })}
+              </div>
+            </section>
+
+            {reflect.isError && (
+              <p
+                className="mt-4 rounded-xl border-[2.5px] border-toon-ink bg-toon-coral-light px-3 py-2 text-sm font-bold text-toon-ink"
+                role="alert"
+              >
+                {errorText(reflect.error)}
+              </p>
+            )}
+
+            <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+              <ToonButton variant="ghost" onClick={toSummary}>
+                Bỏ qua
+              </ToonButton>
+              <ToonButton
+                size="lg"
+                loading={reflect.isPending}
+                disabled={Object.keys(answers).length === 0 && !realism}
+                onClick={() =>
+                  reflect.mutate(
+                    { answers, realism: realism ? Number(realism) : null },
+                    { onSuccess: toSummary },
+                  )
+                }
+              >
+                Xem kết quả ca làm
+              </ToonButton>
+            </div>
+          </div>
         </div>
       </div>
-      <Mountains tone="dawn" className="absolute inset-x-0 bottom-0 h-48" />
-    </div>
+    </SceneBackdrop>
   );
 }

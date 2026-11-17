@@ -25,6 +25,7 @@ import {
   cn,
 } from '@datn/ui';
 import { ArtGallery } from './ArtGallery';
+import { GameKit } from './GameKit';
 import {
   ButtonExamples,
   FormExamples,
@@ -125,6 +126,11 @@ const sections = [
     id: 'vi-du',
     title: 'Ví dụ ghép',
     note: 'Đặt các thành phần cạnh nhau để kiểm tra phân cấp: chuyện gì đang xảy ra, người chơi có thể làm gì tiếp?',
+  },
+  {
+    id: 'game-kit',
+    title: 'Game kit · Cartoon viền đen',
+    note: 'Bộ thành phần cho ca làm: nền giấy kem, nét đen, nhân vật và những thao tác có thể thử ngay.',
   },
 ] as const;
 
@@ -289,6 +295,9 @@ export default function DesignSystemPage() {
           <ShowcaseSection index={15}>
             <CompositionExamples />
           </ShowcaseSection>
+          <ShowcaseSection index={16} toon>
+            <GameKit />
+          </ShowcaseSection>
         </main>
       </div>
       <footer className="relative mt-8 border-t border-line px-4 py-12 text-center">
@@ -335,7 +344,7 @@ function DesignHero() {
               Khám phá bộ thiết kế <ArrowDown size={16} aria-hidden />
             </a>
             <span className="text-xs text-ink-faint">
-              16 phần · tương tác trực tiếp
+              {sections.length} phần · tương tác trực tiếp
             </span>
           </div>
         </div>
@@ -364,9 +373,11 @@ function DesignHero() {
 function ShowcaseSection({
   index,
   children,
+  toon = false,
 }: {
   index: number;
   children: ReactNode;
+  toon?: boolean;
 }) {
   const section = sections[index];
   return (
@@ -377,7 +388,8 @@ function ShowcaseSection({
     >
       <header className="mb-6 border-t border-line pt-6 sm:mb-8">
         <p className="mb-3 font-mono text-xs tracking-[0.18em] text-ink-faint">
-          {String(index + 1).padStart(2, '0')} / CELESTIAL NIGHT
+          {String(index + 1).padStart(2, '0')} /{' '}
+          {toon ? 'GAME KIT' : 'CELESTIAL NIGHT'}
         </p>
         <h2
           id={`${section.id}-title`}
@@ -389,9 +401,13 @@ function ShowcaseSection({
           {section.note}
         </p>
       </header>
-      <Panel as="div" padding="lg" className="min-w-0">
-        {children}
-      </Panel>
+      {toon ? (
+        children
+      ) : (
+        <Panel as="div" padding="lg" className="min-w-0">
+          {children}
+        </Panel>
+      )}
     </section>
   );
 }
@@ -410,8 +426,8 @@ function Principles() {
     },
     {
       icon: Moon,
-      title: 'Một bầu trời đêm',
-      text: 'Chỉ giao diện tối. Navy làm nền, ngà cho chữ và kính nhẹ cho từng lớp thông tin.',
+      title: 'Ngân hà và nơi làm việc',
+      text: 'Nền đêm cho khám phá; giấy kem, màu phẳng và viền đen cho ca làm.',
     },
     {
       icon: Eye,
