@@ -1,20 +1,23 @@
 import { useId, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowRight, LockKeyhole, TriangleAlert } from 'lucide-react';
 import {
-  Badge,
-  Button,
-  Callout,
+  ArrowLeft,
+  ArrowRight,
+  BookOpen,
+  Clock3,
+  Layers,
+  TriangleAlert,
+} from 'lucide-react';
+import {
+  CartoonPlanet,
   EmptyState,
-  Island,
   LoadingBlock,
-  Panel,
-  PanelHeader,
-  Planet,
-  ProgressBar,
-  TabPanel,
-  Tabs,
-  buttonClasses,
+  NightSky,
+  ToonButton,
+  ToonProgress,
+  ToonTabPanel,
+  ToonTabs,
+  toonButtonClasses,
   regionColor,
 } from '@datn/ui';
 import {
@@ -24,25 +27,20 @@ import {
   useRatingForm,
   useRecord,
 } from '../../api/hooks';
-import { firstDestination, formatYears, islandState } from './model';
+import { firstDestination, formatYears } from './model';
 import {
+  BriefText,
+  CareerIsland,
   KeywordLegend,
   Keywords,
   LoadError,
+  PaperSection,
   Ratings,
   RoleLinks,
+  TaskList,
 } from './Parts';
 import { PaySection } from './PaySection';
 
-const sections = [
-  ['tong-quan', 'Tổng quan'],
-  ['mot-ngay', 'Một ngày'],
-  ['mat-kho', 'Mặt khó'],
-  ['lo-trinh', 'Lộ trình'],
-  ['luong', 'Lương'],
-  ['hoc-gi', 'Học gì'],
-  ['danh-gia', 'Đánh giá'],
-] as const;
 const regions = {
   ky_thuat: 'Kỹ thuật',
   suc_khoe: 'Sức khoẻ',
@@ -93,343 +91,331 @@ export default function OccupationPage() {
       );
   };
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
-      <Link to="/galaxy" className="text-sm text-ink-faint hover:text-ink">
-        ← Bản đồ ngân hà
-      </Link>
-      <section id="tong-quan" className="scroll-mt-36 py-8">
-        <div className="flex flex-col items-center gap-7 sm:flex-row sm:items-start">
-          <Planet
-            seed={o.code}
-            color={color}
-            size={180}
-            status={playing ? 'playing' : 'new'}
-          />
-          <div className="min-w-0 flex-1">
-            <p className="eyebrow">
-              {regions[o.regionId]} · {o.group}
+    <div className="theme-toon-night relative isolate min-h-screen overflow-hidden">
+      <NightSky seed={code} scene="plain" />
+      <div className="relative mx-auto max-w-6xl px-5 pb-12 pt-6 sm:px-8">
+        <Link
+          to="/galaxy"
+          className="inline-flex items-center gap-2 rounded-md text-sm font-bold text-toon-star-soft focus-visible:shadow-toon-focus"
+        >
+          <ArrowLeft size={16} aria-hidden />
+          Bản đồ ngân hà
+        </Link>
+        <section
+          id="tong-quan"
+          aria-labelledby="occupation-title"
+          className="grid min-h-[660px] content-center items-center gap-4 pb-10 pt-7 md:grid-cols-[.8fr_1.2fr] md:gap-10"
+        >
+          <div className="relative mx-auto flex w-full max-w-80 items-center justify-center md:max-w-none">
+            <CartoonPlanet
+              seed={code}
+              region={o.regionId}
+              size="100%"
+              className="max-h-64 max-w-80 md:max-h-96 md:max-w-96"
+            />
+          </div>
+          <div className="min-w-0">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[.15em] text-toon-star">
+              {regions[o.regionId]}
             </p>
-            <h1 className="mt-3 text-4xl leading-tight sm:text-5xl">
+            <h1
+              id="occupation-title"
+              className="font-toon text-3xl font-extrabold leading-tight text-toon-paper sm:text-4xl lg:text-5xl"
+            >
               {o.name}
             </h1>
-            {o.nameEn && (
-              <p className="mt-2 text-sm text-ink-faint">{o.nameEn}</p>
-            )}
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
-              {o.summary}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <Badge tone={o.playable ? 'success' : 'muted'}>
-                {o.playable ? 'Có màn chơi' : 'Chưa có màn chơi'}
-              </Badge>
-              <Badge tone="muted">{o.levels.length} cấp nghề</Badge>
-              {o.gate.kind === 'PREREQUISITE' && (
-                <Badge tone="muted" icon={<LockKeyhole size={12} />}>
-                  Cần nghề đi trước
-                </Badge>
-              )}
+            <div className="mt-4 max-w-xl text-toon-star-soft">
+              <BriefText text={o.summary} firstSentence />
             </div>
             <div className="mt-6">
               {o.playable &&
               (playing || (destination && destination.questCount > 0)) ? (
-                <Button
+                <ToonButton
                   size="lg"
-                  loading={enrol.isPending}
                   onClick={enter}
-                  rightIcon={<ArrowRight size={18} />}
+                  loading={enrol.isPending}
+                  rightIcon={<ArrowRight size={18} aria-hidden />}
                 >
                   {playing
                     ? `Chơi tiếp cấp ${playing.levelNo}`
                     : destination?.access === 'ENROLLED'
                       ? `Chơi tiếp cấp ${destination.levelNo}`
-                      : `Vào cấp ${destination?.levelNo}`}
-                </Button>
+                      : destination?.levelNo === 1
+                        ? 'Vào cấp đầu'
+                        : `Vào cấp ${destination?.levelNo}`}
+                </ToonButton>
               ) : (
                 <Link
                   to={`/occupations/${code}/levels`}
-                  className={buttonClasses({ size: 'lg' })}
+                  className={toonButtonClasses({ size: 'lg' })}
                 >
-                  Xem lộ trình
+                  Xem lộ trình <ArrowRight size={18} aria-hidden />
                 </Link>
               )}
+              {enrol.isError && (
+                <p
+                  role="alert"
+                  className="mt-3 rounded-xl bg-toon-paper p-3 text-sm font-bold text-toon-maroon"
+                >
+                  {errorText(enrol.error)}
+                </p>
+              )}
             </div>
-            {enrol.isError && (
-              <Callout tone="danger" className="mt-3">
-                {errorText(enrol.error)}
-              </Callout>
-            )}
           </div>
-        </div>
+        </section>
         {record.isError && (
-          <Callout className="mt-5" title="Chưa tải được tiến độ của bạn">
-            {errorText(record.error)}{' '}
-            <button className="underline" onClick={() => void record.refetch()}>
+          <div
+            role="alert"
+            className="mb-6 rounded-xl border-2 border-toon-star bg-toon-night-deep p-4 text-sm"
+          >
+            Chưa tải được tiến độ của bạn. {errorText(record.error)}{' '}
+            <button
+              className="rounded underline focus-visible:shadow-toon-focus"
+              onClick={() => void record.refetch()}
+            >
               Thử lại
             </button>
-          </Callout>
+          </div>
         )}
-      </section>
-      <nav
-        aria-label="Các phần hồ sơ nghề"
-        className="sticky top-16 z-20 -mx-4 mb-8 flex gap-1 overflow-x-auto border-y border-line bg-night-900/95 px-4 py-2 backdrop-blur sm:mx-0 sm:rounded-lg"
-      >
-        {sections.map(([id, name]) => (
-          <a
-            key={id}
-            href={`#${id}`}
-            className="shrink-0 rounded-md px-3 py-2 text-sm text-ink-muted hover:bg-night-800 hover:text-ink focus-visible:shadow-focus"
-          >
-            {name}
-          </a>
-        ))}
-      </nav>
-      <div className="space-y-6">
-        <Panel id="mot-ngay" className="scroll-mt-36">
-          <PanelHeader
-            title="Một ngày làm việc"
-            description="Cùng một nghề, công việc thay đổi khi bạn đi sâu hơn."
-          />
-          {activeLevel ? (
-            <>
-              <Tabs
-                idBase={tabId}
-                label="Công việc theo cấp"
-                items={o.levels.map((l) => ({
-                  key: String(l.levelNo),
-                  label: `Cấp ${l.levelNo} · ${l.title}`,
-                }))}
-                value={String(activeLevel.levelNo)}
-                onChange={setDayLevel}
-                className="overflow-x-auto"
-              />
-              <TabPanel
-                idBase={tabId}
-                tabKey={String(activeLevel.levelNo)}
-                active
-                className="pt-5"
-              >
-                <p className="mb-3 text-xs text-ink-faint">
-                  {formatYears(activeLevel.years)}
-                </p>
-                <TaskList items={activeLevel.tasks} />
-              </TabPanel>
-            </>
-          ) : (
-            <p className="text-sm text-ink-faint">
-              Chưa có mô tả công việc theo cấp.
-            </p>
-          )}
-        </Panel>
-        <Panel
+        <section
           id="mat-kho"
-          className="scroll-mt-36 border-warning/40 bg-warning-deep/20"
-          padding="lg"
+          aria-labelledby="downsides-title"
+          className="relative mb-8 rounded-[22px] border-[3px] border-toon-ink bg-toon-star-soft p-5 text-toon-ink shadow-toon sm:p-6"
         >
-          <PanelHeader
-            title={
-              <span className="flex items-center gap-3">
-                <TriangleAlert
-                  size={24}
-                  className="shrink-0 text-warning"
-                  aria-hidden
-                />
-                Mặt khó của nghề
-              </span>
-            }
-            description="Những điều cần biết trước khi bước vào một ca làm."
-          />
-          <TaskList
-            items={o.downsides}
-            empty="Chưa có thông tin mặt khó được công bố; hồ sơ nghề còn cần bổ sung phần này."
-          />
-        </Panel>
-        <div className="grid gap-6 lg:grid-cols-2">
-          <Panel>
-            <PanelHeader title="Nhịp việc & nơi làm" />
-            <TaskList items={o.workFacts} />
-            <div className="mt-4 flex flex-wrap gap-2">
-              {o.settings.map((s) => (
-                <Badge key={s} tone="muted">
-                  {s}
-                </Badge>
-              ))}
-            </div>
-          </Panel>
-          <Panel>
-            <PanelHeader
-              title="Môi trường làm việc"
-              description="Tỷ trọng loại hình nơi làm trong dữ liệu nghề."
+          <div className="flex items-start gap-4">
+            <TriangleAlert
+              size={28}
+              strokeWidth={2.6}
+              aria-hidden
+              className="shrink-0"
             />
-            {o.environments.length ? (
-              <ul className="space-y-4">
-                {o.environments.map((e) => (
-                  <li key={e.name}>
-                    <ProgressBar
-                      label={e.name}
-                      value={e.weight}
-                      max={100}
-                      showValue
-                      color={color}
-                      valueText={`${Math.round(e.weight)}%`}
-                      size="sm"
-                    />
-                  </li>
-                ))}
-              </ul>
+            <div className="min-w-0">
+              <h2
+                id="downsides-title"
+                className="mb-2 font-toon text-xl font-extrabold"
+              >
+                Mặt khó của nghề
+              </h2>
+              <TaskList
+                items={o.downsides}
+                limit={1}
+                empty="Chưa có thông tin mặt khó được công bố; hồ sơ nghề còn cần bổ sung phần này."
+              />
+            </div>
+          </div>
+        </section>
+        <div className="grid items-start gap-4 lg:grid-cols-2">
+          <PaperSection
+            id="mot-ngay"
+            title="Một ngày làm việc"
+            icon={<Clock3 size={21} />}
+          >
+            {activeLevel ? (
+              <>
+                <ToonTabs
+                  idBase={tabId}
+                  label="Công việc theo cấp"
+                  items={o.levels.map((l) => ({
+                    key: String(l.levelNo),
+                    label: `Cấp ${l.levelNo}`,
+                  }))}
+                  value={String(activeLevel.levelNo)}
+                  onChange={setDayLevel}
+                />
+                <ToonTabPanel
+                  idBase={tabId}
+                  tabKey={String(activeLevel.levelNo)}
+                  active
+                >
+                  <p className="mb-1 font-toon text-lg font-extrabold">
+                    {activeLevel.title}
+                  </p>
+                  <p className="mb-4 text-xs text-toon-ink-faint">
+                    {formatYears(activeLevel.years)}
+                  </p>
+                  <TaskList items={activeLevel.tasks} />
+                </ToonTabPanel>
+              </>
             ) : (
-              <p className="text-sm text-ink-faint">
+              <p className="text-sm">Chưa có mô tả công việc theo cấp.</p>
+            )}
+          </PaperSection>
+          <PaperSection title="Nhịp việc & nơi làm" icon={<Clock3 size={21} />}>
+            <TaskList items={o.workFacts} />
+            <TaskList items={o.settings} />
+            {o.environments.length ? (
+              <details>
+                <summary className="w-fit cursor-pointer rounded-md text-sm font-bold focus-visible:shadow-toon-focus">
+                  Môi trường làm việc
+                </summary>
+                <ul className="mt-4 space-y-4">
+                  {o.environments.map((e) => (
+                    <li key={e.name}>
+                      <ToonProgress
+                        label={e.name}
+                        value={e.weight}
+                        max={100}
+                        showValue
+                        valueText={`${Math.round(e.weight)}%`}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            ) : (
+              <p className="text-xs text-toon-ink-faint">
                 Chưa có phân bố môi trường làm việc.
               </p>
             )}
-          </Panel>
-        </div>
-        <Panel id="lo-trinh" className="scroll-mt-36">
-          <PanelHeader
-            title="Lộ trình qua các đảo"
-            description="Mỗi đảo là một cấp nghề, với vai trò và phạm vi công việc riêng."
-          />
-          <div className="flex gap-4 overflow-x-auto pb-4">
-            {o.levels.map((l) => (
-              <Link
-                key={l.levelNo}
-                to={`/occupations/${code}/levels?level=${l.levelNo}`}
-                className="flex w-40 shrink-0 flex-col items-center rounded-lg p-2 text-center hover:bg-night-800 focus-visible:shadow-focus"
-              >
-                <Island
-                  seed={`${code}-${l.levelNo}`}
-                  levelNo={l.levelNo}
-                  state={islandState[l.access]}
-                  color={color}
-                  size={140}
-                  title={l.title}
-                />
-                <span className="text-sm font-semibold">{l.title}</span>
-                <span className="mt-1 text-xs text-ink-faint">
-                  {formatYears(l.years, { short: true })}
-                </span>
-              </Link>
-            ))}
-          </div>
-          <Link
-            to={`/occupations/${code}/levels`}
-            className={buttonClasses({ variant: 'subtle', className: 'mt-3' })}
+          </PaperSection>
+          <PaperSection
+            id="lo-trinh"
+            title="Lộ trình"
+            icon={<Layers size={21} />}
           >
-            Xem điều kiện từng cấp <ArrowRight size={16} />
-          </Link>
-          {o.path.map((p, i) => (
-            <div key={`${p.stage}-${i}`} className="mt-6">
-              <h3 className="mb-3 text-lg">{p.label}</h3>
-              <RoleLinks roles={p.roles} />
-            </div>
-          ))}
-          {o.similar.length > 0 && (
-            <div className="mt-6">
-              <h3 className="mb-3 text-lg">Khám phá nghề gần nhau</h3>
-              <ul className="space-y-3">
-                {o.similar.map((s) => (
-                  <li key={s.code}>
-                    <RoleLinks roles={[s]} />
-                    <p className="mt-1 text-xs text-ink-faint">{s.why}</p>
-                  </li>
+            <ol className="flex snap-x gap-3 overflow-x-auto pb-4">
+              {o.levels.map((l) => (
+                <li key={l.levelNo} className="w-36 shrink-0 snap-start">
+                  <Link
+                    to={`/occupations/${code}/levels?level=${l.levelNo}`}
+                    className="flex h-full flex-col items-center rounded-2xl border-2 border-toon-ink bg-toon-cream p-3 text-center focus-visible:shadow-toon-focus"
+                  >
+                    <CareerIsland
+                      levelNo={l.levelNo}
+                      color={color}
+                      locked={l.access === 'LOCKED'}
+                      active={l.access === 'ENROLLED'}
+                      className="w-28"
+                    />
+                    <span className="font-toon text-xs font-bold">
+                      Cấp {l.levelNo}
+                    </span>
+                    <span className="mt-1 text-sm font-bold">{l.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+            <Link
+              to={`/occupations/${code}/levels`}
+              className={toonButtonClasses({
+                variant: 'secondary',
+                size: 'sm',
+              })}
+            >
+              Xem điều kiện từng cấp <ArrowRight size={16} aria-hidden />
+            </Link>
+            <details>
+              <summary className="w-fit cursor-pointer rounded-md font-bold focus-visible:shadow-toon-focus">
+                Các hướng phát triển
+              </summary>
+              <div className="mt-4 space-y-5">
+                {o.path.map((p, i) => (
+                  <div key={`${p.stage}-${i}`}>
+                    <h3 className="mb-3 font-toon text-lg font-bold">
+                      {p.label}
+                    </h3>
+                    <RoleLinks roles={p.roles} />
+                  </div>
                 ))}
-              </ul>
-            </div>
-          )}
-          {o.gate.kind === 'PREREQUISITE' && (
-            <div className="mt-6 rounded-lg border border-line p-4">
-              <h3 className="mb-2 text-base">Nghề đi trước · {o.gate.band}</h3>
-              <p className="mb-3 text-sm text-ink-muted">
-                Hoàn thành cấp yêu cầu ở một nghề đi trước và đủ bậc kỹ năng để
-                vào nghề này. Chi tiết nằm ở từng đảo.
-              </p>
-              <RoleLinks roles={o.gate.roles} />
-            </div>
-          )}
-        </Panel>
-        <PaySection pay={o.pay} />
-        <Panel id="hoc-gi" className="scroll-mt-36">
-          <PanelHeader title="Học gì để bắt đầu?" />
-          {o.education.preparation && (
-            <p className="mb-4 text-sm leading-relaxed text-ink-muted">
-              {o.education.preparation}
-            </p>
-          )}
-          <div className="grid gap-5 sm:grid-cols-2">
+                {o.similar.length > 0 && (
+                  <div>
+                    <h3 className="mb-3 font-toon text-lg font-bold">
+                      Khám phá nghề gần nhau
+                    </h3>
+                    <ul className="space-y-3">
+                      {o.similar.map((s) => (
+                        <li key={s.code}>
+                          <RoleLinks roles={[s]} />
+                          <div className="mt-2 text-toon-ink-soft">
+                            <BriefText text={s.why} />
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </details>
+            {o.gate.kind === 'PREREQUISITE' && (
+              <div className="rounded-xl border-2 border-toon-ink bg-toon-cream p-4">
+                <p className="mb-3 font-bold">Nghề đi trước · {o.gate.band}</p>
+                <p className="mb-3 text-sm">
+                  Hoàn thành cấp yêu cầu ở một nghề đi trước và đủ bậc kỹ năng.
+                  Xem điều kiện ở từng đảo.
+                </p>
+                <RoleLinks roles={o.gate.roles} />
+              </div>
+            )}
+          </PaperSection>
+          <PaySection pay={o.pay} />
+          <PaperSection
+            id="hoc-gi"
+            title="Học gì để bắt đầu?"
+            icon={<BookOpen size={21} />}
+          >
+            {o.education.preparation && (
+              <BriefText text={o.education.preparation} />
+            )}
             <div>
-              <h3 className="mb-2 text-lg">Ngành học đại học</h3>
+              <h3 className="mb-3 font-toon text-lg font-bold">
+                Ngành học đại học
+              </h3>
               <TaskList items={o.education.university} />
             </div>
             <div>
-              <h3 className="mb-2 text-lg">Học nghề</h3>
+              <h3 className="mb-3 font-toon text-lg font-bold">Học nghề</h3>
               <TaskList items={o.education.vocational} />
             </div>
-          </div>
-          {o.education.licence && (
-            <p className="mt-4 rounded-lg bg-night-900/60 p-4 text-sm text-ink-muted">
-              <strong className="text-ink">Chứng chỉ / giấy phép: </strong>
-              {o.education.licence}
+            {o.education.licence && (
+              <div>
+                <p className="mb-2 font-bold">Chứng chỉ / giấy phép</p>
+                <BriefText text={o.education.licence} />
+              </div>
+            )}
+            {o.education.note && <BriefText text={o.education.note} />}
+          </PaperSection>
+          <PaperSection title="Kỹ năng nghề">
+            <Keywords items={o.keywords} />
+            <KeywordLegend />
+          </PaperSection>
+          <PaperSection id="danh-gia" title="Đánh giá">
+            {o.ratings.withheld ? (
+              <Ratings summary={o.ratings} criteria={[]} />
+            ) : rating.isError ? (
+              <LoadError
+                error={rating.error}
+                retry={() => void rating.refetch()}
+              />
+            ) : !rating.data ? (
+              <LoadingBlock text="Đang tải tiêu chí đánh giá…" />
+            ) : (
+              <Ratings summary={o.ratings} criteria={rating.data.criteria} />
+            )}
+            <Link
+              to={`/occupations/${code}/rate`}
+              className={toonButtonClasses({
+                variant: 'secondary',
+                size: 'sm',
+              })}
+            >
+              Chia sẻ trải nghiệm nghề
+            </Link>
+          </PaperSection>
+        </div>
+        <footer className="mt-8 space-y-2 border-t-2 border-dashed border-toon-night-line pt-5 text-xs leading-relaxed text-toon-star-soft">
+          <details>
+            <summary className="w-fit cursor-pointer rounded-md font-bold focus-visible:shadow-toon-focus">
+              Tên & nhóm nghề
+            </summary>
+            <p className="mt-2">
+              {o.nameEn} · {o.group}
             </p>
-          )}
-          {o.education.note && (
-            <p className="mt-4 text-sm text-ink-faint">{o.education.note}</p>
-          )}
-        </Panel>
-        <Panel>
-          <PanelHeader title="Kỹ năng nghề sẽ gặp" />
-          <Keywords items={o.keywords} />
-          <KeywordLegend />
-        </Panel>
-        <Panel id="danh-gia" className="scroll-mt-36">
-          <PanelHeader title="Đánh giá của người đã đi hết nghề" />
-          {o.ratings.withheld ? (
-            <Ratings summary={o.ratings} criteria={[]} />
-          ) : rating.isError ? (
-            <LoadError
-              error={rating.error}
-              retry={() => void rating.refetch()}
-            />
-          ) : !rating.data ? (
-            <LoadingBlock text="Đang tải tiêu chí đánh giá…" />
-          ) : (
-            <Ratings summary={o.ratings} criteria={rating.data.criteria} />
-          )}
-          <Link
-            to={`/occupations/${code}/rate`}
-            className={buttonClasses({ variant: 'subtle', className: 'mt-5' })}
-          >
-            Chia sẻ trải nghiệm nghề
-          </Link>
-        </Panel>
+          </details>
+          {o.attribution.map((line, i) => (
+            <p key={i}>{line}</p>
+          ))}
+        </footer>
       </div>
-      <footer className="mt-8 space-y-2 border-t border-line pt-5 text-xs leading-relaxed text-ink-faint">
-        {o.attribution.map((line, i) => (
-          <p key={i}>{line}</p>
-        ))}
-      </footer>
     </div>
-  );
-}
-
-function TaskList({
-  items,
-  empty = 'Chưa có thông tin được công bố.',
-}: {
-  items: string[];
-  empty?: string;
-}) {
-  return items.length ? (
-    <ul className="space-y-3 text-sm leading-relaxed text-ink-muted">
-      {items.map((t, i) => (
-        <li key={i} className="flex gap-3">
-          <span
-            aria-hidden
-            className="mt-2 size-1.5 shrink-0 rounded-full bg-current opacity-50"
-          />
-          <span>{t}</span>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p className="text-sm text-ink-faint">{empty}</p>
   );
 }

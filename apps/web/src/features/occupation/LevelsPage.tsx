@@ -1,3 +1,9 @@
+/**
+ * Quần đảo cấp nghề theo "Celestial cartoon": các đảo nối bằng đường nét
+ * đứt vàng như bản đồ kho báu trên trời đêm; bên cạnh là thẻ giấy của cấp
+ * đang chọn, chỉ giữ việc chính, điều kiện vào cấp và một nút; kỹ năng nghề
+ * gập lại để người chơi không bị một mớ chữ đập vào mắt.
+ */
 import { useState } from 'react';
 import {
   Link,
@@ -5,37 +11,47 @@ import {
   useParams,
   useSearchParams,
 } from 'react-router-dom';
-import { ArrowRight, Check, Circle, LockKeyhole } from 'lucide-react';
+import {
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  Circle,
+  Gift,
+  LockKeyhole,
+  Sparkles,
+} from 'lucide-react';
 import { profile } from '@datn/game-core';
 import {
-  Badge,
-  Button,
-  Callout,
-  EmptyState,
-  Island,
-  LoadingBlock,
-  Panel,
-  PanelHeader,
+  InkStar,
   RadarChart,
-  buttonClasses,
+  ToonBadge,
+  ToonButton,
   cn,
   regionColor,
+  toonButtonClasses,
 } from '@datn/ui';
 import { errorText, useEnrol, useOccupation, useRecord } from '../../api/hooks';
+import { firstDestination, formatYears, skillTiers } from './model';
 import {
-  firstDestination,
-  formatYears,
-  islandState,
-  skillTiers,
-} from './model';
-import { KeywordLegend, Keywords, LoadError } from './Parts';
+  CareerIsland,
+  KeywordLegend,
+  Keywords,
+  LoadError,
+  PaperSection,
+} from './Parts';
 
-const accessLabels = {
-  OPEN: 'Đã mở',
-  ENROLLED: 'Đang khám phá',
-  COMPLETED: 'Đã hoàn thành',
-  LOCKED: 'Chưa mở',
-};
+const ACCESS = {
+  OPEN: { label: 'Đã mở', tone: 'sky' },
+  ENROLLED: { label: 'Đang khám phá', tone: 'mustard' },
+  COMPLETED: { label: 'Đã hoàn thành', tone: 'mint' },
+  LOCKED: { label: 'Chưa mở', tone: 'paper' },
+} as const;
+
+/** Toạ độ đảo trên bản đồ (phần trăm), lượn trái phải như đường mòn. */
+const spot = (i: number) => ({
+  x: i % 2 === 0 ? 26 : 70,
+  y: i,
+});
 
 export default function LevelsPage() {
   const { code } = useParams();
@@ -47,15 +63,21 @@ export default function LevelsPage() {
   const [actionLevel, setActionLevel] = useState<number | null>(null);
   if (occupation.isError)
     return (
-      <LoadError
-        error={occupation.error}
-        retry={() => void occupation.refetch()}
-      />
+      <div className="theme-toon-night min-h-[60vh] p-6">
+        <LoadError
+          error={occupation.error}
+          retry={() => void occupation.refetch()}
+        />
+      </div>
     );
-  if (!code) return <EmptyState title="Chưa chọn nghề" />;
-  if (!occupation.data)
+  if (!code || !occupation.data)
     return (
-      <LoadingBlock text="Đang vẽ quần đảo nghề…" className="min-h-[60vh]" />
+      <div
+        role="status"
+        className="theme-toon-night grid min-h-[60vh] place-items-center font-toon text-xl font-extrabold"
+      >
+        {code ? 'Đang vẽ quần đảo nghề…' : 'Chưa chọn nghề'}
+      </div>
     );
   const o = occupation.data;
   const color = regionColor(o.regionId);
@@ -64,6 +86,16 @@ export default function LevelsPage() {
     firstDestination(o.levels) ??
     o.levels[0];
   const tiers = record.data ? skillTiers(record.data.softSkills) : null;
+  const needs = selected
+    ? profile.SOFT_SKILL_GROUPS.filter(
+        ({ id }) => (selected.requirement[id] ?? 0) > 0,
+      )
+    : [];
+  const blocked =
+    !selected ||
+    selected.access === 'LOCKED' ||
+    !o.playable ||
+    selected.questCount === 0;
   const enter = () => {
     if (!selected) return;
     if (selected.enrolmentId) {
@@ -76,282 +108,355 @@ export default function LevelsPage() {
       { onSuccess: (island) => navigate(`/islands/${island.enrolmentId}`) },
     );
   };
+  const rows = o.levels.length;
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-10">
-      <Link
-        to={`/occupations/${code}`}
-        className="text-sm text-ink-faint hover:text-ink"
-      >
-        ← Hồ sơ {o.name}
-      </Link>
-      <header className="my-8">
-        <p className="eyebrow">Quần đảo nghề</p>
-        <h1 className="mt-2 text-4xl sm:text-5xl">Một đảo, một bước tiến</h1>
-        <p className="mt-3 text-ink-muted">
-          {o.name} · Chọn một đảo để xem việc sẽ làm và điều kiện vào cấp.
-        </p>
-      </header>
-      {!selected ? (
-        <EmptyState
-          title="Lộ trình đang được chuẩn bị"
-          description="Chưa có cấp nghề được công bố."
-        />
-      ) : (
-        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-          <section
-            aria-label="Các đảo trong lộ trình"
-            className="relative min-w-0 overflow-hidden rounded-xl border border-line bg-night-800/20 p-4 sm:p-6"
-          >
-            <div
-              aria-hidden
-              className="pointer-events-none absolute bottom-20 left-1/2 top-20 border-l-2 border-dashed border-line-strong lg:hidden"
-            />
-            <svg
-              aria-hidden
-              className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
-              viewBox={`0 0 600 ${Math.max(1, Math.ceil(o.levels.length / 2)) * 260}`}
-              preserveAspectRatio="none"
+    <div className="theme-toon-night min-h-full">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-10">
+        <Link
+          to={`/occupations/${code}`}
+          className="inline-flex items-center gap-1.5 text-sm font-bold text-toon-star-soft hover:text-toon-paper"
+        >
+          <ArrowLeft size={15} strokeWidth={2.6} aria-hidden /> Hồ sơ {o.name}
+        </Link>
+        <header className="mb-8 mt-5">
+          <p className="font-toon text-sm font-extrabold uppercase tracking-widest text-toon-star">
+            Quần đảo nghề
+          </p>
+          <h1 className="mt-1 font-toon text-3xl font-extrabold leading-tight sm:text-5xl">
+            Một đảo, một bước tiến
+          </h1>
+          <p className="mt-2 font-semibold text-toon-star-soft">
+            Chọn một đảo để xem việc sẽ làm.
+          </p>
+        </header>
+
+        {!selected ? (
+          <p className="toon-card p-6 text-center font-toon text-xl font-extrabold text-toon-ink">
+            Chưa có cấp nghề được công bố.
+          </p>
+        ) : (
+          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+            <section
+              aria-label="Các đảo trong lộ trình"
+              className="relative min-w-0 rounded-[28px] border-[3px] border-toon-night-deep bg-toon-night-soft/40 px-2 py-6"
             >
-              <path
-                d={`M150 100 ${o.levels
-                  .slice(1)
-                  .map(
-                    (_, i) =>
-                      `Q${i % 2 ? 0 : 600} ${(i + 1) * 130 + 100} ${i % 2 ? 150 : 450} ${Math.floor((i + 1) / 2) * 260 + 100}`,
-                  )
-                  .join(' ')}`}
-                stroke="currentColor"
-                className="text-night-400"
-                fill="none"
-                strokeWidth="2"
-                strokeDasharray="3 9"
+              {/* Đường mòn nét đứt nối các đảo theo thứ tự cấp. */}
+              <svg
+                aria-hidden
+                className="pointer-events-none absolute inset-0 size-full"
+                viewBox={`0 0 100 ${rows * 100}`}
+                preserveAspectRatio="none"
+              >
+                <path
+                  d={o.levels
+                    .map((_, i) => {
+                      const p = spot(i);
+                      const y = p.y * 100 + 42;
+                      if (i === 0) return `M${p.x} ${y}`;
+                      const q = spot(i - 1);
+                      return `C${q.x} ${y - 50} ${p.x} ${y - 50} ${p.x} ${y}`;
+                    })
+                    .join(' ')}
+                  fill="none"
+                  stroke="var(--color-toon-star)"
+                  strokeWidth="2.5"
+                  strokeDasharray="2 8"
+                  strokeLinecap="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </svg>
+              <InkStar
+                size={22}
+                className="absolute right-6 top-5 animate-toon-wiggle"
               />
-            </svg>
-            <ol className="relative grid gap-5 lg:grid-cols-2 lg:gap-x-2 lg:gap-y-10">
-              {o.levels.map((l, i) => (
-                <li
-                  key={l.levelNo}
-                  className={cn(
-                    'flex justify-center',
-                    i % 2 === 1 && 'lg:translate-y-16',
-                    i % 2 === 0
-                      ? 'max-lg:-translate-x-6'
-                      : 'max-lg:translate-x-6',
-                  )}
-                >
-                  <button
-                    type="button"
-                    aria-pressed={selected.levelNo === l.levelNo}
-                    aria-controls="level-details"
-                    onClick={() => {
-                      enrol.reset();
-                      setParams(
-                        { level: String(l.levelNo) },
-                        { replace: true },
-                      );
-                    }}
-                    className={cn(
-                      'relative flex w-44 max-w-full flex-col items-center rounded-xl border p-3 text-center transition-colors focus-visible:outline-none focus-visible:shadow-focus',
-                      selected.levelNo === l.levelNo
-                        ? 'border-line-strong bg-night-800/90'
-                        : 'border-transparent hover:bg-night-800/60',
-                      l.access === 'ENROLLED' && 'shadow-glow',
-                    )}
-                  >
-                    <Island
-                      seed={`${code}-${l.levelNo}`}
-                      title={l.title}
-                      levelNo={l.levelNo}
-                      state={islandState[l.access]}
-                      color={color}
-                      size={140}
-                    />
-                    <span className="text-xs text-ink-faint">
-                      Cấp {l.levelNo} · {accessLabels[l.access]}
-                    </span>
-                    <span className="mt-1 text-sm font-semibold">
-                      {l.title}
-                    </span>
-                    <span className="mt-1 text-xs text-ink-faint">
-                      {formatYears(l.years, { short: true })}
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ol>
-            <div className="hidden h-16 lg:block" />
-          </section>
-          <Panel
-            id="level-details"
-            className="min-w-0 lg:sticky lg:top-24"
-            aria-label={`Chi tiết cấp ${selected.levelNo}`}
-          >
-            <PanelHeader
-              eyebrow={`Cấp ${selected.levelNo} · ${formatYears(selected.years, { short: true })}`}
-              title={selected.title}
-              description={selected.coreOutput ?? undefined}
-            />
-            <Badge
-              tone={
-                selected.access === 'ENROLLED' ||
-                selected.access === 'COMPLETED'
-                  ? 'gold'
-                  : 'muted'
-              }
-            >
-              {accessLabels[selected.access]}
-            </Badge>
-            <h3 className="mb-3 mt-6 text-lg">Việc bạn sẽ làm</h3>
-            {selected.tasks.length ? (
-              <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink-muted">
-                {selected.tasks.map((t, i) => (
-                  <li key={i}>{t}</li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-sm text-ink-faint">Chưa có mô tả công việc.</p>
-            )}
-            <h3 className="mb-3 mt-6 text-lg">Nhóm kỹ năng trọng tâm</h3>
-            <div className="flex flex-wrap gap-2">
-              {selected.focus.map((id) => (
-                <Badge key={id} tone="muted">
-                  {profile.softSkillGroup(id).name}
-                </Badge>
-              ))}
-            </div>
-            <h3 className="mb-2 mt-6 text-lg">Điều kiện vào cấp</h3>
-            {record.isError ? (
-              <LoadError
-                error={record.error}
-                retry={() => void record.refetch()}
-              />
-            ) : !tiers ? (
-              <LoadingBlock text="Đang đối chiếu hồ sơ kỹ năng…" />
-            ) : (
-              <>
-                <ul className="space-y-3 text-sm">
-                  {profile.SOFT_SKILL_GROUPS.filter(
-                    ({ id }) => (selected.requirement[id] ?? 0) > 0,
-                  ).map(({ id, name }) => {
-                    const need = selected.requirement[id] ?? 0;
-                    const met = tiers[id] >= need;
-                    return (
-                      <li key={id} className="flex gap-2">
-                        <span aria-hidden>
-                          {met ? (
-                            <Check size={17} className="text-success" />
-                          ) : (
-                            <Circle size={17} className="text-ink-faint" />
+              <ol className="relative">
+                {o.levels.map((l, i) => {
+                  const active = selected.levelNo === l.levelNo;
+                  return (
+                    <li
+                      key={l.levelNo}
+                      className="flex"
+                      style={{
+                        justifyContent: i % 2 === 0 ? 'flex-start' : 'flex-end',
+                        paddingInline: '6%',
+                      }}
+                    >
+                      <button
+                        type="button"
+                        aria-pressed={active}
+                        aria-controls="level-details"
+                        onClick={() => {
+                          enrol.reset();
+                          setParams(
+                            { level: String(l.levelNo) },
+                            { replace: true },
+                          );
+                        }}
+                        className={cn(
+                          'group flex w-40 max-w-[46%] flex-col items-center rounded-2xl p-2 text-center transition-transform focus-visible:outline-none focus-visible:shadow-toon-focus sm:w-48',
+                          active ? 'scale-105' : 'hover:-translate-y-1',
+                        )}
+                      >
+                        <CareerIsland
+                          levelNo={l.levelNo}
+                          color={color}
+                          active={active || l.access === 'ENROLLED'}
+                          locked={l.access === 'LOCKED'}
+                        />
+                        <span
+                          className={cn(
+                            'mt-1 inline-flex items-center gap-1 rounded-full border-2 px-2.5 py-0.5 font-toon text-xs font-extrabold',
+                            active
+                              ? 'border-toon-ink bg-toon-star text-toon-ink'
+                              : 'border-toon-night-line bg-toon-night text-toon-paper',
                           )}
+                        >
+                          {l.access === 'LOCKED' && (
+                            <LockKeyhole
+                              size={11}
+                              strokeWidth={2.8}
+                              aria-hidden
+                            />
+                          )}
+                          {l.access === 'COMPLETED' && (
+                            <Check size={11} strokeWidth={3} aria-hidden />
+                          )}
+                          Cấp {l.levelNo}
                         </span>
-                        <span>
-                          {name}: bậc {tiers[id]}/{need}{' '}
-                          <span className="text-ink-faint">
-                            · {met ? 'Đã đủ' : `Còn ${need - tiers[id]} bậc`}
-                          </span>
+                        <span className="mt-1 text-sm font-bold leading-tight">
+                          {l.title}
                         </span>
-                      </li>
-                    );
-                  })}
+                        <span className="sr-only">
+                          {ACCESS[l.access].label}
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ol>
+            </section>
+
+            <article
+              id="level-details"
+              aria-label={`Chi tiết cấp ${selected.levelNo}`}
+              className="toon-card relative min-w-0 p-5 pt-7 text-toon-ink shadow-toon-lg sm:p-7 sm:pt-8 lg:sticky lg:top-24"
+            >
+              <span className="absolute -top-4 left-5 inline-flex -rotate-2 items-center gap-1.5 rounded-xl border-[3px] border-toon-ink bg-toon-star px-3 py-0.5 font-toon text-sm font-extrabold shadow-toon-sm">
+                Cấp {selected.levelNo} ·{' '}
+                {formatYears(selected.years, { short: true })}
+              </span>
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <h2 className="font-toon text-2xl font-extrabold leading-tight sm:text-3xl">
+                  {selected.title}
+                </h2>
+                <ToonBadge tone={ACCESS[selected.access].tone}>
+                  {ACCESS[selected.access].label}
+                </ToonBadge>
+              </div>
+              {selected.coreOutput && (
+                <details className="mt-2 text-sm font-semibold text-toon-ink-soft">
+                  <summary className="w-fit cursor-pointer rounded-md underline decoration-dotted underline-offset-4">
+                    Trách nhiệm ở cấp này
+                  </summary>
+                  <p className="mt-1.5 leading-relaxed">
+                    {selected.coreOutput}
+                  </p>
+                </details>
+              )}
+
+              <h3 className="mb-2 mt-5 font-toon text-lg font-extrabold">
+                Việc bạn sẽ làm
+              </h3>
+              {selected.tasks.length ? (
+                <ul className="space-y-2">
+                  {selected.tasks.slice(0, 3).map((t, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-2.5 text-[15px] font-semibold leading-snug"
+                    >
+                      <span
+                        aria-hidden
+                        className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-lg border-2 border-toon-ink bg-toon-sky font-toon text-xs font-extrabold"
+                      >
+                        {i + 1}
+                      </span>
+                      {t}
+                    </li>
+                  ))}
                 </ul>
-                {!Object.values(selected.requirement).some((v) => v > 0) && (
-                  <p className="text-sm text-ink-muted">
-                    Không yêu cầu bậc kỹ năng mềm.
-                  </p>
-                )}
-                {Object.values(selected.requirement).some((v) => v > 0) && (
-                  <RadarChart
-                    axes={profile.SOFT_SKILL_GROUPS.map((s) => ({
-                      key: s.id,
-                      label: s.short,
-                    }))}
-                    values={tiers}
-                    overlay={selected.requirement}
-                    size={400}
-                    label={`Kỹ năng của bạn và yêu cầu cấp ${selected.levelNo}`}
+              ) : (
+                <p className="text-sm text-toon-ink-faint">
+                  Chưa có mô tả công việc.
+                </p>
+              )}
+
+              <h3 className="mb-2 mt-5 font-toon text-lg font-extrabold">
+                Điều kiện vào cấp
+              </h3>
+              {record.isError ? (
+                <LoadError
+                  error={record.error}
+                  retry={() => void record.refetch()}
+                />
+              ) : !tiers ? (
+                <p role="status" className="text-sm text-toon-ink-faint">
+                  Đang đối chiếu hồ sơ kỹ năng…
+                </p>
+              ) : needs.length === 0 ? (
+                <p className="text-sm font-semibold text-toon-ink-soft">
+                  Không yêu cầu bậc kỹ năng mềm.
+                </p>
+              ) : (
+                <>
+                  <ul className="space-y-2 text-sm font-semibold">
+                    {needs.map(({ id, name }) => {
+                      const need = selected.requirement[id] ?? 0;
+                      const met = tiers[id] >= need;
+                      return (
+                        <li key={id} className="flex items-center gap-2">
+                          {met ? (
+                            <Check
+                              size={17}
+                              strokeWidth={3}
+                              className="text-toon-mint-deep"
+                              aria-hidden
+                            />
+                          ) : (
+                            <Circle
+                              size={17}
+                              strokeWidth={2.6}
+                              className="text-toon-ink-faint"
+                              aria-hidden
+                            />
+                          )}
+                          <span>
+                            {name}: bậc {tiers[id]}/{need}{' '}
+                            <span className="text-toon-ink-faint">
+                              · {met ? 'Đã đủ' : `Còn ${need - tiers[id]} bậc`}
+                            </span>
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <details className="mt-2">
+                    <summary className="w-fit cursor-pointer rounded-md text-sm font-bold underline decoration-dotted underline-offset-4">
+                      Xem biểu đồ kỹ năng
+                    </summary>
+                    <div className="mt-2 rounded-2xl border-2 border-toon-ink bg-toon-night p-2 text-toon-paper">
+                      <RadarChart
+                        axes={profile.SOFT_SKILL_GROUPS.map((s) => ({
+                          key: s.id,
+                          label: s.short,
+                        }))}
+                        values={tiers}
+                        overlay={selected.requirement}
+                        size={360}
+                        label={`Kỹ năng của bạn và yêu cầu cấp ${selected.levelNo}`}
+                      />
+                      <p className="px-2 pb-1 text-xs text-toon-star-soft">
+                        Vùng vàng: bậc bạn đã đạt. Nét đứt: bậc cấp này cần.
+                      </p>
+                    </div>
+                  </details>
+                </>
+              )}
+
+              {selected.lockedReason && (
+                <p className="mt-4 flex items-start gap-2 rounded-xl border-2 border-toon-ink bg-[#ffe4a3] px-3 py-2 text-sm font-bold">
+                  <LockKeyhole
+                    size={16}
+                    strokeWidth={2.6}
+                    className="mt-0.5 shrink-0"
+                    aria-hidden
                   />
-                )}
-                {Object.values(selected.requirement).some((v) => v > 0) && (
-                  <p className="-mt-3 mb-4 text-xs text-ink-faint">
-                    Vùng vàng: bậc bạn đã đạt. Nét đứt: bậc cấp này cần.
-                  </p>
-                )}
-              </>
-            )}
-            <h3 className="mb-3 mt-5 text-lg">Kỹ năng nghề đầu vào</h3>
-            <Keywords
-              items={selected.entryKeywords}
-              empty="Không yêu cầu kỹ năng nghề đầu vào."
-            />
-            <h3 className="mb-3 mt-6 text-lg">Hoàn thành cấp này sẽ nhận</h3>
-            <Keywords items={selected.outputKeywords} />
-            <KeywordLegend />
-            {selected.lockedReason && (
-              <Callout
+                  {selected.lockedReason}
+                </p>
+              )}
+              {(!o.playable || selected.questCount === 0) && (
+                <p className="mt-4 flex items-start gap-2 rounded-xl border-2 border-dashed border-toon-ink/50 px-3 py-2 text-sm font-semibold text-toon-ink-soft">
+                  <Sparkles
+                    size={16}
+                    strokeWidth={2.6}
+                    className="mt-0.5 shrink-0"
+                    aria-hidden
+                  />
+                  Cấp này chưa có màn chơi được xuất bản.
+                </p>
+              )}
+
+              <ToonButton
+                size="lg"
+                block
                 className="mt-5"
-                title={
-                  <span className="flex items-center gap-2">
-                    <LockKeyhole size={16} />
-                    Điều kiện còn thiếu
-                  </span>
+                onClick={enter}
+                disabled={blocked}
+                aria-describedby={
+                  selected.access === 'LOCKED'
+                    ? 'level-locked-reason'
+                    : undefined
                 }
+                loading={enrol.isPending}
+                rightIcon={<ArrowRight size={18} strokeWidth={2.8} />}
               >
-                {selected.lockedReason}
-              </Callout>
-            )}
-            {!o.playable || selected.questCount === 0 ? (
-              <Callout className="mt-5">
-                Cấp này chưa có màn chơi được xuất bản. Bạn vẫn có thể khám phá
-                lộ trình.
-              </Callout>
-            ) : null}
-            <Button
-              className="mt-6 w-full"
-              onClick={enter}
-              disabled={
-                selected.access === 'LOCKED' ||
-                !o.playable ||
-                selected.questCount === 0
-              }
-              aria-describedby={
-                selected.access === 'LOCKED' ? 'level-locked-reason' : undefined
-              }
-              loading={enrol.isPending}
-              rightIcon={<ArrowRight size={16} />}
-            >
-              {selected.access === 'LOCKED'
-                ? 'Chưa mở cấp này'
-                : selected.enrolmentId
-                  ? 'Đến đảo'
-                  : `Vào cấp ${selected.levelNo}`}
-            </Button>
-            {selected.access === 'LOCKED' && (
-              <p
-                id="level-locked-reason"
-                className="mt-2 text-sm text-ink-faint"
+                {selected.access === 'LOCKED'
+                  ? 'Chưa mở cấp này'
+                  : selected.enrolmentId
+                    ? 'Đến đảo'
+                    : `Vào cấp ${selected.levelNo}`}
+              </ToonButton>
+              {selected.access === 'LOCKED' && (
+                <p
+                  id="level-locked-reason"
+                  className="mt-2 text-sm font-semibold text-toon-ink-faint"
+                >
+                  {selected.lockedReason ??
+                    'Hoàn thành cấp trước và kiểm tra các điều kiện đầu vào.'}
+                </p>
+              )}
+              {enrol.isError && actionLevel === selected.levelNo && (
+                <p
+                  role="alert"
+                  className="mt-3 rounded-xl border-2 border-toon-ink bg-toon-coral-light px-3 py-2 text-sm font-bold"
+                >
+                  {errorText(enrol.error)}
+                </p>
+              )}
+
+              <div className="mt-6">
+                <PaperSection
+                  title="Kỹ năng nghề"
+                  icon={<Gift size={20} strokeWidth={2.6} />}
+                >
+                  <h4 className="font-toon text-base font-extrabold">
+                    Cần có khi vào cấp
+                  </h4>
+                  <Keywords
+                    items={selected.entryKeywords}
+                    empty="Không yêu cầu kỹ năng nghề đầu vào."
+                  />
+                  <h4 className="font-toon text-base font-extrabold">
+                    Hoàn thành cấp này sẽ nhận
+                  </h4>
+                  <Keywords items={selected.outputKeywords} />
+                  <KeywordLegend />
+                </PaperSection>
+              </div>
+              <Link
+                to={`/occupations/${code}`}
+                className={toonButtonClasses({
+                  variant: 'ghost',
+                  block: true,
+                  className: 'mt-3',
+                })}
               >
-                {selected.lockedReason ??
-                  'Hoàn thành cấp trước và kiểm tra các điều kiện đầu vào.'}
-              </p>
-            )}
-            {enrol.isError && actionLevel === selected.levelNo && (
-              <Callout tone="danger" className="mt-3">
-                {errorText(enrol.error)}
-              </Callout>
-            )}
-            <Link
-              to={`/occupations/${code}`}
-              className={buttonClasses({
-                variant: 'ghost',
-                block: true,
-                className: 'mt-3',
-              })}
-            >
-              Về hồ sơ nghề
-            </Link>
-          </Panel>
-        </div>
-      )}
+                Về hồ sơ nghề
+              </Link>
+            </article>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

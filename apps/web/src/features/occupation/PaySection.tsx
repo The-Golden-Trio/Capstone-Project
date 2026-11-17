@@ -1,5 +1,5 @@
-import { Panel, PanelHeader } from '@datn/ui';
 import type { PayInfo } from '../../api/types';
+import { BriefText, PaperSection } from './Parts';
 import { formatPay, formatYears } from './model';
 
 export function PaySection({ pay }: { pay: PayInfo | null }) {
@@ -11,15 +11,17 @@ export function PaySection({ pay }: { pay: PayInfo | null }) {
     ...(pay?.byYears.map((p) => p.median) ?? []),
   );
   return (
-    <Panel id="luong" className="scroll-mt-36">
-      <PanelHeader title="Lương" description={pay?.basisLabel} />
+    <PaperSection id="luong" title="Lương">
       {!pay ? (
-        <p className="text-sm text-ink-muted">
+        <p className="text-sm text-toon-ink-faint">
           Chưa có số liệu lương đủ tin cậy.
         </p>
       ) : (
-        <div className="space-y-5">
-          <dl className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <>
+          <p className="text-sm font-semibold text-toon-ink-soft">
+            {pay.basisLabel}
+          </p>
+          <dl className="grid gap-3 sm:grid-cols-3">
             {(
               [
                 ['Thấp', pay.low],
@@ -27,9 +29,14 @@ export function PaySection({ pay }: { pay: PayInfo | null }) {
                 ['Cao', pay.high],
               ] as const
             ).map(([label, value]) => (
-              <div key={label} className="rounded-lg bg-night-900/60 p-3">
-                <dt className="text-xs text-ink-faint">{label}</dt>
-                <dd className="mt-1 text-base font-semibold">
+              <div
+                key={label}
+                className="rounded-xl border-2 border-toon-ink bg-toon-cream p-3"
+              >
+                <dt className="text-xs font-bold text-toon-ink-faint">
+                  {label}
+                </dt>
+                <dd className="mt-1 font-toon text-lg font-extrabold">
                   {formatPay(value)}
                 </dd>
               </div>
@@ -39,10 +46,10 @@ export function PaySection({ pay }: { pay: PayInfo | null }) {
             <div
               role="img"
               aria-label={`Khoảng lương: ${formatPay(pay.low)} đến ${formatPay(pay.high)}; trung vị ${formatPay(pay.median)}`}
-              className="relative h-3 rounded-full bg-night-950"
+              className="relative h-6 rounded-full border-[3px] border-toon-ink bg-toon-sand"
             >
               <span
-                className="absolute h-3 rounded-full bg-info/50"
+                className="absolute inset-y-0 rounded-full border-x-2 border-toon-ink bg-toon-sky"
                 style={{
                   left: `${(pay.low / max) * 100}%`,
                   width: `${(Math.max(0, pay.high - pay.low) / max) * 100}%`,
@@ -50,50 +57,55 @@ export function PaySection({ pay }: { pay: PayInfo | null }) {
               />
               {pay.median !== null && (
                 <span
-                  className="absolute -top-1 h-5 w-1 rounded bg-ink"
+                  className="absolute -top-2 h-8 w-2 rounded-full border-2 border-toon-ink bg-toon-star"
                   style={{
-                    left: `min(calc(100% - 4px), ${(pay.median / max) * 100}%)`,
+                    left: `min(calc(100% - 8px), ${(pay.median / max) * 100}%)`,
                   }}
                 />
               )}
             </div>
           )}
           {pay.byYears.length > 0 && (
-            <div>
-              <h3 className="mb-3 text-base">Theo kinh nghiệm</h3>
-              <ul className="space-y-3">
+            <details>
+              <summary className="w-fit cursor-pointer rounded-md font-bold focus-visible:shadow-toon-focus">
+                Theo kinh nghiệm
+              </summary>
+              <ul className="mt-4 space-y-4">
                 {pay.byYears.map((p) => (
-                  <li key={p.years} className="text-sm">
-                    <div className="mb-1 flex flex-wrap justify-between gap-1">
-                      <span className="text-ink-muted">
-                        {formatYears(p.years)}
-                      </span>
-                      <span>{formatPay(p.median)}</span>
+                  <li key={p.years}>
+                    <div className="mb-2 flex flex-wrap justify-between gap-2 text-sm">
+                      <span>{formatYears(p.years)}</span>
+                      <span className="font-bold">{formatPay(p.median)}</span>
                     </div>
-                    <div className="h-2 rounded bg-night-950">
+                    <div className="h-3 overflow-hidden rounded-full border-2 border-toon-ink bg-toon-sand">
                       <div
-                        className="h-2 rounded bg-info/60"
+                        className="h-full bg-toon-sky-deep"
                         style={{ width: `${(p.median / max) * 100}%` }}
                       />
                     </div>
                   </li>
                 ))}
               </ul>
-            </div>
+            </details>
           )}
-          <p className="text-xs text-ink-faint">
+          <p className="text-xs text-toon-ink-faint">
             Nguồn: {pay.source} · Dữ liệu {pay.dataYear}
           </p>
-          {pay.note && <p className="text-sm text-ink-muted">{pay.note}</p>}
+          {pay.note && <BriefText text={pay.note} />}
           {pay.publicSector && (
-            <p className="border-t border-line pt-4 text-sm text-ink-muted">
-              {pay.publicSector.label}: {formatPay(pay.publicSector.low)} –{' '}
-              {formatPay(pay.publicSector.high)}. Nguồn:{' '}
-              {pay.publicSector.source}.
-            </p>
+            <details>
+              <summary className="w-fit cursor-pointer rounded-md text-sm font-bold focus-visible:shadow-toon-focus">
+                {pay.publicSector.label}
+              </summary>
+              <p className="mt-2 text-sm">
+                {formatPay(pay.publicSector.low)} –{' '}
+                {formatPay(pay.publicSector.high)}. Nguồn:{' '}
+                {pay.publicSector.source}.
+              </p>
+            </details>
           )}
-        </div>
+        </>
       )}
-    </Panel>
+    </PaperSection>
   );
 }
