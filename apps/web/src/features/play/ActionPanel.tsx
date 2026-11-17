@@ -1,5 +1,6 @@
 import { useId, useState } from 'react';
 import {
+  Clock3,
   FileText,
   Flag,
   Hourglass,
@@ -88,6 +89,7 @@ export function ActionTray({
       )}
       <ToonTabs
         label="Nhóm việc"
+        variant="quiet"
         idBase={idBase}
         value={current.name}
         onChange={setTab}
@@ -166,12 +168,10 @@ function ActionButton({
         <span className="min-w-0 flex-1">{a.label}</span>
         {a.points > 0 && (
           <span
-            className={cn(
-              'tabular shrink-0 rounded-lg border-2 border-toon-ink bg-toon-cream px-1.5 py-0.5 text-xs font-extrabold',
-              off && 'border-toon-ink/40',
-            )}
-            title={`${a.points} điểm thời gian, ${a.points * minutesPerPoint} phút`}
+            className="tabular inline-flex shrink-0 items-center gap-1 text-xs font-extrabold text-toon-ink-soft"
+            title={`Mất khoảng ${a.points * minutesPerPoint} phút trong ca`}
           >
+            <Clock3 size={13} strokeWidth={2.6} aria-hidden />
             {a.points * minutesPerPoint}′
           </span>
         )}

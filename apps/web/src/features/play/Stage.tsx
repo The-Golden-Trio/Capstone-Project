@@ -72,6 +72,7 @@ export function Stage({
   queued,
   waitingLabel,
   conversationChannel,
+  quiet = false,
   onAdvance,
 }: {
   run: ShiftRun;
@@ -81,6 +82,8 @@ export function Stage({
   waitingLabel: string | null;
   /** Kênh của cuộc trò chuyện đang mở (đổi bối cảnh khi gặp, họp). */
   conversationChannel?: TranscriptLine['channel'] | null;
+  /** Đang chọn phương án có đếm giờ: cất các câu cũ để chỉ còn câu hỏi. */
+  quiet?: boolean;
   onAdvance: () => void;
 }) {
   const cast = useMemo(() => castCharacters(run.cast), [run.cast]);
@@ -88,8 +91,6 @@ export function Stage({
     const m = new Map(run.cast.map((c) => [c.slot, c.name]));
     return (slot: string) => m.get(slot) ?? slot;
   }, [run.cast]);
-  const relationOf = (slot: string) =>
-    run.cast.find((c) => c.slot === slot)?.relation;
 
   // Người đứng trên sân khấu: người đang nói, hoặc người nói gần nhất.
   const onStage = useMemo(() => {
@@ -159,6 +160,7 @@ export function Stage({
             </div>
           )}
           <Backlog
+            quiet={quiet}
             lines={lines}
             current={current}
             nameOf={nameOf}
@@ -175,6 +177,7 @@ export function Stage({
               : ''}
           </p>
           <button
+            id="stage-dialog"
             type="button"
             onClick={tap}
             className="block w-full rounded-[22px] text-left focus-visible:outline-none focus-visible:shadow-toon-focus"
@@ -218,7 +221,6 @@ export function Stage({
                       )}
                       <NameTag
                         name={nameOf(current.speaker)}
-                        role={relationOf(current.speaker)}
                         color={cast.get(current.speaker)?.color}
                       />
                     </span>
@@ -302,7 +304,9 @@ function Backlog({
   current,
   nameOf,
   cast,
+  quiet,
 }: {
+  quiet: boolean;
   lines: TranscriptLine[];
   current: TranscriptLine | null;
   nameOf: (slot: string) => string;
@@ -311,7 +315,7 @@ function Backlog({
   const [open, setOpen] = useState(false);
   const end = useRef<HTMLDivElement>(null);
   const past = lines.filter((l) => l !== current);
-  const recent = past.slice(-BACKLOG_VISIBLE);
+  const recent = quiet ? [] : past.slice(-BACKLOG_VISIBLE);
   useEffect(() => {
     if (!open) return;
     end.current?.scrollIntoView({ block: 'end' });

@@ -59,7 +59,7 @@ export function Composer({
         key={`conv-${c.id}`}
         placeholder={`Nói với ${c.people.map((p) => p.name).join(', ')}…`}
         busy={busy}
-        note={`Cuộc trò chuyện này: còn ${c.turnsLeftInPoint} lượt trước khi tốn thêm 1 điểm.`}
+        note={`Còn ${c.turnsLeftInPoint} lượt nói trước khi tính thêm ${scene.clock.minutesPerPoint} phút.`}
         onSend={(text) => onSend({ kind: 'say', text })}
         extra={
           <ToonButton
@@ -164,8 +164,12 @@ function TextReply({
         <label className="visually-hidden" htmlFor="composer">
           {label ?? 'Câu trả lời'}
         </label>
+        <span id="composer-keys" className="sr-only">
+          Enter để gửi, Shift + Enter để xuống dòng.
+        </span>
         <ToonTextarea
           id="composer"
+          aria-describedby="composer-keys"
           ref={ref}
           value={text}
           maxLength={4000}
@@ -194,7 +198,7 @@ function TextReply({
         </ToonButton>
       </div>
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-toon-ink-faint">
-        <span>{note ?? 'Enter để gửi, Shift + Enter để xuống dòng.'}</span>
+        {note ? <span>{note}</span> : <span />}
         {extra}
       </div>
     </form>

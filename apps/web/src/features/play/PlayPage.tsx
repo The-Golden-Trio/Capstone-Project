@@ -4,7 +4,7 @@
  * trả lời, phải là sổ tay. Trên điện thoại, việc và sổ tay mở thành tấm
  * kéo lên từ dưới.
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
 import { CirclePause, Flag, PartyPopper, Users } from 'lucide-react';
@@ -40,6 +40,42 @@ export default function PlayPage() {
   const qc = useQueryClient();
   const { toast } = useToast();
   const [intro, setIntro] = useState(true);
+  const composerRef = useRef<HTMLDivElement>(null);
+
+  // Nút hay ô nhập đang focus bị thay khi đổi pha (trả lời xong, kết thúc
+  // trò chuyện, kết ca): đưa focus tới hộp thoại hoặc điều khiển mới, để
+  // người dùng bàn phím không bị rơi về body. Không giành focus khi người
+  // chơi đang ở chỗ khác (sổ tay, nhật ký).
+  const hasQueue = s.queued > 0;
+  const focusKey = s.scene
+    ? [
+        s.scene.mode,
+        s.scene.await.kind,
+        s.scene.node?.id ?? '',
+        hasQueue,
+        s.scene.ended,
+        s.waiting,
+      ].join(':')
+    : '';
+  useEffect(() => {
+    if (!focusKey || intro) return;
+    const id = requestAnimationFrame(() => {
+      const active = document.activeElement;
+      const dialogue = document.getElementById('stage-dialog');
+      // Hộp thoại hết nhịp để nghe thì nhường focus cho khung trả lời.
+      const idleDialogue = active === dialogue && !hasQueue;
+      if (active && active !== document.body && !idleDialogue) return;
+      if (hasQueue && dialogue) {
+        dialogue.focus();
+        return;
+      }
+      const target = composerRef.current?.querySelector<HTMLElement>(
+        'textarea, [role="tab"][aria-selected="true"], button:not([disabled])',
+      );
+      (target ?? dialogue)?.focus();
+    });
+    return () => cancelAnimationFrame(id);
+  }, [focusKey, intro, hasQueue]);
   const [notebook, setNotebook] = useState(false);
   const [writing, setWriting] = useState<Action | null>(null);
   const [flagOpen, setFlagOpen] = useState(false);
@@ -169,9 +205,13 @@ export default function PlayPage() {
             queued={s.queued}
             waitingLabel={waitingLabel}
             conversationChannel={scene.conversation?.channel ?? null}
+            quiet={scene.await.kind === 'node_choice'}
             onAdvance={s.advance}
           />
-          <div className="relative z-20 border-t-[3px] border-toon-ink bg-[#f1dcb6] px-3 py-3 sm:px-5 sm:py-4">
+          <div
+            ref={composerRef}
+            className="relative z-20 border-t-[3px] border-toon-ink bg-[#f1dcb6] px-3 py-3 sm:px-5 sm:py-4"
+          >
             <div className="mx-auto max-w-3xl">
               {s.error && (
                 <p

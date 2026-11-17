@@ -23,7 +23,7 @@ import { foldVi } from '../galaxy/layout';
 import { castCharacters } from '../../lib/toon';
 import { Avatar } from './Stage';
 
-type Tab = 'facts' | 'promises' | 'docs' | 'notes' | 'terms' | 'people';
+type Tab = 'facts' | 'docs' | 'notes' | 'more';
 
 const PROMISE_TONE: Record<
   string,
@@ -49,6 +49,7 @@ export function Notebook({
   const [tab, setTab] = useState<Tab>('facts');
   const idBase = useId();
   const [query, setQuery] = useState('');
+  const [searching, setSearching] = useState(false);
   const nb = scene.notebook;
   const looks = useMemo(() => castCharacters(run.cast), [run.cast]);
 
@@ -61,16 +62,43 @@ export function Notebook({
 
   return (
     <div className={cn('flex min-h-0 flex-col', className)}>
-      <div className="px-4 pt-4">
-        <ToonInput
-          leftIcon={<Search size={16} strokeWidth={2.6} />}
-          placeholder="Tìm trong lời thoại…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          compact
-          aria-label="Tìm trong lời thoại"
-        />
-      </div>
+      {/* Ô tìm chỉ hiện khi cần, để chỗ cho dữ kiện. */}
+      {searching ? (
+        <div className="flex items-center gap-2 px-4 pt-4">
+          <div className="min-w-0 flex-1">
+            <ToonInput
+              leftIcon={<Search size={16} strokeWidth={2.6} />}
+              placeholder="Tìm trong lời thoại…"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              compact
+              autoFocus
+              aria-label="Tìm trong lời thoại"
+            />
+          </div>
+          <ToonButton
+            size="sm"
+            variant="ghost"
+            onClick={() => {
+              setSearching(false);
+              setQuery('');
+            }}
+          >
+            Đóng
+          </ToonButton>
+        </div>
+      ) : (
+        <div className="flex justify-end px-4 pt-3">
+          <ToonButton
+            size="sm"
+            variant="secondary"
+            leftIcon={<Search size={15} strokeWidth={2.6} />}
+            onClick={() => setSearching(true)}
+          >
+            Tìm lời thoại
+          </ToonButton>
+        </div>
+      )}
       {hits.length > 0 ? (
         <ul className="min-h-0 flex-1 space-y-2 overflow-y-auto p-4 text-sm">
           {hits.map((l) => (
@@ -96,13 +124,16 @@ export function Notebook({
             value={tab}
             onChange={setTab}
             className="mx-4 mt-3"
+            variant="quiet"
             items={[
               { key: 'facts', label: 'Dữ kiện', count: nb.facts.length },
-              { key: 'promises', label: 'Lời hứa', count: nb.promises.length },
               { key: 'docs', label: 'Tài liệu', count: scene.documents.length },
               { key: 'notes', label: 'Ghi chú' },
-              { key: 'terms', label: 'Thuật ngữ' },
-              { key: 'people', label: 'Người' },
+              {
+                key: 'more',
+                label: 'Thêm',
+                count: nb.promises.length || undefined,
+              },
             ]}
           />
           <ToonTabPanel
@@ -126,7 +157,8 @@ export function Notebook({
               ) : (
                 <Empty text="Dữ kiện bạn tìm ra (hỏi người, mở tài liệu) tự ghi vào đây." />
               ))}
-            {tab === 'promises' &&
+            {tab === 'more' && <MoreHeading>Lời hứa</MoreHeading>}
+            {tab === 'more' &&
               (nb.promises.length ? (
                 <ul className="space-y-2">
                   {nb.promises.map((p) => (
@@ -184,7 +216,8 @@ export function Notebook({
                 <Empty text="Tài liệu đã mở sẽ nằm ở đây, xem lại không tốn thời gian." />
               ))}
             {tab === 'notes' && <Notes runId={run.runId} />}
-            {tab === 'terms' &&
+            {tab === 'more' && <MoreHeading>Thuật ngữ</MoreHeading>}
+            {tab === 'more' &&
               (scene.glossary.length ? (
                 <dl className="space-y-3">
                   {scene.glossary.map((g) => (
@@ -199,7 +232,8 @@ export function Notebook({
               ) : (
                 <Empty text="Ca này không có thuật ngữ cần giải thích." />
               ))}
-            {tab === 'people' && (
+            {tab === 'more' && <MoreHeading>Người trong ca</MoreHeading>}
+            {tab === 'more' && (
               <ul className="space-y-2.5">
                 {run.cast.map((c) => (
                   <li key={c.slot} className="flex items-center gap-3">
@@ -226,6 +260,14 @@ export function Notebook({
         </>
       )}
     </div>
+  );
+}
+
+function MoreHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="mb-2 mt-4 font-toon text-base font-extrabold text-toon-ink first:mt-0">
+      {children}
+    </h3>
   );
 }
 
