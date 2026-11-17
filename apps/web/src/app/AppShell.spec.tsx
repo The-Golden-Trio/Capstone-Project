@@ -17,7 +17,7 @@ it('giữ link, trạng thái trang, focus nội dung và đủ menu tài khoả
     screen
       .getByRole('link', { name: 'Bỏ qua thanh điều hướng' })
       .getAttribute('href'),
-  ).toBe('#main');
+  ).toBe('/galaxy#main');
   const navs = screen.getAllByRole('navigation', { name: 'Điều hướng chính' });
   expect(navs).toHaveLength(2);
   navs.forEach((nav) =>
