@@ -29,6 +29,7 @@
   /* Màu tô phẳng lấy từ trang phục và bối cảnh trong tranh */
   --color-toon-olive: #6b7a4b; /* áo len của trưởng nhóm */
   --color-toon-olive-light: #b9c58f;
+  --color-toon-olive-deep: #56623a; /* nền có chữ sáng: 6,3:1 với giấy */
   --color-toon-maroon: #7a2c45; /* yếm của nhà thiết kế */
   --color-toon-rose: #eea7b4;
   --color-toon-coral: #e2703f; /* áo của chuyên viên dữ liệu */
@@ -140,8 +141,10 @@
     background: rgb(240 182 60 / 0.55);
     color: var(--color-toon-ink);
   }
+  /* Vòng focus mặc định của theme; component có vòng riêng thì tự tắt outline. */
   & :focus-visible {
-    outline: none;
+    outline: 3px solid var(--color-toon-sky-deep);
+    outline-offset: 3px;
   }
 }
 

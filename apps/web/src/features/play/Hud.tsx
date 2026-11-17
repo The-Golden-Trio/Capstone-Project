@@ -29,7 +29,7 @@ export function Hud({
 }) {
   return (
     <header className="relative z-30 border-b-[3px] border-toon-ink bg-toon-paper">
-      <div className="mx-auto flex min-h-[72px] max-w-[1600px] items-center gap-3 px-3 py-2 sm:px-5">
+      <div className="mx-auto flex min-h-16 max-w-[1600px] sm:min-h-[72px] items-center gap-3 px-3 py-2 sm:px-5">
         <Tooltip content="Thoát. Tiến độ được lưu, quay lại chơi tiếp lúc nào cũng được.">
           <Link
             to={backTo}
@@ -43,7 +43,7 @@ export function Hud({
           <h1 className="truncate font-toon text-lg font-extrabold leading-tight text-toon-ink sm:text-xl">
             {title}
           </h1>
-          <p className="mt-0.5 flex min-w-0 items-center gap-1.5">
+          <p className="mt-0.5 hidden min-w-0 items-center gap-1.5 sm:flex">
             <span className="inline-flex min-w-0 items-center gap-1.5 rounded-full border-2 border-toon-ink bg-[#ffe4a3] px-2.5 py-0.5 text-xs font-bold text-toon-ink">
               <Target
                 size={13}
@@ -53,7 +53,7 @@ export function Hud({
               />
               <span className="truncate">{goal}</span>
             </span>
-            <span className="hidden shrink-0 items-center gap-1 rounded-full border-2 border-toon-ink bg-toon-lilac px-2.5 py-0.5 text-[11px] font-extrabold uppercase tracking-wide text-toon-ink md:inline-flex">
+            <span className="inline-flex shrink-0 items-center gap-1 rounded-full border-2 border-toon-ink bg-toon-lilac px-2.5 py-0.5 text-[11px] font-extrabold uppercase tracking-wide text-toon-ink">
               <Sparkles size={11} strokeWidth={2.6} aria-hidden />
               {aiLabel}
             </span>
@@ -100,6 +100,28 @@ export function Hud({
           />
         </div>
       </div>
+      {/* Điện thoại: mục tiêu và nhãn AI xuống dòng riêng để không bị cắt mất. */}
+      <p className="flex min-w-0 items-center gap-1.5 px-3 pb-2 sm:hidden">
+        <span className="inline-flex min-w-0 items-center gap-1.5 rounded-full border-2 border-toon-ink bg-[#ffe4a3] px-2.5 py-0.5 text-xs font-bold text-toon-ink">
+          <Target
+            size={13}
+            strokeWidth={2.6}
+            aria-hidden
+            className="shrink-0"
+          />
+          <span className="truncate">{goal}</span>
+        </span>
+        <span
+          title={aiLabel}
+          className="inline-flex shrink-0 items-center gap-1 rounded-full border-2 border-toon-ink bg-toon-lilac px-2 py-0.5 text-[11px] font-extrabold text-toon-ink"
+        >
+          <Sparkles size={11} strokeWidth={2.6} aria-hidden />
+          <span aria-hidden>
+            {aiLabel.startsWith('AI giả') ? 'AI giả' : 'AI'}
+          </span>
+          <span className="sr-only">{aiLabel}</span>
+        </span>
+      </p>
     </header>
   );
 }

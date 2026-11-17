@@ -164,10 +164,14 @@ const inputBase =
 export function ToonInput({
   invalid,
   leftIcon,
+  compact = false,
   className,
   ref,
   ...rest
-}: InputProps) {
+}: InputProps & {
+  /** Cao 40px thay vì 44px (ô tìm trong cột hẹp). */
+  compact?: boolean;
+}) {
   const input = (
     <input
       {...rest}
@@ -175,7 +179,7 @@ export function ToonInput({
       aria-invalid={invalid || rest['aria-invalid']}
       className={cn(
         inputBase,
-        'h-11 py-2 pr-3',
+        compact ? 'h-10 py-1.5 pr-3 text-sm' : 'h-11 py-2 pr-3',
         leftIcon ? 'pl-10' : 'pl-3',
         invalid ? 'border-toon-coral' : 'border-toon-ink',
         className,
@@ -199,10 +203,16 @@ export function ToonInput({
 
 export function ToonTextarea({
   invalid,
+  size = 'md',
+  resizable = true,
   className,
   ref,
   ...rest
-}: TextareaProps) {
+}: TextareaProps & {
+  /** Chiều cao tối thiểu: `sm` ~2 dòng (ô trả lời), `md` ~3 dòng. */
+  size?: 'sm' | 'md';
+  resizable?: boolean;
+}) {
   return (
     <textarea
       {...rest}
@@ -210,7 +220,9 @@ export function ToonTextarea({
       aria-invalid={invalid || rest['aria-invalid']}
       className={cn(
         inputBase,
-        'min-h-24 resize-y px-3 py-2.5 leading-relaxed',
+        size === 'sm' ? 'min-h-14' : 'min-h-24',
+        resizable ? 'resize-y' : 'resize-none',
+        'px-3 py-2.5 leading-relaxed',
         invalid ? 'border-toon-coral' : 'border-toon-ink',
         className,
       )}
@@ -272,7 +284,11 @@ export function ToonField({
         <div className="flex items-start justify-between gap-3 text-xs">
           <div className="min-w-0">
             {error ? (
-              <p id={errorId} role="alert" className="text-toon-coral">
+              <p
+                id={errorId}
+                role="alert"
+                className="font-bold text-toon-maroon"
+              >
                 {error}
               </p>
             ) : hint ? (
@@ -368,7 +384,7 @@ const tones: Record<ToonTone, string> = {
   coral: 'bg-toon-coral text-toon-ink',
   sky: 'bg-toon-sky text-toon-ink',
   maroon: 'bg-toon-maroon text-toon-paper',
-  olive: 'bg-toon-olive text-toon-paper',
+  olive: 'bg-toon-olive-deep text-toon-paper',
 };
 
 export function ToonBadge({

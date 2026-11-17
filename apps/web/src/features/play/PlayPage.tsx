@@ -156,7 +156,7 @@ export default function PlayPage() {
         inert={intro || undefined}
       >
         <aside
-          className="hidden w-[300px] shrink-0 xl:block"
+          className="hidden w-[256px] shrink-0 xl:block 2xl:w-[300px]"
           aria-label="Việc có thể làm"
         >
           <ToonPanel
@@ -268,7 +268,7 @@ export default function PlayPage() {
         </main>
 
         <aside
-          className="hidden w-[340px] shrink-0 xl:block"
+          className="hidden w-[284px] shrink-0 xl:block 2xl:w-[340px]"
           aria-label="Sổ tay"
         >
           <ToonPanel
@@ -465,7 +465,7 @@ function IntroOverlay({
             </p>
           )}
           <div className="mt-5 rounded-2xl border-[2.5px] border-toon-ink bg-[#d6ecf7] p-4">
-            <p className="font-toon text-sm font-extrabold uppercase tracking-wide text-toon-sky-deep">
+            <p className="font-toon text-sm font-extrabold uppercase tracking-wide text-toon-ink-soft">
               Vai của bạn
             </p>
             <p className="mt-1 font-semibold text-toon-ink">{run.role}</p>
@@ -596,7 +596,7 @@ function FlagDialog({
         aria-label="Điều gì chưa đúng"
       />
       {failed && (
-        <p role="alert" className="mt-2 text-sm font-bold text-toon-coral">
+        <p role="alert" className="mt-2 text-sm font-bold text-toon-maroon">
           {failed}
         </p>
       )}

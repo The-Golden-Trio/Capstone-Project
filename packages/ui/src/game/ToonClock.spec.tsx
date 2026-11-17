@@ -66,9 +66,10 @@ describe('ToonClock', () => {
     expect(screen.getByRole('progressbar')).toBe(battery);
   });
 
-  it('compact chỉ giữ mặt đồng hồ 40px và tên truy cập', () => {
+  it('compact giữ mặt đồng hồ 40px, giờ số và hạn, bỏ thanh điểm', () => {
     const { container } = render(<ToonClock {...props} compact />);
-    expect(screen.getByRole('group').textContent).toBe('');
+    // Điện thoại vẫn phải đọc được giờ và hạn chót bằng mắt (review 17/11).
+    expect(screen.getByRole('group').textContent).toBe('9:40hạn 12:00');
     expect(screen.queryByRole('progressbar')).toBeNull();
     expect(container.querySelector('svg')?.getAttribute('width')).toBe('40');
     expect(screen.getByRole('group').getAttribute('aria-label')).toContain(

@@ -167,10 +167,15 @@ export function Stage({
 
         {/* Hộp thoại */}
         <div className="relative z-20 px-3 pb-3 pt-5 sm:px-5 sm:pb-4">
+          {/* Đọc trọn câu một lần cho trình đọc màn hình, không theo từng chữ đang gõ. */}
+          <p className="sr-only" aria-live="polite">
+            {current
+              ? `${current.kind === 'scene' ? 'Cảnh' : nameOf(current.speaker)}: ${current.text}`
+              : ''}
+          </p>
           <button
             type="button"
             onClick={tap}
-            aria-live="polite"
             className="block w-full rounded-[22px] text-left focus-visible:outline-none focus-visible:shadow-toon-focus"
           >
             {current ? (
@@ -297,7 +302,13 @@ function Backlog({
 }) {
   const end = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    end.current?.scrollIntoView({ block: 'end', behavior: 'smooth' });
+    const reduce = window.matchMedia?.(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+    end.current?.scrollIntoView({
+      block: 'end',
+      behavior: reduce ? 'auto' : 'smooth',
+    });
   }, [lines.length]);
   const past = lines.filter((l) => l !== current);
   return (

@@ -171,7 +171,9 @@ function TextReply({
               submit();
             }
           }}
-          className="min-h-14 flex-1 resize-none py-3"
+          size="sm"
+          resizable={false}
+          className="flex-1 py-3"
           rows={2}
         />
         <ToonButton

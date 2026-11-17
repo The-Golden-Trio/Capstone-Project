@@ -135,9 +135,15 @@ describe('Báo cáo cuối ca khi có điểm', () => {
     expect(
       screen.getByText('Kết cục mẫu để xem trước giao diện.'),
     ).toBeTruthy();
+    // Bản demo chấm bằng heuristic mẫu: phải ghi rõ là điểm mẫu, không nói AI chấm (D-92).
+    expect(screen.getByText('Điểm mẫu · bản xem thử')).toBeTruthy();
     expect(
-      screen.getByText('Nội dung hoặc đánh giá này do AI tạo.'),
+      screen.getByText(/Bản xem thử: điểm và nhận xét ở đây là mẫu/),
     ).toBeTruthy();
+    expect(
+      screen.queryByText('Nội dung hoặc đánh giá này do AI tạo.'),
+    ).toBeNull();
+    expect(screen.getByText('Dữ liệu mẫu')).toBeTruthy();
     expect(
       screen.getByText(
         'Kết quả chỉ để bạn tham khảo, không gửi cho trường hay nhà tuyển dụng.',

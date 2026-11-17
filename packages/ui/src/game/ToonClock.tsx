@@ -130,6 +130,16 @@ export function ToonClock({
         <circle cx="32" cy="32" r="3.2" className="fill-toon-ink" />
       </svg>
 
+      {compact && (
+        <span className="flex flex-col items-start leading-none">
+          <span className="font-toon text-lg font-extrabold tabular-nums">
+            {time}
+          </span>
+          <span className="mt-0.5 text-[11px] font-bold text-toon-ink-soft">
+            hạn {deadline}
+          </span>
+        </span>
+      )}
       {!compact && (
         <div className="min-w-0 flex-1">
           <div className="flex flex-col items-start gap-0.5">

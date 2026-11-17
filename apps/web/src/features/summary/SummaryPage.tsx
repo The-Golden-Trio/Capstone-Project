@@ -27,6 +27,7 @@ import {
   ENDING_TONES,
 } from '@datn/ui';
 import { errorText, useMe, useRun, useRunSummary } from '../../api/hooks';
+import { sourceOf } from '../../api';
 import { castCharacters, TOON_BACKDROPS } from '../../lib/toon';
 import type { RunSummary, SoftSkillDelta } from '../../api/types';
 
@@ -77,7 +78,7 @@ export default function SummaryPage() {
           >
             <ArrowLeft size={20} strokeWidth={2.8} aria-hidden />
           </Link>
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <p className="font-toon text-xl font-extrabold text-toon-ink">
               Tổng kết ca làm
             </p>
@@ -86,6 +87,11 @@ export default function SummaryPage() {
               {s.levelNo ? ` · cấp ${s.levelNo}` : ''}
             </p>
           </div>
+          {sourceOf('play') === 'demo' && (
+            <span className="shrink-0 rounded-full border-2 border-toon-ink bg-[#ffe4a3] px-3 py-1 text-xs font-extrabold text-toon-ink">
+              Dữ liệu mẫu
+            </span>
+          )}
         </div>
       </header>
       <main className="mx-auto grid max-w-7xl items-start gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:py-12">
@@ -247,6 +253,8 @@ export default function SummaryPage() {
 
 function GradeBlock({ s }: { s: RunSummary }) {
   const g = s.grade;
+  // Bản demo chấm bằng heuristic mẫu (D-92: không phải đường chấm thay AI).
+  const sample = sourceOf('play') === 'demo';
   if (g.status === 'PENDING')
     return (
       <Panel className="mt-8" aria-busy="true">
@@ -320,6 +328,11 @@ function GradeBlock({ s }: { s: RunSummary }) {
               {ending.name}
             </span>
           )}
+          {sample && (
+            <span className="rounded-full border-2 border-toon-ink bg-toon-paper px-3 py-0.5 text-xs font-extrabold text-toon-ink">
+              Điểm mẫu · bản xem thử
+            </span>
+          )}
         </div>
         {g.ending && (
           <div className="min-w-0">
@@ -358,7 +371,9 @@ function GradeBlock({ s }: { s: RunSummary }) {
         <Sparkles size={20} className="shrink-0" aria-hidden />
         <div>
           <p className="font-bold text-toon-ink">
-            Nội dung hoặc đánh giá này do AI tạo.
+            {sample
+              ? 'Bản xem thử: điểm và nhận xét ở đây là mẫu tính từ việc bạn đã làm, để xem trước giao diện. Bản chính thức do hội đồng AI chấm.'
+              : 'Nội dung hoặc đánh giá này do AI tạo.'}
           </p>
           <p className="mt-1">
             Kết quả chỉ để bạn tham khảo, không gửi cho trường hay nhà tuyển

@@ -67,7 +67,7 @@ export function Notebook({
           placeholder="Tìm trong lời thoại…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="h-10 text-sm"
+          compact
           aria-label="Tìm trong lời thoại"
         />
       </div>
@@ -263,7 +263,8 @@ function Notes({ runId }: { runId: string }) {
           onChange={(e) => setText(e.target.value)}
           placeholder="Ghi nhanh điều bạn đang nghĩ…"
           aria-label="Ghi chú riêng"
-          className="min-h-16 text-sm"
+          size="sm"
+          className="text-sm"
           maxLength={4000}
         />
         <div className="flex items-center justify-between gap-2">
@@ -282,7 +283,7 @@ function Notes({ runId }: { runId: string }) {
         </div>
       </form>
       {add.isError && (
-        <p role="alert" className="text-xs font-bold text-toon-coral">
+        <p role="alert" className="text-xs font-bold text-toon-maroon">
           {errorText(add.error)} Ghi chú vẫn còn trong ô, bạn bấm Ghi lại nhé.
         </p>
       )}
@@ -290,7 +291,7 @@ function Notes({ runId }: { runId: string }) {
         <p className="text-xs text-toon-ink-faint">Đang mở ghi chú…</p>
       )}
       {notes.isError && (
-        <p className="text-xs font-bold text-toon-coral">
+        <p className="text-xs font-bold text-toon-maroon">
           Chưa tải được ghi chú.{' '}
           <button
             type="button"
