@@ -35,6 +35,23 @@ import {
   type ToonCharacterId,
 } from '../../lib/toon';
 
+import {
+  InkStar,
+  Twinkle,
+  CartoonMoon,
+  CartoonPlanet,
+  Comet,
+  Orbit,
+  Constellation,
+  Cloud,
+  NightSky,
+  StickerBadge,
+  Ribbon,
+  Tape,
+  CornerStars,
+  WavyDivider,
+} from '@datn/ui';
+
 const colors = [
   ['ink', '#1e1b18'],
   ['ink-soft', '#4a433c'],
@@ -101,7 +118,19 @@ export function GameKit() {
           Bước vào ca làm: giấy kem, màu phẳng, nét đen và một chút tinh nghịch.
         </p>
       </div>
+      <CelestialShowcase />
       <Foundations />
+      <DayArtExamples />
+      <GameComponentExamples />
+    </div>
+  );
+}
+
+/** Các phần dùng độc lập trên trang art direction; GameKit vẫn giữ API cũ. */
+export function DayArtExamples() {
+  return (
+    <>
+      {' '}
       <Group
         title="Đồng nghiệp trong ca"
         description="Mỗi vai có một tranh và bảng tên riêng. Sáu nhân vật dưới đây là dàn mẫu để chọn khi soạn ca."
@@ -163,6 +192,14 @@ export function GameKit() {
         </div>
       </Group>
       <ExpressionExamples />
+    </>
+  );
+}
+
+export function GameComponentExamples() {
+  return (
+    <>
+      {' '}
       <Group
         title="Đồng hồ ca làm"
         description="Giờ trong truyện đi cùng số điểm còn lại. Màu cam và con số cùng báo rằng ca sắp hết giờ."
@@ -246,7 +283,7 @@ export function GameKit() {
       </Group>
       <ControlExamples />
       <WorkflowExamples />
-    </div>
+    </>
   );
 }
 
@@ -294,7 +331,7 @@ function Foundations() {
               <div
                 aria-hidden
                 className="h-14 border-b-2 border-toon-ink"
-                style={{ backgroundColor: `var(--color-toon-${name})` }}
+                style={{ backgroundColor: `var(--color-toon-${name}, ${hex})` }}
               />
               <figcaption className="space-y-1 p-2 font-mono text-[11px] text-toon-ink">
                 <span className="block break-all">toon-{name}</span>
@@ -636,5 +673,144 @@ function WorkflowExamples() {
         </p>
       </Dialog>
     </Group>
+  );
+}
+
+/** Bộ mẫu tĩnh để so nét, màu và mật độ trước khi dùng trong màn sản phẩm. */
+export function CelestialShowcase() {
+  const samples = [
+    ['Sao la bàn', <InkStar key="sparkle" size={74} />],
+    ['Sao sticker', <InkStar key="round5" size={74} variant="round5" />],
+    ['Nhấp nháy', <Twinkle key="twinkle" size={74} />],
+    ['Trăng ngủ', <CartoonMoon key="moon" size={90} face="sleep" />],
+    [
+      'Hành tinh',
+      <CartoonPlanet
+        key="planet"
+        size={94}
+        seed="technology"
+        region="cong_nghe"
+      />,
+    ],
+    [
+      'Không vành',
+      <CartoonPlanet
+        key="bare"
+        size={94}
+        seed="health"
+        region="suc_khoe"
+        ring={false}
+      />,
+    ],
+    ['Sao chổi', <Comet key="comet" size={88} />],
+    ['Quỹ đạo', <Orbit key="orbit" size={100} />],
+    ['Chòm sao', <Constellation key="constellation" size={94} />],
+    ['Mây đêm', <Cloud key="cloud" size={112} />],
+  ] as const;
+  return (
+    <section
+      id="celestial-cartoon"
+      aria-labelledby="celestial-heading"
+      className="theme-toon-night relative isolate overflow-hidden rounded-[22px] border-[3px] border-toon-night-deep p-5 sm:p-8"
+    >
+      <header className="relative mb-7 flex items-center justify-between gap-4 border-b-2 border-dashed border-toon-night-line pb-5">
+        <div>
+          <p className="mb-1 font-toon text-sm font-bold uppercase tracking-[.2em] text-toon-star">
+            Bộ motif · 01
+          </p>
+          <h3
+            id="celestial-heading"
+            className="font-toon text-3xl font-extrabold text-toon-paper sm:text-4xl"
+          >
+            Celestial cartoon
+          </h3>
+          <p className="mt-2 max-w-lg text-sm text-toon-star-soft">
+            Một bầu trời mực xanh. Sao vàng la bàn, hành tinh màu phẳng và những
+            miếng giấy mang theo chuyến đi.
+          </p>
+        </div>
+        <CornerStars size={100} className="hidden shrink-0 sm:block" />
+      </header>
+      <div className="grid gap-4 xl:grid-cols-3">
+        {(['home', 'map', 'profile'] as const).map((scene, i) => (
+          <figure
+            key={scene}
+            className="overflow-hidden rounded-2xl border-[3px] border-toon-night-deep bg-toon-night-deep"
+          >
+            <div className="relative isolate h-64 overflow-hidden">
+              <NightSky
+                scene={scene}
+                seed="golden-trio"
+                horizon={scene === 'home' ? 'city' : 'hills'}
+              />
+              <div className="relative flex h-full flex-col items-center justify-center px-8 text-center">
+                <span className="mb-3 rounded-full border-2 border-toon-star bg-toon-night-deep px-3 py-0.5 font-toon text-xs font-bold tracking-widest text-toon-star">
+                  0{i + 1}
+                </span>
+                <p className="max-w-44 font-toon text-2xl font-extrabold leading-tight text-toon-paper">
+                  {
+                    [
+                      'Chuyến đi bắt đầu',
+                      'Cả một trời cơ hội',
+                      'Ngôi sao của bạn',
+                    ][i]
+                  }
+                </p>
+              </div>
+            </div>
+            <figcaption className="border-t-2 border-toon-night-line px-4 py-2 font-toon text-sm text-toon-star-soft">
+              NightSky / {scene}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="my-8">
+        <WavyDivider />
+      </div>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">
+        {samples.map(([name, motif]) => (
+          <figure
+            key={name}
+            className="flex min-h-36 flex-col items-center justify-between rounded-2xl border-2 border-toon-night-line bg-toon-night-deep px-3 pb-3 pt-4"
+          >
+            <div className="flex h-24 items-center justify-center">{motif}</div>
+            <figcaption className="font-toon text-sm font-bold text-toon-star-soft">
+              {name}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="mt-10 grid gap-7 lg:grid-cols-[1.15fr_1fr]">
+        <div className="relative min-w-0 rounded-[20px] border-[3px] border-toon-ink bg-toon-paper p-7 text-toon-ink shadow-toon">
+          <Tape className="absolute -left-4 -top-12" />
+          <CornerStars size={82} className="absolute -right-3 -top-5" />
+          <p className="mb-2 font-toon text-sm font-bold uppercase tracking-widest text-toon-ink-faint">
+            Nhặt một điều mới
+          </p>
+          <h4 className="max-w-64 font-toon text-3xl font-extrabold leading-tight">
+            Thử một nghề.
+            <br />
+            Kể một câu chuyện.
+          </h4>
+          <p className="mt-4 max-w-72 text-sm font-semibold leading-relaxed text-toon-ink-soft">
+            Thẻ giấy kem, góc băng keo và một cụm sao. Một khoảng nghỉ giữa bầu
+            trời đêm.
+          </p>
+          <div className="mt-4 flex justify-end">
+            <StickerBadge size={104}>KHÁM PHÁ</StickerBadge>
+          </div>
+        </div>
+        <div className="flex min-w-0 flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-toon-night-line px-5 py-7">
+          <Ribbon size="100%">Đi tìm ngôi sao riêng</Ribbon>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Tape tone="blue" angle={12} />
+            <StickerBadge size={112}>ĐÃ SẴN SÀNG</StickerBadge>
+          </div>
+          <p className="text-center text-sm text-toon-star-soft">
+            Ribbon · Tape · StickerBadge · CornerStars
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }
