@@ -1,3 +1,4 @@
+import { groupOf } from './ActionPanel';
 import {
   renderWithProviders,
   signInDemo,
@@ -139,16 +140,16 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
         assert(action, `Có việc làm ở ${scene.clock.time}`);
         used.add(action.key);
         conversationSpoke = false;
-        // Mở tấm Chọn việc giống luồng trên điện thoại.
+        // Khay việc: mở tab nhóm của việc rồi bấm việc trong tab đó.
         fireEvent.click(
-          await screen.findByRole('button', { name: 'Chọn việc' }),
+          await screen.findByRole('tab', {
+            name: (name) => name.startsWith(groupOf(action.kind)),
+          }),
         );
-        const sheet = await screen.findByRole('dialog', {
-          name: 'Việc có thể làm',
-        });
-        const button = within(sheet).getByRole('button', {
-          name: (name) => name.startsWith(action.label),
-        });
+        const button = within(screen.getByRole('tabpanel')).getByRole(
+          'button',
+          { name: (name) => name.startsWith(action.label) },
+        );
         if (action.form) {
           fireEvent.click(button);
           const dialog = await screen.findByRole('dialog', {

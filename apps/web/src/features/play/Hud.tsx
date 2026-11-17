@@ -13,6 +13,7 @@ export function Hud({
   scene,
   backTo,
   onNotebook,
+  notebookCount,
   onHint,
   hintDisabled,
   aiLabel,
@@ -22,6 +23,8 @@ export function Hud({
   scene: SceneView | null;
   backTo: string;
   onNotebook: () => void;
+  /** Số dữ kiện trong sổ tay, hiện trên nút để người chơi biết có gì mới. */
+  notebookCount: number;
   onHint: () => void;
   hintDisabled: boolean;
   /** Nhãn thường trực: lời nhân vật do AI viết (NFR-07). */
@@ -60,28 +63,14 @@ export function Hud({
           </p>
         </div>
         {scene && (
-          <>
-            {/* Bọc ngoài để ẩn/hiện: `cn` không trộn class nên không truyền `hidden` vào gốc flex. */}
-            <div className="hidden sm:block">
-              <ToonClock
-                time={scene.clock.time}
-                deadline={scene.clock.deadline}
-                remaining={scene.clock.remaining}
-                budget={scene.clock.budget}
-                minutesPerPoint={scene.clock.minutesPerPoint}
-              />
-            </div>
-            <div className="sm:hidden">
-              <ToonClock
-                time={scene.clock.time}
-                deadline={scene.clock.deadline}
-                remaining={scene.clock.remaining}
-                budget={scene.clock.budget}
-                minutesPerPoint={scene.clock.minutesPerPoint}
-                compact
-              />
-            </div>
-          </>
+          <ToonClock
+            time={scene.clock.time}
+            deadline={scene.clock.deadline}
+            remaining={scene.clock.remaining}
+            budget={scene.clock.budget}
+            minutesPerPoint={scene.clock.minutesPerPoint}
+            compact
+          />
         )}
         <div className="flex items-center gap-2">
           <ToonIconButton
@@ -91,13 +80,22 @@ export function Hud({
             disabled={hintDisabled}
             variant="primary"
           />
-          <ToonIconButton
-            label="Mở sổ tay"
-            icon={<BookOpen size={19} strokeWidth={2.6} />}
-            onClick={onNotebook}
-            variant="secondary"
-            className="xl:hidden"
-          />
+          <span className="relative">
+            <ToonIconButton
+              label={`Mở sổ tay (${notebookCount} dữ kiện)`}
+              icon={<BookOpen size={19} strokeWidth={2.6} />}
+              onClick={onNotebook}
+              variant="secondary"
+            />
+            {notebookCount > 0 && (
+              <span
+                aria-hidden
+                className="tabular pointer-events-none absolute -right-1.5 -top-1.5 grid min-w-5 place-items-center rounded-full border-2 border-toon-ink bg-toon-coral px-1 font-toon text-[11px] font-extrabold leading-4 text-toon-ink"
+              >
+                {notebookCount}
+              </span>
+            )}
+          </span>
         </div>
       </div>
       {/* Điện thoại: mục tiêu và nhãn AI xuống dòng riêng để không bị cắt mất. */}

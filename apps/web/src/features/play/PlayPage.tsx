@@ -7,21 +7,13 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
-import {
-  BookOpen,
-  CirclePause,
-  ClipboardList,
-  Flag,
-  PartyPopper,
-  Users,
-} from 'lucide-react';
+import { CirclePause, Flag, PartyPopper, Users } from 'lucide-react';
 import {
   Character,
   Dialog,
   SceneBackdrop,
   Sheet,
   ToonButton,
-  ToonPanel,
   ToonTextarea,
   toonButtonClasses,
   useToast,
@@ -29,7 +21,6 @@ import {
 import { api, sourceOf } from '../../api';
 import { keys, useRun } from '../../api/hooks';
 import type { SceneView } from '../../api/types';
-import { ActionPanel } from './ActionPanel';
 import { ArtefactForm } from './ArtefactForm';
 import { Composer } from './Composer';
 import { Hud } from './Hud';
@@ -49,7 +40,7 @@ export default function PlayPage() {
   const qc = useQueryClient();
   const { toast } = useToast();
   const [intro, setIntro] = useState(true);
-  const [sheet, setSheet] = useState<'actions' | 'notebook' | null>(null);
+  const [notebook, setNotebook] = useState(false);
   const [writing, setWriting] = useState<Action | null>(null);
   const [flagOpen, setFlagOpen] = useState(false);
 
@@ -116,21 +107,11 @@ export default function PlayPage() {
     : null;
 
   const pick = (a: Action) => {
-    setSheet(null);
     if (a.form) setWriting(a);
     else void s.send({ kind: 'action', key: a.key });
   };
 
   const looks = castCharacters(r.cast);
-
-  const actionPanel = (
-    <ActionPanel
-      actions={scene.actions}
-      minutesPerPoint={scene.clock.minutesPerPoint}
-      disabled={locked || s.sending || scene.mode !== 'phase'}
-      onPick={pick}
-    />
-  );
 
   return (
     <div className="theme-toon toon-dots relative flex h-dvh flex-col overflow-hidden">
@@ -140,7 +121,8 @@ export default function PlayPage() {
           goal={r.goal}
           scene={scene}
           backTo={backTo}
-          onNotebook={() => setSheet('notebook')}
+          onNotebook={() => setNotebook(true)}
+          notebookCount={scene.notebook.facts.length}
           onHint={() => void s.send({ kind: 'hint' })}
           hintDisabled={locked || s.sending || scene.ended}
           aiLabel={
@@ -152,33 +134,12 @@ export default function PlayPage() {
       </div>
 
       <div
-        className="relative mx-auto flex min-h-0 w-full max-w-[1600px] flex-1 gap-4 sm:p-3 xl:p-4"
+        className="relative mx-auto flex min-h-0 w-full max-w-[1280px] flex-1 sm:p-3 lg:p-4"
         inert={intro || undefined}
       >
-        <aside
-          className="hidden w-[256px] shrink-0 xl:block 2xl:w-[300px]"
-          aria-label="Việc có thể làm"
-        >
-          <ToonPanel
-            title="Việc có thể làm"
-            icon={<ClipboardList size={20} strokeWidth={2.6} />}
-            className="relative h-full"
-            bodyClassName="overflow-y-auto p-3.5"
-          >
-            <Clip />
-            {scene.suspended && (
-              <p className="mb-3 rounded-xl border-2 border-toon-ink bg-[#ffe4a3] p-2.5 text-sm font-bold text-toon-ink">
-                Đang dở: {scene.suspended.label} (còn{' '}
-                {scene.suspended.remaining} điểm)
-              </p>
-            )}
-            {actionPanel}
-          </ToonPanel>
-        </aside>
-
         <main className="relative flex min-w-0 flex-1 flex-col overflow-hidden bg-toon-cream sm:rounded-[20px] sm:border-[3px] sm:border-toon-ink sm:shadow-toon">
           {scene.conversation && (
-            <div className="absolute inset-x-0 top-3 z-30 flex justify-center px-3">
+            <div className="pointer-events-none absolute inset-x-0 top-3 z-30 flex px-3 pr-16 sm:justify-center sm:px-48">
               <p className="inline-flex max-w-full items-center gap-2 rounded-full border-[2.5px] border-toon-ink bg-toon-paper py-1 pl-1.5 pr-3.5 text-sm font-bold text-toon-ink shadow-toon-sm">
                 <span className="flex -space-x-2">
                   {scene.conversation.people.map((p) => {
@@ -246,7 +207,8 @@ export default function PlayPage() {
                   busy={s.sending}
                   locked={locked}
                   onSend={s.send}
-                  onShowActions={() => setSheet('actions')}
+                  onPickAction={pick}
+                  spoken={s.current?.text ?? null}
                 />
               )}
               {s.queued > 0 && !s.paused && (
@@ -266,50 +228,11 @@ export default function PlayPage() {
             </div>
           </div>
         </main>
-
-        <aside
-          className="hidden w-[284px] shrink-0 xl:block 2xl:w-[340px]"
-          aria-label="Sổ tay"
-        >
-          <ToonPanel
-            title="Sổ tay"
-            icon={<BookOpen size={20} strokeWidth={2.6} />}
-            className="relative h-full"
-            bodyClassName="flex min-h-0 flex-col"
-            action={
-              <button
-                type="button"
-                onClick={() => setFlagOpen(true)}
-                className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold text-toon-ink-soft hover:bg-toon-sand hover:text-toon-ink"
-              >
-                <Flag size={12} strokeWidth={2.6} aria-hidden /> Báo nội dung
-                sai
-              </button>
-            }
-          >
-            <Rings />
-            <Notebook
-              run={r}
-              scene={scene}
-              lines={s.shown}
-              className="min-h-0 flex-1"
-            />
-          </ToonPanel>
-        </aside>
       </div>
 
       <Sheet
-        open={sheet === 'actions'}
-        onClose={() => setSheet(null)}
-        side="bottom"
-        theme="toon"
-        title="Việc có thể làm"
-      >
-        {actionPanel}
-      </Sheet>
-      <Sheet
-        open={sheet === 'notebook'}
-        onClose={() => setSheet(null)}
+        open={notebook}
+        onClose={() => setNotebook(false)}
         side="right"
         theme="toon"
         title="Sổ tay"
@@ -337,7 +260,7 @@ export default function PlayPage() {
         theme="toon"
         description={
           writing
-            ? `Tốn ${writing.points} điểm thời gian (${writing.points * scene.clock.minutesPerPoint} phút).`
+            ? `Mất khoảng ${writing.points * scene.clock.minutesPerPoint} phút trong ca.`
             : undefined
         }
       >
@@ -381,35 +304,6 @@ export default function PlayPage() {
         <IntroOverlay run={r} scene={scene} onStart={() => setIntro(false)} />
       )}
     </div>
-  );
-}
-
-/** Kẹp bìa hồ sơ trên đầu bảng việc. */
-function Clip() {
-  return (
-    <span
-      aria-hidden
-      className="absolute -top-4 right-6 h-7 w-20 rounded-lg border-[3px] border-toon-ink bg-[#b9b2a6] shadow-toon-sm"
-    >
-      <span className="absolute left-1/2 top-1.5 h-2.5 w-10 -translate-x-1/2 rounded-full border-2 border-toon-ink bg-toon-cream" />
-    </span>
-  );
-}
-
-/** Gáy lò xo trên đầu sổ tay. */
-function Rings() {
-  return (
-    <span
-      aria-hidden
-      className="pointer-events-none absolute -top-3.5 inset-x-6 flex justify-between"
-    >
-      {Array.from({ length: 9 }, (_, i) => (
-        <span
-          key={i}
-          className="h-6 w-2.5 rounded-full border-[2.5px] border-toon-ink bg-[#d9d4cb]"
-        />
-      ))}
-    </span>
   );
 }
 
@@ -496,11 +390,19 @@ function IntroOverlay({
               );
             })}
           </ul>
-          <p className="mt-5 rounded-xl border-2 border-dashed border-toon-ink/50 p-3 text-sm font-semibold text-toon-ink-soft">
-            Đồng hồ chạy theo việc bạn làm: mỗi việc ghi rõ tốn mấy điểm. Hết
-            giờ không phải thua, bạn vẫn nộp với những gì đã có. Lời nhân vật do
-            AI dẫn dắt theo kịch bản chuyên gia duyệt.
-          </p>
+          <details className="group mt-5 rounded-xl border-2 border-dashed border-toon-ink/50 px-3 py-2 text-sm font-semibold text-toon-ink-soft">
+            <summary className="cursor-pointer list-none font-toon font-extrabold text-toon-ink marker:hidden">
+              <span className="mr-1 inline-block transition-transform group-open:rotate-90">
+                ▸
+              </span>
+              Cách chơi
+            </summary>
+            <p className="mt-1.5">
+              Đồng hồ chạy theo việc bạn làm: mỗi việc ghi rõ mất bao nhiêu
+              phút. Hết giờ không phải thua, bạn vẫn nộp với những gì đã có. Lời
+              nhân vật do AI dẫn dắt theo kịch bản chuyên gia duyệt.
+            </p>
+          </details>
           <ToonButton
             size="lg"
             block

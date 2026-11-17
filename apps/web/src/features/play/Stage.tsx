@@ -5,7 +5,7 @@
  * thoại (hay Space/Enter) để qua nhịp (seed khối C3).
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { MessageCircle, Phone, Users, UserRound } from 'lucide-react';
+import { History, MessageCircle, Phone, Users, UserRound } from 'lucide-react';
 import {
   CaptionStrip,
   Character,
@@ -14,6 +14,7 @@ import {
   Emote,
   NameTag,
   SceneBackdrop,
+  Sheet,
   SpeechBubble,
   ToonBadge,
   cn,
@@ -230,7 +231,7 @@ export function Stage({
                     </ToonBadge>
                   )
                 }
-                className="min-h-28 sm:min-h-32"
+                className="min-h-20 sm:min-h-28"
               >
                 <p className="max-h-[26dvh] overflow-y-auto break-words pr-6">
                   {tw.visible}
@@ -289,6 +290,13 @@ function TypingDots() {
  * Nhật ký thoại: cuộn được, dòng mới nhất ở dưới; dòng đang ở hộp thoại
  * không lặp lại. Trên màn rộng nằm bên phải nhân vật.
  */
+/** Số câu đã qua để lại trên sân khấu; phần còn lại xem trong nhật ký. */
+const BACKLOG_VISIBLE = 2;
+
+/**
+ * Nhật ký thoại trên sân khấu: chỉ hai câu gần nhất (mờ dần) để người chơi
+ * không bị một mớ chữ đập vào mắt; toàn bộ hội thoại mở trong tấm "Xem lại".
+ */
 function Backlog({
   lines,
   current,
@@ -300,35 +308,70 @@ function Backlog({
   nameOf: (slot: string) => string;
   cast: Map<string, ToonCharacter>;
 }) {
+  const [open, setOpen] = useState(false);
   const end = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const reduce = window.matchMedia?.(
-      '(prefers-reduced-motion: reduce)',
-    ).matches;
-    end.current?.scrollIntoView({
-      block: 'end',
-      behavior: reduce ? 'auto' : 'smooth',
-    });
-  }, [lines.length]);
   const past = lines.filter((l) => l !== current);
+  const recent = past.slice(-BACKLOG_VISIBLE);
+  useEffect(() => {
+    if (!open) return;
+    end.current?.scrollIntoView({ block: 'end' });
+  }, [open, lines.length]);
+  const render = (l: TranscriptLine) => (
+    <Line
+      line={l}
+      name={l.kind === 'npc' ? nameOf(l.speaker) : ''}
+      look={l.kind === 'npc' ? cast.get(l.speaker) : undefined}
+    />
+  );
   return (
-    <div
-      className="relative z-0 ml-auto flex min-h-0 w-full flex-col overflow-y-auto px-3 pb-16 pt-14 md:pb-8 [mask-image:linear-gradient(to_bottom,transparent_8px,black_64px)] sm:px-5 md:w-[min(60%,640px)] md:pr-6"
-      aria-label="Lịch sử hội thoại"
-    >
-      <ol className="mt-auto flex flex-col gap-4">
-        {past.map((l) => (
-          <li key={l.seq} className="animate-toon-slide">
-            <Line
-              line={l}
-              name={l.kind === 'npc' ? nameOf(l.speaker) : ''}
-              look={l.kind === 'npc' ? cast.get(l.speaker) : undefined}
-            />
-          </li>
-        ))}
-      </ol>
-      <div ref={end} />
-    </div>
+    <>
+      <div
+        className="relative z-0 ml-auto flex min-h-0 w-full flex-col justify-end px-3 pb-16 pt-14 sm:px-5 md:w-[min(58%,600px)] md:pb-8 md:pr-6"
+        aria-label="Lời thoại gần nhất"
+      >
+        <ol className="flex flex-col gap-4">
+          {recent.map((l, i) => (
+            <li
+              key={l.seq}
+              className={cn(
+                'animate-toon-slide transition-opacity',
+                // Điện thoại chỉ giữ câu gần nhất; màn rộng giữ hai câu.
+                i < recent.length - 1 && 'opacity-60 max-md:hidden',
+              )}
+            >
+              {render(l)}
+            </li>
+          ))}
+        </ol>
+      </div>
+      {past.length > 0 && (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="absolute right-3 top-3 z-20 inline-flex items-center gap-1.5 rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-1 font-toon text-sm font-bold text-toon-ink shadow-toon-sm transition-transform hover:-translate-y-px focus-visible:outline-none focus-visible:shadow-toon-focus sm:right-5"
+        >
+          <History size={15} strokeWidth={2.6} aria-hidden />
+          <span className="sr-only sm:not-sr-only">Xem lại hội thoại</span>
+          <span className="tabular rounded-full bg-toon-cream px-1.5 text-xs">
+            {past.length}
+          </span>
+        </button>
+      )}
+      <Sheet
+        open={open}
+        onClose={() => setOpen(false)}
+        side="right"
+        theme="toon"
+        title="Hội thoại trong ca"
+      >
+        <ol className="flex flex-col gap-4" aria-label="Lịch sử hội thoại">
+          {past.map((l) => (
+            <li key={l.seq}>{render(l)}</li>
+          ))}
+        </ol>
+        <div ref={end} />
+      </Sheet>
+    </>
   );
 }
 

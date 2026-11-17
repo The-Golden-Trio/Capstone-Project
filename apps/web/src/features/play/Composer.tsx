@@ -4,25 +4,33 @@
  * xác nhận nộp sớm.
  */
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { DoorClosed, ListChecks, Send, Timer } from 'lucide-react';
+import { DoorClosed, Send, Timer } from 'lucide-react';
 import { ConfirmDialog, ToonButton, ToonTextarea, cn } from '@datn/ui';
 import type { SceneView, TurnInput } from '../../api/types';
 import { ArtefactForm } from './ArtefactForm';
+import { ActionTray } from './ActionPanel';
 
 export function Composer({
   scene,
   busy,
   locked,
   onSend,
-  onShowActions,
+  onPickAction,
+  spoken,
 }: {
   scene: SceneView;
   busy: boolean;
   /** Còn nhịp chưa đọc hoặc đang chờ AI: chưa cho trả lời. */
   locked: boolean;
   onSend: (input: TurnInput) => Promise<boolean>;
-  onShowActions: () => void;
+  /** Chọn một việc ở pha xử lý (việc có biểu mẫu thì mở hộp soạn). */
+  onPickAction: (action: SceneView['actions'][number]) => void;
+  /** Câu nhân vật vừa nói: câu hỏi trùng nguyên văn thì không lặp lại. */
+  spoken?: string | null;
 }) {
+  const norm = (t: string) => t.replace(/\s+/g, ' ').trim().toLowerCase();
+  const fresh = (prompt?: string) =>
+    prompt && (!spoken || norm(prompt) !== norm(spoken)) ? prompt : undefined;
   const w = scene.await;
   const node = scene.node;
 
@@ -69,14 +77,22 @@ export function Composer({
   }
 
   if (node && w.kind === 'node_choice') {
-    return <Choices key={node.id} node={node} busy={busy} onSend={onSend} />;
+    return (
+      <Choices
+        key={node.id}
+        node={node}
+        prompt={fresh(node.prompt)}
+        busy={busy}
+        onSend={onSend}
+      />
+    );
   }
 
   if (node && w.kind === 'node_artefact' && node.form) {
     const form = node.form;
     return (
       <div className="max-h-[55dvh] overflow-y-auto p-1">
-        {node.prompt && <Prompt>{node.prompt}</Prompt>}
+        {fresh(node.prompt) && <Prompt>{node.prompt}</Prompt>}
         <ArtefactForm
           form={form}
           submitLabel={node.kind === 'end' ? 'Gửi và kết thúc ca' : 'Gửi'}
@@ -94,7 +110,7 @@ export function Composer({
     return (
       <TextReply
         key={`${w.kind}-${node?.id ?? 'review'}`}
-        label={review ? 'Nhìn lại ca' : node?.prompt}
+        label={review ? 'Nhìn lại ca' : fresh(node?.prompt)}
         placeholder={review ? 'Trả lời người hỏi…' : 'Bạn trả lời thế nào?'}
         busy={busy}
         onSend={(text) => onSend({ kind: 'say', text })}
@@ -104,23 +120,13 @@ export function Composer({
 
   if (scene.mode === 'phase') {
     return (
-      <div className="flex items-center gap-3 rounded-2xl border-[3px] border-dashed border-toon-ink/60 bg-toon-paper/80 px-4 py-3 text-[15px] font-semibold text-toon-ink-soft">
-        <span
-          aria-hidden
-          className="grid size-10 shrink-0 place-items-center rounded-xl border-[2.5px] border-toon-ink bg-toon-mustard text-toon-ink"
-        >
-          <ListChecks size={20} strokeWidth={2.6} />
-        </span>
-        <span className="flex-1">
-          Bạn tự chọn việc tiếp theo: hỏi ai, mở tài liệu nào, hay chốt khi đã
-          đủ dữ kiện.
-        </span>
-        <span className="xl:hidden">
-          <ToonButton size="sm" onClick={onShowActions}>
-            Chọn việc
-          </ToonButton>
-        </span>
-      </div>
+      <ActionTray
+        actions={scene.actions}
+        minutesPerPoint={scene.clock.minutesPerPoint}
+        disabled={busy}
+        onPick={onPickAction}
+        suspended={scene.suspended}
+      />
     );
   }
 
@@ -198,10 +204,12 @@ function TextReply({
 /** Chọn phương án; có `timeLimitSeconds` thì đếm ngược, đo thời gian trên máy (D-83). */
 function Choices({
   node,
+  prompt,
   busy,
   onSend,
 }: {
   node: NonNullable<SceneView['node']>;
+  prompt?: string;
   busy: boolean;
   onSend: (input: TurnInput) => Promise<boolean>;
 }) {
@@ -247,7 +255,13 @@ function Choices({
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center gap-3">
-        {node.prompt && <Prompt className="flex-1">{node.prompt}</Prompt>}
+        {prompt ? (
+          <Prompt className="flex-1">{prompt}</Prompt>
+        ) : (
+          <span className="flex-1 font-toon text-base font-extrabold text-toon-ink-soft">
+            Chọn một cách trả lời
+          </span>
+        )}
         {limit && (
           <span
             role="timer"
