@@ -1,4 +1,12 @@
-import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ButtonHTMLAttributes,
+  type ReactNode,
+} from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import {
   ArrowRight,
@@ -14,17 +22,14 @@ import {
   X,
 } from 'lucide-react';
 import {
-  Badge,
-  Button,
-  Chip,
-  ColorDot,
+  ToonBadge,
+  ToonButton,
   EmptyState,
-  IconButton,
-  Input,
+  ToonIconButton,
+  ToonInput,
   LoadingBlock,
-  Planet,
-  SegmentedControl,
-  buttonClasses,
+  CartoonPlanet,
+  toonButtonClasses,
   cn,
   regionColor,
 } from '@datn/ui';
@@ -143,16 +148,16 @@ export default function GalaxyPage() {
   );
 
   return (
-    <div className="relative flex h-[calc(100dvh-4rem-4rem)] flex-col md:h-[calc(100dvh-4rem)]">
+    <div className="theme-toon-night relative flex h-[calc(100dvh-10.5rem-env(safe-area-inset-bottom))] min-w-0 flex-col md:h-[calc(100dvh-4.5rem)]">
       <h1 className="sr-only">Bản đồ ngân hà nghề nghiệp</h1>
       {/* Thanh công cụ */}
-      <div className="relative z-10 border-b border-line/60 bg-night-900/60 backdrop-blur-md">
+      <div className="relative z-10 border-b-[3px] border-toon-night-deep bg-toon-night-soft">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
           <div className="min-w-0 flex-1 basis-60">
             <label htmlFor="galaxy-search" className="visually-hidden">
               Tìm nghề
             </label>
-            <Input
+            <ToonInput
               id="galaxy-search"
               leftIcon={<Search size={16} />}
               placeholder="Tìm trong 221 nghề, ví dụ: điều dưỡng, back-end, đầu bếp"
@@ -161,10 +166,10 @@ export default function GalaxyPage() {
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && matches[0]) focusOn(matches[0].code);
               }}
-              className="h-10"
+              compact
             />
           </div>
-          <SegmentedControl
+          <GalaxyViewSwitch
             label="Cách xem"
             value={view}
             onChange={(v) =>
@@ -181,31 +186,35 @@ export default function GalaxyPage() {
           />
         </div>
         <div className="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-4 pb-3 scroll-x-clean sm:px-6">
-          <Chip selected={region === null} onClick={() => setRegion(null)}>
+          <GalaxyChip
+            selected={region === null}
+            onClick={() => setRegion(null)}
+          >
             Tất cả vùng
-          </Chip>
+          </GalaxyChip>
           {catalogue.data.regions.map((r) => (
-            <Chip
+            <GalaxyChip
               key={r.id}
               selected={region === r.id}
               color={regionColor(r.id)}
               count={counts[r.id]}
-              icon={
-                <ColorDot color={regionColor(r.id)} glow={region === r.id} />
-              }
+              icon={<RegionDot color={regionColor(r.id)} />}
               onClick={() => setRegion(region === r.id ? null : r.id)}
             >
               {r.name}
-            </Chip>
+            </GalaxyChip>
           ))}
-          <span className="mx-1 h-5 w-px shrink-0 bg-line" aria-hidden />
-          <Chip
+          <span
+            className="mx-1 h-5 w-px shrink-0 bg-toon-night-line"
+            aria-hidden
+          />
+          <GalaxyChip
             selected={playableOnly}
             onClick={() => setPlayableOnly((v) => !v)}
             icon={<Play size={12} />}
           >
             Có màn chơi
-          </Chip>
+          </GalaxyChip>
         </div>
       </div>
 
@@ -223,20 +232,20 @@ export default function GalaxyPage() {
 
           {/* Nút phóng to */}
           <div className="absolute bottom-4 left-4 z-10 flex flex-col gap-1.5 md:bottom-6 md:left-6">
-            <IconButton
-              variant="subtle"
+            <ToonIconButton
+              variant="secondary"
               label="Phóng to"
               icon={<Plus size={18} />}
               onClick={() => mapRef.current?.zoomBy(1.4)}
             />
-            <IconButton
-              variant="subtle"
+            <ToonIconButton
+              variant="secondary"
               label="Thu nhỏ"
               icon={<Minus size={18} />}
               onClick={() => mapRef.current?.zoomBy(0.7)}
             />
-            <IconButton
-              variant="subtle"
+            <ToonIconButton
+              variant="secondary"
               label="Xem toàn bộ"
               icon={<Maximize2 size={16} />}
               onClick={() => mapRef.current?.fit()}
@@ -251,7 +260,7 @@ export default function GalaxyPage() {
                 type="button"
                 onClick={() => setTipsOpen((v) => !v)}
                 aria-expanded={tipsOpen}
-                className="glass pointer-events-auto inline-flex h-9 items-center gap-2 rounded-full px-3.5 text-xs font-semibold text-gold-200 shadow-lift sm:hidden"
+                className="pointer-events-auto inline-flex min-h-9 items-center gap-2 rounded-full border-[3px] border-toon-night-deep bg-toon-star px-3.5 font-toon text-xs font-bold text-toon-ink shadow-toon-sm sm:hidden"
               >
                 <Sparkles size={14} aria-hidden />{' '}
                 {tipsOpen ? 'Ẩn gợi ý' : 'Bắt đầu từ đâu?'}
@@ -262,41 +271,43 @@ export default function GalaxyPage() {
                 {continueRow && (
                   <Link
                     to={`/islands/${continueRow.enrolmentId}`}
-                    className="glass pointer-events-auto flex items-center gap-3 rounded-lg p-3 shadow-lift transition-colors hover:border-line-gold"
+                    className="pointer-events-auto flex items-center gap-3 rounded-[18px] border-[3px] border-toon-night-deep bg-toon-paper p-3 text-toon-ink shadow-toon motion-safe:hover:-translate-y-0.5"
                   >
-                    <Planet
+                    <CartoonPlanet
                       seed={continueRow.occupationCode}
-                      color={regionColor(continueRow.regionId)}
+                      region={continueRow.regionId}
                       size={44}
-                      status="playing"
+                      ring
                     />
                     <span className="min-w-0 flex-1">
-                      <span className="eyebrow block">Chơi tiếp</span>
+                      <span className="block font-toon text-xs font-bold uppercase tracking-wider text-toon-ink-soft">
+                        Chơi tiếp
+                      </span>
                       <span className="block truncate text-sm font-semibold">
                         {continueRow.occupationName}
                       </span>
-                      <span className="block text-xs text-ink-faint">
+                      <span className="block text-xs text-toon-ink-soft">
                         Cấp {continueRow.levelNo} · {continueRow.done}/
                         {continueRow.total} màn
                       </span>
                     </span>
-                    <ArrowRight size={18} className="text-gold-300" />
+                    <ArrowRight size={18} className="text-toon-ink" />
                   </Link>
                 )}
                 {sourceOf('play') === 'demo' && (
-                  <div className="glass pointer-events-auto rounded-lg border-warning/30 p-4 shadow-lift">
-                    <p className="text-sm font-semibold text-ink">
+                  <div className="pointer-events-auto rounded-[18px] border-[3px] border-toon-night-deep bg-toon-paper p-4 text-toon-ink shadow-toon">
+                    <p className="font-toon text-base font-bold text-toon-ink">
                       Xem trước một ca làm mẫu
                     </p>
-                    <p className="mt-1 text-xs text-ink-muted">
+                    <p className="mt-1 text-xs text-toon-ink-soft">
                       Dữ liệu hiện có đúng một ca đã soạn: Back-end cấp L3, sự
                       cố API chậm. Ở bản xem thử, bạn vào thẳng ca này: điểm kỹ
                       năng không cộng vào hồ sơ và không mở cấp, nhưng thời gian
                       chơi vẫn vào thống kê. Lời nhân vật là AI giả.
                     </p>
-                    <Button
+                    <ToonButton
                       size="sm"
-                      variant="secondary"
+                      style={{ backgroundColor: 'var(--color-toon-star)' }}
                       className="mt-3"
                       loading={startSample.isPending}
                       onClick={() =>
@@ -309,22 +320,23 @@ export default function GalaxyPage() {
                       }
                     >
                       Vào ca mẫu
-                    </Button>
+                    </ToonButton>
                   </div>
                 )}
                 {!me.data?.quizDone && !quiz.data && (
-                  <div className="glass pointer-events-auto rounded-lg p-4 shadow-lift">
-                    <p className="flex items-center gap-2 text-sm font-semibold text-gold-200">
+                  <div className="pointer-events-auto rounded-[18px] border-[3px] border-toon-night-deep bg-toon-paper p-4 text-toon-ink shadow-toon">
+                    <p className="flex items-center gap-2 font-toon text-base font-bold text-toon-ink">
                       <Sparkles size={16} aria-hidden /> Chưa biết bắt đầu từ
                       đâu?
                     </p>
-                    <p className="mt-1 text-xs text-ink-muted">
+                    <p className="mt-1 text-xs text-toon-ink-soft">
                       18 thẻ, khoảng ba phút. Game gợi ý vài vùng nghề nên thử
                       trước.
                     </p>
                     <Link
                       to="/quiz"
-                      className={buttonClasses({
+                      style={{ backgroundColor: 'var(--color-toon-star)' }}
+                      className={toonButtonClasses({
                         size: 'sm',
                         className: 'mt-3',
                       })}
@@ -361,7 +373,7 @@ export default function GalaxyPage() {
 
           {filtering && (
             <p
-              className="absolute bottom-4 right-4 z-10 rounded-full bg-night-900/80 px-3 py-1.5 text-xs text-ink-muted md:right-6"
+              className="absolute bottom-4 right-4 z-10 rounded-full border-2 border-toon-night-deep bg-toon-paper px-3 py-1.5 text-xs font-bold text-toon-ink md:right-6"
               role="status"
             >
               {matches.length} nghề khớp
@@ -380,19 +392,22 @@ export default function GalaxyPage() {
 }
 
 function statusBadge(o: CatalogueOccupation) {
-  if (o.my.status === 'COMPLETED') return <Badge tone="gold">Đã đi hết</Badge>;
+  if (o.my.status === 'COMPLETED')
+    return <ToonBadge tone="mustard">Đã đi hết</ToonBadge>;
   if (o.my.status === 'PLAYING')
-    return <Badge tone="gold">Đang chơi · cấp {o.my.currentLevel}</Badge>;
+    return (
+      <ToonBadge tone="mustard">Đang chơi · cấp {o.my.currentLevel}</ToonBadge>
+    );
   if (o.gate.kind === 'PREREQUISITE')
     return (
-      <Badge tone="muted" icon={<Lock size={11} />}>
+      <ToonBadge tone="paper" icon={<Lock size={11} />}>
         Cần nghề đi trước
-      </Badge>
+      </ToonBadge>
     );
   return o.playable ? (
-    <Badge tone="success">Có màn chơi</Badge>
+    <ToonBadge tone="mint">Có màn chơi</ToonBadge>
   ) : (
-    <Badge tone="muted">Chưa có màn chơi</Badge>
+    <ToonBadge tone="paper">Chưa có màn chơi</ToonBadge>
   );
 }
 
@@ -418,51 +433,50 @@ function PeekPanel({
   return (
     <aside
       aria-label={`Thông tin nghề ${occ.shortName}`}
-      className="glass absolute inset-x-0 bottom-0 z-20 max-h-[70%] animate-rise overflow-y-auto rounded-t-xl p-5 shadow-lift sm:inset-x-auto sm:bottom-auto sm:right-6 sm:top-4 sm:max-h-[calc(100%-2rem)] sm:w-[23rem] sm:rounded-xl"
+      className="absolute inset-x-0 bottom-0 z-20 max-h-[70%] overflow-y-auto rounded-t-[22px] border-[3px] border-toon-night-deep bg-toon-paper p-5 text-toon-ink shadow-toon-lg motion-safe:animate-toon-pop sm:inset-x-auto sm:bottom-auto sm:right-6 sm:top-4 sm:max-h-[calc(100%-2rem)] sm:w-[23rem] sm:rounded-[22px]"
     >
-      <IconButton
-        label="Đóng"
-        icon={<X size={18} />}
-        size="sm"
-        className="absolute right-3 top-3"
-        onClick={onClose}
-      />
+      <div className="absolute right-3 top-3">
+        <ToonIconButton
+          label="Đóng"
+          icon={<X size={18} />}
+          size="sm"
+          onClick={onClose}
+        />
+      </div>
       <div className="flex items-center gap-4 pr-8">
-        <Planet
+        <CartoonPlanet
           seed={occ.code}
-          color={regionColor(occ.regionId)}
+          region={occ.regionId}
+          ring={occ.playable}
           size={76}
-          status={
-            locked
-              ? 'locked'
-              : occ.my.status === 'PLAYING'
-                ? 'playing'
-                : occ.my.status === 'COMPLETED'
-                  ? 'completed'
-                  : 'new'
-          }
         />
         <div className="min-w-0">
-          <p className="flex items-center gap-1.5 text-xs text-ink-faint">
-            <ColorDot color={regionColor(occ.regionId)} size={7} /> {occ.group}
+          <p className="flex items-center gap-1.5 text-xs text-toon-ink-soft">
+            <RegionDot color={regionColor(occ.regionId)} size={7} /> {occ.group}
           </p>
-          <h2 className="mt-1 text-xl leading-tight">{occ.shortName}</h2>
+          <h2 className="mt-1 font-toon text-2xl font-extrabold leading-tight">
+            {occ.shortName}
+          </h2>
           <div className="mt-2 flex flex-wrap gap-1.5">{statusBadge(occ)}</div>
         </div>
       </div>
 
       {suggestedReason && (
-        <p className="mt-4 flex gap-2 rounded-md border border-line-gold bg-gold-900/30 p-3 text-sm text-gold-100">
+        <p className="mt-4 flex gap-2 rounded-xl border-2 border-toon-ink bg-toon-star-soft p-3 text-sm text-toon-ink">
           <Sparkles size={16} className="mt-0.5 shrink-0" aria-hidden />{' '}
           {suggestedReason}
         </p>
       )}
 
-      <p className="mt-4 line-clamp-5 text-sm text-ink-muted">{occ.summary}</p>
+      <p className="mt-4 line-clamp-5 text-sm text-toon-ink-soft">
+        {occ.summary}
+      </p>
 
-      <div className="mt-4 rounded-md border border-warning/30 bg-warning-deep/25 p-3 text-sm">
-        <p className="text-xs font-semibold text-warning">Mặt khó của nghề</p>
-        <p className="mt-1 text-ink-muted">
+      <div className="mt-4 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-sm">
+        <p className="font-toon text-sm font-bold text-toon-ink">
+          Mặt khó của nghề
+        </p>
+        <p className="mt-1 text-toon-ink-soft">
           {downside ??
             (profile.isError
               ? 'Chưa tải được, xem trong hồ sơ nghề.'
@@ -471,12 +485,12 @@ function PeekPanel({
       </div>
 
       <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
-        <div className="rounded-md bg-night-950/40 p-3">
-          <dt className="text-xs text-ink-faint">Lộ trình</dt>
+        <div className="rounded-xl border-2 border-toon-ink bg-toon-cream p-3">
+          <dt className="text-xs text-toon-ink-soft">Lộ trình</dt>
           <dd className="font-semibold">{occ.levelCount} cấp</dd>
         </div>
-        <div className="rounded-md bg-night-950/40 p-3">
-          <dt className="text-xs text-ink-faint">Của bạn</dt>
+        <div className="rounded-xl border-2 border-toon-ink bg-toon-cream p-3">
+          <dt className="text-xs text-toon-ink-soft">Của bạn</dt>
           <dd className="font-semibold">
             {occ.my.highestCompleted
               ? `Xong cấp ${occ.my.highestCompleted}`
@@ -488,7 +502,7 @@ function PeekPanel({
       </dl>
 
       {locked && occ.gate.kind === 'PREREQUISITE' && (
-        <p className="mt-4 text-xs text-ink-muted">
+        <p className="mt-4 text-xs text-toon-ink-soft">
           Cấp đầu của nghề này đòi kinh nghiệm từ nghề khác: xong cấp{' '}
           {occ.gate.band} ở{' '}
           {occ.gate.roles
@@ -500,25 +514,31 @@ function PeekPanel({
       )}
 
       {enterError && (
-        <p className="mt-3 text-sm text-danger" role="alert">
+        <p className="mt-3 text-sm text-toon-maroon" role="alert">
           {enterError}
         </p>
       )}
 
       <div className="mt-5 flex flex-col gap-2">
         {occ.my.status === 'NEW' && occ.playable && !locked && (
-          <Button
+          <ToonButton
             block
+            style={{ backgroundColor: 'var(--color-toon-star)' }}
             onClick={onEnter}
             loading={entering}
             leftIcon={<Play size={16} />}
           >
             Vào cấp đầu tiên
-          </Button>
+          </ToonButton>
         )}
         <Link
           to={`/occupations/${occ.code}`}
-          className={buttonClasses({
+          style={
+            occ.my.status === 'NEW' && occ.playable && !locked
+              ? undefined
+              : { backgroundColor: 'var(--color-toon-star)' }
+          }
+          className={toonButtonClasses({
             variant:
               occ.my.status === 'NEW' && occ.playable && !locked
                 ? 'secondary'
@@ -561,47 +581,40 @@ function OccupationList({
   return (
     <div className="min-h-0 flex-1 overflow-y-auto">
       <p
-        className="mx-auto max-w-7xl px-4 pt-4 text-xs text-ink-faint sm:px-6"
+        className="mx-auto max-w-7xl px-4 pt-4 text-xs font-semibold text-toon-star-soft sm:px-6"
         role="status"
       >
         {sorted.length}/{total} nghề
       </p>
-      <ul className="mx-auto grid max-w-7xl gap-3 px-4 py-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-3">
+      <ul className="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 py-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-3">
         {sorted.map((o) => (
-          <li key={o.code}>
+          <li key={o.code} className="min-w-0">
             <Link
               to={`/occupations/${o.code}`}
               className={cn(
-                'glass flex h-full gap-3 rounded-lg p-4 transition-colors hover:border-line-gold',
-                suggested.has(o.code) && 'border-line-gold',
+                'flex h-full min-w-0 gap-3 rounded-[18px] border-[3px] border-toon-night-deep bg-toon-paper p-4 text-toon-ink shadow-toon transition-transform motion-safe:hover:-translate-y-1',
+                suggested.has(o.code) &&
+                  'outline-2 outline-offset-2 outline-toon-star',
               )}
             >
-              <Planet
+              <CartoonPlanet
                 seed={o.code}
-                color={regionColor(o.regionId)}
+                region={o.regionId}
+                ring={o.playable}
                 size={48}
-                status={
-                  o.my.status === 'PLAYING'
-                    ? 'playing'
-                    : o.my.status === 'COMPLETED'
-                      ? 'completed'
-                      : o.gate.kind === 'PREREQUISITE'
-                        ? 'locked'
-                        : 'new'
-                }
               />
               <span className="min-w-0 flex-1">
-                <span className="block font-semibold leading-snug">
+                <span className="block font-toon text-lg font-bold leading-snug">
                   {o.shortName}
                 </span>
-                <span className="mt-0.5 block truncate text-xs text-ink-faint">
+                <span className="mt-0.5 block truncate text-xs text-toon-ink-soft">
                   {o.group}
                 </span>
                 <span className="mt-2 flex flex-wrap gap-1.5">
                   {suggested.has(o.code) && (
-                    <Badge tone="gold" icon={<Sparkles size={11} />}>
+                    <ToonBadge tone="mustard" icon={<Sparkles size={11} />}>
                       Gợi ý
-                    </Badge>
+                    </ToonBadge>
                   )}
                   {statusBadge(o)}
                 </span>
@@ -610,6 +623,93 @@ function OccupationList({
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+/** Bộ lọc gọn, bấm được và không có glow trên thanh công cụ nền đêm. */
+function GalaxyChip({
+  selected = false,
+  children,
+  icon,
+  count,
+  color,
+  ...rest
+}: Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> & {
+  selected?: boolean;
+  icon?: ReactNode;
+  count?: number;
+  color?: string;
+}) {
+  return (
+    <button
+      {...rest}
+      type="button"
+      aria-pressed={selected}
+      className={cn(
+        'inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-full border-[2px] border-toon-night-deep px-3 font-toon text-[13px] font-bold shadow-toon-sm transition-transform motion-safe:hover:-translate-y-px',
+        selected ? 'bg-toon-star text-toon-ink' : 'bg-toon-paper text-toon-ink',
+      )}
+    >
+      {icon}
+      {children}
+      {count !== undefined && (
+        <span
+          className="rounded-full bg-toon-night-deep/10 px-1.5 font-toon-body text-xs tabular-nums"
+          style={color ? { borderBottom: `2px solid ${color}` } : undefined}
+        >
+          {count}
+        </span>
+      )}
+    </button>
+  );
+}
+
+function RegionDot({ color, size = 8 }: { color: string; size?: number }) {
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-block shrink-0 rounded-full border border-toon-night-deep"
+      style={{ width: size, height: size, backgroundColor: color }}
+    />
+  );
+}
+
+function GalaxyViewSwitch({
+  options,
+  value,
+  onChange,
+  label,
+}: {
+  options: Array<{ key: View; label: ReactNode; icon: ReactNode }>;
+  value: View;
+  onChange: (view: View) => void;
+  label: string;
+}) {
+  return (
+    <div
+      role="radiogroup"
+      aria-label={label}
+      className="inline-flex gap-1 rounded-[16px] border-[3px] border-toon-night-deep bg-toon-night-deep p-1"
+    >
+      {options.map((o) => (
+        <button
+          key={o.key}
+          type="button"
+          role="radio"
+          aria-checked={value === o.key}
+          onClick={() => onChange(o.key)}
+          className={cn(
+            'inline-flex min-h-8 items-center gap-1.5 rounded-[10px] px-3 font-toon text-sm font-bold',
+            value === o.key
+              ? 'bg-toon-star text-toon-ink'
+              : 'text-toon-paper hover:bg-toon-night-soft',
+          )}
+        >
+          {o.icon}
+          {o.label}
+        </button>
+      ))}
     </div>
   );
 }

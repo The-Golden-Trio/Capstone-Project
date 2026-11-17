@@ -9,11 +9,12 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
+  useId,
   useMemo,
   useRef,
   useState,
 } from 'react';
-import { regionColor } from '@datn/ui';
+import { InkStar, regionColor, seededRandom } from '@datn/ui';
 import type { GalaxyLayout, PlacedOccupation } from './layout';
 
 type Detail = 'far' | 'mid' | 'near';
@@ -278,10 +279,15 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
     }
   };
 
-  const regionIds = useMemo(
-    () => [...new Set(layout.regions.map((r) => r.id))],
-    [layout],
-  );
+  const motifId = `galaxy-${useId().replace(/:/g, '')}`;
+  const stars = useMemo(() => {
+    const rand = seededRandom('galaxy-cartoon-stars');
+    return Array.from({ length: 36 }, (_, i) => ({
+      x: 2 + rand() * 96,
+      y: 3 + rand() * 94,
+      size: i % 6 === 0 ? 15 : 6 + rand() * 5,
+    }));
+  }, []);
 
   return (
     <svg
@@ -297,38 +303,64 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
       onPointerCancel={onPointerUp}
       onKeyDown={onKeyDown}
     >
+      <style>{`
+        @keyframes galaxy-ink-orbit { to { transform: rotate(360deg); } }
+        @keyframes galaxy-ink-pick { 0% { transform: scale(.84); } 55% { transform: scale(1.12); } 100% { transform: scale(1); } }
+        .galaxy-ink-orbit { animation: galaxy-ink-orbit 24s linear infinite; transform-origin: 0 0; }
+        .galaxy-ink-pick { animation: galaxy-ink-pick .45s ease-out both; transform-origin: 0 0; }
+        .galaxy-ink-star path { vector-effect: none; stroke-width: 4; }
+        @media (prefers-reduced-motion: reduce) {
+          .galaxy-ink-orbit, .galaxy-ink-pick { animation: none; }
+        }
+      `}</style>
       <defs>
-        {regionIds.map((id) => {
-          const c = regionColor(id);
-          return (
-            <g key={id}>
-              <radialGradient id={`nebula-${id}`}>
-                <stop offset="0" stopColor={c} stopOpacity="0.2" />
-                <stop offset="0.55" stopColor={c} stopOpacity="0.07" />
-                <stop offset="1" stopColor={c} stopOpacity="0" />
-              </radialGradient>
-              <radialGradient id={`planet-${id}`} cx="35%" cy="32%" r="75%">
-                <stop offset="0" stopColor="#f8f6ee" stopOpacity="0.95" />
-                <stop offset="0.28" stopColor={c} />
-                <stop offset="1" stopColor="#0a1026" />
-              </radialGradient>
-            </g>
-          );
-        })}
-        <radialGradient id="halo-gold">
-          <stop offset="0.55" stopColor="#f0d79a" stopOpacity="0.55" />
-          <stop offset="1" stopColor="#f0d79a" stopOpacity="0" />
-        </radialGradient>
+        <symbol id={`${motifId}-star`} viewBox="0 0 96 96">
+          <InkStar size={96} className="galaxy-ink-star" />
+        </symbol>
+        <symbol id={`${motifId}-surface`} viewBox="-1 -1 2 2">
+          <path
+            d="M0-1A1 1 0 0 1 0 1C.65.65.65-.65 0-1Z"
+            fill="#0c1834"
+            fillOpacity=".28"
+          />
+          <ellipse
+            cx="-.35"
+            cy="-.4"
+            rx=".18"
+            ry=".1"
+            transform="rotate(-30 -.35 -.4)"
+            fill="#fffaf0"
+          />
+        </symbol>
       </defs>
+      <rect width="100%" height="100%" fill="#142650" />
+      <g aria-hidden="true" pointerEvents="none" opacity=".65">
+        {stars.map((star, i) => (
+          <use
+            key={i}
+            href={`#${motifId}-star`}
+            x={`${star.x}%`}
+            y={`${star.y}%`}
+            width={star.size}
+            height={star.size}
+          />
+        ))}
+      </g>
 
       <g ref={worldRef}>
         {layout.regions.map((r) => (
-          <circle
+          <path
             key={r.id}
-            cx={r.x}
-            cy={r.y}
-            r={r.radius * 1.15}
-            fill={`url(#nebula-${r.id})`}
+            d={regionBlob(r.id, r.radius)}
+            transform={`translate(${r.x} ${r.y})`}
+            fill={regionColor(r.id)}
+            fillOpacity=".075"
+            stroke={regionColor(r.id)}
+            strokeOpacity=".3"
+            strokeWidth="1.5"
+            strokeDasharray="6 9"
+            vectorEffect="non-scaling-stroke"
+            pointerEvents="none"
           />
         ))}
 
@@ -340,8 +372,9 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
               .map((m) => `${m.x},${m.y}`)
               .join(' ')}
             fill="none"
-            stroke={regionColor(g.regionId)}
-            strokeOpacity={detail === 'far' ? 0.12 : 0.22}
+            stroke="#3b5aa0"
+            strokeDasharray="3 6"
+            strokeOpacity={detail === 'far' ? 0.65 : 0.85}
             strokeWidth={1.2}
             vectorEffect="non-scaling-stroke"
           />
@@ -351,6 +384,7 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
           <PlanetNode
             key={p.occupation.code}
             p={p}
+            motifId={motifId}
             detail={detail}
             selected={selected === p.occupation.code}
             dim={highlight !== null && !highlight.has(p.occupation.code)}
@@ -382,7 +416,11 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
               fill={regionColor(g.regionId)}
               fillOpacity={0.85}
               fontSize={19}
-              fontWeight={600}
+              fontFamily="var(--font-toon)"
+              stroke="#0c1834"
+              strokeWidth={5}
+              paintOrder="stroke"
+              fontWeight={800}
               letterSpacing="0.06em"
               style={{ textTransform: 'uppercase', pointerEvents: 'none' }}
             >
@@ -398,14 +436,17 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
               y={r.y}
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="#f8f6ee"
-              fontFamily="var(--font-display)"
+              fill={regionColor(r.id)}
+              fontFamily="var(--font-toon)"
               fontSize={58}
-              fontWeight={600}
-              style={{ pointerEvents: 'none', paintOrder: 'stroke' }}
-              stroke="#0a1026"
+              fontWeight={800}
+              style={{
+                textTransform: 'uppercase',
+                pointerEvents: 'none',
+                paintOrder: 'stroke',
+              }}
+              stroke="#0c1834"
               strokeWidth={10}
-              strokeOpacity={0.55}
             >
               {r.name}
             </text>
@@ -516,22 +557,40 @@ function PlanetLabel({
   const locked =
     p.occupation.gate.kind === 'PREREQUISITE' &&
     p.occupation.my.status === 'NEW';
+  const fs = labelFont(detail, selected);
+  const y = p.y + p.r + labelOffset(detail, selected);
+  const width = p.occupation.shortName.length * fs * 0.56 + fs * 0.6;
   return (
-    <text
-      x={p.x}
-      y={p.y + p.r + labelOffset(detail, selected)}
-      textAnchor="middle"
-      fill={selected ? '#f6e6bf' : '#e3e9f1'}
-      fillOpacity={locked && !selected ? 0.7 : 1}
-      fontSize={labelFont(detail, selected)}
-      fontWeight={selected ? 700 : 500}
-      stroke="#0a1026"
-      strokeWidth={selected && detail === 'far' ? 8 : 3.5}
-      strokeOpacity={0.85}
-      style={{ paintOrder: 'stroke' }}
-    >
-      {p.occupation.shortName}
-    </text>
+    <g data-planet-label={p.occupation.code}>
+      {selected && (
+        <rect
+          x={p.x - width / 2}
+          y={y - fs * 1.25}
+          width={width}
+          height={fs * 1.8}
+          rx={fs * 0.28}
+          fill="#fffaf0"
+          stroke="#0c1834"
+          strokeWidth="2"
+          vectorEffect="non-scaling-stroke"
+        />
+      )}
+      <text
+        x={p.x}
+        y={y}
+        textAnchor="middle"
+        fill={selected ? '#1e1b18' : '#fffaf0'}
+        fillOpacity={locked && !selected ? 0.7 : 1}
+        fontFamily="var(--font-toon)"
+        fontSize={fs}
+        fontWeight={selected ? 800 : 700}
+        stroke={selected ? 'none' : '#0c1834'}
+        strokeWidth={3.5}
+        style={{ paintOrder: 'stroke' }}
+      >
+        {p.occupation.shortName}
+      </text>
+    </g>
   );
 }
 
@@ -541,12 +600,14 @@ function PlanetNode({
   selected,
   dim,
   suggested,
+  motifId,
 }: {
   p: PlacedOccupation;
   detail: Detail;
   selected: boolean;
   dim: boolean;
   suggested: boolean;
+  motifId: string;
 }) {
   const o = p.occupation;
   const locked = o.gate.kind === 'PREREQUISITE' && o.my.status === 'NEW';
@@ -559,54 +620,100 @@ function PlanetNode({
       style={{ cursor: 'pointer' }}
     >
       <title>{o.shortName}</title>
-      {/* Vùng bấm rộng hơn hành tinh cho ngón tay. */}
+      {/* Vùng bấm giữ nguyên để thao tác bằng ngón tay không đổi. */}
       <circle r={Math.max(p.r + 8, 18)} fill="transparent" />
-      {(selected || suggested) && (
-        <circle
-          r={p.r * (selected ? 2.6 : 2.1)}
-          fill="url(#halo-gold)"
-          opacity={selected ? 0.9 : 0.55}
-        />
-      )}
-      {o.playable && !dim && (
-        <circle
-          r={p.r + 3.5}
-          fill="none"
-          stroke={regionColor(o.regionId)}
-          strokeOpacity={0.45}
-          strokeWidth={1}
-        />
-      )}
-      <circle r={p.r} fill={`url(#planet-${o.regionId})`} />
-      {status === 'PLAYING' && (
-        <circle
-          r={p.r + 6}
-          fill="none"
-          stroke="#f0d79a"
-          strokeWidth={1.6}
-          strokeDasharray="4 3"
-          className="origin-center animate-orbit"
-          style={{ animationDuration: '9s', transformBox: 'fill-box' }}
-        />
-      )}
-      {status === 'COMPLETED' && (
-        <path
-          transform={`translate(${-6} ${-p.r - 14}) scale(0.5)`}
-          d="M12 0C12.9 7.2 14.2 9.8 24 12 14.2 14.2 12.9 16.8 12 24 11.1 16.8 9.8 14.2 0 12 9.8 9.8 11.1 7.2 12 0Z"
-          fill="#f0d79a"
-        />
-      )}
-      {locked && detail !== 'far' && (
-        <g transform={`translate(${p.r * 0.55} ${p.r * 0.35})`} fill="#c7d2e0">
-          <rect x={-3.5} y={-1} width={7} height={5.5} rx={1} />
-          <path
-            d="M-2.2 -1 v-1.6 a2.2 2.2 0 0 1 4.4 0 v1.6"
+      <g className={selected ? 'galaxy-ink-pick' : undefined}>
+        {(selected || suggested) && (
+          <circle
+            r={p.r + (selected ? 7 : 5)}
             fill="none"
-            stroke="#c7d2e0"
-            strokeWidth={1.1}
+            stroke="#f6cf5e"
+            strokeWidth={selected ? 3.5 : 1.5}
+            strokeDasharray={selected ? undefined : '2 4'}
+            vectorEffect="non-scaling-stroke"
           />
-        </g>
-      )}
+        )}
+        {o.playable && !dim && (
+          <ellipse
+            rx={p.r * 1.55}
+            ry={p.r * 0.5}
+            transform="rotate(-24)"
+            fill="#f6cf5e"
+            stroke="#0c1834"
+            strokeWidth="2"
+            vectorEffect="non-scaling-stroke"
+          />
+        )}
+        <circle
+          r={p.r}
+          fill={regionColor(o.regionId)}
+          stroke="#0c1834"
+          strokeWidth="2"
+          vectorEffect="non-scaling-stroke"
+        />
+        <use
+          href={`#${motifId}-surface`}
+          x={-p.r}
+          y={-p.r}
+          width={p.r * 2}
+          height={p.r * 2}
+          pointerEvents="none"
+        />
+        {status === 'PLAYING' && (
+          <circle
+            r={p.r + 11}
+            fill="none"
+            stroke="#f6cf5e"
+            strokeWidth="1.5"
+            strokeDasharray="4 6"
+            vectorEffect="non-scaling-stroke"
+            className="galaxy-ink-orbit"
+          />
+        )}
+        {status === 'COMPLETED' && (
+          <use
+            href={`#${motifId}-star`}
+            x={-7}
+            y={-p.r - 18}
+            width={14}
+            height={14}
+          />
+        )}
+        {locked && detail !== 'far' && (
+          <g
+            transform={`translate(${p.r * 0.55} ${p.r * 0.35})`}
+            stroke="#0c1834"
+            strokeWidth="1.3"
+            strokeLinejoin="round"
+          >
+            <path d="M-2.2-1v-1.6a2.2 2.2 0 0 1 4.4 0V-1" fill="none" />
+            <rect
+              x={-3.5}
+              y={-1}
+              width={7}
+              height={5.5}
+              rx={1}
+              fill="#fffaf0"
+            />
+          </g>
+        )}
+      </g>
     </g>
   );
+}
+
+/** Mười hai điểm uốn mềm, luôn giữ cùng hình dáng theo mã vùng. */
+function regionBlob(seed: string, radius: number) {
+  const rand = seededRandom(`galaxy-region-${seed}`);
+  const points = Array.from({ length: 12 }, (_, i) => {
+    const a = (i * Math.PI) / 6;
+    const r = radius * (0.91 + rand() * 0.16);
+    return [Math.cos(a) * r, Math.sin(a) * r];
+  });
+  const midpoint = (a: number[], b: number[]) => [
+    (a[0] + b[0]) / 2,
+    (a[1] + b[1]) / 2,
+  ];
+  const start = midpoint(points[11], points[0]);
+  return `M${start.join(' ')} ${points.map((p, i) => `Q${p.join(' ')} ${midpoint(p, points[(i + 1) % points.length]).join(' ')}`).join(' ')}Z`;
 }
