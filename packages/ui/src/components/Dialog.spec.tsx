@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, beforeAll, describe, expect, it } from 'vitest';
-import { Dialog, Sheet } from './Dialog';
+import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
+import { ConfirmDialog, Dialog, Sheet } from './Dialog';
 
 beforeAll(() => {
   // jsdom không hiện thực top layer của native dialog.
@@ -11,6 +11,85 @@ beforeAll(() => {
   HTMLDialogElement.prototype.close = function () {
     this.removeAttribute('open');
   };
+});
+
+describe('Dialog theme toon', () => {
+  it('giữ tên và mô tả, nút đóng cartoon gọi onClose và khôi phục cuộn', () => {
+    document.body.style.overflow = 'auto';
+    const closed = vi.fn();
+    function Example() {
+      const [open, setOpen] = useState(true);
+      return (
+        <Dialog
+          theme="toon"
+          open={open}
+          title="Sổ tay ca làm"
+          description="Dữ kiện bạn đã tìm ra."
+          onClose={() => {
+            closed();
+            setOpen(false);
+          }}
+        >
+          Nội dung sổ tay
+        </Dialog>
+      );
+    }
+    render(<Example />);
+    const dialog = screen.getByRole('dialog', { name: 'Sổ tay ca làm' });
+    expect(dialog.className).toContain('theme-toon');
+    expect(
+      document.getElementById(dialog.getAttribute('aria-describedby') ?? '')
+        ?.textContent,
+    ).toBe('Dữ kiện bạn đã tìm ra.');
+    expect(screen.getByText('Nội dung sổ tay')).toBeTruthy();
+    expect(document.body.style.overflow).toBe('hidden');
+    const close = screen.getByRole('button', { name: 'Đóng' });
+    expect(close.className).toContain('focus-visible:shadow-toon-focus');
+    fireEvent.click(close);
+    expect(closed).toHaveBeenCalledTimes(1);
+    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(document.body.style.overflow).toBe('auto');
+  });
+
+  it('ConfirmDialog toon gọi đúng onConfirm và onClose, không gửi thao tác khi loading', () => {
+    const confirm = vi.fn();
+    const close = vi.fn();
+    const props = {
+      open: true,
+      title: 'Nộp trước hạn?',
+      theme: 'toon' as const,
+      confirmLabel: 'Nộp luôn',
+      cancelLabel: 'Làm thêm',
+      onConfirm: confirm,
+      onClose: close,
+    };
+    const { rerender } = render(
+      <ConfirmDialog {...props} tone="danger">
+        Các việc còn dở sẽ được giữ lại.
+      </ConfirmDialog>,
+    );
+    expect(
+      screen.getByRole('dialog', { name: 'Nộp trước hạn?' }).className,
+    ).toContain('theme-toon');
+    const submit = screen.getByRole('button', { name: 'Nộp luôn' });
+    expect(submit.className).toContain('bg-toon-coral');
+    fireEvent.click(submit);
+    expect(confirm).toHaveBeenCalledTimes(1);
+    expect(close).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Làm thêm' }));
+    expect(close).toHaveBeenCalledTimes(1);
+    expect(confirm).toHaveBeenCalledTimes(1);
+    rerender(<ConfirmDialog {...props} loading />);
+    const loading = screen.getByRole('button', { name: 'Nộp luôn' });
+    const cancel = screen.getByRole('button', { name: 'Làm thêm' });
+    expect(loading.hasAttribute('disabled')).toBe(true);
+    expect(loading.getAttribute('aria-busy')).toBe('true');
+    expect(cancel.hasAttribute('disabled')).toBe(true);
+    loading.click();
+    cancel.click();
+    expect(confirm).toHaveBeenCalledTimes(1);
+    expect(close).toHaveBeenCalledTimes(1);
+  });
 });
 afterEach(cleanup);
 describe('Dialog', () => {

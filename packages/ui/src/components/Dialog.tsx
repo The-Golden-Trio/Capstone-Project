@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, type ReactNode, type Ref } from 'react';
 import { X } from 'lucide-react';
 import { cn } from '../lib/cn';
 import { Button, IconButton } from './Button';
+import { ToonButton, ToonIconButton } from '../game/ToonControls';
 
 export interface DialogProps {
   open: boolean;
@@ -13,6 +14,8 @@ export interface DialogProps {
   children?: ReactNode;
   className?: string;
   ref?: Ref<HTMLDialogElement>;
+  /** `toon`: viền đen, giấy kem cho các màn trong ca làm. */
+  theme?: 'night' | 'toon';
 }
 
 // Đếm các hộp thoại để đóng một hộp không mở khoá cuộn của hộp còn lại.
@@ -28,7 +31,9 @@ function Modal({
   children,
   className,
   ref,
+  theme = 'night',
 }: DialogProps) {
+  const toon = theme === 'toon';
   const local = useRef<HTMLDialogElement>(null);
   const id = useId();
   useEffect(() => {
@@ -74,30 +79,69 @@ function Modal({
           onClose();
       }}
       className={cn(
-        'jq-dialog m-auto max-h-[90dvh] w-[calc(100%_-_2rem)] overflow-y-auto rounded-2xl border border-line-gold bg-night-900 p-0 text-ink shadow-lift backdrop:bg-night-950/80 backdrop:backdrop-blur-sm',
+        'jq-dialog m-auto max-h-[90dvh] w-[calc(100%_-_2rem)] overflow-y-auto p-0',
+        toon
+          ? 'theme-toon rounded-[22px] border-[3px] border-toon-ink shadow-toon-lg backdrop:bg-[#1e1b18]/55'
+          : 'rounded-2xl border border-line-gold bg-night-900 text-ink shadow-lift backdrop:bg-night-950/80 backdrop:backdrop-blur-sm',
         { sm: 'max-w-sm', md: 'max-w-xl', lg: 'max-w-3xl' }[size],
         className,
       )}
     >
-      <header className="relative border-b border-line px-6 py-5 pr-16">
-        <h2 id={`${id}-title`} className="font-display text-2xl text-gold-100">
+      <header
+        className={cn(
+          'relative px-6 py-5 pr-16',
+          toon
+            ? 'border-b-[3px] border-toon-ink bg-toon-paper'
+            : 'border-b border-line',
+        )}
+      >
+        <h2
+          id={`${id}-title`}
+          className={
+            toon
+              ? 'font-toon text-2xl font-extrabold leading-tight text-toon-ink'
+              : 'font-display text-2xl text-gold-100'
+          }
+        >
           {title}
         </h2>
         {description && (
-          <div id={`${id}-description`} className="mt-2 text-sm text-ink-muted">
+          <div
+            id={`${id}-description`}
+            className={
+              toon
+                ? 'mt-1.5 text-sm font-semibold text-toon-ink-soft'
+                : 'mt-2 text-sm text-ink-muted'
+            }
+          >
             {description}
           </div>
         )}
-        <IconButton
-          label="Đóng"
-          icon={<X size={18} />}
-          onClick={onClose}
-          className="absolute right-3 top-3"
-        />
+        {/* Bọc ngoài để định vị: nút có sẵn `relative`, `cn` không trộn class. */}
+        <div className="absolute right-3 top-3">
+          {toon ? (
+            <ToonIconButton
+              label="Đóng"
+              icon={<X size={18} strokeWidth={2.8} />}
+              onClick={onClose}
+              variant="secondary"
+              size="sm"
+            />
+          ) : (
+            <IconButton label="Đóng" icon={<X size={18} />} onClick={onClose} />
+          )}
+        </div>
       </header>
       {children && <div className="p-6">{children}</div>}
       {footer && (
-        <footer className="sticky bottom-0 z-10 flex flex-wrap justify-end gap-3 border-t border-line bg-night-900/95 px-6 py-4 backdrop-blur-sm">
+        <footer
+          className={cn(
+            'sticky bottom-0 z-10 flex flex-wrap justify-end gap-3 px-6 py-4',
+            toon
+              ? 'border-t-[3px] border-toon-ink bg-toon-paper'
+              : 'border-t border-line bg-night-900/95 backdrop-blur-sm',
+          )}
+        >
           {footer}
         </footer>
       )}
@@ -124,6 +168,31 @@ export function ConfirmDialog({
   loading,
   ...props
 }: ConfirmDialogProps) {
+  if (props.theme === 'toon') {
+    return (
+      <Dialog
+        {...props}
+        footer={
+          <>
+            <ToonButton
+              variant="secondary"
+              onClick={props.onClose}
+              disabled={loading}
+            >
+              {cancelLabel}
+            </ToonButton>
+            <ToonButton
+              variant={tone === 'danger' ? 'danger' : 'primary'}
+              loading={loading}
+              onClick={onConfirm}
+            >
+              {confirmLabel}
+            </ToonButton>
+          </>
+        }
+      />
+    );
+  }
   return (
     <Dialog
       {...props}

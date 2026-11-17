@@ -1,0 +1,196 @@
+/*
+ * Theme "Cartoon viền đen" cho các màn trong ca làm (onboard, chơi, nhìn
+ * lại, tổng kết). Lấy theo concept art số 5 của nhóm: viền đen gọn, màu tô
+ * phẳng, nền giấy kem, bóng đổ cứng không nhoè. Bản đồ ngân hà và hồ sơ nghề
+ * vẫn dùng Celestial Night: ra ngoài là vũ trụ, vào đảo là nơi làm việc.
+ *
+ * Token sinh utility Tailwind: `bg-toon-paper`, `text-toon-ink`,
+ * `shadow-toon`, `font-toon`…
+ */
+@import '@fontsource/baloo-2/vietnamese-600.css';
+@import '@fontsource/baloo-2/vietnamese-700.css';
+@import '@fontsource/baloo-2/vietnamese-800.css';
+@import '@fontsource/baloo-2/latin-600.css';
+@import '@fontsource/baloo-2/latin-700.css';
+@import '@fontsource/baloo-2/latin-800.css';
+@import '@fontsource/baloo-2/latin-ext-700.css';
+@import '@fontsource-variable/nunito/wght.css';
+
+@theme {
+  /* Nét và giấy */
+  --color-toon-ink: #1e1b18; /* viền, chữ chính */
+  --color-toon-ink-soft: #4a433c; /* chữ phụ */
+  --color-toon-ink-faint: #665c52; /* chú thích */
+  --color-toon-paper: #fffaf0; /* mặt thẻ */
+  --color-toon-cream: #f7ecd6; /* nền màn */
+  --color-toon-sand: #ead8b8; /* mặt lõm, rãnh */
+  --color-toon-shade: #dcc6a0; /* gạch ngang, ô trống */
+
+  /* Màu tô phẳng lấy từ trang phục và bối cảnh trong tranh */
+  --color-toon-olive: #6b7a4b; /* áo len của trưởng nhóm */
+  --color-toon-olive-light: #b9c58f;
+  --color-toon-maroon: #7a2c45; /* yếm của nhà thiết kế */
+  --color-toon-rose: #eea7b4;
+  --color-toon-coral: #e2703f; /* áo của chuyên viên dữ liệu */
+  --color-toon-coral-light: #f6b496;
+  --color-toon-mustard: #f0b63c; /* nút chính */
+  --color-toon-mustard-deep: #c98d17;
+  --color-toon-sky: #a6d2ea; /* ô kính văn phòng */
+  --color-toon-sky-deep: #4f8db3;
+  --color-toon-lilac: #b3acdf; /* trời quán cà phê */
+  --color-toon-mint: #a8dbb9;
+  --color-toon-mint-deep: #3f8a5c;
+  --color-toon-wood: #c98b4e;
+
+  --font-toon:
+    'Baloo 2', 'Nunito Variable', ui-rounded, 'Arial Rounded MT Bold',
+    system-ui, sans-serif;
+  --font-toon-body:
+    'Nunito Variable', 'Nunito', ui-rounded, system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+
+  /* Bóng cứng lệch xuống phải: cảm giác giấy cắt dán, không nhoè. */
+  --shadow-toon-sm: 2px 2px 0 0 #1e1b18;
+  --shadow-toon: 4px 4px 0 0 #1e1b18;
+  --shadow-toon-lg: 6px 6px 0 0 #1e1b18;
+  --shadow-toon-press: 1px 1px 0 0 #1e1b18;
+  --shadow-toon-focus: 0 0 0 3px #fffaf0, 0 0 0 6px #4f8db3;
+
+  --animate-toon-bob: toon-bob 3.2s ease-in-out infinite;
+  --animate-toon-hop: toon-hop 0.55s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+  --animate-toon-shake: toon-shake 0.5s ease-in-out both;
+  --animate-toon-pop: toon-pop 0.32s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+  --animate-toon-slide: toon-slide 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-toon-wiggle: toon-wiggle 2.4s ease-in-out infinite;
+
+  @keyframes toon-bob {
+    0%,
+    100% {
+      transform: translateY(0) scaleY(1);
+    }
+    50% {
+      transform: translateY(-4px) scaleY(1.008);
+    }
+  }
+  @keyframes toon-hop {
+    0% {
+      transform: translateY(0);
+    }
+    35% {
+      transform: translateY(-14px);
+    }
+    65% {
+      transform: translateY(0) scaleY(0.97);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes toon-shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20%,
+    60% {
+      transform: translateX(-5px) rotate(-0.6deg);
+    }
+    40%,
+    80% {
+      transform: translateX(5px) rotate(0.6deg);
+    }
+  }
+  @keyframes toon-pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.6) translateY(6px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  @keyframes toon-slide {
+    0% {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes toon-wiggle {
+    0%,
+    100% {
+      transform: rotate(-2deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+  }
+}
+
+/* Vùng theme: chữ, nền và lựa chọn văn bản trong thế giới cartoon. */
+@utility theme-toon {
+  font-family: var(--font-toon-body);
+  color: var(--color-toon-ink);
+  background-color: var(--color-toon-cream);
+  & ::selection {
+    background: rgb(240 182 60 / 0.55);
+    color: var(--color-toon-ink);
+  }
+  & :focus-visible {
+    outline: none;
+  }
+}
+
+/* Thẻ giấy viền đen, bóng cứng. */
+@utility toon-card {
+  background-color: var(--color-toon-paper);
+  border: 3px solid var(--color-toon-ink);
+  border-radius: 18px;
+  box-shadow: var(--shadow-toon);
+}
+
+/* Nền giấy có chấm mờ, dùng cho mặt bàn và khung lớn. */
+@utility toon-dots {
+  background-image: radial-gradient(
+    rgb(30 27 24 / 0.09) 1.2px,
+    transparent 1.3px
+  );
+  background-size: 14px 14px;
+}
+
+/* Kẻ dòng như giấy sổ tay. */
+@utility toon-ruled {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    rgb(79 141 179 / 0.22) 27px,
+    rgb(79 141 179 / 0.22) 28px
+  );
+}
+
+/* Chữ tiêu đề viền đen dày kiểu logo game. */
+@utility toon-title {
+  font-family: var(--font-toon);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  -webkit-text-stroke: 0;
+  text-shadow:
+    2px 2px 0 var(--color-toon-ink),
+    -1px -1px 0 var(--color-toon-ink),
+    1px -1px 0 var(--color-toon-ink),
+    -1px 1px 0 var(--color-toon-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toon *,
+  .theme-toon *::before,
+  .theme-toon *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
