@@ -20,8 +20,14 @@ describe('hành trang riêng tư', () => {
       await screen.findByRole('heading', { name: 'Người khám phá' }),
     ).toBeTruthy();
     expect(screen.getByText(/♊︎ Song Tử/)).toBeTruthy();
+    expect(screen.queryByText('Ước mơ của bạn là gì?')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Sửa' }));
     await screen.findByText('Ước mơ của bạn là gì?');
-    expect(screen.getAllByRole('group')).toHaveLength(5);
+    expect(
+      screen
+        .getAllByRole('group')
+        .filter((node) => node.tagName === 'FIELDSET'),
+    ).toHaveLength(5);
     fireEvent.click(
       screen.getByRole('checkbox', {
         name: 'Làm ra thứ được nhiều người dùng',

@@ -2,21 +2,26 @@ import { useState, type FormEvent } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import {
-  Button,
-  Badge,
-  Callout,
+  ToonButton,
+  ToonBadge,
   ConfirmDialog,
-  EmptyState,
-  Field,
-  Input,
+  ToonField,
+  ToonInput,
   LoadingBlock,
-  PageHeader,
-  Panel,
-  PanelHeader,
-  PasswordInput,
-  Select,
   useToast,
 } from '@datn/ui';
+import {
+  Notice,
+  EmptyMessage,
+  FormHeading,
+  PaperCard,
+  CardHeading,
+  ToonPassword,
+  ToonSelect,
+  ReadMore,
+} from '../profile/ProfileKit';
+import { ProfileCanvas } from '../profile/ProfileKit';
+
 import { api } from '../../api';
 import { errorText, keys, useMe, useSignOut } from '../../api/hooks';
 import { useSession } from '../../api/session';
@@ -26,10 +31,12 @@ export default function SettingsPage() {
   const me = useMe();
   if (me.isError)
     return (
-      <EmptyState
+      <EmptyMessage
         title="Chưa tải được tài khoản"
         description={errorText(me.error)}
-        action={<Button onClick={() => void me.refetch()}>Thử lại</Button>}
+        action={
+          <ToonButton onClick={() => void me.refetch()}>Thử lại</ToonButton>
+        }
       />
     );
   if (!me.data) return <LoadingBlock text="Đang mở cài đặt…" />;
@@ -94,14 +101,14 @@ function SettingsForm({ me }: { me: Me }) {
     change.mutate();
   };
   return (
-    <div className="mx-auto max-w-3xl space-y-6 px-4 py-8 sm:py-12">
-      <PageHeader
+    <ProfileCanvas narrow>
+      <FormHeading
         eyebrow="Góc riêng của bạn"
         title="Cài đặt tài khoản"
-        description="Bạn quyết định cách mình xuất hiện và những điều muốn giữ lại."
+        description="Bạn quản lý tài khoản."
       />
-      <Panel padding="lg">
-        <PanelHeader title="Hồ sơ" />
+      <PaperCard>
+        <CardHeading title="Hồ sơ" />
         <form
           className="space-y-4"
           onSubmit={(event) => {
@@ -109,17 +116,17 @@ function SettingsForm({ me }: { me: Me }) {
             if (displayName.trim()) save.mutate();
           }}
         >
-          <Field label="Tên hiển thị">
-            <Input
+          <ToonField label="Tên hiển thị">
+            <ToonInput
               required
               maxLength={80}
               autoComplete="nickname"
               value={displayName}
               onChange={(event) => setDisplayName(event.target.value)}
             />
-          </Field>
-          <Field label="Giai đoạn đang ở">
-            <Select
+          </ToonField>
+          <ToonField label="Giai đoạn đang ở">
+            <ToonSelect
               value={stage ?? ''}
               onChange={(event) =>
                 setStage((event.target.value || null) as Me['stage'])
@@ -130,30 +137,30 @@ function SettingsForm({ me }: { me: Me }) {
               <option value="sinh_vien">Sinh viên</option>
               <option value="moi_di_lam">Mới đi làm</option>
               <option value="chuyen_nghe">Đang chuyển nghề</option>
-            </Select>
-          </Field>
+            </ToonSelect>
+          </ToonField>
           {save.isError && (
-            <Callout tone="danger">{errorText(save.error)}</Callout>
+            <Notice tone="danger">{errorText(save.error)}</Notice>
           )}
-          <Button
+          <ToonButton
             type="submit"
             loading={save.isPending}
             disabled={!displayName.trim()}
           >
             Lưu hồ sơ
-          </Button>
+          </ToonButton>
         </form>
-      </Panel>
-      <Panel padding="lg">
-        <PanelHeader title="Bảo mật" />
-        <p className="mb-5 text-sm text-ink-muted">
+      </PaperCard>
+      <PaperCard>
+        <CardHeading title="Bảo mật" />
+        <p className="mb-5 text-sm text-toon-ink-soft">
           Google{' '}
-          <Badge tone={me.hasGoogle ? 'success' : 'muted'}>
+          <ToonBadge tone={me.hasGoogle ? 'mint' : 'paper'}>
             {me.hasGoogle ? 'Đã liên kết' : 'Chưa liên kết'}
-          </Badge>
+          </ToonBadge>
         </p>
         <form className="space-y-4" onSubmit={changePassword}>
-          <Field
+          <ToonField
             label="Mật khẩu hiện tại"
             hint={
               me.hasGoogle
@@ -161,16 +168,16 @@ function SettingsForm({ me }: { me: Me }) {
                 : undefined
             }
           >
-            <PasswordInput
+            <ToonPassword
               autoComplete="current-password"
               value={passwords.current}
               onChange={(event) =>
                 setPasswords({ ...passwords, current: event.target.value })
               }
             />
-          </Field>
-          <Field label="Mật khẩu mới" hint="Ít nhất 8 ký tự.">
-            <PasswordInput
+          </ToonField>
+          <ToonField label="Mật khẩu mới" hint="Ít nhất 8 ký tự.">
+            <ToonPassword
               required
               minLength={8}
               autoComplete="new-password"
@@ -179,9 +186,9 @@ function SettingsForm({ me }: { me: Me }) {
                 setPasswords({ ...passwords, next: event.target.value })
               }
             />
-          </Field>
-          <Field label="Nhập lại mật khẩu mới">
-            <PasswordInput
+          </ToonField>
+          <ToonField label="Nhập lại mật khẩu mới">
+            <ToonPassword
               required
               autoComplete="new-password"
               value={passwords.confirm}
@@ -189,22 +196,26 @@ function SettingsForm({ me }: { me: Me }) {
                 setPasswords({ ...passwords, confirm: event.target.value })
               }
             />
-          </Field>
-          {passwordError && <Callout tone="danger">{passwordError}</Callout>}
+          </ToonField>
+          {passwordError && <Notice tone="danger">{passwordError}</Notice>}
           {change.isError && (
-            <Callout tone="danger">{errorText(change.error)}</Callout>
+            <Notice tone="danger">{errorText(change.error)}</Notice>
           )}
-          <Button type="submit" variant="secondary" loading={change.isPending}>
+          <ToonButton
+            type="submit"
+            variant="secondary"
+            loading={change.isPending}
+          >
             Đổi mật khẩu
-          </Button>
+          </ToonButton>
         </form>
-      </Panel>
-      <Panel padding="lg">
-        <PanelHeader
+      </PaperCard>
+      <PaperCard>
+        <CardHeading
           title="Quyền riêng tư"
           description="Hành trang chỉ dành cho bạn xem."
         />
-        <ul className="mb-4 space-y-3 text-sm text-ink-muted">
+        <ul className="mb-4 space-y-3 text-sm text-toon-ink-soft">
           <li>
             Thông tin tài khoản để đăng nhập; ngày sinh để xác định chòm sao và
             xử lý đồng ý theo độ tuổi.
@@ -214,10 +225,7 @@ function SettingsForm({ me }: { me: Me }) {
             xem lại điều đã làm.
           </li>
           <li>
-            18 thẻ Get to know me để phác điểm xuất phát và vùng nghề nên thử.
-            Mục tiêu, sở thích và phần kể thêm chỉ để bạn tự nhìn lại và để nhân
-            vật động viên khi chơi, không dùng để gợi ý nghề. Bạn có thể xoá
-            phần kể về bạn.
+            <ReadMore text="18 thẻ Get to know me để phác điểm xuất phát và vùng nghề nên thử. Mục tiêu, sở thích và phần kể thêm chỉ để bạn tự nhìn lại và để nhân vật động viên khi chơi, không dùng để gợi ý nghề. Bạn có thể xoá phần kể về bạn." />
           </li>
         </ul>
         <Link
@@ -226,18 +234,16 @@ function SettingsForm({ me }: { me: Me }) {
         >
           Xoá phần kể về bạn
         </Link>
-        <Callout tone="ai" className="mt-5">
-          AI dẫn chuyện và chấm câu trả lời trong ca làm. Chữ tự do và mục tiêu
-          có thể được gửi tới nhà cung cấp model để tạo nhận xét. Kết quả chỉ là
-          thông tin tham khảo từ việc chơi.
-        </Callout>
-      </Panel>
-      <Panel padding="lg">
-        <PanelHeader
+        <Notice tone="ai" className="mt-5">
+          <ReadMore text="AI dẫn chuyện và chấm câu trả lời trong ca làm. Chữ tự do và mục tiêu có thể được gửi tới nhà cung cấp model để tạo nhận xét. Kết quả chỉ là thông tin tham khảo từ việc chơi." />
+        </Notice>
+      </PaperCard>
+      <PaperCard>
+        <CardHeading
           title="Vùng nguy hiểm"
           description="Xoá tài khoản là thao tác không thể hoàn tác."
         />
-        <Button
+        <ToonButton
           variant="danger"
           onClick={() => {
             setDeleting(true);
@@ -246,17 +252,17 @@ function SettingsForm({ me }: { me: Me }) {
           }}
         >
           Xoá tài khoản
-        </Button>
-      </Panel>
-      <Panel>
-        <PanelHeader
+        </ToonButton>
+      </PaperCard>
+      <PaperCard>
+        <CardHeading
           title="Đăng xuất"
           description="Bạn có thể quay lại để tiếp tục hành trình."
         />
         {signOut.isError && (
-          <Callout tone="danger">{errorText(signOut.error)}</Callout>
+          <Notice tone="danger">{errorText(signOut.error)}</Notice>
         )}
-        <Button
+        <ToonButton
           variant="ghost"
           loading={signOut.isPending}
           onClick={() =>
@@ -264,9 +270,10 @@ function SettingsForm({ me }: { me: Me }) {
           }
         >
           Đăng xuất
-        </Button>
-      </Panel>
+        </ToonButton>
+      </PaperCard>
       <ConfirmDialog
+        theme="toon"
         open={deleting}
         onClose={() => {
           if (!remove.isPending) setDeleting(false);
@@ -284,19 +291,19 @@ function SettingsForm({ me }: { me: Me }) {
           remove.mutate();
         }}
       >
-        <Field label="Gõ XOÁ" error={deleteError}>
-          <Input
+        <ToonField label="Gõ XOÁ" error={deleteError}>
+          <ToonInput
             value={confirmation}
             autoComplete="off"
             onChange={(event) => setConfirmation(event.target.value)}
           />
-        </Field>
+        </ToonField>
         {remove.isError && (
-          <Callout tone="danger" className="mt-4">
+          <Notice tone="danger" className="mt-4">
             {errorText(remove.error)}
-          </Callout>
+          </Notice>
         )}
       </ConfirmDialog>
-    </div>
+    </ProfileCanvas>
   );
 }

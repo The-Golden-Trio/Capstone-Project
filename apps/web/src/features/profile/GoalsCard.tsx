@@ -2,17 +2,22 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import {
-  Button,
-  Callout,
-  Checkbox,
-  EmptyState,
-  Field,
+  ToonButton,
+  ToonCheckbox,
+  ToonField,
   LoadingBlock,
-  Panel,
-  PanelHeader,
-  Textarea,
+  ToonTextarea,
   useToast,
 } from '@datn/ui';
+import {
+  Notice,
+  ReadMore,
+  EmptyMessage,
+  PaperCard,
+  CardHeading,
+  Foldout,
+} from './ProfileKit';
+
 import { api } from '../../api';
 import { errorText, keys, useQuizForm } from '../../api/hooks';
 import type { PlayerRecord, QuizAnswers } from '../../api/types';
@@ -27,9 +32,7 @@ export function GoalsCard({
   const form = useQuizForm();
   const qc = useQueryClient();
   const { toast } = useToast();
-  const [editing, setEditing] = useState(
-    !record.goals || Object.keys(record.goals).length === 0,
-  );
+  const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState<QuizAnswers['goals']>(record.goals ?? {});
   const save = useMutation({
     mutationFn: () => api.progress.updateGoals(draft),
@@ -41,13 +44,13 @@ export function GoalsCard({
     },
   });
   return (
-    <Panel padding="lg">
-      <PanelHeader
+    <PaperCard>
+      <CardHeading
         title="Mục tiêu của bạn"
         description="Điều bạn muốn thử có thể thay đổi theo từng chặng."
         action={
           !editing && (
-            <Button
+            <ToonButton
               variant="ghost"
               size="sm"
               onClick={() => {
@@ -56,18 +59,18 @@ export function GoalsCard({
               }}
             >
               Sửa
-            </Button>
+            </ToonButton>
           )
         }
       />
       {form.isError ? (
-        <EmptyState
+        <EmptyMessage
           title="Chưa tải được câu hỏi"
           description={errorText(form.error)}
           action={
-            <Button variant="secondary" onClick={() => void form.refetch()}>
+            <ToonButton variant="secondary" onClick={() => void form.refetch()}>
               Thử lại
-            </Button>
+            </ToonButton>
           }
         />
       ) : !form.data ? (
@@ -89,7 +92,7 @@ export function GoalsCard({
                 </legend>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {question.options.map((option) => (
-                    <Checkbox
+                    <ToonCheckbox
                       disabled={save.isPending}
                       key={option}
                       label={option}
@@ -108,12 +111,12 @@ export function GoalsCard({
                     />
                   ))}
                 </div>
-                <Field
+                <ToonField
                   label={`Kể thêm · ${question.label}`}
                   optional
                   counter={`${answer.note.length}/500`}
                 >
-                  <Textarea
+                  <ToonTextarea
                     maxLength={500}
                     disabled={save.isPending}
                     value={answer.note}
@@ -124,11 +127,11 @@ export function GoalsCard({
                       })
                     }
                   />
-                </Field>
+                </ToonField>
                 {hasDistressSignal(answer.note) && (
                   <p
                     role="status"
-                    className="mt-2 rounded-md border border-info/40 bg-info-deep/40 p-3 text-sm text-ink"
+                    className="mt-2 rounded-md border border-toon-ink bg-toon-sky p-3 text-sm text-toon-ink"
                   >
                     {DISTRESS_MESSAGE}
                   </p>
@@ -136,40 +139,50 @@ export function GoalsCard({
               </fieldset>
             );
           })}
-          <Callout tone="ai">
+          <Notice tone="ai">
             Mục tiêu và phần kể thêm có thể được gửi tới nhà cung cấp model khi
             AI nhận xét ca làm. Chỉ chia sẻ điều bạn muốn.
-          </Callout>
+          </Notice>
           {save.isError && (
-            <Callout tone="danger">{errorText(save.error)}</Callout>
+            <Notice tone="danger">{errorText(save.error)}</Notice>
           )}
           <div className="flex gap-3">
-            <Button type="submit" variant="secondary" loading={save.isPending}>
+            <ToonButton
+              type="submit"
+              variant="secondary"
+              loading={save.isPending}
+            >
               Lưu mục tiêu
-            </Button>
-            {record.goals && (
-              <Button variant="ghost" onClick={() => setEditing(false)}>
-                Huỷ
-              </Button>
-            )}
+            </ToonButton>
+            <ToonButton variant="ghost" onClick={() => setEditing(false)}>
+              Huỷ
+            </ToonButton>
           </div>
         </form>
       ) : (
-        <dl className="space-y-4">
-          {form.data.goals.map((question) => (
-            <div key={question.id}>
-              <dt className="eyebrow">{question.label}</dt>
-              <dd className="mt-1 break-words text-sm text-ink-muted">
-                {[
-                  ...(record.goals?.[question.id]?.picked ?? []),
-                  record.goals?.[question.id]?.note,
-                ]
-                  .filter(Boolean)
-                  .join(' · ') || 'Chưa kể'}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <Foldout title="Xem mục tiêu đã kể">
+          <dl className="space-y-4">
+            {form.data.goals.map((question) => (
+              <div key={question.id}>
+                <dt className="font-toon text-xs font-bold uppercase tracking-wider">
+                  {question.label}
+                </dt>
+                <dd className="mt-1 break-words text-sm text-toon-ink-soft">
+                  <ReadMore
+                    text={
+                      [
+                        ...(record.goals?.[question.id]?.picked ?? []),
+                        record.goals?.[question.id]?.note,
+                      ]
+                        .filter(Boolean)
+                        .join(' · ') || 'Chưa kể'
+                    }
+                  />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Foldout>
       )}
       {!quizDone && (
         <Link
@@ -179,6 +192,6 @@ export function GoalsCard({
           Hoặc làm Get to know me để được gợi ý nghề nên thử
         </Link>
       )}
-    </Panel>
+    </PaperCard>
   );
 }

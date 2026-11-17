@@ -1,4 +1,5 @@
-import { Button, Skeleton } from '@datn/ui';
+import { ToonButton, Skeleton } from '@datn/ui';
+
 import { errorText, useCatalogue, useRunSummary } from '../../api/hooks';
 
 /** Một số nguồn demo trả URL thay vì đường nghề; tra ngữ cảnh ca qua hook chung. */
@@ -13,9 +14,9 @@ function ResolvedRunPath({ runId }: { runId: string }) {
 
   if (summary.isError || catalogue.isError) {
     return (
-      <span className="text-ink-faint">
+      <span className="text-toon-ink-soft">
         Chưa tải được đường nghề · {errorText(summary.error ?? catalogue.error)}{' '}
-        <Button
+        <ToonButton
           variant="ghost"
           size="sm"
           onClick={() => {
@@ -24,7 +25,7 @@ function ResolvedRunPath({ runId }: { runId: string }) {
           }}
         >
           Thử lại
-        </Button>
+        </ToonButton>
       </span>
     );
   }

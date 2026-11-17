@@ -1,21 +1,19 @@
-import {
-  EmptyState,
-  MEDAL,
-  Medal,
-  Panel,
-  PanelHeader,
-  StackedBar,
-} from '@datn/ui';
+import { MEDAL, ToonBadge, ToonProgress } from '@datn/ui';
+import { EmptyMessage, Foldout } from './ProfileKit';
+
 import type { PlayerRecord } from '../../api/types';
 
 export function KeywordsCard({ record }: { record: PlayerRecord }) {
   const groups = [...new Set(record.keywords.map((keyword) => keyword.group))];
   return (
-    <Panel padding="lg">
-      <PanelHeader
-        title="Kỹ năng nghề đã mang về"
-        description="Hoàn thành cấp nghề để nhận huy chương Làm quen, Thành thạo và Chuyên sâu."
-      />
+    <Foldout
+      title="Kỹ năng nghề đã mang về"
+      className="bg-toon-paper p-5 text-toon-ink shadow-toon"
+    >
+      <p className="mb-5 text-sm text-toon-ink-soft">
+        Hoàn thành cấp nghề để nhận huy chương Làm quen, Thành thạo và Chuyên
+        sâu.
+      </p>
       {groups.length ? (
         <div className="space-y-6">
           {groups.map((group) => {
@@ -29,39 +27,56 @@ export function KeywordsCard({ record }: { record: PlayerRecord }) {
                   {keywords.map((keyword) => (
                     <div
                       key={keyword.id}
-                      className="flex items-center gap-2 rounded-lg border border-line p-2"
+                      className="flex items-center gap-2 rounded-lg border border-toon-ink p-2"
                     >
-                      <Medal level={keyword.level} size={32} />
+                      <ToonBadge
+                        tone={
+                          keyword.level === 3
+                            ? 'mustard'
+                            : keyword.level === 2
+                              ? 'sky'
+                              : 'coral'
+                        }
+                      >
+                        {keyword.level}
+                      </ToonBadge>
                       <span className="max-w-48 text-xs">
                         {keyword.name}
-                        <span className="mt-1 block text-ink-faint">
+                        <span className="mt-1 block text-toon-ink-soft">
                           {MEDAL[keyword.level].name}
                         </span>
                       </span>
                     </div>
                   ))}
                 </div>
-                <StackedBar
-                  label={`Kỹ năng nghề · ${group}`}
-                  items={([1, 2, 3] as const).map((level) => ({
-                    key: String(level),
-                    label: MEDAL[level].name,
-                    value: keywords.filter((keyword) => keyword.level === level)
-                      .length,
-                    color: MEDAL[level].color,
-                  }))}
-                />
+                <div
+                  aria-label={`Kỹ năng nghề · ${group}`}
+                  className="grid gap-3 sm:grid-cols-3"
+                >
+                  {([1, 2, 3] as const).map((level) => (
+                    <ToonProgress
+                      key={level}
+                      label={MEDAL[level].name}
+                      max={keywords.length}
+                      value={
+                        keywords.filter((keyword) => keyword.level === level)
+                          .length
+                      }
+                      showValue
+                    />
+                  ))}
+                </div>
               </section>
             );
           })}
         </div>
       ) : (
-        <EmptyState
+        <EmptyMessage
           className="grayscale opacity-60"
           title="chơi thêm để mở"
           description="Huy chương đầu tiên sẽ xuất hiện khi bạn hoàn thành một cấp."
         />
       )}
-    </Panel>
+    </Foldout>
   );
 }

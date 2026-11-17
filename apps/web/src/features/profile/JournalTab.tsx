@@ -2,17 +2,15 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { profile } from '@datn/game-core';
+import { ToonBadge, ToonButton, ConfirmDialog, useToast } from '@datn/ui';
 import {
-  Badge,
-  Button,
-  Callout,
-  ConfirmDialog,
-  EmptyState,
-  Panel,
-  PanelHeader,
-  Timeline,
-  useToast,
-} from '@datn/ui';
+  Notice,
+  EmptyMessage,
+  PaperCard,
+  CardHeading,
+  RecordTimeline,
+} from './ProfileKit';
+
 import { api } from '../../api';
 import { errorText, keys } from '../../api/hooks';
 import { RunPath } from './RunPath';
@@ -42,13 +40,13 @@ export function JournalTab({ record }: { record: PlayerRecord }) {
   });
   return (
     <div className="space-y-6">
-      <Panel padding="lg">
-        <PanelHeader
+      <PaperCard>
+        <CardHeading
           title="Nhật ký những lần thử"
-          description="Xem lại lựa chọn, kết quả và điều bạn đã luyện."
+          description="Xem lại các ca."
         />
         {record.journal.length ? (
-          <Timeline
+          <RecordTimeline
             items={[...record.journal]
               .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
               .map((entry) => ({
@@ -75,14 +73,14 @@ export function JournalTab({ record }: { record: PlayerRecord }) {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {entry.deltas.map((delta) => (
-                        <Badge
+                        <ToonBadge
                           key={delta.id}
-                          tone={delta.delta < 0 ? 'danger' : 'neutral'}
+                          tone={delta.delta < 0 ? 'coral' : 'paper'}
                         >
                           {profile.softSkillGroup(delta.id).short}{' '}
                           {delta.delta < 0 ? '−' : '+'}
                           {Math.abs(delta.delta).toLocaleString('vi-VN')}
-                        </Badge>
+                        </ToonBadge>
                       ))}
                     </div>
                   </div>
@@ -90,22 +88,23 @@ export function JournalTab({ record }: { record: PlayerRecord }) {
               }))}
           />
         ) : (
-          <EmptyState
+          <EmptyMessage
             title="Nhật ký còn để ngỏ"
             description="Ca làm đầu tiên sẽ mở trang đầu tiên."
           />
         )}
-      </Panel>
-      <Panel id="quyen-rieng-tu" padding="lg" className="scroll-mt-24">
-        <PanelHeader
+      </PaperCard>
+      <PaperCard id="quyen-rieng-tu" className="scroll-mt-24">
+        <CardHeading
           title="Chuyện của bạn, quyền của bạn"
           description="Bạn có thể rút đồng ý và xoá sở thích, mục tiêu cùng phần tự kể. Lịch sử chơi được giữ riêng để lưu tiến độ."
         />
-        <Button variant="danger" onClick={() => setConfirm(true)}>
+        <ToonButton variant="danger" onClick={() => setConfirm(true)}>
           Xoá phần kể về bạn
-        </Button>
-      </Panel>
+        </ToonButton>
+      </PaperCard>
       <ConfirmDialog
+        theme="toon"
         open={confirm}
         onClose={() => {
           if (!remove.isPending) setConfirm(false);
@@ -118,7 +117,7 @@ export function JournalTab({ record }: { record: PlayerRecord }) {
         onConfirm={() => remove.mutate()}
       >
         {remove.isError && (
-          <Callout tone="danger">{errorText(remove.error)}</Callout>
+          <Notice tone="danger">{errorText(remove.error)}</Notice>
         )}
       </ConfirmDialog>
     </div>

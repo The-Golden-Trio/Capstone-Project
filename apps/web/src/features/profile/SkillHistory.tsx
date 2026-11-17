@@ -1,6 +1,8 @@
 import { useId, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { EmptyState, cn } from '@datn/ui';
+import { cn } from '@datn/ui';
+import { EmptyMessage } from './ProfileKit';
+
 import type { SoftSkillState } from '../../api/types';
 import { RunPath } from './RunPath';
 import { chronological } from './recordView';
@@ -17,7 +19,7 @@ export function SkillHistory({
   const [active, setActive] = useState<number | null>(null);
   if (events.length < 2)
     return (
-      <EmptyState
+      <EmptyMessage
         className="grayscale opacity-60"
         title="chơi thêm để mở"
         description="Cần ít nhất hai ca có chấm nhóm này để vẽ đường tích luỹ."
@@ -42,7 +44,7 @@ export function SkillHistory({
         <polyline
           points={events.map((_, index) => point(index).join(',')).join(' ')}
           fill="none"
-          stroke="#d4b06a"
+          stroke="#1e1b18"
           strokeWidth="2"
         />
         {events.map((event, index) => {
@@ -74,7 +76,7 @@ export function SkillHistory({
                   cy={y}
                   r="9"
                   fill="none"
-                  stroke="#c7d2e0"
+                  stroke="#1e1b18"
                   strokeWidth="1.5"
                 />
               )}
@@ -82,13 +84,15 @@ export function SkillHistory({
                 cx={x}
                 cy={y}
                 r="5"
-                fill={event.delta < 0 ? '#ef8a8a' : '#f0d79a'}
+                stroke="#1e1b18"
+                strokeWidth="1.5"
+                fill={event.delta < 0 ? '#ef6f5e' : '#f6cf5e'}
               />
               <text
                 x={x}
                 y={y - 9}
                 textAnchor="middle"
-                fill="#c7d2e0"
+                fill="#1e1b18"
                 fontSize="9"
               >
                 {event.delta < 0 ? '−' : '+'}
@@ -110,10 +114,10 @@ export function SkillHistory({
             onMouseEnter={() => setActive(index)}
             onClick={() => setActive(index)}
             className={cn(
-              'rounded border px-2 py-1 text-xs focus-visible:shadow-focus',
+              'rounded border px-2 py-1 text-xs focus-visible:shadow-toon-focus',
               activeIndex === index
-                ? 'border-line-gold text-gold-200'
-                : 'border-line text-ink-muted',
+                ? 'border-toon-ink text-toon-maroon'
+                : 'border-toon-ink text-toon-ink-soft',
             )}
           >
             #{index + 1} {event.delta < 0 ? '−' : '+'}
@@ -124,7 +128,7 @@ export function SkillHistory({
       <figcaption
         id={tooltipId}
         aria-live="polite"
-        className="mt-3 space-y-1 text-xs text-ink-muted"
+        className="mt-3 space-y-1 text-xs text-toon-ink-soft"
       >
         <Link
           to={`/play/${current.runId}/summary`}
