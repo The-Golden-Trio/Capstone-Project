@@ -546,6 +546,7 @@ export function ToonProgress({
   label,
   labelHidden = false,
   showValue = false,
+  valueText,
   className,
 }: {
   value: number;
@@ -555,6 +556,8 @@ export function ToonProgress({
   /** Nhãn chỉ dành cho trình đọc màn hình (khi tiêu đề đã nằm ngay trên). */
   labelHidden?: boolean;
   showValue?: boolean;
+  /** Chữ thay cho "giá trị/tối đa" (vd "40%" tỷ trọng, "3 bậc"); cũng là aria-valuetext. */
+  valueText?: string;
   className?: string;
 }) {
   const limit = Number.isFinite(max) && max > 0 ? max : 100;
@@ -570,7 +573,8 @@ export function ToonProgress({
           {label && !labelHidden && <span>{label}</span>}
           {showValue && (
             <span className="tabular-nums">
-              {current.toLocaleString('vi-VN')}/{limit.toLocaleString('vi-VN')}
+              {valueText ??
+                `${current.toLocaleString('vi-VN')}/${limit.toLocaleString('vi-VN')}`}
             </span>
           )}
         </div>
@@ -581,6 +585,7 @@ export function ToonProgress({
         aria-valuemin={0}
         aria-valuemax={limit}
         aria-valuenow={current}
+        aria-valuetext={valueText}
         className="h-5 overflow-hidden rounded-full border-[3px] border-toon-ink bg-toon-sand"
       >
         <div

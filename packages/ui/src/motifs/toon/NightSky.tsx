@@ -82,13 +82,14 @@ export function NightSky({
       )}
       {scene === 'profile' && (
         <>
-          <div className="absolute left-[4%] top-[9%] -rotate-12">
+          {/* Điện thoại: bỏ thiên thể lớn để không đè lên tiêu đề trang. */}
+          <div className="absolute left-[4%] top-[9%] -rotate-12 max-sm:hidden">
             <CartoonMoon size={110} face="smile" />
           </div>
           <div className="absolute bottom-[8%] right-[3%]">
             <Cloud size={220} />
           </div>
-          <div className="absolute right-[4%] top-[6%]">
+          <div className="absolute right-[4%] top-[6%] max-sm:hidden">
             <CartoonPlanet size={100} seed={seed} />
           </div>
         </>
