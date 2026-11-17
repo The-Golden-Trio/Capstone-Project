@@ -160,7 +160,11 @@ describe('Báo cáo cuối ca khi có điểm', () => {
     const mentor = screen.getByRole('complementary', {
       name: 'Đồng nghiệp cuối ca',
     });
-    expect(within(mentor).getByText('Đã có hướng xử lý')).toBeTruthy();
+    // Kết cục chỉ hiện một lần ở tiêu đề, đồng nghiệp đứng cạnh không lặp lại (giảm chữ).
+    expect(within(mentor).queryByText('Đã có hướng xử lý')).toBeNull();
+    expect(
+      screen.getByRole('heading', { name: 'Đã có hướng xử lý' }),
+    ).toBeTruthy();
     expect(
       screen
         .getByRole('link', { name: 'Về đảo của cấp này' })

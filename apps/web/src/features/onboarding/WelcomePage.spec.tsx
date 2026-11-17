@@ -23,9 +23,7 @@ it('giữ hai buff và giới hạn của chòm sao, lưu giai đoạn rồi m�
   expect(
     screen.getByText('Mặt cần để ý · Tìm hiểu thêm').closest('details')?.open,
   ).toBe(false);
-  fireEvent.click(
-    screen.getByRole('button', { name: 'Tiếp tục', exact: true }),
-  );
+  fireEvent.click(screen.getByRole('button', { name: 'Tiếp tục' }));
   const submit = screen.getByRole('button', { name: 'Lưu và tiếp tục' });
   expect(submit.hasAttribute('disabled')).toBe(true);
   fireEvent.click(screen.getByRole('radio', { name: 'Sinh viên' }));
@@ -49,11 +47,9 @@ it('giữ hai buff và giới hạn của chòm sao, lưu giai đoạn rồi m�
 });
 
 it('thiếu ngày sinh thì bỏ chòm sao; có thể bỏ qua giai đoạn mà không ghi API', async () => {
-  const session = await signInDemo();
-  vi.spyOn(api.account, 'me').mockResolvedValue({
-    ...session.user,
-    dateOfBirth: null,
-  });
+  await signInDemo();
+  const me = await api.account.me();
+  vi.spyOn(api.account, 'me').mockResolvedValue({ ...me, dateOfBirth: null });
   const save = vi.spyOn(api.account, 'updateMe');
   renderWithProviders(<WelcomePage />);
   expect(

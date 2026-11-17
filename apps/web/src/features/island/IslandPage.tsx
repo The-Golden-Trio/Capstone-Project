@@ -101,37 +101,35 @@ export default function IslandPage() {
           <div className="min-w-0 flex-1 pb-8">
             <Link
               to={`/occupations/${data.occupationCode}/levels?level=${data.level.levelNo}`}
-              className="inline-flex items-center gap-1.5 rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-1 text-sm font-bold text-toon-ink shadow-toon-sm hover:-translate-y-px"
+              className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-sm font-bold text-toon-ink focus-visible:shadow-toon-focus"
             >
-              <ArrowLeft size={15} strokeWidth={2.8} /> Quần đảo{' '}
-              {data.occupationName}
+              <ArrowLeft size={15} aria-hidden /> Lộ trình
             </Link>
-            <div className="toon-card relative mt-6 max-w-2xl p-5 pt-7 shadow-toon-lg sm:p-7 sm:pt-8">
-              <span className="absolute -top-4 left-5 inline-flex -rotate-2 items-center gap-1.5 rounded-xl border-[3px] border-toon-ink bg-toon-mustard px-3 py-0.5 font-toon text-sm font-extrabold text-toon-ink shadow-toon-sm">
+            <div className="toon-card relative mt-4 max-w-2xl p-5 sm:p-7">
+              <p className="font-toon text-sm font-bold text-toon-ink-soft">
                 Cấp {data.level.levelNo} · {data.company.name}
-              </span>
-              <h1 className="font-toon text-3xl font-extrabold leading-tight text-toon-ink sm:text-4xl">
+              </p>
+              <h1 className="mt-1 font-toon text-3xl font-extrabold text-toon-ink">
                 {data.level.title}
               </h1>
-              <p className="mt-2 font-semibold leading-relaxed text-toon-ink-soft">
-                {data.level.coreOutput ??
-                  'Làm quen với đồng nghiệp, nhận nhiệm vụ và thử sức qua từng ca làm.'}
-              </p>
-              <div className="mt-4">
-                {total === 0 ? (
-                  <p className="text-sm font-bold text-toon-ink-soft">
-                    Cấp này chưa có màn chính
-                  </p>
-                ) : (
-                  <ToonProgress
-                    value={data.progress.done}
-                    max={total}
-                    tone="mint"
-                    label={`${data.progress.done}/${total} màn chính đã hoàn thành`}
-                    showValue
-                  />
-                )}
-              </div>
+              <details className="mt-3 text-sm">
+                <summary className="cursor-pointer rounded font-bold focus-visible:shadow-toon-focus">
+                  Vai ở cấp này
+                </summary>
+                <p className="mt-2 leading-relaxed">
+                  {data.level.coreOutput ??
+                    'Làm quen với đồng nghiệp, nhận nhiệm vụ và thử sức qua từng ca làm.'}
+                </p>
+              </details>
+              {total > 0 && (
+                <ToonProgress
+                  className="mt-4"
+                  value={data.progress.done}
+                  max={total}
+                  tone="mint"
+                  label={`${data.progress.done}/${total} ca đã hoàn thành`}
+                />
+              )}
             </div>
           </div>
           <div className="pointer-events-none hidden h-[340px] shrink-0 self-end md:block">
@@ -145,7 +143,7 @@ export default function IslandPage() {
         </div>
       </SceneBackdrop>
 
-      <div className="mx-auto mt-8 grid max-w-6xl items-start gap-6 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_330px]">
+      <div className="mx-auto mt-8 grid max-w-6xl items-start gap-6 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_260px]">
         <div className="min-w-0 space-y-7">
           {!data.onboard.seen && (
             <div className="relative flex flex-col gap-4 rounded-[22px] border-[3px] border-toon-ink bg-[#ffe4a3] p-5 shadow-toon sm:flex-row sm:items-center">
@@ -156,45 +154,33 @@ export default function IslandPage() {
                 <Sparkles size={26} strokeWidth={2.4} />
               </span>
               <div className="min-w-0 flex-1">
-                <p className="font-toon text-sm font-extrabold uppercase tracking-wide text-toon-ink-soft">
-                  Trước ca làm đầu tiên
-                </p>
-                <h2 className="font-toon text-xl font-extrabold leading-tight text-toon-ink">
-                  Ngày đầu nhận việc: xem 6 slide onboard
+                <h2 className="font-toon text-xl font-extrabold text-toon-ink">
+                  Ngày đầu nhận việc
                 </h2>
-                <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
-                  Gặp đồng nghiệp, hiểu vai trò và nắm quy định ở nơi làm mới.
-                  Không chấm điểm.
-                </p>
+                <p className="text-sm text-toon-ink-soft">Không chấm điểm.</p>
               </div>
               <Link
                 to={`/islands/${enrolmentId}/onboard`}
                 className={toonButtonClasses({ size: 'lg' })}
               >
-                Bắt đầu ngày đầu <ArrowRight size={17} strokeWidth={2.8} />
+                Bắt đầu <ArrowRight size={17} strokeWidth={2.8} />
               </Link>
             </div>
           )}
 
-          <section aria-labelledby="main-quests">
-            <h2
-              id="main-quests"
-              className="font-toon text-2xl font-extrabold text-toon-ink"
-            >
-              Nhận ca làm
-            </h2>
-            <p className="mb-5 font-semibold text-toon-ink-soft">
-              Mỗi màn là một tình huống trọn vẹn. Màn chơi cung cấp kiến thức
-              cần để bạn xử lý công việc.
-            </p>
+          <section aria-label="Ca làm">
+            {data.mainQuests.length > 0 && (
+              <h2
+                id="main-quests"
+                className="mb-4 font-toon text-2xl font-extrabold"
+              >
+                Nhận ca làm
+              </h2>
+            )}
             {!data.mainQuests.length ? (
               <div className="toon-card p-6 text-center">
                 <p className="font-toon text-xl font-extrabold text-toon-ink">
-                  Cấp này chưa có màn chơi được duyệt
-                </p>
-                <p className="mt-1 font-semibold text-toon-ink-soft">
-                  Bạn vẫn có thể xem giới thiệu nơi làm và khám phá các cấp khác
-                  trong lộ trình.
+                  Chưa có ca được duyệt
                 </p>
                 <Link
                   to={`/occupations/${data.occupationCode}/levels`}
@@ -203,7 +189,7 @@ export default function IslandPage() {
                     className: 'mt-4',
                   })}
                 >
-                  Về lộ trình nghề <ArrowRight size={16} strokeWidth={2.8} />
+                  Về lộ trình <ArrowRight size={16} strokeWidth={2.8} />
                 </Link>
               </div>
             ) : (
@@ -311,13 +297,10 @@ export default function IslandPage() {
             )}
           </section>
 
-          <section aria-labelledby="side-quests">
-            <h2
-              id="side-quests"
-              className="mb-4 font-toon text-2xl font-extrabold text-toon-ink"
-            >
+          <details className="toon-card p-4">
+            <summary className="cursor-pointer rounded font-toon font-bold focus-visible:shadow-toon-focus">
               Nhiệm vụ phụ
-            </h2>
+            </summary>
             {data.sideQuests.length ? (
               <div className="grid gap-3 sm:grid-cols-2">
                 {data.sideQuests.map((q) => (
@@ -343,35 +326,40 @@ export default function IslandPage() {
                 ca làm chính.
               </p>
             )}
-          </section>
+          </details>
         </div>
 
         <aside className="min-w-0 space-y-6 lg:sticky lg:top-24">
-          <ToonPanel
-            title={data.company.name}
-            icon={<Building2 size={20} strokeWidth={2.6} />}
-            bodyClassName="p-4"
-          >
-            <ToonBadge tone="sky">{data.company.kind}</ToonBadge>
-            <p className="mt-3 text-sm font-semibold leading-relaxed text-toon-ink">
-              {data.company.blurb}
-            </p>
-            <p className="mt-4 border-t-2 border-dashed border-toon-ink/30 pt-3 text-xs font-semibold leading-relaxed text-toon-ink-faint">
-              Công ty hư cấu, được chọn ngẫu nhiên theo tỷ trọng loại hình trong
-              ngành. Một số tỷ trọng còn là ước tính chờ kiểm chứng. Bối cảnh
-              đổi, tiêu chí làm tốt vẫn giữ nguyên.
-            </p>
-            <Link
-              to={`/islands/${enrolmentId}/onboard`}
-              className={toonButtonClasses({
-                variant: 'secondary',
-                size: 'sm',
-                className: 'mt-4',
-              })}
+          <details className="toon-card p-4">
+            <summary className="cursor-pointer rounded font-toon font-bold focus-visible:shadow-toon-focus">
+              Về nơi làm
+            </summary>
+            <ToonPanel
+              title={data.company.name}
+              icon={<Building2 size={20} strokeWidth={2.6} />}
+              bodyClassName="p-4"
             >
-              Xem lại giới thiệu nơi làm
-            </Link>
-          </ToonPanel>
+              <ToonBadge tone="sky">{data.company.kind}</ToonBadge>
+              <p className="mt-3 text-sm font-semibold leading-relaxed text-toon-ink">
+                {data.company.blurb}
+              </p>
+              <p className="mt-4 border-t-2 border-dashed border-toon-ink/30 pt-3 text-xs font-semibold leading-relaxed text-toon-ink-faint">
+                Công ty hư cấu, được chọn ngẫu nhiên theo tỷ trọng loại hình
+                trong ngành. Một số tỷ trọng còn là ước tính chờ kiểm chứng. Bối
+                cảnh đổi, tiêu chí làm tốt vẫn giữ nguyên.
+              </p>
+              <Link
+                to={`/islands/${enrolmentId}/onboard`}
+                className={toonButtonClasses({
+                  variant: 'secondary',
+                  size: 'sm',
+                  className: 'mt-4',
+                })}
+              >
+                Xem lại giới thiệu nơi làm
+              </Link>
+            </ToonPanel>
+          </details>
           <p className="flex gap-2.5 rounded-2xl border-[2.5px] border-toon-ink bg-toon-lilac p-4 text-sm font-semibold text-toon-ink shadow-toon-sm">
             <Sparkles
               size={18}
@@ -379,30 +367,34 @@ export default function IslandPage() {
               aria-hidden
               className="mt-0.5 shrink-0"
             />
-            Lời dẫn và phần chấm trong ca làm có sử dụng AI. Kết quả giúp bạn
-            nhìn lại cách xử lý tình huống.
+            AI dẫn chuyện và chấm bài. Kết quả để tham khảo.
           </p>
-          <ToonPanel
-            title="Xong cấp này bạn nhận…"
-            icon={<Gift size={20} strokeWidth={2.6} />}
-            bodyClassName="p-4"
-          >
-            <KeywordCards items={data.level.outputKeywords} />
-            <p className="mt-3 text-xs font-semibold leading-relaxed text-toon-ink-faint">
-              Ba mức: Làm quen · có hướng dẫn; Thành thạo · tự làm việc thường
-              gặp; Chuyên sâu · xử lý việc khó và hướng dẫn người khác.
-            </p>
-            <Link
-              to={`/occupations/${data.occupationCode}/levels?level=${data.level.levelNo + 1}`}
-              className={toonButtonClasses({
-                variant: 'secondary',
-                size: 'sm',
-                className: 'mt-4',
-              })}
+          <details className="toon-card p-4">
+            <summary className="cursor-pointer rounded font-toon font-bold focus-visible:shadow-toon-focus">
+              Kỹ năng nghề
+            </summary>
+            <ToonPanel
+              title="Xong cấp này bạn nhận…"
+              icon={<Gift size={20} strokeWidth={2.6} />}
+              bodyClassName="p-4"
             >
-              Khám phá cấp kế tiếp <ArrowRight size={15} strokeWidth={2.8} />
-            </Link>
-          </ToonPanel>
+              <KeywordCards items={data.level.outputKeywords} />
+              <p className="mt-3 text-xs font-semibold leading-relaxed text-toon-ink-faint">
+                Ba mức: Làm quen · có hướng dẫn; Thành thạo · tự làm việc thường
+                gặp; Chuyên sâu · xử lý việc khó và hướng dẫn người khác.
+              </p>
+              <Link
+                to={`/occupations/${data.occupationCode}/levels?level=${data.level.levelNo + 1}`}
+                className={toonButtonClasses({
+                  variant: 'secondary',
+                  size: 'sm',
+                  className: 'mt-4',
+                })}
+              >
+                Khám phá cấp kế tiếp <ArrowRight size={15} strokeWidth={2.8} />
+              </Link>
+            </ToonPanel>
+          </details>
         </aside>
       </div>
     </Frame>

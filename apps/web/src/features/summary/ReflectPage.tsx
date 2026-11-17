@@ -4,7 +4,7 @@
  * hay dở không kéo theo thích hay ghét. Câu "giống thực tế không" tách
  * riêng. Không ghi tên trục, không hiện biểu đồ, bỏ qua được.
  */
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { Coffee } from 'lucide-react';
 import {
@@ -32,6 +32,19 @@ export default function ReflectPage() {
   const [answers, setAnswers] = useState<Record<string, LikeValue>>({});
   const [realism, setRealism] = useState<'1' | '2' | '3' | null>(null);
   const toSummary = () => navigate(`/play/${runId}/summary`, { replace: true });
+
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const focusedRun = useRef<string | null>(null);
+  const ready = Boolean(
+    summary.data &&
+    !summary.data.reflection.answered &&
+    summary.data.reflection.prompts.length,
+  );
+  useEffect(() => {
+    if (!ready || focusedRun.current === runId || !titleRef.current) return;
+    titleRef.current.focus({ preventScroll: true });
+    focusedRun.current = runId;
+  }, [ready, runId]);
 
   if (summary.isLoading)
     return (
@@ -77,12 +90,15 @@ export default function ReflectPage() {
             <span className="absolute -top-5 left-6 inline-flex -rotate-3 items-center gap-2 rounded-xl border-[3px] border-toon-ink bg-toon-mustard px-3.5 py-1 font-toon text-base font-extrabold text-toon-ink shadow-toon-sm">
               <Coffee size={17} strokeWidth={2.6} aria-hidden /> Nghỉ một chút
             </span>
-            <h1 className="font-toon text-3xl font-extrabold leading-tight text-toon-ink">
+            <h1
+              ref={titleRef}
+              tabIndex={-1}
+              className="font-toon text-3xl font-extrabold leading-tight text-toon-ink focus:outline-none focus-visible:outline-none"
+            >
               Trước khi xem kết quả
             </h1>
             <p className="mt-2 font-semibold text-toon-ink-soft">
-              Nếu ngày nào đi làm cũng là việc như vậy, bạn thấy thế nào? Không
-              có đáp án đúng sai.
+              Bạn muốn làm việc này hằng ngày? Không đúng sai.
             </p>
 
             <ol className="mt-6 flex flex-col gap-5">

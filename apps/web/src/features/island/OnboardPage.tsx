@@ -57,8 +57,6 @@ const FALLBACK_BACKDROPS: ToonBackdropId[] = [
   'home',
 ];
 
-const BULLET_COLORS = ['#a6d2ea', '#a8dbb9', '#eea7b4', '#f6b496', '#f0b63c'];
-
 export default function OnboardPage() {
   const { enrolmentId } = useParams();
   const island = useIsland(enrolmentId);
@@ -117,8 +115,7 @@ function Deck({
   const slide = slides[index];
   const last = index === slides.length - 1;
   const host = TOON_CHARACTERS.relations;
-  const hostLine =
-    index === 0 ? data.onboard.hrOpen : last ? data.onboard.hrClose : null;
+  const hostLine = index === 0 ? data.onboard.hrOpen : null;
   const backdrop =
     TOON_BACKDROPS[
       FRAME_BACKDROP[slide.frame] ??
@@ -233,26 +230,15 @@ function Deck({
               >
                 {slide.title}
               </h2>
-              <ul className="mt-6 space-y-3.5">
-                {slide.lines.map((line, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-3 text-base font-semibold leading-relaxed text-toon-ink sm:text-[17px]"
-                  >
-                    <span
-                      aria-hidden
-                      className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-lg border-[2.5px] border-toon-ink font-toon text-sm font-extrabold"
-                      style={{
-                        backgroundColor:
-                          BULLET_COLORS[i % BULLET_COLORS.length],
-                      }}
-                    >
-                      {i + 1}
-                    </span>
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
+              <SlideLines key={index} lines={slide.lines} />
+              {last && data.onboard.hrClose && (
+                <details className="mt-4 text-sm">
+                  <summary className="cursor-pointer rounded font-bold focus-visible:shadow-toon-focus">
+                    Lời nhắn cuối
+                  </summary>
+                  <p className="mt-2">{data.onboard.hrClose}</p>
+                </details>
+              )}
               {/* Trên điện thoại không có nhân vật đứng: lời chào nằm trong thẻ. */}
               {hostLine && (
                 <div className="mt-7 flex items-start gap-3 border-t-[3px] border-dashed border-toon-ink/30 pt-5 lg:hidden">
@@ -295,7 +281,7 @@ function Deck({
                 Trước
               </ToonButton>
               <p className="hidden rounded-full border-2 border-toon-ink bg-toon-paper/90 px-3 py-1 text-xs font-bold text-toon-ink-soft sm:block">
-                Dùng phím ← → hoặc vuốt ngang để lật slide.
+                ← → hoặc vuốt.
               </p>
               {last ? (
                 <ToonButton
@@ -324,7 +310,44 @@ function Deck({
   );
 }
 
-/** Dãy bước: slide đã xem có dấu tích, slide đang xem phồng lên. */
+const BULLET_COLORS = ['#a6d2ea', '#a8dbb9', '#eea7b4', '#f6b496', '#f0b63c'];
+
+/** Ba dòng đầu luôn thấy; phần còn lại gập sau "Xem thêm" (giữ nguyên câu seed). */
+function SlideLines({ lines }: { lines: string[] }) {
+  const head = lines.slice(0, 3);
+  const rest = lines.slice(3);
+  const item = (line: string, i: number) => (
+    <li
+      key={i}
+      className="flex gap-3 text-base font-semibold leading-relaxed text-toon-ink sm:text-[17px]"
+    >
+      <span
+        aria-hidden
+        className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-lg border-[2.5px] border-toon-ink font-toon text-sm font-extrabold"
+        style={{ backgroundColor: BULLET_COLORS[i % BULLET_COLORS.length] }}
+      >
+        {i + 1}
+      </span>
+      <span>{line}</span>
+    </li>
+  );
+  return (
+    <div className="mt-5">
+      <ul className="space-y-3.5">{head.map(item)}</ul>
+      {rest.length > 0 && (
+        <details className="mt-3">
+          <summary className="w-fit cursor-pointer rounded-md font-toon text-sm font-extrabold underline decoration-dotted underline-offset-4">
+            Xem thêm ({rest.length})
+          </summary>
+          <ul className="mt-3 space-y-3.5">
+            {rest.map((line, i) => item(line, i + 3))}
+          </ul>
+        </details>
+      )}
+    </div>
+  );
+}
+
 function Pips({
   slides,
   index,

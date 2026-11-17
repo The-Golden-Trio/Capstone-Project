@@ -6,7 +6,6 @@
 import { Link, useParams } from 'react-router-dom';
 import {
   ArrowLeft,
-  BookMarked,
   Lightbulb,
   MessageSquareQuote,
   RotateCcw,
@@ -14,11 +13,10 @@ import {
   Target,
 } from 'lucide-react';
 import { profile } from '@datn/game-core';
-import type { HTMLAttributes, ReactNode } from 'react';
+import { useEffect, useRef, type HTMLAttributes, type ReactNode } from 'react';
 import {
   Character,
   SceneBackdrop,
-  SpeechBubble,
   ToonBadge,
   ToonPanel,
   ToonProgress,
@@ -36,6 +34,15 @@ export default function SummaryPage() {
   const summary = useRunSummary(runId);
   const me = useMe();
   const run = useRun(runId);
+
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const focusedRun = useRef<string | null>(null);
+  const ready = Boolean(summary.data);
+  useEffect(() => {
+    if (!ready || focusedRun.current === runId || !titleRef.current) return;
+    titleRef.current.focus({ preventScroll: true });
+    focusedRun.current = runId;
+  }, [ready, runId]);
 
   if (summary.isLoading)
     return <SummaryNotice loading title="Đang tổng kết ca làm…" />;
@@ -97,22 +104,17 @@ export default function SummaryPage() {
           )}
         </div>
       </header>
-      <main className="mx-auto grid max-w-7xl items-start gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:py-12">
+      <main className="mx-auto grid max-w-7xl items-start gap-5 px-4 py-4 sm:px-6 lg:grid-cols-[160px_minmax(0,1fr)] lg:py-6">
         {host && hostLook ? (
           <aside
             aria-label="Đồng nghiệp cuối ca"
             className="sticky top-8 hidden min-w-0 self-start lg:block"
           >
-            {s.grade.ending && (
-              <SpeechBubble tone={hostLook.bubble}>
-                {s.grade.ending.title}
-              </SpeechBubble>
-            )}
             <div className="mt-7 flex justify-center">
               <Character
                 src={hostLook.src}
                 name={host.name}
-                height={320}
+                height={240}
                 flip={hostLook.facing === 'left'}
                 motion="none"
               />
@@ -122,110 +124,119 @@ export default function SummaryPage() {
           <div className="hidden lg:block" />
         )}
         <article className="toon-card min-w-0 p-4 shadow-toon-lg sm:p-7">
-          <header className="mt-4 text-center">
+          <header className="text-center">
             <p className="font-toon text-sm font-extrabold uppercase tracking-widest text-toon-ink-soft">
               Báo cáo cuối ca
             </p>
-            <h1 className="mt-3 font-toon text-3xl font-extrabold leading-tight text-toon-ink sm:text-4xl">
+            <h1
+              ref={titleRef}
+              tabIndex={-1}
+              className="mt-1 font-toon text-2xl font-extrabold leading-tight text-toon-ink focus:outline-none focus-visible:outline-none sm:text-3xl"
+            >
               {s.title}
             </h1>
-            {s.occupationName && (
-              <p className="mt-2 text-sm font-bold text-toon-ink-soft">
-                {s.occupationName}
-                {s.levelNo ? ` · cấp ${s.levelNo}` : ''}
-              </p>
-            )}
           </header>
 
           <GradeBlock s={s} />
 
-          {tierUps.length > 0 && (
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {tierUps.map((d) => (
-                <div
-                  key={d.id}
-                  className="flex animate-toon-pop items-center gap-4 rounded-2xl border-[3px] border-toon-ink bg-toon-mint p-4 shadow-toon-sm"
-                >
-                  <span className="grid size-14 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-2xl font-extrabold text-toon-ink">
-                    {d.tierAfter}
-                  </span>
-                  <p className="text-sm">
-                    <span className="block font-toon text-lg font-extrabold text-toon-ink">
-                      Lên bậc!
-                    </span>
-                    <b className="text-toon-ink">
-                      {profile.softSkillGroup(d.id).name}
-                    </b>{' '}
-                    lên bậc {d.tierAfter}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {s.grade.status === 'READY' && s.grade.softSkills.length > 0 && (
-            <Panel className="mt-6">
-              <PanelHeader
-                eyebrow="Kỹ năng mềm"
-                title="Điểm cộng trừ trong ca này"
-                description={
-                  [
-                    s.enrolmentId
-                      ? null
-                      : 'Ca xem thử: điểm chỉ để bạn thấy cách tính, không cộng vào hồ sơ.',
-                    sign
-                      ? `Nhóm có ★ được chòm sao ${sign.name} cộng thêm 12% phần điểm cộng.`
-                      : null,
-                  ]
-                    .filter(Boolean)
-                    .join(' ') || undefined
-                }
-              />
-              <ul className="divide-y-2 divide-dashed divide-toon-ink/20">
-                {s.grade.softSkills.map((d) => (
-                  <DeltaRow
+          <details
+            open
+            className="mt-5 rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4"
+          >
+            <summary className="cursor-pointer rounded font-toon text-lg font-bold focus-visible:shadow-toon-focus">
+              Kỹ năng
+            </summary>
+            {tierUps.length > 0 && (
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {tierUps.map((d) => (
+                  <div
                     key={d.id}
-                    d={d}
-                    starred={Boolean(sign?.buffs.includes(d.id))}
-                    signName={sign?.name}
-                  />
-                ))}
-              </ul>
-            </Panel>
-          )}
-
-          {s.grade.keywordsGained.length > 0 && (
-            <Panel className="mt-6">
-              <PanelHeader
-                eyebrow="Xong cấp"
-                title="Kỹ năng nghề bạn nhận được"
-              />
-              <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                {s.grade.keywordsGained.map((k) => (
-                  <li
-                    key={k.id}
-                    className="flex min-w-0 items-start gap-3 rounded-2xl border-[3px] border-toon-ink bg-toon-sky p-3 shadow-toon-sm"
+                    className="flex animate-toon-pop items-center gap-4 rounded-2xl border-[3px] border-toon-ink bg-toon-mint p-4 shadow-toon-sm"
                   >
-                    <span
-                      aria-hidden
-                      className="grid size-10 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-xl font-extrabold"
-                    >
-                      {k.level}
+                    <span className="grid size-14 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-2xl font-extrabold text-toon-ink">
+                      {d.tierAfter}
                     </span>
-                    <span className="min-w-0 text-sm">
-                      <span className="block font-toon text-base font-extrabold leading-tight">
-                        {k.name}
+                    <p className="text-sm">
+                      <span className="block font-toon text-lg font-extrabold text-toon-ink">
+                        Lên bậc!
                       </span>
-                      <span className="mt-1 block text-xs font-bold text-toon-ink-soft">
-                        {['', 'Làm quen', 'Thành thạo', 'Chuyên sâu'][k.level]}
-                      </span>
-                    </span>
-                  </li>
+                      <b className="text-toon-ink">
+                        {profile.softSkillGroup(d.id).name}
+                      </b>{' '}
+                      lên bậc {d.tierAfter}
+                    </p>
+                  </div>
                 ))}
-              </ul>
-            </Panel>
-          )}
+              </div>
+            )}
 
+            {s.grade.status === 'READY' && s.grade.softSkills.length > 0 && (
+              <Panel className="mt-6">
+                <PanelHeader
+                  eyebrow="Kỹ năng mềm"
+                  title="Điểm cộng trừ trong ca này"
+                  description={
+                    [
+                      s.enrolmentId
+                        ? null
+                        : 'Ca xem thử: điểm chỉ để bạn thấy cách tính, không cộng vào hồ sơ.',
+                      sign
+                        ? `Nhóm có ★ được chòm sao ${sign.name} cộng thêm điểm.`
+                        : null,
+                    ]
+                      .filter(Boolean)
+                      .join(' ') || undefined
+                  }
+                />
+                <ul className="divide-y-2 divide-dashed divide-toon-ink/20">
+                  {s.grade.softSkills.map((d) => (
+                    <DeltaRow
+                      key={d.id}
+                      d={d}
+                      starred={Boolean(sign?.buffs.includes(d.id))}
+                      signName={sign?.name}
+                    />
+                  ))}
+                </ul>
+              </Panel>
+            )}
+
+            {s.grade.keywordsGained.length > 0 && (
+              <Panel className="mt-6">
+                <PanelHeader
+                  eyebrow="Xong cấp"
+                  title="Kỹ năng nghề bạn nhận được"
+                />
+                <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                  {s.grade.keywordsGained.map((k) => (
+                    <li
+                      key={k.id}
+                      className="flex min-w-0 items-start gap-3 rounded-2xl border-[3px] border-toon-ink bg-toon-sky p-3 shadow-toon-sm"
+                    >
+                      <span
+                        aria-hidden
+                        className="grid size-10 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-xl font-extrabold"
+                      >
+                        {k.level}
+                      </span>
+                      <span className="min-w-0 text-sm">
+                        <span className="block font-toon text-base font-extrabold leading-tight">
+                          {k.name}
+                        </span>
+                        <span className="mt-1 block text-xs font-bold text-toon-ink-soft">
+                          {
+                            ['', 'Làm quen', 'Thành thạo', 'Chuyên sâu'][
+                              k.level
+                            ]
+                          }
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </Panel>
+            )}
+          </details>
           <div
             aria-hidden
             className="my-8 border-t-[3px] border-dashed border-toon-ink/30"
@@ -304,16 +315,16 @@ function GradeBlock({ s }: { s: RunSummary }) {
           ? 'bg-toon-mustard'
           : 'bg-toon-mint';
   return (
-    <section className="mt-7" aria-label="Kết quả">
-      <div className="grid items-center gap-6 sm:grid-cols-[180px_minmax(0,1fr)]">
-        <div className="flex flex-col items-center gap-3 py-3">
+    <section className="mt-3" aria-label="Kết quả">
+      <div className="grid grid-cols-[100px_minmax(0,1fr)] items-center gap-4 sm:grid-cols-[120px_minmax(0,1fr)]">
+        <div className="flex flex-col items-center gap-2 py-1">
           <div
             role="img"
             aria-label={`Điểm màn: ${g.score ?? 'chưa có'} trên 100`}
-            className="grid size-40 place-items-center rounded-full border-[5px] border-toon-ink bg-toon-mustard shadow-toon"
+            className="grid size-24 sm:size-28 place-items-center rounded-full border-[5px] border-toon-ink bg-toon-mustard shadow-toon"
           >
             <span className="text-center">
-              <span className="block font-toon text-7xl font-extrabold leading-none text-toon-ink">
+              <span className="block font-toon text-4xl sm:text-5xl font-extrabold leading-none text-toon-ink">
                 {g.score ?? '–'}
               </span>
               <span className="text-sm font-extrabold text-toon-ink-soft">
@@ -324,16 +335,11 @@ function GradeBlock({ s }: { s: RunSummary }) {
           {ending && (
             <span
               className={cn(
-                '-rotate-6 rounded-xl border-[3px] border-toon-ink px-4 py-1 font-toon text-lg font-extrabold shadow-toon-sm',
+                '-rotate-3 rounded-xl border-[3px] border-toon-ink px-2 py-0.5 font-toon text-sm font-extrabold shadow-toon-sm',
                 stamp,
               )}
             >
               {ending.name}
-            </span>
-          )}
-          {sample && (
-            <span className="rounded-full border-2 border-toon-ink bg-toon-paper px-3 py-0.5 text-xs font-extrabold text-toon-ink">
-              Điểm mẫu · bản xem thử
             </span>
           )}
         </div>
@@ -342,14 +348,17 @@ function GradeBlock({ s }: { s: RunSummary }) {
             <h2 className="font-toon text-2xl font-extrabold leading-tight sm:text-3xl">
               {g.ending.title}
             </h2>
-            <p className="mt-3 font-semibold leading-relaxed text-toon-ink-soft">
-              {g.ending.text}
-            </p>
+            <CompactText text={g.ending.text} />
           </div>
         )}
       </div>
+      {sample && (
+        <p className="mt-3 text-xs font-extrabold text-toon-ink">
+          Điểm mẫu · bản xem thử
+        </p>
+      )}
       {g.feedback && (
-        <div className="mt-6 grid gap-4 xl:grid-cols-3">
+        <div className="mt-3 grid gap-2 sm:grid-cols-3">
           <FeedbackCard
             icon={<Target size={20} />}
             title="Kết quả"
@@ -370,12 +379,12 @@ function GradeBlock({ s }: { s: RunSummary }) {
           />
         </div>
       )}
-      <div className="mt-5 flex items-start gap-3 rounded-2xl border-[2.5px] border-dashed border-toon-ink bg-toon-cream p-4 text-sm font-semibold text-toon-ink-soft">
+      <div className="mt-3 flex items-start gap-2 text-xs font-semibold text-toon-ink-soft">
         <Sparkles size={20} className="shrink-0" aria-hidden />
         <div>
           <p className="font-bold text-toon-ink">
             {sample
-              ? 'Bản xem thử: điểm và nhận xét ở đây là mẫu tính từ việc bạn đã làm, để xem trước giao diện. Bản chính thức do hội đồng AI chấm.'
+              ? 'Bản xem thử: điểm và nhận xét ở đây là mẫu. Bản chính thức do hội đồng AI chấm.'
               : 'Nội dung hoặc đánh giá này do AI tạo.'}
           </p>
           <p className="mt-1">
@@ -402,7 +411,7 @@ function FeedbackCard({
   return (
     <article
       className={cn(
-        'min-w-0 rounded-2xl border-[3px] border-toon-ink p-4 shadow-toon-sm',
+        'min-w-0 rounded-2xl border-[3px] border-toon-ink p-3 shadow-toon-sm',
         tone,
       )}
     >
@@ -412,8 +421,26 @@ function FeedbackCard({
         </span>
         {title}
       </h3>
-      <p className="mt-3 text-sm font-semibold leading-relaxed">{text}</p>
+      <CompactText text={text} />
     </article>
+  );
+}
+
+/** Chỉ đổi cách đọc đoạn dài; phần mở thêm giữ toàn bộ nội dung nhận được. */
+function CompactText({ text }: { text: string }) {
+  const words = text.trim().split(/\s+/);
+  if (words.length <= 30)
+    return <p className="mt-2 text-sm font-semibold leading-relaxed">{text}</p>;
+  return (
+    <div className="mt-2 text-sm font-semibold leading-relaxed">
+      <p>{words.slice(0, 25).join(' ')}…</p>
+      <details className="mt-1">
+        <summary className="cursor-pointer rounded font-bold focus-visible:shadow-toon-focus">
+          Xem đầy đủ
+        </summary>
+        <p className="mt-2 whitespace-pre-wrap">{text}</p>
+      </details>
+    </div>
   );
 }
 
@@ -474,129 +501,130 @@ const PROMISE: Record<string, string> = {
 function Story({ s }: { s: RunSummary }) {
   const st = s.story;
   return (
-    <section
-      aria-labelledby="story-title"
-      className="grid gap-6 lg:grid-cols-2"
-    >
-      <div className="lg:col-span-2">
-        <h2
-          id="story-title"
-          className="flex items-center gap-2 font-toon text-2xl font-extrabold"
-        >
-          <BookMarked size={22} className="text-toon-ink" aria-hidden /> Nhìn
-          lại ca làm
-        </h2>
-        <p className="mt-1 text-sm text-toon-ink-soft">
+    <div className="space-y-4">
+      <details className="rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4">
+        <summary className="cursor-pointer rounded focus-visible:shadow-toon-focus">
+          <h2 className="inline font-toon text-xl font-extrabold">
+            Nhìn lại ca làm
+          </h2>
+        </summary>
+        <p className="my-3 text-sm text-toon-ink-soft">
           Kết thúc lúc {st.endedAt}.{' '}
           {st.hintsUsed > 0
             ? `Bạn đã dùng ${st.hintsUsed} gợi ý.`
             : 'Bạn không dùng gợi ý nào.'}
         </p>
-      </div>
-
-      <Panel>
-        <PanelHeader level={3} title="Việc bạn đã làm" />
-        {st.actions.length ? (
-          <ol className="ml-2 border-l-[3px] border-toon-ink pl-5">
-            {st.actions.map((a, i) => (
-              <li key={i} className="relative pb-5 last:pb-0">
-                <span
-                  aria-hidden
-                  className="absolute -left-[29px] top-1 size-3.5 rounded-full border-[3px] border-toon-ink bg-toon-mustard"
-                />
-                <time className="font-toon text-sm font-extrabold tabular-nums">
-                  {a.time}
-                </time>
-                <p className="mt-1 font-bold">{a.label}</p>
-                <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
-                  {a.cut
-                    ? 'Bị chen ngang giữa chừng'
-                    : `${a.points} điểm thời gian`}
-                </p>
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <p className="text-sm text-toon-ink-soft">
-            Bạn đi thẳng tới các mốc chính của ca.
-          </p>
-        )}
-      </Panel>
-
-      <div className="flex flex-col gap-6">
-        <Panel>
-          <PanelHeader
-            level={3}
-            title="Dữ kiện bạn tìm ra"
-            description={
-              st.facts.requiredMissed
-                ? `Còn ${st.facts.requiredMissed} dữ kiện quan trọng bạn chưa mở tới.`
-                : 'Bạn đã mở tới mọi dữ kiện quan trọng.'
-            }
-          />
-          <ul className="space-y-2 text-sm">
-            {st.facts.found.map((f, i) => (
-              <li key={i} className="flex gap-3">
-                <time className="tabular w-11 shrink-0 text-xs text-toon-ink">
-                  {f.time}
-                </time>
-                <span className="text-toon-ink-soft">{f.text}</span>
-              </li>
-            ))}
-          </ul>
-        </Panel>
-        {st.promises.length > 0 && (
+        <div className="grid gap-4 lg:grid-cols-2">
           <Panel>
-            <PanelHeader level={3} title="Lời hẹn trong ca" />
-            <ul className="space-y-2 text-sm">
-              {st.promises.map((p, i) => (
-                <li key={i} className="flex items-center justify-between gap-3">
-                  <span>{p.label}</span>
-                  <ToonBadge
-                    className="shrink-0 whitespace-nowrap"
-                    tone={
-                      p.status === 'kept'
-                        ? 'mint'
-                        : p.status === 'late'
-                          ? 'coral'
-                          : 'paper'
-                    }
-                  >
-                    {PROMISE[p.status] ?? p.status}
-                  </ToonBadge>
-                </li>
-              ))}
-            </ul>
+            <PanelHeader level={3} title="Việc bạn đã làm" />
+            {st.actions.length ? (
+              <ol className="ml-2 border-l-[3px] border-toon-ink pl-5">
+                {st.actions.map((a, i) => (
+                  <li key={i} className="relative pb-5 last:pb-0">
+                    <span
+                      aria-hidden
+                      className="absolute -left-[29px] top-1 size-3.5 rounded-full border-[3px] border-toon-ink bg-toon-mustard"
+                    />
+                    <time className="font-toon text-sm font-extrabold tabular-nums">
+                      {a.time}
+                    </time>
+                    <p className="mt-1 font-bold">{a.label}</p>
+                    <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
+                      {a.cut
+                        ? 'Bị chen ngang giữa chừng'
+                        : `${a.points} điểm thời gian`}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p className="text-sm text-toon-ink-soft">
+                Bạn đi thẳng tới các mốc chính của ca.
+              </p>
+            )}
           </Panel>
-        )}
-        {st.concerns.length > 0 && (
-          <Panel>
-            <PanelHeader level={3} title="Điều đồng nghiệp còn băn khoăn" />
-            <ul className="space-y-2 text-sm">
-              {st.concerns.map((c, i) => (
-                <li key={i} className="flex items-start justify-between gap-3">
-                  <span>
-                    <b className="capitalize">{c.person}</b>:{' '}
-                    <span className="text-toon-ink-soft">{c.text}</span>
-                  </span>
-                  <ToonBadge
-                    className="shrink-0 whitespace-nowrap"
-                    tone={c.resolved ? 'mint' : 'paper'}
-                  >
-                    {c.resolved ? 'Đã gỡ' : 'Còn đó'}
-                  </ToonBadge>
-                </li>
-              ))}
-            </ul>
-          </Panel>
-        )}
-      </div>
 
+          <div className="flex flex-col gap-6">
+            <Panel>
+              <PanelHeader
+                level={3}
+                title="Dữ kiện bạn tìm ra"
+                description={
+                  st.facts.requiredMissed
+                    ? `Còn ${st.facts.requiredMissed} dữ kiện quan trọng bạn chưa mở tới.`
+                    : 'Bạn đã mở tới mọi dữ kiện quan trọng.'
+                }
+              />
+              <ul className="space-y-2 text-sm">
+                {st.facts.found.map((f, i) => (
+                  <li key={i} className="flex gap-3">
+                    <time className="tabular w-11 shrink-0 text-xs text-toon-ink">
+                      {f.time}
+                    </time>
+                    <span className="text-toon-ink-soft">{f.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </Panel>
+            {st.promises.length > 0 && (
+              <Panel>
+                <PanelHeader level={3} title="Lời hẹn trong ca" />
+                <ul className="space-y-2 text-sm">
+                  {st.promises.map((p, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center justify-between gap-3"
+                    >
+                      <span>{p.label}</span>
+                      <ToonBadge
+                        className="shrink-0 whitespace-nowrap"
+                        tone={
+                          p.status === 'kept'
+                            ? 'mint'
+                            : p.status === 'late'
+                              ? 'coral'
+                              : 'paper'
+                        }
+                      >
+                        {PROMISE[p.status] ?? p.status}
+                      </ToonBadge>
+                    </li>
+                  ))}
+                </ul>
+              </Panel>
+            )}
+            {st.concerns.length > 0 && (
+              <Panel>
+                <PanelHeader level={3} title="Điều đồng nghiệp còn băn khoăn" />
+                <ul className="space-y-2 text-sm">
+                  {st.concerns.map((c, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start justify-between gap-3"
+                    >
+                      <span>
+                        <b className="capitalize">{c.person}</b>:{' '}
+                        <span className="text-toon-ink-soft">{c.text}</span>
+                      </span>
+                      <ToonBadge
+                        className="shrink-0 whitespace-nowrap"
+                        tone={c.resolved ? 'mint' : 'paper'}
+                      >
+                        {c.resolved ? 'Đã gỡ' : 'Còn đó'}
+                      </ToonBadge>
+                    </li>
+                  ))}
+                </ul>
+              </Panel>
+            )}
+          </div>
+        </div>
+      </details>
       {st.artefacts.length > 0 && (
-        <div className="lg:col-span-2">
-          <h3 className="mb-3 font-toon text-xl font-extrabold">
+        <details className="rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4">
+          <summary className="cursor-pointer rounded font-toon text-xl font-extrabold focus-visible:shadow-toon-focus">
             Những gì bạn đã viết
-          </h3>
+          </summary>
           <div className="grid gap-4 md:grid-cols-2">
             {st.artefacts.map((a, i) => (
               <article
@@ -619,12 +647,14 @@ function Story({ s }: { s: RunSummary }) {
               </article>
             ))}
           </div>
-        </div>
+        </details>
       )}
 
       {st.review.length > 0 && (
-        <Panel className="lg:col-span-2">
-          <PanelHeader level={3} title="Hỏi lại sau ca" />
+        <details className="rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4">
+          <summary className="cursor-pointer rounded font-toon text-xl font-extrabold focus-visible:shadow-toon-focus">
+            Hỏi lại sau ca
+          </summary>
           <ul className="space-y-4 text-sm">
             {st.review.map((r, i) => (
               <li key={i}>
@@ -638,7 +668,7 @@ function Story({ s }: { s: RunSummary }) {
               </li>
             ))}
           </ul>
-        </Panel>
+        </details>
       )}
 
       <p className="flex items-center justify-center gap-2 text-xs text-toon-ink-soft lg:col-span-2">
@@ -646,7 +676,7 @@ function Story({ s }: { s: RunSummary }) {
         điểm giữ kết quả cao nhất.
         <RotateCcw size={12} aria-hidden />
       </p>
-    </section>
+    </div>
   );
 }
 
