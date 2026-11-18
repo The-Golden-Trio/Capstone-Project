@@ -1,5 +1,6 @@
 import { profile, type shift } from '@datn/game-core';
 import { ApiError } from '../port';
+import type { Showcase } from './showcase';
 import type {
   AppFeedbackInput,
   Company,
@@ -48,6 +49,8 @@ export interface Player {
   feedback: AppFeedbackInput[];
   refreshToken: string | null;
   resetToken: string | null;
+  /** Lớp phủ dữ liệu mẫu của người chơi demo (xem showcase.ts). */
+  showcase?: Showcase;
 }
 interface Database {
   players: Player[];

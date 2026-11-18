@@ -10,3 +10,4 @@ export function createDemoApi(): ExplorerApi {
   return { auth, account, catalogue, quiz, progress, play, feedback };
 }
 export { bindExternalUser, unbindExternalUser } from './store';
+export { SHOWCASE_EMAIL, SHOWCASE_PASSWORD } from './showcase';
