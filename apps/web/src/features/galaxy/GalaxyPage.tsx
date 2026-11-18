@@ -299,12 +299,20 @@ export default function GalaxyPage() {
                     <p className="font-toon text-base font-bold text-toon-ink">
                       Xem trước một ca làm mẫu
                     </p>
-                    <p className="mt-1 text-xs text-toon-ink-soft">
-                      Dữ liệu hiện có đúng một ca đã soạn: Back-end cấp L3, sự
-                      cố API chậm. Ở bản xem thử, bạn vào thẳng ca này: điểm kỹ
-                      năng không cộng vào hồ sơ và không mở cấp, nhưng thời gian
-                      chơi vẫn vào thống kê. Lời nhân vật là AI giả.
+                    <p className="mt-1 text-xs font-semibold text-toon-ink-soft">
+                      Ca Back-end L3: API chậm giờ cao điểm. Lời nhân vật là AI
+                      giả.
                     </p>
+                    <details className="mt-1 text-xs text-toon-ink-soft">
+                      <summary className="w-fit cursor-pointer font-bold underline decoration-dotted underline-offset-4">
+                        Chi tiết ca mẫu
+                      </summary>
+                      <p className="mt-1">
+                        Dữ liệu hiện có đúng một ca đã soạn. Ở bản xem thử, bạn
+                        vào thẳng ca này: điểm kỹ năng không cộng vào hồ sơ và
+                        không mở cấp, nhưng thời gian chơi vẫn vào thống kê.
+                      </p>
+                    </details>
                     <ToonButton
                       size="sm"
                       style={{ backgroundColor: 'var(--color-toon-star)' }}
@@ -330,8 +338,8 @@ export default function GalaxyPage() {
                       đâu?
                     </p>
                     <p className="mt-1 text-xs text-toon-ink-soft">
-                      18 thẻ, khoảng ba phút. Game gợi ý vài vùng nghề nên thử
-                      trước.
+                      18 thẻ, khoảng ba phút. Game gợi ý vài vùng nghề có thể
+                      thử trước.
                     </p>
                     <Link
                       to="/quiz"
@@ -468,9 +476,7 @@ function PeekPanel({
         </p>
       )}
 
-      <p className="mt-4 line-clamp-5 text-sm text-toon-ink-soft">
-        {occ.summary}
-      </p>
+      <PeekSummary text={occ.summary} />
 
       <div className="mt-4 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-sm">
         <p className="font-toon text-sm font-bold text-toon-ink">
@@ -484,22 +490,14 @@ function PeekPanel({
         </p>
       </div>
 
-      <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
-        <div className="rounded-xl border-2 border-toon-ink bg-toon-cream p-3">
-          <dt className="text-xs text-toon-ink-soft">Lộ trình</dt>
-          <dd className="font-semibold">{occ.levelCount} cấp</dd>
-        </div>
-        <div className="rounded-xl border-2 border-toon-ink bg-toon-cream p-3">
-          <dt className="text-xs text-toon-ink-soft">Của bạn</dt>
-          <dd className="font-semibold">
-            {occ.my.highestCompleted
-              ? `Xong cấp ${occ.my.highestCompleted}`
-              : occ.my.currentLevel
-                ? `Đang ở cấp ${occ.my.currentLevel}`
-                : 'Chưa thử'}
-          </dd>
-        </div>
-      </dl>
+      <p className="mt-3 text-xs font-bold text-toon-ink-soft">
+        Lộ trình {occ.levelCount} cấp ·{' '}
+        {occ.my.highestCompleted
+          ? `bạn đã xong cấp ${occ.my.highestCompleted}`
+          : occ.my.currentLevel
+            ? `bạn đang ở cấp ${occ.my.currentLevel}`
+            : 'bạn chưa thử'}
+      </p>
 
       {locked && occ.gate.kind === 'PREREQUISITE' && (
         <p className="mt-4 text-xs text-toon-ink-soft">
@@ -586,6 +584,9 @@ function OccupationList({
       >
         {sorted.length}/{total} nghề
       </p>
+      <p className="mx-auto max-w-7xl px-4 text-xs text-toon-star-soft sm:px-6">
+        Hành tinh có vành là nghề đã có màn chơi.
+      </p>
       <ul className="mx-auto grid max-w-7xl grid-cols-1 gap-3 px-4 py-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-3">
         {sorted.map((o) => (
           <li key={o.code} className="min-w-0">
@@ -616,13 +617,39 @@ function OccupationList({
                       Gợi ý
                     </ToonBadge>
                   )}
-                  {statusBadge(o)}
+                  {/* Đa số nghề chưa có màn chơi: trạng thái thường không gắn huy hiệu, chỉ nổi trạng thái khác thường. */}
+                  {(o.playable ||
+                    o.my.status !== 'NEW' ||
+                    o.gate.kind === 'PREREQUISITE') &&
+                    statusBadge(o)}
                 </span>
               </span>
             </Link>
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+/**
+ * Mô tả nghề trong khung xem nhanh: mở nguyên câu đầu, phần còn lại gập trong
+ * "Mô tả nghề" (giữ nguyên văn, không chỉ cắt bằng CSS).
+ */
+function PeekSummary({ text }: { text: string }) {
+  const full = text.trim();
+  const first = full.match(/^.+?[.!?…](?=\s|$)/s)?.[0] ?? full;
+  if (first.length >= full.length)
+    return <p className="mt-4 text-sm text-toon-ink-soft">{full}</p>;
+  return (
+    <div className="mt-4 text-sm text-toon-ink-soft">
+      <p>{first}</p>
+      <details className="mt-1">
+        <summary className="w-fit cursor-pointer rounded font-bold underline decoration-dotted underline-offset-4 focus-visible:shadow-toon-focus">
+          Mô tả nghề
+        </summary>
+        <p className="mt-1.5">{full}</p>
+      </details>
     </div>
   );
 }

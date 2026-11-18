@@ -71,18 +71,25 @@ export function JournalTab({ record }: { record: PlayerRecord }) {
                         ? 'Chưa có điểm'
                         : `Điểm ca: ${entry.score}/100`}
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      {entry.deltas.map((delta) => (
-                        <ToonBadge
-                          key={delta.id}
-                          tone={delta.delta < 0 ? 'coral' : 'paper'}
-                        >
-                          {profile.softSkillGroup(delta.id).short}{' '}
-                          {delta.delta < 0 ? '−' : '+'}
-                          {Math.abs(delta.delta).toLocaleString('vi-VN')}
-                        </ToonBadge>
-                      ))}
-                    </div>
+                    {entry.deltas.length > 0 && (
+                      <details>
+                        <summary className="w-fit cursor-pointer rounded text-xs font-bold underline decoration-dotted underline-offset-4 focus-visible:shadow-toon-focus">
+                          Kỹ năng thay đổi ({entry.deltas.length})
+                        </summary>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {entry.deltas.map((delta) => (
+                            <ToonBadge
+                              key={delta.id}
+                              tone={delta.delta < 0 ? 'coral' : 'paper'}
+                            >
+                              {profile.softSkillGroup(delta.id).short}{' '}
+                              {delta.delta < 0 ? '−' : '+'}
+                              {Math.abs(delta.delta).toLocaleString('vi-VN')}
+                            </ToonBadge>
+                          ))}
+                        </div>
+                      </details>
+                    )}
                   </div>
                 ),
               }))}

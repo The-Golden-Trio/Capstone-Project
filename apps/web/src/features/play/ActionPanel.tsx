@@ -99,7 +99,11 @@ export function ActionTray({
             key: g.name,
             label: g.name,
             icon: <Icon size={15} strokeWidth={2.6} aria-hidden />,
-            count: g.items.filter((a) => a.enabled).length,
+            // Chỉ tab đang mở hiện số việc, để hàng tab không thành một dãy huy hiệu.
+            count:
+              g.name === current.name
+                ? g.items.filter((a) => a.enabled).length
+                : undefined,
           };
         })}
       />

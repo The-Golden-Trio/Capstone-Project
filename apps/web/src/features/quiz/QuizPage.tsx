@@ -296,7 +296,7 @@ function QuizFlow({
             Kể một chút về bạn
           </h1>
           <p className="mt-3 text-toon-paper">
-            Chạm những điều bạn muốn giữ lại. Không cần trả lời hết.
+            Chọn điều muốn kể, không cần trả lời hết.
           </p>
           <ToonButton
             className="my-5"

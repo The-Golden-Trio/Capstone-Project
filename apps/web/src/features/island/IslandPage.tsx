@@ -101,7 +101,7 @@ export default function IslandPage() {
           <div className="min-w-0 flex-1 pb-8">
             <Link
               to={`/occupations/${data.occupationCode}/levels?level=${data.level.levelNo}`}
-              className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-sm font-bold text-toon-ink focus-visible:shadow-toon-focus"
+              className="inline-flex items-center gap-1.5 rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-1 text-sm font-bold text-toon-ink shadow-toon-sm focus-visible:shadow-toon-focus"
             >
               <ArrowLeft size={15} aria-hidden /> Lộ trình
             </Link>

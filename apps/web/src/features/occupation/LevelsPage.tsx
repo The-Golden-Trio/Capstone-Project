@@ -91,11 +91,14 @@ export default function LevelsPage() {
         ({ id }) => (selected.requirement[id] ?? 0) > 0,
       )
     : [];
+  // Đã có đảo thì luôn cho về đảo (onboard, công ty vẫn dùng được); chỉ
+  // chặn vào cấp mới khi cấp bị khoá hoặc chưa có ca được xuất bản.
   const blocked =
     !selected ||
-    selected.access === 'LOCKED' ||
-    !o.playable ||
-    selected.questCount === 0;
+    (!selected.enrolmentId &&
+      (selected.access === 'LOCKED' ||
+        !o.playable ||
+        selected.questCount === 0));
   const enter = () => {
     if (!selected) return;
     if (selected.enrolmentId) {
@@ -265,30 +268,28 @@ export default function LevelsPage() {
                 </details>
               )}
 
-              <h3 className="mb-2 mt-5 font-toon text-lg font-extrabold">
-                Việc bạn sẽ làm
-              </h3>
-              {selected.tasks.length ? (
-                <ul className="space-y-2">
-                  {selected.tasks.slice(0, 3).map((t, i) => (
-                    <li
-                      key={i}
-                      className="flex gap-2.5 text-[15px] font-semibold leading-snug"
-                    >
-                      <span
-                        aria-hidden
-                        className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-lg border-2 border-toon-ink bg-toon-sky font-toon text-xs font-extrabold"
+              {selected.tasks.length > 0 && (
+                <details className="group mt-4 rounded-2xl border-[2.5px] border-toon-ink bg-toon-cream px-3 py-2">
+                  <summary className="cursor-pointer rounded-md font-toon text-base font-extrabold focus-visible:shadow-toon-focus">
+                    Việc bạn sẽ làm ({selected.tasks.length})
+                  </summary>
+                  <ul className="mt-2 space-y-2 pb-1">
+                    {selected.tasks.map((t, i) => (
+                      <li
+                        key={i}
+                        className="flex gap-2.5 text-[15px] font-semibold leading-snug"
                       >
-                        {i + 1}
-                      </span>
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-sm text-toon-ink-faint">
-                  Chưa có mô tả công việc.
-                </p>
+                        <span
+                          aria-hidden
+                          className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-lg border-2 border-toon-ink bg-toon-sky font-toon text-xs font-extrabold"
+                        >
+                          {i + 1}
+                        </span>
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
               )}
 
               <h3 className="mb-2 mt-5 font-toon text-lg font-extrabold">

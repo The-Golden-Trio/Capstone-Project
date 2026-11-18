@@ -348,7 +348,14 @@ function GradeBlock({ s }: { s: RunSummary }) {
             <h2 className="font-toon text-2xl font-extrabold leading-tight sm:text-3xl">
               {g.ending.title}
             </h2>
-            <CompactText text={g.ending.text} />
+            {g.ending.text.trim() && (
+              <details className="mt-2 text-sm font-semibold leading-relaxed">
+                <summary className="w-fit cursor-pointer rounded font-bold underline decoration-dotted underline-offset-4 focus-visible:shadow-toon-focus">
+                  Chi tiết kết cục
+                </summary>
+                <p className="mt-2 whitespace-pre-wrap">{g.ending.text}</p>
+              </details>
+            )}
           </div>
         )}
       </div>
@@ -426,19 +433,23 @@ function FeedbackCard({
   );
 }
 
-/** Chỉ đổi cách đọc đoạn dài; phần mở thêm giữ toàn bộ nội dung nhận được. */
+/**
+ * Đoạn dài chỉ mở câu đầu (nguyên câu, không cắt giữa chừng); phần mở thêm
+ * giữ toàn bộ nội dung nhận được.
+ */
 function CompactText({ text }: { text: string }) {
-  const words = text.trim().split(/\s+/);
-  if (words.length <= 30)
-    return <p className="mt-2 text-sm font-semibold leading-relaxed">{text}</p>;
+  const full = text.trim();
+  const first = full.match(/^.+?[.!?…](?=\s|$)/s)?.[0] ?? full;
+  if (first.length >= full.length || full.split(/\s+/).length <= 30)
+    return <p className="mt-2 text-sm font-semibold leading-relaxed">{full}</p>;
   return (
     <div className="mt-2 text-sm font-semibold leading-relaxed">
-      <p>{words.slice(0, 25).join(' ')}…</p>
+      <p>{first}</p>
       <details className="mt-1">
         <summary className="cursor-pointer rounded font-bold focus-visible:shadow-toon-focus">
           Xem đầy đủ
         </summary>
-        <p className="mt-2 whitespace-pre-wrap">{text}</p>
+        <p className="mt-2 whitespace-pre-wrap">{full}</p>
       </details>
     </div>
   );
