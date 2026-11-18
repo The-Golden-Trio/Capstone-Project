@@ -1,7 +1,7 @@
 import {
   useState,
   type ComponentProps,
-  type HTMLAttributes,
+  type DetailsHTMLAttributes,
   type ReactNode,
   type SelectHTMLAttributes,
 } from 'react';
@@ -157,7 +157,7 @@ export function Foldout({
   title,
   children,
   ...rest
-}: HTMLAttributes<HTMLDetailsElement> & { title: string }) {
+}: DetailsHTMLAttributes<HTMLDetailsElement> & { title: string }) {
   return (
     <details
       {...rest}
@@ -166,8 +166,10 @@ export function Foldout({
         rest.className,
       )}
     >
-      <summary className="cursor-pointer font-toon font-bold">{title}</summary>
-      <div className="mt-3 min-w-0">{children}</div>
+      <summary className="cursor-pointer font-toon font-bold text-toon-ink focus-visible:shadow-toon-focus">
+        {title}
+      </summary>
+      <div className="mt-3 min-w-0 text-toon-ink">{children}</div>
     </details>
   );
 }

@@ -5,6 +5,7 @@ import { profile } from '@datn/game-core';
 import { ToonBadge, ToonButton, ConfirmDialog, useToast } from '@datn/ui';
 import {
   Notice,
+  Foldout,
   EmptyMessage,
   PaperCard,
   CardHeading,
@@ -41,10 +42,7 @@ export function JournalTab({ record }: { record: PlayerRecord }) {
   return (
     <div className="space-y-6">
       <PaperCard>
-        <CardHeading
-          title="Nhật ký những lần thử"
-          description="Xem lại các ca."
-        />
+        <CardHeading title="Nhật ký" />
         {record.journal.length ? (
           <RecordTimeline
             items={[...record.journal]
@@ -101,15 +99,20 @@ export function JournalTab({ record }: { record: PlayerRecord }) {
           />
         )}
       </PaperCard>
-      <PaperCard id="quyen-rieng-tu" className="scroll-mt-24">
-        <CardHeading
-          title="Chuyện của bạn, quyền của bạn"
-          description="Bạn có thể rút đồng ý và xoá sở thích, mục tiêu cùng phần tự kể. Lịch sử chơi được giữ riêng để lưu tiến độ."
-        />
+      <Foldout
+        id="quyen-rieng-tu"
+        title="Quản lý tự kể"
+        open={location.hash === '#quyen-rieng-tu' || undefined}
+        className="scroll-mt-24"
+      >
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Bạn có thể rút đồng ý và xoá sở thích, mục tiêu cùng phần tự kể. Lịch
+          sử chơi được giữ riêng để lưu tiến độ.
+        </p>
         <ToonButton variant="danger" onClick={() => setConfirm(true)}>
           Xoá phần kể về bạn
         </ToonButton>
-      </PaperCard>
+      </Foldout>
       <ConfirmDialog
         theme="toon"
         open={confirm}

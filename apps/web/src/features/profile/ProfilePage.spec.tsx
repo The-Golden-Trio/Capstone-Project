@@ -21,6 +21,9 @@ describe('hành trang riêng tư', () => {
     ).toBeTruthy();
     expect(screen.getByText(/♊︎ Song Tử/)).toBeTruthy();
     expect(screen.queryByText('Ước mơ của bạn là gì?')).toBeNull();
+    fireEvent.click(
+      screen.getByText('Mục tiêu của bạn', { selector: 'summary' }),
+    );
     fireEvent.click(screen.getByRole('button', { name: 'Sửa' }));
     await screen.findByText('Ước mơ của bạn là gì?');
     expect(
@@ -44,6 +47,7 @@ describe('hành trang riêng tư', () => {
       '/profile?tab=nhat-ky',
     );
     const invalidate = vi.spyOn(client, 'invalidateQueries');
+    fireEvent.click(screen.getByText('Quản lý tự kể', { selector: 'summary' }));
     fireEvent.click(screen.getByRole('button', { name: 'Xoá phần kể về bạn' }));
     const dialog = within(
       screen.getByRole('dialog', { name: 'Xoá phần kể về bạn?' }),
@@ -57,9 +61,11 @@ describe('hành trang riêng tư', () => {
 
   it('hiện đủ 221 sao nghề chia vùng và các trạng thái chưa có dữ liệu', async () => {
     renderWithProviders(<ProfilePage />, '/profile?tab=thong-ke');
-    expect(
-      await screen.findByRole('heading', { name: 'Những vì sao đã ghé' }),
-    ).toBeTruthy();
+    const stars = await screen.findByText('Những vì sao đã ghé', {
+      selector: 'summary',
+    });
+    expect(stars.closest('details')?.open).toBe(false);
+    fireEvent.click(stars);
     await waitFor(() =>
       expect(screen.getAllByRole('img', { name: /Cụm sao/ })).toHaveLength(6),
     );
@@ -71,7 +77,7 @@ describe('hành trang riêng tư', () => {
         ),
     ).toHaveLength(221);
     expect(screen.getByText('0/221')).toBeTruthy();
-    expect(screen.getAllByText('chơi thêm để mở').length).toBeGreaterThan(0);
+    expect(screen.getByText(/Vùng còn tối: chơi thêm để mở/)).toBeTruthy();
   });
 
   it('giới hạn ghim ba huy hiệu và gửi đúng danh sách khi bỏ ghim', async () => {
@@ -92,6 +98,10 @@ describe('hành trang riêng tư', () => {
       // Tên dạng chuỗi được so khớp nguyên văn nên không lẫn với "Bỏ ghim".
       screen.getByRole<HTMLButtonElement>('button', { name: 'Ghim' }).disabled,
     ).toBe(true);
+    expect(screen.queryByText('Chưa mở khoá')).toBeNull();
+    fireEvent.click(
+      screen.getByRole('checkbox', { name: 'Xem cả huy hiệu chưa mở' }),
+    );
     expect(screen.getByText('Chưa mở khoá')).toBeTruthy();
     fireEvent.click(screen.getAllByRole('button', { name: 'Bỏ ghim' })[0]);
     await waitFor(() => expect(pin).toHaveBeenCalledWith(['a1', 'a2']));

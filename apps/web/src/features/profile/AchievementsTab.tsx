@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { ACHIEVEMENT_KINDS, ToonButton, useToast } from '@datn/ui';
-import { Notice, EmptyMessage, PaperCard, CardHeading } from './ProfileKit';
+import { Notice, PaperCard, CardHeading } from './ProfileKit';
 import { AchievementSeal } from './ProfileArt';
 
 import { api } from '../../api';
@@ -13,6 +13,7 @@ export function AchievementsTab({
 }: {
   achievements: Achievement[];
 }) {
+  const [showLocked, setShowLocked] = useState(false);
   const [kind, setKind] = useState<Achievement['kind'] | null>(null);
   const qc = useQueryClient();
   const { toast } = useToast();
@@ -70,12 +71,25 @@ export function AchievementsTab({
           {errorText(pin.error)}
         </Notice>
       )}
+      <label className="mb-4 flex cursor-pointer items-center gap-2 text-sm font-bold">
+        <input
+          type="checkbox"
+          checked={showLocked}
+          onChange={(event) => setShowLocked(event.target.checked)}
+          className="size-4 accent-toon-maroon focus-visible:shadow-toon-focus"
+        />
+        Xem cả huy hiệu chưa mở
+      </label>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {[...achievements]
           .sort(
             (a, b) => Number(Boolean(b.earnedAt)) - Number(Boolean(a.earnedAt)),
           )
-          .filter((achievement) => !kind || achievement.kind === kind)
+          .filter(
+            (achievement) =>
+              (!kind || achievement.kind === kind) &&
+              (showLocked || achievement.earnedAt),
+          )
           .map((achievement) => (
             <article
               key={achievement.code}
@@ -130,8 +144,16 @@ export function AchievementsTab({
           ))}
       </div>
       {!achievements.some(
-        (achievement) => !kind || achievement.kind === kind,
-      ) && <EmptyMessage title="Chưa có huy hiệu trong nhóm này" />}
+        (achievement) =>
+          (!kind || achievement.kind === kind) &&
+          (showLocked || achievement.earnedAt),
+      ) && (
+        <p className="mt-4 text-sm text-toon-ink-soft">
+          {showLocked
+            ? 'Chưa có huy hiệu trong nhóm này.'
+            : 'Chưa có huy hiệu đã mở trong nhóm này.'}
+        </p>
+      )}
     </PaperCard>
   );
 }

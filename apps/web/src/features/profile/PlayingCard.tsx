@@ -25,10 +25,7 @@ export function PlayingCard({ playing }: { playing: PlayingRow[] }) {
   );
   return (
     <PaperCard>
-      <CardHeading
-        title="Đang chơi"
-        description="Tiếp tục từ nơi bạn vừa dừng lại."
-      />
+      <CardHeading title="Đang chơi" />
       {rows.length ? (
         <div className="space-y-4">
           {rows.map((row, index) => (
@@ -77,7 +74,7 @@ function PlayingOccupation({
         />
         <div className="min-w-0 flex-1">
           <p className="text-xs text-toon-ink-soft">
-            {row.group} › Cấp {row.levelNo} · {row.levelTitle}
+            Cấp {row.levelNo} · {row.levelTitle}
           </p>
           <h3 className="mt-1 font-toon text-2xl font-bold">
             <Link
@@ -107,30 +104,38 @@ function PlayingOccupation({
           max={Math.max(1, row.total)}
           value={row.done}
           label="Màn đã hoàn thành"
+          labelHidden
         />
         <p className="mt-1 text-xs text-toon-ink-soft">
-          {row.done}/{row.total} màn đã xong · Lần gần nhất{' '}
-          {new Date(row.lastPlayedAt).toLocaleDateString('vi-VN')}
+          {row.done}/{row.total} màn
         </p>
       </div>
-      {row.nextLevel ? (
-        <Foldout
-          title={`Mở cấp ${row.nextLevel.levelNo} cần:`}
-          className="mb-4 text-sm text-toon-ink-soft"
-        >
-          <ul className="mt-1 space-y-1">
-            {row.nextLevel.conditions.map((condition) => (
-              <li key={condition.label}>
-                {condition.met ? '✓ Đã đạt' : '○ Chưa đạt'} · {condition.label}
-              </li>
-            ))}
-          </ul>
-        </Foldout>
-      ) : (
-        <p className="mb-4 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-xs text-toon-ink-soft">
-          Chưa có cấp tiếp theo trong lộ trình này.
+      <Foldout
+        title="Tiến độ và điều kiện"
+        className="mb-4 text-sm text-toon-ink-soft"
+      >
+        <p>
+          {row.group} · Lần gần nhất{' '}
+          {new Date(row.lastPlayedAt).toLocaleDateString('vi-VN')}
         </p>
-      )}
+        {row.nextLevel ? (
+          <div className="mt-3 text-sm text-toon-ink-soft">
+            <p className="font-bold">Mở cấp {row.nextLevel.levelNo} cần:</p>
+            <ul className="mt-1 space-y-1">
+              {row.nextLevel.conditions.map((condition) => (
+                <li key={condition.label}>
+                  {condition.met ? '✓ Đã đạt' : '○ Chưa đạt'} ·{' '}
+                  {condition.label}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <p className="mb-4 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-xs text-toon-ink-soft">
+            Chưa có cấp tiếp theo trong lộ trình này.
+          </p>
+        )}
+      </Foldout>
       <div className="mb-4 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-xs text-toon-ink-soft">
         <p className="mb-2 font-semibold">Mặt khó của nghề</p>
         {occupation.isError ? (

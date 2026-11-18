@@ -7,14 +7,7 @@ import {
   InkStar,
   regionColor,
 } from '@datn/ui';
-import {
-  Foldout,
-  Notice,
-  EmptyMessage,
-  PaperCard,
-  CardHeading,
-  StatCard,
-} from './ProfileKit';
+import { Foldout, Notice, EmptyMessage, StatCard } from './ProfileKit';
 
 import { errorText, useCatalogue } from '../../api/hooks';
 import type { CatalogueOccupation, PlayerRecord } from '../../api/types';
@@ -39,11 +32,10 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
         />
         <StatCard label="Nhóm ngành đã ghé" value={stats.groupsVisited} />
       </div>
-      <PaperCard>
-        <CardHeading
-          title="Những vì sao đã ghé"
-          description="Chấm sáng: nghề đã thử. Vùng còn tối: chơi thêm để mở."
-        />
+      <Foldout title="Những vì sao đã ghé">
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Chấm sáng: nghề đã thử. Vùng còn tối: chơi thêm để mở.
+        </p>
         {catalogue.isError ? (
           <EmptyMessage
             title="Chưa vẽ được bản đồ"
@@ -94,12 +86,11 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
             })}
           </div>
         )}
-      </PaperCard>
-      <PaperCard>
-        <CardHeading
-          title="Thời gian trong từng vùng"
-          description="Mỗi ô đầy là 30 phút. Ô cuối ghi lại cả phần phút lẻ."
-        />
+      </Foldout>
+      <Foldout title="Thời gian theo vùng">
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Mỗi ô đầy là 30 phút. Ô cuối ghi lại cả phần phút lẻ.
+        </p>
         {!stats.minutes ? (
           <EmptyMessage
             className="grayscale opacity-60"
@@ -162,12 +153,11 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
         ) : (
           <LoadingBlock text="Đang lấy danh mục vùng nghề…" />
         )}
-      </PaperCard>
-      <PaperCard>
-        <CardHeading
-          title="Những việc bạn thích làm"
-          description="Năm việc được chọn “Thích” nhiều nhất sau ca làm."
-        />
+      </Foldout>
+      <Foldout title="Việc bạn thích">
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Năm việc được chọn “Thích” nhiều nhất sau ca làm.
+        </p>
         {stats.favouriteTasks.length ? (
           <ol className="space-y-3">
             {[...stats.favouriteTasks]
@@ -193,7 +183,7 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
             description="Trả lời câu hỏi thích tới đâu sau một ca để ghi lại việc bạn muốn thử tiếp."
           />
         )}
-      </PaperCard>
+      </Foldout>
     </div>
   );
 }

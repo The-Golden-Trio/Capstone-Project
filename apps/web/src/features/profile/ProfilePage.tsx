@@ -8,7 +8,7 @@ import {
   PillTabs,
   StickerBadge,
 } from '@datn/ui';
-import { EmptyMessage, PaperCard, ProfileCanvas } from './ProfileKit';
+import { EmptyMessage, Foldout, PaperCard, ProfileCanvas } from './ProfileKit';
 import { AchievementSeal, PlayerSeal } from './ProfileArt';
 
 import { errorText, useMe, useRecord } from '../../api/hooks';
@@ -86,9 +86,15 @@ export default function ProfilePage() {
       >
         <PlayingCard playing={data.playing} />
         <SkillsCard record={data} sign={sign} />
-        <GoalsCard record={data} quizDone={me.data.quizDone} />
-        <RiasecCard riasec={data.riasec} />
-        <KeywordsCard record={data} />
+        <Foldout title="Mục tiêu của bạn">
+          <GoalsCard record={data} quizDone={me.data.quizDone} />
+        </Foldout>
+        <Foldout title="Điều bạn thích">
+          <RiasecCard riasec={data.riasec} />
+        </Foldout>
+        <Foldout title="Kỹ năng nghề">
+          <KeywordsCard record={data} />
+        </Foldout>
       </ToonTabPanel>
       <ToonTabPanel
         idBase="profile"
