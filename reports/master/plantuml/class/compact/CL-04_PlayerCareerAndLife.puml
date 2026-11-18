@@ -1,0 +1,201 @@
+@startuml CL-04_PlayerCareerAndLife
+title CL-04 · NestJS modules — Player career and life
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "CareerModule" <<Rectangle>> {
+  class CareerModule <<module>> {
+    imports: CatalogueModule
+    controllers: ProfileController, GetToKnowMeController, CareerController
+    providers: ProfileService, GetToKnowMeService, LevelAccessService, PlayerLevelService, SuggestionService, AchievementService
+    exports: ProfileService, PlayerLevelService
+    <i>player_profile and player_level: Get to know me, soft skills, keywords, levels, suggestions, achievements</i>
+  }
+  class ProfileController <<controller>> {
+    -profiles : ProfileService
+    -achievements : AchievementService
+    --
+    +getProfile(user: AuthUser) : ProfileView  «GET /profile» [EX]
+    +getJournal(user: AuthUser, query: ListQuery) : Page<JournalEntry>  «GET /profile/journal» [EX]
+    +updateGoals(user: AuthUser, dto: GoalsInput) : ProfileView  «PUT /profile/goals» [EX]
+    +pinAchievements(user: AuthUser, dto: PinInput) : ProfileView  «PUT /profile/pins» [EX]
+  }
+  class GetToKnowMeController <<controller>> {
+    -gtkm : GetToKnowMeService
+    --
+    +getCards(user: AuthUser) : CardSet  «GET /get-to-know-me» [EX]
+    +submitGetToKnowMe(user: AuthUser, dto: GetToKnowMeInput) : GetToKnowMeResult  «POST /get-to-know-me» [EX]
+  }
+  class CareerController <<controller>> {
+    -levels : PlayerLevelService
+    -suggestions : SuggestionService
+    --
+    +enterLevel(user: AuthUser, dto: EnterLevelInput) : LevelEntry  «POST /career/levels» [EX]
+    +getPlayerLevel(user: AuthUser, playerLevelId: string) : LevelEntry  «GET /career/levels/{playerLevelId}» [EX]
+    +getSuggestions(user: AuthUser) : Suggestions  «GET /career/suggestions» [EX]
+  }
+  class ProfileService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -data : GameData
+    --
+    +view(user) : ProfileView  «7-group radar, tiers, strengths after ≥ 3 scenes, RIASEC self vs tried»
+    +journal(user, query) : Page<JournalEntry>
+    +updateGoals(user, dto) : ProfileView
+    +applyRun(tx, run) : TierUp[]  «soft_skills, riasec.tried; keep best per scene»
+  }
+  class GetToKnowMeService {
+    <i>no AI; 18 cards → RIASEC self line + 2–3 interest regions; goals card</i>
+    -prisma : PrismaService
+    -data : GameData
+    --
+    +cards() : CardSet
+    +submit(user, dto) : GetToKnowMeResult
+    -safetyCheck(text) : boolean  «word list → hotline 111 message»
+  }
+  class LevelAccessService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    --
+    +access(user, levelId) : LevelAccess  «entry open · tiers · keyword coverage ≥ 50% (30% if Sim ≥ 1.2) · prerequisites D-121»
+    +explain(user, levelId) : CoverageExplanation
+  }
+  class PlayerLevelService {
+    -prisma : PrismaService
+    -access : LevelAccessService
+    -rules : RuleEngine
+    -profiles : ProfileService
+    -achievements : AchievementService
+    --
+    +enter(user, dto) : LevelEntry  «random company by industry weights; onboarding slides»
+    +get(user, id) : LevelEntry
+    +completeIfDone(tx, playerLevelId) : LevelUp | null  «keywords → output mastery (≤ 5)»
+  }
+  class SuggestionService {
+    -prisma : PrismaService
+    -catalogue : CatalogueService
+    --
+    +forPlayer(user) : Suggestions  «same field you may like · other field you do well · other field you may like»
+    -likeScore(riasec, occupation) : number
+    -doWellScore(softSkills, occupation) : number
+  }
+  class AchievementService {
+    -prisma : PrismaService
+    -data : GameData
+    -notifications : NotificationService
+    --
+    +evaluate(tx, playerId, event) : string[]
+    +pin(user, dto) : ProfileView
+  }
+  class "CareerModule DTOs" as CareerModule_DTOs <<dto>> {
+    EnterLevelInput { levelId, keepCompany? }
+    GetToKnowMeInput { cards[18]: integer, interests?[≤5], goals? }
+    GoalsInput { goals }
+    ListQuery { cursor?, limit?: integer, status?, kind? }
+    PinInput { achievementCodes[≤3] }
+    CardSet
+    GetToKnowMeResult
+    JournalEntry
+    LevelEntry
+    ProfileView
+    Suggestions
+  }
+}
+
+package "LifeModule" <<Rectangle>> {
+  class LifeModule <<module>> {
+    imports: —
+    controllers: ShopController, NpcController
+    providers: WalletService, HealthService, ShopService, BondService, SideQuestService
+    exports: WalletService, HealthService, BondService, SideQuestService
+    <i>coins, health, overtime, shop and inventory, NPC bonds and side quests (no grading)</i>
+  }
+  class ShopController <<controller>> {
+    -shop : ShopService
+    --
+    +getShop(user: AuthUser) : ShopView  «GET /shop» [EX]
+    +buyItem(user: AuthUser, dto: BuyInput) : InventoryItem[]  «POST /shop/purchases» [EX]
+    +listInventory(user: AuthUser) : InventoryItem[]  «GET /inventory» [EX]
+    +useItem(user: AuthUser, dto: UseItemInput) : InventoryItem  «POST /inventory/use» [EX]
+  }
+  class NpcController <<controller>> {
+    -bonds : BondService
+    --
+    +listNpcs(user: AuthUser) : NpcBondView[]  «GET /npcs» [EX]
+    +giveGift(user: AuthUser, npcId: string, dto: GiftInput) : NpcBondView  «POST /npcs/{npcId}/gifts» [EX]
+  }
+  class WalletService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    --
+    +pay(tx, run) : number  «coins of the scene; payday and bonuses follow the in-game calendar»
+    +spend(tx, playerId, amount) : void  «409 if not enough»
+  }
+  class HealthService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    --
+    +beforeRun(tx, playerId, level) : TimeAdjust  «drain, tier → spare turns»
+    +overtime(tx, run, option) : TimeAdjust
+    +rest(tx, playerId, amount) : void
+  }
+  class ShopService {
+    -prisma : PrismaService
+    -data : GameData
+    -wallet : WalletService
+    -health : HealthService
+    --
+    +view(user) : ShopView  «prices in u or X»
+    +buy(user, dto) : InventoryItem[]
+    +inventory(user) : InventoryItem[]
+    +use(user, dto) : InventoryItem  «buff for one run, decor placement, milestone»
+  }
+  class BondService {
+    <i>player_profile.npc_bonds: MET → CLOSE → BONDED → SOULMATE, deck of unlocked cards</i>
+    -prisma : PrismaService
+    -data : GameData
+    -wallet : WalletService
+    --
+    +list(user) : NpcBondView[]
+    +gift(user, npcId, dto) : NpcBondView
+    +addAffinity(tx, playerId, npcId, amount) : Stage
+    +drawCast(playerId, slots) : NpcSlot[]
+  }
+  class SideQuestService {
+    -prisma : PrismaService
+    -bonds : BondService
+    -health : HealthService
+    --
+    +eligible(playerId, scenario) : boolean  «needs stage, ticket, milestone or occasion»
+    +complete(tx, run) : void  «fixed bonus ≤ 10% of the level budget, +6 health»
+  }
+  class "LifeModule DTOs" as LifeModule_DTOs <<dto>> {
+    BuyInput { itemCode, qty }
+    GiftInput { inventoryId }
+    UseItemInput { inventoryId, runId?, placement? }
+    InventoryItem
+    NpcBondView
+    ShopView
+  }
+}
+
+class CatalogueService <<CL-02 · CatalogueModule>>
+
+ProfileController --> ProfileService
+ProfileController --> AchievementService
+GetToKnowMeController --> GetToKnowMeService
+CareerController --> PlayerLevelService
+CareerController --> SuggestionService
+PlayerLevelService --> LevelAccessService
+PlayerLevelService --> ProfileService
+PlayerLevelService --> AchievementService
+SuggestionService --> CatalogueService
+ShopController --> ShopService
+NpcController --> BondService
+ShopService --> WalletService
+ShopService --> HealthService
+BondService --> WalletService
+SideQuestService --> BondService
+SideQuestService --> HealthService
+@enduml

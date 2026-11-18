@@ -1,9 +1,10 @@
-import { Button, EmptyState, LoadingBlock } from '@datn/ui';
+import { Button, Checkbox, EmptyState, LoadingBlock } from '@datn/ui';
 import { useState } from 'react';
 import { staffApi } from '../../api/endpoints';
 import type { ReferenceAnswer, ScenarioContent } from '../../api/types';
 import { Card, ProblemAlert, SelectField, TextArea } from '../../components/ui';
 import { useLoad } from '../../hooks/useLoad';
+import { SourceTag } from '../shared/Guidance';
 import type { SkillName } from './ScenarioEditor';
 
 type Score = 0 | 1 | 2 | null;
@@ -36,6 +37,8 @@ export function ReferenceAnswers({
   const [text, setText] = useState('');
   const [stratum, setStratum] = useState<ReferenceAnswer['stratum']>('MEDIUM');
   const [scores, setScores] = useState<Record<string, Score>>({});
+  /** Cờ phản tác dụng ghi riêng với điểm (D-116). */
+  const [flags, setFlags] = useState<Record<string, boolean>>({});
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<unknown>();
   const activity = content.activities.find((a) => a.key === activityKey);
@@ -55,12 +58,14 @@ export function ReferenceAnswers({
         answerText: text,
         stratum,
         scores: rubric.map((r) => ({
-          criterionId: r.id,
-          score: scores[r.id] ?? null,
+          criterionId: r.id as string,
+          score: scores[r.id as string] ?? null,
+          counterproductive: flags[r.id as string] ?? false,
         })),
       });
       setText('');
       setScores({});
+      setFlags({});
       await list.reload();
     } catch (e) {
       setError(e);
@@ -95,7 +100,10 @@ export function ReferenceAnswers({
                 <p>{r.answerText}</p>
                 <p className="mt-1 text-[12px] text-ink-muted">
                   {r.scores
-                    .map((s) => (s.score === null ? 'không xét' : s.score))
+                    .map(
+                      (s) =>
+                        `${s.score === null ? 'không xét' : s.score}${s.counterproductive ? ' ⚑' : ''}`,
+                    )
                     .join(' · ')}
                 </p>
               </li>
@@ -138,36 +146,52 @@ export function ReferenceAnswers({
               { value: 'HARD', label: 'Khó' },
             ]}
           />
+          {rubric.length > 0 && (
+            <p className="mb-2 text-[12px] text-ink-faint">
+              Chấm 0/1/2 hoặc “không xét”. Cờ phản tác dụng ghi riêng, không trừ
+              vào điểm.
+              <SourceTag>D-116</SourceTag>
+            </p>
+          )}
           {rubric.map((r) => (
-            <SelectField
-              key={r.id}
-              label={`Điểm: ${nameOf(r.competencyId)}`}
-              value={
-                scores[r.id] === undefined
-                  ? ''
-                  : scores[r.id] === null
-                    ? 'na'
-                    : String(scores[r.id])
-              }
-              onChange={(e) => {
-                const value = e.target.value;
-                setScores((previous) => {
-                  const next = { ...previous };
-                  if (value === '') delete next[r.id];
-                  else
-                    next[r.id] =
-                      value === 'na' ? null : (Number(value) as Score);
-                  return next;
-                });
-              }}
-              placeholder="— Chọn —"
-              options={[
-                { value: '2', label: '2' },
-                { value: '1', label: '1' },
-                { value: '0', label: '0' },
-                { value: 'na', label: 'Không xét' },
-              ]}
-            />
+            <div key={r.id} className="mb-1">
+              <SelectField
+                label={`Điểm: ${nameOf(r.competencyId)}`}
+                value={
+                  scores[r.id as string] === undefined
+                    ? ''
+                    : String(scores[r.id as string])
+                }
+                onChange={(e) =>
+                  setScores((s) => ({
+                    ...s,
+                    [r.id as string]:
+                      e.target.value === 'na'
+                        ? null
+                        : (Number(e.target.value) as Score),
+                  }))
+                }
+                placeholder="— Chọn —"
+                options={[
+                  { value: '2', label: '2' },
+                  { value: '1', label: '1' },
+                  { value: '0', label: '0' },
+                  { value: 'na', label: 'Không xét' },
+                ]}
+              />
+              <div className="-mt-1 mb-2">
+                <Checkbox
+                  label="Có dấu hiệu phản tác dụng"
+                  checked={flags[r.id as string] ?? false}
+                  onChange={(e) =>
+                    setFlags((f) => ({
+                      ...f,
+                      [r.id as string]: e.target.checked,
+                    }))
+                  }
+                />
+              </div>
+            </div>
           ))}
           <Button
             variant="primary"

@@ -35,6 +35,37 @@ package "ERD-06 Answers and assessment" {
 package "ERD-07 Operations and settings" {
   entity "ai_job" as ai_job
 }
+package "ERD-08 Player profile and stats" #DDEBF7 {
+  entity "explorer_profile" as explorer_profile
+  entity "gtkm_attempt" as gtkm_attempt
+  entity "riasec_trace" as riasec_trace
+  entity "soft_skill_group" as soft_skill_group
+  entity "explorer_skill_group" as explorer_skill_group
+  entity "suggestion_event" as suggestion_event
+}
+package "ERD-09 Keywords and progression" #DDEBF7 {
+  entity "keyword" as keyword
+  entity "occupation_keyword" as occupation_keyword
+  entity "level_keyword" as level_keyword
+  entity "level_skill_budget" as level_skill_budget
+  entity "explorer_keyword" as explorer_keyword
+  entity "scenario_best" as scenario_best
+}
+package "ERD-10 Shift content" #FFF2CC {
+  entity "company" as company
+  entity "level_pack" as level_pack
+  entity "explorer_company" as explorer_company
+}
+package "ERD-11 Economy, health and NPC" #DDEBF7 {
+  entity "wallet" as wallet
+  entity "xu_transaction" as xu_transaction
+  entity "shop_item" as shop_item
+  entity "mission_prep" as mission_prep
+  entity "health_state" as health_state
+  entity "life_milestone" as life_milestone
+  entity "npc_card" as npc_card
+  entity "explorer_npc" as explorer_npc
+}
 
 staff_assignment }o--|| occupation
 staff_assignment }o--|| user_account
@@ -65,4 +96,40 @@ answer }o--|| scenario_run
 assessment |o--|| answer
 assessment }o--|| ai_job
 ai_job }o--o| scenario_run
+explorer_profile |o--|| user_account
+gtkm_attempt }o--|| user_account
+riasec_trace }o--|| user_account
+explorer_skill_group }o--|| user_account
+explorer_skill_group }o--|| soft_skill_group
+suggestion_event }o--|| user_account
+occupation_keyword }o--|| occupation
+occupation_keyword }o--|| keyword
+level_keyword }o--|| occupation_level
+level_keyword }o--|| keyword
+level_skill_budget }o--|| occupation_level
+level_skill_budget }o--|| soft_skill_group
+explorer_keyword }o--|| user_account
+explorer_keyword }o--|| keyword
+scenario_best }o--|| scenario
+scenario_best }o--|| scenario_run
+level_pack }o--|| occupation_level
+explorer_company }o--|| user_account
+explorer_company }o--|| company
+scenario_run }o--o| company
+wallet |o--|| user_account
+xu_transaction }o--|| user_account
+xu_transaction }o--o| scenario_run
+xu_transaction }o--o| shop_item
+mission_prep |o--|| scenario_run
+health_state |o--|| user_account
+life_milestone }o--o| soft_skill_group
+explorer_npc }o--|| user_account
+explorer_npc }o--|| npc_card
+
+legend right
+  |<#FFFFFF>      | ERD-01..07: data model of the master report (§5.3) |
+  |<#DDEBF7>      | ERD-08, 09, 11: game design from ✅ decisions (D-104..D-133) |
+  |<#FFF2CC>      | ERD-10: Seed scenario, decided in research/ |
+  Tables still "Cần chốt" are marked inside each file (07 A28).
+endlegend
 @enduml

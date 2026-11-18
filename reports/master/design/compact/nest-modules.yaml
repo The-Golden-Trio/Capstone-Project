@@ -1,0 +1,675 @@
+# JobQuest backend — NestJS module design for the compact ERD (19 tables, 18 Nov 2026).
+# Source of truth for CL-00 … CL-07; gen_class.py checks it and draws the diagrams.
+#
+# Routes are declared on each controller: {m: signature, http: "METHOD /path", roles: [...]}.
+# Every path is under /api/v1. Roles: Pub (no sign-in), EX, DE, CA, SA.
+# Provider kinds: service (default), processor (BullMQ, worker app), cron, guard, interceptor,
+#                 interface, adapter, library, decorator, constants, command (CLI, nest-commander).
+# deps: constructor injection "field: Type". Global provider types are drawn as fields only, not arrows.
+
+global_types: [PrismaService, SettingsService, StorageService, AuditLogService, MetricsService,
+               StreamService, NotificationService, RuleEngine, GameData, Queue]
+
+components:
+  identity: Identity & access
+  content: Content (staff)
+  player: Player
+  play: Play & assessment
+  ai: AI orchestration · Model gateway
+  operations: Feedback & monitoring
+  platform: Shared platform
+
+diagrams:
+  CL-01: {title: "Identity and access", modules: [AuthModule, UserModule]}
+  CL-02: {title: "Catalogue and scenario authoring", modules: [CatalogueModule, ScenarioModule, LifecycleModule]}
+  CL-03: {title: "Review and publishing", modules: [ReviewModule, PublishingModule]}
+  CL-04: {title: "Player career and life", modules: [CareerModule, LifeModule]}
+  CL-05: {title: "Play and assessment", modules: [PlayModule, AssessmentModule]}
+  CL-06: {title: "AI, feedback and monitoring", modules: [AiModule, FeedbackModule, MonitoringModule]}
+  CL-07: {title: "Shared platform", modules: [CoreModule, NotificationModule, GameCoreModule]}
+
+# Input DTOs with their fields (output DTOs are named only; their fields follow the ERD columns they read).
+dtos:
+  RegisterInput: "email, password, nickname, birthDate"
+  SignInInput: "email, password"
+  GoogleSignInInput: "code, redirectUri, birthDate?"
+  RefreshInput: "refreshToken"
+  PasswordResetInput: "email"
+  PasswordResetConfirmInput: "token, newPassword"
+  UpdateMeInput: "nickname?, currentPassword?, newPassword?"
+  CreateStaffInput: "email, displayName, roles[]"
+  UpdateUserInput: "status?: ACTIVE|DISABLED, roles?[]: EXPLORER|DOMAIN_EXPERT|CONTENT_ADMIN|SYSTEM_ADMIN"
+  StaffingInput: "contentAdminId, domainExpertIds[]"
+  OccupationUpdateInput: "status?, profile?"
+  OpenScenarioInput: "levelId, kind, code, npcId?"
+  AssignAuthorInput: "authorId"
+  SeedInput: "seed, rowVersion"
+  AssignReviewerInput: "reviewerId, deadlineAt"
+  ReviewDecisionInput: "decision, answers[], comment?"
+  FindingsInput: "runId, findings[] {kind, text}"
+  PublishInput: "effectiveFrom"
+  GetToKnowMeInput: "cards[18]: integer, interests?[≤5], goals?"
+  GoalsInput: "goals"
+  PinInput: "achievementCodes[≤3]"
+  EnterLevelInput: "levelId, keepCompany?"
+  TaskQuery: "roleCode, band"
+  TranscriptQuery: "after?: integer"
+  StartRunInput: "taskId: string, playerLevelId?"
+  TurnInput: "turnId: uuid, kind: action|say|end_conversation|choose|timeout|save_artefact|confirm_end|cancel_end|hint|overtime, key?, text?, option?, artefact?, fields?: object, ticks?: integer, elapsedMs?: integer"
+  FlagInput: "nodeKey, reason"
+  NoteInput: "text"
+  LikingInput: "answers[] {activity, level 0–2}"
+  BuyInput: "itemCode, qty"
+  UseItemInput: "inventoryId, runId?, placement?"
+  GiftInput: "inventoryId"
+  FeedbackInput: "kind: RATING|APP, occupationId?, scores?: object, text?"
+  HandleFeedbackInput: "status"
+  BlindRatingInput: "ratings[] {runId, segment, subSkill, level, flags[]}"
+  PromptInput: "kind, baseVersion, text, changeNote"
+  ListQuery: "cursor?, limit?: integer, status?, kind?"
+
+modules:
+  # ───────────────────────── Shared platform ─────────────────────────
+  CoreModule:
+    component: platform
+    global: true
+    note: "infrastructure: database, queues, object storage, settings from env, audit log, Prometheus metrics"
+    imports: ["BullModule.forRootAsync()", "BullModule.registerQueue(...QUEUES)", "ConfigModule.forRoot({ validate })", "PrometheusModule.register()"]
+    providers:
+      PrismaService:
+        note: "extends PrismaClient · 19 tables of the compact ERD"
+        methods: ["+onModuleInit() : Promise<void>", "+$transaction(fn) : Promise<T>"]
+      QUEUES:
+        kind: constants
+        fields: [narration, flag-judge, grading, feedback-note, email]
+      StorageService:
+        deps: ["s3: S3Client"]
+        methods: ["+putObject(key, body, contentType) : Promise<string>", "+signedUrl(key, ttlSeconds) : Promise<string>"]
+      SettingsService:
+        deps: ["config: ConfigService"]
+        methods: ["+get<K>(key: K) : AppSettings[K]  «costCeilingUsd, ratingMinResponses, idleTimeoutMinutes»"]
+      AuditLogService:
+        deps: ["prisma: PrismaService"]
+        note: "audit_log: account actions, SM-01 transitions, prompt saves"
+        methods: ["+log(tx, actorId, action, target, detail?) : Promise<void>", "+list(target, page: ListQuery) : Page<AuditEntry>"]
+      MetricsService:
+        deps: ["httpDuration: Histogram", "aiCallDuration: Histogram", "queueDepth: Gauge"]
+        methods: ["+observeHttp(route, status, seconds) : void", "+observeAiCall(task, seconds, ok) : void"]
+      HttpMetricsInterceptor:
+        kind: interceptor
+        deps: ["metrics: MetricsService"]
+        methods: ["+intercept(ctx, next) : Observable<unknown>"]
+    exports: [PrismaService, BullModule, StorageService, SettingsService, AuditLogService, MetricsService]
+
+  NotificationModule:
+    component: platform
+    global: true
+    note: "everything pushed to a user: SSE stream, in-app notifications, e-mail (notification)"
+    controllers:
+      StreamController:
+        deps: ["stream: StreamService"]
+        routes:
+          - {m: "openEventStream(user: AuthUser, lastEventId?: string) : Observable<MessageEvent>", http: "GET /stream", roles: [EX, DE, CA, SA]}
+      NotificationController:
+        deps: ["notifications: NotificationService"]
+        routes:
+          - {m: "listNotifications(user: AuthUser, query: ListQuery) : Page<NotificationView>", http: "GET /notifications", roles: [EX, DE, CA, SA]}
+          - {m: "markNotificationRead(user: AuthUser, id: string) : void", http: "POST /notifications/{id}/read", roles: [EX, DE, CA, SA]}
+    providers:
+      StreamService:
+        deps: ["pub: Redis", "sub: Redis"]
+        methods: ["+publish(userId, event: StreamEvent) : Promise<void>", "+events(userId, lastEventId?) : Observable<MessageEvent>"]
+      NotificationService:
+        deps: ["prisma: PrismaService", "emailQueue: Queue «email»"]
+        methods: ["+notify(userId, template, payload, channels) : Promise<void>", "+list(user, query) : Page<NotificationView>", "+markRead(user, id) : void"]
+      EmailProcessor:
+        kind: processor
+        queue: email
+        deps: ["smtp: Transporter"]
+        methods: ["+process(job) : Promise<void>"]
+      ReminderScheduler:
+        kind: cron
+        deps: ["prisma: PrismaService", "notifications: NotificationService"]
+        methods: ["+remindReviewDeadlines() : Promise<void>  «@Cron hourly»"]
+    exports: [StreamService, NotificationService]
+
+  GameCoreModule:
+    component: platform
+    global: true
+    note: "wraps @jobquest/game-core, also bundled in the Explorer and Staff apps (play-test)"
+    providers:
+      RuleEngine:
+        kind: library
+        methods:
+          - "+advanceClock(state, cost, health, items) : SceneState  «time points, timed nodes cut long actions»"
+          - "+dueNode(seed, state) : NodeRef | null  «trigger by time, player or fact»"
+          - "+validateAnswer(node, answer) : ValidationResult"
+          - "+closedLevels(node, answer) : SubSkillLevel[]  «option profiles → 0/1/2 + flags»"
+          - "+engineHint(seed, state) : Hint | null  «tier 1 unread source, tier 2 unused fact»"
+          - "+groupPoints(caps, levels, band, sign, items) : GroupPoints  «cap × (avg/2 − penalty × flags), zodiac ×1.12 on gains»"
+          - "+tierOf(points, highest) : Tier  «0·500·1500·3000·6000·10000, never drops»"
+          - "+coverage(have: KeywordMap, need: KeywordMap) : number"
+          - "+coinsFor(level, playIndex) : number  «100 × √(salary ÷ 13 M), 60–250; replay 50% / 25%»"
+          - "+healthAfter(health, drain, ot) : number"
+      GameData:
+        kind: library
+        note: "fixed catalogues: 7 groups and 42 sub-skills, 18 cards, 12 signs, shop items, ~100 achievements, 13 shared flags"
+        methods: ["+subSkill(code) : SubSkillDef", "+zodiacOf(birthDate) : Sign", "+item(code) : ShopItemDef", "+achievement(code) : AchievementDef"]
+    exports: [RuleEngine, GameData]
+
+  # ───────────────────────── Identity ─────────────────────────
+  AuthModule:
+    component: identity
+    imports: [JwtModule]
+    controllers:
+      AuthController:
+        deps: ["auth: AuthService"]
+        routes:
+          - {m: "register(dto: RegisterInput) : Session", http: "POST /auth/register", roles: [Pub]}
+          - {m: "signIn(dto: SignInInput) : Session", http: "POST /auth/sign-in", roles: [Pub]}
+          - {m: "signInWithGoogle(dto: GoogleSignInInput) : Session", http: "POST /auth/google", roles: [Pub]}
+          - {m: "refreshSession(dto: RefreshInput) : Session", http: "POST /auth/refresh", roles: [Pub]}
+          - {m: "signOut(user: AuthUser) : void", http: "POST /auth/sign-out", roles: [EX, DE, CA, SA]}
+          - {m: "requestPasswordReset(dto: PasswordResetInput) : void", http: "POST /auth/password-reset", roles: [Pub]}
+          - {m: "confirmPasswordReset(dto: PasswordResetConfirmInput) : void", http: "POST /auth/password-reset/confirm", roles: [Pub]}
+    providers:
+      AuthService:
+        deps: ["prisma: PrismaService", "tokens: TokenService", "passwords: PasswordService", "google: GoogleOAuthService", "audit: AuditLogService"]
+        methods:
+          - "+register(dto) : Session  «user_account + player_profile in one transaction»"
+          - "+signIn(dto) : Session"
+          - "+signInWithGoogle(dto) : Session"
+          - "+refresh(dto) : Session"
+          - "+signOut(user) : void"
+          - "+requestPasswordReset(dto) : void"
+          - "+confirmPasswordReset(dto) : void"
+      TokenService:
+        deps: ["jwt: JwtService", "prisma: PrismaService", "settings: SettingsService"]
+        note: "auth_token: REFRESH (rotated) and RESET (single use)"
+        methods: ["+issue(account) : Session", "+verifyAccess(token) : AuthUser", "+rotate(refreshToken) : Session", "+revokeAll(userId) : void"]
+      PasswordService:
+        methods: ["+hash(plain) : Promise<string>", "+verify(plain, hash) : Promise<boolean>"]
+      GoogleOAuthService:
+        deps: ["oauth: OAuth2Client"]
+        methods: ["+exchangeCode(code, redirectUri) : GoogleProfile"]
+      AccessPolicyService:
+        deps: ["prisma: PrismaService"]
+        note: "staff_assignment"
+        methods: ["+occupationOf(ref) : Promise<string>", "+isAssigned(userId, occupationId, role?) : boolean", "+isAuthorOf(userId, scenarioId) : boolean", "+isReviewerOf(userId, scenarioId) : boolean"]
+      JwtAuthGuard:
+        kind: guard
+        deps: ["tokens: TokenService", "reflector: Reflector"]
+        methods: ["+canActivate(ctx) : boolean"]
+      RolesGuard:
+        kind: guard
+        deps: ["reflector: Reflector"]
+        methods: ["+canActivate(ctx) : boolean"]
+      OccupationAccessGuard:
+        kind: guard
+        deps: ["access: AccessPolicyService"]
+        note: "on every /staff route"
+        methods: ["+canActivate(ctx) : Promise<boolean>"]
+      Decorators:
+        kind: decorator
+        fields: ["@Public()", "@Roles(...roles)", "@CurrentUser() : AuthUser"]
+    exports: [TokenService, PasswordService, AccessPolicyService, OccupationAccessGuard]
+
+  UserModule:
+    component: identity
+    imports: [AuthModule]
+    controllers:
+      MeController:
+        deps: ["accounts: AccountService"]
+        routes:
+          - {m: "getMe(user: AuthUser) : Me", http: "GET /me", roles: [EX, DE, CA, SA]}
+          - {m: "updateMe(user: AuthUser, dto: UpdateMeInput) : Me", http: "PATCH /me", roles: [EX, DE, CA, SA]}
+          - {m: "deleteMe(user: AuthUser) : void", http: "DELETE /me", roles: [EX]}
+      UserAdminController:
+        deps: ["users: UserAdminService"]
+        routes:
+          - {m: "listUsers(user: AuthUser, query: ListQuery) : Page<UserAdminView>", http: "GET /admin/users", roles: [SA]}
+          - {m: "createStaffAccount(user: AuthUser, dto: CreateStaffInput) : UserAdminView", http: "POST /admin/users", roles: [SA]}
+          - {m: "updateUser(user: AuthUser, userId: string, dto: UpdateUserInput) : UserAdminView", http: "PATCH /admin/users/{userId}", roles: [SA]}
+          - {m: "deleteUser(user: AuthUser, userId: string) : void", http: "DELETE /admin/users/{userId}", roles: [SA]}
+          - {m: "getUserActivity(user: AuthUser, userId: string, query: ListQuery) : Page<AuditEntry>", http: "GET /admin/users/{userId}/activity", roles: [SA]}
+      StaffingController:
+        deps: ["staffing: StaffingService"]
+        routes:
+          - {m: "getOccupationStaff(user: AuthUser, occupationId: string) : OccupationStaff", http: "GET /admin/occupations/{occupationId}/staff", roles: [SA]}
+          - {m: "setOccupationStaff(user: AuthUser, occupationId: string, dto: StaffingInput) : OccupationStaff", http: "PUT /admin/occupations/{occupationId}/staff", roles: [SA]}
+    providers:
+      AccountService:
+        deps: ["prisma: PrismaService", "passwords: PasswordService", "tokens: TokenService"]
+        methods: ["+getMe(user) : Me", "+update(user, dto) : Me", "+deleteExplorer(user) : void  «cascade runs, profile; feedback.user_id → NULL»"]
+      UserAdminService:
+        deps: ["prisma: PrismaService", "tokens: TokenService", "audit: AuditLogService", "notifications: NotificationService"]
+        methods: ["+list(query) : Page<UserAdminView>", "+createStaff(admin, dto) : UserAdminView", "+update(admin, userId, dto) : UserAdminView", "+delete(admin, userId) : void  «staff are anonymised»", "+activity(userId, query) : Page<AuditEntry>"]
+      StaffingService:
+        deps: ["prisma: PrismaService", "notifications: NotificationService"]
+        methods: ["+get(occupationId) : OccupationStaff", "+set(admin, occupationId, dto) : OccupationStaff  «one active CA, ≥ 1 DE»"]
+
+  # ───────────────────────── Content (staff) ─────────────────────────
+  CatalogueModule:
+    component: content
+    imports: [AuthModule]
+    controllers:
+      CatalogueController:
+        deps: ["catalogue: CatalogueService"]
+        routes:
+          - {m: "getGalaxyMap(user: AuthUser) : GalaxyMap", http: "GET /occupations", roles: [EX]}
+          - {m: "getOccupation(user: AuthUser, occupationId: string) : OccupationView", http: "GET /occupations/{occupationId}", roles: [EX]}
+          - {m: "getLevel(user: AuthUser, levelId: string) : LevelView", http: "GET /levels/{levelId}", roles: [EX]}
+      OccupationController:
+        deps: ["occupations: OccupationService"]
+        routes:
+          - {m: "listMyOccupations(user: AuthUser) : StaffOccupation[]", http: "GET /staff/occupations", roles: [CA, DE]}
+          - {m: "updateOccupation(user: AuthUser, occupationId: string, dto: OccupationUpdateInput) : StaffOccupation", http: "PATCH /staff/occupations/{occupationId}", roles: [CA, DE]}
+          - {m: "getLevelPackage(user: AuthUser, levelId: string) : LevelPackage", http: "GET /staff/levels/{levelId}", roles: [CA, DE]}
+    providers:
+      CatalogueService:
+        deps: ["prisma: PrismaService", "data: GameData"]
+        methods: ["+galaxyMap(user) : GalaxyMap", "+occupation(user, id) : OccupationView", "+level(user, id) : LevelView"]
+      OccupationService:
+        deps: ["prisma: PrismaService", "audit: AuditLogService"]
+        methods: ["+listAssigned(user) : StaffOccupation[]", "+update(user, id, dto) : StaffOccupation  «CA: status; DE: profile»", "+levelPackage(levelId) : LevelPackage"]
+      OccupationDataLoader:
+        kind: command
+        deps: ["prisma: PrismaService", "storage: StorageService"]
+        note: "CLI: loads occupation-data (221 occupations, levels, budgets, ESCO keywords, 22 NPC) — replaces the import screens"
+        methods: ["+run(path) : LoadReport", "-upsertOccupation(json) : void", "-upsertLevels(json) : void", "-upsertNpcs(yaml) : void"]
+    exports: [CatalogueService]
+
+  LifecycleModule:
+    component: content
+    providers:
+      ScenarioStateMachine:
+        deps: ["prisma: PrismaService", "audit: AuditLogService"]
+        note: "TRANSITIONS = SM-01; every transition is written to audit_log in the same transaction"
+        methods: ["+apply(tx, scenarioId, action, actor) : ScenarioStatus", "+allowedActions(status, role) : LifecycleAction[]", "+history(scenarioId) : LifecycleEntry[]"]
+      LifecycleAction:
+        kind: constants
+        fields: [OPEN, SUBMIT, START_REVIEW, REQUEST_CHANGES, REJECT, APPROVE, BUILD_DRAFT, REPORT_ISSUE, PASS_PLAYTEST, PUBLISH, DELETE]
+    exports: [ScenarioStateMachine]
+
+  ScenarioModule:
+    component: content
+    imports: [AuthModule, LifecycleModule]
+    controllers:
+      ScenarioController:
+        deps: ["scenarios: ScenarioService"]
+        routes:
+          - {m: "listScenarios(user: AuthUser, query: ListQuery) : Page<ScenarioListItem>", http: "GET /staff/scenarios", roles: [CA, DE]}
+          - {m: "openScenario(user: AuthUser, dto: OpenScenarioInput) : ScenarioDetail", http: "POST /staff/scenarios", roles: [CA]}
+          - {m: "getScenario(user: AuthUser, scenarioId: string) : ScenarioDetail", http: "GET /staff/scenarios/{scenarioId}", roles: [CA, DE]}
+          - {m: "assignAuthor(user: AuthUser, scenarioId: string, dto: AssignAuthorInput) : ScenarioDetail", http: "PUT /staff/scenarios/{scenarioId}/author", roles: [CA]}
+          - {m: "getScenarioHistory(user: AuthUser, scenarioId: string) : LifecycleEntry[]", http: "GET /staff/scenarios/{scenarioId}/history", roles: [CA, DE]}
+      SeedController:
+        deps: ["seeds: SeedService"]
+        routes:
+          - {m: "saveSeed(user: AuthUser, scenarioId: string, dto: SeedInput) : ScenarioDetail", http: "PUT /staff/scenarios/{scenarioId}/seed", roles: [DE]}
+          - {m: "checkSeed(user: AuthUser, scenarioId: string) : CheckReport", http: "POST /staff/scenarios/{scenarioId}/checks", roles: [DE]}
+          - {m: "submitScenario(user: AuthUser, scenarioId: string) : ScenarioDetail", http: "POST /staff/scenarios/{scenarioId}/submit", roles: [DE]}
+    providers:
+      ScenarioService:
+        deps: ["prisma: PrismaService", "lifecycle: ScenarioStateMachine", "access: AccessPolicyService", "notifications: NotificationService"]
+        methods: ["+list(user, query) : Page<ScenarioListItem>", "+open(user, dto) : ScenarioDetail  «409 if the slot code is active»", "+get(user, id) : ScenarioDetail", "+assignAuthor(user, id, dto) : ScenarioDetail", "+history(id) : LifecycleEntry[]"]
+      SeedService:
+        deps: ["prisma: PrismaService", "validator: SeedValidator", "lifecycle: ScenarioStateMachine", "notifications: NotificationService"]
+        methods: ["+save(user, id, dto) : ScenarioDetail  «DRAFT only, author only, 412 on row_version»", "+check(id) : CheckReport", "+submit(user, id) : ScenarioDetail"]
+      SeedValidator:
+        deps: ["data: GameData"]
+        note: "seed rules: open/mid/end nodes, end node is a written format, ≥ 1 closed node, ≤ 1 timed node, 3–6 observed sub-skills, limits said aloud, facts referenced exist, budget shares sum to 100%"
+        methods: ["+check(seed, level) : CheckReport"]
+
+  # ───────────────────────── Review and publishing ─────────────────────────
+  ReviewModule:
+    component: content
+    imports: [AuthModule, LifecycleModule]
+    controllers:
+      ReviewController:
+        deps: ["reviews: ReviewService"]
+        routes:
+          - {m: "listMyReviewQueue(user: AuthUser) : ReviewQueueItem[]", http: "GET /staff/reviews", roles: [DE]}
+          - {m: "openReview(user: AuthUser, reviewId: string) : ReviewView", http: "GET /staff/reviews/{reviewId}", roles: [DE]}
+          - {m: "decideReview(user: AuthUser, reviewId: string, dto: ReviewDecisionInput) : ScenarioDetail", http: "POST /staff/reviews/{reviewId}/decision", roles: [DE]}
+      ReviewAssignmentController:
+        deps: ["assignments: ReviewAssignmentService"]
+        routes:
+          - {m: "assignReviewer(user: AuthUser, scenarioId: string, dto: AssignReviewerInput) : ReviewView", http: "POST /staff/scenarios/{scenarioId}/reviews", roles: [CA]}
+          - {m: "listOverdueReviews(user: AuthUser) : ReviewQueueItem[]", http: "GET /staff/reviews/overdue", roles: [CA]}
+          - {m: "reassignReview(user: AuthUser, reviewId: string, dto: AssignReviewerInput) : ReviewView", http: "POST /staff/reviews/{reviewId}/reassign", roles: [CA]}
+    providers:
+      ReviewService:
+        deps: ["prisma: PrismaService", "lifecycle: ScenarioStateMachine", "access: AccessPolicyService", "notifications: NotificationService"]
+        note: "scenario_review; criteria come from occupation.profile.reviewCriteria"
+        methods: ["+queue(user) : ReviewQueueItem[]", "+open(user, reviewId) : ReviewView  «SUBMITTED → IN_REVIEW»", "+decide(user, reviewId, dto) : ScenarioDetail  «422 if a criterion is unanswered»"]
+      ReviewAssignmentService:
+        deps: ["prisma: PrismaService", "access: AccessPolicyService", "notifications: NotificationService"]
+        methods: ["+assign(user, scenarioId, dto) : ReviewView  «reviewer ≠ author»", "+overdue(user) : ReviewQueueItem[]", "+reassign(user, reviewId, dto) : ReviewView  «old row → REASSIGNED»"]
+
+  PublishingModule:
+    component: content
+    imports: [AuthModule, LifecycleModule, PlayModule]
+    controllers:
+      BuildController:
+        deps: ["builds: BuildService"]
+        routes:
+          - {m: "buildDraftGame(user: AuthUser, scenarioId: string) : Build", http: "POST /staff/scenarios/{scenarioId}/builds", roles: [CA]}
+          - {m: "getBuild(user: AuthUser, buildId: string) : Build", http: "GET /staff/builds/{buildId}", roles: [CA, DE]}
+          - {m: "startPlaytestRun(user: AuthUser, buildId: string) : RunView", http: "POST /staff/builds/{buildId}/runs", roles: [DE]}
+          - {m: "reportFindings(user: AuthUser, buildId: string, dto: FindingsInput) : ScenarioDetail", http: "POST /staff/builds/{buildId}/findings", roles: [DE]}
+          - {m: "passPlaytest(user: AuthUser, buildId: string) : ScenarioDetail", http: "POST /staff/builds/{buildId}/pass", roles: [DE]}
+      ReleaseController:
+        deps: ["releases: ReleaseService"]
+        routes:
+          - {m: "publishScenario(user: AuthUser, scenarioId: string, dto: PublishInput) : Build", http: "POST /staff/scenarios/{scenarioId}/release", roles: [CA]}
+          - {m: "deleteScenario(user: AuthUser, scenarioId: string) : ScenarioDetail", http: "DELETE /staff/scenarios/{scenarioId}", roles: [CA]}
+    providers:
+      BuildService:
+        deps: ["prisma: PrismaService", "lifecycle: ScenarioStateMachine", "snapshots: BuildSnapshotter", "runs: RunService", "notifications: NotificationService"]
+        methods: ["+build(user, scenarioId) : Build  «APPROVED → IN_PLAYTEST»", "+get(id) : Build", "+startPlaytest(user, buildId) : RunView", "+reportFindings(user, buildId, dto) : ScenarioDetail  «findings in audit_log; → DRAFT»", "+pass(user, buildId) : ScenarioDetail  «→ READY»"]
+      BuildSnapshotter:
+        deps: ["prisma: PrismaService"]
+        methods: ["+snapshot(tx, scenarioId) : BuildContent  «seed + level package»", "+hash(content) : string"]
+      ReleaseService:
+        deps: ["prisma: PrismaService", "lifecycle: ScenarioStateMachine", "storage: StorageService"]
+        methods: ["+publish(user, scenarioId, dto) : Build  «READY only; sets effective_from»", "+delete(user, scenarioId) : ScenarioDetail  «→ RETIRED, sets retired_at»", "+publishDue(now) : number"]
+      ReleaseScheduler:
+        kind: cron
+        deps: ["releases: ReleaseService"]
+        methods: ["+publishDueReleases() : Promise<void>  «@Cron every 5 min»"]
+
+  # ───────────────────────── Player ─────────────────────────
+  CareerModule:
+    component: player
+    note: "player_profile and player_level: Get to know me, soft skills, keywords, levels, suggestions, achievements"
+    imports: [CatalogueModule]
+    controllers:
+      ProfileController:
+        deps: ["profiles: ProfileService", "achievements: AchievementService"]
+        routes:
+          - {m: "getProfile(user: AuthUser) : ProfileView", http: "GET /profile", roles: [EX]}
+          - {m: "getJournal(user: AuthUser, query: ListQuery) : Page<JournalEntry>", http: "GET /profile/journal", roles: [EX]}
+          - {m: "updateGoals(user: AuthUser, dto: GoalsInput) : ProfileView", http: "PUT /profile/goals", roles: [EX]}
+          - {m: "pinAchievements(user: AuthUser, dto: PinInput) : ProfileView", http: "PUT /profile/pins", roles: [EX]}
+      GetToKnowMeController:
+        deps: ["gtkm: GetToKnowMeService"]
+        routes:
+          - {m: "getCards(user: AuthUser) : CardSet", http: "GET /get-to-know-me", roles: [EX]}
+          - {m: "submitGetToKnowMe(user: AuthUser, dto: GetToKnowMeInput) : GetToKnowMeResult", http: "POST /get-to-know-me", roles: [EX]}
+      CareerController:
+        deps: ["levels: PlayerLevelService", "suggestions: SuggestionService"]
+        routes:
+          - {m: "enterLevel(user: AuthUser, dto: EnterLevelInput) : LevelEntry", http: "POST /career/levels", roles: [EX]}
+          - {m: "getPlayerLevel(user: AuthUser, playerLevelId: string) : LevelEntry", http: "GET /career/levels/{playerLevelId}", roles: [EX]}
+          - {m: "getSuggestions(user: AuthUser) : Suggestions", http: "GET /career/suggestions", roles: [EX]}
+    providers:
+      ProfileService:
+        deps: ["prisma: PrismaService", "rules: RuleEngine", "data: GameData"]
+        methods: ["+view(user) : ProfileView  «7-group radar, tiers, strengths after ≥ 3 scenes, RIASEC self vs tried»", "+journal(user, query) : Page<JournalEntry>", "+updateGoals(user, dto) : ProfileView", "+applyRun(tx, run) : TierUp[]  «soft_skills, riasec.tried; keep best per scene»"]
+      GetToKnowMeService:
+        deps: ["prisma: PrismaService", "data: GameData"]
+        note: "no AI; 18 cards → RIASEC self line + 2–3 interest regions; goals card"
+        methods: ["+cards() : CardSet", "+submit(user, dto) : GetToKnowMeResult", "-safetyCheck(text) : boolean  «word list → hotline 111 message»"]
+      LevelAccessService:
+        deps: ["prisma: PrismaService", "rules: RuleEngine"]
+        methods: ["+access(user, levelId) : LevelAccess  «entry open · tiers · keyword coverage ≥ 50% (30% if Sim ≥ 1.2) · prerequisites D-121»", "+explain(user, levelId) : CoverageExplanation"]
+      PlayerLevelService:
+        deps: ["prisma: PrismaService", "access: LevelAccessService", "rules: RuleEngine", "profiles: ProfileService", "achievements: AchievementService"]
+        methods: ["+enter(user, dto) : LevelEntry  «random company by industry weights; onboarding slides»", "+get(user, id) : LevelEntry", "+completeIfDone(tx, playerLevelId) : LevelUp | null  «keywords → output mastery (≤ 5)»"]
+      SuggestionService:
+        deps: ["prisma: PrismaService", "catalogue: CatalogueService"]
+        methods: ["+forPlayer(user) : Suggestions  «same field you may like · other field you do well · other field you may like»", "-likeScore(riasec, occupation) : number", "-doWellScore(softSkills, occupation) : number"]
+      AchievementService:
+        deps: ["prisma: PrismaService", "data: GameData", "notifications: NotificationService"]
+        methods: ["+evaluate(tx, playerId, event) : string[]", "+pin(user, dto) : ProfileView"]
+    exports: [ProfileService, PlayerLevelService]
+
+  LifeModule:
+    component: player
+    note: "coins, health, overtime, shop and inventory, NPC bonds and side quests (no grading)"
+    controllers:
+      ShopController:
+        deps: ["shop: ShopService"]
+        routes:
+          - {m: "getShop(user: AuthUser) : ShopView", http: "GET /shop", roles: [EX]}
+          - {m: "buyItem(user: AuthUser, dto: BuyInput) : InventoryItem[]", http: "POST /shop/purchases", roles: [EX]}
+          - {m: "listInventory(user: AuthUser) : InventoryItem[]", http: "GET /inventory", roles: [EX]}
+          - {m: "useItem(user: AuthUser, dto: UseItemInput) : InventoryItem", http: "POST /inventory/use", roles: [EX]}
+      NpcController:
+        deps: ["bonds: BondService"]
+        routes:
+          - {m: "listNpcs(user: AuthUser) : NpcBondView[]", http: "GET /npcs", roles: [EX]}
+          - {m: "giveGift(user: AuthUser, npcId: string, dto: GiftInput) : NpcBondView", http: "POST /npcs/{npcId}/gifts", roles: [EX]}
+    providers:
+      WalletService:
+        deps: ["prisma: PrismaService", "rules: RuleEngine"]
+        methods: ["+pay(tx, run) : number  «coins of the scene; payday and bonuses follow the in-game calendar»", "+spend(tx, playerId, amount) : void  «409 if not enough»"]
+      HealthService:
+        deps: ["prisma: PrismaService", "rules: RuleEngine"]
+        methods: ["+beforeRun(tx, playerId, level) : TimeAdjust  «drain, tier → spare turns»", "+overtime(tx, run, option) : TimeAdjust", "+rest(tx, playerId, amount) : void"]
+      ShopService:
+        deps: ["prisma: PrismaService", "data: GameData", "wallet: WalletService", "health: HealthService"]
+        methods: ["+view(user) : ShopView  «prices in u or X»", "+buy(user, dto) : InventoryItem[]", "+inventory(user) : InventoryItem[]", "+use(user, dto) : InventoryItem  «buff for one run, decor placement, milestone»"]
+      BondService:
+        deps: ["prisma: PrismaService", "data: GameData", "wallet: WalletService"]
+        note: "player_profile.npc_bonds: MET → CLOSE → BONDED → SOULMATE, deck of unlocked cards"
+        methods: ["+list(user) : NpcBondView[]", "+gift(user, npcId, dto) : NpcBondView", "+addAffinity(tx, playerId, npcId, amount) : Stage", "+drawCast(playerId, slots) : NpcSlot[]"]
+      SideQuestService:
+        deps: ["prisma: PrismaService", "bonds: BondService", "health: HealthService"]
+        methods: ["+eligible(playerId, scenario) : boolean  «needs stage, ticket, milestone or occasion»", "+complete(tx, run) : void  «fixed bonus ≤ 10% of the level budget, +6 health»"]
+    exports: [WalletService, HealthService, BondService, SideQuestService]
+
+  # ───────────────────────── Play and assessment ─────────────────────────
+  PlayModule:
+    component: play
+    note: "run, run_turn: one scene = one shift; AI-4 narrates, the engine decides. Paths match the shift-run API already in apps/api"
+    imports: [AssessmentModule, AiModule, CareerModule, LifeModule, FeedbackModule]
+    controllers:
+      ShiftRunController:
+        deps: ["runs: RunService", "turns: TurnService", "summaries: SummaryService"]
+        routes:
+          - {m: "listShiftTasks(user: AuthUser, query: TaskQuery) : ShiftTask[]", http: "GET /shift-runs/tasks", roles: [EX, DE]}
+          - {m: "startRun(user: AuthUser, dto: StartRunInput) : RunView", http: "POST /shift-runs", roles: [EX], status: 201}
+          - {m: "getRun(user: AuthUser, runId: string) : RunView", http: "GET /shift-runs/{runId}", roles: [EX, DE]}
+          - {m: "getScene(user: AuthUser, runId: string) : SceneView", http: "GET /shift-runs/{runId}/scene", roles: [EX, DE]}
+          - {m: "getTranscript(user: AuthUser, runId: string, query: TranscriptQuery) : TurnLine[]", http: "GET /shift-runs/{runId}/transcript", roles: [EX, DE]}
+          - {m: "takeTurn(user: AuthUser, runId: string, dto: TurnInput) : TurnResult | JobAccepted", http: "POST /shift-runs/{runId}/turns", roles: [EX, DE]}
+          - {m: "resumeRun(user: AuthUser, runId: string) : JobAccepted", http: "POST /shift-runs/{runId}/resume", roles: [EX, DE]}
+          - {m: "saveNote(user: AuthUser, runId: string, dto: NoteInput) : void", http: "POST /shift-runs/{runId}/notes", roles: [EX, DE], status: 201}
+          - {m: "flagContent(user: AuthUser, runId: string, dto: FlagInput) : void", http: "POST /shift-runs/{runId}/flags", roles: [EX], status: 201}
+          - {m: "finishRun(user: AuthUser, runId: string, dto: LikingInput) : SceneSummary | JobAccepted", http: "POST /shift-runs/{runId}/finish", roles: [EX, DE]}
+          - {m: "getSummary(user: AuthUser, runId: string) : SceneSummary", http: "GET /shift-runs/{runId}/summary", roles: [EX, DE]}
+    providers:
+      RunService:
+        deps: ["prisma: PrismaService", "rules: RuleEngine", "health: HealthService", "bonds: BondService", "sideQuests: SideQuestService", "feedback: FeedbackService"]
+        methods: ["+tasks(query) : ShiftTask[]", "+start(user, dto) : RunView  «resume if IN_PROGRESS; health, items and cast set the budget»", "+startPlaytest(user, buildId) : RunView  «is_playtest, no player_level»", "+get(user, id) : RunView", "+scene(user, id) : SceneView", "+transcript(user, id, after?) : TurnLine[]", "+note(user, id, dto) : void", "+flag(user, id, dto) : void  «feedback kind FLAG»"]
+      TurnService:
+        deps: ["prisma: PrismaService", "rules: RuleEngine", "assessment: AssessmentService", "health: HealthService", "narrationQueue: Queue «narration»"]
+        note: "turnId from the client makes retries safe; NPC lines arrive on /stream (turn.lines, turn.done)"
+        methods: ["+take(user, runId, dto) : TurnResult | JobAccepted  «action · say · end_conversation · choose · timeout · save_artefact · confirm_end · cancel_end · hint · overtime»", "+resume(user, runId) : JobAccepted  «run paused when no model answered (D-92)»"]
+      SummaryService:
+        deps: ["prisma: PrismaService", "scoring: ScoringService", "profiles: ProfileService", "levels: PlayerLevelService", "wallet: WalletService", "sideQuests: SideQuestService"]
+        methods: ["+finish(user, runId, dto) : SceneSummary | JobAccepted  «waits for pending judgements; pays coins; tiers; level-up»", "+get(user, runId) : SceneSummary"]
+      NarrationProcessor:
+        kind: processor
+        queue: narration
+        deps: ["prisma: PrismaService", "gateway: ModelGatewayService", "prompts: PromptBuilder", "checks: OutputCheckService", "stream: StreamService", "flagQueue: Queue «flag-judge»"]
+        methods: ["+process(job) : Promise<void>  «reply · bridge · reaction · probe → lines [{speaker, text, expression}]; R1–R4, regenerate ≤ 2»"]
+    exports: [RunService]
+
+  AssessmentModule:
+    component: play
+    note: "judgement: three-judge panel on yes/no questions, story flags, expert blind ratings"
+    imports: [AuthModule, AiModule]
+    controllers:
+      ReliabilityController:
+        deps: ["reliability: ReliabilityService"]
+        routes:
+          - {m: "getBlindSamples(user: AuthUser, occupationId: string) : BlindSample[]", http: "GET /staff/occupations/{occupationId}/blind-samples", roles: [DE]}
+          - {m: "submitBlindRatings(user: AuthUser, dto: BlindRatingInput) : void", http: "POST /staff/blind-ratings", roles: [DE]}
+          - {m: "getAgreementReport(user: AuthUser, occupationId: string) : AgreementReport", http: "GET /staff/occupations/{occupationId}/agreement", roles: [DE, CA]}
+    providers:
+      AssessmentService:
+        deps: ["prisma: PrismaService", "rules: RuleEngine", "gradingQueue: Queue «grading»"]
+        methods: ["+recordClosed(tx, run, node, answer) : Judgement[]", "+requestGrading(tx, runId, segment) : void  «when a node closes or a phase ends»"]
+      GradingProcessor:
+        kind: processor
+        queue: grading
+        deps: ["prisma: PrismaService", "panel: JudgePanelService", "stream: StreamService", "noteQueue: Queue «feedback-note»"]
+        methods: ["+process(job) : Promise<void>  «one judgement per segment × observed sub-skill»"]
+      FlagJudgeProcessor:
+        kind: processor
+        queue: flag-judge
+        deps: ["prisma: PrismaService", "panel: JudgePanelService"]
+        methods: ["+process(job) : Promise<void>  «yes/no conditions → story flags in run.state (on only, D-129)»"]
+      JudgePanelService:
+        deps: ["gateway: ModelGatewayService", "prompts: PromptBuilder", "deid: DeIdentifierService", "checks: OutputCheckService"]
+        methods: ["+grade(transcript, subSkills, signs) : PanelResult  «A/B/C → 0/1/2, flags, verified quotes»", "+askYesNo(transcript, questions) : boolean[]", "-callJudge(slot, prompt) : JudgeOutcome  «retry ≤ 2»", "-combine(outcomes) : Level  «median of 3; 2 judges → lower (D-132)»"]
+      ScoringService:
+        deps: ["prisma: PrismaService", "rules: RuleEngine", "data: GameData"]
+        methods: ["+groupPoints(run) : GroupPoints  «penalty only on judged written answers; hints never lower a score»", "+sceneScore(run) : number  «0–100»"]
+      FeedbackNoteProcessor:
+        kind: processor
+        queue: feedback-note
+        deps: ["prisma: PrismaService", "gateway: ModelGatewayService", "prompts: PromptBuilder", "checks: OutputCheckService", "stream: StreamService"]
+        methods: ["+process(job) : Promise<void>  «“look back at the shift” note, stored in run.state»"]
+      ReliabilityService:
+        deps: ["prisma: PrismaService"]
+        methods: ["+samples(user, occupationId) : BlindSample[]  «play-test segments, AI levels hidden»", "+submit(user, dto) : void  «judgement rows with rated_by, beside the AI rows»", "+report(occupationId) : AgreementReport  «Cohen's kappa expert–AI and expert–expert»"]
+    exports: [AssessmentService, ScoringService]
+
+  # ───────────────────────── AI, feedback, monitoring ─────────────────────────
+  AiModule:
+    component: ai
+    imports: [AuthModule]
+    controllers:
+      SystemPromptController:
+        deps: ["prompts: PromptService"]
+        routes:
+          - {m: "getSystemPrompts(user: AuthUser, occupationId: string) : SystemPrompt[]", http: "GET /staff/occupations/{occupationId}/prompts", roles: [CA, DE]}
+          - {m: "saveSystemPrompt(user: AuthUser, occupationId: string, dto: PromptInput) : SystemPrompt", http: "PUT /staff/occupations/{occupationId}/prompts", roles: [CA, DE]}
+    providers:
+      ModelGatewayService:
+        deps: ["providers: ModelProvider[]", "cost: CostLedgerService", "metrics: MetricsService", "settings: SettingsService"]
+        note: "model families from the deployment config; judges ≠ narrator family"
+        methods: ["+complete(task, prompt, ctx) : ModelReply"]
+      ModelProvider:
+        kind: interface
+        methods: ["+name : string", "+complete(model, prompt) : ModelReply"]
+      OpenRouterProvider:
+        kind: adapter
+        implements: ModelProvider
+        deps: ["http: HttpService"]
+        note: "judges, ZDR endpoints only (D-131)"
+      OpenAiCompatibleProvider:
+        kind: adapter
+        implements: ModelProvider
+        deps: ["http: HttpService"]
+        note: "narrator (Qwen, DeepSeek), local models"
+      PromptBuilder:
+        deps: ["prompts: PromptService"]
+        methods: ["+narrator(occupationId, card, state) : Prompt  «narrator.v3»", "+judge(occupationId, transcript, questions) : Prompt", "+yesNo(conditions, transcript) : Prompt", "+feedbackNote(occupationId, transcript) : Prompt"]
+      PromptService:
+        deps: ["prisma: PrismaService", "audit: AuditLogService"]
+        note: "occupation.prompts; each save logged; 409 if baseVersion is old"
+        methods: ["+list(user, occupationId) : SystemPrompt[]", "+save(user, occupationId, dto) : SystemPrompt", "+current(occupationId, kind) : string"]
+      DeIdentifierService:
+        methods: ["+strip(text) : string  «name → {ten} placeholder»"]
+      OutputCheckService:
+        methods: ["+checkNarration(beats, facts) : CheckResult  «R1–R4»", "+verifyQuotes(outcome, transcript) : boolean", "+checkNote(note) : CheckResult"]
+      CostLedgerService:
+        deps: ["prisma: PrismaService"]
+        note: "ai_call"
+        methods: ["+record(task, runId, reply) : void", "+sessionCost(runId) : number"]
+    exports: [ModelGatewayService, PromptBuilder, DeIdentifierService, OutputCheckService]
+
+  FeedbackModule:
+    component: operations
+    note: "feedback: occupation rating, app feedback, wrong-content flag"
+    imports: [AuthModule]
+    controllers:
+      FeedbackController:
+        deps: ["feedback: FeedbackService"]
+        routes:
+          - {m: "sendFeedback(user: AuthUser, dto: FeedbackInput) : FeedbackView", http: "POST /feedback", roles: [EX, DE, CA]}
+          - {m: "getRatingSummary(user: AuthUser, occupationId: string) : RatingSummary", http: "GET /occupations/{occupationId}/ratings", roles: [EX, CA]}
+      FeedbackInboxController:
+        deps: ["feedback: FeedbackService"]
+        routes:
+          - {m: "listFeedback(user: AuthUser, query: ListQuery) : Page<FeedbackView>", http: "GET /staff/feedback", roles: [DE, SA]}
+          - {m: "handleFeedback(user: AuthUser, feedbackId: string, dto: HandleFeedbackInput) : FeedbackView", http: "PATCH /staff/feedback/{feedbackId}", roles: [DE, SA]}
+    exports: [FeedbackService]
+    providers:
+      FeedbackService:
+        deps: ["prisma: PrismaService", "settings: SettingsService", "notifications: NotificationService"]
+        methods: ["+send(user, dto) : FeedbackView  «RATING only after every level»", "+flag(tx, runId, dto) : void  «kind FLAG; notifies the DEs»", "+ratingSummary(occupationId) : RatingSummary  «withheld below threshold»", "+inbox(user, query) : Page<FeedbackView>  «DE: flags; SA: app feedback»", "+handle(user, id, dto) : FeedbackView"]
+
+  MonitoringModule:
+    component: operations
+    imports: [AuthModule]
+    controllers:
+      StatisticsController:
+        deps: ["statistics: StatisticsService"]
+        routes:
+          - {m: "getOccupationStatistics(user: AuthUser, occupationId: string) : OccupationStatistics", http: "GET /staff/occupations/{occupationId}/statistics", roles: [CA]}
+      OperationsController:
+        deps: ["operations: OperationsService"]
+        routes:
+          - {m: "getMetrics(user: AuthUser, query: ListQuery) : Metrics", http: "GET /admin/metrics", roles: [SA]}
+          - {m: "listAiCalls(user: AuthUser, query: ListQuery) : Page<AiCallView>", http: "GET /admin/ai-calls", roles: [SA]}
+    providers:
+      StatisticsService:
+        deps: ["prisma: PrismaService", "settings: SettingsService"]
+        methods: ["+forOccupation(id) : OccupationStatistics  «excludes play-test runs; stuck rate per level»"]
+      OperationsService:
+        deps: ["prisma: PrismaService", "settings: SettingsService"]
+        methods: ["+metrics(query) : Metrics  «cost per run vs ceiling, latency p95, failed calls»", "+aiCalls(query) : Page<AiCallView>"]
+
+# Output DTOs (response bodies). Field syntax, shared with `dtos`:
+#   name[?][[]] [: type] [{inner fields}] [description]
+#   type: uuid · integer · number · boolean · date · date-time · object · A|B (enum) · another DTO name
+#   Without a type: …Id → uuid, …At → date-time, …Date → date, is…/has… → boolean, counts → integer, else string.
+views:
+  Session: "accessToken, refreshToken, expiresIn: integer, user: Me"
+  Me: "id, email?, nickname, roles[]: EXPLORER|DOMAIN_EXPERT|CONTENT_ADMIN|SYSTEM_ADMIN, hasGoogle: boolean, onboarded: boolean, coins: integer, health: integer"
+  UserAdminView: "id, email?, displayName, roles[], status: ACTIVE|DISABLED|DELETED, createdAt, lastSignInAt?"
+  AuditEntry: "id: integer, actorId?, action, target, detail?: object, createdAt"
+  OccupationStaff: "occupationId, contentAdminId, domainExpertIds[]"
+  GalaxyMap: "regions[] {code, name, occupations[] {id, code, name, riasecCode, highestLevelDone: integer, locked: boolean}}"
+  OccupationView: "id, code, name, industryGroup, riasecCode, profile: object, levels[] {id, levelNo: integer, title, access: OPEN|LOCKED|DONE}, ratings: RatingSummary"
+  LevelView: "id, occupationId, levelNo: integer, title, salaryMonth?: integer, access: OPEN|LOCKED|DONE, accessReason: ENTRY|TIERS|COVERAGE|PREREQUISITE|NONE, missingTiers[] {group, need: integer, have: integer}, coverage: number, keywordsNeeded[] {escoUri, name, need: integer, have: integer}"
+  StaffOccupation: "id, code, name, status: DRAFT|PUBLISHED|RETIRED, myRole: CONTENT_ADMIN|DOMAIN_EXPERT, levelCount: integer"
+  LevelPackage: "levelId, levelNo: integer, title, pointBudget: object, entryTiers: object, keywords: object, package: object"
+  ScenarioListItem: "id, code, title, kind: MAIN|SIDE_QUEST, levelId, status: DRAFT|SUBMITTED|IN_REVIEW|APPROVED|IN_PLAYTEST|READY|PUBLISHED|RETIRED, authorId?, reviewerId?, reviewDeadlineAt?"
+  ScenarioDetail: "id, code, title, kind: MAIN|SIDE_QUEST, levelId, npcId?, status, authorId?, seed: object, rowVersion: integer, allowedActions[], currentReview?: ReviewQueueItem"
+  LifecycleEntry: "action, fromStatus?, toStatus, actorId, note?, createdAt"
+  CheckReport: "passed: boolean, failedRules[] {rule, path, message}"
+  ReviewQueueItem: "reviewId, scenarioId, code, title, deadlineAt, status: ACTIVE|DONE|REASSIGNED, isOverdue: boolean"
+  ReviewView: "reviewId, scenario: ScenarioDetail, criteria[] {key, text}, previousReviews[] {decision, comment, decidedAt}"
+  Build: "id, scenarioId, version: integer, contentHash, content: object, effectiveFrom?, retiredAt?"
+  RunView: "id, taskId: string, title, goal, role, isPlaytest: boolean, status: IN_PROGRESS|FINISHED|ABANDONED, paused: boolean, pendingTurnId?, cast[] {slot, npcId: string, name}, glossary: object, startedAt"
+  SceneView: "clock {used: integer, budget: integer}, mode, openNode?, actions[] {key, label, cost: integer, enabled: boolean, reason?}, documents[] {key, title, opened: boolean}, notebook: object, note?"
+  TurnLine: "seq: integer, speaker, channel?, text, expression?, createdAt"
+  TurnResult: "turnId: uuid, lines[]: TurnLine, scene: SceneView, ended: boolean"
+  JobAccepted: "jobId: uuid, turnId?: uuid, streamEvent, lines[]: TurnLine"
+  ShiftTask: "taskId: string, title, situation, goal, minutes: integer"
+  SceneSummary: "runId, title, score: integer, groupPoints: object, tierUps[] {group, tier: integer}, coinsEarned: integer, healthAfter: integer, lookBack, keywordsGained[] {escoUri, mastery: integer}, levelUp?: object, suggestions?: Suggestions"
+  ProfileView: "nickname, zodiac, coins: integer, health: integer, softSkills: object, keywords: object, riasec {self: object, tried: object}, strengths[], goals?: object, pinnedAchievements[], achievementCount: integer"
+  JournalEntry: "runId, occupation, levelNo: integer, title, score: integer, finishedAt"
+  CardSet: "cards[] {code, text, region}, interestOptions[]"
+  GetToKnowMeResult: "riasecSelf: object, regions[], message"
+  LevelEntry: "playerLevelId, level: LevelView, company: object, attempt: integer, onboarding[] {title, text}, scenes[] {scenarioId, code, title, best?: integer}, completedAt?"
+  Suggestions: "sameFieldLike[] {occupationId, name, reason}, otherFieldDoWell[] {occupationId, name, reason}, otherFieldLike[] {occupationId, name, reason}"
+  ShopView: "coins: integer, items[] {code, category, name, price: integer, owned: integer}"
+  InventoryItem: "id, itemCode, state: OWNED|ACTIVE|USED, runId?, placement?: object, pricePaid: integer"
+  NpcBondView: "npcId: string, name, arcanaNo: integer, stage: MET|CLOSE|BONDED|SOULMATE, affinity: integer, inDeck: boolean, birthday"
+  BlindSample: "runId, segment, transcript, subSkills[]"
+  AgreementReport: "occupationId, samples: integer, kappaExpertAi: number, kappaExpertExpert: number, bySubSkill[] {subSkill, kappa: number}"
+  SystemPrompt: "kind, version: integer, text, changedBy?, changedAt?"
+  FeedbackView: "id, kind: RATING|APP|FLAG, occupationId?, runId?, text?, scores?: object, status: NEW|HANDLED, createdAt"
+  RatingSummary: "responses: integer, withheld: boolean, averages?: object"
+  OccupationStatistics: "plays: integer, completionRate: number, averageScore: number, stuckRateByLevel[] {levelNo: integer, rate: number}, flags: integer, ratings: RatingSummary"
+  Metrics: "runs: integer, costUsd: number, costPerRunP95Usd: number, costCeilingUsd: number, narrationLatencyP95Ms: integer, gradingLatencyP95Ms: integer, failedCalls: integer"
+  AiCallView: "id, task, runId?, model, status: QUEUED|RUNNING|SUCCEEDED|FAILED, tokens: integer, costUsd: number, createdAt"
+  NotificationView: "id, template, payload: object, createdAt, readAt?"

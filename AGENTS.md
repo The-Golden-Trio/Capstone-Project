@@ -30,6 +30,7 @@
 | Sản phẩm, luật, thuật ngữ          | `docs/project-hub/03-san-pham.md`                                                                                                                            |
 | Bản đồ code/data, hướng dẫn cũ     | `docs/project-hub/04-hien-trang-code-data.md` — đối chiếu code vì nhiều mục chụp từ tháng 9                                                                  |
 | Vấn đề chưa chốt                   | `docs/project-hub/07-van-de-mo.md` và ghi chú mới của mảng đang sửa                                                                                          |
+| Mô hình dữ liệu (ERD)              | `reports/master/plantuml/erd/`: ERD-00 tổng quan, ERD-01…07 theo báo cáo, ERD-08…11 game design (hồ sơ, keyword, ca làm, kinh tế/NPC; chỗ chờ chốt ở 07 A28) |
 | Task, họp, tiến độ                 | `docs/project-hub/tuan/README.md`, rồi tuần/minutes liên quan; giữ nguyên ID `T…`                                                                            |
 | Báo cáo đang phát triển            | `reports/master/report.md`, quy ước tại `reports/README.md`                                                                                                  |
 | Yêu cầu và sơ đồ                   | `docs/project-hub/assets/jobquest-requirements-report.md`, `jobquest-usecase-diagram.md`, `jobquest-user-journey.md`, `jobquest-erd-mermaid.md` cùng thư mục |

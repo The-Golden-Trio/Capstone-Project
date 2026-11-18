@@ -321,6 +321,18 @@ export function StaffShell() {
   );
 }
 
+/**
+ * Chỉ cho vào nhánh của một cổng khi có vai tương ứng; sai vai thì về cổng
+ * của mình. Máy chủ vẫn chặn theo `@Roles`, đây chỉ để không mở màn vô dụng.
+ */
+export function RequirePortal({ portal }: { portal: Portal }) {
+  const me = useAuth((s) => s.me);
+  const portals = portalsOf(me);
+  if (!portals.includes(portal))
+    return <Navigate to={`/${portals[0] ?? 'ca'}`} replace />;
+  return <Outlet />;
+}
+
 /** Mở đúng cổng theo vai (AD-02a, AD-03a). */
 export function PortalRedirect() {
   const me = useAuth((s) => s.me);

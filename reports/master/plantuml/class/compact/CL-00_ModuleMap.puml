@@ -1,0 +1,47 @@
+@startuml CL-00_ModuleMap
+title CL-00 · NestJS module map (API app and worker app)\n<size:11>Arrows are module imports. Global modules are available everywhere. Modules with /staff routes also import AuthModule for OccupationAccessGuard (arrows omitted).</size>
+skinparam componentStyle rectangle
+
+package "Identity & access" {
+  [AuthModule\n<size:10>CL-01 · api</size>] as AuthModule
+  [UserModule\n<size:10>CL-01 · api</size>] as UserModule
+}
+package "Content (staff)" {
+  [CatalogueModule\n<size:10>CL-02 · api</size>] as CatalogueModule
+  [LifecycleModule\n<size:10>CL-02 · shared</size>] as LifecycleModule
+  [ScenarioModule\n<size:10>CL-02 · api</size>] as ScenarioModule
+  [ReviewModule\n<size:10>CL-03 · api</size>] as ReviewModule
+  [PublishingModule\n<size:10>CL-03 · api</size>] as PublishingModule
+}
+package "Player" {
+  [CareerModule\n<size:10>CL-04 · api</size>] as CareerModule
+  [LifeModule\n<size:10>CL-04 · api</size>] as LifeModule
+}
+package "Play & assessment" {
+  [PlayModule\n<size:10>CL-05 · worker · api</size>] as PlayModule
+  [AssessmentModule\n<size:10>CL-05 · worker · api</size>] as AssessmentModule
+}
+package "AI orchestration · Model gateway" {
+  [AiModule\n<size:10>CL-06 · api</size>] as AiModule
+}
+package "Feedback & monitoring" {
+  [FeedbackModule\n<size:10>CL-06 · api</size>] as FeedbackModule
+  [MonitoringModule\n<size:10>CL-06 · api</size>] as MonitoringModule
+}
+package "Shared platform" {
+  [CoreModule\n<size:10>CL-07 · global · shared</size>] as CoreModule
+  [NotificationModule\n<size:10>CL-07 · global · worker · api</size>] as NotificationModule
+  [GameCoreModule\n<size:10>CL-07 · global · shared</size>] as GameCoreModule
+}
+ScenarioModule ..> LifecycleModule
+ReviewModule ..> LifecycleModule
+PublishingModule ..> LifecycleModule
+PublishingModule ..> PlayModule
+CareerModule ..> CatalogueModule
+PlayModule ..> AssessmentModule
+PlayModule ..> AiModule
+PlayModule ..> CareerModule
+PlayModule ..> LifeModule
+PlayModule ..> FeedbackModule
+AssessmentModule ..> AiModule
+@enduml

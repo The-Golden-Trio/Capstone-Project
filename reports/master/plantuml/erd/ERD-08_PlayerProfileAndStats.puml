@@ -1,0 +1,261 @@
+@startuml ERD-08_PlayerProfileAndStats
+title ERD-08 · Player profile, Get to know me and stats
+hide circle
+' Sources: 02-quyet-dinh D-104, D-106..D-114, D-116, D-125 (section J, game design);
+' research/reports/Hồ sơ JobQuest cơ chế game.md (Khối A–F); Hồ sơ NPC JobQuest.md §4 (address form).
+' Replaces ERD-05 quiz_question, quiz_attempt, quiz_answer, quiz_suggestion, portrait_text (D-108, D-125).
+
+entity "explorer_profile" as explorer_profile <<D-107>> #DDEBF7 {
+  * user_id : uuid <<PK,FK>>
+  --
+  * nickname : varchar(40)
+  * address_form : address_form
+    life_stage : life_stage
+    knows_target : boolean
+    gtkm_invited_at : timestamp
+  * created_at : timestamp
+  * updated_at : timestamp
+}
+
+' ── Get to know me (D-108, D-125): 18 cards, 3 levels, no AI call (FR-04) ──
+entity "gtkm_card" as gtkm_card <<D-108>> #DDEBF7 {
+  * id : uuid <<PK>>
+  --
+  * code : varchar(20) <<UQ>>
+  * cluster_no : smallint
+    riasec_axis : riasec_type
+    interest_region_id : uuid <<FK>>
+  * text : text
+  * sort_order : smallint
+}
+
+entity "gtkm_attempt" as gtkm_attempt <<D-108>> #DDEBF7 {
+  * id : uuid <<PK>>
+  --
+  * explorer_id : uuid <<FK>>
+  * is_current : boolean
+  * started_at : timestamp
+    completed_at : timestamp
+}
+
+entity "gtkm_card_answer" as gtkm_card_answer <<D-108>> #DDEBF7 {
+  * attempt_id : uuid <<PK,FK>>
+  * card_id : uuid <<PK,FK>>
+  --
+  * value : smallint
+}
+
+entity "goal_question" as goal_question <<D-108>> #DDEBF7 {
+  * id : uuid <<PK>>
+  --
+  * code : varchar(20) <<UQ>>
+  * text : text
+  * sort_order : smallint
+}
+
+entity "goal_option" as goal_option <<D-108>> #DDEBF7 {
+  * id : uuid <<PK>>
+  --
+  * question_id : uuid <<FK>>
+  * text : text
+  * sort_order : smallint
+}
+
+entity "goal_answer" as goal_answer <<D-108>> #DDEBF7 {
+  * attempt_id : uuid <<PK,FK>>
+  * option_id : uuid <<PK,FK>>
+  --
+}
+
+entity "explorer_goal" as explorer_goal <<D-109>> #DDEBF7 {
+  * id : uuid <<PK>>
+  --
+  * explorer_id : uuid <<FK>>
+    attempt_id : uuid <<FK>>
+  * text : varchar(500)
+  * updated_at : timestamp
+    deleted_at : timestamp
+}
+
+entity "explorer_interest" as explorer_interest <<D-108>> #DDEBF7 {
+  * explorer_id : uuid <<PK,FK>>
+  * tag : varchar(40) <<PK>>
+  --
+  * added_at : timestamp
+}
+
+entity "distress_term" as distress_term <<cần chốt>> #FCE4D6 {
+  * id : uuid <<PK>>
+  --
+  * term : varchar(80) <<UQ>>
+  * updated_by : uuid <<FK>>
+  * updated_at : timestamp
+}
+
+' ── RIASEC: two traces, "self-told" and "after trying" (D-104, D-106) ──
+entity "riasec_trace" as riasec_trace <<D-104>> #DDEBF7 {
+  * explorer_id : uuid <<PK,FK>>
+  * axis : riasec_type <<PK>>
+  --
+    self_score : numeric(3,2)
+  * tried_sum : integer
+  * tried_count : integer
+  * updated_at : timestamp
+}
+
+entity "interest_tap" as interest_tap <<D-106>> #DDEBF7 {
+  * run_id : uuid <<PK,FK>>
+  * activity_key : varchar(20) <<PK>>
+  --
+  * axis : riasec_type
+  * value : smallint
+  * tapped_at : timestamp
+}
+
+' ── Soft skill: 7 groups × 42 items, ≤10,000 points, tier 0–5 never drops (D-114, D-116) ──
+entity "soft_skill_group" as soft_skill_group <<D-114>> #DDEBF7 {
+  * id : uuid <<PK>>
+  --
+  * code : varchar(20) <<UQ>>
+  * name : varchar(80)
+  * sort_order : smallint
+}
+
+entity "soft_skill_item" as soft_skill_item <<D-116>> #DDEBF7 {
+  * id : uuid <<PK>>
+  --
+  * group_id : uuid <<FK>>
+  * code : varchar(20) <<UQ>>
+  * name : varchar(120)
+  * indicator : text
+}
+
+entity "skill_tier_name" as skill_tier_name <<cần chốt>> #FCE4D6 {
+  * group_id : uuid <<PK,FK>>
+  * tier : smallint <<PK>>
+  --
+  * name : varchar(60)
+}
+
+entity "explorer_skill_group" as explorer_skill_group <<D-114>> #DDEBF7 {
+  * explorer_id : uuid <<PK,FK>>
+  * group_id : uuid <<PK,FK>>
+  --
+  * points : integer
+  * raw_points : integer
+  * tier : smallint
+  * scored_scenarios : smallint
+  * updated_at : timestamp
+}
+
+' ── Achievements and badge pins (D-110) ──
+entity "achievement" as achievement <<cần chốt>> #FCE4D6 {
+  * id : uuid <<PK>>
+  --
+  * code : varchar(40) <<UQ>>
+  * kind : achievement_kind
+  * name : varchar(80)
+  * condition : jsonb
+    level_id : uuid <<FK>>
+}
+
+entity "explorer_achievement" as explorer_achievement <<D-110>> #DDEBF7 {
+  * explorer_id : uuid <<PK,FK>>
+  * achievement_id : uuid <<PK,FK>>
+  --
+  * achieved_at : timestamp
+    pin_order : smallint
+}
+
+' ── Zodiac (D-113): sun sign derived from user_account.date_of_birth, never stored ──
+entity "zodiac_sign" as zodiac_sign <<D-113>> #DDEBF7 {
+  * code : varchar(12) <<PK>>
+  --
+  * name : varchar(40)
+  * start_md : char(5)
+  * end_md : char(5)
+  * element : zodiac_element
+  * modality : zodiac_modality
+  * ruler : varchar(40)
+  * motto : varchar(120)
+  * description : text
+  * caution : text
+}
+
+entity "zodiac_buff_group" as zodiac_buff_group <<D-113>> #DDEBF7 {
+  * sign_code : varchar(12) <<PK,FK>>
+  * group_id : uuid <<PK,FK>>
+  --
+  * rate : numeric(3,2)
+}
+
+' ── Occupation suggestions (D-111): three boxes, 0–3 occupations each, no numbers shown ──
+entity "suggestion_event" as suggestion_event <<D-111>> #DDEBF7 {
+  * id : uuid <<PK>>
+  --
+  * explorer_id : uuid <<FK>>
+    trigger_level_id : uuid <<FK>>
+  * created_at : timestamp
+}
+
+entity "suggestion_item" as suggestion_item <<D-111>> #DDEBF7 {
+  * event_id : uuid <<PK,FK>>
+  * box : suggestion_box <<PK>>
+  * rank : smallint <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+  * reason : text
+}
+
+entity "user_account\n(ERD-01)" as user_account
+entity "occupation\n(ERD-02)" as occupation
+entity "occupation_level\n(ERD-02)" as occupation_level
+entity "scenario_run\n(ERD-05)" as scenario_run
+entity "interest_region\n(ERD-09)" as interest_region
+
+explorer_profile |o--|| user_account
+gtkm_card }o--o| interest_region
+gtkm_attempt }o--|| user_account
+gtkm_card_answer }o--|| gtkm_attempt
+gtkm_card_answer }o--|| gtkm_card
+goal_option }o--|| goal_question
+goal_answer }o--|| gtkm_attempt
+goal_answer }o--|| goal_option
+explorer_goal }o--|| user_account
+explorer_goal }o--o| gtkm_attempt
+explorer_interest }o--|| user_account
+distress_term }o--|| user_account : updated_by
+riasec_trace }o--|| user_account
+interest_tap }o--|| scenario_run
+soft_skill_item }o--|| soft_skill_group
+skill_tier_name }o--|| soft_skill_group
+explorer_skill_group }o--|| user_account
+explorer_skill_group }o--|| soft_skill_group
+achievement }o--o| occupation_level
+explorer_achievement }o--|| user_account
+explorer_achievement }o--|| achievement
+zodiac_buff_group }o--|| zodiac_sign
+zodiac_buff_group }o--|| soft_skill_group
+suggestion_event }o--|| user_account
+suggestion_event }o--o| occupation_level
+suggestion_item }o--|| suggestion_event
+suggestion_item }o--|| occupation
+
+note bottom of explorer_skill_group
+  points = buffed (unlocks, tiers); raw_points = no buff
+  (suggestions S, strengths). Tier never drops (D-114).
+  Strengths shown once scored_scenarios >= 3 (D-105).
+end note
+
+note bottom of zodiac_sign
+  +12% on gains of the 2 groups of the sign, applied last,
+  never on penalties (D-113, D-116). Not sent to AI.
+end note
+
+legend right
+  |<#DDEBF7>      | new, from a ✅ decision (stereotype = D-ID) |
+  |<#FFF2CC>      | new, decided in research/, no D-ID yet |
+  |<#FCE4D6>      | new, still "Cần chốt" (07 A28) |
+  |<#FFFFFF>      | existing ERD-01..07 table |
+endlegend
+@enduml

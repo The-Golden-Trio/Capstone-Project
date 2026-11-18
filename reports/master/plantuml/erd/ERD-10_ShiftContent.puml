@@ -1,0 +1,148 @@
+@startuml ERD-10_ShiftContent
+title ERD-10 · Shift content: work environments, companies and level packs
+hide circle
+' Sources: research/reports/Seed scenario JobQuest.md (Khối 1, A, G, B, C, D: "đã chốt");
+' Luật dẫn truyện JobQuest.md (bản 3, chốt 5/11); 02-quyet-dinh D-127..D-130.
+' Only what must be looked up or drawn at runtime is a table. Facts, nodes, options, probes,
+' story_flags, clock and glossary stay inside scenario_build.content (immutable, ERD-04).
+' Run state (flags, promises, notes, OT, buffs applied) is a fold of run_event (ERD-05).
+
+entity "work_environment" as work_environment <<research>> #FFF2CC {
+  * id : uuid <<PK>>
+  --
+  * code : varchar(40) <<UQ>>
+  * name : varchar(120)
+  * health_cost : smallint
+  * minutes_per_point : smallint
+}
+
+entity "occupation_work_environment" as occupation_work_environment <<research>> #FFF2CC {
+  * occupation_id : uuid <<PK,FK>>
+  * work_environment_id : uuid <<PK,FK>>
+  --
+  * weight : numeric(4,3)
+  * weight_status : weight_status
+}
+
+entity "company" as company <<research>> #FFF2CC {
+  * id : uuid <<PK>>
+  --
+  * code : varchar(40) <<UQ>>
+  * name : varchar(120)
+  * company_type : company_type
+  * work_environment_id : uuid <<FK>>
+    colour_hex : char(7)
+    description : text
+}
+
+entity "level_pack" as level_pack <<research>> #FFF2CC {
+  * id : uuid <<PK>>
+  --
+  * level_id : uuid <<FK>>
+  * version_no : integer
+  * workplace : text
+  * team : jsonb
+  * level_scope : text
+  * rules : jsonb
+    honest_note : text
+  * shared_facts : jsonb
+  * hr_open : text
+  * hr_close : text
+  * followup_cap : smallint
+  * status : scenario_status
+  * updated_at : timestamp
+}
+
+entity "level_pack_company" as level_pack_company <<research>> #FFF2CC {
+  * level_pack_id : uuid <<PK,FK>>
+  * company_id : uuid <<PK,FK>>
+  --
+  * weight : numeric(4,3)
+}
+
+entity "level_pack_resident" as level_pack_resident <<research>> #FFF2CC {
+  * level_pack_id : uuid <<PK,FK>>
+  * slot : varchar(40) <<PK>>
+  --
+  * relation : varchar(40)
+    npc_card_id : uuid <<FK>>
+  * is_fixed : boolean
+}
+
+entity "explorer_company" as explorer_company <<research>> #FFF2CC {
+  * id : uuid <<PK>>
+  --
+  * explorer_id : uuid <<FK>>
+  * level_id : uuid <<FK>>
+  * company_id : uuid <<FK>>
+  * drawn_at : timestamp
+    replaced_at : timestamp
+}
+
+entity "scenario_keyword" as scenario_keyword <<research>> #FFF2CC {
+  * scenario_id : uuid <<PK,FK>>
+  * keyword_id : uuid <<PK,FK>>
+  --
+}
+
+entity "occupation\n(ERD-02)" as occupation
+entity "occupation_level\n(ERD-02)" as occupation_level
+entity "user_account\n(ERD-01)" as user_account
+entity "scenario\n(ERD-03)" as scenario
+entity "keyword\n(ERD-09)" as keyword
+entity "npc_card\n(ERD-11)" as npc_card
+
+occupation_work_environment }o--|| occupation
+occupation_work_environment }o--|| work_environment
+company }o--|| work_environment
+level_pack }o--|| occupation_level
+level_pack_company }o--|| level_pack
+level_pack_company }o--|| company
+level_pack_resident }o--|| level_pack
+level_pack_resident }o--o| npc_card
+explorer_company }o--|| user_account
+explorer_company }o--|| occupation_level
+explorer_company }o--|| company
+scenario_keyword }o--|| scenario
+scenario_keyword }o--|| keyword
+
+note right of level_pack
+  One pack per level (Khối G). An onboarding mission
+  (scenario.is_onboarding) is generated from it: 6 slides,
+  not scored. Goes through the same lifecycle (SM-01).
+end note
+
+note bottom of explorer_company
+  Company drawn per player × level, weighted by
+  occupation_work_environment; redrawn on replay,
+  stay or redraw on a new level (Khối G).
+end note
+
+note as build_content
+  <b>Inside scenario_build.content (shift seed, Khối B–D)</b>
+  context {situation, goal, stakes, clock{start, deadline,
+    time_points}, glossary, difficulty, honest_detail}
+  facts[] {id, text, visibility, layer, known_by, unlock}
+  artefacts[] · story_flags[] · ot_offers[]
+  nodes[] {id, kind open|mid|end, trigger, speaker, channel,
+    canon, adapt, format, options[sets], probe{by, hook},
+    reactions, if_unreached, observes, check_q}
+  1 point = level pack minutes_per_point (D-127)
+end note
+
+note as shift_events
+  <b>run_event.type for flow = shift (ERD-05)</b>
+  PLAYER_INPUT · AI_NARRATION (provenance) · AI_CHECKS
+  NOTE_ADDED · CONTENT_FLAGGED · RUN_PAUSED · RUN_RESUMED
+  + OT_ACCEPTED · OT_REFUSED · BUFF_APPLIED
+  + PROMISE_MADE · PROMISE_RESOLVED (Kinh tế S2, Luật A1b)
+  Flags only switch on (D-129); state = fold via game-core.
+end note
+
+legend right
+  |<#DDEBF7>      | new, from a ✅ decision (stereotype = D-ID) |
+  |<#FFF2CC>      | new, decided in research/, no D-ID yet |
+  |<#FCE4D6>      | new, still "Cần chốt" (07 A28) |
+  |<#FFFFFF>      | existing ERD-01..07 table |
+endlegend
+@enduml

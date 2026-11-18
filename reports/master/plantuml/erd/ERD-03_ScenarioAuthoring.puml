@@ -19,6 +19,12 @@ entity "scenario" as scenario {
   * row_version : integer
   * created_at : timestamp
   * updated_at : timestamp
+  .. + Seed scenario Khối 1, A, G; Kinh tế hook 1 ..
+  * flow : scenario_flow
+    mission_no : smallint
+    situation_type : situation_type
+  * is_onboarding : boolean
+    health_cost : smallint
 }
 
 entity "scenario_skill" as scenario_skill {
@@ -36,6 +42,16 @@ entity "cast_member" as cast_member {
   * role_in_scene : varchar(120)
     pressure : text
     voice : text
+  .. + Seed scenario Khối C; Hồ sơ NPC §3 ..
+    slot : varchar(40)
+    relation : varchar(40)
+    source : cast_source
+    npc_card_id : uuid <<FK>>
+    want : text
+    stance : varchar(40)
+    expertise : smallint
+    disclosure_style : varchar(40)
+    default_channel : varchar(20)
 }
 
 entity "activity" as activity {
@@ -129,8 +145,17 @@ entity "side_quest" as side_quest {
   * scenario_id : uuid <<FK>>
   * prompt : text
   * task_type : task_type
-  * points : smallint
+  * fixed_bonus : smallint
     answer_key : jsonb
+  .. + Kinh tế N5, Hồ sơ NPC §6.2 ..
+    npc_card_id : uuid <<FK>>
+    chapter_no : smallint
+    min_intimacy : smallint
+    requires_item_id : uuid <<FK>>
+    occasion_id : uuid <<FK>>
+  * xu_cost : smallint
+  * intimacy_gain : smallint
+  * health_bonus : smallint
 }
 
 entity "generation_run" as generation_run {
@@ -172,6 +197,9 @@ entity "competency\n(ERD-02)" as competency
 entity "model_config\n(ERD-07)" as model_config
 entity "task\n(ERD-02)" as task
 entity "user_account\n(ERD-01)" as user_account
+entity "npc_card\n(ERD-11)" as npc_card
+entity "shop_item\n(ERD-11)" as shop_item
+entity "occasion\n(ERD-11)" as occasion
 
 scenario }o--|| task
 scenario }o--o| user_account : author_id
@@ -190,6 +218,15 @@ random_event }o--|| activity
 random_event }o--|| competency
 ending }o--|| scenario
 side_quest }o--|| scenario
+side_quest }o--o| npc_card
+side_quest }o--o| shop_item : requires_item_id
+side_quest }o--o| occasion
+cast_member }o--o| npc_card
+
+note bottom of side_quest
+  Not scored (Kinh tế N5): gives intimacy, +6 health and a
+  fixed bonus within 10% of the level budget (D-119).
+end note
 generation_run }o--|| scenario
 generation_run |o--|| ai_job
 generation_run }o--|| model_config

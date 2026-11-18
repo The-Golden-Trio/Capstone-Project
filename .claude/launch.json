@@ -12,6 +12,22 @@
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["exec", "nx", "run", "@datn/web:serve"],
       "port": 4200
+    },
+    {
+      "name": "web-mock",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "VITE_PLAY_API=mock",
+        "pnpm",
+        "--dir",
+        "apps/web",
+        "exec",
+        "vite",
+        "--port",
+        "4210",
+        "--strictPort"
+      ],
+      "port": 4210
     }
   ]
 }

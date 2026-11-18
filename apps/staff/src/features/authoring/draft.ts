@@ -10,6 +10,14 @@ export function produce(
   return draft;
 }
 
+/** Bỏ dòng gợi ý trống trước khi lưu (schema đòi mỗi gợi ý có chữ). */
+export function cleanContent(content: ScenarioContent): ScenarioContent {
+  return produce(content, (d) => {
+    for (const a of d.activities)
+      if (a.hints) a.hints = a.hints.filter((h) => h.trim());
+  });
+}
+
 /** Ghi `value` vào đường dẫn kiểu `activities[1].rubric`. */
 export function setAtPath(
   content: ScenarioContent,

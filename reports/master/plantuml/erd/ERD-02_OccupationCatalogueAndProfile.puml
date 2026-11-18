@@ -24,6 +24,11 @@ entity "occupation" as occupation {
   * created_at : timestamp
     published_at : timestamp
     retired_at : timestamp
+  .. + D-115, D-125 (ERD-09) ..
+    interest_region_id : uuid <<FK>>
+    onet_soc_codes : varchar(10)[]
+    difficulty_k : numeric(3,2)
+    difficulty_class : difficulty_class
 }
 
 entity "occupation_level" as occupation_level {
@@ -41,6 +46,14 @@ entity "occupation_level" as occupation_level {
     salary_currency : char(3)
     written_by : uuid <<FK>>
   * updated_at : timestamp
+  .. + D-114, D-117, D-119, D-133 ..
+    band_equivalent : varchar(3)
+    evidence_grade : char(1)
+    point_budget : integer
+    unlock_ratio : numeric(3,2)
+    main_mission_count : smallint
+    salary_ref_vnd : numeric(12,0)
+    xu_per_mission : smallint
 }
 
 entity "downside" as downside {
@@ -70,6 +83,8 @@ entity "competency" as competency {
   * indicator : text
     source_record_id : uuid <<FK>>
   * created_by : uuid <<FK>>
+  .. + D-116 (ERD-08) ..
+    soft_skill_item_id : uuid <<FK>>
 }
 
 entity "level_competency" as level_competency {
@@ -126,8 +141,12 @@ entity "reference_record" as reference_record {
     adjusted_at : timestamp
 }
 
+entity "interest_region\n(ERD-09)" as interest_region
+entity "soft_skill_item\n(ERD-08)" as soft_skill_item
 
 occupation }o--|| domain
+occupation }o--o| interest_region
+competency }o--o| soft_skill_item
 occupation_level }o--|| occupation
 downside }o--|| occupation
 generation_rule }o--|| occupation
@@ -140,4 +159,10 @@ task }o--|| occupation_level
 task }o--o| reference_record
 import_job }o--o| occupation
 reference_record }o--|| import_job
+
+note bottom of occupation_adjacency
+  Kept as a per-pair cache; jumping is computed
+  per player from explorer_keyword (D-124, ERD-09).
+  Open: 07 A27.
+end note
 @enduml

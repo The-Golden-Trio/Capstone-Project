@@ -1,0 +1,217 @@
+@startuml CL-05_PlayAndAssessment
+title CL-05 · NestJS modules — Play and assessment
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "PlayModule" <<Rectangle>> {
+  class PlayModule <<module>> {
+    imports: AssessmentModule, AiModule, CareerModule, LifeModule, FeedbackModule
+    controllers: ShiftRunController
+    providers: RunService, TurnService, SummaryService, NarrationProcessor
+    exports: RunService
+    <i>run, run_turn: one scene = one shift; AI-4 narrates, the engine decides. Paths match the shift-run API already in apps/api</i>
+  }
+  class ShiftRunController <<controller>> {
+    -runs : RunService
+    -turns : TurnService
+    -summaries : SummaryService
+    --
+    +listShiftTasks(user: AuthUser, query: TaskQuery) : ShiftTask[]  «GET /shift-runs/tasks» [EX,DE]
+    +startRun(user: AuthUser, dto: StartRunInput) : RunView  «POST /shift-runs» [EX]
+    +getRun(user: AuthUser, runId: string) : RunView  «GET /shift-runs/{runId}» [EX,DE]
+    +getScene(user: AuthUser, runId: string) : SceneView  «GET /shift-runs/{runId}/scene» [EX,DE]
+    +getTranscript(user: AuthUser, runId: string, query: TranscriptQuery) : TurnLine[]  «GET /shift-runs/{runId}/transcript» [EX,DE]
+    +takeTurn(user: AuthUser, runId: string, dto: TurnInput) : TurnResult | JobAccepted  «POST /shift-runs/{runId}/turns» [EX,DE]
+    +resumeRun(user: AuthUser, runId: string) : JobAccepted  «POST /shift-runs/{runId}/resume» [EX,DE]
+    +saveNote(user: AuthUser, runId: string, dto: NoteInput) : void  «POST /shift-runs/{runId}/notes» [EX,DE]
+    +flagContent(user: AuthUser, runId: string, dto: FlagInput) : void  «POST /shift-runs/{runId}/flags» [EX]
+    +finishRun(user: AuthUser, runId: string, dto: LikingInput) : SceneSummary | JobAccepted  «POST /shift-runs/{runId}/finish» [EX,DE]
+    +getSummary(user: AuthUser, runId: string) : SceneSummary  «GET /shift-runs/{runId}/summary» [EX,DE]
+  }
+  class RunService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -health : HealthService
+    -bonds : BondService
+    -sideQuests : SideQuestService
+    -feedback : FeedbackService
+    --
+    +tasks(query) : ShiftTask[]
+    +start(user, dto) : RunView  «resume if IN_PROGRESS; health, items and cast set the budget»
+    +startPlaytest(user, buildId) : RunView  «is_playtest, no player_level»
+    +get(user, id) : RunView
+    +scene(user, id) : SceneView
+    +transcript(user, id, after?) : TurnLine[]
+    +note(user, id, dto) : void
+    +flag(user, id, dto) : void  «feedback kind FLAG»
+  }
+  class TurnService {
+    <i>turnId from the client makes retries safe; NPC lines arrive on /stream (turn.lines, turn.done)</i>
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -assessment : AssessmentService
+    -health : HealthService
+    -narrationQueue : Queue «narration»
+    --
+    +take(user, runId, dto) : TurnResult | JobAccepted  «action · say · end_conversation · choose · timeout · save_artefact · confirm_end · cancel_end · hint · overtime»
+    +resume(user, runId) : JobAccepted  «run paused when no model answered (D-92)»
+  }
+  class SummaryService {
+    -prisma : PrismaService
+    -scoring : ScoringService
+    -profiles : ProfileService
+    -levels : PlayerLevelService
+    -wallet : WalletService
+    -sideQuests : SideQuestService
+    --
+    +finish(user, runId, dto) : SceneSummary | JobAccepted  «waits for pending judgements; pays coins; tiers; level-up»
+    +get(user, runId) : SceneSummary
+  }
+  class NarrationProcessor <<processor · narration>> {
+    -prisma : PrismaService
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -checks : OutputCheckService
+    -stream : StreamService
+    -flagQueue : Queue «flag-judge»
+    --
+    +process(job) : Promise<void>  «reply · bridge · reaction · probe → lines [{speaker, text, expression}]; R1–R4, regenerate ≤ 2»
+  }
+  class "PlayModule DTOs" as PlayModule_DTOs <<dto>> {
+    FlagInput { nodeKey, reason }
+    LikingInput { answers[] {activity, level 0–2} }
+    NoteInput { text }
+    StartRunInput { taskId: string, playerLevelId? }
+    TaskQuery { roleCode, band }
+    TranscriptQuery { after?: integer }
+    TurnInput { turnId: uuid, kind: action|say|end_conversation|choose|timeout|save_artefact|confirm_end|cancel_end|hint|overtime, key?, text?, option?, artefact?, fields?: object, ticks?: integer, elapsedMs?: integer }
+    JobAccepted
+    RunView
+    SceneSummary
+    SceneView
+    ShiftTask
+    TurnLine
+    TurnResult
+  }
+}
+
+package "AssessmentModule" <<Rectangle>> {
+  class AssessmentModule <<module>> {
+    imports: AuthModule, AiModule
+    controllers: ReliabilityController
+    providers: AssessmentService, GradingProcessor, FlagJudgeProcessor, JudgePanelService, ScoringService, FeedbackNoteProcessor, ReliabilityService
+    exports: AssessmentService, ScoringService
+    <i>judgement: three-judge panel on yes/no questions, story flags, expert blind ratings</i>
+  }
+  class ReliabilityController <<controller>> {
+    -reliability : ReliabilityService
+    --
+    +getBlindSamples(user: AuthUser, occupationId: string) : BlindSample[]  «GET /staff/occupations/{occupationId}/blind-samples» [DE]
+    +submitBlindRatings(user: AuthUser, dto: BlindRatingInput) : void  «POST /staff/blind-ratings» [DE]
+    +getAgreementReport(user: AuthUser, occupationId: string) : AgreementReport  «GET /staff/occupations/{occupationId}/agreement» [DE,CA]
+  }
+  class AssessmentService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -gradingQueue : Queue «grading»
+    --
+    +recordClosed(tx, run, node, answer) : Judgement[]
+    +requestGrading(tx, runId, segment) : void  «when a node closes or a phase ends»
+  }
+  class GradingProcessor <<processor · grading>> {
+    -prisma : PrismaService
+    -panel : JudgePanelService
+    -stream : StreamService
+    -noteQueue : Queue «feedback-note»
+    --
+    +process(job) : Promise<void>  «one judgement per segment × observed sub-skill»
+  }
+  class FlagJudgeProcessor <<processor · flag-judge>> {
+    -prisma : PrismaService
+    -panel : JudgePanelService
+    --
+    +process(job) : Promise<void>  «yes/no conditions → story flags in run.state (on only, D-129)»
+  }
+  class JudgePanelService {
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -deid : DeIdentifierService
+    -checks : OutputCheckService
+    --
+    +grade(transcript, subSkills, signs) : PanelResult  «A/B/C → 0/1/2, flags, verified quotes»
+    +askYesNo(transcript, questions) : boolean[]
+    -callJudge(slot, prompt) : JudgeOutcome  «retry ≤ 2»
+    -combine(outcomes) : Level  «median of 3; 2 judges → lower (D-132)»
+  }
+  class ScoringService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -data : GameData
+    --
+    +groupPoints(run) : GroupPoints  «penalty only on judged written answers; hints never lower a score»
+    +sceneScore(run) : number  «0–100»
+  }
+  class FeedbackNoteProcessor <<processor · feedback-note>> {
+    -prisma : PrismaService
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -checks : OutputCheckService
+    -stream : StreamService
+    --
+    +process(job) : Promise<void>  «“look back at the shift” note, stored in run.state»
+  }
+  class ReliabilityService {
+    -prisma : PrismaService
+    --
+    +samples(user, occupationId) : BlindSample[]  «play-test segments, AI levels hidden»
+    +submit(user, dto) : void  «judgement rows with rated_by, beside the AI rows»
+    +report(occupationId) : AgreementReport  «Cohen's kappa expert–AI and expert–expert»
+  }
+  class "AssessmentModule DTOs" as AssessmentModule_DTOs <<dto>> {
+    BlindRatingInput { ratings[] {runId, segment, subSkill, level, flags[]} }
+    AgreementReport
+    BlindSample
+  }
+}
+
+class BondService <<CL-04 · LifeModule>>
+class DeIdentifierService <<CL-06 · AiModule>>
+class FeedbackService <<CL-06 · FeedbackModule>>
+class HealthService <<CL-04 · LifeModule>>
+class ModelGatewayService <<CL-06 · AiModule>>
+class OutputCheckService <<CL-06 · AiModule>>
+class PlayerLevelService <<CL-04 · CareerModule>>
+class ProfileService <<CL-04 · CareerModule>>
+class PromptBuilder <<CL-06 · AiModule>>
+class SideQuestService <<CL-04 · LifeModule>>
+class WalletService <<CL-04 · LifeModule>>
+
+ShiftRunController --> RunService
+ShiftRunController --> TurnService
+ShiftRunController --> SummaryService
+RunService --> HealthService
+RunService --> BondService
+RunService --> SideQuestService
+RunService --> FeedbackService
+TurnService --> AssessmentService
+TurnService --> HealthService
+SummaryService --> ScoringService
+SummaryService --> ProfileService
+SummaryService --> PlayerLevelService
+SummaryService --> WalletService
+SummaryService --> SideQuestService
+NarrationProcessor --> ModelGatewayService
+NarrationProcessor --> PromptBuilder
+NarrationProcessor --> OutputCheckService
+ReliabilityController --> ReliabilityService
+GradingProcessor --> JudgePanelService
+FlagJudgeProcessor --> JudgePanelService
+JudgePanelService --> ModelGatewayService
+JudgePanelService --> PromptBuilder
+JudgePanelService --> DeIdentifierService
+JudgePanelService --> OutputCheckService
+FeedbackNoteProcessor --> ModelGatewayService
+FeedbackNoteProcessor --> PromptBuilder
+FeedbackNoteProcessor --> OutputCheckService
+@enduml

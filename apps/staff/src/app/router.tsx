@@ -16,7 +16,11 @@ import { DePortalPage } from '../pages/de/DePortalPage';
 import { ReviewPage } from '../pages/de/ReviewPage';
 import { ResetPasswordPage } from '../pages/auth/ResetPasswordPage';
 import { SignInPage } from '../pages/auth/SignInPage';
-import { PortalRedirect, RequireStaff } from '../shell/StaffShell';
+import {
+  PortalRedirect,
+  RequirePortal,
+  RequireStaff,
+} from '../shell/StaffShell';
 
 /**
  * Route của staff app (đề xuất Q6, `docs/plans/2026-11-06_ke-hoach-staff-app-CA-DE.md` §5).
@@ -29,38 +33,50 @@ export const routes = [
     element: <RequireStaff />, // T00
     children: [
       { index: true, element: <PortalRedirect /> },
-      { path: 'ca', element: <CaPortalPage /> }, // C01
       {
-        path: 'ca/occupations/:occupationId/scenarios',
-        element: <ScenarioSlotsPage />,
-      }, // C05
+        path: 'ca',
+        element: <RequirePortal portal="ca" />,
+        children: [
+          { index: true, element: <CaPortalPage /> }, // C01
+          {
+            path: 'occupations/:occupationId/scenarios',
+            element: <ScenarioSlotsPage />,
+          }, // C05
+          {
+            path: 'occupations/:occupationId/review-criteria',
+            element: <ReviewCriteriaPage />,
+          }, // C04
+          { path: 'scenarios/:scenarioId/gamify', element: <GamifyPage /> }, // C06
+          { path: 'assets', element: <AssetLibraryPage /> }, // C07
+          { path: 'catalogue', element: <CataloguePage /> }, // C02
+          {
+            path: 'catalogue/imports/:importId?',
+            element: <ReferenceImportPage />,
+          }, // C03
+          {
+            path: 'scenarios/:scenarioId/publish',
+            element: <PublishScenarioPage />,
+          }, // C08
+          {
+            path: 'occupations/:occupationId/monitor',
+            element: <OccupationMonitorPage />,
+          }, // C09
+          {
+            path: 'occupations/:occupationId/prompts',
+            element: <SystemPromptsPage />,
+          }, // C10
+          { path: 'settings', element: <GameSettingsPage /> }, // C11 ĐỀ XUẤT
+        ],
+      },
       {
-        path: 'ca/occupations/:occupationId/review-criteria',
-        element: <ReviewCriteriaPage />,
-      }, // C04
-      { path: 'ca/scenarios/:scenarioId/gamify', element: <GamifyPage /> }, // C06
-      { path: 'ca/assets', element: <AssetLibraryPage /> }, // C07
-      { path: 'de', element: <DePortalPage /> }, // D01
-      { path: 'de/scenarios/:scenarioId/author', element: <AuthoringPage /> }, // D03
-      { path: 'de/scenarios/:scenarioId/review', element: <ReviewPage /> }, // D04
-      { path: 'ca/catalogue', element: <CataloguePage /> }, // C02
-      {
-        path: 'ca/catalogue/imports/:importId?',
-        element: <ReferenceImportPage />,
-      }, // C03
-      {
-        path: 'ca/scenarios/:scenarioId/publish',
-        element: <PublishScenarioPage />,
-      }, // C08
-      {
-        path: 'ca/occupations/:occupationId/monitor',
-        element: <OccupationMonitorPage />,
-      }, // C09
-      {
-        path: 'ca/occupations/:occupationId/prompts',
-        element: <SystemPromptsPage />,
-      }, // C10
-      { path: 'ca/settings', element: <GameSettingsPage /> }, // C11 ĐỀ XUẤT
+        path: 'de',
+        element: <RequirePortal portal="de" />,
+        children: [
+          { index: true, element: <DePortalPage /> }, // D01
+          { path: 'scenarios/:scenarioId/author', element: <AuthoringPage /> }, // D03
+          { path: 'scenarios/:scenarioId/review', element: <ReviewPage /> }, // D04
+        ],
+      },
       { path: '*', element: <PortalRedirect /> },
     ],
   },

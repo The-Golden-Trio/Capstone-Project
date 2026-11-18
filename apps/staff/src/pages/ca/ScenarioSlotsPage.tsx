@@ -23,7 +23,12 @@ import {
 import { HistoryTimeline } from '../../features/shared/HistoryTimeline';
 import { StatusBadge } from '../../features/shared/StatusBadge';
 import { useLoad } from '../../hooks/useLoad';
-import { formatDateTime } from '../../lib/labels';
+import {
+  ARCHETYPE_LABEL,
+  COMPANY_LABEL,
+  formatDateTime,
+} from '../../lib/labels';
+import { SourceTag } from '../../features/shared/Guidance';
 
 /** `datetime-local` cần giờ địa phương không có múi giờ. */
 const toLocalInput = (d: Date) =>
@@ -83,6 +88,8 @@ export function ScenarioSlotsPage() {
     }
   };
 
+  const overdueIds = new Set((overdue.data ?? []).map((a) => a.scenarioId));
+
   const titleOf = (scenarioId: string) =>
     scenarios.data?.items.find((s) => s.id === scenarioId)?.taskTitle ??
     scenarioId;
@@ -129,12 +136,22 @@ export function ScenarioSlotsPage() {
                 <Card
                   key={level.levelNo}
                   title={`L${level.levelNo} · ${level.title}`}
+                  actions={
+                    <span className="text-[12px] text-ink-faint">
+                      {
+                        level.tasks.filter((t) =>
+                          activeByTask.has(`${level.levelNo}|${t.text}`),
+                        ).length
+                      }
+                      /{level.tasks.length} task đã mở
+                    </span>
+                  }
                 >
                   {level.tasks.length === 0 ? (
                     <EmptyState title={<>Cấp này chưa có task.</>} />
                   ) : (
                     <div className="overflow-x-auto">
-                      <table className="w-full min-w-[620px] text-left">
+                      <table className="w-full min-w-[640px] text-left">
                         <thead className="text-[12px] text-ink-faint">
                           <tr>
                             <th className="py-1 font-medium">Task</th>
@@ -142,6 +159,7 @@ export function ScenarioSlotsPage() {
                             <th className="py-1 font-medium">
                               Tác giả · Người duyệt
                             </th>
+                            <th className="py-1 font-medium">Hạn duyệt</th>
                             <th className="py-1" />
                           </tr>
                         </thead>
@@ -164,6 +182,22 @@ export function ScenarioSlotsPage() {
                                   {s
                                     ? `${s.authorName ?? '—'} · ${s.reviewerName ?? '—'}`
                                     : ''}
+                                </td>
+                                <td className="py-2 pr-3 text-[13px]">
+                                  {s?.reviewDeadline ? (
+                                    overdueIds.has(s.id) ? (
+                                      <Badge tone="danger">
+                                        Quá hạn ·{' '}
+                                        {formatDateTime(s.reviewDeadline)}
+                                      </Badge>
+                                    ) : (
+                                      <span className="text-ink-muted">
+                                        {formatDateTime(s.reviewDeadline)}
+                                      </span>
+                                    )
+                                  ) : (
+                                    ''
+                                  )}
                                 </td>
                                 <td className="py-2 text-right">
                                   {s ? (
@@ -233,6 +267,15 @@ export function ScenarioSlotsPage() {
       {selected && (
         <ScenarioDrawer
           scenarioId={selected}
+          siblings={(scenarios.data?.items ?? []).filter((x) => {
+            const me = scenarios.data?.items.find((y) => y.id === selected);
+            return (
+              me &&
+              x.id !== me.id &&
+              x.levelNo === me.levelNo &&
+              x.status !== 'RETIRED'
+            );
+          })}
           onClose={() => setSelected(null)}
           onChanged={() => {
             void scenarios.reload();
@@ -246,14 +289,22 @@ export function ScenarioSlotsPage() {
 
 function ScenarioDrawer({
   scenarioId,
+  siblings,
   onClose,
   onChanged,
 }: {
   scenarioId: string;
+  /** Scenario khác cùng cấp, để nhắc luật kiểm trùng (Seed §1). */
+  siblings: ScenarioListItem[];
   onClose: () => void;
   onChanged: () => void;
 }) {
   const detail = useLoad(() => staffApi.getScenario(scenarioId), [scenarioId]);
+  const siblingKey = siblings.map((x) => x.id).join(',');
+  const others = useLoad(
+    () => Promise.all(siblings.map((x) => staffApi.getScenario(x.id))),
+    [siblingKey],
+  );
   const [tick, setTick] = useState(0);
   const d = detail.data;
   const refresh = async () => {
@@ -282,6 +333,7 @@ function ScenarioDrawer({
               L{d.levelNo} · cập nhật {formatDateTime(d.updatedAt)}
             </span>
           </div>
+          <SituationSummary detail={d} others={others.data ?? []} />
           {(d.status === 'APPROVED' || d.status === 'IN_PLAYTEST') && (
             <LinkButton
               to={`/ca/scenarios/${d.id}/gamify`}
@@ -489,5 +541,50 @@ function ReassignForm({
         Giao lại
       </Button>
     </section>
+  );
+}
+
+/**
+ * Loại tình huống, công ty của scenario và nhắc luật kiểm trùng cùng cấp
+ * (Seed §1): không có hai màn trùng cả việc chính lẫn loại tình huống. Mỗi ô
+ * là một task riêng nên chỉ cảnh báo khi trùng loại tình huống, để CA xem lại
+ * hai việc có thật sự khác nhau không.
+ */
+function SituationSummary({
+  detail: d,
+  others,
+}: {
+  detail: ScenarioDetail;
+  others: ScenarioDetail[];
+}) {
+  if (!d.archetype)
+    return (
+      <p className="text-[13px] text-ink-faint">
+        Tác giả chưa chọn loại tình huống.
+      </p>
+    );
+  const same = others.filter((o) => o.archetype === d.archetype);
+  return (
+    <div className="rounded-xl border border-line bg-night-900/25 px-3 py-2 text-[13px]">
+      <p>
+        <span className="text-ink-faint">Loại tình huống:</span>{' '}
+        {ARCHETYPE_LABEL[d.archetype] ?? d.archetype}
+        {d.companyType && (
+          <>
+            {' '}
+            · <span className="text-ink-faint">công ty:</span>{' '}
+            {COMPANY_LABEL[d.companyType] ?? d.companyType}
+          </>
+        )}
+      </p>
+      {same.length > 0 && (
+        <p className="mt-1 text-warning">
+          Cùng loại tình huống với{' '}
+          {same.map((o) => `“${o.taskTitle}”`).join(', ')} ở cấp này. Kiểm hai
+          màn khác nhau về việc chính và cặp kỹ năng trọng tâm.
+          <SourceTag>Seed §1</SourceTag>
+        </p>
+      )}
+    </div>
   );
 }

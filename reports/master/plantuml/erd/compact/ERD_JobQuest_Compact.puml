@@ -1,0 +1,256 @@
+@startuml ERD_JobQuest_Compact
+title JobQuest · Entity relationship diagram
+hide circle
+hide empty members
+
+entity "occupation" as occupation {
+  * id : uuid <<PK>>
+  --
+  * code : varchar <<UQ>>
+  * name : varchar
+  * industry_group : varchar
+  * riasec_code : varchar(3)
+  * difficulty_k : numeric(3,2)
+  * status : occupation_status
+  * profile : jsonb
+    prerequisites : jsonb
+    similar : jsonb
+    prompts : jsonb
+}
+
+entity "occupation_level" as occupation_level {
+  * id : uuid <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+  * level_no : smallint
+  * band_equivalent : smallint
+  * title : varchar
+  * coins_per_scene : smallint
+  * point_budget : jsonb
+  * entry_tiers : jsonb
+  * keywords : jsonb
+  * package : jsonb
+}
+
+entity "npc" as npc {
+  * id : varchar <<PK>>
+  --
+  * arcana_no : smallint <<UQ>>
+  * name : varchar
+  * unlock : npc_unlock
+  * birthday : char(5)
+  * profile : jsonb
+}
+
+entity "scenario" as scenario {
+  * id : uuid <<PK>>
+  --
+  * level_id : uuid <<FK>>
+    npc_id : varchar <<FK>>
+    author_id : uuid <<FK>>
+  * kind : MAIN | SIDE_QUEST
+  * code : varchar <<UQ>>
+  * title : varchar
+  * status : scenario_status
+  * seed : jsonb
+  * row_version : integer
+}
+
+entity "scenario_review" as scenario_review {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * reviewer_id : uuid <<FK>>
+  * deadline_at : timestamp
+  * status : review_status
+    decision : review_decision
+    answers : jsonb
+}
+
+entity "scenario_build" as scenario_build {
+  * id : uuid <<PK>>
+  --
+  * scenario_id : uuid <<FK>>
+  * version : integer
+  * content : jsonb
+  * content_hash : char(64)
+    effective_from : timestamp
+    retired_at : timestamp
+}
+
+entity "user_account" as user_account {
+  * id : uuid <<PK>>
+  --
+    email : varchar <<UQ>>
+    google_sub : varchar <<UQ>>
+    password_hash : text
+  * roles : role_kind[]
+  * status : account_status
+}
+
+entity "auth_token" as auth_token {
+  * id : uuid <<PK>>
+  --
+  * user_id : uuid <<FK>>
+  * kind : REFRESH | RESET
+  * token_hash : char(64) <<UQ>>
+  * expires_at : timestamp
+}
+
+entity "staff_assignment" as staff_assignment {
+  * id : uuid <<PK>>
+  --
+  * occupation_id : uuid <<FK>>
+  * user_id : uuid <<FK>>
+  * role : staff_role
+    ended_at : timestamp
+}
+
+entity "audit_log" as audit_log {
+  * id : bigint <<PK>>
+  --
+    actor_id : uuid <<FK>>
+  * action : varchar
+  * target : varchar
+    detail : jsonb
+}
+
+entity "notification" as notification {
+  * id : uuid <<PK>>
+  --
+  * recipient_id : uuid <<FK>>
+  * template : varchar
+  * payload : jsonb
+    read_at : timestamp
+}
+
+entity "player_profile" as player_profile {
+  * user_id : uuid <<PK,FK>>
+  --
+  * nickname : varchar
+  * birth_date : date
+  * coins : integer
+  * health : smallint
+  * soft_skills : jsonb
+  * keywords : jsonb
+  * riasec : jsonb
+  * npc_bonds : jsonb
+    get_to_know_me : jsonb
+    achievements : jsonb
+}
+
+entity "player_level" as player_level {
+  * id : uuid <<PK>>
+  --
+  * player_id : uuid <<FK>>
+  * level_id : uuid <<FK>>
+  * attempt : smallint
+  * entered_via : entry_kind
+  * company : jsonb
+    completed_at : timestamp
+}
+
+entity "inventory" as inventory {
+  * id : uuid <<PK>>
+  --
+  * player_id : uuid <<FK>>
+    run_id : uuid <<FK>>
+  * item_code : varchar
+  * state : item_state
+  * price_paid : integer
+}
+
+entity "run" as run {
+  * id : uuid <<PK>>
+  --
+  * player_id : uuid <<FK>>
+    player_level_id : uuid <<FK>>
+  * build_id : uuid <<FK>>
+  * is_playtest : boolean
+  * status : run_status
+  * time_used : smallint
+    score : smallint
+    group_points : jsonb
+    liking : jsonb
+  * state : jsonb
+}
+
+entity "run_turn" as run_turn {
+  * id : bigint <<PK>>
+  --
+  * run_id : uuid <<FK>>
+  * seq : integer
+  * kind : turn_kind
+    node_key : varchar
+    text : text
+    payload : jsonb
+  * time_cost : smallint
+}
+
+entity "judgement" as judgement {
+  * id : uuid <<PK>>
+  --
+  * run_id : uuid <<FK>>
+    rated_by : uuid <<FK>>
+  * segment : varchar
+  * sub_skill : varchar
+    level : smallint
+    flags : text[]
+    evidence : jsonb
+}
+
+entity "ai_call" as ai_call {
+  * id : uuid <<PK>>
+  --
+    run_id : uuid <<FK>>
+  * task : ai_task
+  * model : varchar
+  * status : job_status
+  * tokens : integer
+  * cost_usd : numeric(10,5)
+}
+
+entity "feedback" as feedback {
+  * id : uuid <<PK>>
+  --
+    user_id : uuid <<FK>>
+    occupation_id : uuid <<FK>>
+    run_id : uuid <<FK>>
+  * kind : RATING | APP | FLAG
+    scores : jsonb
+    text : text
+}
+
+' content column
+occupation ||-down-o{ occupation_level
+occupation_level ||-down-o{ scenario
+scenario ||-down-o{ scenario_build
+scenario ||-left-o{ scenario_review
+npc |o-up-o{ scenario
+
+' staff
+occupation ||-left-o{ staff_assignment
+user_account ||-up-o{ staff_assignment
+user_account ||-left-o{ auth_token
+user_account |o-down-o{ audit_log
+user_account ||-down-o{ notification
+user_account ||-up-o{ scenario_review
+user_account |o-up-o{ scenario
+
+' player
+user_account ||-right-o| player_profile
+player_profile ||-down-o{ player_level
+occupation_level ||-right-o{ player_level
+player_profile ||-right-o{ inventory
+player_profile ||-down-o{ run
+player_level |o-down-o{ run
+scenario_build ||-right-o{ run
+run ||-down-o{ run_turn
+run ||-down-o{ judgement
+user_account |o--o{ judgement
+run |o-right-o{ inventory
+run |o-down-o{ ai_call
+run |o-down-o{ feedback
+occupation |o-right-o{ feedback
+user_account |o--o{ feedback
+@enduml

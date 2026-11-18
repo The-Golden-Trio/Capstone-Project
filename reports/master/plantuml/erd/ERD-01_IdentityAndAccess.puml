@@ -12,6 +12,9 @@ entity "user_account" as user_account {
   * created_at : timestamp
     last_sign_in_at : timestamp
     deleted_at : timestamp
+  .. + 07 A22, D-113 ..
+    username : varchar(40) <<UQ>>
+    date_of_birth : date
 }
 
 entity "google_identity" as google_identity {
