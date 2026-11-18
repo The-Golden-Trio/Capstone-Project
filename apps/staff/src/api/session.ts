@@ -10,6 +10,8 @@
  * - Nhiều tab: tab nào refresh xong thì ghi token mới vào localStorage; tab
  *   khác đọc lại trước khi tự refresh, nên không tab nào cầm token đã chết.
  */
+import { STAFF_DEMO, demoFetch, demoRefresh } from './demo-server';
+
 const BASE_URL = import.meta.env.VITE_API_URL ?? '';
 const REFRESH_KEY = 'jq.staff.refresh';
 
@@ -62,6 +64,12 @@ let refreshInFlight: Promise<boolean> | null = null;
 async function doRefresh(retried: boolean): Promise<boolean> {
   const presented = readRefresh();
   if (!presented) return false;
+  if (STAFF_DEMO) {
+    const session = demoRefresh(presented);
+    if (session) setSession(session);
+    else clearSession();
+    return Boolean(session);
+  }
   try {
     const response = await fetch(`${BASE_URL}/api/v1/auth/refresh`, {
       method: 'POST',
@@ -101,6 +109,8 @@ export async function authFetch(
   const send = () => {
     const headers = new Headers(init.headers);
     if (accessToken) headers.set('Authorization', `Bearer ${accessToken}`);
+    // Chế độ demo: trả dữ liệu mẫu ngay trong trình duyệt, không gọi máy chủ.
+    if (STAFF_DEMO) return demoFetch(input, { ...init, headers });
     return fetch(input, { ...init, headers });
   };
   let response = await send();
