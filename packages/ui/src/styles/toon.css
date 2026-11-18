@@ -143,6 +143,16 @@
   }
 }
 
+/*
+ * base.css gán Playfair cho mọi h1–h4; trong hai theme cartoon, tiêu đề mặc
+ * định dùng Baloo 2. Specificity 0 (:where) nên class trên phần tử vẫn thắng.
+ */
+@layer components {
+  :where(.theme-toon, .theme-toon-night) :where(h1, h2, h3, h4) {
+    font-family: var(--font-toon);
+  }
+}
+
 /* Vùng theme: chữ, nền và lựa chọn văn bản trong thế giới cartoon. */
 @utility theme-toon {
   font-family: var(--font-toon-body);
