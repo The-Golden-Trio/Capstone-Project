@@ -299,12 +299,20 @@ export default function GalaxyPage() {
                     <p className="font-toon text-base font-bold text-toon-ink">
                       Xem trước một ca làm mẫu
                     </p>
-                    <p className="mt-1 text-xs text-toon-ink-soft">
-                      Dữ liệu hiện có đúng một ca đã soạn: Back-end cấp L3, sự
-                      cố API chậm. Ở bản xem thử, bạn vào thẳng ca này: điểm kỹ
-                      năng không cộng vào hồ sơ và không mở cấp, nhưng thời gian
-                      chơi vẫn vào thống kê. Lời nhân vật là AI giả.
+                    <p className="mt-1 text-xs font-semibold text-toon-ink-soft">
+                      Ca Back-end L3: API chậm giờ cao điểm. Lời nhân vật là AI
+                      giả.
                     </p>
+                    <details className="mt-1 text-xs text-toon-ink-soft">
+                      <summary className="w-fit cursor-pointer font-bold underline decoration-dotted underline-offset-4">
+                        Chi tiết ca mẫu
+                      </summary>
+                      <p className="mt-1">
+                        Dữ liệu hiện có đúng một ca đã soạn. Ở bản xem thử, bạn
+                        vào thẳng ca này: điểm kỹ năng không cộng vào hồ sơ và
+                        không mở cấp, nhưng thời gian chơi vẫn vào thống kê.
+                      </p>
+                    </details>
                     <ToonButton
                       size="sm"
                       style={{ backgroundColor: 'var(--color-toon-star)' }}

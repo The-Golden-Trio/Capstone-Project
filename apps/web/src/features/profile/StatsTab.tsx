@@ -74,7 +74,7 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
                   className="rounded-lg border border-toon-ink bg-toon-cream p-4"
                 >
                   <h3
-                    className="text-sm font-semibold"
+                    className="font-toon text-sm font-bold"
                     style={{
                       borderBottom: `3px solid ${regionColor(region.id)}`,
                     }}

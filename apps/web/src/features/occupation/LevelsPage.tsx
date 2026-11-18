@@ -91,11 +91,14 @@ export default function LevelsPage() {
         ({ id }) => (selected.requirement[id] ?? 0) > 0,
       )
     : [];
+  // Đã có đảo thì luôn cho về đảo (onboard, công ty vẫn dùng được); chỉ
+  // chặn vào cấp mới khi cấp bị khoá hoặc chưa có ca được xuất bản.
   const blocked =
     !selected ||
-    selected.access === 'LOCKED' ||
-    !o.playable ||
-    selected.questCount === 0;
+    (!selected.enrolmentId &&
+      (selected.access === 'LOCKED' ||
+        !o.playable ||
+        selected.questCount === 0));
   const enter = () => {
     if (!selected) return;
     if (selected.enrolmentId) {
