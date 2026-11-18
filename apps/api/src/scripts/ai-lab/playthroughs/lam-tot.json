@@ -1,0 +1,144 @@
+{
+  "_note": "Đây là câu giả do nhóm viết để thử AI, không phải lời của người chơi thật.",
+  "name": "lam-tot",
+  "seed": "SWE_BACKEND.L3.m2",
+  "title": "Làm tốt: điều tra, hẹn báo lại, vá đủ ba ý, email có cách kiểm và rollback",
+  "intent": "Đường đẹp của L3.m2: mở đủ nguồn, nói nguyên nhân kèm bằng chứng với anh An, báo #su-co, hẹn báo lại chị Linh vào 11:30 (và giữ lời), viết bản vá đủ ba ý, chạy thử staging, ghi chú sự cố, rồi gửi email có cách kiểm và cách lùi lại. Kỳ vọng: các cờ nguyen_nhan_da_noi_voi_mentor, da_loai_db_bang_chung, hua_bao_lai, bv.*, email.*, n3.* bật; anh An duyệt; không có tre_hen.",
+  "steps": [
+    {
+      "do": "start"
+    },
+    {
+      "do": "say",
+      "text": "Dạ em chào anh, em vào coi log ngay đây. Có gì em nhắn anh nha."
+    },
+    {
+      "do": "action",
+      "key": "open_log"
+    },
+    {
+      "do": "action",
+      "key": "open_bang"
+    },
+    {
+      "do": "action",
+      "key": "open_code"
+    },
+    {
+      "do": "action",
+      "key": "talk_mentor"
+    },
+    {
+      "do": "say",
+      "text": "Anh ơi, log ghi mở lịch sử đơn của khách MP-0042 là hệ thống hỏi cơ sở dữ liệu 901 lần, còn khách ít đơn cùng giờ thì chỉ 4 lần và vẫn nhanh. Số query tăng theo số đơn, CPU của DB mới 24% nên em thấy không phải DB quá tải. Trong code em đang lấy chi tiết từng đơn trong một vòng lặp."
+    },
+    {
+      "do": "end_conversation"
+    },
+    {
+      "do": "action",
+      "key": "message_su_co",
+      "fields": {
+        "noi_dung": "Em đang xử lý API lịch sử đơn chậm. Nguyên nhân là vòng lặp lấy chi tiết từng đơn (khách 900 đơn thì 901 truy vấn). Em đang viết bản vá, chưa đưa lên production, chờ anh An duyệt rồi mới lên."
+      }
+    },
+    {
+      "do": "action",
+      "key": "talk_support"
+    },
+    {
+      "do": "say",
+      "text": "Chị Linh ơi, bên kỹ thuật tìm ra lỗi rồi, em đang sửa. Chị nói với khách là bên em đã thấy nguyên nhân và đang xử lý. Em chưa hứa giờ xong được, nhưng 11 rưỡi em gọi báo chị nha."
+    },
+    {
+      "do": "end_conversation"
+    },
+    {
+      "do": "action",
+      "key": "write_patch",
+      "fields": {
+        "mo_ta": "Bỏ vòng lặp gọi cơ sở dữ liệu cho từng đơn, thay bằng một truy vấn gom lấy chi tiết tất cả các đơn của khách. Giới hạn số đơn trả về mỗi lần bằng phân trang, mỗi trang 50 đơn. App cũ không gửi số trang thì mặc định trả trang 1 với limit 200 và có has_more để app cũ tải tiếp."
+      }
+    },
+    {
+      "do": "action",
+      "key": "run_staging"
+    },
+    {
+      "do": "action",
+      "key": "wait"
+    },
+    {
+      "do": "choose",
+      "option": "a",
+      "elapsedMs": 9000
+    },
+    {
+      "do": "say",
+      "text": "Dạ chị, em đang chạy thử bản sửa, khoảng 11 rưỡi em gọi báo chị kết quả nha.",
+      "ifAwait": "node_reply"
+    },
+    {
+      "do": "action",
+      "key": "talk_support"
+    },
+    {
+      "do": "say",
+      "text": "Chị Linh ơi, em báo chị đúng hẹn nè. Bản sửa chạy thử trên staging đã nhanh, em đang chờ anh An duyệt. Chị nói với khách là sắp xong, em báo ngay khi lên."
+    },
+    {
+      "do": "end_conversation"
+    },
+    {
+      "do": "action",
+      "key": "chot_nguyen_nhan"
+    },
+    {
+      "do": "save_artefact",
+      "artefact": "ghi_chu_su_co",
+      "fields": {
+        "hien_tuong": "API lịch sử đơn chậm từ 8:00, từ 0,2 giây lên hơn 4 giây, nặng nhất với khách sỉ nhiều đơn.",
+        "nguyen_nhan": "API gọi cơ sở dữ liệu một lần cho mỗi đơn (901 truy vấn với khách 900 đơn, khách 3 đơn chỉ 4 truy vấn). DB không quá tải: CPU 24%, 38/200 kết nối. API cũng trả hết đơn, không giới hạn số đơn, nên khách càng nhiều đơn càng chậm.",
+        "da_lam": "Đã gom thành một truy vấn, thêm phân trang, giữ cách xử lý cho app cũ, chạy thử trên staging."
+      },
+      "ticks": ["h3", "h4"]
+    },
+    {
+      "do": "say",
+      "text": "Em loại DB quá tải bằng số liệu: CPU DB 24%, số query tăng đúng theo số đơn của khách chứ không theo giờ cao điểm. Mạng khách cũng không phải vì khách ít đơn cùng lúc vẫn nhanh.",
+      "ifAwait": "probe_answer"
+    },
+    {
+      "do": "action",
+      "key": "gui_anh_an"
+    },
+    {
+      "do": "confirm_end",
+      "ifAwait": "confirm_end"
+    },
+    {
+      "do": "save_artefact",
+      "artefact": "email_an",
+      "fields": {
+        "nguyen_nhan": "API lịch sử đơn gọi cơ sở dữ liệu một lần cho mỗi đơn và không giới hạn số đơn trả về.",
+        "huong_xu_ly": "Gom thành một truy vấn, thêm phân trang 50 đơn mỗi trang, app cũ không gửi số trang thì trả trang 1 với limit 200. Đã chạy thử trên staging, thời gian về 0,18 giây.",
+        "rui_ro": "Sau khi anh duyệt và lên production em theo dõi thời gian phản hồi và số query trên dashboard 30 phút đầu. Nếu lỗi em rollback, deploy lại bản cũ ngay. Rủi ro chính là app cũ nên em đã kiểm riêng request không gửi số trang."
+      }
+    },
+    {
+      "do": "say",
+      "text": "Nếu khách nhiều đơn hơn nữa thì có phân trang nên số query vẫn là 2, thời gian không tăng theo số đơn. Với app cũ, em đã chạy thử request không gửi page và nó trả limit 200 kèm has_more.",
+      "ifAwait": "probe_answer"
+    },
+    {
+      "do": "say",
+      "text": "Dạ chị, em báo chị đúng hẹn 11 rưỡi rồi, bản sửa đã chạy thử và anh An duyệt rồi nên chị nói khách là đã xử lý xong ạ.",
+      "ifAwait": "probe_answer"
+    },
+    {
+      "do": "say",
+      "text": "Dạ em sẽ báo chị ngay khi bản sửa lên production ạ.",
+      "ifAwait": "probe_answer"
+    }
+  ]
+}

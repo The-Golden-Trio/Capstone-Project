@@ -42,6 +42,19 @@ pnpm exec nx run @datn/api:narrator-try -- --mode=check  # thử riêng AI-4
 
 Khi khởi động, worker in ra chuỗi model đang dùng: `Chuỗi dẫn truyện: …`, `Ghế 1: claude-haiku-5.5 → claude-sonnet-5.5`… Có dòng `Panel judge tắt: …` nghĩa là AI-5 không chạy: thiếu key, hoặc vi phạm DC-01.
 
+### Thử các service AI mà không cần UI, DB, Redis: `ai-lab`
+
+`ai-lab` chạy ca làm L3.m2 trong bộ nhớ theo một **kịch bản người chơi** (JSON ở `apps/api/src/scripts/ai-lab/playthroughs/`, là câu giả do nhóm viết). Mỗi việc đi qua `shift.step`, rồi vòng giải `pendingRequest` giống `ShiftTurnProcessor`: AI-4 viết nhịp (`ShiftSceneNarrator`), bộ phán có/không đọc lời người chơi (`ShiftCheckerService`). Cần Node và `pnpm install`, không cần `.env` ở chế độ `fake`.
+
+```sh
+pnpm exec nx run @datn/api:ai-lab -- --mode=fake --play=all                # model giả, miễn phí (mặc định)
+pnpm exec nx run @datn/api:ai-lab -- --mode=check                          # mỗi model dẫn truyện và mỗi ghế judge một lượt nhỏ: sẵn sàng hay không, vì sao
+pnpm exec nx run @datn/api:ai-lab -- --mode=live --play=lam-tot --out=tmp/lab   # gọi thật, TỐN TIỀN
+pnpm exec nx run @datn/api:ai-lab -- --mode=live --only=narrator           # chỉ AI-4 chạy thật, bộ phán dùng bản giả
+```
+
+Kịch bản có sẵn: `lam-tot` (điều tra, hẹn báo lại, vá đủ ba ý, email có cách kiểm và rollback), `lam-nhanh-quen-hen` (hứa giờ rồi trễ, email thiếu rollback), `lac-de-tan-cong` (lạc đề, chèn lệnh, đòi xem đáp án). Thêm kịch bản = thêm một file JSON; bước có `ifAwait` chỉ chạy khi engine đang chờ đúng loại đó, vì nhánh của engine đổi theo câu trả lời của bộ phán. In ra từng bước, cảnh hiện ra, mỗi lượt gọi AI (loại việc, model, nhịp trả về, kết quả R1–R4 từng lần thử, đáp án có/không kèm câu trích, cờ vừa bật, độ trễ, token, tiền) và `shiftSummary`. `--out` ghi mỗi lượt gọi một file JSON gồm request và response nguyên văn, key thay bằng tên biến. Bước chạy sau ca (chấm bằng AI-5) là một `LabStage` thêm vào `LAB_STAGES` trong `ai-lab/stages.ts`; hiện danh sách trống.
+
 ## 3. Bản đồ code
 
 ```
