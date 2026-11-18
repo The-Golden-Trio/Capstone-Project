@@ -225,7 +225,7 @@ function SettingsForm({ me }: { me: Me }) {
             xem lại điều đã làm.
           </li>
           <li>
-            <ReadMore text="18 thẻ Get to know me để phác điểm xuất phát và vùng nghề nên thử. Mục tiêu, sở thích và phần kể thêm chỉ để bạn tự nhìn lại và để nhân vật động viên khi chơi, không dùng để gợi ý nghề. Bạn có thể xoá phần kể về bạn." />
+            <ReadMore text="18 thẻ Get to know me để phác điểm xuất phát và vùng nghề có thể thử. Mục tiêu, sở thích và phần kể thêm chỉ để bạn tự nhìn lại và để nhân vật động viên khi chơi, không dùng để gợi ý nghề. Bạn có thể xoá phần kể về bạn." />
           </li>
         </ul>
         <Link

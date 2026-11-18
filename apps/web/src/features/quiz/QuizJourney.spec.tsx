@@ -61,7 +61,7 @@ it('trả lời 18 thẻ bằng phím 1/2/3, bỏ kể về bạn, xem tối đa
   expect(document.body.textContent).not.toMatch(/phù hợp|hợp nhất|bạn nên|%/i);
   expect(saved?.goals).toEqual({});
   expect(saved?.interests).toEqual([]);
-  expect(screen.getByText('Bản nháp, không phải chẩn đoán.')).toBeTruthy();
+  expect(screen.getByText(/không phải chẩn đoán/)).toBeTruthy();
   expect(
     screen.getByText(
       'Chỉ để tham khảo, không gửi cho trường hay nhà tuyển dụng.',

@@ -189,7 +189,7 @@ export function GoalsCard({
           to="/quiz"
           className="mt-5 block text-sm underline underline-offset-4"
         >
-          Hoặc làm Get to know me để được gợi ý nghề nên thử
+          Hoặc làm Get to know me để được gợi ý vài nghề có thể thử
         </Link>
       )}
     </PaperCard>

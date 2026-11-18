@@ -95,7 +95,14 @@ export function AchievementsTab({
                 </summary>
                 <p className="mt-2">{achievement.description}</p>
               </details>
-              <p className="my-3 text-xs text-toon-ink-soft">
+              {/* Huy hiệu khoá đã có dấu khoá trên hình; chữ chỉ cho trình đọc màn hình. */}
+              <p
+                className={
+                  achievement.earnedAt
+                    ? 'my-3 text-xs text-toon-ink-soft'
+                    : 'sr-only'
+                }
+              >
                 {achievement.earnedAt
                   ? new Date(achievement.earnedAt).toLocaleDateString('vi-VN')
                   : 'Chưa mở khoá'}

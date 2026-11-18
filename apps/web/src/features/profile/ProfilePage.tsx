@@ -141,32 +141,33 @@ function ProfileHeader({
         <h1 className="mt-1 break-words font-toon text-4xl font-extrabold sm:text-5xl">
           {me.displayName}
         </h1>
-        <p className="mt-3 text-sm text-toon-ink-soft">
-          Riêng tư, lưu dấu mỗi lần thử.
-        </p>
         {sign && (
-          <div className="mt-3 flex flex-wrap gap-2">
-            <ToonBadge tone="sky" className="-rotate-2 self-center">
-              {sign.symbol}
-              {'\uFE0E'} {sign.name}
-            </ToonBadge>
-            {sign.buffs.map((id) => (
-              <span
-                key={id}
-                className="inline-flex max-w-full items-center gap-1"
-              >
-                <StickerBadge
-                  size={68}
-                  label={`${profile.softSkillGroup(id).short}: +12% điểm cộng`}
+          <details className="mt-3">
+            <summary className="w-fit cursor-pointer list-none rounded-full focus-visible:shadow-toon-focus [&::-webkit-details-marker]:hidden">
+              <ToonBadge tone="sky" className="-rotate-2">
+                {sign.symbol}
+                {'\uFE0E'} {sign.name} · thưởng chòm sao
+              </ToonBadge>
+            </summary>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {sign.buffs.map((id) => (
+                <span
+                  key={id}
+                  className="inline-flex max-w-full items-center gap-1"
                 >
-                  +12%
-                </StickerBadge>
-                <span className="max-w-28 text-xs font-bold text-toon-ink-soft">
-                  {profile.softSkillGroup(id).short} · điểm cộng
+                  <StickerBadge
+                    size={68}
+                    label={`${profile.softSkillGroup(id).short}: +12% điểm cộng`}
+                  >
+                    +12%
+                  </StickerBadge>
+                  <span className="max-w-28 text-xs font-bold text-toon-ink-soft">
+                    {profile.softSkillGroup(id).short} · điểm cộng
+                  </span>
                 </span>
-              </span>
-            ))}
-          </div>
+              ))}
+            </div>
+          </details>
         )}
       </div>
       {pinned.length > 0 && (

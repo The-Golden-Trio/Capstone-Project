@@ -42,7 +42,7 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
       <PaperCard>
         <CardHeading
           title="Những vì sao đã ghé"
-          description="Chấm sáng: nghề đã thử."
+          description="Chấm sáng: nghề đã thử. Vùng còn tối: chơi thêm để mở."
         />
         {catalogue.isError ? (
           <EmptyMessage
@@ -83,7 +83,6 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
                   </h3>
                   <p className="mt-1 text-xs text-toon-ink-soft">
                     {tried}/{occupations.length} nghề đã thử
-                    {tried === 0 && ' · chơi thêm để mở'}
                   </p>
                   <RegionConstellation
                     occupations={occupations}
@@ -114,7 +113,7 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
               return (
                 <div key={region.id}>
                   <div className="mb-2 flex flex-wrap justify-between gap-2 text-sm">
-                    <h3>{region.name}</h3>
+                    <h3 className="font-toon font-bold">{region.name}</h3>
                     <span className="text-toon-ink-soft">{minutes} phút</span>
                   </div>
                   <div className="flex flex-wrap gap-1">

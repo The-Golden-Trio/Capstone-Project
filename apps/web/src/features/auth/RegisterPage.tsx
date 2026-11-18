@@ -62,7 +62,7 @@ export default function RegisterPage() {
   return (
     <AuthLayout
       title="Bắt đầu hành trình"
-      subtitle="Một tài khoản để giữ tiến độ, kỹ năng và nhật ký các ca bạn đã làm."
+      subtitle="Lưu tiến độ và nhật ký ca làm."
       footer={
         <>
           Đã có tài khoản?{' '}

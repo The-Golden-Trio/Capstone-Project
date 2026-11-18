@@ -65,15 +65,9 @@ export default function QuizResultPage() {
           <h1 className="font-toon text-3xl font-extrabold">Bản nháp về bạn</h1>
         }
       >
-        <p className="text-xs font-bold uppercase tracking-widest text-toon-ink-soft">
-          Get to know me · Tự kể lúc này
-        </p>
-        <p className="mt-4 max-w-xl text-sm text-toon-ink-soft">
-          Thẻ do nhóm tự viết, chưa được kiểm định. Đây là bản nháp để bắt đầu
-          thử nghề, có thể thay đổi sau mỗi trải nghiệm.
-        </p>
-        <p className="mt-3 text-sm font-bold">
-          Bản nháp, không phải chẩn đoán.
+        <p className="max-w-xl text-sm font-bold">
+          Bản nháp từ thẻ chưa kiểm định, không phải chẩn đoán; có thể đổi sau
+          khi bạn thử nghề.
         </p>
         <p className="mt-2 text-sm text-toon-ink-soft">
           Chỉ để tham khảo, không gửi cho trường hay nhà tuyển dụng.
@@ -87,8 +81,7 @@ export default function QuizResultPage() {
           Những việc bạn thích
         </h2>
         <p className="mt-2 text-sm text-toon-ink-soft">
-          Thang 1–3: Không thích · Bình thường · Thích. Đây là lời bạn tự kể,
-          chưa có dữ liệu sau khi thử.
+          Thang 1–3: Không thích · Bình thường · Thích.
         </p>
         <ul
           aria-label="Sở thích tự kể, thang 1 đến 3"
@@ -147,7 +140,7 @@ export default function QuizResultPage() {
           id="regions-title"
           className="mb-4 font-toon text-2xl font-extrabold"
         >
-          Vùng nên thử trước
+          Vùng có thể thử trước
         </h2>
         {catalogue.isError ? (
           <QuizMessage tone="warning">
