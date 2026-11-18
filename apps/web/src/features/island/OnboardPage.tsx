@@ -166,8 +166,7 @@ function Deck({
                 Ngày đầu nhận việc
               </h1>
               <p className="truncate text-sm font-semibold text-toon-ink-soft">
-                {data.company.name} · Cấp {data.level.levelNo} · Không chấm
-                điểm, xem lại lúc nào cũng được
+                Cấp {data.level.levelNo} · Không chấm điểm
               </p>
             </div>
             <Pips

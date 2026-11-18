@@ -205,7 +205,7 @@ export default function PlayPage() {
             queued={s.queued}
             waitingLabel={waitingLabel}
             conversationChannel={scene.conversation?.channel ?? null}
-            quiet={scene.await.kind === 'node_choice'}
+            quiet={scene.mode === 'phase' || scene.await.kind === 'node_choice'}
             onAdvance={s.advance}
           />
           <div
