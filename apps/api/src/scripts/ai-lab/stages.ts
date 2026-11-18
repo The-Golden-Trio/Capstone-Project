@@ -11,6 +11,7 @@ import type { shift } from '@datn/game-core';
 import type { KnownIdentity } from '@datn/game-core';
 import type { ModelGateway } from '../../ai/gateway/model-gateway';
 import type { AiSettings, JudgeSlot } from '../../ai/gateway/models';
+import { judgeStage } from './stages/judge';
 
 /** Môi trường gọi model của một lần chạy. `gateway` là `null` khi chạy bản giả. */
 export interface LabRuntime {
@@ -30,6 +31,8 @@ export interface LabStageInput {
   /** Số tiền còn được tiêu sau các lượt dẫn truyện và bộ phán. */
   budgetUsd: number;
   runtime: LabRuntime;
+  /** `--only`: chỉ service này gọi thật ở chế độ live; không có = mọi service. */
+  only: 'narrator' | 'checker' | 'judge' | undefined;
 }
 
 export interface LabStageResult {
@@ -44,4 +47,4 @@ export interface LabStage {
   run(input: LabStageInput): Promise<LabStageResult>;
 }
 
-export const LAB_STAGES: readonly LabStage[] = [];
+export const LAB_STAGES: readonly LabStage[] = [judgeStage];

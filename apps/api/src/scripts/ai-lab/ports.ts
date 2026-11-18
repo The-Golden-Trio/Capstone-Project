@@ -153,7 +153,7 @@ export function liveRuntime(
   return runtime;
 }
 
-export type Only = 'narrator' | 'checker' | undefined;
+export type Only = 'narrator' | 'checker' | 'judge' | undefined;
 
 export function createPorts(runtime: Runtime, only: Only): LabPorts {
   const drain = (): CallDetail => {
@@ -162,8 +162,8 @@ export function createPorts(runtime: Runtime, only: Only): LabPorts {
     return detail;
   };
   const useLive = runtime.mode === 'live' && runtime.gateway !== null;
-  const liveNarrator = useLive && only !== 'checker';
-  const liveChecker = useLive && only !== 'narrator';
+  const liveNarrator = useLive && (only === undefined || only === 'narrator');
+  const liveChecker = useLive && (only === undefined || only === 'checker');
 
   let narrator: LabPorts['narrator'] = new FakeShiftNarrator();
   let checker: LabPorts['checker'] = new FakeShiftChecker();

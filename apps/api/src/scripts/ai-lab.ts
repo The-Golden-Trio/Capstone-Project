@@ -10,7 +10,7 @@
  *
  * Tuỳ chọn:
  *     --play=<tên>|a,b|all    kịch bản trong `ai-lab/playthroughs/` (mặc định all)
- *     --only=narrator|checker chỉ thử riêng một service; cổng kia chạy bản giả
+ *     --only=narrator|checker|judge  chỉ thử riêng một service; các service còn lại chạy bản giả
  *     --out=thư/mục           ghi nhật ký JSON từng lượt gọi (request, response nguyên văn, không có key)
  *     --budget=0.25           trần chi phí AI mỗi kịch bản, USD (NFR-11)
  *
@@ -107,7 +107,7 @@ function preflight(settings: AiSettings, only: Only): boolean {
   for (const { provider, reason } of setup.excluded)
     console.log(`– không dùng ${provider}: ${reason}`);
   let ready = true;
-  if (only !== 'checker') {
+  if (only === undefined || only === 'narrator') {
     if (setup.chain.length === 0) {
       ready = false;
       console.error(
@@ -136,8 +136,10 @@ function preflight(settings: AiSettings, only: Only): boolean {
 async function main(): Promise<void> {
   const mode = args.get('mode') ?? 'fake';
   const only = args.get('only') as Only;
-  if (only !== undefined && only !== 'narrator' && only !== 'checker') {
-    console.error(`--only phải là narrator hoặc checker (đang là "${only}")`);
+  if (only !== undefined && !['narrator', 'checker', 'judge'].includes(only)) {
+    console.error(
+      `--only phải là narrator, checker hoặc judge (đang là "${only}")`,
+    );
     process.exitCode = 1;
     return;
   }
@@ -210,6 +212,7 @@ async function main(): Promise<void> {
           identity: IDENTITY,
           budgetUsd: Math.max(0, budgetUsd - result.costUsd),
           runtime,
+          only,
         });
         for (const line of out.lines) console.log(line);
         const detail = ports.drain();
