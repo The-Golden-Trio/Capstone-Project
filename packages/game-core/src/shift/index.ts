@@ -32,3 +32,10 @@ export {
   type FakeEventRules,
 } from './testing/fakes.js';
 export { FAKE_RULES, FAKE_EVENTS } from './testing/fakeRules.js';
+
+/* ── Chấm theo checklist có/không (D-116; AI-5 trả lời câu hỏi, code quy ra mức) ── */
+export * from './grading/library.js';
+export * from './grading/observe.js';
+export * from './grading/evidence.js';
+export * from './grading/scoring.js';
+export { L3M2_OBSERVES_DRAFT } from './testing/l3m2.observes.draft.js';

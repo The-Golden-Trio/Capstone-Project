@@ -1,6 +1,6 @@
 # Handoff: AI-4 và AI-5 đã nối vào luồng chơi
 
-> Viết cho AI (và thành viên nhóm) sắp sửa hoặc mở rộng phần này. Mốc: **11/11/2026**, cập nhật **12/11/2026** (D-131, D-132). Đọc cùng `AGENTS.md` ở gốc và `AGENTS.md` của thư mục này. Tài liệu này mô tả **code đang chạy**, không phải thiết kế đã chốt: chỗ nào code chọn một cách khi thiết kế còn mở thì ghi ở mục 7.
+> Viết cho AI (và thành viên nhóm) sắp sửa hoặc mở rộng phần này. Mốc: **11/11/2026**, cập nhật **12/11/2026** (D-131, D-132) và **18/11/2026** (mục 10: chấm ca làm theo checklist). Đọc cùng `AGENTS.md` ở gốc và `AGENTS.md` của thư mục này. Tài liệu này mô tả **code đang chạy**, không phải thiết kế đã chốt: chỗ nào code chọn một cách khi thiết kế còn mở thì ghi ở mục 7.
 
 ## 1. Tóm tắt trong 30 giây
 
@@ -125,16 +125,18 @@ Một số điểm cụ thể:
 
 ## 6. Muốn đổi X thì sửa ở đâu
 
-| Muốn                                                       | Sửa                                                                                                                                              |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Đổi model judge, bậc chính, giá, endpoint ZDR              | `ai/gateway/models.ts` (`JUDGE_MODELS`, `judgePanel({primaryTier})`); tra `GET /api/v1/endpoints/zdr`; kiểm bằng `judge-try --mode=live`         |
-| Đổi temperature, trần token, timeout, số lần thử của judge | `ai/judge/judge.profile.ts` (tăng `version`)                                                                                                     |
-| Đổi chính sách khi một ghế hỏng (chờ hay gộp 2)            | `JUDGE_PROFILE.whenOneJudgeDown`, `lowerOf2FromAttempt` (D-132)                                                                                  |
-| Đổi luật được hỏi vặn                                      | `followUpAllowed` trong `playRun.ts`, kèm test                                                                                                   |
-| Đổi số lần thử lại hoặc độ lùi của job chấm                | `core/queues.ts` (`GRADING_ATTEMPTS`, `GRADING_BACKOFF_MS`)                                                                                      |
-| Chuyển AI-4 sang contract nhịp (D-130, `narrateScene`)     | `assessment/follow-up.service.ts`. Cần runtime dạng cảnh/seed mới, chưa có (xem 7)                                                               |
-| Thêm ghi chú phản hồi ẩn do model viết (SD-01 bước cuối)   | job mới trong worker sau `ANSWER_GRADED`. Chờ câu hỏi ③ của thiết kế AI-4                                                                        |
-| Nối sổ chi phí vào trần mỗi phiên (NFR-11)                 | `JudgePanelService.grade({budgetUsd})` và `narrate({budgetUsd})` đã nhận tham số; chỉ còn thiếu cấu hình trần và chỗ cộng `usage_cost` theo lượt |
+| Muốn                                                             | Sửa                                                                                                                                              |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Đổi model judge, bậc chính, giá, endpoint ZDR                    | `ai/gateway/models.ts` (`JUDGE_MODELS`, `judgePanel({primaryTier})`); tra `GET /api/v1/endpoints/zdr`; kiểm bằng `judge-try --mode=live`         |
+| Đổi temperature, trần token, timeout, số lần thử của judge       | `ai/judge/judge.profile.ts` (tăng `version`)                                                                                                     |
+| Đổi luật chấm ca làm (quy ra mức, cờ, ép về 0), thư viện câu hỏi | `packages/game-core/src/shift/grading/` (thư viện chép từ spec, sửa spec thì sửa `library.ts`; xem mục 10)                                       |
+| Đổi prompt, khuôn json, trần token của judge ca làm              | `ai/judge/prompts/judge.v2.ts` (tạo `judge.v3.ts` khi sửa), `checklist.prompt.ts`, `CHECKLIST_PROFILE`                                           |
+| Đổi chính sách khi một ghế hỏng (chờ hay gộp 2)                  | `JUDGE_PROFILE.whenOneJudgeDown`, `lowerOf2FromAttempt` (D-132)                                                                                  |
+| Đổi luật được hỏi vặn                                            | `followUpAllowed` trong `playRun.ts`, kèm test                                                                                                   |
+| Đổi số lần thử lại hoặc độ lùi của job chấm                      | `core/queues.ts` (`GRADING_ATTEMPTS`, `GRADING_BACKOFF_MS`)                                                                                      |
+| Chuyển AI-4 sang contract nhịp (D-130, `narrateScene`)           | `assessment/follow-up.service.ts`. Cần runtime dạng cảnh/seed mới, chưa có (xem 7)                                                               |
+| Thêm ghi chú phản hồi ẩn do model viết (SD-01 bước cuối)         | job mới trong worker sau `ANSWER_GRADED`. Chờ câu hỏi ③ của thiết kế AI-4                                                                        |
+| Nối sổ chi phí vào trần mỗi phiên (NFR-11)                       | `JudgePanelService.grade({budgetUsd})` và `narrate({budgetUsd})` đã nhận tham số; chỉ còn thiếu cấu hình trần và chỗ cộng `usage_cost` theo lượt |
 
 ## 7. Lệch thiết kế và việc còn mở (đọc trước khi "sửa cho đúng")
 
@@ -170,3 +172,41 @@ pnpm exec nx run-many -t lint typecheck build test     # test mới: playRun.spe
 pnpm exec nx format:check --base=origin/main
 node tools/dev/play-e2e.mjs                            # đầu cuối, model thật
 ```
+
+## 10. Chấm luồng ca làm theo checklist có/không (18/11/2026)
+
+Đường chấm cho luồng ca làm (D-116, thư viện câu hỏi `occupation-data/specs/spec-checklist-softskill.md` v4.1). Chạy độc lập với `grade(...)` của luồng activity; hai đường không dùng chung prompt và không đổi nhau. **Chưa nối vào worker hay HTTP**, chưa có `observes` trong seed thật (seed L3.m2 bản 4 vẫn không có khối E).
+
+**Có gì mới**
+
+- `packages/game-core/src/shift/grading/`, export qua `shift` (thuần, không gọi model):
+  - `library.ts`: 7 nhóm, 43 mục con, 13 cờ, luật trùng, cờ nặng. Chép từ spec; `grading.spec.ts` đọc lại spec và so khớp từng ô.
+  - `observe.ts`: `ObserveItem { sub, from, signs? }` theo E1 và `lintObserves`.
+  - `evidence.ts`: `evidenceSegments(state, ctx, observes)` dựng đoạn bằng chứng, `verifyQuote`.
+  - `scoring.ts`: `checkOutput` (kiểm câu trích), `itemLevel` (A → 1, A và B hoặc C → 2, không A → 0, không xét → null), `normalizeFlags`, `consensusFlags`, `pairLevels` (ép về 0), `subLevels`, `groupScores`.
+  - `testing/l3m2.observes.draft.ts`: 5 mục con cho L3.m2 (4.2, 7.1, 1.5, 7.4, 1.1). **Nháp do AI soạn để test, chưa DE duyệt.**
+- `apps/api/src/ai/judge/`: `prompts/judge.v2.ts`, `checklist.prompt.ts`, `checklist.output.ts`, `checklist.combine.ts`, `checklist.segments.ts`, `checklist.types.ts`, `CHECKLIST_PROFILE` trong `judge.profile.ts`, và `JudgePanelService.gradeChecklist(...)`.
+
+**Luồng**
+
+1. `shift.evidenceSegments(state, ctx, observes)` → mỗi nơi lấy bằng chứng (nút hay `pha`) một đoạn. Mỗi lượt nói có mã: `t<seq>` (dòng người chơi trong sổ lời), `act<NN>` (dòng nhật ký hành động), `art_<id>` (bài nộp của nút, cả form là một lượt). Kèm dữ kiện đã mở và quy định đã được nghe.
+2. `gradeChecklist({ jobId, segments, observes, identity?, budgetUsd?, whenOneJudgeDown?, contentVersion? })`: khử định danh, mỗi ghế judge nhận cả màn trong **một** lượt gọi (cờ xét ở cấp màn nên phải thấy mọi đoạn), trả lời có/không kèm câu trích, không tự cho mức.
+3. Code kiểm câu trích (chuỗi con sau chuẩn hoá khoảng trắng của đúng lượt, hoặc mã hành động có thật), quy ra mức, gộp panel bằng `combineJudgments` (trung vị ba, mức thấp hơn của hai, D-132).
+4. Kết quả: `graded` (mức từng cặp mục con–đoạn, mức mục con trong màn, cờ đã giao nhóm), `pending` hoặc `unavailable`; kèm bản ghi mỗi lượt gọi (model, prompt version, token, tiền, độ trễ, số câu "có" bị bỏ vì trích sai).
+
+**Lựa chọn tạm của code** (chưa phải quyết định của nhóm; đừng ghi vào `02-quyet-dinh.md`):
+
+1. "Không xét" khi ít nhất nửa số judge nói không xét; cờ theo đa số (hai judge thì cả hai). Cùng hai luật tạm của `judge-combine.ts`.
+2. Cờ nặng (C4, C5, C6, C8) ép về 0 chỉ khi **panel** đã bật cờ, không phải khi một judge nêu. Mục con mang cờ trong cột Cờ bị ép cả khi judge nói "không xét" (luật 5: seed đã dựng thì luôn xét).
+3. Cặp cờ gần nhau (C12>C1, C5>C4, C8>C13, C6>C8) chỉ giữ cờ cụ thể khi cùng một **lượt nói**; spec nói "một câu", code chỉ kiểm được theo lượt.
+4. Câu trích sai thì câu đó tính "không", **không gọi lại model** (luật 6). Chỉ thiếu cặp, sai mã hay sai khuôn mới chấm lại.
+5. Nút đóng (trắc nghiệm, đếm giờ) không vào đoạn: chấm bằng profile phương án (spec, "Phạm vi"), chưa có. Chữ phương án người chơi chọn bị loại; lời nói thêm sau reaction thì giữ. Hết giờ mà người chơi không nói thêm gì: mức 0, không cờ, không qua judge (D-86). Nút chưa tới: không có đoạn, không xét.
+6. Đoạn `pha` gồm lời trong trò chuyện, tin kênh chung, nhật ký hành động. **Mô tả bản vá (ô gõ ở artefact `ban_va`) chưa vào đoạn nào**, vì spec định nghĩa pha là chat cộng hành động. `review:*` (Nhìn lại ca) cũng ngoài đoạn.
+7. Dữ kiện đưa cho judge lấy chữ lúc cuối màn (`factText`), không dựng lại theo giờ; một dữ kiện đổi theo đồng hồ (f2) sẽ hiện bản mới nhất. Quy định "đã được nghe" = nút `told_at` đã mở tới cuối đoạn; chỉ dùng `pack.rules`, không đọc riêng `limits` của seed.
+8. `CHECKLIST_PROFILE`: 4.000 token ra, 30 giây một lượt. **Khởi đầu chưa đo**; cần đo ở §7.3.
+9. Hệ số phạt và `groupScores`: có hàm, **chưa được gọi** vì chưa có trần nhóm từng màn (`point_budgets.json` chỉ có quỹ theo cấp). Không bịa trần. Dùng hint giảm trọng số: chưa làm, chưa có con số.
+10. Prompt `judge-v2` chưa thử trên model thật (không chạy `check`/`live` theo ràng buộc của task); test dùng transport giả.
+
+**Lệch giữa các tài liệu cần nhóm chọn:** spec `spec-checklist-softskill.md` (tiêu đề), `Seed scenario JobQuest.md` E1/E2 và `Hồ sơ JobQuest cơ chế game.md` G5 đều ghi **42** mục con, nhưng bảng trong spec có **43** dòng (nhóm 2 có 2.1–2.7, thêm 2.7 "Xây dựng và giữ quan hệ"), trong khi `packages/game-core/src/profile/softSkills.ts` liệt kê 6 mục ở nhóm 2. Code theo bảng (43); test khoá theo bảng, không theo tiêu đề.
+
+**Kiểm:** `pnpm exec nx run game-core:test` (`shift/grading/grading.spec.ts`) và `pnpm exec nx run @datn/api:test` (`judge/checklist.spec.ts`).
