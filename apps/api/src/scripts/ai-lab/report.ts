@@ -139,45 +139,49 @@ export function printTable(result: RunResult): void {
   );
 }
 
-export function printSummary(s: shift.ShiftSummary): void {
-  console.log(`Ca "${s.title}" kết thúc lúc ${s.endedAt}. Mục tiêu: ${s.goal}`);
-  console.log('Nút:');
+/** Tổng kết cuối ca thành từng dòng chữ, cho cả bản in lẫn báo cáo `.md`. */
+export function summaryLines(s: shift.ShiftSummary): string[] {
+  const out: string[] = [];
+  const log = (line: string): void => void out.push(line);
+  log(`Ca "${s.title}" kết thúc lúc ${s.endedAt}. Mục tiêu: ${s.goal}`);
+  log('Nút:');
   for (const n of s.nodes)
-    console.log(
+    log(
       `  ${n.id} (${n.kind}) ${n.status}${n.time ? ` lúc ${n.time}` : ''}` +
         `${n.choice ? ` · chọn: ${n.choice}` : ''}` +
         `${n.timedOut ? ' · hết giờ' : ''}` +
         `${n.approved !== undefined ? ` · ${n.approved ? 'được duyệt' : 'bị hoãn'}` : ''}`,
     );
-  console.log('Hành động:');
+  log('Hành động:');
   for (const a of s.actions)
-    console.log(
+    log(
       `  ${a.time} ${a.label} (${a.points} điểm${a.cut ? ', bị cắt ngang' : ''})`,
     );
-  console.log(
+  log(
     `Dữ kiện tìm được: ${s.facts.found.length} (thiếu ${s.facts.requiredMissed} dữ kiện bắt buộc)`,
   );
-  for (const f of s.facts.found) console.log(`  ${f.time} ${f.text}`);
-  console.log('Lời hứa:');
-  if (s.promises.length === 0) console.log('  (không có)');
-  for (const p of s.promises) console.log(`  ${p.label} → ${p.status}`);
-  console.log('Khúc mắc:');
+  for (const f of s.facts.found) log(`  ${f.time} ${f.text}`);
+  log('Lời hứa:');
+  if (s.promises.length === 0) log('  (không có)');
+  for (const p of s.promises) log(`  ${p.label} → ${p.status}`);
+  log('Khúc mắc:');
   for (const c of s.concerns)
-    console.log(
-      `  ${c.person}: ${c.text} → ${c.resolved ? 'đã gỡ' : 'chưa gỡ'}`,
-    );
-  console.log('Tài liệu đã nộp:');
+    log(`  ${c.person}: ${c.text} → ${c.resolved ? 'đã gỡ' : 'chưa gỡ'}`);
+  log('Tài liệu đã nộp:');
   for (const a of s.artefacts)
-    console.log(
+    log(
       `  ${a.title} (${a.status}): ${a.fields.map((f) => `${f.label}: ${f.text}`).join(' | ')}`,
     );
-  console.log('Nhìn lại ca:');
-  if (s.review.length === 0) console.log('  (không có mục nào)');
+  log('Nhìn lại ca:');
+  if (s.review.length === 0) log('  (không có mục nào)');
   for (const r of s.review)
-    console.log(
-      `  ${r.person}: ${r.question} → ${r.answer || '(chưa trả lời)'}`,
-    );
-  console.log(`Gợi ý đã dùng: ${s.hintsUsed}`);
+    log(`  ${r.person}: ${r.question} → ${r.answer || '(chưa trả lời)'}`);
+  log(`Gợi ý đã dùng: ${s.hintsUsed}`);
+  return out;
+}
+
+export function printSummary(s: shift.ShiftSummary): void {
+  for (const line of summaryLines(s)) console.log(line);
 }
 
 export function printResult(result: RunResult): void {

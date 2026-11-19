@@ -139,6 +139,8 @@ export interface RunOptions {
   budgetUsd: number;
   contentVersion?: number;
   observer?: LabObserver;
+  /** Tên ghi vào kết quả và nhật ký; `runPlaythrough` lấy từ kịch bản. */
+  playthroughName?: string;
 }
 
 const callsCost = (calls: readonly CallLog[]): number =>
@@ -148,7 +150,7 @@ const timeOf = (state: shift.ShiftState, ctx: shift.ShiftContext): string =>
   shift.clockAt(state.points, ctx.seed.clock.start, ctx.pack.minutes_per_point);
 
 /** Việc người chơi làm được lúc này, để lời báo lỗi kịch bản chỉ đúng chỗ. */
-function hintForScript(
+export function hintForScript(
   state: shift.ShiftState,
   ctx: shift.ShiftContext,
 ): string {
@@ -250,79 +252,164 @@ async function resolvePending(
   throw new Error(`Một lượt vượt quá ${MAX_AI_STEPS} bước AI`);
 }
 
-export async function runPlaythrough(
-  playthrough: Playthrough,
-  options: RunOptions,
-): Promise<RunResult> {
-  const { ctx, observer } = options;
-  let state = shift.initialState(ctx);
-  const steps: StepLog[] = [];
-  const calls: CallLog[] = [];
-  let outcome: RunOutcome = 'incomplete';
-  let message: string | undefined;
-  let callIndex = 0;
+export type ApplyOutcome =
+  | { status: 'applied'; log: StepLog; pausedBecause: string | null }
+  | { status: 'skipped'; log: StepLog }
+  /** Engine từ chối: trạng thái giữ nguyên, không ghi bước. */
+  | { status: 'rejected'; message: string };
 
-  const spent = () => callsCost(calls);
+/**
+ * Một ca đang chạy trong bộ nhớ: giữ trạng thái và nhật ký, nhận từng bước một.
+ * `runPlaythrough` đẩy cả kịch bản qua đây; chế độ chơi tay đẩy từng lệnh của
+ * tester, cùng một đường đi qua engine và vòng giải yêu cầu AI.
+ */
+export class LabSession {
+  state: shift.ShiftState;
+  readonly steps: StepLog[] = [];
+  readonly calls: CallLog[] = [];
+  private callIndex = 0;
 
-  for (const [index, step] of playthrough.steps.entries()) {
-    const time = timeOf(state, ctx);
-    if (!stepApplies(step, state.await.kind)) {
-      observer?.stepSkipped?.(index + 1, step, state.await.kind);
-      steps.push({
-        index: index + 1,
+  constructor(readonly options: RunOptions) {
+    this.state = shift.initialState(options.ctx);
+  }
+
+  get time(): string {
+    return timeOf(this.state, this.options.ctx);
+  }
+
+  get costUsd(): number {
+    return callsCost(this.calls);
+  }
+
+  async apply(step: Step): Promise<ApplyOutcome> {
+    const { ctx, observer } = this.options;
+    const index = this.steps.length + 1;
+    const time = this.time;
+    if (!stepApplies(step, this.state.await.kind)) {
+      observer?.stepSkipped?.(index, step, this.state.await.kind);
+      const log: StepLog = {
+        index,
         step,
         time,
         lines: [],
         calls: [],
-        awaitAfter: state.await,
+        awaitAfter: this.state.await,
         skipped: true,
-      });
-      continue;
+      };
+      this.steps.push(log);
+      return { status: 'skipped', log };
     }
-    observer?.stepStart?.(index + 1, step, time);
-    const lineFrom = state.transcript.length;
-    const stepCalls: CallLog[] = [];
 
+    observer?.stepStart?.(index, step, time);
+    let next: shift.ShiftState;
     try {
-      state = shift.step(state, toPlayerInput(step), ctx).state;
+      next = shift.step(this.state, toPlayerInput(step), ctx).state;
     } catch (err) {
-      if (err instanceof shift.ShiftRuleError) {
-        outcome = 'script_error';
-        message = `Bước ${index + 1} (${describeStep(step)}) bị engine từ chối: ${err.message}. ${hintForScript(state, ctx)}`;
-        break;
-      }
+      if (err instanceof shift.ShiftRuleError)
+        return { status: 'rejected', message: err.message };
       throw err;
     }
 
-    const resolved = await resolvePending(state, {
+    const lineFrom = this.state.transcript.length;
+    const stepCalls: CallLog[] = [];
+    const resolved = await resolvePending(next, {
       ctx,
-      ports: options.ports,
-      options,
-      spent,
-      step: index + 1,
+      ports: this.options.ports,
+      options: this.options,
+      spent: () => this.costUsd,
+      step: index,
       calls: stepCalls,
-      nextIndex: () => ++callIndex,
+      nextIndex: () => ++this.callIndex,
     });
-    state = resolved.state;
-    calls.push(...stepCalls);
+    this.state = resolved.state;
+    this.calls.push(...stepCalls);
 
-    const lines = state.transcript.slice(lineFrom);
+    const lines = this.state.transcript.slice(lineFrom);
     observer?.lines?.(lines);
-    steps.push({
-      index: index + 1,
+    const log: StepLog = {
+      index,
       step,
       time,
       lines,
       calls: stepCalls,
-      awaitAfter: state.await,
-    });
+      awaitAfter: this.state.await,
+    };
+    this.steps.push(log);
+    return { status: 'applied', log, pausedBecause: resolved.pausedBecause };
+  }
 
-    if (resolved.pausedBecause) {
-      outcome = 'paused';
-      message = `Hết model dùng được ở bước ${index + 1}: ${resolved.pausedBecause}. Ca tạm dừng, giữ tiến độ (D-92).`;
+  /**
+   * Giải lại yêu cầu AI còn treo sau khi `apply` dừng vì hết model (D-92),
+   * để tester thử lại mà không mất tiến độ. Nhật ký gộp vào bước cuối.
+   */
+  async resume(): Promise<{
+    lines: shift.TranscriptLine[];
+    calls: CallLog[];
+    pausedBecause: string | null;
+  }> {
+    const lineFrom = this.state.transcript.length;
+    const stepCalls: CallLog[] = [];
+    const resolved = await resolvePending(this.state, {
+      ctx: this.options.ctx,
+      ports: this.options.ports,
+      options: this.options,
+      spent: () => this.costUsd,
+      step: this.steps.length,
+      calls: stepCalls,
+      nextIndex: () => ++this.callIndex,
+    });
+    this.state = resolved.state;
+    this.calls.push(...stepCalls);
+    const lines = this.state.transcript.slice(lineFrom);
+    const last = this.steps.at(-1);
+    if (last) {
+      last.lines.push(...lines);
+      last.calls.push(...stepCalls);
+      last.awaitAfter = this.state.await;
+    }
+    return { lines, calls: stepCalls, pausedBecause: resolved.pausedBecause };
+  }
+
+  result(outcome: RunOutcome, message?: string): RunResult {
+    return {
+      playthrough: this.options.playthroughName ?? 'choi-thu',
+      outcome,
+      message,
+      steps: this.steps,
+      calls: this.calls,
+      state: this.state,
+      summary: shift.shiftSummary(this.state, this.options.ctx),
+      costUsd: this.costUsd,
+    };
+  }
+}
+
+export async function runPlaythrough(
+  playthrough: Playthrough,
+  options: RunOptions,
+): Promise<RunResult> {
+  const { ctx } = options;
+  const session = new LabSession({
+    ...options,
+    playthroughName: playthrough.name,
+  });
+  let outcome: RunOutcome = 'incomplete';
+  let message: string | undefined;
+
+  for (const [index, step] of playthrough.steps.entries()) {
+    const done = await session.apply(step);
+    if (done.status === 'skipped') continue;
+    if (done.status === 'rejected') {
+      outcome = 'script_error';
+      message = `Bước ${index + 1} (${describeStep(step)}) bị engine từ chối: ${done.message}. ${hintForScript(session.state, ctx)}`;
       break;
     }
-    if (state.ended) {
+    if (done.pausedBecause) {
+      outcome = 'paused';
+      message = `Hết model dùng được ở bước ${index + 1}: ${done.pausedBecause}. Ca tạm dừng, giữ tiến độ (D-92).`;
+      break;
+    }
+    if (session.state.ended) {
       // Ca hết sớm hơn kịch bản dự tính: chỉ là lỗi nếu còn bước bắt buộc.
       const rest = playthrough.steps.slice(index + 1);
       const required = rest.findIndex((x) => x.ifAwait === undefined);
@@ -335,16 +422,7 @@ export async function runPlaythrough(
   }
 
   if (outcome === 'incomplete')
-    message = `Kịch bản hết mà ca chưa xong (engine đang chờ "${state.await.kind}").`;
+    message = `Kịch bản hết mà ca chưa xong (engine đang chờ "${session.state.await.kind}").`;
 
-  return {
-    playthrough: playthrough.name,
-    outcome,
-    message,
-    steps,
-    calls,
-    state,
-    summary: shift.shiftSummary(state, ctx),
-    costUsd: spent(),
-  };
+  return session.result(outcome, message);
 }

@@ -7,11 +7,21 @@
  *     pnpm exec nx run @datn/api:ai-lab -- --mode=fake --play=lam-tot    # một kịch bản
  *     pnpm exec nx run @datn/api:ai-lab -- --mode=check                  # mỗi model, mỗi ghế judge một lượt nhỏ
  *     pnpm exec nx run @datn/api:ai-lab -- --mode=live --play=lam-tot    # gọi thật, TỐN TIỀN, cần key trong apps/api/.env
+ *     pnpm exec nx run @datn/api:ai-lab -- --play=interactive            # tự chơi một ca trong terminal (fake)
+ *
+ * Chơi tay cần bàn phím của terminal. `nx run` chuyển stdin cho script (đã thử với
+ * stdin dạng pipe). Nếu terminal của bạn không nhận được chữ gõ qua nx (ví dụ
+ * giao diện TUI của Nx chiếm bàn phím), tắt TUI bằng `NX_TUI=false` hoặc build
+ * một lần rồi chạy thẳng bản đã build, cùng các cờ:
+ *     pnpm exec nx run @datn/api:ai-lab -- --mode=fake --play=lam-tot   # build ra apps/api/dist/ai-lab.mjs
+ *     node apps/api/dist/ai-lab.mjs --play=interactive --out=thư/mục
  *
  * Tuỳ chọn:
- *     --play=<tên>|a,b|all    kịch bản trong `ai-lab/playthroughs/` (mặc định all)
+ *     --play=<tên>|a,b|all|<file.json>  kịch bản trong `ai-lab/playthroughs/` hoặc đường dẫn file (mặc định all)
+ *     --play=interactive      tester tự chơi; thêm --seed=<mã> (mặc định SWE_BACKEND.L3.m2), xem `ai-lab/interactive/play.ts`
  *     --only=narrator|checker|judge  chỉ thử riêng một service; các service còn lại chạy bản giả
- *     --out=thư/mục           ghi nhật ký JSON từng lượt gọi (request, response nguyên văn, không có key)
+ *     --out=thư/mục           ghi nhật ký JSON từng lượt gọi (request, response nguyên văn, không có key);
+ *                             chơi tay ghi thêm kịch bản `.json` chạy lại được và báo cáo `.md`
  *     --budget=0.25           trần chi phí AI mỗi kịch bản, USD (NFR-11)
  *
  * Kịch bản người chơi là câu giả do nhóm viết, không phải người chơi thật.
@@ -36,6 +46,8 @@ import {
   type Only,
   type Runtime,
 } from './ai-lab/ports';
+import { createLineReader } from './ai-lab/interactive/lineReader';
+import { DEFAULT_SEED, playInteractive } from './ai-lab/interactive/play';
 import { selectPlaythroughs } from './ai-lab/playthrough';
 import { printResult, printingObserver, rule, writeLog } from './ai-lab/report';
 import { runPlaythrough, type RunResult } from './ai-lab/runner';
@@ -165,10 +177,11 @@ async function main(): Promise<void> {
     return;
   }
 
-  const playthroughs = selectPlaythroughs(
-    PLAYTHROUGH_DIR,
-    args.get('play') ?? 'all',
-  );
+  const play = args.get('play') ?? 'all';
+  const interactive = play === 'interactive';
+  const playthroughs = interactive
+    ? []
+    : selectPlaythroughs(PLAYTHROUGH_DIR, play);
   const outDir = args.get('out');
 
   let runtime: Runtime;
@@ -191,6 +204,30 @@ async function main(): Promise<void> {
   console.log(
     `Chế độ ${mode}: dẫn truyện ${ports.narratorMode}, bộ phán ${ports.checkerMode}.`,
   );
+
+  if (interactive) {
+    const reader = createLineReader(process.stdin, process.stdout);
+    try {
+      await playInteractive({
+        seedId: args.get('seed') ?? DEFAULT_SEED,
+        mode: mode === 'live' ? 'live' : 'fake',
+        only,
+        budgetUsd,
+        outDir,
+        ports,
+        runtime,
+        identity: IDENTITY,
+        displayName: DISPLAY_NAME,
+        reader,
+        out: (text) =>
+          process.stdout.write(`${text}
+`),
+      });
+    } finally {
+      reader.close();
+    }
+    return;
+  }
 
   const results: RunResult[] = [];
   for (const playthrough of playthroughs) {
