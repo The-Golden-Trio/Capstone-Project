@@ -1,5 +1,5 @@
-/** Tải dữ liệu một lần theo khoá, kèm trạng thái và hàm tải lại. */
-import { useCallback, useEffect, useState } from 'react';
+/** Load by key without letting an older request replace the current screen. */
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export interface Loaded<T> {
   data: T | undefined;
@@ -13,27 +13,55 @@ export function useLoad<T>(
   load: () => Promise<T>,
   deps: readonly unknown[],
 ): Loaded<T> {
-  const [data, setData] = useState<T>();
-  const [error, setError] = useState<unknown>();
-  const [loading, setLoading] = useState(true);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const run = useCallback(load, deps);
-
+  const [snapshot, setSnapshot] = useState<{
+    loader: typeof run;
+    data?: T;
+    error?: unknown;
+    loading: boolean;
+  }>({ loader: run, loading: true });
+  const mounted = useRef(false);
+  const request = useRef(0);
   const reload = useCallback(async () => {
-    setLoading(true);
-    setError(undefined);
+    const id = ++request.current;
+    setSnapshot((previous) => ({
+      loader: run,
+      data: previous.loader === run ? previous.data : undefined,
+      loading: true,
+    }));
     try {
-      setData(await run());
-    } catch (e) {
-      setError(e);
-    } finally {
-      setLoading(false);
+      const value = await run();
+      if (mounted.current && id === request.current)
+        setSnapshot({ loader: run, data: value, loading: false });
+    } catch (error) {
+      if (mounted.current && id === request.current)
+        setSnapshot((previous) => ({ ...previous, error, loading: false }));
     }
   }, [run]);
-
   useEffect(() => {
+    mounted.current = true;
     void reload();
+    return () => {
+      mounted.current = false;
+      request.current++;
+    };
   }, [reload]);
-
-  return { data, error, loading, reload, setData };
+  const setData = useCallback(
+    (value: T) => {
+      // A completed mutation supersedes any earlier refresh still in flight.
+      request.current++;
+      if (mounted.current)
+        setSnapshot({ loader: run, data: value, loading: false });
+    },
+    [run],
+  );
+  // Do not expose the previous route's data during the render before effects run.
+  const current = snapshot.loader === run ? snapshot : { loading: true };
+  return {
+    data: 'data' in current ? current.data : undefined,
+    error: 'error' in current ? current.error : undefined,
+    loading: current.loading,
+    reload,
+    setData,
+  };
 }

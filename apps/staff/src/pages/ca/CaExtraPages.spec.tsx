@@ -65,6 +65,26 @@ describe('các màn CA mới trong chế độ mẫu', () => {
     ).toBe('/ca/occupations/SWE_BACKEND/monitor');
     expect(screen.getByText('Dữ liệu mẫu')).toBeTruthy();
   });
+  it('C02 paginates locally and resets the page when filtering', async () => {
+    openPage(<CataloguePage />);
+    const next = await screen.findByRole('button', { name: 'Trang sau' });
+    expect(screen.getAllByRole('row')).toHaveLength(26);
+    fireEvent.click(next);
+    expect(screen.getByText(/Trang 2\/9/)).toBeTruthy();
+    fireEvent.change(screen.getByRole('searchbox', { name: 'Tìm nghề' }), {
+      target: { value: 'SWE_BACKEND' },
+    });
+    expect(screen.getAllByRole('row')).toHaveLength(2);
+    expect(screen.getByText(/Trang 1\/1/)).toBeTruthy();
+    expect(next.hasAttribute('disabled')).toBe(true);
+    fireEvent.change(screen.getByRole('searchbox', { name: 'Tìm nghề' }), {
+      target: { value: 'nghe-khong-ton-tai' },
+    });
+    expect(screen.getByText('Không tìm thấy nghề')).toBeTruthy();
+    expect(
+      screen.queryByRole('navigation', { name: 'Phân trang danh mục nghề' }),
+    ).toBeNull();
+  });
   it('C03 không cho hoàn tất trước khi tải tệp và mô tả rõ tệp mẫu không được phân tích', () => {
     openPage(<ReferenceImportPage />);
     expect(

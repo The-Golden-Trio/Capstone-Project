@@ -1,10 +1,12 @@
-import { EmptyState, IconButton, LoadingBlock } from '@datn/ui';
+import { Button, EmptyState, IconButton, LoadingBlock } from '@datn/ui';
 import { ProblemAlert } from '../components/ui';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { staffApi } from '../api/endpoints';
 import type { Notification } from '../api/types';
 import { formatDateTime, NOTIFICATION_LABEL } from '../lib/labels';
+
+import { notificationTarget } from './notifications';
 
 const POLL_MS = 60_000;
 const SEEN_KEY = 'jq.staff.notifications.seen';
@@ -26,6 +28,7 @@ export function NotificationBell() {
   const [open, setOpen] = useState(false);
   const [seen, setSeen] = useState(readSeen);
   const [loading, setLoading] = useState(true);
+  const [revision, setRevision] = useState(0);
   const [error, setError] = useState<unknown>();
   const trigger = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLDivElement>(null);
@@ -37,7 +40,11 @@ export function NotificationBell() {
         .listNotifications()
         .then((page) => {
           if (alive) {
-            setItems(page.items);
+            setItems(
+              [...page.items].sort((a, b) =>
+                b.createdAt.localeCompare(a.createdAt),
+              ),
+            );
             setError(undefined);
           }
         })
@@ -47,13 +54,14 @@ export function NotificationBell() {
         .finally(() => {
           if (alive) setLoading(false);
         });
+    setLoading(true);
     void load();
     const timer = setInterval(load, POLL_MS);
     return () => {
       alive = false;
       clearInterval(timer);
     };
-  }, []);
+  }, [revision]);
 
   useEffect(() => {
     if (!open) return;
@@ -74,7 +82,7 @@ export function NotificationBell() {
     };
   }, [open]);
 
-  const unread = items.filter((n) => n.createdAt > seen).length;
+  const unread = items.filter((n) => !n.readAt && n.createdAt > seen).length;
 
   const toggle = () => {
     setOpen((o) => !o);
@@ -129,6 +137,15 @@ export function NotificationBell() {
           </h2>
           <div className="px-3 pt-2">
             <ProblemAlert error={error} />
+            {!!error && (
+              <Button
+                variant="subtle"
+                size="sm"
+                onClick={() => setRevision((value) => value + 1)}
+              >
+                Thử lại thông báo
+              </Button>
+            )}
           </div>
           {loading ? (
             <LoadingBlock />
@@ -137,21 +154,16 @@ export function NotificationBell() {
           ) : (
             <ul>
               {items.map((n) => {
-                const link =
-                  typeof n.payload['link'] === 'string'
-                    ? new URL(n.payload['link']).pathname.replace(
-                        /^\/staff/,
-                        '',
-                      )
-                    : null;
+                const link = notificationTarget(n, window.location.origin);
                 const text = (
                   <>
                     <p className="font-medium">
                       {NOTIFICATION_LABEL[n.template] ?? n.template}
                     </p>
-                    {typeof n.payload['taskText'] === 'string' && (
+                    {typeof (n.payload['taskText'] ?? n.payload['title']) ===
+                      'string' && (
                       <p className="text-[13px] text-ink-muted">
-                        {n.payload['taskText']}
+                        {String(n.payload['taskText'] ?? n.payload['title'])}
                       </p>
                     )}
                     <p className="text-[12px] text-ink-faint">

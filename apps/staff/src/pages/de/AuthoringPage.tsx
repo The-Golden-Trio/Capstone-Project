@@ -41,6 +41,10 @@ type Tab = 'context' | 'content' | 'references' | 'checks' | 'history';
  */
 export function AuthoringPage() {
   const { scenarioId = '' } = useParams();
+  return <AuthoringScenario key={scenarioId} scenarioId={scenarioId} />;
+}
+
+function AuthoringScenario({ scenarioId }: { scenarioId: string }) {
   const me = useAuth((s) => s.me);
   const detail = useLoad(() => staffApi.getScenario(scenarioId), [scenarioId]);
   const options = useLoad(
@@ -261,7 +265,7 @@ export function AuthoringPage() {
           </span>
         </Notice>
       )}
-      <ProblemAlert error={error} />
+      <ProblemAlert error={error ?? detail.error} />
 
       <Tabs
         idBase="authoring"
