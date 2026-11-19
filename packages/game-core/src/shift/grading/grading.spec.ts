@@ -7,7 +7,6 @@ import { initialState, step } from '../engine.js';
 import type { PlayerInput, ShiftInput, ShiftState } from '../state.js';
 import { fakeChecks, fakeNarration } from '../testing/fakes.js';
 import { FAKE_EVENTS, FAKE_RULES } from '../testing/fakeRules.js';
-import { L3M2_OBSERVES_DRAFT } from '../testing/l3m2.observes.draft.js';
 import {
   evidenceSegments,
   findTurn,
@@ -35,6 +34,7 @@ import {
   itemLevel,
   normalizeFlags,
   pairLevels,
+  quoteReliability,
   subLevels,
   type CheckedFlag,
   type CheckedItem,
@@ -61,6 +61,7 @@ const SPEC = readFileSync(
 
 const SEED = 'SWE_BACKEND.L3.m2';
 const ctx = fixtureShiftContext(SEED);
+const OBSERVES = ctx.seed.observes ?? [];
 
 /* ── Thư viện so khớp spec ────────────────────────────────────────────── */
 
@@ -91,8 +92,7 @@ describe('thư viện checklist chép từ spec', () => {
     expect(CHECKLIST_GROUPS).toHaveLength(7);
     expect(CHECKLIST_FLAGS).toHaveLength(13);
     expect(CHECKLIST_ITEMS).toHaveLength(itemRows.length);
-    // Tiêu đề spec và các tài liệu khác ghi "42 mục con"; bảng thực có 43
-    // dòng (nhóm 2 có 2.1–2.7). Test này khoá theo bảng, không theo tiêu đề.
+    // D-143: 43 mục con, nhóm 2 có 2.1–2.7.
     expect(CHECKLIST_ITEMS).toHaveLength(43);
     expect(
       CHECKLIST_GROUPS.map(
@@ -156,19 +156,19 @@ describe('thư viện checklist chép từ spec', () => {
 
 /* ── observes ─────────────────────────────────────────────────────────── */
 
-describe('observes nháp của L3.m2', () => {
+describe('observes của seed L3.m2 (nháp, chờ DE duyệt)', () => {
   it('qua lint: 5 mục con hợp lệ, from trỏ nút có thật, không trùng nhóm', () => {
-    expect(lintObserves(L3M2_OBSERVES_DRAFT, ctx.seed)).toEqual([]);
-    expect(L3M2_OBSERVES_DRAFT.map((o) => o.sub)).toEqual([
+    expect(lintObserves(OBSERVES, ctx.seed)).toEqual([]);
+    expect(OBSERVES.map((o) => o.sub)).toEqual([
       '4.2',
       '7.1',
       '1.5',
       '7.4',
       '1.1',
     ]);
-    expect(L3M2_OBSERVES_DRAFT.map((o) => checklistItem(o.sub)?.group)).toEqual(
-      [4, 7, 1, 7, 1],
-    );
+    expect(OBSERVES.map((o) => checklistItem(o.sub)?.group)).toEqual([
+      4, 7, 1, 7, 1,
+    ]);
   });
 
   it('lint bắt: số lượng, mã lạ, from lạ, trùng nhóm', () => {
@@ -184,6 +184,15 @@ describe('observes nháp của L3.m2', () => {
     expect(bad).toContain('7.1: from "n9" không phải nút của seed');
     expect(bad).toContain('Luật trùng: chỉ chọn một trong 7.1, 5.6');
     expect(bad).toContain('Luật trùng: chỉ chọn một trong 7.4, 5.5');
+    expect(
+      lintObserves([o('7.1', ['review']), o('1.1'), o('4.2')], ctx.seed),
+    ).toEqual([]);
+    expect(
+      lintObserves([o('7.1', ['review']), o('1.1'), o('4.2')], {
+        ...ctx.seed,
+        review: [],
+      }),
+    ).toEqual(['7.1: from "review" mà seed không có "Nhìn lại ca"']);
   });
 });
 
@@ -267,7 +276,7 @@ function fullRun(): ShiftState {
 
 describe('evidenceSegments', () => {
   const state = fullRun();
-  const segments = evidenceSegments(state, ctx, L3M2_OBSERVES_DRAFT);
+  const segments = evidenceSegments(state, ctx, OBSERVES);
   const byId = (id: string): EvidenceSegment => {
     const found = segments.find((s) => s.id === id);
     if (!found) throw new Error(`thiếu đoạn ${id}`);
@@ -356,9 +365,59 @@ describe('evidenceSegments', () => {
     expect(byId('n2').brief).toContain(ctx.seed.goal);
   });
 
+  it('bản vá nộp trong pha là một lượt art_ban_va của đoạn pha (D-144)', () => {
+    const pha = byId('pha');
+    const patch = turnsOf(pha).find((t) => t.code === 'art_ban_va');
+    expect(patch).toMatchObject({ kind: 'artefact', text: PATCH.mo_ta });
+    expect(patch?.parts).toEqual([
+      { label: 'Mô tả thay đổi', text: PATCH.mo_ta },
+    ]);
+    // Bài nộp của nút không lặp lại trong pha.
+    expect(turnsOf(pha).some((t) => t.code === 'art_email_an')).toBe(false);
+    expect(
+      verifyQuote(pha, 'art_ban_va', 'gom chi tiết đơn bằng một truy vấn'),
+    ).toBe(true);
+  });
+
+  it('"Nhìn lại ca" là đoạn review; chưa mục nào bật thì không có đoạn (D-144)', () => {
+    expect(segments.some((s) => s.id === 'review')).toBe(false);
+    const copy = structuredClone(state);
+    const at = Math.max(...copy.transcript.map((l) => l.at));
+    const base = copy.transcript.length;
+    copy.transcript.push(
+      {
+        ...copy.transcript[0],
+        seq: base,
+        at,
+        kind: 'npc',
+        speaker: 'support',
+        context: 'review:tre_hen',
+        text: 'Lúc 11:30 chị chờ hoài, em kẹt gì vậy?',
+      },
+      {
+        ...copy.transcript[0],
+        seq: base + 1,
+        at,
+        kind: 'player',
+        speaker: 'player',
+        context: 'review:tre_hen',
+        text: 'Dạ em xin lỗi chị, em mải chạy staging nên quên báo.',
+      },
+    );
+    const review = evidenceSegments(copy, ctx, OBSERVES).find(
+      (s) => s.id === 'review',
+    );
+    expect(review).toMatchObject({ kind: 'review', subs: ['7.1', '7.4'] });
+    expect(turnsOf(review as EvidenceSegment).map((t) => t.code)).toEqual([
+      `t${base + 1}`,
+    ]);
+    expect(review?.entries[0]).toMatchObject({ role: 'npc' });
+    expect(review?.promises.length).toBe(copy.promises.length);
+  });
+
   it('nút chưa tới thì không có đoạn (không xét, D2); chưa làm gì ở pha thì không có đoạn pha', () => {
     const early = new Run().send({ type: 'START' }).say('Dạ em coi liền anh.');
-    expect(evidenceSegments(early.state, ctx, L3M2_OBSERVES_DRAFT)).toEqual([]);
+    expect(evidenceSegments(early.state, ctx, OBSERVES)).toEqual([]);
   });
 
   it('hết giờ mà không nói thêm gì: đoạn timed_out, mức 0 không qua judge (D-86)', () => {
@@ -367,7 +426,7 @@ describe('evidenceSegments', () => {
     copy.transcript = copy.transcript.filter(
       (l) => !(l.kind === 'player' && l.context === 'node:n1'),
     );
-    const seg = evidenceSegments(copy, ctx, L3M2_OBSERVES_DRAFT).find(
+    const seg = evidenceSegments(copy, ctx, OBSERVES).find(
       (s) => s.id === 'n1',
     );
     expect(seg).toMatchObject({ outcome: 'timed_out', subs: ['1.5'] });
@@ -390,6 +449,12 @@ describe('evidenceSegments', () => {
     expect(verifyQuote(n3, email.code, '901 lần cho MP-0099')).toBe(false);
     expect(verifyQuote(n3, email.code, '')).toBe(false);
     expect(verifyQuote(n3, email.code, 'rollback về bản cũ')).toBe(true);
+    // D-145: ít nhất 3 tiếng, trừ khi trích trọn lượt nói.
+    expect(verifyQuote(n3, email.code, 'rollback')).toBe(false);
+    expect(verifyQuote(n3, email.code, 'về bản')).toBe(false);
+    const short = seg('n9', [], [turn('t9', 'Dạ ok chị.')]);
+    expect(verifyQuote(short, 't9', 'Dạ ok chị.')).toBe(true);
+    expect(verifyQuote(short, 't9', 'ok chị')).toBe(false);
     // Chữ hoa thường phải khớp.
     expect(verifyQuote(n3, email.code, 'ROLLBACK')).toBe(false);
     // Lượt của đoạn khác, hay mã không tồn tại.
@@ -482,7 +547,7 @@ const checked = (item: RawItem): CheckedItem => {
 
 describe('quy ra mức (D-116)', () => {
   const A = yes('t1', 'API em viết gọi DB trong vòng lặp');
-  const B = yes('t1', 'nên chậm');
+  const B = yes('t1', 'trong vòng lặp nên chậm');
   const C = yes('t2', '901 lần giờ còn 2 lần');
 
   it('không có A → 0, dù có B hoặc C', () => {
@@ -554,6 +619,34 @@ describe('quy ra mức (D-116)', () => {
       flags: [],
     });
     expect(out.items).toEqual([]);
+  });
+  it('độ tin câu trích của một judge (D-145): từ 2 câu sai và từ 1/3 số "có"', () => {
+    const fake = yes('t1', 'em đã test kỹ rồi');
+    const reliability = (items: RawItem[]) =>
+      quoteReliability(checkOutput(SEGMENTS, { items, flags: [] }));
+    expect(
+      reliability([raw({ sub: '7.1', segment: 'n2', A, B, C: fake })]),
+    ).toEqual({ yes: 3, rejected: 1, unreliable: false });
+    expect(
+      reliability([
+        raw({ sub: '7.1', segment: 'n2', A, B: fake, C: fake }),
+        raw({ sub: '4.2', segment: 'n2', A, B, C }),
+      ]),
+    ).toEqual({ yes: 6, rejected: 2, unreliable: true });
+    // 2 câu sai trên 7 câu "có" là dưới 1/3: chưa cảnh báo.
+    expect(
+      reliability([
+        raw({ sub: '7.1', segment: 'n2', A, B: fake, C: fake }),
+        raw({ sub: '4.2', segment: 'n2', A, B, C }),
+        raw({ sub: '7.4', segment: 'pha', A: yes('act01', 'act01') }),
+      ]).unreliable,
+    ).toBe(false);
+    // Cặp không xét thì "có" không tính.
+    expect(
+      reliability([
+        raw({ sub: '7.1', segment: 'n2', applicable: false, A: fake, B: fake }),
+      ]),
+    ).toEqual({ yes: 0, rejected: 0, unreliable: false });
   });
 });
 

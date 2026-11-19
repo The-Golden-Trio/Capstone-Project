@@ -38,4 +38,3 @@ export * from './grading/library.js';
 export * from './grading/observe.js';
 export * from './grading/evidence.js';
 export * from './grading/scoring.js';
-export { L3M2_OBSERVES_DRAFT } from './testing/l3m2.observes.draft.js';

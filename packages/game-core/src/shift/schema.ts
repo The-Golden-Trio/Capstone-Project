@@ -7,10 +7,11 @@
  * bằng `forward_to`, mà là các nút canon (mở, giữa, kết) xen pha xử lý tự do
  * tốn điểm thời gian. Hai khuôn sống song song tới khi luồng cũ được bỏ.
  *
- * Phần chấm (`observes`, `signs`, profile phương án) chưa có trong seed mẫu
- * bản 4, nên ở đây chỉ giữ chỗ.
+ * Phần chấm: `observes` (khối E1) theo `grading/observe.ts`; profile phương án
+ * của nút đóng chưa có.
  */
 import { z } from 'zod';
+import { ObserveItemSchema } from './grading/observe.js';
 
 /* ── Mảnh dùng chung ─────────────────────────────────────────────────── */
 
@@ -429,8 +430,8 @@ export const ShiftSeedSchema = z.object({
   nodes: z.array(NodeSchema).min(2),
   review: z.array(ReviewItemSchema).default([]),
   review_max: z.number().int().positive().default(2),
-  /** Giữ chỗ cho khối E; seed mẫu bản 4 chưa có. */
-  observes: z.array(z.unknown()).optional(),
+  /** Khối E1: mục con cần chấm và đoạn bằng chứng của từng mục. */
+  observes: z.array(ObserveItemSchema).optional(),
   _draft: DraftNote,
 });
 export type ShiftSeed = z.infer<typeof ShiftSeedSchema>;

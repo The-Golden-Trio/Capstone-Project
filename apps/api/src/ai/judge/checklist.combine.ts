@@ -12,6 +12,7 @@
  *   4. Gộp mức giữa các judge bằng `combineJudgments`: trung vị của ba, mức
  *      thấp hơn của hai (D-132).
  *   5. Mức mục con trong màn = trung bình các đoạn.
+ *   6. Cảnh báo ghế trích sai nhiều (D-145): mức giữ nguyên.
  *
  * TẠM, thiết kế chưa nói, chốt cùng nhóm (cùng chỗ với `judge-combine.ts`):
  *   - "Không xét": cặp là không xét khi ít nhất nửa số judge nói không xét.
@@ -37,6 +38,8 @@ export type ChecklistVerdict =
       items: ChecklistItemGrade[];
       subs: shift.SubResult[];
       flags: shift.FlagInstance[];
+      /** Theo thứ tự `panel` (các ghế chấm được). */
+      quoteChecks: shift.QuoteReliability[];
     }
   | Extract<PanelVerdict, { status: 'pending' }>;
 
@@ -73,6 +76,7 @@ export function combineChecklist(args: {
     items,
     subs: shift.subLevels(observes, items),
     flags,
+    quoteChecks: panel.map(shift.quoteReliability),
   });
 
   // Mọi đoạn là hết giờ: không có gì để hỏi judge.

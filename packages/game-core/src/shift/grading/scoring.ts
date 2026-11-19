@@ -155,6 +155,37 @@ export function checkOutput(
   return { items, flags, rejected };
 }
 
+/* ── Độ tin của một judge (D-145) ─────────────────────────────────────── */
+
+/** Ghế có từ chừng này câu "có" bị bỏ trở lên… */
+export const UNRELIABLE_MIN_REJECTED = 2;
+/** …và số đó chiếm ít nhất chừng này phần số "có" của ghế thì bị cảnh báo. */
+export const UNRELIABLE_MIN_SHARE = 1 / 3;
+
+export interface QuoteReliability {
+  /** Số câu "có" judge trả lời ở các cặp được xét. */
+  yes: number;
+  /** Số câu "có" bị bỏ vì câu trích sai. */
+  rejected: number;
+  /** Cảnh báo: mức vẫn giữ, chỉ báo cho người xem. */
+  unreliable: boolean;
+}
+
+export function quoteReliability(checked: CheckedOutput): QuoteReliability {
+  const answers = checked.items
+    .filter((i) => i.applicable)
+    .flatMap((i) => [i.A, i.B, i.C])
+    .filter((a) => a.yes);
+  const rejected = answers.filter((a) => !a.valid).length;
+  return {
+    yes: answers.length,
+    rejected,
+    unreliable:
+      rejected >= UNRELIABLE_MIN_REJECTED &&
+      rejected >= answers.length * UNRELIABLE_MIN_SHARE,
+  };
+}
+
 /* ── Mức ──────────────────────────────────────────────────────────────── */
 
 /** Không có A → 0; A → 1; A và (B hoặc C) → 2; mục con không xét → null. */

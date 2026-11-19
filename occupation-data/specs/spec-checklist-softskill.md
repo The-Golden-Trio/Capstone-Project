@@ -1,8 +1,8 @@
-# Thư viện câu hỏi có/không cho 42 mục con soft skill (bản v4.1, sau QA lần 3 và test mù lại, chờ DE kiểm)
+# Thư viện câu hỏi có/không cho 43 mục con soft skill (bản v4.1, sau QA lần 3 và test mù lại, chờ DE kiểm)
 
 ## Bối cảnh chấm (đã chốt)
 - Mỗi màn chọn 3–6 mục con, ghi `from`: lấy bằng chứng từ nút nào hoặc từ pha xử lý.
-- Judge (AI-5) chấm theo **đoạn bằng chứng**: một nút viết (câu trả lời + follow-up) hoặc cả một pha xử lý (chat với NPC, mở tài liệu, tự mô tả hành động; mỗi hành động là một dòng nhật ký hành động có mã).
+- Judge (AI-5) chấm theo **đoạn bằng chứng**: một nút viết (câu trả lời + follow-up) hoặc cả một pha xử lý (chat với NPC, mở tài liệu, tự mô tả hành động, kể cả ô gõ của artefact nộp trong pha như mô tả bản vá; mỗi hành động là một dòng nhật ký hành động có mã), hoặc "Nhìn lại ca" (`review`, D-144).
 - Mỗi đoạn, mỗi mục con: mức 0/1/2, hoặc "không xét". Mức của mục con trong màn = trung bình các đoạn. Điểm nhóm trong màn = trần nhóm × (trung bình mức các mục con của nhóm ÷ 2 − hệ số phạt × số cờ giao cho nhóm); phạt 0,25 (L1–L2) · 0,35 (L3–L5) · 0,5 (L6+). Điểm nhóm trong một màn có thể âm (D-116); chơi lại giữ kết quả cao nhất (D-119).
 - `signs` của seed chỉ là minh hoạ. Chấm theo thông tin người chơi có lúc quyết định. Lời NPC chỉ là bối cảnh.
 - Hết giờ ở câu đếm giờ = mức 0, không cờ. Nút chưa tới vì hết thời gian = không xét. Dùng hint = giảm trọng số.

@@ -1,5 +1,5 @@
 /**
- * Thư viện câu hỏi có/không của AI-5 cho ca làm: 7 nhóm, 42 mục con, 13 cờ chung.
+ * Thư viện câu hỏi có/không của AI-5 cho ca làm: 7 nhóm, 43 mục con (D-143), 13 cờ chung.
  *
  * Chép từ `occupation-data/specs/spec-checklist-softskill.md` (bản v4.1, sau QA
  * lần 3, chờ DE kiểm). Câu chữ từng câu hỏi là suy luận của nhóm, chưa DE duyệt.

@@ -25,7 +25,7 @@ import { oneJudgeDownPolicy } from './judge.profile';
 
 const SEED = 'SWE_BACKEND.L3.m2';
 const ctx = fixtureShiftContext(SEED);
-const OBSERVES = [...shift.L3M2_OBSERVES_DRAFT];
+const OBSERVES = ctx.seed.observes ?? [];
 
 const SLOTS = judgePanel({
   openrouter: { apiKey: 'or' },
@@ -411,6 +411,26 @@ describe('combineChecklist', () => {
     });
     // 4.2 chấm ở n2 (median 1) và pha (cả ba cùng 0) → trung bình 0,5.
     expect(v.subs.find((s) => s.sub === '4.2')?.level).toBeCloseTo(0.5);
+  });
+
+  it('ghế trích sai nhiều thì có cảnh báo, mức giữ nguyên (D-145)', () => {
+    const bad = shift.checkOutput(
+      SEGMENTS,
+      JSON.parse(
+        judgeReply(2, { quoteOverride: 'em đã test kỹ rồi nha' })
+          .content as string,
+      ),
+    );
+    const v = run([answers(2), answers(2), bad]);
+    if (v.status !== 'graded') throw new Error('chưa chấm');
+    expect(v.quoteChecks.map((q) => q.unreliable)).toEqual([
+      false,
+      false,
+      true,
+    ]);
+    expect(v.quoteChecks[2].rejected).toBe(v.quoteChecks[2].yes);
+    // Trung vị của 2, 2, 0 vẫn là 2: cảnh báo không đổi mức.
+    expect(v.items.find((i) => key(i) === '4.2@n2')?.level).toBe(2);
   });
 
   it('hai judge: lấy mức thấp hơn (D-132), chờ nếu chính sách là chờ', () => {

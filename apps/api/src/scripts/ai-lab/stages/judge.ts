@@ -2,7 +2,8 @@
  * Bước sau ca: AI-5 chấm cả ca theo checklist có/không (D-116), qua
  * `JudgePanelService.gradeChecklist`.
  *
- * Rubric là `L3M2_OBSERVES_DRAFT`: nháp do AI soạn để test, chưa DE duyệt.
+ * Rubric là `observes` của seed (khối E1). Seed L3.m2 có bản AI soạn nháp, chờ
+ * DE duyệt (`_draft_observes`).
  *
  * Chế độ fake dùng một transport giả trả lời "có" cho câu A của mọi cặp mục
  * con–đoạn, trích câu đầu tiên của người chơi trong đoạn. Mục đích chỉ là cho
@@ -32,7 +33,7 @@ function fakeService(
       const quote =
         !turn || turn.kind === 'action'
           ? (turn?.code ?? '')
-          : turn.text.slice(0, 24);
+          : turn.text.split(/\s+/).slice(0, 8).join(' ');
       const no = { yes: false, quote: '', turn: '' };
       return {
         sub,
@@ -89,6 +90,13 @@ function describe(result: ChecklistPanelResult, fake: boolean): string[] {
         `  ${sub.sub} ${item?.name ?? ''} (nhóm ${sub.group}): ${fmtLevel(sub.level)}  [${perSegment}]`,
       );
     }
+    const okSlots = result.slots.filter((s) => s.status === 'ok');
+    result.quoteChecks.forEach((q, i) => {
+      if (q.unreliable)
+        lines.push(
+          `  ⚠ ghế ${okSlots[i]?.slot ?? i} ${okSlots[i]?.modelKey ?? ''} trích sai ${q.rejected}/${q.yes} câu "có": không đáng tin (D-145), mức giữ nguyên`,
+        );
+    });
     for (const item of result.items.filter((i) => i.highDisagreement))
       lines.push(
         `  ⚠ judge lệch nhau ở ${item.sub}/${item.segment}: ${item.judgeLevels.join(' / ')}`,
@@ -115,7 +123,13 @@ function describe(result: ChecklistPanelResult, fake: boolean): string[] {
 export const judgeStage: LabStage = {
   name: 'AI-5 chấm theo checklist',
   async run(input: LabStageInput): Promise<LabStageResult> {
-    const observes = [...shift.L3M2_OBSERVES_DRAFT];
+    const observes = input.ctx.seed.observes ?? [];
+    if (observes.length === 0)
+      return {
+        lines: [
+          `✘ Seed ${input.ctx.seed.id} chưa có observes (khối E1): không có gì để chấm.`,
+        ],
+      };
     const segments = shift.evidenceSegments(input.state, input.ctx, observes);
     const { runtime } = input;
     const live =
@@ -124,7 +138,7 @@ export const judgeStage: LabStage = {
       (input.only === undefined || input.only === 'judge');
 
     const lines = [
-      `Rubric: L3M2_OBSERVES_DRAFT (nháp, chưa DE duyệt): ${observes.map((o) => o.sub).join(', ')}`,
+      `Rubric: observes của seed ${input.ctx.seed.id} (nháp, chờ DE duyệt): ${observes.map((o) => `${o.sub}←${o.from.join('+')}`).join(', ')}`,
       `Đoạn bằng chứng: ${segments
         .map((s) => `${s.id} (${shift.turnsOf(s).length} lượt, ${s.outcome})`)
         .join(', ')}`,

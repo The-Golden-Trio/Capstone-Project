@@ -77,6 +77,11 @@ export type ChecklistPanelResult = {
       subs: shift.SubResult[];
       /** Cờ đã qua đa số, đã giao nhóm nhận phạt. */
       flags: shift.FlagInstance[];
+      /**
+       * Độ tin câu trích của từng ghế chấm được, theo thứ tự các ghế `ok`
+       * trong `slots`. `unreliable` chỉ là cảnh báo, mức giữ nguyên (D-145).
+       */
+      quoteChecks: shift.QuoteReliability[];
     }
   /** Không đủ judge để chấm theo chính sách; lời người chơi được giữ, chấm lại sau (NFR-04). */
   | {

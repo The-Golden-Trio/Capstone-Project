@@ -5,7 +5,10 @@
  * - Đoạn của một nút (`from: "n2"`): câu trả lời của nút cộng lời đáp probe,
  *   cộng artefact nút đó nhận (email, ghi chú sự cố).
  * - Đoạn `pha`: lời người chơi trong các cuộc trò chuyện và tin nhắn kênh, cộng
- *   nhật ký hành động. Mỗi dòng nhật ký là một lượt có mã.
+ *   nhật ký hành động, cộng artefact nộp trong pha (ô gõ của bản vá, D-144).
+ *   Mỗi dòng nhật ký là một lượt có mã.
+ * - Đoạn `review` ("Nhìn lại ca", D-144): câu hỏi của NPC và lời đáp của người
+ *   chơi ở các mục đã bật. Không mục nào bật thì không có đoạn (không xét).
  * - Chỉ chữ của người chơi được chấm và được trích. Lời NPC và kết quả chạy
  *   thử là bối cảnh.
  * - Câu trả lời của nút ĐÓNG (trắc nghiệm, chọn một, đếm giờ) không vào đoạn:
@@ -14,14 +17,14 @@
  * Mã lượt nói suy ra tất định từ trạng thái, không thêm gì vào schema sự kiện:
  *   `t<seq>`    dòng người chơi trong `transcript` (seq là vị trí trong sổ)
  *   `act<NN>`   dòng thứ NN của `actionLog` (đánh số từ 01)
- *   `art_<id>`  artefact nút đã nhận (cả form là một lượt)
+ *   `art_<id>`  artefact đã lưu, của nút hay nộp trong pha (cả form là một lượt)
  *
  * Hàm này thuần: không đọc giờ thật, không gọi model.
  */
 import { factText, type ShiftContext } from '../context.js';
 import type { ShiftState, TranscriptLine } from '../state.js';
 import { clockAt } from '../time.js';
-import { PHA, type ObserveItem } from './observe.js';
+import { PHA, REVIEW, type ObserveItem } from './observe.js';
 
 export type TurnKind = 'say' | 'artefact' | 'action';
 
@@ -51,10 +54,10 @@ export type EvidenceEntry =
     };
 
 export interface EvidenceSegment {
-  /** Id nút hoặc "pha". */
+  /** Id nút, "pha" hoặc "review". */
   id: string;
   label: string;
-  kind: 'node' | 'pha';
+  kind: 'node' | 'pha' | 'review';
   /** Mục con chấm ở đoạn này, theo thứ tự `observes`. */
   subs: string[];
   /**
@@ -68,7 +71,7 @@ export interface EvidenceSegment {
   facts: Array<{ id: string; text: string; time: string }>;
   /** Quy định người chơi đã được nghe tới cuối đoạn (cờ C8, mục 7.3). */
   rulesHeard: Array<{ id: string; text: string }>;
-  /** Lời hứa đang có và trạng thái (mục 7.4, cờ C7). Chỉ đoạn `pha`. */
+  /** Lời hứa đang có và trạng thái (mục 7.4, cờ C7). Chỉ đoạn `pha` và `review`. */
   promises: Array<{ label: string; status: string }>;
   /** Mô tả màn, giống nhau ở mọi đoạn. */
   brief: string;
@@ -104,12 +107,18 @@ export function findTurn(
   return undefined;
 }
 
+/** Câu trích ngắn nhất, tính bằng tiếng (D-145). */
+export const MIN_QUOTE_WORDS = 3;
+
 /**
  * Câu trích hợp lệ khi (luật 6, spec):
  *  - lượt nói/artefact: là chuỗi con (sau chuẩn hoá khoảng trắng) của đúng
  *    lượt nói đã ghi;
  *  - hành động: là chính mã hành động, hoặc chuỗi con của dòng mô tả hành động.
  * Lượt phải thuộc `segment`: trích từ đoạn khác không tính.
+ * Câu trích chữ của người chơi dài ít nhất `MIN_QUOTE_WORDS` tiếng (D-145),
+ * trừ khi trích trọn lượt nói (lượt "Dạ em sai" chỉ có thể trích nguyên).
+ * Lượt hành động được miễn: dòng mô tả do engine viết, không phải lời người chơi.
  */
 export function verifyQuote(
   segment: EvidenceSegment,
@@ -121,7 +130,13 @@ export function verifyQuote(
   const turn = turnsOf(segment).find((t) => t.code === turnCode);
   if (!turn) return false;
   if (turn.kind === 'action' && q === turn.code) return true;
-  return normalizeQuote(turn.text).includes(q);
+  const text = normalizeQuote(turn.text);
+  if (!text.includes(q)) return false;
+  return (
+    turn.kind === 'action' ||
+    q === text ||
+    q.split(' ').length >= MIN_QUOTE_WORDS
+  );
 }
 
 /* ── Dựng đoạn ────────────────────────────────────────────────────────── */
@@ -222,10 +237,40 @@ export function evidenceSegments(
         .filter((r) => heard(r.told_at))
         .map((r) => ({ id: r.id, text: r.text })),
       promises:
-        kind === 'pha'
+        kind === 'pha' || kind === 'review'
           ? s.promises.map((p) => ({ label: p.label, status: p.status }))
           : [],
       brief,
+    };
+  };
+
+  const artefactPart = (
+    artefactId: string,
+    at: number,
+    seq: number,
+  ): Sortable | undefined => {
+    const saved = s.artefacts[artefactId];
+    const artefact = seed.artefacts.find((a) => a.id === artefactId);
+    if (!saved || !artefact || saved.status !== 'saved') return undefined;
+    const fields = (artefact.fields ?? []).map((f) => ({
+      label: f.label,
+      text: saved.fields[f.id] ?? '',
+    }));
+    return {
+      at,
+      rank: 1,
+      seq,
+      entry: {
+        role: 'player',
+        turn: {
+          code: artefactCode(artefact.id),
+          kind: 'artefact',
+          at,
+          time: time(at),
+          text: fields.map((f) => f.text).join('\n'),
+          parts: fields,
+        },
+      },
     };
   };
 
@@ -271,14 +316,7 @@ export function evidenceSegments(
     }
 
     const saved = node.artefact ? s.artefacts[node.artefact] : undefined;
-    const artefact = node.artefact
-      ? seed.artefacts.find((a) => a.id === node.artefact)
-      : undefined;
-    if (saved && artefact && saved.status === 'saved') {
-      const fields = (artefact.fields ?? []).map((f) => ({
-        label: f.label,
-        text: saved.fields[f.id] ?? '',
-      }));
+    if (node.artefact && saved?.status === 'saved') {
       // Đặt artefact ở chỗ dòng "Bạn gửi …" của nút, để đúng thứ tự trong sổ.
       const marker = s.transcript.find(
         (l) =>
@@ -286,23 +324,12 @@ export function evidenceSegments(
           l.kind === 'scene' &&
           l.text.startsWith('Bạn gửi'),
       );
-      const at = marker?.at ?? saved.savedAt ?? 0;
-      parts.push({
-        at,
-        rank: 1,
-        seq: marker?.seq ?? Number.MAX_SAFE_INTEGER,
-        entry: {
-          role: 'player',
-          turn: {
-            code: artefactCode(artefact.id),
-            kind: 'artefact',
-            at,
-            time: time(at),
-            text: fields.map((f) => f.text).join('\n'),
-            parts: fields,
-          },
-        },
-      });
+      const part = artefactPart(
+        node.artefact,
+        marker?.at ?? saved.savedAt ?? 0,
+        marker?.seq ?? Number.MAX_SAFE_INTEGER,
+      );
+      if (part) parts.push(part);
     }
 
     const answered = parts.some((p) => p.entry.role === 'player');
@@ -358,12 +385,55 @@ export function evidenceSegments(
         },
       });
     });
+    // Artefact nộp trong pha: đích của một hành động, không phải bài nộp của nút.
+    const nodeArtefacts = new Set(seed.nodes.map((n) => n.artefact));
+    const phaArtefacts = new Set(
+      seed.actions.flatMap((a) =>
+        a.target && !nodeArtefacts.has(a.target) ? [a.target] : [],
+      ),
+    );
+    for (const id of phaArtefacts) {
+      const part = artefactPart(
+        id,
+        s.artefacts[id]?.savedAt ?? 0,
+        Number.MAX_SAFE_INTEGER,
+      );
+      if (part) parts.push(part);
+    }
     if (parts.some((p) => p.entry.role === 'player'))
       segments.push(
         finish(
           PHA,
           'Pha xử lý (trò chuyện và hành động)',
           'pha',
+          'answered',
+          parts,
+        ),
+      );
+  }
+
+  if (wanted.has(REVIEW)) {
+    const parts: Sortable[] = [];
+    for (const l of s.transcript) {
+      if (!l.context.startsWith('review:')) continue;
+      if (l.kind === 'player')
+        parts.push({
+          at: l.at,
+          rank: 1,
+          seq: l.seq,
+          entry: { role: 'player', turn: turnOfLine(l) },
+        });
+      else {
+        const entry = contextEntry(l);
+        if (entry) parts.push({ at: l.at, rank: 1, seq: l.seq, entry });
+      }
+    }
+    if (parts.some((p) => p.entry.role === 'player'))
+      segments.push(
+        finish(
+          REVIEW,
+          'Nhìn lại ca (sau nút kết)',
+          'review',
           'answered',
           parts,
         ),
