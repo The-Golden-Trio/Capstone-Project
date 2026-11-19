@@ -47,6 +47,7 @@ import { sourceOf } from '../../api';
 import type { CatalogueOccupation, RegionId } from '../../api/types';
 import { GalaxyMap, type GalaxyMapHandle } from './GalaxyMap';
 import { foldVi, layoutGalaxy } from './layout';
+import { keepHyphenated } from '../../lib/text';
 
 type View = 'map' | 'list';
 
@@ -463,7 +464,7 @@ function PeekPanel({
             <RegionDot color={regionColor(occ.regionId)} size={7} /> {occ.group}
           </p>
           <h2 className="mt-1 font-toon text-2xl font-extrabold leading-tight">
-            {occ.shortName}
+            {keepHyphenated(occ.shortName)}
           </h2>
           <div className="mt-2 flex flex-wrap gap-1.5">{statusBadge(occ)}</div>
         </div>

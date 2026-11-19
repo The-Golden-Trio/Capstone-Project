@@ -19,12 +19,22 @@ export function NightSky({
   className,
 }: NightSkyProps) {
   const rand = seededRandom(seed);
-  const stars = Array.from({ length: 22 }, (_, i) => ({
-    x: 3 + rand() * 94,
-    y: 4 + rand() * 78,
-    size: i % 5 === 0 ? 22 + rand() * 10 : 9 + rand() * 7,
-    rotation: Math.round(rand() * 24 - 12),
-  }));
+  // Sao lớn chỉ nằm ở hai mép; dải giữa (nơi thường có chữ) chỉ có sao nhỏ,
+  // mờ làm nền, để trang trí không đè lên nội dung.
+  const stars = Array.from({ length: 22 }, (_, i) => {
+    const big = i % 5 === 0;
+    const r = rand();
+    const x = big ? (r < 0.5 ? 1 + r * 16 : 83 + (r - 0.5) * 32) : 3 + r * 94;
+    const edge = x < 12 || x > 88;
+    return {
+      x,
+      y: 4 + rand() * 78,
+      size: big ? 22 + rand() * 10 : edge ? 9 + rand() * 7 : 6 + rand() * 3,
+      rotation: Math.round(rand() * 24 - 12),
+      big,
+      edge,
+    };
+  });
   const city = horizon === 'city' || (horizon === true && scene === 'home');
   return (
     <div
@@ -40,7 +50,13 @@ export function NightSky({
         <div
           key={i}
           data-sky-star=""
-          className="absolute"
+          // Màn hẹp: chữ sát mép nên ẩn sao lớn và làm mờ sao ở mép.
+          className={cn(
+            'absolute',
+            s.big && 'max-sm:hidden',
+            !s.big && !s.edge && 'opacity-45',
+            !s.big && s.edge && 'max-sm:opacity-45',
+          )}
           style={{
             left: `${s.x}%`,
             top: `${s.y}%`,
