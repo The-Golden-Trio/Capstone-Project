@@ -26,7 +26,7 @@ import { db, newSkills, save, type Player, type SavedRun } from './store';
 export const SHOWCASE_EMAIL = 'demo@jobquest.local';
 export const SHOWCASE_PASSWORD = 'demo';
 /** Tăng khi đổi dữ liệu mẫu để trình duyệt đã lưu bản cũ tự dựng lại. */
-const SHOWCASE_VERSION = 4;
+const SHOWCASE_VERSION = 5;
 
 /** Lớp phủ dữ liệu mẫu, cộng thêm vào hồ sơ tính từ lượt chơi thật. */
 export interface Showcase {
@@ -390,13 +390,7 @@ export async function fillShowcase(p: Player): Promise<void> {
       C: [1, 2],
       R: [1],
     },
-    favourites: [
-      { text: 'Bạn đã phác luồng màn hình cho ứng dụng đặt lịch.', likes: 3 },
-      {
-        text: 'Bạn đã lắng nghe một học sinh kể chuyện áp lực thi cử.',
-        likes: 3,
-      },
-    ],
+    favourites: [],
     counts: { kham_pha: 7, kien_tri: 6 },
   };
   save();
