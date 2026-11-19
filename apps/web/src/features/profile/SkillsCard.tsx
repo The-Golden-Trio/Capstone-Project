@@ -6,8 +6,13 @@ import { Notice, PaperCard, CardHeading } from './ProfileKit';
 import { SkillRadar } from './ProfileArt';
 
 import type { PlayerRecord } from '../../api/types';
-import { radarValue, skillEvidence } from './recordView';
-import { SkillHistory } from './SkillHistory';
+import {
+  radarValue,
+  skillEvidence,
+  historySummary,
+  skillTimeline,
+} from './recordView';
+import { SkillTrends } from './SkillTrends';
 const number = (value: number) => value.toLocaleString('vi-VN');
 export function SkillsCard({
   record,
@@ -25,6 +30,8 @@ export function SkillsCard({
   const values = Object.fromEntries(
     record.softSkills.map((skill) => [skill.id, radarValue(skill)]),
   );
+  const summary = historySummary(record.softSkills);
+  const timeline = skillTimeline(record.softSkills, record.journal);
   const hasData = record.softSkills.some((skill) => skill.scenarios > 0);
   return (
     <PaperCard>
@@ -75,24 +82,34 @@ export function SkillsCard({
                   <span>
                     {group.name}
                     {sign?.buffs.includes(group.id) && (
-                      <span className="text-toon-maroon"> ·</span>
+                      <span
+                        className="text-toon-maroon"
+                        aria-label={`Thưởng ${sign.name} +12%`}
+                      >
+                        {' '}
+                        ★ {sign.name} +12%
+                      </span>
                     )}
                   </span>
                   <span className="shrink-0 text-toon-maroon">
                     Bậc {progress.tier}
                   </span>
                 </button>
+                {/* Thanh và nhãn cùng một thước: điểm hiện có so với ngưỡng bậc kế. */}
                 <ToonProgress
                   label={group.name}
-                  value={progress.ratio}
+                  value={
+                    progress.nextAt === null
+                      ? 1
+                      : (skill?.points ?? 0) / progress.nextAt
+                  }
                   max={1}
                   labelHidden
                 />
                 <p className="mt-1 text-xs text-toon-ink-soft">
-                  {number(skill?.points ?? 0)} / 10.000 ·{' '}
                   {progress.nextAt === null
-                    ? 'Bậc tối đa'
-                    : `Bậc ${progress.tier + 1} ở ${number(progress.nextAt)}`}
+                    ? `${number(skill?.points ?? 0)} điểm · bậc tối đa`
+                    : `${number(skill?.points ?? 0)} / ${number(progress.nextAt)} điểm · tới bậc ${progress.tier + 1}`}
                 </p>
                 {selected === group.id && (
                   <div
@@ -107,10 +124,6 @@ export function SkillsCard({
                     <p className="my-3 text-xs text-toon-ink-soft">
                       Các mục con không có điểm riêng.
                     </p>
-                    <SkillHistory
-                      key={group.id}
-                      history={skill?.history ?? []}
-                    />
                   </div>
                 )}
               </div>
@@ -118,6 +131,52 @@ export function SkillsCard({
           })}
         </div>
       </div>
+      <section
+        aria-label="Tóm tắt lịch sử kỹ năng"
+        className="mt-5 rounded-xl border-2 border-toon-ink bg-toon-sky p-4 text-sm"
+      >
+        <h3 className="font-toon text-lg font-bold">
+          Sau {summary.count} ca có lịch sử điểm
+        </h3>
+        <p className="mt-2">
+          <strong>Đang mạnh lên:</strong>{' '}
+          {summary.positive
+            ? `${profile.softSkillGroup(summary.positive.id).short} được cộng ở ${summary.positive.count}/${summary.count} ca.`
+            : 'Chưa có nhóm đủ lịch sử để tóm tắt điểm cộng.'}
+        </p>
+        <p className="mt-2">
+          <strong>Còn chững lại:</strong>{' '}
+          {summary.negative ? (
+            <>
+              {profile.softSkillGroup(summary.negative.id).short} bị trừ ở{' '}
+              {summary.negative.runIds.map((id, i) => (
+                <span key={id}>
+                  {i > 0 && ', '}
+                  <Link
+                    to={`/play/${id}/summary`}
+                    className="rounded font-bold underline focus-visible:shadow-toon-focus"
+                  >
+                    #{timeline.runs.find((run) => run.runId === id)?.index}
+                  </Link>
+                </span>
+              ))}
+              .
+            </>
+          ) : (
+            'Chưa có nhóm đủ lịch sử với ca bị trừ điểm.'
+          )}
+        </p>
+        <p className="mt-2 text-xs text-toon-ink-soft">
+          Tóm tắt từ lịch sử; mỗi nhóm cần ít nhất{' '}
+          {profile.STRENGTH_MIN_SCENARIOS} ca được chấm.
+        </p>
+      </section>
+      <SkillTrends
+        skills={record.softSkills}
+        journal={record.journal}
+        value={selected ?? undefined}
+        onChange={setSelected}
+      />
       <details className="mt-6 rounded-xl border-2 border-toon-ink bg-toon-cream p-4">
         <summary className="cursor-pointer font-toon font-bold">
           Dấu vết từ các ca đã chơi

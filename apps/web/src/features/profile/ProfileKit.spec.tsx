@@ -24,9 +24,12 @@ describe('thành phần form trên giấy', () => {
   });
   it('giữ nguyên phần kể dài trong vùng Xem thêm, không mất nội dung', () => {
     const words = Array.from({ length: 42 }, (_, i) => `từ${i}`);
-    const { container } = render(<ReadMore text={words.join(' ')} />);
+    const remainder = words.join(' ');
+    const { container } = render(
+      <ReadMore text={`Một câu trọn nghĩa. ${remainder}`} />,
+    );
     expect(container.querySelector('details')?.open).toBe(false);
-    expect(screen.getByText(words.slice(35).join(' '))).toBeTruthy();
+    expect(screen.getByText(remainder)).toBeTruthy();
     expect(container.querySelector('summary')?.textContent).toBe('Xem thêm');
   });
 });

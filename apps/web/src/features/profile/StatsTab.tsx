@@ -11,10 +11,12 @@ import { Foldout, Notice, EmptyMessage, StatCard } from './ProfileKit';
 
 import { errorText, useCatalogue } from '../../api/hooks';
 import type { CatalogueOccupation, PlayerRecord } from '../../api/types';
+import { useRecordContext } from './useRecordContext';
 import { constellationPoints, timeCells } from './recordView';
 export function StatsTab({ record }: { record: PlayerRecord }) {
   const catalogue = useCatalogue();
   const stats = record.stats;
+  const context = useRecordContext(record);
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
@@ -159,16 +161,18 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
           Năm việc được chọn “Thích” nhiều nhất sau ca làm.
         </p>
         {stats.favouriteTasks.length ? (
-          <ol className="space-y-3">
+          <ol className="grid gap-3 sm:grid-cols-2">
             {[...stats.favouriteTasks]
               .sort((a, b) => b.likes - a.likes)
               .slice(0, 5)
               .map((task, index) => (
                 <li
                   key={task.text}
-                  className="flex gap-3 rounded-lg border border-toon-ink p-3"
+                  className="rounded-xl border-2 border-toon-ink bg-toon-cream p-4"
                 >
-                  <span className="text-toon-ink-soft">{index + 1}.</span>
+                  <p className="mb-2 text-xs font-bold text-toon-maroon">
+                    {index + 1}. {context.taskGroup(task.text)}
+                  </p>
                   <p className="min-w-0 flex-1 text-sm">{task.text}</p>
                   <span className="shrink-0 text-xs text-toon-ink-soft">
                     {task.likes} lần thích

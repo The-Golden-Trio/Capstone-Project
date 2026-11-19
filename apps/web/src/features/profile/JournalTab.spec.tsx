@@ -1,4 +1,4 @@
-import { fireEvent, screen, within } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { expect, it } from 'vitest';
 import {
   renderWithProviders,
@@ -7,7 +7,7 @@ import {
 import { api } from '../../api';
 import { JournalTab } from './JournalTab';
 
-it('giữ điểm ca và đường tổng kết, chỉ mở chi tiết kỹ năng khi yêu cầu', async () => {
+it('giữ điểm ca và đường tổng kết, hiện thẳng điểm cộng trừ từng nhóm', async () => {
   await signInDemo();
   const record = await api.progress.record();
   record.journal = [
@@ -26,15 +26,8 @@ it('giữ điểm ca và đường tổng kết, chỉ mở chi tiết kỹ năn
   expect(
     screen.getByRole('link', { name: '#1 · Ca sự cố' }).getAttribute('href'),
   ).toBe('/play/shift-1/summary');
-  const skills = screen.getByText('Kỹ năng thay đổi (1)', {
-    selector: 'summary',
-  });
-  const details = skills.closest('details');
-  if (!details) throw new Error('Thiếu vùng mở chi tiết kỹ năng');
-  expect(details.open).toBe(false);
-  fireEvent.click(skills);
-  expect(details.open).toBe(true);
-  expect(within(details).getByText(/Giao tiếp −20/)).toBeTruthy();
+  expect(screen.getByText(/Giao tiếp −20/)).toBeTruthy();
+  expect(screen.getByText(/Giao tiếp −20/).closest('details')).toBeNull();
   expect(
     screen
       .getByText('Quản lý tự kể', { selector: 'summary' })

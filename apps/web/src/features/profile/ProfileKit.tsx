@@ -174,17 +174,18 @@ export function Foldout({
   );
 }
 export function ReadMore({ text }: { text: string }) {
-  const words = text.trim().split(/\s+/);
-  return words.length <= 35 ? (
+  const boundary = /[.!?…](?:["”’)]*)\s+/u.exec(text);
+  const splitAt = boundary ? boundary.index + boundary[0].length : text.length;
+  return text.trim().split(/\s+/).length <= 35 || splitAt === text.length ? (
     <p>{text}</p>
   ) : (
     <div>
-      <p>{words.slice(0, 35).join(' ')}…</p>
+      <p>{text.slice(0, splitAt).trim()}</p>
       <details className="mt-2">
         <summary className="cursor-pointer font-bold underline underline-offset-4">
           Xem thêm
         </summary>
-        <p className="mt-2">{words.slice(35).join(' ')}</p>
+        <p className="mt-2">{text.slice(splitAt)}</p>
       </details>
     </div>
   );

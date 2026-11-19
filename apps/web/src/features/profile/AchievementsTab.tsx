@@ -30,8 +30,8 @@ export function AchievementsTab({
   return (
     <PaperCard>
       <CardHeading
-        title="Bộ sưu tập dấu mốc"
-        description={`${achievements.filter((achievement) => achievement.earnedAt).length}/${achievements.length} · Ghim tối đa 3.`}
+        title={`Bộ sưu tập dấu mốc · ${achievements.filter((item) => item.earnedAt).length}/${achievements.length}`}
+        description="Chạm huy hiệu đã mở để ghim hoặc bỏ ghim. Tối đa 3."
       />
       <div className="mb-6 flex flex-wrap gap-2">
         <ToonButton
@@ -61,11 +61,23 @@ export function AchievementsTab({
               }
               onClick={() => setKind(key)}
             >
+              <span
+                aria-hidden
+                className="mr-1 inline-block size-3 rounded-full border border-toon-ink"
+                style={{
+                  backgroundColor: ACHIEVEMENT_KINDS[key].color,
+                }}
+              />
               {ACHIEVEMENT_KINDS[key].name}
             </ToonButton>
           ),
         )}
       </div>
+      {pins.length >= 3 && (
+        <p role="status" className="mb-4 text-sm font-bold">
+          Đã ghim đủ 3 huy hiệu. Bỏ một ghim để chọn huy hiệu khác.
+        </p>
+      )}
       {pin.isError && (
         <Notice tone="danger" className="mb-4">
           {errorText(pin.error)}
@@ -95,11 +107,35 @@ export function AchievementsTab({
               key={achievement.code}
               className="flex flex-col items-center rounded-2xl border-2 border-toon-ink bg-toon-cream p-4 text-center"
             >
-              <AchievementSeal
-                kind={achievement.kind}
-                locked={!achievement.earnedAt}
-                label={achievement.name}
-              />
+              {achievement.pinned && achievement.earnedAt && (
+                <span className="mb-2 rounded bg-toon-mustard px-2 text-xs font-bold">
+                  GHIM
+                </span>
+              )}
+              <button
+                type="button"
+                aria-label={`${achievement.pinned ? 'Bỏ ghim' : 'Ghim'} huy hiệu: ${achievement.name}`}
+                disabled={
+                  !achievement.earnedAt ||
+                  pin.isPending ||
+                  (!achievement.pinned && pins.length >= 3)
+                }
+                aria-pressed={achievement.pinned}
+                className="rounded-full focus-visible:shadow-toon-focus disabled:cursor-default"
+                onClick={() =>
+                  pin.mutate(
+                    achievement.pinned
+                      ? pins.filter((code) => code !== achievement.code)
+                      : [...pins, achievement.code],
+                  )
+                }
+              >
+                <AchievementSeal
+                  kind={achievement.kind}
+                  locked={!achievement.earnedAt}
+                  label={achievement.name}
+                />
+              </button>
               <h3 className="mt-2 font-toon text-sm font-bold">
                 {achievement.name}
               </h3>

@@ -1,13 +1,6 @@
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { profile } from '@datn/game-core';
-import {
-  ToonBadge,
-  ToonButton,
-  LoadingBlock,
-  ToonTabPanel,
-  PillTabs,
-  StickerBadge,
-} from '@datn/ui';
+import { ToonButton, LoadingBlock, ToonTabPanel, PillTabs } from '@datn/ui';
 import { EmptyMessage, Foldout, PaperCard, ProfileCanvas } from './ProfileKit';
 import { AchievementSeal, PlayerSeal } from './ProfileArt';
 
@@ -89,12 +82,8 @@ export default function ProfilePage() {
         <Foldout title="Mục tiêu của bạn">
           <GoalsCard record={data} quizDone={me.data.quizDone} />
         </Foldout>
-        <Foldout title="Điều bạn thích">
-          <RiasecCard riasec={data.riasec} />
-        </Foldout>
-        <Foldout title="Kỹ năng nghề">
-          <KeywordsCard record={data} />
-        </Foldout>
+        <RiasecCard riasec={data.riasec} />
+        <KeywordsCard record={data} />
       </ToonTabPanel>
       <ToonTabPanel
         idBase="profile"
@@ -148,46 +137,46 @@ function ProfileHeader({
           {me.displayName}
         </h1>
         {sign && (
-          <details className="mt-3">
-            <summary className="w-fit cursor-pointer list-none rounded-full focus-visible:shadow-toon-focus [&::-webkit-details-marker]:hidden">
-              <ToonBadge tone="sky" className="-rotate-2">
-                {sign.symbol}
-                {'\uFE0E'} {sign.name} · thưởng chòm sao
-              </ToonBadge>
-            </summary>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {sign.buffs.map((id) => (
-                <span
-                  key={id}
-                  className="inline-flex max-w-full items-center gap-1"
-                >
-                  <StickerBadge
-                    size={68}
-                    label={`${profile.softSkillGroup(id).short}: +12% điểm cộng`}
-                  >
-                    +12%
-                  </StickerBadge>
-                  <span className="max-w-28 text-xs font-bold text-toon-ink-soft">
-                    {profile.softSkillGroup(id).short} · điểm cộng
-                  </span>
-                </span>
-              ))}
-            </div>
-          </details>
+          <p className="mt-3 text-sm font-bold text-toon-maroon">
+            {sign.name} · +12%{' '}
+            {sign.buffs
+              .map((id) => profile.softSkillGroup(id).short)
+              .join(', ')}
+          </p>
         )}
       </div>
-      {pinned.length > 0 && (
-        <div className="flex gap-1" aria-label="Thành tựu đã ghim">
+      <div
+        className="min-w-0 rounded-xl border-2 border-toon-ink bg-toon-cream px-3 py-2"
+        aria-label="Huy hiệu ghim"
+      >
+        <p className="mb-2 font-toon text-sm font-bold">
+          Huy hiệu ghim · {pinned.length}/3
+        </p>
+        <div className="flex flex-wrap gap-2">
           {pinned.map((achievement) => (
-            <AchievementSeal
+            <Link
               key={achievement.code}
-              kind={achievement.kind}
-              label={achievement.name}
-              size={52}
-            />
+              to="/profile?tab=thanh-tuu"
+              aria-label={`Huy hiệu ghim: ${achievement.name}`}
+              className="rounded-lg focus-visible:shadow-toon-focus"
+            >
+              <AchievementSeal
+                kind={achievement.kind}
+                label={achievement.name}
+                size={44}
+              />
+            </Link>
           ))}
+          {!pinned.length && (
+            <Link
+              to="/profile?tab=thanh-tuu"
+              className="rounded text-xs underline focus-visible:shadow-toon-focus"
+            >
+              Chọn huy hiệu để ghim
+            </Link>
+          )}
         </div>
-      )}
+      </div>
     </PaperCard>
   );
 }
