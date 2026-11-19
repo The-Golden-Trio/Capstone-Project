@@ -1,10 +1,10 @@
 # Thiết kế gọn theo game design: ERD, class diagram NestJS, API
 
-Bộ thiết kế thứ hai, dựng từ `research/` (cơ chế game, hồ sơ người chơi, seed scenario, luật dẫn truyện, NPC, kinh tế và sức khoẻ). Nó nằm cạnh bộ ERD-00…07, CL-00…07 và `api/openapi.yaml` hiện có, không thay chúng; nhóm chốt dùng bộ nào thì đổi `report.md` theo.
+Bộ thiết kế thứ hai, dựng từ `research/` (cơ chế game, hồ sơ người chơi, seed scenario, luật dẫn truyện, NPC, kinh tế và sức khoẻ). Nó nằm cạnh CL-00…07 và `api/openapi.yaml` hiện có, không thay chúng; nhóm chốt dùng bộ nào thì đổi `report.md` theo.
 
 | Phần | File | Sinh từ |
 |---|---|---|
-| ERD 19 bảng, 1 trang A4 | `plantuml/erd/compact/ERD_JobQuest_Compact.puml` | viết tay |
+| ERD 19 bảng, 1 trang A4 | đã xoá 18/11, thay bằng `plantuml/erd/ERD_JobQuest_Chen.puml` (một sơ đồ Chen đầy đủ) | viết tay |
 | Class diagram NestJS (17 module) | `plantuml/class/compact/CL-00 … CL-07` | `gen_class.py` |
 | Hợp đồng API (85 operation) | `api/compact/openapi.yaml` (OpenAPI 3.1) | `gen_openapi.py` |
 | Swagger UI | `api/compact/swagger.html`: mở thẳng bằng trình duyệt (cần mạng để tải `swagger-ui-dist` từ unpkg) | `gen_openapi.py` |
