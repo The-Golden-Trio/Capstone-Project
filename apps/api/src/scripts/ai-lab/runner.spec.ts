@@ -144,6 +144,40 @@ describe('runPlaythrough: vòng giải yêu cầu AI', () => {
     expect(seen[0].castNames).toEqual(['anh An', 'chị Linh']);
   });
 
+  it('trừ cả các lượt đã gọi trong cùng một bước, không chỉ các bước trước', async () => {
+    const COST = 0.01;
+    const BUDGET = 1;
+    const seen: number[] = [];
+    const inner = fakePorts();
+    const paid = {
+      narrator: {
+        async narrate(req, opts) {
+          seen.push(opts?.budgetUsd ?? NaN);
+          const out = await inner.narrator.narrate(req, opts);
+          return out.status === 'ok'
+            ? { ...out, provenance: { ...out.provenance, costUsd: COST } }
+            : out;
+        },
+      } satisfies ShiftNarrator,
+      checker: {
+        async check(req, opts) {
+          seen.push(opts?.budgetUsd ?? NaN);
+          const out = await inner.checker.check(req, opts);
+          return out.status === 'ok'
+            ? { ...out, provenance: { ...out.provenance, costUsd: COST } }
+            : out;
+        },
+      } satisfies ShiftChecker,
+    };
+    const result = await run(shipped('lam-tot'), fakePorts(paid), BUDGET);
+
+    // Có bước gọi AI nhiều lần liền, nếu không thì test này không chứng minh gì.
+    expect(result.steps.some((s) => s.calls.length > 1)).toBe(true);
+    expect(seen).toHaveLength(result.calls.length);
+    seen.forEach((budget, i) => expect(budget).toBeCloseTo(BUDGET - COST * i));
+    expect(result.costUsd).toBeCloseTo(COST * result.calls.length);
+  });
+
   it('hết model dùng được thì dừng ở đó như RUN_PAUSED, giữ tiến độ', async () => {
     const narrator: ShiftNarrator = {
       narrate: async (): Promise<AiOutcome<shift.Beat[]>> => ({

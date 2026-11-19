@@ -52,6 +52,7 @@ import {
   buildChecklistMessages,
   checklistJsonSchema,
 } from './checklist.prompt';
+import { CallBudget } from './call-budget';
 import { checkChecklistOutput } from './checklist.output';
 import { combineChecklist } from './checklist.combine';
 import { deidentifySegments } from './checklist.segments';
@@ -151,6 +152,9 @@ const chunk = <T>(items: readonly T[], size: number): T[][] => {
   return out;
 };
 
+const inputChars = (messages: readonly ChatMessage[]): number =>
+  messages.flatMap((m) => m.parts).reduce((n, p) => n + p.text.length, 0);
+
 /** Lỗi do cấu hình hay do chính request: thử lại cùng model là vô ích. */
 const GIVE_UP_ON_MODEL: ReadonlySet<GatewayErrorKind> = new Set([
   'auth',
@@ -196,13 +200,9 @@ export class JudgePanelService {
         return (
           sum +
           batches.reduce((s, batch) => {
-            const chars = buildJudgeMessages({
-              ...input,
-              answer,
-              criteria: batch,
-            })
-              .flatMap((m) => m.parts)
-              .reduce((n, p) => n + p.text.length, 0);
+            const chars = inputChars(
+              buildJudgeMessages({ ...input, answer, criteria: batch }),
+            );
             return (
               s +
               upperBoundUsd(chars, JUDGE_PROFILE.maxOutputTokens, spec.price)
@@ -220,9 +220,10 @@ export class JudgePanelService {
         };
     }
 
+    const budget = new CallBudget(input.budgetUsd);
     const slots = await Promise.all(
       this.slots.map((slot) =>
-        this.runSlot(slot, batches, { ...input, answer }, records),
+        this.runSlot(slot, batches, { ...input, answer }, records, budget),
       ),
     );
     const verdict = combineJudgments(
@@ -295,9 +296,7 @@ export class JudgePanelService {
 
     if (input.budgetUsd !== undefined) {
       // Chặn trước khi tiêu: mỗi ghế, một lượt gọi, bậc chính, không trúng cache.
-      const chars = buildChecklistMessages(turn)
-        .flatMap((m) => m.parts)
-        .reduce((n, p) => n + p.text.length, 0);
+      const chars = inputChars(buildChecklistMessages(turn));
       const worst = this.slots.reduce(
         (sum, { chain }) =>
           sum +
@@ -318,9 +317,10 @@ export class JudgePanelService {
         };
     }
 
+    const budget = new CallBudget(input.budgetUsd);
     const slots = await Promise.all(
       this.slots.map((slot) =>
-        this.runChecklistSlot(slot, turn, pairs, input, records),
+        this.runChecklistSlot(slot, turn, pairs, input, records, budget),
       ),
     );
     const verdict = combineChecklist({
@@ -345,6 +345,7 @@ export class JudgePanelService {
     pairs: ReadonlyArray<{ sub: string; segment: string }>,
     input: ChecklistGradeInput,
     records: ChecklistCallRecord[],
+    budget: CallBudget,
   ): Promise<ChecklistSlotOutcome> {
     const baseMessages = buildChecklistMessages(turn);
     const schema = checklistJsonSchema(turn.segments);
@@ -353,7 +354,6 @@ export class JudgePanelService {
     let lastModel: string | null = null;
 
     for (const spec of chain) {
-      lastModel = spec.key;
       let messages: ChatMessage[] = baseMessages;
       let accepted: shift.CheckedOutput | null = null;
 
@@ -362,6 +362,25 @@ export class JudgePanelService {
         retry <= JUDGE_PROFILE.maxRetries && !accepted;
         retry++
       ) {
+        const upper = upperBoundUsd(
+          inputChars(messages),
+          CHECKLIST_PROFILE.maxOutputTokens,
+          spec.price,
+        );
+        if (!budget.reserve(upper)) {
+          lastError = outOfBudget(spec.key, lastError);
+          this.logger.warn(`Ghế ${slot}: ${lastError}`);
+          return {
+            slot,
+            family,
+            status: 'failed',
+            modelKey: lastModel,
+            attempts,
+            checked: null,
+            error: lastError,
+          };
+        }
+        lastModel = spec.key;
         attempts++;
         const temperature =
           spec.supports.temperature === false
@@ -406,6 +425,7 @@ export class JudgePanelService {
             err instanceof GatewayError
               ? err
               : new GatewayError('network', String(err), spec.provider);
+          budget.settle(upper, 0);
           record.error = {
             kind: error.kind,
             status: error.status,
@@ -435,6 +455,7 @@ export class JudgePanelService {
         record.finishReason = result.finishReason;
         record.usage = result.usage;
         record.cost = costOf(result.usage, spec.price);
+        budget.settle(upper, record.cost.usd);
         record.requestId = result.requestId;
         record.output = result.text;
 
@@ -489,13 +510,13 @@ export class JudgePanelService {
     batches: readonly RubricCriterion[][],
     turn: GradeInput & { answer: string },
     records: JudgeCallRecord[],
+    budget: CallBudget,
   ): Promise<SlotOutcome> {
     let attempts = 0;
     let lastError: string | null = null;
     let lastModel: string | null = null;
 
     for (const spec of chain) {
-      lastModel = spec.key;
       const judgments: Judgment[] = [];
       let modelFailed = false;
 
@@ -509,6 +530,25 @@ export class JudgePanelService {
           retry <= JUDGE_PROFILE.maxRetries && !accepted;
           retry++
         ) {
+          const upper = upperBoundUsd(
+            inputChars(messages),
+            JUDGE_PROFILE.maxOutputTokens,
+            spec.price,
+          );
+          if (!budget.reserve(upper)) {
+            lastError = outOfBudget(spec.key, lastError);
+            this.logger.warn(`Ghế ${slot}: ${lastError}`);
+            return {
+              slot,
+              family,
+              status: 'failed',
+              modelKey: lastModel,
+              attempts,
+              judgments: [],
+              error: lastError,
+            };
+          }
+          lastModel = spec.key;
           attempts++;
           const temperature =
             spec.supports.temperature === false
@@ -552,6 +592,7 @@ export class JudgePanelService {
               err instanceof GatewayError
                 ? err
                 : new GatewayError('network', String(err), spec.provider);
+            budget.settle(upper, 0);
             record.error = {
               kind: error.kind,
               status: error.status,
@@ -581,6 +622,7 @@ export class JudgePanelService {
           record.finishReason = result.finishReason;
           record.usage = result.usage;
           record.cost = costOf(result.usage, spec.price);
+          budget.settle(upper, record.cost.usd);
           record.requestId = result.requestId;
           record.output = result.text;
 
@@ -636,6 +678,9 @@ export class JudgePanelService {
     };
   }
 }
+
+const outOfBudget = (modelKey: string, previous: string | null): string =>
+  `${modelKey}: hết ngân sách trước lượt gọi tiếp${previous ? ` (lỗi trước đó: ${previous})` : ''}`;
 
 const zero: Cost = { usd: 0, basis: 'list' };
 

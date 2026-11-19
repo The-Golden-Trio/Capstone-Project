@@ -141,6 +141,9 @@ export interface RunOptions {
   observer?: LabObserver;
 }
 
+const callsCost = (calls: readonly CallLog[]): number =>
+  calls.reduce((sum, c) => sum + (c.provenance?.costUsd ?? 0), 0);
+
 const timeOf = (state: shift.ShiftState, ctx: shift.ShiftContext): string =>
   shift.clockAt(state.points, ctx.seed.clock.start, ctx.pack.minutes_per_point);
 
@@ -181,7 +184,10 @@ async function resolvePending(
 
     const opts: AiCallOptions = {
       identity: options.identity,
-      budgetUsd: Math.max(0, options.budgetUsd - args.spent()),
+      budgetUsd: Math.max(
+        0,
+        options.budgetUsd - args.spent() - callsCost(args.calls),
+      ),
       castNames: ctx.seed.cast.map((c) => c.name),
       ctx,
       contentVersion: options.contentVersion,
@@ -256,8 +262,7 @@ export async function runPlaythrough(
   let message: string | undefined;
   let callIndex = 0;
 
-  const spent = () =>
-    calls.reduce((sum, c) => sum + (c.provenance?.costUsd ?? 0), 0);
+  const spent = () => callsCost(calls);
 
   for (const [index, step] of playthrough.steps.entries()) {
     const time = timeOf(state, ctx);

@@ -2,6 +2,7 @@
  * Panel ba judge với model giả ở tầng Transport: adapter OpenRouter dựng body
  * thật, đọc câu trả lời thật — chỉ khác chỗ trả lời.
  */
+import { upperBoundUsd } from '../gateway/cost';
 import { ModelGateway } from '../gateway/model-gateway';
 import { judgePanel, type JudgeSlot } from '../gateway/models';
 import {
@@ -11,7 +12,8 @@ import {
   type FakeTurn,
 } from '../testing/fake-model';
 import { JudgePanelService, type GradeInput } from './judge-panel.service';
-import { oneJudgeDownPolicy } from './judge.profile';
+import { JUDGE_PROFILE, oneJudgeDownPolicy } from './judge.profile';
+import { buildJudgeMessages } from './judge.prompt';
 import type { RubricCriterion } from './judge.types';
 
 describe('oneJudgeDownPolicy (D-132)', () => {
@@ -351,5 +353,63 @@ describe('JudgePanelService', () => {
       reason: 'budget',
     });
     expect(transport.calls).toHaveLength(0);
+  });
+
+  describe('trần chi phí trước mỗi lượt gọi', () => {
+    const [anthropic] = SLOTS;
+    /** Cận trên của lượt gọi đầu tiên ở bậc chính, y như bước chặn đầu job. */
+    const firstCallUsd = upperBoundUsd(
+      buildJudgeMessages({
+        ...input(),
+        answer: ANSWER,
+        criteria: [criterion('k1')],
+      })
+        .flatMap((m) => m.parts)
+        .reduce((n, p) => n + p.text.length, 0),
+      JUDGE_PROFILE.maxOutputTokens,
+      anthropic.chain[0].price,
+    );
+    /** Câu trích bịa: J1 loại, nên ghế sẽ thử lại. Token nhỏ để chi phí thật thấp. */
+    const fabricated: FakeTurn = {
+      ...reply('1', ['k1'], 'câu này không có'),
+      promptTokens: 10,
+      completionTokens: 10,
+    };
+
+    it('đủ cho lượt đầu nhưng không đủ cho lượt thử lại: không gọi lượt thử lại', async () => {
+      const { transport, service } = setup(() => fabricated, [anthropic]);
+      const r = await service.grade(input({ budgetUsd: firstCallUsd }));
+
+      expect(transport.calls).toHaveLength(1);
+      expect(r.slots[0]).toMatchObject({
+        status: 'failed',
+        attempts: 1,
+        modelKey: 'claude-haiku-5.5@openrouter',
+        error: expect.stringContaining('hết ngân sách'),
+      });
+      expect(r.status).not.toBe('graded');
+    });
+
+    it('đủ cho bậc chính nhưng không đủ cho bậc dự phòng: không chuyển sang bậc dự phòng', async () => {
+      const { transport, service } = setup(
+        byModel({
+          'anthropic/claude-haiku-5.5': { status: 503 },
+          'anthropic/claude-sonnet-5.5': reply('1'),
+        }),
+        [anthropic],
+      );
+      const r = await service.grade(input({ budgetUsd: firstCallUsd }));
+
+      expect(transport.calls.map((c) => c.body['model'])).toEqual(
+        Array(3).fill('anthropic/claude-haiku-5.5'),
+      );
+      expect(r.slots[0]).toMatchObject({ status: 'failed', attempts: 3 });
+    });
+
+    it('ngân sách dư thì vẫn thử lại và chuyển bậc như thường: 3 lượt mỗi bậc', async () => {
+      const { transport, service } = setup(() => fabricated, [anthropic]);
+      await service.grade(input({ budgetUsd: 10 }));
+      expect(transport.calls).toHaveLength(6);
+    });
   });
 });
