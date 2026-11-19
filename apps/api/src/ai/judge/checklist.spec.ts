@@ -5,6 +5,7 @@
  */
 import { shift } from '@datn/game-core';
 import { fixtureShiftContext } from '@datn/game-core/testing';
+import { upperBoundUsd } from '../gateway/cost';
 import { ModelGateway } from '../gateway/model-gateway';
 import { judgePanel, type JudgeSlot } from '../gateway/models';
 import {
@@ -776,5 +777,73 @@ describe('JudgePanelService.gradeChecklist', () => {
     expect(transport.calls).toHaveLength(0);
     expect(r).toMatchObject({ status: 'graded', method: 'none' });
     if (r.status === 'graded') expect(r.subs[0].level).toBe(0);
+  });
+});
+
+describe('JudgePanelService.gradeChecklist: trần chi phí trước mỗi lượt gọi', () => {
+  /** Token giả nhỏ: chi phí thật của lượt đầu thấp hơn nhiều so với cận trên. */
+  const tiny = (turn: FakeTurn): FakeTurn => ({
+    ...turn,
+    promptTokens: 10,
+    completionTokens: 10,
+  });
+  const rejected = tiny(judgeReply(1, { drop: key(PAIRS[0]) }));
+  /** Cận trên của lượt gọi đầu tiên ở bậc chính, y như bước chặn đầu job. */
+  const firstCallUsd = (slot: JudgeSlot) =>
+    upperBoundUsd(
+      buildChecklistMessages({ segments: SEGMENTS, observes: OBSERVES })
+        .flatMap((m) => m.parts)
+        .reduce((n, p) => n + p.text.length, 0),
+      4_000,
+      slot.chain[0].price,
+    );
+  const [anthropic] = SLOTS;
+
+  it('đủ cho lượt đầu nhưng không đủ cho lượt thử lại: không gọi lượt thử lại', async () => {
+    const { transport, service } = setup(() => rejected, [anthropic]);
+    const r = await service.gradeChecklist(
+      input({ budgetUsd: firstCallUsd(anthropic) }),
+    );
+
+    expect(transport.calls).toHaveLength(1);
+    expect(r.records).toHaveLength(1);
+    expect(r.slots[0]).toMatchObject({
+      status: 'failed',
+      attempts: 1,
+      modelKey: 'claude-haiku-5.5@openrouter',
+      error: expect.stringContaining('hết ngân sách'),
+    });
+    expect(r.status).not.toBe('graded');
+  });
+
+  it('đủ cho bậc chính nhưng không đủ cho bậc dự phòng: không chuyển sang bậc dự phòng', async () => {
+    const { transport, service } = setup(
+      byModel({
+        [anthropic.chain[0].model]: { status: 503 },
+        [anthropic.chain[1].model]: judgeReply(1),
+      }),
+      [anthropic],
+    );
+    const r = await service.gradeChecklist(
+      input({ budgetUsd: firstCallUsd(anthropic) }),
+    );
+
+    expect(transport.calls.map((c) => c.body['model'])).toEqual(
+      Array(3).fill(anthropic.chain[0].model),
+    );
+    expect(r.slots[0]).toMatchObject({
+      status: 'failed',
+      attempts: 3,
+      modelKey: 'claude-haiku-5.5@openrouter',
+      error: expect.stringContaining('hết ngân sách'),
+    });
+  });
+
+  it('ngân sách dư thì vẫn thử lại và chuyển bậc như thường: 3 lượt mỗi bậc', async () => {
+    const { transport, service } = setup(() => rejected, [anthropic]);
+    const r = await service.gradeChecklist(input({ budgetUsd: 10 }));
+
+    expect(transport.calls).toHaveLength(6);
+    expect(r.slots[0]).toMatchObject({ status: 'failed', attempts: 6 });
   });
 });
