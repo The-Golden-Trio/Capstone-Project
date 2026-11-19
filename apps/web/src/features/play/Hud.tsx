@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Lightbulb, Sparkles, Target } from 'lucide-react';
+import {
+  ArrowLeft,
+  BookOpen,
+  ChevronDown,
+  Lightbulb,
+  Sparkles,
+  Target,
+} from 'lucide-react';
 import { ToonClock, ToonIconButton, Tooltip } from '@datn/ui';
 import type { SceneView } from '../../api/types';
 
@@ -32,7 +39,7 @@ export function Hud({
 }) {
   return (
     <header className="relative z-30 border-b-[3px] border-toon-ink bg-toon-paper">
-      <div className="mx-auto flex min-h-16 max-w-[1600px] sm:min-h-[72px] items-center gap-3 px-3 py-2 sm:px-5">
+      <div className="mx-auto flex min-h-16 max-w-[1600px] sm:min-h-[72px] items-center gap-2 px-3 py-2 sm:gap-3 sm:px-5">
         <Tooltip content="Thoát. Tiến độ được lưu, quay lại chơi tiếp lúc nào cũng được.">
           <Link
             to={backTo}
@@ -43,7 +50,7 @@ export function Hud({
           </Link>
         </Tooltip>
         <div className="min-w-0 flex-1">
-          <h1 className="truncate font-toon text-lg font-extrabold leading-tight text-toon-ink sm:text-xl">
+          <h1 className="max-sm:line-clamp-2 break-words font-toon text-sm font-extrabold leading-tight text-toon-ink sm:truncate sm:text-xl">
             {title}
           </h1>
           <p className="mt-0.5 hidden min-w-0 items-center gap-1.5 sm:flex">
@@ -98,17 +105,26 @@ export function Hud({
           </span>
         </div>
       </div>
-      {/* Điện thoại: mục tiêu và nhãn AI xuống dòng riêng để không bị cắt mất. */}
-      <p className="flex min-w-0 items-center gap-1.5 px-3 pb-2 sm:hidden">
-        <span className="inline-flex min-w-0 items-center gap-1.5 rounded-full border-2 border-toon-ink bg-[#ffe4a3] px-2.5 py-0.5 text-xs font-bold text-toon-ink">
-          <Target
-            size={13}
-            strokeWidth={2.6}
-            aria-hidden
-            className="shrink-0"
-          />
-          <span className="truncate">{goal}</span>
-        </span>
+      {/* Keep the full objective reachable after the intro is dismissed. */}
+      <div className="flex min-w-0 items-start gap-1.5 px-3 pb-2 sm:hidden">
+        <details className="min-w-0 flex-1">
+          <summary
+            aria-label="Mục tiêu ca làm"
+            className="flex cursor-pointer list-none items-center gap-1.5 rounded-xl border-2 border-toon-ink bg-[#ffe4a3] px-2.5 py-0.5 text-xs font-bold text-toon-ink focus-visible:shadow-toon-focus [&::-webkit-details-marker]:hidden"
+          >
+            <Target
+              size={13}
+              strokeWidth={2.6}
+              aria-hidden
+              className="shrink-0"
+            />
+            <span className="min-w-0 flex-1 truncate">{goal}</span>
+            <ChevronDown size={13} aria-hidden className="shrink-0" />
+          </summary>
+          <p className="mt-2 rounded-xl border-2 border-toon-ink bg-toon-cream px-3 py-2 text-sm font-semibold leading-relaxed text-toon-ink">
+            {goal}
+          </p>
+        </details>
         <span
           title={aiLabel}
           className="inline-flex shrink-0 items-center gap-1 rounded-full border-2 border-toon-ink bg-toon-lilac px-2 py-0.5 text-[11px] font-extrabold text-toon-ink"
@@ -119,7 +135,7 @@ export function Hud({
           </span>
           <span className="sr-only">{aiLabel}</span>
         </span>
-      </p>
+      </div>
     </header>
   );
 }

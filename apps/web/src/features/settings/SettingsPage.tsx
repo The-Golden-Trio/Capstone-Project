@@ -12,6 +12,7 @@ import {
 } from '@datn/ui';
 import {
   Notice,
+  Foldout,
   EmptyMessage,
   FormHeading,
   PaperCard,
@@ -151,8 +152,7 @@ function SettingsForm({ me }: { me: Me }) {
           </ToonButton>
         </form>
       </PaperCard>
-      <PaperCard>
-        <CardHeading title="Bảo mật" />
+      <Foldout title="Bảo mật">
         <p className="mb-5 text-sm text-toon-ink-soft">
           Google{' '}
           <ToonBadge tone={me.hasGoogle ? 'mint' : 'paper'}>
@@ -209,12 +209,11 @@ function SettingsForm({ me }: { me: Me }) {
             Đổi mật khẩu
           </ToonButton>
         </form>
-      </PaperCard>
-      <PaperCard>
-        <CardHeading
-          title="Quyền riêng tư"
-          description="Hành trang chỉ dành cho bạn xem."
-        />
+      </Foldout>
+      <Foldout title="Quyền riêng tư">
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Hành trang chỉ dành cho bạn xem.
+        </p>
         <ul className="mb-4 space-y-3 text-sm text-toon-ink-soft">
           <li>
             Thông tin tài khoản để đăng nhập; ngày sinh để xác định chòm sao và
@@ -237,12 +236,11 @@ function SettingsForm({ me }: { me: Me }) {
         <Notice tone="ai" className="mt-5">
           <ReadMore text="AI dẫn chuyện và chấm câu trả lời trong ca làm. Chữ tự do và mục tiêu có thể được gửi tới nhà cung cấp model để tạo nhận xét. Kết quả chỉ là thông tin tham khảo từ việc chơi." />
         </Notice>
-      </PaperCard>
-      <PaperCard>
-        <CardHeading
-          title="Vùng nguy hiểm"
-          description="Xoá tài khoản là thao tác không thể hoàn tác."
-        />
+      </Foldout>
+      <Foldout title="Vùng nguy hiểm">
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Xoá tài khoản là thao tác không thể hoàn tác.
+        </p>
         <ToonButton
           variant="danger"
           onClick={() => {
@@ -253,12 +251,11 @@ function SettingsForm({ me }: { me: Me }) {
         >
           Xoá tài khoản
         </ToonButton>
-      </PaperCard>
-      <PaperCard>
-        <CardHeading
-          title="Đăng xuất"
-          description="Bạn có thể quay lại để tiếp tục hành trình."
-        />
+      </Foldout>
+      <Foldout title="Đăng xuất">
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Bạn có thể quay lại để tiếp tục hành trình.
+        </p>
         {signOut.isError && (
           <Notice tone="danger">{errorText(signOut.error)}</Notice>
         )}
@@ -271,7 +268,7 @@ function SettingsForm({ me }: { me: Me }) {
         >
           Đăng xuất
         </ToonButton>
-      </PaperCard>
+      </Foldout>
       <ConfirmDialog
         theme="toon"
         open={deleting}

@@ -96,6 +96,22 @@ export async function buildRecord(p: Player): Promise<PlayerRecord> {
       if (tap === 3) favourites.push({ text: prompt.recap, likes: tap });
     }
   }
+  const extra = p.showcase;
+  if (extra) {
+    for (const [axis, list] of Object.entries(extra.taps))
+      taps[axis as RiasecAxis].push(...(list ?? []));
+    for (const k of extra.keywords)
+      if (!keywords.has(k.id)) keywords.set(k.id, k);
+    for (const [region, m] of Object.entries(extra.minutesByRegion)) {
+      minutesByRegion[region as keyof typeof minutesByRegion] =
+        (minutesByRegion[region as keyof typeof minutesByRegion] ?? 0) +
+        (m ?? 0);
+      minutes += m ?? 0;
+    }
+    for (const code of Object.keys(extra.occupations)) tried.add(code);
+    for (const g of extra.groups) groups.add(g);
+    favourites.push(...extra.favourites);
+  }
   const counts = {
     kham_pha: tried.size,
     thanh_thao: p.skills.filter(
@@ -107,6 +123,12 @@ export async function buildRecord(p: Player): Promise<PlayerRecord> {
     ).length,
     kien_tri: new Set(ended.map((r) => r.at.slice(0, 10))).size,
   };
+  if (extra)
+    for (const [kind, n] of Object.entries(extra.counts))
+      counts[kind as keyof typeof counts] = Math.max(
+        counts[kind as keyof typeof counts],
+        n ?? 0,
+      );
   return {
     softSkills: p.skills,
     riasec: {
@@ -123,13 +145,16 @@ export async function buildRecord(p: Player): Promise<PlayerRecord> {
     playing,
     keywords: [...keywords.values()],
     stats: {
-      scenarios: ended.length,
+      scenarios: Math.max(ended.length, extra?.scenarios ?? 0),
       minutes,
       occupationsTried: tried.size,
       occupationsTotal: baseCatalogue.occupations.length,
       groupsVisited: groups.size,
       minutesByRegion,
-      favouriteTasks: favourites.slice(0, 5),
+      // Cùng một việc thích ở nhiều ca chỉ hiện một lần.
+      favouriteTasks: [
+        ...new Map(favourites.map((f) => [f.text, f])).values(),
+      ].slice(0, 5),
     },
     achievements: achievementCatalogue.map(({ threshold, ...a }) => ({
       ...a,

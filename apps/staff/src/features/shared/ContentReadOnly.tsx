@@ -10,7 +10,7 @@ function Row({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="mb-2">
       <dt className="text-[12px] font-medium text-ink-faint">{label}</dt>
-      <dd className="whitespace-pre-wrap">{children}</dd>
+      <dd className="min-w-0 whitespace-pre-wrap break-words">{children}</dd>
     </div>
   );
 }
@@ -26,7 +26,7 @@ export function ContentReadOnly({
   renderActivityExtra?: (activityKey: string) => ReactNode;
 }) {
   return (
-    <div className="staff-paper space-y-4 rounded-lg">
+    <div className="staff-paper min-w-0 space-y-4 rounded-lg">
       <section className="paper rounded-lg p-5">
         <dl>
           <Row label="Mở đầu">{content.intro}</Row>

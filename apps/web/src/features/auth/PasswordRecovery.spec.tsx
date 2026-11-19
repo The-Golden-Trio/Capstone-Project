@@ -60,3 +60,25 @@ it('giữ kiểm tra mã, độ dài và mật khẩu khớp trước khi gửi;
     screen.getByRole('link', { name: 'Đăng nhập' }).getAttribute('href'),
   ).toBe('/sign-in');
 });
+
+it('email sai dạng không gửi yêu cầu và đưa focus về ô email', async () => {
+  const send = vi.spyOn(api.auth, 'requestPasswordReset');
+  renderWithProviders(<ForgotPasswordPage />);
+  const email = screen.getByRole('textbox', { name: /^Email$/ });
+  fireEvent.change(email, { target: { value: 'sai-email' } });
+  fireEvent.click(screen.getByRole('button', { name: /^Gửi đường dẫn$/ }));
+  expect(screen.getByRole('alert').textContent).toContain(
+    'Email chưa đúng dạng.',
+  );
+  expect(document.activeElement).toBe(email);
+  expect(send).not.toHaveBeenCalled();
+});
+
+it('thiếu mã đặt lại mật khẩu có đường xin mã mới', () => {
+  renderWithProviders(<ResetPasswordPage />, '/reset-password');
+  expect(
+    screen
+      .getByRole('link', { name: /^Xin đường dẫn mới$/ })
+      .getAttribute('href'),
+  ).toBe('/forgot-password');
+});

@@ -42,7 +42,7 @@ export function ContextForm({
           label={`Loại tình huống (mở ở cấp ${options.band})`}
           value={archetype}
           onChange={(e) => setArchetype(e.target.value)}
-          disabled={disabled}
+          disabled={disabled || busy}
           options={options.archetypes.map((a) => ({
             value: a,
             label: ARCHETYPE_LABEL[a] ?? a,
@@ -52,7 +52,7 @@ export function ContextForm({
           label="Loại công ty"
           value={companyType}
           onChange={(e) => setCompanyType(e.target.value)}
-          disabled={disabled}
+          disabled={disabled || busy}
           options={options.companyTypes.map((c) => ({
             value: c,
             label: COMPANY_LABEL[c] ?? c,
@@ -65,12 +65,12 @@ export function ContextForm({
         rows={6}
         maxLength={4000}
         value={context}
-        disabled={disabled}
+        disabled={disabled || busy}
         onChange={(e) => setContext(e.target.value)}
       />
-      <fieldset className="mb-3" disabled={disabled}>
+      <fieldset className="mb-3" disabled={disabled || busy}>
         <legend className="mb-1 text-[13px] font-medium text-ink-muted">
-          Năng lực scenario nhắm tới (chọn 3–5)
+          Năng lực scenario nhắm tới (chọn ít nhất 1)
         </legend>
         <div className="grid gap-x-6 gap-y-1 md:grid-cols-2">
           <div>
@@ -102,7 +102,13 @@ export function ContextForm({
       <Button
         variant="primary"
         loading={busy}
-        disabled={disabled || !context.trim() || skills.length === 0}
+        disabled={
+          disabled ||
+          !context.trim() ||
+          !archetype ||
+          !companyType ||
+          skills.length === 0
+        }
         onClick={() =>
           onGenerate({ archetype, companyType, context, competencyIds: skills })
         }

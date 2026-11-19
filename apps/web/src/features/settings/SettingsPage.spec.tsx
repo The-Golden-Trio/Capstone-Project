@@ -20,7 +20,12 @@ it('chỉ xoá tài khoản sau khi gõ chính xác XOÁ, rồi xoá phiên và 
     </Routes>,
     '/settings',
   );
-  fireEvent.click(await screen.findByRole('button', { name: 'Xoá tài khoản' }));
+  const danger = await screen.findByText('Vùng nguy hiểm', {
+    selector: 'summary',
+  });
+  expect(danger.closest('details')?.open).toBe(false);
+  fireEvent.click(danger);
+  fireEvent.click(screen.getByRole('button', { name: 'Xoá tài khoản' }));
   const dialog = within(
     await screen.findByRole('dialog', { name: 'Xoá tài khoản?' }),
   );

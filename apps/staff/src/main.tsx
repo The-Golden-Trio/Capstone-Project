@@ -13,7 +13,13 @@ function App() {
   return <RouterProvider router={router} />;
 }
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const container = document.getElementById('root');
+if (!container) throw new Error('Staff root container is missing.');
+// Vite may evaluate this entry again during HMR; keep one root per document.
+const previousRoot: ReactDOM.Root | undefined = import.meta.hot?.data.staffRoot;
+const root = previousRoot ?? ReactDOM.createRoot(container);
+if (import.meta.hot) import.meta.hot.data.staffRoot = root;
+root.render(
   <StrictMode>
     <App />
   </StrictMode>,

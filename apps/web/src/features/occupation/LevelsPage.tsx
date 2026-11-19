@@ -4,7 +4,7 @@
  * đang chọn, chỉ giữ việc chính, điều kiện vào cấp và một nút; kỹ năng nghề
  * gập lại để người chơi không bị một mớ chữ đập vào mắt.
  */
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   Link,
   useNavigate,
@@ -61,6 +61,7 @@ export default function LevelsPage() {
   const enrol = useEnrol();
   const navigate = useNavigate();
   const [actionLevel, setActionLevel] = useState<number | null>(null);
+  const details = useRef<HTMLElement>(null);
   if (occupation.isError)
     return (
       <div className="theme-toon-night min-h-[60vh] p-6">
@@ -193,8 +194,15 @@ export default function LevelsPage() {
                           enrol.reset();
                           setParams(
                             { level: String(l.levelNo) },
-                            { replace: true },
+                            { replace: true, preventScrollReset: true },
                           );
+                          requestAnimationFrame(() => {
+                            details.current?.focus({ preventScroll: true });
+                            details.current?.scrollIntoView({
+                              block: 'start',
+                              behavior: 'instant',
+                            });
+                          });
                         }}
                         className={cn(
                           'group flex w-40 max-w-[46%] flex-col items-center rounded-2xl p-2 text-center transition-transform focus-visible:outline-none focus-visible:shadow-toon-focus sm:w-48',
@@ -241,9 +249,11 @@ export default function LevelsPage() {
             </section>
 
             <article
+              ref={details}
+              tabIndex={-1}
               id="level-details"
               aria-label={`Chi tiết cấp ${selected.levelNo}`}
-              className="toon-card relative min-w-0 p-5 pt-7 text-toon-ink shadow-toon-lg sm:p-7 sm:pt-8 lg:sticky lg:top-24"
+              className="toon-card relative min-w-0 scroll-mt-28 p-5 pt-7 text-toon-ink shadow-toon-lg focus:outline-none sm:p-7 sm:pt-8 lg:sticky lg:top-24"
             >
               <span className="absolute -top-4 left-5 inline-flex -rotate-2 items-center gap-1.5 rounded-xl border-[3px] border-toon-ink bg-toon-star px-3 py-0.5 font-toon text-sm font-extrabold shadow-toon-sm">
                 Cấp {selected.levelNo} ·{' '}

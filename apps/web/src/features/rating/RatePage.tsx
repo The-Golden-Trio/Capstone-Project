@@ -111,7 +111,18 @@ function RatingEditor({
   const submit = (event: FormEvent) => {
     event.preventDefault();
     setTouched(true);
-    if (!complete || comment.length > 2000 || rate.isPending) return;
+    if (rate.isPending) return;
+    if (!complete) {
+      const missing = data.criteria.find((c) => !scores[c.code]);
+      if (missing)
+        event.currentTarget
+          .querySelector<HTMLInputElement>(
+            `input[name="rating-${missing.code}"]`,
+          )
+          ?.focus();
+      return;
+    }
+    if (comment.length > 2000) return;
     rate.mutate(
       {
         scores: Object.fromEntries(

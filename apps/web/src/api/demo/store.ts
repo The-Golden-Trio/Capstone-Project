@@ -1,5 +1,6 @@
 import { profile, type shift } from '@datn/game-core';
 import { ApiError } from '../port';
+import type { Showcase } from './showcase';
 import type {
   AppFeedbackInput,
   Company,
@@ -48,6 +49,8 @@ export interface Player {
   feedback: AppFeedbackInput[];
   refreshToken: string | null;
   resetToken: string | null;
+  /** Lớp phủ dữ liệu mẫu của người chơi demo (xem showcase.ts). */
+  showcase?: Showcase;
 }
 interface Database {
   players: Player[];
@@ -111,10 +114,17 @@ export const newSkills = (): SoftSkillState[] =>
     scenarios: 0,
     history: [],
   }));
+/** Việc chạy trước mỗi dịch vụ demo (nạp dữ liệu mẫu, xem showcase.ts). */
+let beforeService: (() => Promise<void>) | null = null;
+export const onBeforeService = (fn: () => Promise<void>) => {
+  beforeService = fn;
+};
+
 export const service =
   <T extends unknown[], R>(fn: (...args: T) => R | Promise<R>) =>
   async (...args: T): Promise<R> => {
     await wait();
+    if (beforeService) await beforeService();
     return clone(await fn(...args));
   };
 

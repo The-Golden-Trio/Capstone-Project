@@ -39,7 +39,10 @@ export function ReferenceAnswers({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<unknown>();
   const activity = content.activities.find((a) => a.key === activityKey);
-  const rubric = (activity?.rubric ?? []).filter((r) => r.id);
+  const rubric = (activity?.rubric ?? []).filter(
+    (r): r is typeof r & { id: string } =>
+      typeof r.id === 'string' && r.id.length > 0,
+  );
   const nameOf = (id: string) =>
     skills.find((s) => s.competencyId === id)?.name ?? id;
 
@@ -52,8 +55,8 @@ export function ReferenceAnswers({
         answerText: text,
         stratum,
         scores: rubric.map((r) => ({
-          criterionId: r.id as string,
-          score: scores[r.id as string] ?? null,
+          criterionId: r.id,
+          score: scores[r.id] ?? null,
         })),
       });
       setText('');
@@ -140,19 +143,23 @@ export function ReferenceAnswers({
               key={r.id}
               label={`Điểm: ${nameOf(r.competencyId)}`}
               value={
-                scores[r.id as string] === undefined
+                scores[r.id] === undefined
                   ? ''
-                  : String(scores[r.id as string])
+                  : scores[r.id] === null
+                    ? 'na'
+                    : String(scores[r.id])
               }
-              onChange={(e) =>
-                setScores((s) => ({
-                  ...s,
-                  [r.id as string]:
-                    e.target.value === 'na'
-                      ? null
-                      : (Number(e.target.value) as Score),
-                }))
-              }
+              onChange={(e) => {
+                const value = e.target.value;
+                setScores((previous) => {
+                  const next = { ...previous };
+                  if (value === '') delete next[r.id];
+                  else
+                    next[r.id] =
+                      value === 'na' ? null : (Number(value) as Score);
+                  return next;
+                });
+              }}
               placeholder="— Chọn —"
               options={[
                 { value: '2', label: '2' },
@@ -166,9 +173,7 @@ export function ReferenceAnswers({
             variant="primary"
             loading={busy}
             disabled={
-              dirty ||
-              !text.trim() ||
-              rubric.some((r) => !((r.id as string) in scores))
+              dirty || !text.trim() || rubric.some((r) => !(r.id in scores))
             }
             onClick={add}
           >

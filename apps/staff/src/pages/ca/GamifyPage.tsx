@@ -30,6 +30,10 @@ import { formatDateTime, TASK_TYPE_LABEL } from '../../lib/labels';
  */
 export function GamifyPage() {
   const { scenarioId = '' } = useParams();
+  return <GamifyScenario key={scenarioId} scenarioId={scenarioId} />;
+}
+
+function GamifyScenario({ scenarioId }: { scenarioId: string }) {
   const detail = useLoad(() => staffApi.getScenario(scenarioId), [scenarioId]);
   const saved = useLoad(
     () => staffApi.getPresentation(scenarioId),
@@ -38,6 +42,7 @@ export function GamifyPage() {
   const assets = useLoad(() => staffApi.listAssets(), []);
   const [p, setP] = useState<Presentation | null>(null);
   const [dirty, setDirty] = useState(false);
+  const [notice, setNotice] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<unknown>();
   const [build, setBuild] = useState<Build | null>(null);
@@ -77,6 +82,7 @@ export function GamifyPage() {
   const save = async () => {
     if (!p) return;
     setBusy('save');
+    setNotice('');
     setError(undefined);
     try {
       await staffApi.savePresentation(scenarioId, {
@@ -84,6 +90,7 @@ export function GamifyPage() {
         npcs: p.npcs.filter((n) => n.avatarAssetId),
       });
       setDirty(false);
+      setNotice('Đã lưu trình bày.');
     } catch (e) {
       setError(e);
     } finally {
@@ -119,7 +126,7 @@ export function GamifyPage() {
       <PageHeader
         title={`Trình bày: ${d.taskTitle}`}
         description={
-          <span className="flex items-center gap-2">
+          <span className="flex flex-wrap items-center gap-2">
             <StatusBadge status={d.status} /> L{d.levelNo} · tác giả{' '}
             {d.authorName ?? '—'}
           </span>
@@ -141,7 +148,10 @@ export function GamifyPage() {
             : 'Chỉ thiết kế trình bày khi scenario đã được duyệt.'}
         </Notice>
       )}
-      <ProblemAlert error={error ?? assets.error ?? saved.error} />
+      <ProblemAlert
+        error={error ?? detail.error ?? assets.error ?? saved.error}
+      />
+      {notice && <Notice tone="success">{notice}</Notice>}
       {build && (
         <Notice tone="success">
           Đã dựng bản nháp lúc {formatDateTime(build.builtAt)} · hash{' '}
@@ -149,7 +159,7 @@ export function GamifyPage() {
           Tác giả đã được báo để chơi thử.
         </Notice>
       )}
-      <div className="grid gap-4 lg:grid-cols-[1fr_360px]">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_360px]">
         <div>
           {content && p ? (
             <ContentReadOnly

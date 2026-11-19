@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Badge,
   Breadcrumbs,
   Button,
   IconButton,
@@ -8,7 +9,8 @@ import {
   Sheet,
   LoadingBlock as Loading,
 } from '@datn/ui';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { STAFF_DEMO } from '../api/demo-server';
 import {
   Link,
   NavLink,
@@ -34,7 +36,13 @@ export function RequireStaff() {
   const location = useLocation();
   if (status === 'loading') return <Loading />;
   if (status === 'anon')
-    return <Navigate to="/login" replace state={{ from: location.pathname }} />;
+    return (
+      <Navigate
+        to="/login"
+        replace
+        state={{ from: location.pathname + location.search + location.hash }}
+      />
+    );
   if (portalsOf(me).length === 0)
     return (
       <main className="mx-auto max-w-lg p-8">
@@ -57,6 +65,14 @@ export function StaffShell() {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
   const [drawer, setDrawer] = useState(false);
+  const main = useRef<HTMLElement>(null);
+  const previousPath = useRef(location.pathname);
+  useEffect(() => {
+    if (previousPath.current === location.pathname) return;
+    previousPath.current = location.pathname;
+    main.current?.focus({ preventScroll: true });
+    window.scrollTo({ top: 0 });
+  }, [location.pathname]);
   const portals = portalsOf(me);
   const current: Portal = location.pathname.startsWith('/de') ? 'de' : 'ca';
   const portal = portals.includes(current) ? current : portals[0];
@@ -104,6 +120,15 @@ export function StaffShell() {
           key={n.to}
           to={n.to}
           end
+          aria-current={
+            (
+              n.to.includes('#')
+                ? location.pathname + location.hash === n.to
+                : location.pathname === n.to && !location.hash
+            )
+              ? 'page'
+              : false
+          }
           onClick={() => setDrawer(false)}
           title={compact ? n.label : undefined}
           className={({ isActive }) =>
@@ -156,6 +181,11 @@ export function StaffShell() {
     <div className="min-h-dvh">
       <a
         href="#main"
+        onClick={(event) => {
+          event.preventDefault();
+          main.current?.focus();
+          main.current?.scrollIntoView({ block: 'start' });
+        }}
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-2 focus:z-50 focus:bg-night-800 focus:p-3"
       >
         Bỏ qua tới nội dung
@@ -206,21 +236,37 @@ export function StaffShell() {
             onClick={() => setDrawer(true)}
           />
           <div className="min-w-0 flex-1">
-            <Breadcrumbs
-              items={[
-                { label: PORTAL_LABEL[portal], href: `/${portal}` },
-                { label: breadcrumbLabel(location.pathname, location.hash) },
-              ]}
-              renderLink={(href, children) => <Link to={href}>{children}</Link>}
-            />
+            <p
+              className="truncate text-xs text-ink sm:hidden"
+              title={breadcrumbLabel(location.pathname, location.hash)}
+            >
+              {breadcrumbLabel(location.pathname, location.hash)}
+            </p>
+            <div className="hidden sm:block">
+              <Breadcrumbs
+                items={[
+                  { label: PORTAL_LABEL[portal], href: `/${portal}` },
+                  { label: breadcrumbLabel(location.pathname, location.hash) },
+                ]}
+                renderLink={(href, children) => (
+                  <Link to={href}>{children}</Link>
+                )}
+              />
+            </div>
           </div>
+          {STAFF_DEMO && (
+            <span title="Dữ liệu mô phỏng trong trình duyệt; tải lại trang sẽ khôi phục dữ liệu ban đầu.">
+              <Badge tone="info">Dữ liệu mẫu</Badge>
+            </span>
+          )}
           <NotificationBell />
           <Menu
             label="Tài khoản"
             trigger={(props) => (
               <button
                 {...props}
-                className="flex items-center gap-3 rounded-md px-2 py-1.5 hover:bg-night-800"
+                aria-label={`Tài khoản ${me?.displayName ?? 'Staff'}`}
+                className="flex min-h-11 items-center gap-3 rounded-md px-2 py-1.5 hover:bg-night-800"
               >
                 <Avatar name={me?.displayName ?? 'Staff'} size={28} />
                 <span className="hidden max-w-40 truncate text-sm font-semibold sm:block">
@@ -255,6 +301,7 @@ export function StaffShell() {
         </header>
         <main
           id="main"
+          ref={main}
           className="staff-workspace mx-auto max-w-[1440px] scroll-mt-20 px-4 py-6 sm:px-6 lg:px-8"
           tabIndex={-1}
         >

@@ -15,6 +15,7 @@ describe('Tài khoản explorer qua API demo', () => {
     renderWithProviders(<RegisterPage />);
     submit();
     expect(screen.getAllByRole('alert')).toHaveLength(5);
+    expect(document.activeElement).toBe(screen.getByLabelText('Biệt danh'));
     expect(db.players).toHaveLength(0);
     fireEvent.change(screen.getByLabelText('Biệt danh'), {
       target: { value: 'Lan' },
@@ -101,4 +102,17 @@ it('giữ nhãn và giá trị khi hiện/ẩn mật khẩu cartoon', () => {
   expect((input as HTMLInputElement).value).toBe('mat-khau-123');
   fireEvent.click(screen.getByRole('button', { name: 'Ẩn mật khẩu' }));
   expect(input.getAttribute('type')).toBe('password');
+});
+
+it('đăng nhập trống đưa focus về trường đầu tiên còn thiếu', () => {
+  renderWithProviders(<SignInPage />);
+  fireEvent.click(screen.getByRole('button', { name: /^Đăng nhập$/ }));
+  expect(document.activeElement).toBe(
+    screen.getByLabelText('Email hoặc tên đăng nhập'),
+  );
+  fireEvent.change(screen.getByLabelText('Email hoặc tên đăng nhập'), {
+    target: { value: 'lan' },
+  });
+  fireEvent.click(screen.getByRole('button', { name: /^Đăng nhập$/ }));
+  expect(document.activeElement).toBe(screen.getByLabelText('Mật khẩu'));
 });

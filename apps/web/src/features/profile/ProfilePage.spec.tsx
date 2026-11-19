@@ -19,8 +19,11 @@ describe('hành trang riêng tư', () => {
     expect(
       await screen.findByRole('heading', { name: 'Người khám phá' }),
     ).toBeTruthy();
-    expect(screen.getByText(/♊︎ Song Tử/)).toBeTruthy();
+    expect(screen.getByText(/Song Tử · \+12%/)).toBeTruthy();
     expect(screen.queryByText('Ước mơ của bạn là gì?')).toBeNull();
+    fireEvent.click(
+      screen.getByText('Mục tiêu của bạn', { selector: 'summary' }),
+    );
     fireEvent.click(screen.getByRole('button', { name: 'Sửa' }));
     await screen.findByText('Ước mơ của bạn là gì?');
     expect(
@@ -44,6 +47,7 @@ describe('hành trang riêng tư', () => {
       '/profile?tab=nhat-ky',
     );
     const invalidate = vi.spyOn(client, 'invalidateQueries');
+    fireEvent.click(screen.getByText('Quản lý tự kể', { selector: 'summary' }));
     fireEvent.click(screen.getByRole('button', { name: 'Xoá phần kể về bạn' }));
     const dialog = within(
       screen.getByRole('dialog', { name: 'Xoá phần kể về bạn?' }),
@@ -55,11 +59,32 @@ describe('hành trang riêng tư', () => {
     expect(db.players).toHaveLength(1);
   });
 
+  it('reports a record failure and allows retry without losing the requested tab', async () => {
+    const record = await api.progress.record();
+    const request = vi
+      .spyOn(api.progress, 'record')
+      .mockRejectedValueOnce(new Error('Không tải được hồ sơ'))
+      .mockResolvedValue(record);
+    renderWithProviders(<ProfilePage />, '/profile?tab=thanh-tuu');
+    expect(screen.getByText('Đang gom những dấu chân của bạn…')).toBeTruthy();
+    await screen.findByRole('heading', { name: 'Chưa mở được hành trang' });
+    fireEvent.click(screen.getByRole('button', { name: 'Thử lại' }));
+    await screen.findByRole('heading', { name: 'Người khám phá' });
+    expect(request).toHaveBeenCalledTimes(2);
+    expect(
+      screen
+        .getByRole('tab', { name: 'Thành tựu' })
+        .getAttribute('aria-selected'),
+    ).toBe('true');
+  });
+
   it('hiện đủ 221 sao nghề chia vùng và các trạng thái chưa có dữ liệu', async () => {
     renderWithProviders(<ProfilePage />, '/profile?tab=thong-ke');
-    expect(
-      await screen.findByRole('heading', { name: 'Những vì sao đã ghé' }),
-    ).toBeTruthy();
+    const stars = await screen.findByText('Những vì sao đã ghé', {
+      selector: 'summary',
+    });
+    expect(stars.closest('details')?.open).toBe(false);
+    fireEvent.click(stars);
     await waitFor(() =>
       expect(screen.getAllByRole('img', { name: /Cụm sao/ })).toHaveLength(6),
     );
@@ -71,7 +96,7 @@ describe('hành trang riêng tư', () => {
         ),
     ).toHaveLength(221);
     expect(screen.getByText('0/221')).toBeTruthy();
-    expect(screen.getAllByText('chơi thêm để mở').length).toBeGreaterThan(0);
+    expect(screen.getByText(/Vùng còn tối: chơi thêm để mở/)).toBeTruthy();
   });
 
   it('giới hạn ghim ba huy hiệu và gửi đúng danh sách khi bỏ ghim', async () => {
@@ -92,8 +117,21 @@ describe('hành trang riêng tư', () => {
       // Tên dạng chuỗi được so khớp nguyên văn nên không lẫn với "Bỏ ghim".
       screen.getByRole<HTMLButtonElement>('button', { name: 'Ghim' }).disabled,
     ).toBe(true);
+    expect(screen.queryByText('Chưa mở khoá')).toBeNull();
+    fireEvent.click(
+      screen.getByRole('checkbox', { name: 'Xem cả huy hiệu chưa mở' }),
+    );
     expect(screen.getByText('Chưa mở khoá')).toBeTruthy();
-    fireEvent.click(screen.getAllByRole('button', { name: 'Bỏ ghim' })[0]);
+    expect(screen.getByText(/Đã ghim đủ 3 huy hiệu/).getAttribute('role')).toBe(
+      'status',
+    );
+    expect(
+      screen.getByRole('heading', { name: 'Bộ sưu tập dấu mốc · 4/5' }),
+    ).toBeTruthy();
+    expect(screen.getAllByText('GHIM')).toHaveLength(3);
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Bỏ ghim huy hiệu: Dấu mốc 0' }),
+    );
     await waitFor(() => expect(pin).toHaveBeenCalledWith(['a1', 'a2']));
     expect(db.players[0].pinned).toEqual(['a1', 'a2']);
   });

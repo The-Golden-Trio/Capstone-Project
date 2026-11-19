@@ -46,8 +46,15 @@ export default function RegisterPage() {
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
+    if (register.isPending) return;
     setTouched(true);
-    if (Object.keys(errors).length) return;
+    const firstError = Object.keys(errors)[0];
+    if (firstError) {
+      e.currentTarget
+        .querySelector<HTMLInputElement>(`input[name="${firstError}"]`)
+        ?.focus();
+      return;
+    }
     register.mutate(
       {
         displayName: form.displayName.trim(),
@@ -85,6 +92,7 @@ export default function RegisterPage() {
           error={show('displayName')}
         >
           <ToonInput
+            name="displayName"
             autoComplete="nickname"
             leftIcon={<UserRound size={16} />}
             value={form.displayName}
@@ -94,6 +102,7 @@ export default function RegisterPage() {
         </ToonField>
         <ToonField label="Email" error={show('email')}>
           <ToonInput
+            name="email"
             type="email"
             autoComplete="email"
             leftIcon={<Mail size={16} />}
@@ -107,6 +116,7 @@ export default function RegisterPage() {
           error={show('password')}
         >
           <AuthPassword
+            name="password"
             autoComplete="new-password"
             value={form.password}
             onChange={set('password')}
@@ -126,6 +136,7 @@ export default function RegisterPage() {
           error={show('dateOfBirth')}
         >
           <ToonInput
+            name="dateOfBirth"
             type="date"
             max={today}
             min="1900-01-01"
@@ -135,6 +146,7 @@ export default function RegisterPage() {
         </ToonField>
         <div>
           <ToonCheckbox
+            name="agree"
             checked={agree}
             onChange={(e) => setAgree(e.target.checked)}
             label="Mình hiểu màn chơi do AI dẫn dắt và chấm"

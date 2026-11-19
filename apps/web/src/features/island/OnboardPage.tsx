@@ -169,12 +169,14 @@ function Deck({
                 Cấp {data.level.levelNo} · Không chấm điểm
               </p>
             </div>
-            <Pips
-              slides={slides}
-              index={index}
-              disabled={saving}
-              onPick={change}
-            />
+            <div className="flex w-full justify-center sm:w-auto">
+              <Pips
+                slides={slides}
+                index={index}
+                disabled={saving}
+                onPick={change}
+              />
+            </div>
           </div>
         </header>
 
@@ -372,16 +374,20 @@ function Pips({
           disabled={disabled}
           aria-label={`Slide ${i + 1}: ${s.title}`}
           aria-current={i === index ? 'step' : undefined}
-          className={cn(
-            'grid place-items-center rounded-full border-[2.5px] border-toon-ink font-toon text-xs font-extrabold transition-transform focus-visible:outline-none focus-visible:shadow-toon-focus',
-            i === index
-              ? 'size-9 bg-toon-mustard shadow-toon-sm'
-              : i < index
-                ? 'size-7 bg-toon-mint'
-                : 'size-7 bg-toon-paper hover:-translate-y-0.5',
-          )}
+          className="grid size-11 shrink-0 place-items-center rounded-full font-toon text-xs font-extrabold focus-visible:outline-none focus-visible:shadow-toon-focus"
         >
-          {i < index ? <Check size={14} strokeWidth={3.2} /> : i + 1}
+          <span
+            className={cn(
+              'grid place-items-center rounded-full border-[2.5px] border-toon-ink transition-transform motion-reduce:transition-none',
+              i === index
+                ? 'size-9 bg-toon-mustard shadow-toon-sm'
+                : i < index
+                  ? 'size-7 bg-toon-mint'
+                  : 'size-7 bg-toon-paper',
+            )}
+          >
+            {i < index ? <Check size={14} strokeWidth={3.2} /> : i + 1}
+          </span>
         </button>
       ))}
     </div>

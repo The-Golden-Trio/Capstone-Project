@@ -52,6 +52,10 @@ const DECISIONS: Record<
  */
 export function ReviewPage() {
   const { scenarioId = '' } = useParams();
+  return <ReviewScenario key={scenarioId} scenarioId={scenarioId} />;
+}
+
+function ReviewScenario({ scenarioId }: { scenarioId: string }) {
   const view = useLoad(
     () => staffApi.openScenarioForReview(scenarioId),
     [scenarioId],
@@ -129,7 +133,7 @@ export function ReviewPage() {
       <PageHeader
         title={`Duyệt: ${s.taskTitle}`}
         description={
-          <span className="flex items-center gap-2">
+          <span className="flex flex-wrap items-center gap-2">
             <StatusBadge status={s.status} /> L{s.levelNo} · tác giả{' '}
             {s.authorName ?? '—'}
             {s.assignment && (
@@ -140,7 +144,7 @@ export function ReviewPage() {
       />
       {done && <Notice tone="success">{done}</Notice>}
       <ProblemAlert error={error} />
-      <div className="grid gap-4 lg:grid-cols-[1fr_380px]">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_380px]">
         <div>
           {s.content ? (
             <ContentReadOnly content={s.content} skillName={skillName} />
@@ -219,7 +223,7 @@ export function ReviewPage() {
               </p>
             )}
             {canDecide && (
-              <div className="staff-action-bar">
+              <div className="staff-action-bar staff-review-decisions">
                 {(
                   Object.keys(DECISIONS) as Array<
                     ReviewDecisionInput['decision']

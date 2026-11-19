@@ -83,3 +83,57 @@ describe('Ngân hà từ danh mục demo', () => {
     );
   });
 });
+
+it('Enter chọn đúng từ vừa gõ, ẩn kết quả và trả focus khi đóng thông tin nghề', async () => {
+  renderWithProviders(<GalaxyPage />, '/galaxy');
+  const input = await screen.findByRole('textbox', { name: /^Tìm nghề$/ });
+  fireEvent.change(input, { target: { value: 'back' } });
+  fireEvent.keyDown(input, { key: 'Enter' });
+  const panel = await screen.findByRole('complementary', {
+    name: /Thông tin nghề/,
+  });
+  expect(screen.getByLabelText('Đường dẫn').textContent).toContain(
+    'nghe=SWE_BACKEND',
+  );
+  expect(
+    screen.queryByRole('list', { name: /^Nghề khớp với tìm kiếm$/ }),
+  ).toBeNull();
+  expect(document.activeElement).toBe(panel.querySelector('h2'));
+  fireEvent.click(screen.getByRole('button', { name: /^Đóng$/ }));
+  expect(document.activeElement).toBe(input);
+});
+
+it('nghề đang khám phá mở đúng lộ trình từ thẻ trên bản đồ', async () => {
+  const catalogue = await api.catalogue.catalogue();
+  vi.spyOn(api.catalogue, 'catalogue').mockResolvedValue({
+    ...catalogue,
+    occupations: catalogue.occupations.map((o) =>
+      o.code === 'SWE_BACKEND'
+        ? { ...o, my: { ...o.my, status: 'PLAYING' as const, currentLevel: 3 } }
+        : o,
+    ),
+  });
+  renderWithProviders(<GalaxyPage />, '/galaxy?nghe=SWE_BACKEND');
+  expect(
+    (
+      await screen.findByRole('link', { name: /^Mở lộ trình nghề$/ })
+    ).getAttribute('href'),
+  ).toBe('/occupations/SWE_BACKEND/levels');
+});
+
+it('chuyển cách xem bằng phím mũi tên và chỉ một lựa chọn nằm trong thứ tự Tab', async () => {
+  renderWithProviders(<GalaxyPage />, '/galaxy');
+  const map = await screen.findByRole('radio', { name: /^Bản đồ$/ });
+  const list = screen.getByRole('radio', { name: /^Danh sách$/ });
+  expect(map.tabIndex).toBe(0);
+  expect(list.tabIndex).toBe(-1);
+  map.focus();
+  fireEvent.keyDown(map, { key: 'ArrowRight' });
+  expect(list.getAttribute('aria-checked')).toBe('true');
+  expect(document.activeElement).toBe(list);
+  expect(list.tabIndex).toBe(0);
+  expect(map.tabIndex).toBe(-1);
+  fireEvent.keyDown(list, { key: 'Home' });
+  expect(map.getAttribute('aria-checked')).toBe('true');
+  expect(document.activeElement).toBe(map);
+});

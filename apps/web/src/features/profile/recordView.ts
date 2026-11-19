@@ -47,3 +47,83 @@ export function constellationPoints(count: number): Array<[number, number]> {
     ];
   });
 }
+
+/** Align group histories by run ID rather than by each group's array index. */
+export function skillTimeline(
+  skills: SoftSkillState[],
+  journal: Array<{ runId: string; index: number }> = [],
+) {
+  const byRun = new Map<string, SoftSkillState['history'][number]>();
+  for (const skill of skills)
+    for (const event of chronological(skill.history))
+      if (!byRun.has(event.runId)) byRun.set(event.runId, event);
+  const runs = chronological([...byRun.values()]).map((event, i) => ({
+    ...event,
+    index: journal.find((entry) => entry.runId === event.runId)?.index ?? i + 1,
+  }));
+  const series = profile.SOFT_SKILL_GROUPS.map(({ id }) => {
+    const events = new Map(
+      chronological(skills.find((skill) => skill.id === id)?.history ?? []).map(
+        (event) => [event.runId, event],
+      ),
+    );
+    let previous: number | null = null;
+    const points = runs.map((run) => {
+      const event = events.get(run.runId);
+      if (event) previous = event.total;
+      return previous;
+    });
+    return { id, events, points };
+  });
+  return { runs, series };
+}
+
+export function historySummary(skills: SoftSkillState[]) {
+  const { runs, series } = skillTimeline(skills);
+  const eligible = series.filter(
+    (group) => group.events.size >= profile.STRENGTH_MIN_SCENARIOS,
+  );
+  const positive = eligible
+    .map((group) => ({
+      id: group.id,
+      count: [...group.events.values()].filter((event) => event.delta > 0)
+        .length,
+    }))
+    .filter((group) => group.count > 0)
+    .sort((a, b) => b.count - a.count)[0];
+  const negative = eligible
+    .map((group) => ({
+      id: group.id,
+      runIds: [...group.events.values()]
+        .filter((event) => event.delta < 0)
+        .map((event) => event.runId),
+    }))
+    .filter((group) => group.runIds.length > 0)
+    .sort((a, b) => b.runIds.length - a.runIds.length)[0];
+  return { count: runs.length, positive, negative };
+}
+
+export function keywordDepth(
+  keywords: Array<{ group: string; level: 1 | 2 | 3 }>,
+) {
+  return [...new Set(keywords.map((keyword) => keyword.group))].map(
+    (group) => ({
+      group,
+      counts: ([1, 2, 3] as const).map(
+        (level) =>
+          keywords.filter(
+            (keyword) => keyword.group === group && keyword.level === level,
+          ).length,
+      ),
+    }),
+  );
+}
+
+export function riasecDifference(self: number | null, after: number | null) {
+  return self !== null &&
+    after !== null &&
+    Number.isFinite(self) &&
+    Number.isFinite(after)
+    ? Math.round((after - self) * 10) / 10
+    : null;
+}

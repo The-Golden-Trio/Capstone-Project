@@ -1,12 +1,12 @@
 import { renderWithProviders } from '../../test/renderWithProviders';
-import { screen, within } from '@testing-library/react';
+import { fireEvent, screen, within } from '@testing-library/react';
 import { Route, Routes } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 import type { RunSummary } from '../../api/types';
 import SummaryPage from './SummaryPage';
 
 const { summaryState } = vi.hoisted(() => ({
-  summaryState: { data: null as RunSummary | null },
+  summaryState: { data: null as RunSummary | null, refetch: vi.fn() },
 }));
 vi.mock('../../api/hooks', async (importOriginal) => ({
   ...(await importOriginal<typeof import('../../api/hooks')>()),
@@ -14,7 +14,13 @@ vi.mock('../../api/hooks', async (importOriginal) => ({
   useRun: () => ({
     data: { cast: [{ slot: 'mentor', name: 'anh An', relation: 'mentor' }] },
   }),
-  useRunSummary: () => ({ data: summaryState.data, isLoading: false }),
+  useRunSummary: () => ({
+    data: summaryState.data,
+    isLoading: false,
+    isFetching: false,
+    error: new Error('Mất kết nối'),
+    refetch: summaryState.refetch,
+  }),
 }));
 function summary(status: RunSummary['grade']['status']): RunSummary {
   return {
@@ -78,6 +84,7 @@ describe('Tổng kết khi worker chưa trả điểm', () => {
       ).toBeTruthy();
       expect(screen.getByText('Đọc log sự cố')).toBeTruthy();
       expect(screen.getByText('Có 901 query')).toBeTruthy();
+      expect(screen.queryByText('Kỹ năng', { selector: 'summary' })).toBeNull();
       expect(screen.queryByRole('img', { name: /^Điểm màn:/ })).toBeNull();
       expect(screen.queryByRole('heading', { name: 'Nhận xét' })).toBeNull();
       expect(
@@ -126,6 +133,9 @@ describe('Báo cáo cuối ca khi có điểm', () => {
       screen.getByRole('img', { name: 'Điểm màn: 80 trên 100' }),
     ).toBeTruthy();
     expect(screen.getByText('Báo cáo cuối ca')).toBeTruthy();
+    expect(document.activeElement).toBe(
+      screen.getByRole('heading', { name: 'Ca API chậm' }),
+    );
     expect(
       screen.getByText(
         'Ca xem thử: điểm chỉ để bạn thấy cách tính, không cộng vào hồ sơ.',
@@ -165,11 +175,8 @@ describe('Báo cáo cuối ca khi có điểm', () => {
     expect(
       screen.getByRole('heading', { name: 'Đã có hướng xử lý' }),
     ).toBeTruthy();
-    expect(
-      screen
-        .getByRole('link', { name: 'Về đảo của cấp này' })
-        .getAttribute('href'),
-    ).toBe('/occupations/SWE_BACKEND');
+    for (const link of screen.getAllByRole('link', { name: /^Về hồ sơ nghề$/ }))
+      expect(link.getAttribute('href')).toBe('/occupations/SWE_BACKEND');
     expect(
       screen
         .getByRole('link', { name: 'Xem lộ trình nghề' })
@@ -217,9 +224,29 @@ describe('Báo cáo cuối ca khi có điểm', () => {
       expect(screen.getByText(text)).toBeTruthy();
     expect(
       screen
-        .getByRole('link', { name: 'Về đảo của cấp này' })
-        .getAttribute('href'),
-    ).toBe('/islands/enrolled');
+        .getAllByRole('link', { name: /^Về đảo của cấp này$/ })
+        .every((link) => link.getAttribute('href') === '/islands/enrolled'),
+    ).toBe(true);
     expect(screen.queryByText(/Ca xem thử:/)).toBeNull();
   });
+});
+
+it('allows retrying a failed summary without sending the player away', () => {
+  summaryState.data = null;
+  summaryState.refetch.mockClear();
+  renderWithProviders(
+    <Routes>
+      <Route path="/play/:runId/summary" element={<SummaryPage />} />
+    </Routes>,
+    '/play/sample/summary',
+  );
+  expect(
+    screen.getByRole('heading', { name: 'Chưa tải được tổng kết' }),
+  ).toBeTruthy();
+  expect(screen.getByText('Mất kết nối')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Thử lại' }));
+  expect(summaryState.refetch).toHaveBeenCalledTimes(1);
+  expect(screen.getByLabelText('Đường dẫn').textContent).toBe(
+    '/play/sample/summary',
+  );
 });

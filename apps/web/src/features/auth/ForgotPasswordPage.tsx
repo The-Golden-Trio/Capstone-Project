@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import { useMutation } from '@tanstack/react-query';
@@ -9,13 +9,22 @@ import { AuthLayout, AuthNotice } from './AuthLayout';
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
+  const [touched, setTouched] = useState(false);
+  const input = useRef<HTMLInputElement>(null);
+  const invalid = !/^\S+@\S+\.\S+$/.test(email.trim());
   const send = useMutation({
     mutationFn: (e: string) => api.auth.requestPasswordReset(e),
   });
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
-    if (email.trim()) send.mutate(email.trim());
+    if (send.isPending) return;
+    setTouched(true);
+    if (invalid) {
+      input.current?.focus();
+      return;
+    }
+    send.mutate(email.trim());
   };
 
   return (
@@ -41,8 +50,13 @@ export default function ForgotPasswordPage() {
           {send.isError && (
             <AuthNotice tone="danger">{errorText(send.error)}</AuthNotice>
           )}
-          <ToonField label="Email">
+          <ToonField
+            label="Email"
+            error={touched && invalid ? 'Email chưa đúng dạng.' : undefined}
+          >
             <ToonInput
+              ref={input}
+              readOnly={send.isPending}
               type="email"
               autoComplete="email"
               leftIcon={<Mail size={16} />}

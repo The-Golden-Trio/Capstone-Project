@@ -39,7 +39,7 @@ export function Composer({
       <ConfirmDialog
         open
         title="Nộp trước hạn?"
-        description={`Còn ${scene.clock.remaining} điểm thời gian (tới ${scene.clock.deadline}). Nộp bây giờ thì ca kết thúc, những việc chưa làm sẽ không được xét.`}
+        description={`Còn ${scene.clock.remaining * scene.clock.minutesPerPoint} phút tới hạn ${scene.clock.deadline}. Nộp bây giờ sẽ kết thúc ca; những việc chưa làm sẽ không được xét.`}
         confirmLabel="Nộp luôn"
         cancelLabel="Làm thêm"
         loading={busy}
@@ -94,6 +94,7 @@ export function Composer({
       <div className="max-h-[55dvh] overflow-y-auto p-1">
         {fresh(node.prompt) && <Prompt>{node.prompt}</Prompt>}
         <ArtefactForm
+          key={form.id}
           form={form}
           submitLabel={node.kind === 'end' ? 'Gửi và kết thúc ca' : 'Gửi'}
           busy={busy}
@@ -168,6 +169,7 @@ function TextReply({
           Enter để gửi, Shift + Enter để xuống dòng.
         </span>
         <ToonTextarea
+          readOnly={busy}
           id="composer"
           aria-describedby="composer-keys"
           ref={ref}
@@ -221,6 +223,7 @@ function Choices({
   const started = useRef(performance.now());
   const [left, setLeft] = useState(limit ?? 0);
   const sent = useRef(false);
+  const [timeoutFailed, setTimeoutFailed] = useState(false);
 
   useEffect(() => {
     if (!limit) return;
@@ -235,7 +238,7 @@ function Choices({
         window.clearInterval(id);
         // Hết giờ là không trả lời: mức 0, không trừ (D-86).
         void onSend({ kind: 'timeout' }).then((ok) => {
-          if (!ok) sent.current = false;
+          if (!ok) setTimeoutFailed(true);
         });
       }
     }, 100);
@@ -290,6 +293,25 @@ function Choices({
           />
         </div>
       )}
+      {timeoutFailed && (
+        <div className="rounded-xl border-2 border-toon-ink bg-toon-paper p-3">
+          <p role="alert" className="mb-2 text-sm font-bold text-toon-maroon">
+            Chưa ghi nhận được lượt hết giờ. Bạn thử gửi lại nhé.
+          </p>
+          <ToonButton
+            size="sm"
+            loading={busy}
+            onClick={() => {
+              setTimeoutFailed(false);
+              void onSend({ kind: 'timeout' }).then((ok) =>
+                setTimeoutFailed(!ok),
+              );
+            }}
+          >
+            Gửi lại lượt hết giờ
+          </ToonButton>
+        </div>
+      )}
       <ul className="grid gap-2.5 md:grid-cols-2">
         {node.options.map((o, i) => (
           <li
@@ -302,7 +324,7 @@ function Choices({
           >
             <button
               type="button"
-              disabled={busy}
+              disabled={busy || (limit !== null && left <= 0)}
               onClick={() => choose(o.key)}
               className="group flex size-full items-start gap-3 rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-3 text-left font-toon-body text-[15px] font-bold leading-snug text-toon-ink shadow-toon transition-[transform,box-shadow,background-color] duration-150 hover:-translate-y-0.5 hover:bg-[#fff1c9] hover:shadow-toon-lg active:translate-y-0.5 active:shadow-toon-press focus-visible:outline-none focus-visible:shadow-toon-focus disabled:opacity-60"
             >

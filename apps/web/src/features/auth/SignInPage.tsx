@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { LogIn, Mail } from 'lucide-react';
 import { ToonButton, ToonField, ToonInput } from '@datn/ui';
 import { errorText, useSignIn } from '../../api/hooks';
+import { sourceOf } from '../../api';
+import { SHOWCASE_EMAIL, SHOWCASE_PASSWORD } from '../../api/demo';
 import { AuthLayout, AuthNotice, AuthPassword } from './AuthLayout';
 import { GoogleButton } from './GoogleButton';
 
@@ -23,8 +25,18 @@ export default function SignInPage() {
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
+    if (signIn.isPending) return;
     setTouched(true);
-    if (!identifier.trim() || !password) return;
+    if (!identifier.trim() || !password) {
+      e.currentTarget
+        .querySelector<HTMLInputElement>(
+          !identifier.trim()
+            ? 'input[autocomplete="username"]'
+            : 'input[autocomplete="current-password"]',
+        )
+        ?.focus();
+      return;
+    }
     signIn.mutate(
       { identifier: identifier.trim(), password },
       { onSuccess: () => navigate(from, { replace: true }) },
@@ -48,6 +60,28 @@ export default function SignInPage() {
       }
     >
       <form onSubmit={submit} noValidate className="flex flex-col gap-5">
+        {sourceOf('auth') === 'demo' && (
+          <div className="rounded-2xl border-[2.5px] border-dashed border-toon-ink bg-toon-cream p-3 text-sm">
+            <p className="font-bold text-toon-ink">
+              Bản demo: có sẵn một người chơi đã chơi nhiều
+            </p>
+            <p className="mt-0.5 text-toon-ink-soft">
+              {SHOWCASE_EMAIL} · mật khẩu {SHOWCASE_PASSWORD}
+            </p>
+            <ToonButton
+              type="button"
+              size="sm"
+              variant="secondary"
+              className="mt-2"
+              onClick={() => {
+                setIdentifier(SHOWCASE_EMAIL);
+                setPassword(SHOWCASE_PASSWORD);
+              }}
+            >
+              Điền tài khoản mẫu
+            </ToonButton>
+          </div>
+        )}
         {signIn.isError && (
           <AuthNotice tone="danger">{errorText(signIn.error)}</AuthNotice>
         )}

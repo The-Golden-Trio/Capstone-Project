@@ -47,6 +47,7 @@ import { sourceOf } from '../../api';
 import type { CatalogueOccupation, RegionId } from '../../api/types';
 import { GalaxyMap, type GalaxyMapHandle } from './GalaxyMap';
 import { foldVi, layoutGalaxy } from './layout';
+import { keepHyphenated } from '../../lib/text';
 
 type View = 'map' | 'list';
 
@@ -59,9 +60,12 @@ export default function GalaxyPage() {
   const enrol = useEnrol();
   const startSample = useStartRun();
   const mapRef = useRef<GalaxyMapHandle>(null);
+  const searchRef = useRef<HTMLInputElement>(null);
   const [params, setParams] = useSearchParams();
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
+  // Câu tìm lúc người chơi vừa chọn một kết quả: ẩn danh sách cho tới khi gõ tiếp.
+  const [pickedQuery, setPickedQuery] = useState<string | null>(null);
   const [region, setRegion] = useState<RegionId | null>(
     () => (params.get('vung') as RegionId | null) ?? null,
   );
@@ -158,13 +162,30 @@ export default function GalaxyPage() {
               Tìm nghề
             </label>
             <ToonInput
+              ref={searchRef}
               id="galaxy-search"
               leftIcon={<Search size={16} />}
               placeholder="Tìm trong 221 nghề, ví dụ: điều dưỡng, back-end, đầu bếp"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setPickedQuery(null);
+              }}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && matches[0]) focusOn(matches[0].code);
+                if (e.key !== 'Enter' || e.nativeEvent.isComposing) return;
+                // Deferred results may still describe the previous keystroke.
+                const q = foldVi(query.trim());
+                if (!q) return;
+                const match = catalogue.data?.occupations.find(
+                  (o) =>
+                    (!region || o.regionId === region) &&
+                    (!playableOnly || o.playable) &&
+                    foldVi(`${o.name} ${o.group}`).includes(q),
+                );
+                if (match) {
+                  setPickedQuery(query);
+                  focusOn(match.code);
+                }
               }}
               compact
             />
@@ -364,7 +385,10 @@ export default function GalaxyPage() {
                 quiz.data?.suggestions.find((s) => s.code === selectedOcc.code)
                   ?.reason ?? null
               }
-              onClose={() => select(null)}
+              onClose={() => {
+                select(null);
+                searchRef.current?.focus();
+              }}
               onEnter={() =>
                 enrol.mutate(
                   { code: selectedOcc.code, levelNo: 1 },
@@ -379,6 +403,21 @@ export default function GalaxyPage() {
             />
           )}
 
+          {deferredQuery.trim() && pickedQuery !== deferredQuery && (
+            <SearchResults
+              items={matches}
+              onPick={(code) => {
+                setPickedQuery(deferredQuery);
+                focusOn(code);
+              }}
+              onShowAll={() =>
+                setParams((p) => {
+                  p.set('view', 'list');
+                  return p;
+                })
+              }
+            />
+          )}
           {filtering && (
             <p
               className="absolute bottom-4 right-4 z-10 rounded-full border-2 border-toon-night-deep bg-toon-paper px-3 py-1.5 text-xs font-bold text-toon-ink md:right-6"
@@ -438,6 +477,10 @@ function PeekPanel({
   // Mặt khó của nghề phải thấy được trước khi vào nghề (BR-07).
   const profile = useOccupation(occ.code);
   const downside = profile.data?.downsides[0];
+  const heading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    heading.current?.focus({ preventScroll: true });
+  }, [occ.code]);
   return (
     <aside
       aria-label={`Thông tin nghề ${occ.shortName}`}
@@ -462,8 +505,12 @@ function PeekPanel({
           <p className="flex items-center gap-1.5 text-xs text-toon-ink-soft">
             <RegionDot color={regionColor(occ.regionId)} size={7} /> {occ.group}
           </p>
-          <h2 className="mt-1 font-toon text-2xl font-extrabold leading-tight">
-            {occ.shortName}
+          <h2
+            ref={heading}
+            tabIndex={-1}
+            className="mt-1 font-toon text-2xl font-extrabold leading-tight focus:outline-none"
+          >
+            {keepHyphenated(occ.shortName)}
           </h2>
           <div className="mt-2 flex flex-wrap gap-1.5">{statusBadge(occ)}</div>
         </div>
@@ -530,7 +577,11 @@ function PeekPanel({
           </ToonButton>
         )}
         <Link
-          to={`/occupations/${occ.code}`}
+          to={
+            occ.my.status === 'NEW'
+              ? `/occupations/${occ.code}`
+              : `/occupations/${occ.code}/levels`
+          }
           style={
             occ.my.status === 'NEW' && occ.playable && !locked
               ? undefined
@@ -654,6 +705,63 @@ function PeekSummary({ text }: { text: string }) {
   );
 }
 
+/**
+ * Kết quả tìm trên bản đồ: nghề khớp chỉ là chấm nhỏ không tên, nên liệt kê
+ * vài nghề đầu để bấm bay tới; phần còn lại xem ở dạng danh sách.
+ */
+function SearchResults({
+  items,
+  onPick,
+  onShowAll,
+}: {
+  items: CatalogueOccupation[];
+  onPick: (code: string) => void;
+  onShowAll: () => void;
+}) {
+  const shown = items.slice(0, 6);
+  return (
+    <div className="absolute left-4 top-4 z-20 w-[min(22rem,calc(100%-2rem))] rounded-[18px] border-[3px] border-toon-night-deep bg-toon-paper p-2 text-toon-ink shadow-toon md:left-6">
+      {shown.length === 0 ? (
+        <p className="px-2 py-1.5 text-sm text-toon-ink-soft">
+          Không có nghề nào khớp. Thử bỏ dấu hoặc gõ ngắn hơn.
+        </p>
+      ) : (
+        <ul aria-label="Nghề khớp với tìm kiếm" className="grid gap-1">
+          {shown.map((o) => (
+            <li key={o.code}>
+              <button
+                type="button"
+                onClick={() => onPick(o.code)}
+                className="flex w-full items-center gap-2.5 rounded-xl px-2 py-1.5 text-left hover:bg-toon-cream focus-visible:shadow-toon-focus focus-visible:outline-none"
+              >
+                <RegionDot color={regionColor(o.regionId)} />
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate font-toon font-bold">
+                    {o.shortName}
+                  </span>
+                  <span className="block truncate text-xs text-toon-ink-soft">
+                    {o.group}
+                  </span>
+                </span>
+                <ArrowRight size={15} aria-hidden className="shrink-0" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      {items.length > shown.length && (
+        <button
+          type="button"
+          onClick={onShowAll}
+          className="mt-1 w-full rounded-xl px-2 py-1.5 text-left text-xs font-bold underline underline-offset-4 hover:bg-toon-cream focus-visible:shadow-toon-focus focus-visible:outline-none"
+        >
+          Xem cả {items.length} nghề trong danh sách
+        </button>
+      )}
+    </div>
+  );
+}
+
 /** Bộ lọc gọn, bấm được và không có glow trên thanh công cụ nền đêm. */
 function GalaxyChip({
   selected = false,
@@ -717,6 +825,36 @@ function GalaxyViewSwitch({
     <div
       role="radiogroup"
       aria-label={label}
+      onKeyDown={(event) => {
+        if (
+          ![
+            'ArrowLeft',
+            'ArrowRight',
+            'ArrowUp',
+            'ArrowDown',
+            'Home',
+            'End',
+          ].includes(event.key)
+        )
+          return;
+        event.preventDefault();
+        const index = options.findIndex((option) => option.key === value);
+        const next =
+          event.key === 'Home'
+            ? 0
+            : event.key === 'End'
+              ? options.length - 1
+              : (index +
+                  (event.key === 'ArrowLeft' || event.key === 'ArrowUp'
+                    ? -1
+                    : 1) +
+                  options.length) %
+                options.length;
+        onChange(options[next].key);
+        event.currentTarget
+          .querySelectorAll<HTMLButtonElement>('[role="radio"]')
+          [next]?.focus();
+      }}
       className="inline-flex gap-1 rounded-[16px] border-[3px] border-toon-night-deep bg-toon-night-deep p-1"
     >
       {options.map((o) => (
@@ -725,9 +863,10 @@ function GalaxyViewSwitch({
           type="button"
           role="radio"
           aria-checked={value === o.key}
+          tabIndex={value === o.key ? 0 : -1}
           onClick={() => onChange(o.key)}
           className={cn(
-            'inline-flex min-h-8 items-center gap-1.5 rounded-[10px] px-3 font-toon text-sm font-bold',
+            'inline-flex min-h-8 items-center gap-1.5 rounded-[10px] px-3 font-toon text-sm font-bold focus-visible:outline-none focus-visible:shadow-toon-focus',
             value === o.key
               ? 'bg-toon-star text-toon-ink'
               : 'text-toon-paper hover:bg-toon-night-soft',

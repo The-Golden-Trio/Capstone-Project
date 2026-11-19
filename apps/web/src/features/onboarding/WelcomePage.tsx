@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { profile } from '@datn/game-core';
@@ -29,6 +29,7 @@ export default function WelcomePage() {
   const me = useMe();
   const qc = useQueryClient();
   const [step, setStep] = useState(0);
+  const heading = useRef<HTMLHeadingElement>(null);
   const [stage, setStage] = useState<LifeStage | null>(null);
   const save = useMutation({
     mutationFn: (value: LifeStage) => api.account.updateMe({ stage: value }),
@@ -40,6 +41,9 @@ export default function WelcomePage() {
   const sign = profile.zodiacOf(me.data?.dateOfBirth);
   const current = !sign && step === 0 ? 1 : step;
   const text = sign ? zodiacText[sign.id] : undefined;
+  useEffect(() => {
+    if (me.data) heading.current?.focus();
+  }, [current, me.data?.id]);
   const steps = [
     ...(sign ? [{ key: 'stars', label: 'Chòm sao' }] : []),
     { key: 'stage', label: 'Giai đoạn' },
@@ -103,7 +107,11 @@ export default function WelcomePage() {
               </p>
               {current === 0 && sign && text && (
                 <>
-                  <h1 className="mt-4 font-toon text-xl font-bold">
+                  <h1
+                    ref={heading}
+                    tabIndex={-1}
+                    className="mt-4 font-toon text-xl font-bold focus:outline-none"
+                  >
                     Chòm sao của bạn
                   </h1>
                   <WelcomeStars sign={sign.id as ZodiacId} />
@@ -117,7 +125,10 @@ export default function WelcomePage() {
                   </div>
                   <ul className="my-4 grid grid-cols-2 gap-4">
                     {sign.buffs.map((id) => (
-                      <li key={id} className="text-center">
+                      <li
+                        key={id}
+                        className="flex flex-col items-center text-center"
+                      >
                         <StickerBadge
                           size={72}
                           label={`+12% điểm cộng cho ${profile.softSkillGroup(id).name}`}
@@ -165,7 +176,11 @@ export default function WelcomePage() {
               )}
               {current === 1 && (
                 <>
-                  <h1 className="mt-4 font-toon text-3xl font-extrabold">
+                  <h1
+                    ref={heading}
+                    tabIndex={-1}
+                    className="mt-4 font-toon text-3xl font-extrabold focus:outline-none"
+                  >
                     Bạn đang ở giai đoạn nào?
                   </h1>
                   <p className="my-4 text-sm text-toon-ink-soft">
@@ -250,7 +265,11 @@ export default function WelcomePage() {
                       strokeWidth={2.5}
                     />
                   </div>
-                  <h1 className="font-toon text-3xl font-extrabold">
+                  <h1
+                    ref={heading}
+                    tabIndex={-1}
+                    className="font-toon text-3xl font-extrabold focus:outline-none"
+                  >
                     Bạn đã biết muốn thử nghề nào chưa?
                   </h1>
                   <p className="mt-4 text-sm text-toon-ink-soft">

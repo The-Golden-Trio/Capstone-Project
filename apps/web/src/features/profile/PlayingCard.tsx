@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
   ToonButton,
-  ToonProgress,
   CartoonPlanet,
   Skeleton,
   toonButtonClasses,
@@ -27,7 +26,7 @@ export function PlayingCard({ playing }: { playing: PlayingRow[] }) {
     <PaperCard>
       <CardHeading
         title="Đang chơi"
-        description="Tiếp tục từ nơi bạn vừa dừng lại."
+        description={`${new Set(rows.map((row) => row.occupationCode)).size} nghề · sắp theo lần chơi gần nhất`}
       />
       {rows.length ? (
         <div className="space-y-4">
@@ -77,7 +76,7 @@ function PlayingOccupation({
         />
         <div className="min-w-0 flex-1">
           <p className="text-xs text-toon-ink-soft">
-            {row.group} › Cấp {row.levelNo} · {row.levelTitle}
+            Cấp {row.levelNo} · {row.levelTitle}
           </p>
           <h3 className="mt-1 font-toon text-2xl font-bold">
             <Link
@@ -103,34 +102,67 @@ function PlayingOccupation({
         Chơi tiếp<span className="visually-hidden"> {row.occupationName}</span>
       </Link>
       <div className="my-3 max-w-lg">
-        <ToonProgress
-          max={Math.max(1, row.total)}
-          value={row.done}
-          label="Màn đã hoàn thành"
-        />
+        {row.total > 0 ? (
+          <div
+            role="progressbar"
+            aria-label="Màn đã hoàn thành"
+            aria-valuemin={0}
+            aria-valuemax={row.total}
+            aria-valuenow={Math.min(row.total, Math.max(0, row.done))}
+            className="flex gap-1"
+          >
+            {Array.from({ length: row.total }, (_, i) => (
+              <span
+                key={i}
+                aria-hidden
+                className={`h-3 min-w-0 flex-1 rounded border-2 border-toon-ink ${i < row.done ? 'bg-toon-mint' : 'bg-toon-sand'}`}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="text-xs text-toon-ink-soft">Chưa có màn chính</p>
+        )}
         <p className="mt-1 text-xs text-toon-ink-soft">
-          {row.done}/{row.total} màn đã xong · Lần gần nhất{' '}
-          {new Date(row.lastPlayedAt).toLocaleDateString('vi-VN')}
+          {row.done}/{row.total} màn
         </p>
       </div>
-      {row.nextLevel ? (
-        <Foldout
-          title={`Mở cấp ${row.nextLevel.levelNo} cần:`}
-          className="mb-4 text-sm text-toon-ink-soft"
-        >
-          <ul className="mt-1 space-y-1">
-            {row.nextLevel.conditions.map((condition) => (
-              <li key={condition.label}>
-                {condition.met ? '✓ Đã đạt' : '○ Chưa đạt'} · {condition.label}
-              </li>
-            ))}
-          </ul>
-        </Foldout>
-      ) : (
-        <p className="mb-4 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-xs text-toon-ink-soft">
-          Chưa có cấp tiếp theo trong lộ trình này.
+      {row.nextLevel && (
+        <p className="mb-3 text-xs font-bold text-toon-ink-soft">
+          {row.nextLevel.conditions.every((condition) => condition.met)
+            ? '✓'
+            : '○'}{' '}
+          Mở cấp {row.nextLevel.levelNo}:{' '}
+          {row.nextLevel.conditions.filter((condition) => !condition.met).length
+            ? `còn ${row.nextLevel.conditions.filter((condition) => !condition.met).length} điều kiện`
+            : 'đủ điều kiện'}
         </p>
       )}
+      <Foldout
+        title="Tiến độ và điều kiện"
+        className="mb-4 text-sm text-toon-ink-soft"
+      >
+        <p>
+          {row.group} · Lần gần nhất{' '}
+          {new Date(row.lastPlayedAt).toLocaleDateString('vi-VN')}
+        </p>
+        {row.nextLevel ? (
+          <div className="mt-3 text-sm text-toon-ink-soft">
+            <p className="font-bold">Mở cấp {row.nextLevel.levelNo} cần:</p>
+            <ul className="mt-1 space-y-1">
+              {row.nextLevel.conditions.map((condition) => (
+                <li key={condition.label}>
+                  {condition.met ? '✓ Đã đạt' : '○ Chưa đạt'} ·{' '}
+                  {condition.label}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <p className="mb-4 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-xs text-toon-ink-soft">
+            Chưa có cấp tiếp theo trong lộ trình này.
+          </p>
+        )}
+      </Foldout>
       <div className="mb-4 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-xs text-toon-ink-soft">
         <p className="mb-2 font-semibold">Mặt khó của nghề</p>
         {occupation.isError ? (
@@ -149,9 +181,7 @@ function PlayingOccupation({
         ) : occupation.data.downsides.length ? (
           <ul className="list-inside list-disc space-y-1">
             {occupation.data.downsides.slice(0, 1).map((downside) => (
-              <li key={downside}>
-                <ReadMore text={downside} />
-              </li>
+              <li key={downside}>{downside}</li>
             ))}
           </ul>
         ) : (

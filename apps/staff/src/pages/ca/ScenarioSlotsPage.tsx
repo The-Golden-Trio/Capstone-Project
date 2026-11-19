@@ -370,7 +370,10 @@ function AssignmentForm({
       <SelectField
         label="Tác giả (Domain Expert)"
         value={authorId}
-        onChange={(e) => setAuthorId(e.target.value)}
+        onChange={(e) => {
+          setAuthorId(e.target.value);
+          if (e.target.value === reviewerId) setReviewerId('');
+        }}
         options={options}
         placeholder="— Chọn —"
       />
@@ -391,7 +394,13 @@ function AssignmentForm({
       <Button
         variant="primary"
         loading={busy}
-        disabled={!authorId || !reviewerId}
+        disabled={
+          !authorId ||
+          !reviewerId ||
+          authorId === reviewerId ||
+          !deadline ||
+          !Number.isFinite(new Date(deadline).getTime())
+        }
         onClick={save}
       >
         Lưu giao việc
@@ -414,6 +423,7 @@ function ReassignForm({
   );
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<unknown>();
+  const [saved, setSaved] = useState(false);
   if (!a) return null;
   const options = detail.eligibleExperts
     .filter((e) => e.userId !== a.authorId && e.userId !== a.reviewerId)
@@ -422,12 +432,15 @@ function ReassignForm({
   const save = async () => {
     setBusy(true);
     setError(undefined);
+    setSaved(false);
     try {
       await staffApi.reassignReview(a.assignmentId, {
         reviewerId,
         deadlineAt: new Date(deadline).toISOString(),
       });
       await onSaved();
+      setReviewerId('');
+      setSaved(true);
     } catch (e) {
       setError(e);
     } finally {
@@ -445,6 +458,11 @@ function ReassignForm({
         )}
       </p>
       <ProblemAlert error={error} />
+      {saved && (
+        <p role="status" className="mb-2 text-sm text-success">
+          Đã giao lại người duyệt.
+        </p>
+      )}
       <SelectField
         label="Giao lại cho"
         value={reviewerId}
@@ -461,7 +479,11 @@ function ReassignForm({
       <Button
         variant="primary"
         loading={busy}
-        disabled={!reviewerId}
+        disabled={
+          !reviewerId ||
+          !deadline ||
+          !Number.isFinite(new Date(deadline).getTime())
+        }
         onClick={save}
       >
         Giao lại

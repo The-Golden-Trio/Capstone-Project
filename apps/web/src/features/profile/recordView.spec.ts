@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import {
   chronological,
+  skillTimeline,
+  historySummary,
+  keywordDepth,
+  riasecDifference,
   constellationPoints,
   radarValue,
   skillEvidence,
@@ -66,5 +70,79 @@ describe('cụm sao nghề', () => {
     ).toBe(true);
     expect(constellationPoints(50)).toEqual(points);
     expect(constellationPoints(0)).toEqual([]);
+  });
+});
+
+describe('shared profile charts', () => {
+  it('aligns by run ID, carries observed totals, and leaves unknown beginnings empty', () => {
+    const first: SoftSkillState = {
+      id: 'giao_tiep_hop_tac',
+      points: 100,
+      reachedTier: 0,
+      scenarios: 1,
+      history: [event('2026-11-15', 100)],
+    };
+    const second: SoftSkillState = {
+      ...first,
+      id: 'thich_ung_hoc_hoi',
+      history: [event('2026-11-16', -20)],
+    };
+    const result = skillTimeline(
+      [second, first],
+      [{ runId: '2026-11-15', index: 7 }],
+    );
+    expect(result.runs.map((run) => run.index)).toEqual([7, 2]);
+    expect(
+      result.series.find((group) => group.id === first.id)?.points,
+    ).toEqual([100, 100]);
+    expect(
+      result.series.find((group) => group.id === second.id)?.points,
+    ).toEqual([null, 100]);
+    expect(result.series).toHaveLength(7);
+    expect(second.history).toHaveLength(1);
+  });
+  it('summarizes observed positive and negative runs only after three observations', () => {
+    const skill: SoftSkillState = {
+      id: 'giao_tiep_hop_tac',
+      points: 100,
+      reachedTier: 0,
+      scenarios: 3,
+      history: [
+        event('2026-11-15', 100),
+        event('2026-11-16', -20),
+        event('2026-11-17', 40),
+      ],
+    };
+    expect(historySummary([skill])).toEqual({
+      count: 3,
+      positive: { id: skill.id, count: 2 },
+      negative: { id: skill.id, runIds: ['2026-11-16'] },
+    });
+    expect(
+      historySummary([{ ...skill, history: skill.history.slice(0, 2) }])
+        .positive,
+    ).toBeUndefined();
+    expect(historySummary([]).count).toBe(0);
+  });
+  it('keeps missing RIASEC values distinct from zero change', () => {
+    expect(riasecDifference(2, 2.3)).toBe(0.3);
+    expect(riasecDifference(2, 1.8)).toBe(-0.2);
+    expect(riasecDifference(2, 2)).toBe(0);
+    expect(riasecDifference(null, 2)).toBeNull();
+    expect(riasecDifference(2, NaN)).toBeNull();
+  });
+  it('counts keyword levels separately within each recorded group', () => {
+    expect(
+      keywordDepth([
+        { group: 'A', level: 1 },
+        { group: 'B', level: 3 },
+        { group: 'A', level: 2 },
+        { group: 'A', level: 2 },
+      ]),
+    ).toEqual([
+      { group: 'A', counts: [1, 2, 0] },
+      { group: 'B', counts: [0, 0, 1] },
+    ]);
+    expect(keywordDepth([])).toEqual([]);
   });
 });
