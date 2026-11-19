@@ -117,7 +117,10 @@ export default function WelcomePage() {
                   </div>
                   <ul className="my-4 grid grid-cols-2 gap-4">
                     {sign.buffs.map((id) => (
-                      <li key={id} className="text-center">
+                      <li
+                        key={id}
+                        className="flex flex-col items-center text-center"
+                      >
                         <StickerBadge
                           size={72}
                           label={`+12% điểm cộng cho ${profile.softSkillGroup(id).name}`}
