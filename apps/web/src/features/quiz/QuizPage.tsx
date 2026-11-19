@@ -295,18 +295,18 @@ function QuizFlow({
           >
             Kể một chút về bạn
           </h1>
-          <p className="mt-3 text-toon-paper">
-            Chọn điều muốn kể, không cần trả lời hết.
+          <p className="mb-5 mt-3 text-toon-paper">
+            Chọn điều muốn kể, không cần trả lời hết.{' '}
+            {/* Bỏ qua là lựa chọn phụ: link nhỏ, nút chính nằm cuối trang. */}
+            <button
+              type="button"
+              disabled={submit.isPending}
+              onClick={() => finish(true)}
+              className="rounded font-bold text-toon-star underline underline-offset-4 focus-visible:shadow-toon-focus focus-visible:outline-none disabled:opacity-50"
+            >
+              Bỏ qua, xem kết quả luôn
+            </button>
           </p>
-          <ToonButton
-            className="my-5"
-            block
-            variant="secondary"
-            disabled={submit.isPending}
-            onClick={() => finish(true)}
-          >
-            Bỏ qua, xem kết quả luôn
-          </ToonButton>
           <fieldset disabled={submit.isPending} className="space-y-5">
             <NightCard>
               <h2 className="font-toon text-xl font-bold">
