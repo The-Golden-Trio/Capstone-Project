@@ -6,11 +6,23 @@
  * Lượt gọi dùng đúng prompt, khuôn JSON và luật kiểm của service thật, nên
  * "sẵn sàng" nghĩa là service thật sẽ chạy được với cấu hình này.
  */
-import { beatsJsonSchema, checkBeats, sceneTurnTexts } from '@datn/game-core';
+import {
+  beatsJsonSchema,
+  checkBeats,
+  sceneTurnTexts,
+  shift,
+} from '@datn/game-core';
+import { fixtureShiftContext } from '@datn/game-core/testing';
 import { explainGatewayError, keyWarnings } from '../../ai/gateway/diagnose';
 import { GatewayError, type ModelSpec } from '../../ai/gateway/gateway.types';
 import { ModelGateway } from '../../ai/gateway/model-gateway';
 import { gatewayKeys, type AiSettings } from '../../ai/gateway/models';
+import { checkChecklistOutput } from '../../ai/judge/checklist.output';
+import {
+  buildChecklistMessages,
+  checklistJsonSchema,
+} from '../../ai/judge/checklist.prompt';
+import { JUDGE_PROFILE } from '../../ai/judge/judge.profile';
 import { NARRATOR_PROFILE } from '../../ai/narrator/narrator.profile';
 import { buildSceneMessages } from '../../ai/narrator/scene.prompt';
 import {
@@ -119,7 +131,7 @@ async function checkNarrator(
   }
 }
 
-async function checkJudge(
+export async function checkJudge(
   gateway: ModelGateway,
   slot: number,
   spec: ModelSpec,
@@ -178,6 +190,94 @@ async function checkJudge(
   }
 }
 
+const CHECKLIST_SEED = 'SWE_BACKEND.L3.m2';
+/** Nhỏ vì chỉ một mục con; 4 000 của lúc chấm thật là cho cả ca. */
+const CHECKLIST_CHECK_MAX_TOKENS = 1_000;
+
+/**
+ * Một đoạn bằng chứng nhỏ dựng từ seed L3.m2: mục con đầu của `observes`, hai
+ * lượt nói của người chơi. Cùng khuôn với đoạn thật nên prompt, khuôn json và
+ * luật kiểm là của `judge-v2`.
+ */
+export function checklistSample(): {
+  segments: shift.EvidenceSegment[];
+  observes: shift.ObserveItem[];
+} {
+  const { seed } = fixtureShiftContext(CHECKLIST_SEED);
+  const observes = (seed.observes ?? []).slice(0, 1);
+  const say = (code: string, time: string, text: string) => ({
+    role: 'player' as const,
+    turn: { code, kind: 'say' as const, at: 0, time, text },
+  });
+  return {
+    observes,
+    segments: [
+      {
+        id: 'pha',
+        label: 'Trong ca',
+        kind: 'pha',
+        subs: observes.map((o) => o.sub),
+        outcome: 'answered',
+        entries: [
+          say('t1', '10:05', 'Dạ em coi liền anh.'),
+          say(
+            't2',
+            '10:20',
+            'Chị ơi em tìm ra lỗi rồi, đang sửa. 11:30 em gọi báo lại chị nha.',
+          ),
+        ],
+        facts: [],
+        rulesHeard: [],
+        promises: [],
+        brief:
+          'API lịch sử đơn chạy chậm với khách nhiều đơn; người chơi đang điều tra.',
+      },
+    ],
+  };
+}
+
+export async function checkChecklist(
+  gateway: ModelGateway,
+  slot: number,
+  spec: ModelSpec,
+): Promise<CheckRow> {
+  const service = `ghế judge ${slot} (AI-5 checklist)`;
+  const { segments, observes } = checklistSample();
+  const pairs = shift.expectedPairs(segments);
+  try {
+    const result = await gateway.complete({
+      model: spec,
+      messages: buildChecklistMessages({ segments, observes }),
+      temperature: JUDGE_PROFILE.temperature,
+      maxOutputTokens: CHECKLIST_CHECK_MAX_TOKENS,
+      json: { name: 'checklist', schema: checklistJsonSchema(segments) },
+      timeoutMs: CHECK_TIMEOUT_MS,
+    });
+    const check = checkChecklistOutput(result.text, {
+      pairs,
+      finishReason: result.finishReason,
+    });
+    if (!check.ok)
+      return row(
+        service,
+        spec.key,
+        'có cảnh báo',
+        `gọi được nhưng sai khuôn judge-v2, lúc chấm thật sẽ hỏi lại một lần: ${check.problems.map((p) => `${p.rule} ${p.detail}`).join('; ')}`,
+        result.latencyMs,
+      );
+    const { rejected } = shift.checkOutput(segments, check.output);
+    return row(
+      service,
+      spec.key,
+      'sẵn sàng',
+      `đúng khuôn, vào ${result.usage.input} ra ${result.usage.output} token, bỏ ${rejected.length} câu trích${rejected.length > 0 ? ` (${rejected.join('; ')})` : ''}`,
+      result.latencyMs,
+    );
+  } catch (err) {
+    return failure(service, spec, err);
+  }
+}
+
 /** Trả `true` khi mọi mục đều dùng được (không có dòng "không sẵn sàng"). */
 export async function runCheck(settings: AiSettings): Promise<boolean> {
   rule('Cấu hình');
@@ -213,6 +313,7 @@ export async function runCheck(settings: AiSettings): Promise<boolean> {
   for (const { slot, chain } of setup.slots) {
     rule(`Gọi thử ghế judge ${slot}: ${chain[0].key}`);
     rows.push(await checkJudge(gateway, slot, chain[0]));
+    rows.push(await checkChecklist(gateway, slot, chain[0]));
   }
 
   rule('Kết quả');
