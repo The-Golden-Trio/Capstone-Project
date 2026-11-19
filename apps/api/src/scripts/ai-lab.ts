@@ -26,6 +26,7 @@ import { aiSettingsFromEnv } from '../ai/ai.module';
 import { keyWarnings } from '../ai/gateway/diagnose';
 import type { AiSettings } from '../ai/gateway/models';
 import { loadAiEnv } from '../config/env';
+import { parseBudgetUsd } from './ai-lab/budget';
 import { runCheck } from './ai-lab/check';
 import {
   createPorts,
@@ -149,6 +150,15 @@ async function main(): Promise<void> {
     return;
   }
 
+  const budgetUsd = parseBudgetUsd(args.get('budget'));
+  if (budgetUsd === null) {
+    console.error(
+      `--budget phải là số USD lớn hơn 0, ví dụ --budget=0.25 (đang là "${args.get('budget')}")`,
+    );
+    process.exitCode = 1;
+    return;
+  }
+
   if (mode === 'check') {
     const settings = loadSettings();
     if (settings && !(await runCheck(settings))) process.exitCode = 1;
@@ -159,7 +169,6 @@ async function main(): Promise<void> {
     PLAYTHROUGH_DIR,
     args.get('play') ?? 'all',
   );
-  const budgetUsd = Number(args.get('budget') ?? 0.25);
   const outDir = args.get('out');
 
   let runtime: Runtime;
