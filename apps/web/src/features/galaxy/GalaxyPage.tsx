@@ -63,6 +63,8 @@ export default function GalaxyPage() {
   const [params, setParams] = useSearchParams();
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
+  // Câu tìm lúc người chơi vừa chọn một kết quả: ẩn danh sách cho tới khi gõ tiếp.
+  const [pickedQuery, setPickedQuery] = useState<string | null>(null);
   const [region, setRegion] = useState<RegionId | null>(
     () => (params.get('vung') as RegionId | null) ?? null,
   );
@@ -380,6 +382,21 @@ export default function GalaxyPage() {
             />
           )}
 
+          {deferredQuery.trim() && pickedQuery !== deferredQuery && (
+            <SearchResults
+              items={matches}
+              onPick={(code) => {
+                setPickedQuery(deferredQuery);
+                focusOn(code);
+              }}
+              onShowAll={() =>
+                setParams((p) => {
+                  p.set('view', 'list');
+                  return p;
+                })
+              }
+            />
+          )}
           {filtering && (
             <p
               className="absolute bottom-4 right-4 z-10 rounded-full border-2 border-toon-night-deep bg-toon-paper px-3 py-1.5 text-xs font-bold text-toon-ink md:right-6"
@@ -651,6 +668,63 @@ function PeekSummary({ text }: { text: string }) {
         </summary>
         <p className="mt-1.5">{full}</p>
       </details>
+    </div>
+  );
+}
+
+/**
+ * Kết quả tìm trên bản đồ: nghề khớp chỉ là chấm nhỏ không tên, nên liệt kê
+ * vài nghề đầu để bấm bay tới; phần còn lại xem ở dạng danh sách.
+ */
+function SearchResults({
+  items,
+  onPick,
+  onShowAll,
+}: {
+  items: CatalogueOccupation[];
+  onPick: (code: string) => void;
+  onShowAll: () => void;
+}) {
+  const shown = items.slice(0, 6);
+  return (
+    <div className="absolute left-4 top-4 z-20 w-[min(22rem,calc(100%-2rem))] rounded-[18px] border-[3px] border-toon-night-deep bg-toon-paper p-2 text-toon-ink shadow-toon md:left-6">
+      {shown.length === 0 ? (
+        <p className="px-2 py-1.5 text-sm text-toon-ink-soft">
+          Không có nghề nào khớp. Thử bỏ dấu hoặc gõ ngắn hơn.
+        </p>
+      ) : (
+        <ul aria-label="Nghề khớp với tìm kiếm" className="grid gap-1">
+          {shown.map((o) => (
+            <li key={o.code}>
+              <button
+                type="button"
+                onClick={() => onPick(o.code)}
+                className="flex w-full items-center gap-2.5 rounded-xl px-2 py-1.5 text-left hover:bg-toon-cream focus-visible:shadow-toon-focus focus-visible:outline-none"
+              >
+                <RegionDot color={regionColor(o.regionId)} />
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate font-toon font-bold">
+                    {o.shortName}
+                  </span>
+                  <span className="block truncate text-xs text-toon-ink-soft">
+                    {o.group}
+                  </span>
+                </span>
+                <ArrowRight size={15} aria-hidden className="shrink-0" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      {items.length > shown.length && (
+        <button
+          type="button"
+          onClick={onShowAll}
+          className="mt-1 w-full rounded-xl px-2 py-1.5 text-left text-xs font-bold underline underline-offset-4 hover:bg-toon-cream focus-visible:shadow-toon-focus focus-visible:outline-none"
+        >
+          Xem cả {items.length} nghề trong danh sách
+        </button>
+      )}
     </div>
   );
 }
