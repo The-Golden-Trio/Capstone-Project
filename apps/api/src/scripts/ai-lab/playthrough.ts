@@ -178,14 +178,23 @@ export function listPlaythroughs(dir: string): string[] {
     .sort();
 }
 
-/** `--play=<tên>|all` thành danh sách kịch bản; tên sai thì liệt kê tên có. */
+/** Có dấu thư mục hoặc đuôi `.json` thì là đường dẫn file, không phải tên trong thư mục. */
+const isFilePath = (value: string): boolean =>
+  /[\\/]/.test(value) || value.endsWith('.json');
+
+/**
+ * `--play=<tên>|<đường dẫn .json>|a,b|all` thành danh sách kịch bản; tên sai
+ * thì liệt kê tên có. Đường dẫn dùng để chạy lại file do chế độ chơi tay xuất ra.
+ */
 export function selectPlaythroughs(dir: string, play: string): Playthrough[] {
   const names = listPlaythroughs(dir);
   const chosen = play === 'all' ? names : play.split(',');
   for (const name of chosen)
-    if (!names.includes(name))
+    if (!isFilePath(name) && !names.includes(name))
       throw new Error(
-        `Không có kịch bản "${name}". Có: ${names.join(', ')}, hoặc all.`,
+        `Không có kịch bản "${name}". Có: ${names.join(', ')}, hoặc all, hoặc đường dẫn file .json.`,
       );
-  return chosen.map((name) => loadPlaythrough(join(dir, `${name}.json`)));
+  return chosen.map((name) =>
+    loadPlaythrough(isFilePath(name) ? name : join(dir, `${name}.json`)),
+  );
 }
