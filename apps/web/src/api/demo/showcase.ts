@@ -26,7 +26,7 @@ import { db, newSkills, save, type Player, type SavedRun } from './store';
 export const SHOWCASE_EMAIL = 'demo@jobquest.local';
 export const SHOWCASE_PASSWORD = 'demo';
 /** Tăng khi đổi dữ liệu mẫu để trình duyệt đã lưu bản cũ tự dựng lại. */
-const SHOWCASE_VERSION = 3;
+const SHOWCASE_VERSION = 4;
 
 /** Lớp phủ dữ liệu mẫu, cộng thêm vào hồ sơ tính từ lượt chơi thật. */
 export interface Showcase {
@@ -202,86 +202,122 @@ async function keywordsOf(): Promise<EarnedKeyword[]> {
 }
 
 /** Dựng người chơi mẫu một lần cho mỗi trình duyệt (bỏ qua nếu đã có). */
+const COMPANY = {
+  name: 'Sao Bắc Commerce',
+  kind: 'Thương mại điện tử',
+  blurb: 'Sàn bán hàng cỡ vừa, đội Back-end 8 người, deploy mỗi tuần.',
+};
+const STUDIO = {
+  name: 'Xưởng Mây Xanh',
+  kind: 'Studio sản phẩm số',
+  blurb: 'Studio 30 người làm ứng dụng cho khách hàng trong nước.',
+};
+
+/** Dựng tài khoản demo@jobquest.local (bỏ qua nếu đã có bản mới nhất). */
 export async function ensureShowcasePlayer(): Promise<void> {
-  const old = db.players.findIndex((p) => p.me.email === SHOWCASE_EMAIL);
-  if (old >= 0) {
-    if (db.players[old].showcase?.version === SHOWCASE_VERSION) return;
-    db.players.splice(old, 1);
+  let p = db.players.find((x) => x.me.email === SHOWCASE_EMAIL);
+  if (!p) {
+    p = {
+      me: {
+        id: 'demo-showcase',
+        email: SHOWCASE_EMAIL,
+        username: null,
+        displayName: 'Sao Mai',
+        roles: ['EXPLORER'],
+        hasGoogle: false,
+        quizDone: true,
+        dateOfBirth: '2008-05-21',
+        stage: null,
+      },
+      password: SHOWCASE_PASSWORD,
+      quiz: null,
+      goals: null,
+      interests: [],
+      enrolments: [],
+      runs: [],
+      skills: newSkills(),
+      pinned: [],
+      ratings: {},
+      ratingComments: {},
+      feedback: [],
+      refreshToken: null,
+      resetToken: null,
+    };
+    db.players.push(p);
   }
+  await fillShowcase(p);
+}
+
+const isDemoItem = (id: string) => id.startsWith('demo-');
+
+/**
+ * Nạp dữ liệu mẫu vào một người chơi, giữ tên, email và những gì người chơi
+ * tự làm (lượt chơi, lần vào nghề thật). Chạy lại khi đổi phiên bản dữ liệu.
+ */
+export async function fillShowcase(p: Player): Promise<void> {
+  if (p.showcase?.version === SHOWCASE_VERSION) return;
   const task = seeds.find((s) => s.level_ref === 'SWE_BACKEND.L3') ?? seeds[0];
   if (!task) return;
-  const quiz = resultOf(quizAnswers());
-  const company = {
-    name: 'Sao Bắc Commerce',
-    kind: 'Thương mại điện tử',
-    blurb: 'Sàn bán hàng cỡ vừa, đội Back-end 8 người, deploy mỗi tuần.',
-  };
-  const studio = {
-    name: 'Xưởng Mây Xanh',
-    kind: 'Studio sản phẩm số',
-    blurb: 'Studio 30 người làm ứng dụng cho khách hàng trong nước.',
-  };
-  const p: Player = {
-    me: {
-      id: 'demo-showcase',
-      email: SHOWCASE_EMAIL,
-      username: null,
-      displayName: 'Sao Mai',
-      roles: ['EXPLORER'],
-      hasGoogle: false,
-      quizDone: true,
-      dateOfBirth: '2008-05-21',
-      stage: null,
-    },
-    password: SHOWCASE_PASSWORD,
-    quiz,
-    goals: quiz.goals,
-    interests: quiz.interests,
-    enrolments: [
-      ['SWE_BACKEND', 3, company, 20],
-      ['SWE_FRONTEND', 2, studio, 9],
-      ['ONET-27-1024.00', 2, studio, 5],
-      ['DATA_DA', 1, company, 3],
-    ].map(([code, levelNo, co, ago]) => ({
-      id: `demo-enrol-${String(code).toLowerCase()}-${levelNo}`,
-      code: code as string,
-      levelNo: levelNo as number,
+  p.enrolments = p.enrolments.filter((e) => !isDemoItem(e.id));
+  p.runs = p.runs.filter((r) => !isDemoItem(r.id));
+
+  if (!p.quiz) {
+    const quiz = resultOf(quizAnswers());
+    p.quiz = quiz;
+    p.goals = quiz.goals;
+    p.interests = quiz.interests;
+    p.me.quizDone = true;
+  }
+  const demoEnrolments = (
+    [
+      ['SWE_BACKEND', 3, COMPANY, 20],
+      ['SWE_FRONTEND', 2, STUDIO, 9],
+      ['ONET-27-1024.00', 2, STUDIO, 5],
+      ['DATA_DA', 1, COMPANY, 3],
+    ] as const
+  )
+    .filter(
+      ([code, levelNo]) =>
+        !p.enrolments.some((e) => e.code === code && e.levelNo === levelNo),
+    )
+    .map(([code, levelNo, company, ago]) => ({
+      id: `demo-enrol-${code.toLowerCase()}-${levelNo}`,
+      code,
+      levelNo,
       band: `L${levelNo}`,
-      company: co as typeof company,
+      company,
       seen: true,
-      at: day(ago as number),
-    })),
-    runs: [],
-    skills: newSkills(),
-    pinned: [],
-    ratings: {
-      SWE_BACKEND: { a1: 4, a2: 5, a3: 3, a4: 4, a5: 4 },
-    },
-    ratingComments: {
-      SWE_BACKEND: 'Ca sự cố khá giống thật, phần đọc log hơi khó lúc đầu.',
-    },
-    feedback: [],
-    refreshToken: null,
-    resetToken: null,
-  };
+      at: day(ago),
+    }));
+  p.enrolments.unshift(...demoEnrolments);
+  p.ratings.SWE_BACKEND ??= { a1: 4, a2: 5, a3: 3, a4: 4, a5: 4 };
+  p.ratingComments.SWE_BACKEND ??=
+    'Ca sự cố khá giống thật, phần đọc log hơi khó lúc đầu.';
+
   // Điểm nền cho 7 nhóm kỹ năng mềm để biểu đồ có hình dáng rõ.
   const base = [1350, 820, 610, 1980, 1150, 2400, 1720];
   p.skills = p.skills.map((s, i) => {
-    const points = base[i % base.length];
+    const points = Math.max(s.points, base[i % base.length]);
     return {
       ...s,
       points,
-      reachedTier: profile.tierProgress(points, 0).tier,
-      scenarios: 2 + (i % 4),
+      reachedTier: Math.max(
+        s.reachedTier,
+        profile.tierProgress(points, 0).tier,
+      ),
+      scenarios: Math.max(s.scenarios, 2 + (i % 4)),
     };
   });
 
-  const l3 = p.enrolments[0];
+  const l3 =
+    p.enrolments.find((e) => e.code === 'SWE_BACKEND' && e.levelNo === 3) ??
+    null;
+  const demoRuns: SavedRun[] = [];
   for (const [i, ago] of [20, 14, 9, 5, 2].entries()) {
     const r: SavedRun = {
       id: `demo-run-${i + 1}`,
       taskId: task.id,
-      enrolmentId: l3.id,
+      enrolmentId: l3?.id ?? null,
       events: [],
       notes: [
         { text: 'Query /orders quét toàn bảng, thiếu index.', at: day(ago) },
@@ -295,12 +331,11 @@ export async function ensureShowcasePlayer(): Promise<void> {
       paused: false,
     };
     playToEnd(r, i);
-    if (!stateOf(r).ended) continue;
-    p.runs.push(r);
+    if (stateOf(r).ended) demoRuns.push(r);
   }
-  db.players.push(p);
+  p.runs.unshift(...demoRuns);
   // Tổng kết (điểm mẫu, cộng kỹ năng) và câu "thích tới đâu" của từng ca.
-  for (const [i, r] of p.runs.entries()) {
+  for (const [i, r] of demoRuns.entries()) {
     const summary = await summaryOf(p, r);
     r.reflection = Object.fromEntries(
       summary.reflection.prompts.map((pr, j) => [
@@ -364,6 +399,22 @@ export async function ensureShowcasePlayer(): Promise<void> {
     ],
     counts: { kham_pha: 7, kien_tri: 6 },
   };
-  p.pinned = [];
   save();
+}
+
+let filling: Promise<void> | null = null;
+
+/**
+ * Chế độ demo: mọi tài khoản đều được nạp dữ liệu mẫu ở lần gọi đầu tiên,
+ * để xem đủ các trang mà không phải chơi trước. Tắt trong test để các kịch
+ * bản người chơi mới vẫn chạy trên tài khoản trống.
+ */
+export function fillCurrentPlayer(): Promise<void> {
+  if (import.meta.env.MODE === 'test') return Promise.resolve();
+  const p = db.players.find((x) => x.me.id === db.current);
+  if (!p || p.showcase?.version === SHOWCASE_VERSION) return Promise.resolve();
+  filling ??= fillShowcase(p).finally(() => {
+    filling = null;
+  });
+  return filling;
 }

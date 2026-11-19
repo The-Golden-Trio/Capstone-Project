@@ -5,8 +5,11 @@ import { quiz } from './quiz';
 import { progress } from './progress';
 import { play } from './play';
 import { feedback } from './feedback';
+import { onBeforeService } from './store';
+import { fillCurrentPlayer } from './showcase';
 /** Dữ liệu demo chỉ lưu trên trình duyệt; live thay từng service ở ngoài module này. */
 export function createDemoApi(): ExplorerApi {
+  onBeforeService(fillCurrentPlayer);
   return { auth, account, catalogue, quiz, progress, play, feedback };
 }
 export { bindExternalUser, unbindExternalUser } from './store';
