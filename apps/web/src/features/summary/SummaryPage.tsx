@@ -18,6 +18,7 @@ import {
   Character,
   SceneBackdrop,
   ToonBadge,
+  ToonButton,
   ToonPanel,
   ToonProgress,
   cn,
@@ -48,7 +49,12 @@ export default function SummaryPage() {
     return <SummaryNotice loading title="Đang tổng kết ca làm…" />;
   if (!summary.data)
     return (
-      <SummaryNotice title="Chưa có tổng kết" text={errorText(summary.error)} />
+      <SummaryNotice
+        title="Chưa tải được tổng kết"
+        text={errorText(summary.error)}
+        retry={() => void summary.refetch()}
+        retrying={summary.isFetching}
+      />
     );
   const s = summary.data;
   const sign = profile.zodiacOf(me.data?.dateOfBirth);
@@ -144,104 +150,108 @@ export default function SummaryPage() {
 
           <GradeBlock s={s} />
 
-          <details
-            open
-            className="mt-5 rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4"
-          >
-            <summary className="cursor-pointer rounded font-toon text-lg font-bold focus-visible:shadow-toon-focus">
-              Kỹ năng
-            </summary>
-            {tierUps.length > 0 && (
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {tierUps.map((d) => (
-                  <div
-                    key={d.id}
-                    className="flex animate-toon-pop items-center gap-4 rounded-2xl border-[3px] border-toon-ink bg-toon-mint p-4 shadow-toon-sm"
-                  >
-                    <span className="grid size-14 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-2xl font-extrabold text-toon-ink">
-                      {d.tierAfter}
-                    </span>
-                    <p className="text-sm">
-                      <span className="block font-toon text-lg font-extrabold text-toon-ink">
-                        Lên bậc!
-                      </span>
-                      <b className="text-toon-ink">
-                        {profile.softSkillGroup(d.id).name}
-                      </b>{' '}
-                      lên bậc {d.tierAfter}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {s.grade.status === 'READY' && s.grade.softSkills.length > 0 && (
-              <Panel className="mt-6">
-                <PanelHeader
-                  eyebrow="Kỹ năng mềm"
-                  title="Điểm cộng trừ trong ca này"
-                  description={
-                    [
-                      s.enrolmentId
-                        ? null
-                        : 'Ca xem thử: điểm chỉ để bạn thấy cách tính, không cộng vào hồ sơ.',
-                      sign
-                        ? `Nhóm có ★ được chòm sao ${sign.name} cộng thêm điểm.`
-                        : null,
-                    ]
-                      .filter(Boolean)
-                      .join(' ') || undefined
-                  }
-                />
-                <ul className="divide-y-2 divide-dashed divide-toon-ink/20">
-                  {s.grade.softSkills.map((d) => (
-                    <DeltaRow
+          {(tierUps.length > 0 ||
+            (s.grade.status === 'READY' && s.grade.softSkills.length > 0) ||
+            s.grade.keywordsGained.length > 0) && (
+            <details
+              open
+              className="mt-5 rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4"
+            >
+              <summary className="cursor-pointer rounded font-toon text-lg font-bold focus-visible:shadow-toon-focus">
+                Kỹ năng
+              </summary>
+              {tierUps.length > 0 && (
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {tierUps.map((d) => (
+                    <div
                       key={d.id}
-                      d={d}
-                      starred={Boolean(sign?.buffs.includes(d.id))}
-                      signName={sign?.name}
-                    />
-                  ))}
-                </ul>
-              </Panel>
-            )}
-
-            {s.grade.keywordsGained.length > 0 && (
-              <Panel className="mt-6">
-                <PanelHeader
-                  eyebrow="Xong cấp"
-                  title="Kỹ năng nghề bạn nhận được"
-                />
-                <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                  {s.grade.keywordsGained.map((k) => (
-                    <li
-                      key={k.id}
-                      className="flex min-w-0 items-start gap-3 rounded-2xl border-[3px] border-toon-ink bg-toon-sky p-3 shadow-toon-sm"
+                      className="flex animate-toon-pop items-center gap-4 rounded-2xl border-[3px] border-toon-ink bg-toon-mint p-4 shadow-toon-sm"
                     >
-                      <span
-                        aria-hidden
-                        className="grid size-10 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-xl font-extrabold"
-                      >
-                        {k.level}
+                      <span className="grid size-14 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-2xl font-extrabold text-toon-ink">
+                        {d.tierAfter}
                       </span>
-                      <span className="min-w-0 text-sm">
-                        <span className="block font-toon text-base font-extrabold leading-tight">
-                          {k.name}
+                      <p className="text-sm">
+                        <span className="block font-toon text-lg font-extrabold text-toon-ink">
+                          Lên bậc!
                         </span>
-                        <span className="mt-1 block text-xs font-bold text-toon-ink-soft">
-                          {
-                            ['', 'Làm quen', 'Thành thạo', 'Chuyên sâu'][
-                              k.level
-                            ]
-                          }
-                        </span>
-                      </span>
-                    </li>
+                        <b className="text-toon-ink">
+                          {profile.softSkillGroup(d.id).name}
+                        </b>{' '}
+                        lên bậc {d.tierAfter}
+                      </p>
+                    </div>
                   ))}
-                </ul>
-              </Panel>
-            )}
-          </details>
+                </div>
+              )}
+
+              {s.grade.status === 'READY' && s.grade.softSkills.length > 0 && (
+                <Panel className="mt-6">
+                  <PanelHeader
+                    eyebrow="Kỹ năng mềm"
+                    title="Điểm cộng trừ trong ca này"
+                    description={
+                      [
+                        s.enrolmentId
+                          ? null
+                          : 'Ca xem thử: điểm chỉ để bạn thấy cách tính, không cộng vào hồ sơ.',
+                        sign
+                          ? `Nhóm có ★ được chòm sao ${sign.name} cộng thêm điểm.`
+                          : null,
+                      ]
+                        .filter(Boolean)
+                        .join(' ') || undefined
+                    }
+                  />
+                  <ul className="divide-y-2 divide-dashed divide-toon-ink/20">
+                    {s.grade.softSkills.map((d) => (
+                      <DeltaRow
+                        key={d.id}
+                        d={d}
+                        starred={Boolean(sign?.buffs.includes(d.id))}
+                        signName={sign?.name}
+                      />
+                    ))}
+                  </ul>
+                </Panel>
+              )}
+
+              {s.grade.keywordsGained.length > 0 && (
+                <Panel className="mt-6">
+                  <PanelHeader
+                    eyebrow="Xong cấp"
+                    title="Kỹ năng nghề bạn nhận được"
+                  />
+                  <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                    {s.grade.keywordsGained.map((k) => (
+                      <li
+                        key={k.id}
+                        className="flex min-w-0 items-start gap-3 rounded-2xl border-[3px] border-toon-ink bg-toon-sky p-3 shadow-toon-sm"
+                      >
+                        <span
+                          aria-hidden
+                          className="grid size-10 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-mustard font-toon text-xl font-extrabold"
+                        >
+                          {k.level}
+                        </span>
+                        <span className="min-w-0 text-sm">
+                          <span className="block font-toon text-base font-extrabold leading-tight">
+                            {k.name}
+                          </span>
+                          <span className="mt-1 block text-xs font-bold text-toon-ink-soft">
+                            {
+                              ['', 'Làm quen', 'Thành thạo', 'Chuyên sâu'][
+                                k.level
+                              ]
+                            }
+                          </span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </Panel>
+              )}
+            </details>
+          )}
           <div
             aria-hidden
             className="my-8 border-t-[3px] border-dashed border-toon-ink/30"
@@ -744,10 +754,14 @@ function SummaryNotice({
   title,
   text,
   loading = false,
+  retry,
+  retrying = false,
 }: {
   title: string;
   text?: string;
   loading?: boolean;
+  retry?: () => void;
+  retrying?: boolean;
 }) {
   return (
     <SceneBackdrop
@@ -762,6 +776,15 @@ function SummaryNotice({
             <p className="mt-3 text-sm font-semibold text-toon-ink-soft">
               {text}
             </p>
+          )}
+          {!loading && retry && (
+            <ToonButton
+              className="mt-5 mr-3"
+              loading={retrying}
+              onClick={retry}
+            >
+              Thử lại
+            </ToonButton>
           )}
           {!loading && (
             <Link

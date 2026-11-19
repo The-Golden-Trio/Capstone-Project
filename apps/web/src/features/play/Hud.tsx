@@ -39,7 +39,7 @@ export function Hud({
 }) {
   return (
     <header className="relative z-30 border-b-[3px] border-toon-ink bg-toon-paper">
-      <div className="mx-auto flex min-h-16 max-w-[1600px] sm:min-h-[72px] items-center gap-3 px-3 py-2 sm:px-5">
+      <div className="mx-auto flex min-h-16 max-w-[1600px] sm:min-h-[72px] items-center gap-2 px-3 py-2 sm:gap-3 sm:px-5">
         <Tooltip content="Thoát. Tiến độ được lưu, quay lại chơi tiếp lúc nào cũng được.">
           <Link
             to={backTo}
@@ -50,7 +50,7 @@ export function Hud({
           </Link>
         </Tooltip>
         <div className="min-w-0 flex-1">
-          <h1 className="truncate font-toon text-lg font-extrabold leading-tight text-toon-ink sm:text-xl">
+          <h1 className="max-sm:line-clamp-2 break-words font-toon text-sm font-extrabold leading-tight text-toon-ink sm:truncate sm:text-xl">
             {title}
           </h1>
           <p className="mt-0.5 hidden min-w-0 items-center gap-1.5 sm:flex">
