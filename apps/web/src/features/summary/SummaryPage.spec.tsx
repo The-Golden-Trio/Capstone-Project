@@ -165,11 +165,8 @@ describe('Báo cáo cuối ca khi có điểm', () => {
     expect(
       screen.getByRole('heading', { name: 'Đã có hướng xử lý' }),
     ).toBeTruthy();
-    expect(
-      screen
-        .getByRole('link', { name: 'Về đảo của cấp này' })
-        .getAttribute('href'),
-    ).toBe('/occupations/SWE_BACKEND');
+    for (const link of screen.getAllByRole('link', { name: /^Về hồ sơ nghề$/ }))
+      expect(link.getAttribute('href')).toBe('/occupations/SWE_BACKEND');
     expect(
       screen
         .getByRole('link', { name: 'Xem lộ trình nghề' })
@@ -217,9 +214,9 @@ describe('Báo cáo cuối ca khi có điểm', () => {
       expect(screen.getByText(text)).toBeTruthy();
     expect(
       screen
-        .getByRole('link', { name: 'Về đảo của cấp này' })
-        .getAttribute('href'),
-    ).toBe('/islands/enrolled');
+        .getAllByRole('link', { name: /^Về đảo của cấp này$/ })
+        .every((link) => link.getAttribute('href') === '/islands/enrolled'),
+    ).toBe(true);
     expect(screen.queryByText(/Ca xem thử:/)).toBeNull();
   });
 });

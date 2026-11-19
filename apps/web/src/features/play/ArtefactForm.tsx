@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useId, useRef, useState, type FormEvent } from 'react';
 import { FileText, Send } from 'lucide-react';
 import { ToonButton, ToonCheckbox, ToonField, ToonTextarea } from '@datn/ui';
 import type { SceneView } from '../../api/types';
@@ -30,12 +30,20 @@ export function ArtefactForm({
     ...(form.prefill?.ticks ?? []),
   ]);
   const [touched, setTouched] = useState(false);
+  const firstField = useRef<HTMLTextAreaElement>(null);
+  const errorId = useId();
   const empty = form.fields.filter((f) => !(fields[f.id] ?? '').trim());
+  const missing =
+    touched && form.fields.length > 0 && empty.length === form.fields.length;
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
+    if (busy) return;
     setTouched(true);
-    if (empty.length === form.fields.length && form.fields.length > 0) return;
+    if (empty.length === form.fields.length && form.fields.length > 0) {
+      firstField.current?.focus();
+      return;
+    }
     onSubmit(
       Object.fromEntries(
         form.fields.map((f) => [f.id, (fields[f.id] ?? '').trim()]),
@@ -49,6 +57,7 @@ export function ArtefactForm({
       onSubmit={submit}
       className="toon-card relative mt-3 bg-toon-paper p-4 pt-6 sm:p-6 sm:pt-7"
       noValidate
+      aria-busy={busy || undefined}
     >
       {/* Kẹp giấy: tài liệu đang soạn trên bàn làm việc. */}
       <span
@@ -61,19 +70,27 @@ export function ArtefactForm({
           {form.title}
         </span>
       </p>
+      {missing && (
+        <p
+          id={errorId}
+          role="alert"
+          className="mt-3 text-sm font-bold text-toon-maroon"
+        >
+          Viết ít nhất một phần rồi gửi nhé.
+        </p>
+      )}
       <div className="mt-4 flex flex-col gap-4">
-        {form.fields.map((f) => (
+        {form.fields.map((f, index) => (
           <ToonField
             key={f.id}
             label={f.label}
             counter={`${(fields[f.id] ?? '').length}/4000`}
-            error={
-              touched && empty.length === form.fields.length
-                ? 'Viết ít nhất một phần rồi gửi nhé.'
-                : undefined
-            }
           >
             <ToonTextarea
+              ref={index === 0 ? firstField : undefined}
+              readOnly={busy}
+              aria-invalid={missing || undefined}
+              aria-describedby={missing ? errorId : undefined}
               value={fields[f.id] ?? ''}
               maxLength={4000}
               onChange={(e) =>
@@ -90,6 +107,7 @@ export function ArtefactForm({
             </legend>
             {form.ticks.map((t) => (
               <ToonCheckbox
+                disabled={busy}
                 key={t.id}
                 label={t.label}
                 checked={ticks.includes(t.id)}
@@ -107,7 +125,7 @@ export function ArtefactForm({
       </div>
       <div className="mt-5 flex flex-wrap justify-end gap-3">
         {onCancel && (
-          <ToonButton variant="ghost" onClick={onCancel}>
+          <ToonButton variant="ghost" onClick={onCancel} disabled={busy}>
             Để sau
           </ToonButton>
         )}

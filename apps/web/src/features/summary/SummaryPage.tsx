@@ -57,6 +57,11 @@ export default function SummaryPage() {
     : s.occupationCode
       ? `/occupations/${s.occupationCode}`
       : '/galaxy';
+  const backLabel = s.enrolmentId
+    ? 'Về đảo của cấp này'
+    : s.occupationCode
+      ? 'Về hồ sơ nghề'
+      : 'Về bản đồ ngân hà';
   const host = run.data?.cast[0];
   const hostLook = host
     ? castCharacters(run.data?.cast ?? []).get(host.slot)
@@ -83,7 +88,7 @@ export default function SummaryPage() {
         <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6">
           <Link
             to={back}
-            aria-label="Về đảo"
+            aria-label={backLabel}
             className="grid size-11 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink bg-toon-cream shadow-toon-sm focus-visible:outline-none focus-visible:shadow-toon-focus"
           >
             <ArrowLeft size={20} strokeWidth={2.8} aria-hidden />
@@ -245,7 +250,7 @@ export default function SummaryPage() {
 
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <Link to={back} className={toonButtonClasses({ size: 'lg' })}>
-              Về đảo của cấp này
+              {backLabel}
             </Link>
             {s.occupationCode && (
               <Link

@@ -148,18 +148,18 @@ function ActionButton({
         title={!a.enabled ? a.reason : undefined}
         aria-describedby={!a.enabled && a.reason ? `why-${a.key}` : undefined}
         className={cn(
-          'group flex size-full items-center gap-3 rounded-2xl border-[2.5px] border-toon-ink px-2.5 py-2 text-left font-toon-body text-[15px] font-bold leading-snug text-toon-ink shadow-toon-sm transition-[transform,box-shadow,background-color] duration-150 focus-visible:outline-none focus-visible:shadow-toon-focus',
-          a.kind === 'trigger' ? 'bg-[#ffe4a3]' : 'bg-toon-paper',
+          'group flex size-full items-center gap-3 rounded-2xl border-[2.5px] px-2.5 py-2 text-left font-toon-body text-[15px] font-bold leading-snug transition-[transform,box-shadow,background-color] duration-150 focus-visible:outline-none focus-visible:shadow-toon-focus',
+          !off && (a.kind === 'trigger' ? 'bg-[#ffe4a3]' : 'bg-toon-paper'),
           off
             ? 'cursor-not-allowed border-toon-ink/40 bg-toon-sand/70 text-toon-ink-faint shadow-none'
-            : 'hover:-translate-y-0.5 hover:shadow-toon active:translate-y-0.5 active:shadow-toon-press',
+            : 'border-toon-ink text-toon-ink shadow-toon-sm hover:-translate-y-0.5 hover:shadow-toon active:translate-y-0.5 active:shadow-toon-press',
         )}
       >
         <span
           aria-hidden
           className={cn(
-            'grid size-9 shrink-0 place-items-center rounded-xl border-[2.5px] border-toon-ink',
-            off && 'border-toon-ink/40 opacity-60',
+            'grid size-9 shrink-0 place-items-center rounded-xl border-[2.5px]',
+            off ? 'border-toon-ink/40 opacity-60' : 'border-toon-ink',
           )}
           style={{ backgroundColor: ACTION_GROUPS[meta.group].color }}
         >
@@ -169,7 +169,17 @@ function ActionButton({
             <Icon size={17} strokeWidth={2.6} />
           )}
         </span>
-        <span className="min-w-0 flex-1">{a.label}</span>
+        <span className="min-w-0 flex-1">
+          <span className="block">{a.label}</span>
+          {!a.enabled && a.reason && (
+            <span
+              id={`why-${a.key}`}
+              className="mt-0.5 block text-xs font-semibold text-toon-ink-faint"
+            >
+              {a.reason}
+            </span>
+          )}
+        </span>
         {a.points > 0 && (
           <span
             className="tabular inline-flex shrink-0 items-center gap-1 text-xs font-extrabold text-toon-ink-soft"
@@ -180,11 +190,6 @@ function ActionButton({
           </span>
         )}
       </button>
-      {!a.enabled && a.reason && (
-        <span id={`why-${a.key}`} className="visually-hidden">
-          {a.reason}
-        </span>
-      )}
     </>
   );
 }
