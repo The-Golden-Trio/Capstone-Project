@@ -60,6 +60,7 @@ export default function GalaxyPage() {
   const enrol = useEnrol();
   const startSample = useStartRun();
   const mapRef = useRef<GalaxyMapHandle>(null);
+  const searchRef = useRef<HTMLInputElement>(null);
   const [params, setParams] = useSearchParams();
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
@@ -161,13 +162,30 @@ export default function GalaxyPage() {
               Tìm nghề
             </label>
             <ToonInput
+              ref={searchRef}
               id="galaxy-search"
               leftIcon={<Search size={16} />}
               placeholder="Tìm trong 221 nghề, ví dụ: điều dưỡng, back-end, đầu bếp"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setPickedQuery(null);
+              }}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && matches[0]) focusOn(matches[0].code);
+                if (e.key !== 'Enter' || e.nativeEvent.isComposing) return;
+                // Deferred results may still describe the previous keystroke.
+                const q = foldVi(query.trim());
+                if (!q) return;
+                const match = catalogue.data?.occupations.find(
+                  (o) =>
+                    (!region || o.regionId === region) &&
+                    (!playableOnly || o.playable) &&
+                    foldVi(`${o.name} ${o.group}`).includes(q),
+                );
+                if (match) {
+                  setPickedQuery(query);
+                  focusOn(match.code);
+                }
               }}
               compact
             />
@@ -367,7 +385,10 @@ export default function GalaxyPage() {
                 quiz.data?.suggestions.find((s) => s.code === selectedOcc.code)
                   ?.reason ?? null
               }
-              onClose={() => select(null)}
+              onClose={() => {
+                select(null);
+                searchRef.current?.focus();
+              }}
               onEnter={() =>
                 enrol.mutate(
                   { code: selectedOcc.code, levelNo: 1 },
@@ -456,6 +477,10 @@ function PeekPanel({
   // Mặt khó của nghề phải thấy được trước khi vào nghề (BR-07).
   const profile = useOccupation(occ.code);
   const downside = profile.data?.downsides[0];
+  const heading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    heading.current?.focus({ preventScroll: true });
+  }, [occ.code]);
   return (
     <aside
       aria-label={`Thông tin nghề ${occ.shortName}`}
@@ -480,7 +505,11 @@ function PeekPanel({
           <p className="flex items-center gap-1.5 text-xs text-toon-ink-soft">
             <RegionDot color={regionColor(occ.regionId)} size={7} /> {occ.group}
           </p>
-          <h2 className="mt-1 font-toon text-2xl font-extrabold leading-tight">
+          <h2
+            ref={heading}
+            tabIndex={-1}
+            className="mt-1 font-toon text-2xl font-extrabold leading-tight focus:outline-none"
+          >
             {keepHyphenated(occ.shortName)}
           </h2>
           <div className="mt-2 flex flex-wrap gap-1.5">{statusBadge(occ)}</div>
@@ -548,7 +577,11 @@ function PeekPanel({
           </ToonButton>
         )}
         <Link
-          to={`/occupations/${occ.code}`}
+          to={
+            occ.my.status === 'NEW'
+              ? `/occupations/${occ.code}`
+              : `/occupations/${occ.code}/levels`
+          }
           style={
             occ.my.status === 'NEW' && occ.playable && !locked
               ? undefined
@@ -792,6 +825,36 @@ function GalaxyViewSwitch({
     <div
       role="radiogroup"
       aria-label={label}
+      onKeyDown={(event) => {
+        if (
+          ![
+            'ArrowLeft',
+            'ArrowRight',
+            'ArrowUp',
+            'ArrowDown',
+            'Home',
+            'End',
+          ].includes(event.key)
+        )
+          return;
+        event.preventDefault();
+        const index = options.findIndex((option) => option.key === value);
+        const next =
+          event.key === 'Home'
+            ? 0
+            : event.key === 'End'
+              ? options.length - 1
+              : (index +
+                  (event.key === 'ArrowLeft' || event.key === 'ArrowUp'
+                    ? -1
+                    : 1) +
+                  options.length) %
+                options.length;
+        onChange(options[next].key);
+        event.currentTarget
+          .querySelectorAll<HTMLButtonElement>('[role="radio"]')
+          [next]?.focus();
+      }}
       className="inline-flex gap-1 rounded-[16px] border-[3px] border-toon-night-deep bg-toon-night-deep p-1"
     >
       {options.map((o) => (
@@ -800,9 +863,10 @@ function GalaxyViewSwitch({
           type="button"
           role="radio"
           aria-checked={value === o.key}
+          tabIndex={value === o.key ? 0 : -1}
           onClick={() => onChange(o.key)}
           className={cn(
-            'inline-flex min-h-8 items-center gap-1.5 rounded-[10px] px-3 font-toon text-sm font-bold',
+            'inline-flex min-h-8 items-center gap-1.5 rounded-[10px] px-3 font-toon text-sm font-bold focus-visible:outline-none focus-visible:shadow-toon-focus',
             value === o.key
               ? 'bg-toon-star text-toon-ink'
               : 'text-toon-paper hover:bg-toon-night-soft',

@@ -25,8 +25,18 @@ export default function SignInPage() {
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
+    if (signIn.isPending) return;
     setTouched(true);
-    if (!identifier.trim() || !password) return;
+    if (!identifier.trim() || !password) {
+      e.currentTarget
+        .querySelector<HTMLInputElement>(
+          !identifier.trim()
+            ? 'input[autocomplete="username"]'
+            : 'input[autocomplete="current-password"]',
+        )
+        ?.focus();
+      return;
+    }
     signIn.mutate(
       { identifier: identifier.trim(), password },
       { onSuccess: () => navigate(from, { replace: true }) },

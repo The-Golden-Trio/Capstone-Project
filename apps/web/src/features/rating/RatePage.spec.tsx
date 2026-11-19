@@ -43,6 +43,9 @@ it('đòi đủ năm tiêu chí, gửi đúng điểm và giữ số tổng hợ
   ).toBeTruthy();
   const groups = screen.getAllByRole('radiogroup');
   expect(groups).toHaveLength(5);
+  expect(document.activeElement).toBe(
+    within(groups[0]).getAllByRole('radio')[0],
+  );
   for (const group of groups)
     fireEvent.click(within(group).getByRole('radio', { name: '3 trên 5' }));
   fireEvent.change(screen.getByLabelText(/Điều bạn muốn chia sẻ thêm/), {

@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { MessageSquareHeart, Send } from 'lucide-react';
@@ -27,6 +27,8 @@ export default function FeedbackPage() {
     useState<AppFeedbackInput['category']>('idea');
   const [message, setMessage] = useState('');
   const [page, setPage] = useState('');
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
   const send = useMutation({
     mutationFn: (input: AppFeedbackInput) =>
@@ -34,9 +36,12 @@ export default function FeedbackPage() {
     onSuccess: () =>
       toast({ tone: 'success', title: 'Đã nhận góp ý của bạn. Cảm ơn bạn!' }),
   });
+  useEffect(() => {
+    if (send.isSuccess) successRef.current?.focus();
+  }, [send.isSuccess]);
   const submit = (event: FormEvent) => {
     event.preventDefault();
-    if (message.trim())
+    if (message.trim() && !send.isPending)
       send.mutate({
         category,
         message: message.trim(),
@@ -52,27 +57,36 @@ export default function FeedbackPage() {
       />
       <PaperCard className="mt-6">
         {send.isSuccess ? (
-          <EmptyMessage
-            title="Lời nhắn đã đến nơi"
-            description="Cảm ơn bạn đã giúp hành trình khám phá nghề dễ đi hơn."
-            action={
-              <div className="flex flex-wrap justify-center gap-3">
-                <Link to="/galaxy" className={toonButtonClasses()}>
-                  Về ngân hà
-                </Link>
-                <ToonButton
-                  variant="ghost"
-                  onClick={() => {
-                    send.reset();
-                    setMessage('');
-                    setPage('');
-                  }}
-                >
-                  Gửi lời nhắn khác
-                </ToonButton>
-              </div>
-            }
-          />
+          <div
+            ref={successRef}
+            tabIndex={-1}
+            role="region"
+            aria-label="Lời nhắn đã đến nơi"
+            className="focus:outline-none"
+          >
+            <EmptyMessage
+              title="Lời nhắn đã đến nơi"
+              description="Cảm ơn bạn đã giúp hành trình khám phá nghề dễ đi hơn."
+              action={
+                <div className="flex flex-wrap justify-center gap-3">
+                  <Link to="/galaxy" className={toonButtonClasses()}>
+                    Về ngân hà
+                  </Link>
+                  <ToonButton
+                    variant="ghost"
+                    onClick={() => {
+                      send.reset();
+                      setMessage('');
+                      setPage('');
+                      requestAnimationFrame(() => messageRef.current?.focus());
+                    }}
+                  >
+                    Gửi lời nhắn khác
+                  </ToonButton>
+                </div>
+              }
+            />
+          </div>
         ) : (
           <form onSubmit={submit} className="space-y-6">
             <fieldset disabled={send.isPending} className="space-y-6">
@@ -117,6 +131,7 @@ export default function FeedbackPage() {
                 hint="Nếu gặp lỗi, kể lại các bước và điều bạn mong đợi. Tránh gửi mật khẩu hay thông tin riêng tư."
               >
                 <ToonTextarea
+                  ref={messageRef}
                   required
                   maxLength={4000}
                   rows={7}

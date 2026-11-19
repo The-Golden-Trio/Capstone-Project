@@ -33,7 +33,13 @@ export default function ResetPasswordPage() {
     <AuthLayout title="Đặt mật khẩu mới">
       {!token ? (
         <AuthNotice tone="warning" title="Đường dẫn thiếu mã">
-          Bạn mở lại đường dẫn trong thư, hoặc xin một đường dẫn mới.
+          <p>Bạn mở lại đường dẫn trong thư, hoặc xin một đường dẫn mới.</p>
+          <Link
+            to="/forgot-password"
+            className={toonButtonClasses({ className: 'mt-4' })}
+          >
+            Xin đường dẫn mới
+          </Link>
         </AuthNotice>
       ) : reset.isSuccess ? (
         <div className="flex flex-col gap-5">
