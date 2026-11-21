@@ -1,0 +1,235 @@
+@startuml CL-07_AiFeedbackAndMonitoring
+title CL-07 · NestJS modules — AI, feedback and monitoring
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "AiModule" <<Rectangle>> {
+  class AiModule <<module>> {
+    imports: AuthModule
+    controllers: SystemPromptController
+    providers: ModelGatewayService, OpenRouterProvider, OpenAiCompatibleProvider, PromptBuilder, PromptService, DeIdentifierService, OutputCheckService, CostLedgerService, AiJobService, ModelConfigService
+    exports: ModelGatewayService, PromptBuilder, DeIdentifierService, OutputCheckService, AiJobService, ModelConfigService
+  }
+  class SystemPromptController <<controller>> {
+    -prompts : PromptService
+    --
+    +getSystemPrompts(user: AuthUser) : SystemPrompt[]  «GET /staff/prompts» [CA,DE]
+    +saveSystemPrompt(user: AuthUser, key: string, dto: PromptInput) : SystemPrompt  «PUT /staff/prompts/{key}» [CA,DE]
+  }
+  class ModelGatewayService {
+    <i>model families from the deployment config; judges ≠ narrator family</i>
+    -providers : ModelProvider[]
+    -config : ModelConfigService
+    -cost : CostLedgerService
+    -metrics : MetricsService
+    -settings : SettingsService
+    --
+    +complete(task, prompt, ctx) : ModelReply
+  }
+  interface ModelProvider {
+    +name : string
+    +complete(model, prompt) : ModelReply
+  }
+  class OpenRouterProvider <<adapter>> {
+    <i>judges, ZDR endpoints only (D-131)</i>
+    -http : HttpService
+  }
+  class OpenAiCompatibleProvider <<adapter>> {
+    <i>narrator (Qwen, DeepSeek), local models</i>
+    -http : HttpService
+  }
+  class PromptBuilder {
+    -prompts : PromptService
+    --
+    +narrator(card, state) : Prompt  «narrator.v3»
+    +judge(transcript, questions) : Prompt
+    +yesNo(conditions, transcript) : Prompt
+    +feedbackNote(transcript) : Prompt
+    +interviewer(guide, turns) : Prompt
+    +generation(section, interview) : Prompt
+    +revision(section, instruction) : Prompt
+    +presentation(seed) : Prompt
+    +image(request) : Prompt
+  }
+  class PromptService {
+    <i>PROMPT_TEMPLATE (key, version, role, body) is global in the ERD, not per occupation; each save is a new version and an audit entry; 409 if baseVersion is old</i>
+    -prisma : PrismaService
+    -audit : AuditLogService
+    --
+    +list(user) : SystemPrompt[]
+    +save(user, key, dto) : SystemPrompt
+    +current(key) : string
+  }
+  class DeIdentifierService {
+    +strip(text) : string  «name → {ten} placeholder»
+  }
+  class OutputCheckService {
+    +checkNarration(beats, facts) : CheckResult  «R1–R4»
+    +verifyQuotes(outcome, transcript) : boolean
+    +checkNote(note) : CheckResult
+  }
+  class CostLedgerService {
+    <i>MODEL_CALL: requested and returned model, token counts by kind, cost at the price of that date, latency, finish reason</i>
+    -prisma : PrismaService
+    -config : ModelConfigService
+    --
+    +record(job, reply) : void
+    +sessionCost(runId) : number
+  }
+  class AiJobService {
+    <i>AI_JOB: one row per queued unit of AI work (grading, narration, generation, regrade…), the parent of its MODEL_CALL rows</i>
+    -prisma : PrismaService
+    --
+    +start(kind, runId?, promptKey?) : AiJob
+    +finish(job, status, error?) : void
+    +retry(job) : void  «D-92: switch to a model of the same role; no model left → the run pauses»
+  }
+  class ModelConfigService {
+    <i>which model fills which role (narrator, three judges, image) with a call profile and a dated price list; judge families differ from the narrator family (DC-01)</i>
+    -prisma : PrismaService
+    -audit : AuditLogService
+    --
+    +forSlot(slot) : ModelConfig[]  «ordered by FILLS_SLOT.priority»
+    +priceOn(model, date) : ModelPrice
+    +configure(admin, slot, models) : void
+  }
+  class "AiModule DTOs" as AiModule_DTOs <<dto>> {
+    PromptInput { kind, baseVersion, text, changeNote }
+    SystemPrompt
+  }
+}
+
+package "FeedbackModule" <<Rectangle>> {
+  class FeedbackModule <<module>> {
+    imports: —
+    controllers: FeedbackController, FeedbackInboxController
+    providers: FeedbackDataSeeder, FeedbackService
+    exports: FeedbackService
+    <i>OCCUPATION_RATING (5 attributes, FR-19) and APP_FEEDBACK (FR-20); wrong-content flags live in QualityModule</i>
+  }
+  class FeedbackController <<controller>> {
+    -feedback : FeedbackService
+    --
+    +sendFeedback(user: AuthUser, dto: FeedbackInput) : FeedbackView  «POST /feedback» [EX,DE,CA]
+    +getRatingSummary(user: AuthUser, occupationId: string) : RatingSummary  «GET /occupations/{occupationId}/ratings» [EX,CA]
+  }
+  class FeedbackInboxController <<controller>> {
+    -feedback : FeedbackService
+    --
+    +listFeedback(user: AuthUser, query: ListQuery) : Page<FeedbackView>  «GET /admin/feedback» [SA]
+    +handleFeedback(user: AuthUser, feedbackId: string, dto: HandleFeedbackInput) : FeedbackView  «PATCH /admin/feedback/{feedbackId}» [SA]
+  }
+  class FeedbackDataSeeder <<command>> {
+    <i>CLI: loads the 5 rating attributes</i>
+    -prisma : PrismaService
+    --
+    +run() : LoadReport
+  }
+  class FeedbackService {
+    -prisma : PrismaService
+    -settings : SettingsService
+    -notifications : NotificationService
+    --
+    +send(user, dto) : FeedbackView  «RATING only after every level; one SCORES_ATTR row per attribute»
+    +ratingSummary(occupationId) : RatingSummary  «withheld below threshold»
+    +inbox(user, query) : Page<FeedbackView>  «APP_FEEDBACK for the system admin»
+    +handle(user, id, dto) : FeedbackView
+  }
+  class "FeedbackModule DTOs" as FeedbackModule_DTOs <<dto>> {
+    FeedbackInput { kind: RATING|APP, occupationId?, scores?: object, text? }
+    HandleFeedbackInput { status }
+    ListQuery { cursor?, limit?: integer, status?, kind? }
+    FeedbackView
+    RatingSummary
+  }
+}
+
+package "MonitoringModule" <<Rectangle>> {
+  class MonitoringModule <<module>> {
+    imports: AuthModule
+    controllers: StatisticsController, OperationsController
+    providers: StatisticsService, OperationsService
+    exports: —
+  }
+  class StatisticsController <<controller>> {
+    -statistics : StatisticsService
+    --
+    +getOccupationStatistics(user: AuthUser, occupationId: string) : OccupationStatistics  «GET /staff/occupations/{occupationId}/statistics» [CA]
+  }
+  class OperationsController <<controller>> {
+    -operations : OperationsService
+    --
+    +getMetrics(user: AuthUser, query: ListQuery) : Metrics  «GET /admin/metrics» [SA]
+    +listAiCalls(user: AuthUser, query: ListQuery) : Page<AiCallView>  «GET /admin/ai-calls» [SA]
+  }
+  class StatisticsService {
+    -prisma : PrismaService
+    -settings : SettingsService
+    --
+    +forOccupation(id) : OccupationStatistics  «excludes play-test runs; stuck rate per level»
+  }
+  class OperationsService {
+    -prisma : PrismaService
+    -settings : SettingsService
+    --
+    +metrics(query) : Metrics  «cost per run vs ceiling, latency p95, failed calls»
+    +aiCalls(query) : Page<AiCallView>
+  }
+  class "MonitoringModule DTOs" as MonitoringModule_DTOs <<dto>> {
+    ListQuery { cursor?, limit?: integer, status?, kind? }
+    AiCallView
+    Metrics
+    OccupationStatistics
+  }
+}
+
+class AiJob <<domain · CD-08>>
+class AppFeedback <<domain · CD-08>>
+class FillsSlot <<domain · CD-08>>
+class ModelCall <<domain · CD-08>>
+class ModelConfig <<domain · CD-08>>
+class ModelPrice <<domain · CD-08>>
+class ModelSlot <<domain · CD-08>>
+class OccupationRating <<domain · CD-08>>
+class PromptTemplate <<domain · CD-08>>
+class RatingAttribute <<domain · CD-08>>
+class ScoresAttr <<domain · CD-08>>
+
+SystemPromptController --> PromptService
+SystemPromptController ..> AiModule_DTOs
+ModelGatewayService --> ModelProvider
+ModelGatewayService --> ModelConfigService
+ModelGatewayService --> CostLedgerService
+OpenRouterProvider ..|> ModelProvider
+OpenAiCompatibleProvider ..|> ModelProvider
+PromptBuilder --> PromptService
+PromptService ..> PromptTemplate : «write»
+CostLedgerService ..> ModelCall : «write»
+CostLedgerService --> ModelConfigService
+AiJobService ..> AiJob : «write»
+ModelConfigService ..> ModelConfig : «write»
+ModelConfigService ..> ModelSlot : «write»
+ModelConfigService ..> ModelPrice : «write»
+ModelConfigService ..> FillsSlot : «write»
+FeedbackController --> FeedbackService
+FeedbackController ..> FeedbackModule_DTOs
+FeedbackInboxController --> FeedbackService
+FeedbackInboxController ..> FeedbackModule_DTOs
+FeedbackDataSeeder ..> RatingAttribute : «write»
+FeedbackService ..> OccupationRating : «write»
+FeedbackService ..> ScoresAttr : «write»
+FeedbackService ..> AppFeedback : «write»
+StatisticsController --> StatisticsService
+StatisticsController ..> MonitoringModule_DTOs
+OperationsController --> OperationsService
+OperationsController ..> MonitoringModule_DTOs
+legend bottom
+  | Arrow | Meaning |
+  | A --> B | association: A holds B through constructor injection (a controller holds its services) |
+  | A ..> Entity : «write» | A writes the domain class (the module owns it; see CD-01 … CD-08) |
+  | Controller ..> DTOs | the controller's routes take and return these types |
+  | A ..\|> I | A realizes the interface or port I |
+  | grey class | defined in another diagram (CL-0x · module, or domain · CD-0x) |
+endlegend
+@enduml

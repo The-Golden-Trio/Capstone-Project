@@ -1,32 +1,38 @@
-# JobQuest backend — NestJS module design for the compact ERD (19 tables, 18 Nov 2026).
-# Source of truth for CL-00 … CL-07; gen_class.py checks it and draws the diagrams.
+# JobQuest backend — NestJS module design for ERD_JobQuest_Chen.puml (the ERD is the source of truth and is not edited).
+# Source of truth for CL-00 … CL-08; gen_class.py checks it and draws the diagrams.
 #
 # Routes are declared on each controller: {m: signature, http: "METHOD /path", roles: [...]}.
-# Every path is under /api/v1. Roles: Pub (no sign-in), EX, DE, CA, SA.
+# Every path is under /api/v1. Roles: Pub (no sign-in), EX, DE, CA, SA. Routes of modules that the ERD adds
+# (Import, Quality, interviews, presentation, revalidation, level pack) are PROPOSALS taken from SD-05…SD-09, not yet in api/openapi.yaml.
 # Provider kinds: service (default), processor (BullMQ, worker app), cron, guard, interceptor,
 #                 interface, adapter, library, decorator, constants, command (CLI, nest-commander).
 # deps: constructor injection "field: Type". Global provider types are drawn as fields only, not arrows.
+# owns: ERD entities and association classes (a relationship that carries attributes) that the module writes;
+#       each one has exactly one owner module. writes (on a provider): which of those it writes; drawn as «write» dependencies.
+#       Names are the ERD names in UPPER_SNAKE; the class diagram names are their PascalCase (see gen_domain.py).
 
 global_types: [PrismaService, SettingsService, StorageService, AuditLogService, MetricsService,
                StreamService, NotificationService, RuleEngine, GameData, Queue]
 
 components:
   identity: Identity & access
-  content: Content (staff)
-  player: Player
-  play: Play & assessment
+  content: Content lifecycle
+  import: Import
+  exploration: Exploration
+  assessment: Assessment
   ai: AI orchestration · Model gateway
-  operations: Feedback & monitoring
+  operations: Monitoring
   platform: Shared platform
 
 diagrams:
   CL-01: {title: "Identity and access", modules: [AuthModule, UserModule]}
-  CL-02: {title: "Catalogue and scenario authoring", modules: [CatalogueModule, ScenarioModule, LifecycleModule]}
-  CL-03: {title: "Review and publishing", modules: [ReviewModule, PublishingModule]}
-  CL-04: {title: "Player career and life", modules: [CareerModule, LifeModule]}
-  CL-05: {title: "Play and assessment", modules: [PlayModule, AssessmentModule]}
-  CL-06: {title: "AI, feedback and monitoring", modules: [AiModule, FeedbackModule, MonitoringModule]}
-  CL-07: {title: "Shared platform", modules: [CoreModule, NotificationModule, GameCoreModule]}
+  CL-02: {title: "Catalogue and import", modules: [CatalogueModule, ImportModule]}
+  CL-03: {title: "Scenario authoring and lifecycle", modules: [ScenarioModule, LifecycleModule]}
+  CL-04: {title: "Review and publishing", modules: [ReviewModule, PublishingModule]}
+  CL-05: {title: "Explorer career and life", modules: [CareerModule, LifeModule]}
+  CL-06: {title: "Play, assessment and quality", modules: [PlayModule, AssessmentModule, QualityModule]}
+  CL-07: {title: "AI, feedback and monitoring", modules: [AiModule, FeedbackModule, MonitoringModule]}
+  CL-08: {title: "Shared platform", modules: [CoreModule, NotificationModule, GameCoreModule]}
 
 # Input DTOs with their fields (output DTOs are named only; their fields follow the ERD columns they read).
 dtos:
@@ -67,30 +73,50 @@ dtos:
   BlindRatingInput: "ratings[] {runId, segment, subSkill, level, flags[]}"
   PromptInput: "kind, baseVersion, text, changeNote"
   ListQuery: "cursor?, limit?: integer, status?, kind?"
+  StartImportInput: "source: ONET|ESCO, version, fileKey"
+  ResolveIssueInput: "resolution: MAP|SKIP, targetRef?"
+  AdaptInput: "keywords[] {escoUri, nameVi}"
+  StartInterviewInput: "topicGuideVersion?: integer"
+  InterviewTurnInput: "text"
+  GenerationInput: "section, interviewId?"
+  RevisionInput: "section, instruction"
+  LevelPackInput: "pack, rowVersion"
+  ReferenceAnswerInput: "nodeCode, text, difficultyStratum"
+  CriteriaInput: "criteria[] {text}"
+  RevalidationRequestInput: "reason, dueAt"
+  RevalidationResultInput: "result: STILL_ACCURATE|NEEDS_CHANGE, note?"
+  PresentationInput: "scenes[] {position: integer, nodeCode?, assetId}"
+  AssetRequestInput: "kind: NPC|BACKGROUND|SCENE|ICON, aiPrompt?, source: LIBRARY|LICENSED|AI_GENERATED"
+  BiasCheckInput: "status: PASSED|FAILED, note?"
+  TriageInput: "selection, decision"
+  HandleFlagInput: "status"
 
 modules:
   # ───────────────────────── Shared platform ─────────────────────────
   CoreModule:
     component: platform
+    owns: [AUDIT_LOG, PLATFORM_SETTING]
     global: true
     note: "infrastructure: database, queues, object storage, settings from env, audit log, Prometheus metrics"
     imports: ["BullModule.forRootAsync()", "BullModule.registerQueue(...QUEUES)", "ConfigModule.forRoot({ validate })", "PrometheusModule.register()"]
     providers:
       PrismaService:
-        note: "extends PrismaClient · 19 tables of the compact ERD"
+        note: "extends PrismaClient · every table of ERD_JobQuest_Chen"
         methods: ["+onModuleInit() : Promise<void>", "+$transaction(fn) : Promise<T>"]
       QUEUES:
         kind: constants
-        fields: [narration, flag-judge, grading, feedback-note, email]
+        fields: [narration, flag-judge, grading, feedback-note, email, import, generation, suggestion, asset, regrade]
       StorageService:
         deps: ["s3: S3Client"]
         methods: ["+putObject(key, body, contentType) : Promise<string>", "+signedUrl(key, ttlSeconds) : Promise<string>"]
       SettingsService:
-        deps: ["config: ConfigService"]
-        methods: ["+get<K>(key: K) : AppSettings[K]  «costCeilingUsd, ratingMinResponses, idleTimeoutMinutes»"]
+        writes: [PLATFORM_SETTING]
+        deps: ["config: ConfigService", "prisma: PrismaService"]
+        methods: ["+get<K>(key: K) : AppSettings[K]  «costCeilingUsd, ratingMinResponses, idleTimeoutMinutes»", "+set(admin, key, value) : void  «one PLATFORM_SETTING row per change, with version»"]
       AuditLogService:
         deps: ["prisma: PrismaService"]
-        note: "audit_log: account actions, SM-01 transitions, prompt saves"
+        writes: [AUDIT_LOG]
+        note: "AUDIT_LOG: account actions and prompt saves; scenario transitions go to LIFECYCLE_LOG"
         methods: ["+log(tx, actorId, action, target, detail?) : Promise<void>", "+list(target, page: ListQuery) : Page<AuditEntry>"]
       MetricsService:
         deps: ["httpDuration: Histogram", "aiCallDuration: Histogram", "queueDepth: Gauge"]
@@ -103,6 +129,7 @@ modules:
 
   NotificationModule:
     component: platform
+    owns: [NOTIFICATION]
     global: true
     note: "everything pushed to a user: SSE stream, in-app notifications, e-mail (notification)"
     controllers:
@@ -120,6 +147,7 @@ modules:
         deps: ["pub: Redis", "sub: Redis"]
         methods: ["+publish(userId, event: StreamEvent) : Promise<void>", "+events(userId, lastEventId?) : Observable<MessageEvent>"]
       NotificationService:
+        writes: [NOTIFICATION]
         deps: ["prisma: PrismaService", "emailQueue: Queue «email»"]
         methods: ["+notify(userId, template, payload, channels) : Promise<void>", "+list(user, query) : Page<NotificationView>", "+markRead(user, id) : void"]
       EmailProcessor:
@@ -135,6 +163,7 @@ modules:
 
   GameCoreModule:
     component: platform
+    owns: []
     global: true
     note: "wraps @jobquest/game-core, also bundled in the Explorer and Staff apps (play-test)"
     providers:
@@ -153,13 +182,14 @@ modules:
           - "+healthAfter(health, drain, ot) : number"
       GameData:
         kind: library
-        note: "fixed catalogues: 7 groups and 42 sub-skills, 18 cards, 12 signs, shop items, ~100 achievements, 13 shared flags"
-        methods: ["+subSkill(code) : SubSkillDef", "+zodiacOf(birthDate) : Sign", "+item(code) : ShopItemDef", "+achievement(code) : AchievementDef"]
+        note: "snapshot of the reference tables (SOFT_SKILL_*, SKILL_TIER, CONDUCT_FLAG, ZODIAC_SIGN, GTKM_CARD, SHOP_ITEM, ACHIEVEMENT, LIFE_MILESTONE…); built once at start by a factory provider from PrismaService, so game-core itself never touches the database"
+        methods: ["+subSkill(code) : SubSkillDef", "+zodiacOf(birthDate) : Sign", "+item(code) : ShopItemDef", "+achievement(code) : AchievementDef", "+tiers() : SkillTierDef[]"]
     exports: [RuleEngine, GameData]
 
   # ───────────────────────── Identity ─────────────────────────
   AuthModule:
     component: identity
+    owns: [USER_ACCOUNT, EXPLORER, STAFF_MEMBER, USER_IDENTITY, AUTH_SESSION, PASSWORD_RESET_TOKEN]
     imports: [JwtModule]
     controllers:
       AuthController:
@@ -174,9 +204,9 @@ modules:
           - {m: "confirmPasswordReset(dto: PasswordResetConfirmInput) : void", http: "POST /auth/password-reset/confirm", roles: [Pub]}
     providers:
       AuthService:
-        deps: ["prisma: PrismaService", "tokens: TokenService", "passwords: PasswordService", "google: GoogleOAuthService", "audit: AuditLogService"]
+        deps: ["accounts: AccountStore", "tokens: TokenService", "passwords: PasswordService", "google: GoogleOAuthService", "audit: AuditLogService"]
         methods:
-          - "+register(dto) : Session  «user_account + player_profile in one transaction»"
+          - "+register(dto) : Session  «USER_ACCOUNT + EXPLORER in one transaction»"
           - "+signIn(dto) : Session"
           - "+signInWithGoogle(dto) : Session"
           - "+refresh(dto) : Session"
@@ -184,17 +214,23 @@ modules:
           - "+requestPasswordReset(dto) : void"
           - "+confirmPasswordReset(dto) : void"
       TokenService:
+        writes: [AUTH_SESSION, PASSWORD_RESET_TOKEN]
         deps: ["jwt: JwtService", "prisma: PrismaService", "settings: SettingsService"]
-        note: "auth_token: REFRESH (rotated) and RESET (single use)"
+        note: "AUTH_SESSION (refresh hash, rotated) and PASSWORD_RESET_TOKEN (single use)"
         methods: ["+issue(account) : Session", "+verifyAccess(token) : AuthUser", "+rotate(refreshToken) : Session", "+revokeAll(userId) : void"]
       PasswordService:
         methods: ["+hash(plain) : Promise<string>", "+verify(plain, hash) : Promise<boolean>"]
       GoogleOAuthService:
         deps: ["oauth: OAuth2Client"]
         methods: ["+exchangeCode(code, redirectUri) : GoogleProfile"]
+      AccountStore:
+        writes: [USER_ACCOUNT, EXPLORER, STAFF_MEMBER, USER_IDENTITY]
+        deps: ["prisma: PrismaService"]
+        note: "the only writer of the identity tables; sign-in, profile and admin screens all go through it"
+        methods: ["+findByEmail(email) : Account | null", "+createExplorer(tx, data) : Account  «USER_ACCOUNT + EXPLORER (subclass, same id)»", "+createStaff(tx, data) : Account  «USER_ACCOUNT + STAFF_MEMBER»", "+linkIdentity(tx, userId, provider, subject) : void", "+update(tx, userId, patch) : Account", "+softDelete(tx, userId) : void  «status DELETED, deletedAt, personal data cleared»"]
       AccessPolicyService:
         deps: ["prisma: PrismaService"]
-        note: "staff_assignment"
+        note: "reads ASSIGNED_TO, SCENARIO.author, REVIEW_ASSIGNMENT"
         methods: ["+occupationOf(ref) : Promise<string>", "+isAssigned(userId, occupationId, role?) : boolean", "+isAuthorOf(userId, scenarioId) : boolean", "+isReviewerOf(userId, scenarioId) : boolean"]
       JwtAuthGuard:
         kind: guard
@@ -212,10 +248,11 @@ modules:
       Decorators:
         kind: decorator
         fields: ["@Public()", "@Roles(...roles)", "@CurrentUser() : AuthUser"]
-    exports: [TokenService, PasswordService, AccessPolicyService, OccupationAccessGuard]
+    exports: [TokenService, PasswordService, AccountStore, AccessPolicyService, OccupationAccessGuard]
 
   UserModule:
     component: identity
+    owns: [ASSIGNED_TO]
     imports: [AuthModule]
     controllers:
       MeController:
@@ -239,18 +276,20 @@ modules:
           - {m: "setOccupationStaff(user: AuthUser, occupationId: string, dto: StaffingInput) : OccupationStaff", http: "PUT /admin/occupations/{occupationId}/staff", roles: [SA]}
     providers:
       AccountService:
-        deps: ["prisma: PrismaService", "passwords: PasswordService", "tokens: TokenService"]
-        methods: ["+getMe(user) : Me", "+update(user, dto) : Me", "+deleteExplorer(user) : void  «cascade runs, profile; feedback.user_id → NULL»"]
+        deps: ["accounts: AccountStore", "passwords: PasswordService", "tokens: TokenService"]
+        methods: ["+getMe(user) : Me", "+update(user, dto) : Me", "+deleteExplorer(user) : void  «soft delete; the account row stays for the ledger and run history»"]
       UserAdminService:
-        deps: ["prisma: PrismaService", "tokens: TokenService", "audit: AuditLogService", "notifications: NotificationService"]
+        deps: ["accounts: AccountStore", "tokens: TokenService", "audit: AuditLogService", "notifications: NotificationService"]
         methods: ["+list(query) : Page<UserAdminView>", "+createStaff(admin, dto) : UserAdminView", "+update(admin, userId, dto) : UserAdminView", "+delete(admin, userId) : void  «staff are anonymised»", "+activity(userId, query) : Page<AuditEntry>"]
       StaffingService:
+        writes: [ASSIGNED_TO]
         deps: ["prisma: PrismaService", "notifications: NotificationService"]
         methods: ["+get(occupationId) : OccupationStaff", "+set(admin, occupationId, dto) : OccupationStaff  «one active CA, ≥ 1 DE»"]
 
   # ───────────────────────── Content (staff) ─────────────────────────
   CatalogueModule:
     component: content
+    owns: [INTEREST_REGION, OCCUPATION_GROUP, OCCUPATION, OCCUPATION_LEVEL, BAND, LEVEL_TASK, SKILL_TIER, WORK_ENVIRONMENT, DEPARTMENT, COMPANY_TYPE, COMPANY, SOFT_SKILL_GROUP, SOFT_SKILL_ITEM, CHECK_QUESTION, CONDUCT_FLAG, REQUIRES_PRIOR, SIMILAR_TO, NEEDS_SKILL, WORKS_IN, REQUIRES_KEYWORD, TRAINS, TIER_NAME, BUDGETS, NPC_CARD, NPC_ABILITY, NPC_CHAPTER, SIDE_ACTIVITY, OUTFIT_GROUP, NPC_ASSET, RELATES_TO, FALLS_BACK_TO]
     imports: [AuthModule]
     controllers:
       CatalogueController:
@@ -270,22 +309,57 @@ modules:
         deps: ["prisma: PrismaService", "data: GameData"]
         methods: ["+galaxyMap(user) : GalaxyMap", "+occupation(user, id) : OccupationView", "+level(user, id) : LevelView"]
       OccupationService:
+        writes: [OCCUPATION, OCCUPATION_LEVEL]
         deps: ["prisma: PrismaService", "audit: AuditLogService"]
         methods: ["+listAssigned(user) : StaffOccupation[]", "+update(user, id, dto) : StaffOccupation  «CA: status; DE: profile»", "+levelPackage(levelId) : LevelPackage"]
       OccupationDataLoader:
+        writes: [INTEREST_REGION, OCCUPATION_GROUP, OCCUPATION, OCCUPATION_LEVEL, BAND, LEVEL_TASK, SKILL_TIER, WORK_ENVIRONMENT, DEPARTMENT, COMPANY_TYPE, COMPANY, SOFT_SKILL_GROUP, SOFT_SKILL_ITEM, CHECK_QUESTION, CONDUCT_FLAG, REQUIRES_PRIOR, SIMILAR_TO, NEEDS_SKILL, WORKS_IN, REQUIRES_KEYWORD, TRAINS, TIER_NAME, BUDGETS, NPC_CARD, NPC_ABILITY, NPC_CHAPTER, SIDE_ACTIVITY, OUTFIT_GROUP, NPC_ASSET, RELATES_TO, FALLS_BACK_TO]
         kind: command
         deps: ["prisma: PrismaService", "storage: StorageService"]
-        note: "CLI: loads occupation-data (221 occupations, levels, budgets, ESCO keywords, 22 NPC) — replaces the import screens"
+        note: "CLI: loads occupation-data (221 occupations, levels, budgets, soft skills, work environments, 22 NPC, outfits) into the catalogue tables; O*NET and ESCO sources go through ImportModule"
         methods: ["+run(path) : LoadReport", "-upsertOccupation(json) : void", "-upsertLevels(json) : void", "-upsertNpcs(yaml) : void"]
     exports: [CatalogueService]
 
+  # ───────────────────────── Import (SD-09) ─────────────────────────
+  ImportModule:
+    component: import
+    owns: [IMPORT_BATCH, IMPORT_ISSUE, ONET_OCCUPATION, ESCO_OCCUPATION, ESCO_SKILL_GROUP, KEYWORD, MAPS_TO_ONET, MAPS_TO_ESCO, TRANSFERS_TO]
+    note: "reference data import: O*NET and ESCO files → matching → record fixes → Vietnamese keyword names (SD-09)"
+    imports: [AuthModule]
+    controllers:
+      ImportController:
+        deps: ["imports: ImportService"]
+        routes:
+          - {m: "startImport(user: AuthUser, dto: StartImportInput) : ImportView", http: "POST /staff/imports", roles: [CA], status: 202}
+          - {m: "getImport(user: AuthUser, importId: string) : ImportView", http: "GET /staff/imports/{importId}", roles: [CA]}
+          - {m: "resolveIssue(user: AuthUser, importId: string, issueId: string, dto: ResolveIssueInput) : ImportView", http: "PUT /staff/imports/{importId}/issues/{issueId}", roles: [CA]}
+          - {m: "saveAdaptation(user: AuthUser, importId: string, dto: AdaptInput) : ImportView", http: "PUT /staff/imports/{importId}/adaptation", roles: [CA]}
+    providers:
+      ImportService:
+        writes: [IMPORT_BATCH, IMPORT_ISSUE, KEYWORD, MAPS_TO_ONET, MAPS_TO_ESCO]
+        deps: ["prisma: PrismaService", "storage: StorageService", "importQueue: Queue «import»"]
+        methods: ["+start(user, dto) : ImportView  «file already in object storage; enqueues the job»", "+get(id) : ImportView", "+resolve(user, importId, issueId, dto) : ImportView  «RESOLVES: issue closed by a staff member»", "+saveAdaptation(user, importId, dto) : ImportView  «Vietnamese keyword names, nameViStatus»"]
+      ImportProcessor:
+        kind: processor
+        queue: import
+        writes: [IMPORT_BATCH, IMPORT_ISSUE, ONET_OCCUPATION, ESCO_OCCUPATION, ESCO_SKILL_GROUP, KEYWORD, MAPS_TO_ONET, MAPS_TO_ESCO, TRANSFERS_TO]
+        deps: ["prisma: PrismaService", "source: ReferenceSourceClient", "stream: StreamService"]
+        methods: ["+process(job) : Promise<void>  «match records to sources; unmatched ones become IMPORT_ISSUE rows; publishes import.done»"]
+      ReferenceSourceClient:
+        kind: adapter
+        deps: ["http: HttpService"]
+        note: "looks up source identifiers (SOC code, ESCO URI) at O*NET and ESCO"
+        methods: ["+lookup(source, ref) : SourceRecord | null"]
+
   LifecycleModule:
     component: content
+    owns: [LIFECYCLE_LOG]
     providers:
       ScenarioStateMachine:
-        deps: ["prisma: PrismaService", "audit: AuditLogService"]
-        note: "TRANSITIONS = SM-01; every transition is written to audit_log in the same transaction"
-        methods: ["+apply(tx, scenarioId, action, actor) : ScenarioStatus", "+allowedActions(status, role) : LifecycleAction[]", "+history(scenarioId) : LifecycleEntry[]"]
+        writes: [LIFECYCLE_LOG]
+        deps: ["prisma: PrismaService"]
+        note: "TRANSITIONS = SM-01 (scenario); every transition is written to LIFECYCLE_LOG in the same transaction. The ERD also logs level pack, occupation and NPC chapter changes; SM-01 has no transitions for them (A29)"
+        methods: ["+apply(tx, scenarioId, action, actor) : ScenarioStatus", "+logChange(tx, subject: SubjectRef, from, to, actor, reason?) : void  «scenario, level pack, occupation or NPC chapter: exactly one»", "+allowedActions(status, role) : LifecycleAction[]", "+history(scenarioId) : LifecycleEntry[]"]
       LifecycleAction:
         kind: constants
         fields: [OPEN, SUBMIT, START_REVIEW, REQUEST_CHANGES, REJECT, APPROVE, BUILD_DRAFT, REPORT_ISSUE, PASS_PLAYTEST, PUBLISH, DELETE]
@@ -293,7 +367,8 @@ modules:
 
   ScenarioModule:
     component: content
-    imports: [AuthModule, LifecycleModule]
+    owns: [LEVEL_PACK, RESIDENT_SLOT, SCENARIO, SCENARIO_SLOT, FACT, ARTEFACT, ACTION, TIMELINE_EVENT, AMBIENT, STORY_FLAG, CHECK, NODE, OPTION, REVIEW_PROBE, OBSERVED_ITEM, REFERENCE_ANSWER, SCORES, REF_GRADE, TOPIC_GUIDE, EXPERT_INTERVIEW, INTERVIEW_TURN, GENERATION_RUN]
+    imports: [AuthModule, LifecycleModule, AiModule]
     controllers:
       ScenarioController:
         deps: ["scenarios: ScenarioService"]
@@ -309,21 +384,69 @@ modules:
           - {m: "saveSeed(user: AuthUser, scenarioId: string, dto: SeedInput) : ScenarioDetail", http: "PUT /staff/scenarios/{scenarioId}/seed", roles: [DE]}
           - {m: "checkSeed(user: AuthUser, scenarioId: string) : CheckReport", http: "POST /staff/scenarios/{scenarioId}/checks", roles: [DE]}
           - {m: "submitScenario(user: AuthUser, scenarioId: string) : ScenarioDetail", http: "POST /staff/scenarios/{scenarioId}/submit", roles: [DE]}
+      InterviewController:
+        deps: ["interviews: InterviewService"]
+        routes:
+          - {m: "startInterview(user: AuthUser, scenarioId: string, dto: StartInterviewInput) : InterviewView", http: "POST /staff/scenarios/{scenarioId}/interviews", roles: [DE], status: 201}
+          - {m: "answerInterview(user: AuthUser, interviewId: string, dto: InterviewTurnInput) : InterviewView | JobAccepted", http: "POST /staff/interviews/{interviewId}/turns", roles: [DE]}
+          - {m: "confirmInterview(user: AuthUser, interviewId: string) : InterviewView", http: "POST /staff/interviews/{interviewId}/confirm", roles: [DE]}
+      GenerationController:
+        deps: ["generation: GenerationService"]
+        routes:
+          - {m: "requestGeneration(user: AuthUser, scenarioId: string, dto: GenerationInput) : JobAccepted", http: "POST /staff/scenarios/{scenarioId}/generations", roles: [DE], status: 202}
+          - {m: "requestRevision(user: AuthUser, scenarioId: string, dto: RevisionInput) : JobAccepted", http: "POST /staff/scenarios/{scenarioId}/revisions", roles: [DE], status: 202}
+      LevelPackController:
+        deps: ["packs: LevelPackService"]
+        routes:
+          - {m: "getLevelPack(user: AuthUser, levelId: string) : LevelPackView", http: "GET /staff/levels/{levelId}/pack", roles: [CA, DE]}
+          - {m: "saveLevelPack(user: AuthUser, levelId: string, dto: LevelPackInput) : LevelPackView", http: "PUT /staff/levels/{levelId}/pack", roles: [DE]}
+      ReferenceAnswerController:
+        deps: ["references: ReferenceAnswerService"]
+        routes:
+          - {m: "writeReferenceAnswer(user: AuthUser, scenarioId: string, dto: ReferenceAnswerInput) : void", http: "POST /staff/scenarios/{scenarioId}/reference-answers", roles: [DE], status: 201}
     providers:
       ScenarioService:
+        writes: [SCENARIO]
         deps: ["prisma: PrismaService", "lifecycle: ScenarioStateMachine", "access: AccessPolicyService", "notifications: NotificationService"]
         methods: ["+list(user, query) : Page<ScenarioListItem>", "+open(user, dto) : ScenarioDetail  «409 if the slot code is active»", "+get(user, id) : ScenarioDetail", "+assignAuthor(user, id, dto) : ScenarioDetail", "+history(id) : LifecycleEntry[]"]
       SeedService:
+        writes: [SCENARIO, SCENARIO_SLOT, FACT, ARTEFACT, ACTION, TIMELINE_EVENT, AMBIENT, STORY_FLAG, CHECK, NODE, OPTION, REVIEW_PROBE, OBSERVED_ITEM, SCORES]
         deps: ["prisma: PrismaService", "validator: SeedValidator", "lifecycle: ScenarioStateMachine", "notifications: NotificationService"]
-        methods: ["+save(user, id, dto) : ScenarioDetail  «DRAFT only, author only, 412 on row_version»", "+check(id) : CheckReport", "+submit(user, id) : ScenarioDetail"]
+        note: "one seed document in, rows out: slots, facts, artefacts, actions, timeline, ambient, flags, checks, nodes, options, probes and observed items are written in one transaction"
+        methods: ["+save(user, id, dto) : ScenarioDetail  «DRAFT only, author only, 412 on rowVersion»", "+check(id) : CheckReport", "+submit(user, id) : ScenarioDetail"]
       SeedValidator:
         deps: ["data: GameData"]
         note: "seed rules: open/mid/end nodes, end node is a written format, ≥ 1 closed node, ≤ 1 timed node, 3–6 observed sub-skills, limits said aloud, facts referenced exist, budget shares sum to 100%"
         methods: ["+check(seed, level) : CheckReport"]
+      InterviewService:
+        writes: [EXPERT_INTERVIEW, INTERVIEW_TURN, TOPIC_GUIDE]
+        deps: ["prisma: PrismaService", "access: AccessPolicyService", "gateway: ModelGatewayService", "prompts: PromptBuilder", "deid: DeIdentifierService", "jobs: AiJobService", "stream: StreamService"]
+        note: "AI interviews the Domain Expert round by round (TOPIC_GUIDE) and tracks which seed fields are covered (fieldCoverage)"
+        methods: ["+start(user, scenarioId, dto) : InterviewView", "+answer(user, interviewId, dto) : InterviewView | JobAccepted", "+confirm(user, interviewId) : InterviewView  «confirmedAt; the summary feeds generation»", "+saveGuide(admin, content) : TopicGuide  «new version»"]
+      GenerationService:
+        writes: [GENERATION_RUN]
+        deps: ["prisma: PrismaService", "access: AccessPolicyService", "lifecycle: ScenarioStateMachine", "generationQueue: Queue «generation»"]
+        methods: ["+request(user, scenarioId, dto) : JobAccepted  «DRAFT only; section by section»", "+revise(user, scenarioId, dto) : JobAccepted  «only the requested part»"]
+      GenerationProcessor:
+        kind: processor
+        queue: generation
+        writes: [GENERATION_RUN]
+        deps: ["prisma: PrismaService", "gateway: ModelGatewayService", "prompts: PromptBuilder", "deid: DeIdentifierService", "checks: OutputCheckService", "validator: SeedValidator", "jobs: AiJobService", "stream: StreamService"]
+        methods: ["+process(job) : Promise<void>  «generate or revise → check output → store input, output, fieldProvenance, checkResult → publish content.ready»"]
+      LevelPackService:
+        writes: [LEVEL_PACK, RESIDENT_SLOT]
+        deps: ["prisma: PrismaService", "access: AccessPolicyService", "lifecycle: ScenarioStateMachine"]
+        methods: ["+get(user, levelId) : LevelPackView", "+save(user, levelId, dto) : LevelPackView  «412 on rowVersion; new version per approved change»"]
+      ReferenceAnswerService:
+        writes: [REFERENCE_ANSWER, REF_GRADE]
+        deps: ["prisma: PrismaService", "access: AccessPolicyService"]
+        note: "expert-written answers with the level each sub-skill deserves; they become the regression set"
+        methods: ["+write(user, scenarioId, dto) : void  «WRITES_REF; REF_GRADE rows»"]
 
   # ───────────────────────── Review and publishing ─────────────────────────
   ReviewModule:
     component: content
+    owns: [CRITERIA_VERSION, REVIEW_CRITERION, REVIEW_ASSIGNMENT, REVIEW, REVIEW_COMMENT, ANSWERS_CRITERION, REVALIDATION_REQUEST]
     imports: [AuthModule, LifecycleModule]
     controllers:
       ReviewController:
@@ -332,6 +455,16 @@ modules:
           - {m: "listMyReviewQueue(user: AuthUser) : ReviewQueueItem[]", http: "GET /staff/reviews", roles: [DE]}
           - {m: "openReview(user: AuthUser, reviewId: string) : ReviewView", http: "GET /staff/reviews/{reviewId}", roles: [DE]}
           - {m: "decideReview(user: AuthUser, reviewId: string, dto: ReviewDecisionInput) : ScenarioDetail", http: "POST /staff/reviews/{reviewId}/decision", roles: [DE]}
+      CriteriaController:
+        deps: ["criteria: CriteriaService"]
+        routes:
+          - {m: "getReviewCriteria(user: AuthUser, occupationId: string) : CriteriaView", http: "GET /staff/occupations/{occupationId}/review-criteria", roles: [CA, DE]}
+          - {m: "saveReviewCriteria(user: AuthUser, occupationId: string, dto: CriteriaInput) : CriteriaView", http: "PUT /staff/occupations/{occupationId}/review-criteria", roles: [CA]}
+      RevalidationController:
+        deps: ["revalidations: RevalidationService"]
+        routes:
+          - {m: "requestRevalidation(user: AuthUser, scenarioId: string, versionNo: integer, dto: RevalidationRequestInput) : RevalidationView", http: "POST /staff/scenarios/{scenarioId}/releases/{versionNo}/revalidations", roles: [CA, SA], status: 201}
+          - {m: "resolveRevalidation(user: AuthUser, requestId: string, dto: RevalidationResultInput) : RevalidationView", http: "POST /staff/revalidations/{requestId}/result", roles: [DE]}
       ReviewAssignmentController:
         deps: ["assignments: ReviewAssignmentService"]
         routes:
@@ -340,40 +473,91 @@ modules:
           - {m: "reassignReview(user: AuthUser, reviewId: string, dto: AssignReviewerInput) : ReviewView", http: "POST /staff/reviews/{reviewId}/reassign", roles: [CA]}
     providers:
       ReviewService:
+        writes: [REVIEW, REVIEW_COMMENT, ANSWERS_CRITERION]
         deps: ["prisma: PrismaService", "lifecycle: ScenarioStateMachine", "access: AccessPolicyService", "notifications: NotificationService"]
-        note: "scenario_review; criteria come from occupation.profile.reviewCriteria"
+        note: "REVIEW answers every REVIEW_CRITERION of the CRITERIA_VERSION that was current when it was assigned"
         methods: ["+queue(user) : ReviewQueueItem[]", "+open(user, reviewId) : ReviewView  «SUBMITTED → IN_REVIEW»", "+decide(user, reviewId, dto) : ScenarioDetail  «422 if a criterion is unanswered»"]
       ReviewAssignmentService:
+        writes: [REVIEW_ASSIGNMENT]
         deps: ["prisma: PrismaService", "access: AccessPolicyService", "notifications: NotificationService"]
-        methods: ["+assign(user, scenarioId, dto) : ReviewView  «reviewer ≠ author»", "+overdue(user) : ReviewQueueItem[]", "+reassign(user, reviewId, dto) : ReviewView  «old row → REASSIGNED»"]
+        note: "an assignment reviews a scenario or a level pack (REVIEWS_SCENARIO / REVIEWS_PACK, exactly one)"
+        methods: ["+assign(user, scenarioId, dto) : ReviewView  «reviewer ≠ author»", "+overdue(user) : ReviewQueueItem[]", "+reassign(user, reviewId, dto) : ReviewView  «old row → REASSIGNED, REASSIGNS link»"]
+      CriteriaService:
+        writes: [CRITERIA_VERSION, REVIEW_CRITERION]
+        deps: ["prisma: PrismaService", "audit: AuditLogService"]
+        methods: ["+current(occupationId) : CriteriaView", "+save(user, occupationId, dto) : CriteriaView  «a new CRITERIA_VERSION; old reviews keep theirs»"]
+      RevalidationService:
+        writes: [REVALIDATION_REQUEST]
+        deps: ["prisma: PrismaService", "lifecycle: ScenarioStateMachine", "notifications: NotificationService"]
+        methods: ["+request(user, scenarioId, versionNo, dto) : RevalidationView  «on a PUBLISHED release; notifies the DEs»", "+resolve(user, requestId, dto) : RevalidationView  «STILL_ACCURATE keeps PUBLISHED; NEEDS_CHANGE → retire (SM-01)»"]
 
   PublishingModule:
     component: content
-    imports: [AuthModule, LifecycleModule, PlayModule]
+    owns: [ASSET, PRESENTATION, PRESENTATION_SCENE, SCENARIO_BUILD, PLAYTEST_FINDING, TRIAGE_ITEM, SCENARIO_RELEASE]
+    imports: [AuthModule, LifecycleModule, PlayModule, AiModule]
     controllers:
+      PresentationController:
+        deps: ["presentations: PresentationService"]
+        routes:
+          - {m: "requestSuggestions(user: AuthUser, scenarioId: string) : JobAccepted", http: "POST /staff/scenarios/{scenarioId}/presentation/suggestions", roles: [CA], status: 202}
+          - {m: "savePresentation(user: AuthUser, scenarioId: string, dto: PresentationInput) : PresentationView", http: "PUT /staff/scenarios/{scenarioId}/presentation", roles: [CA]}
+      AssetController:
+        deps: ["assets: AssetService"]
+        routes:
+          - {m: "requestAsset(user: AuthUser, dto: AssetRequestInput) : JobAccepted | AssetView", http: "POST /staff/assets", roles: [CA], status: 202}
+          - {m: "checkAssetBias(user: AuthUser, assetId: string, dto: BiasCheckInput) : AssetView", http: "PUT /staff/assets/{assetId}/bias-check", roles: [CA]}
       BuildController:
-        deps: ["builds: BuildService"]
+        deps: ["builds: BuildService", "triage: TriageService"]
         routes:
           - {m: "buildDraftGame(user: AuthUser, scenarioId: string) : Build", http: "POST /staff/scenarios/{scenarioId}/builds", roles: [CA]}
           - {m: "getBuild(user: AuthUser, buildId: string) : Build", http: "GET /staff/builds/{buildId}", roles: [CA, DE]}
           - {m: "startPlaytestRun(user: AuthUser, buildId: string) : RunView", http: "POST /staff/builds/{buildId}/runs", roles: [DE]}
           - {m: "reportFindings(user: AuthUser, buildId: string, dto: FindingsInput) : ScenarioDetail", http: "POST /staff/builds/{buildId}/findings", roles: [DE]}
           - {m: "passPlaytest(user: AuthUser, buildId: string) : ScenarioDetail", http: "POST /staff/builds/{buildId}/pass", roles: [DE]}
+          - {m: "triageRun(user: AuthUser, runId: string, dto: TriageInput) : TriageView", http: "POST /staff/runs/{runId}/triage", roles: [DE], status: 201}
       ReleaseController:
         deps: ["releases: ReleaseService"]
         routes:
           - {m: "publishScenario(user: AuthUser, scenarioId: string, dto: PublishInput) : Build", http: "POST /staff/scenarios/{scenarioId}/release", roles: [CA]}
           - {m: "deleteScenario(user: AuthUser, scenarioId: string) : ScenarioDetail", http: "DELETE /staff/scenarios/{scenarioId}", roles: [CA]}
     providers:
+      PresentationService:
+        writes: [PRESENTATION, PRESENTATION_SCENE]
+        deps: ["prisma: PrismaService", "access: AccessPolicyService", "suggestions: Queue «suggestion»"]
+        note: "the Content Admin picks task types, NPCs and backgrounds (SD-07); the engine derives outfits, the admin only chooses scene pictures"
+        methods: ["+requestSuggestions(user, scenarioId) : JobAccepted", "+save(user, scenarioId, dto) : PresentationView  «scenes in order, FROM a node or not»"]
+      SuggestionProcessor:
+        kind: processor
+        queue: suggestion
+        writes: [PRESENTATION]
+        deps: ["prisma: PrismaService", "gateway: ModelGatewayService", "prompts: PromptBuilder", "checks: OutputCheckService", "jobs: AiJobService", "stream: StreamService"]
+        methods: ["+process(job) : Promise<void>  «suggest task types, NPCs and backgrounds → publish suggestions.ready»"]
+      AssetService:
+        writes: [ASSET]
+        deps: ["prisma: PrismaService", "storage: StorageService", "assetQueue: Queue «asset»"]
+        methods: ["+request(user, dto) : JobAccepted | AssetView", "+checkBias(user, assetId, dto) : AssetView  «CHECKS_BIAS: a staff member signs off»"]
+      AssetProcessor:
+        kind: processor
+        queue: asset
+        writes: [ASSET]
+        deps: ["prisma: PrismaService", "gateway: ModelGatewayService", "storage: StorageService", "jobs: AiJobService", "stream: StreamService"]
+        methods: ["+process(job) : Promise<void>  «generate image → store → biasCheck PENDING»"]
+      TriageService:
+        writes: [TRIAGE_ITEM]
+        deps: ["prisma: PrismaService", "access: AccessPolicyService"]
+        methods: ["+triage(user, runId, dto) : TriageView  «selection by signals and threshold version»"]
       BuildService:
+        writes: [SCENARIO_BUILD, PLAYTEST_FINDING]
         deps: ["prisma: PrismaService", "lifecycle: ScenarioStateMachine", "snapshots: BuildSnapshotter", "runs: RunService", "notifications: NotificationService"]
-        methods: ["+build(user, scenarioId) : Build  «APPROVED → IN_PLAYTEST»", "+get(id) : Build", "+startPlaytest(user, buildId) : RunView", "+reportFindings(user, buildId, dto) : ScenarioDetail  «findings in audit_log; → DRAFT»", "+pass(user, buildId) : ScenarioDetail  «→ READY»"]
+        methods: ["+build(user, scenarioId) : Build  «APPROVED → IN_PLAYTEST»", "+get(id) : Build", "+startPlaytest(user, buildId) : RunView", "+reportFindings(user, buildId, dto) : ScenarioDetail  «PLAYTEST_FINDING rows; → DRAFT or APPROVED»", "+pass(user, buildId) : ScenarioDetail  «→ READY»"]
       BuildSnapshotter:
         deps: ["prisma: PrismaService"]
         methods: ["+snapshot(tx, scenarioId) : BuildContent  «seed + level package»", "+hash(content) : string"]
       ReleaseService:
+        writes: [SCENARIO_RELEASE]
         deps: ["prisma: PrismaService", "lifecycle: ScenarioStateMachine", "storage: StorageService"]
-        methods: ["+publish(user, scenarioId, dto) : Build  «READY only; sets effective_from»", "+delete(user, scenarioId) : ScenarioDetail  «→ RETIRED, sets retired_at»", "+publishDue(now) : number"]
+        note: "SCENARIO_RELEASE is immutable and numbered per scenario; it is built from exactly one SCENARIO_BUILD"
+        methods: ["+publish(user, scenarioId, dto) : Build  «READY only; sets effectiveAt»", "+delete(user, scenarioId) : ScenarioDetail  «→ RETIRED»", "+publishDue(now) : number"]
       ReleaseScheduler:
         kind: cron
         deps: ["releases: ReleaseService"]
@@ -381,8 +565,9 @@ modules:
 
   # ───────────────────────── Player ─────────────────────────
   CareerModule:
-    component: player
-    note: "player_profile and player_level: Get to know me, soft skills, keywords, levels, suggestions, achievements"
+    component: exploration
+    owns: [GTKM_CARD, GTKM_ATTEMPT, GOAL_QUESTION, GOAL_OPTION, EXPLORER_GOAL, HOBBY, DISTRESS_TERM, ZODIAC_SIGN, ACHIEVEMENT, SUGGESTION_EVENT, LEVEL_ENROLMENT, SCENARIO_BEST, ANSWERS_CARD, INVITED, CHOOSES, PROGRESSES, BOOSTS, EARNS, SUGGESTS, CASTS, EARNED_KEYWORD]
+    note: "EXPLORER profile and progression: Get to know me, goals, 7 soft skill groups, keywords, level enrolments, best score per scenario, suggestions, achievements"
     imports: [CatalogueModule]
     controllers:
       ProfileController:
@@ -404,30 +589,42 @@ modules:
           - {m: "getPlayerLevel(user: AuthUser, playerLevelId: string) : LevelEntry", http: "GET /career/levels/{playerLevelId}", roles: [EX]}
           - {m: "getSuggestions(user: AuthUser) : Suggestions", http: "GET /career/suggestions", roles: [EX]}
     providers:
+      ProfileDataSeeder:
+        kind: command
+        writes: [GTKM_CARD, GOAL_QUESTION, GOAL_OPTION, HOBBY, ZODIAC_SIGN, ACHIEVEMENT, BOOSTS]
+        deps: ["prisma: PrismaService"]
+        note: "CLI: loads the fixed profile tables (18 cards, goal questions, hobbies, 12 zodiac signs and their boosts, achievements); the staff edit them only through a new load"
+        methods: ["+run(path) : LoadReport"]
       ProfileService:
+        writes: [PROGRESSES, EXPLORER_GOAL, SCENARIO_BEST]
         deps: ["prisma: PrismaService", "rules: RuleEngine", "data: GameData"]
-        methods: ["+view(user) : ProfileView  «7-group radar, tiers, strengths after ≥ 3 scenes, RIASEC self vs tried»", "+journal(user, query) : Page<JournalEntry>", "+updateGoals(user, dto) : ProfileView", "+applyRun(tx, run) : TierUp[]  «soft_skills, riasec.tried; keep best per scene»"]
+        methods: ["+view(user) : ProfileView  «7-group radar, tiers, strengths after ≥ 3 scenes, RIASEC self vs tried»", "+journal(user, query) : Page<JournalEntry>", "+updateGoals(user, dto) : ProfileView", "+applyRun(tx, run) : TierUp[]  «PROGRESSES, riasecTried; SCENARIO_BEST keeps the best, pays only the difference»"]
       GetToKnowMeService:
+        writes: [GTKM_ATTEMPT, ANSWERS_CARD, CHOOSES, INVITED, DISTRESS_TERM]
         deps: ["prisma: PrismaService", "data: GameData"]
         note: "no AI; 18 cards → RIASEC self line + 2–3 interest regions; goals card"
-        methods: ["+cards() : CardSet", "+submit(user, dto) : GetToKnowMeResult", "-safetyCheck(text) : boolean  «word list → hotline 111 message»"]
+        methods: ["+cards() : CardSet", "+submit(user, dto) : GetToKnowMeResult", "+setDistressTerms(staff, terms) : void  «DISTRESS_TERM list kept by staff»", "-safetyCheck(text) : boolean  «DISTRESS_TERM list → hotline 111 message»"]
       LevelAccessService:
         deps: ["prisma: PrismaService", "rules: RuleEngine"]
         methods: ["+access(user, levelId) : LevelAccess  «entry open · tiers · keyword coverage ≥ 50% (30% if Sim ≥ 1.2) · prerequisites D-121»", "+explain(user, levelId) : CoverageExplanation"]
       PlayerLevelService:
+        writes: [LEVEL_ENROLMENT, CASTS, EARNED_KEYWORD]
         deps: ["prisma: PrismaService", "access: LevelAccessService", "rules: RuleEngine", "profiles: ProfileService", "achievements: AchievementService"]
         methods: ["+enter(user, dto) : LevelEntry  «random company by industry weights; onboarding slides»", "+get(user, id) : LevelEntry", "+completeIfDone(tx, playerLevelId) : LevelUp | null  «keywords → output mastery (≤ 5)»"]
       SuggestionService:
+        writes: [SUGGESTION_EVENT, SUGGESTS]
         deps: ["prisma: PrismaService", "catalogue: CatalogueService"]
         methods: ["+forPlayer(user) : Suggestions  «same field you may like · other field you do well · other field you may like»", "-likeScore(riasec, occupation) : number", "-doWellScore(softSkills, occupation) : number"]
       AchievementService:
+        writes: [EARNS]
         deps: ["prisma: PrismaService", "data: GameData", "notifications: NotificationService"]
         methods: ["+evaluate(tx, playerId, event) : string[]", "+pin(user, dto) : ProfileView"]
     exports: [ProfileService, PlayerLevelService]
 
   LifeModule:
-    component: player
-    note: "coins, health, overtime, shop and inventory, NPC bonds and side quests (no grading)"
+    component: exploration
+    owns: [XU_TRANSACTION, SHOP_ITEM, INVENTORY_ITEM, HEALTH_CHANGE, CAREER_HABIT, OCCASION, GAP, LIFE_MILESTONE, EXPLORER_MILESTONE, INTIMACY_GAIN, SIDE_QUEST_RUN, ITEM_NEEDS_CARD, PLACES_DECOR, WARNED, HAS_HABIT, KNOWS]
+    note: "xu ledger (append-only), health and overtime, shop and inventory, in-game calendar and life milestones, NPC bonds (KNOWS) and side quests (no grading)"
     controllers:
       ShopController:
         deps: ["shop: ShopService"]
@@ -442,29 +639,45 @@ modules:
           - {m: "listNpcs(user: AuthUser) : NpcBondView[]", http: "GET /npcs", roles: [EX]}
           - {m: "giveGift(user: AuthUser, npcId: string, dto: GiftInput) : NpcBondView", http: "POST /npcs/{npcId}/gifts", roles: [EX]}
     providers:
+      LifeDataSeeder:
+        kind: command
+        writes: [SHOP_ITEM, OCCASION, CAREER_HABIT, LIFE_MILESTONE, ITEM_NEEDS_CARD]
+        deps: ["prisma: PrismaService"]
+        note: "CLI: loads shop items, occasions, career habits and the 17 life milestones; prices and buffs still marked pending in the ERD stay empty"
+        methods: ["+run(path) : LoadReport"]
       WalletService:
+        writes: [XU_TRANSACTION]
         deps: ["prisma: PrismaService", "rules: RuleEngine"]
         methods: ["+pay(tx, run) : number  «coins of the scene; payday and bonuses follow the in-game calendar»", "+spend(tx, playerId, amount) : void  «409 if not enough»"]
       HealthService:
+        writes: [HEALTH_CHANGE, WARNED, HAS_HABIT]
         deps: ["prisma: PrismaService", "rules: RuleEngine"]
         methods: ["+beforeRun(tx, playerId, level) : TimeAdjust  «drain, tier → spare turns»", "+overtime(tx, run, option) : TimeAdjust", "+rest(tx, playerId, amount) : void"]
       ShopService:
+        writes: [INVENTORY_ITEM, PLACES_DECOR]
         deps: ["prisma: PrismaService", "data: GameData", "wallet: WalletService", "health: HealthService"]
         methods: ["+view(user) : ShopView  «prices in u or X»", "+buy(user, dto) : InventoryItem[]", "+inventory(user) : InventoryItem[]", "+use(user, dto) : InventoryItem  «buff for one run, decor placement, milestone»"]
       BondService:
+        writes: [KNOWS, INTIMACY_GAIN]
         deps: ["prisma: PrismaService", "data: GameData", "wallet: WalletService"]
-        note: "player_profile.npc_bonds: MET → CLOSE → BONDED → SOULMATE, deck of unlocked cards"
+        note: "KNOWS carries unlockRoute, intimacyPoints, promises; intimacy never decreases; every gain is an INTIMACY_GAIN row"
         methods: ["+list(user) : NpcBondView[]", "+gift(user, npcId, dto) : NpcBondView", "+addAffinity(tx, playerId, npcId, amount) : Stage", "+drawCast(playerId, slots) : NpcSlot[]"]
+      CalendarService:
+        writes: [GAP, EXPLORER_MILESTONE]
+        deps: ["prisma: PrismaService", "rules: RuleEngine"]
+        methods: ["+advance(tx, explorer, run) : Gap  «one scene = one working day, gameDate moves»", "+reach(tx, explorer, milestone) : void  «EXPLORER_MILESTONE; costs gap slots»"]
       SideQuestService:
+        writes: [SIDE_QUEST_RUN]
         deps: ["prisma: PrismaService", "bonds: BondService", "health: HealthService"]
         methods: ["+eligible(playerId, scenario) : boolean  «needs stage, ticket, milestone or occasion»", "+complete(tx, run) : void  «fixed bonus ≤ 10% of the level budget, +6 health»"]
-    exports: [WalletService, HealthService, BondService, SideQuestService]
+    exports: [WalletService, HealthService, BondService, SideQuestService, CalendarService]
 
   # ───────────────────────── Play and assessment ─────────────────────────
   PlayModule:
-    component: play
-    note: "run, run_turn: one scene = one shift; AI-4 narrates, the engine decides. Paths match the shift-run API already in apps/api"
-    imports: [AssessmentModule, AiModule, CareerModule, LifeModule, FeedbackModule]
+    component: exploration
+    owns: [SCENARIO_RUN, RUN_EVENT, EVIDENCE_SEGMENT, INTEREST_TAP, NPC_MEMORY]
+    note: "SCENARIO_RUN and its append-only RUN_EVENT list: one scene = one shift; AI-4 narrates, the engine decides. Paths match the shift-run API already in apps/api"
+    imports: [AssessmentModule, AiModule, CareerModule, LifeModule, QualityModule]
     controllers:
       ShiftRunController:
         deps: ["runs: RunService", "turns: TurnService", "summaries: SummaryService"]
@@ -482,76 +695,111 @@ modules:
           - {m: "getSummary(user: AuthUser, runId: string) : SceneSummary", http: "GET /shift-runs/{runId}/summary", roles: [EX, DE]}
     providers:
       RunService:
-        deps: ["prisma: PrismaService", "rules: RuleEngine", "health: HealthService", "bonds: BondService", "sideQuests: SideQuestService", "feedback: FeedbackService"]
-        methods: ["+tasks(query) : ShiftTask[]", "+start(user, dto) : RunView  «resume if IN_PROGRESS; health, items and cast set the budget»", "+startPlaytest(user, buildId) : RunView  «is_playtest, no player_level»", "+get(user, id) : RunView", "+scene(user, id) : SceneView", "+transcript(user, id, after?) : TurnLine[]", "+note(user, id, dto) : void", "+flag(user, id, dto) : void  «feedback kind FLAG»"]
+        writes: [SCENARIO_RUN, NPC_MEMORY]
+        deps: ["prisma: PrismaService", "rules: RuleEngine", "health: HealthService", "bonds: BondService", "sideQuests: SideQuestService", "flags: FlagService"]
+        methods: ["+tasks(query) : ShiftTask[]", "+start(user, dto) : RunView  «resume if IN_PROGRESS; health, items and cast set the budget»", "+startPlaytest(user, buildId) : RunView  «is_playtest, no player_level»", "+get(user, id) : RunView", "+scene(user, id) : SceneView", "+transcript(user, id, after?) : TurnLine[]", "+note(user, id, dto) : void", "+flag(user, id, dto) : void  «delegates to FlagService (CONTENT_FLAG)»"]
       TurnService:
+        writes: [RUN_EVENT, EVIDENCE_SEGMENT]
         deps: ["prisma: PrismaService", "rules: RuleEngine", "assessment: AssessmentService", "health: HealthService", "narrationQueue: Queue «narration»"]
         note: "turnId from the client makes retries safe; NPC lines arrive on /stream (turn.lines, turn.done)"
         methods: ["+take(user, runId, dto) : TurnResult | JobAccepted  «action · say · end_conversation · choose · timeout · save_artefact · confirm_end · cancel_end · hint · overtime»", "+resume(user, runId) : JobAccepted  «run paused when no model answered (D-92)»"]
       SummaryService:
+        writes: [INTEREST_TAP]
         deps: ["prisma: PrismaService", "scoring: ScoringService", "profiles: ProfileService", "levels: PlayerLevelService", "wallet: WalletService", "sideQuests: SideQuestService"]
         methods: ["+finish(user, runId, dto) : SceneSummary | JobAccepted  «waits for pending judgements; pays coins; tiers; level-up»", "+get(user, runId) : SceneSummary"]
       NarrationProcessor:
         kind: processor
         queue: narration
-        deps: ["prisma: PrismaService", "gateway: ModelGatewayService", "prompts: PromptBuilder", "checks: OutputCheckService", "stream: StreamService", "flagQueue: Queue «flag-judge»"]
+        deps: ["prisma: PrismaService", "gateway: ModelGatewayService", "prompts: PromptBuilder", "checks: OutputCheckService", "stream: StreamService", "flagQueue: Queue «flag-judge»", "jobs: AiJobService"]
         methods: ["+process(job) : Promise<void>  «reply · bridge · reaction · probe → lines [{speaker, text, expression}]; R1–R4, regenerate ≤ 2»"]
     exports: [RunService]
 
   AssessmentModule:
-    component: play
-    note: "judgement: three-judge panel on yes/no questions, story flags, expert blind ratings"
-    imports: [AuthModule, AiModule]
+    component: assessment
+    owns: [ASSESSMENT, JUDGE_RESULT, FEEDBACK_NOTE, RAISES_FLAG, EARNS_POINTS]
+    note: "ASSESSMENT per evidence segment × sub-skill: three-judge panel on yes/no questions (JUDGE_RESULT), conduct flags, story flags, feedback notes"
+    imports: [AiModule]
+    providers:
+      AssessmentService:
+        writes: [ASSESSMENT]
+        deps: ["prisma: PrismaService", "rules: RuleEngine", "gradingQueue: Queue «grading»"]
+        methods: ["+recordClosed(tx, run, node, answer) : Judgement[]", "+requestGrading(tx, runId, segment) : void  «when a node closes or a phase ends»"]
+      GradingProcessor:
+        kind: processor
+        queue: grading
+        writes: [JUDGE_RESULT]
+        deps: ["prisma: PrismaService", "panel: JudgePanelService", "jobs: AiJobService", "stream: StreamService", "noteQueue: Queue «feedback-note»"]
+        methods: ["+process(job) : Promise<void>  «one judgement per segment × observed sub-skill»"]
+      FlagJudgeProcessor:
+        kind: processor
+        queue: flag-judge
+        writes: [RAISES_FLAG]
+        deps: ["prisma: PrismaService", "panel: JudgePanelService", "jobs: AiJobService"]
+        methods: ["+process(job) : Promise<void>  «yes/no conditions → story flags in run.state (on only, D-129)»"]
+      JudgePanelService:
+        deps: ["gateway: ModelGatewayService", "prompts: PromptBuilder", "deid: DeIdentifierService", "checks: OutputCheckService"]
+        methods: ["+grade(transcript, subSkills, signs) : PanelResult  «A/B/C → 0/1/2, flags, verified quotes»", "+askYesNo(transcript, questions) : boolean[]", "-callJudge(slot, prompt) : JudgeOutcome  «retry ≤ 2»", "-combine(outcomes) : Level  «median of 3; 2 judges → lower (D-132)»"]
+      ScoringService:
+        writes: [EARNS_POINTS]
+        deps: ["prisma: PrismaService", "rules: RuleEngine", "data: GameData"]
+        methods: ["+groupPoints(run) : GroupPoints  «penalty only on judged written answers; hints never lower a score»", "+sceneScore(run) : number  «0–100»"]
+      FeedbackNoteProcessor:
+        kind: processor
+        queue: feedback-note
+        writes: [FEEDBACK_NOTE]
+        deps: ["prisma: PrismaService", "gateway: ModelGatewayService", "prompts: PromptBuilder", "checks: OutputCheckService", "jobs: AiJobService", "stream: StreamService"]
+        methods: ["+process(job) : Promise<void>  «“look back at the shift” notes, one FEEDBACK_NOTE row each»"]
+    exports: [AssessmentService, ScoringService, JudgePanelService]
+
+  QualityModule:
+    component: assessment
+    owns: [CONTENT_FLAG, BLIND_RATING, REFERENCE_REGRADE]
+    note: "grading quality: wrong-content flags from players, expert blind ratings against the AI judges, regrade of the reference answers"
+    imports: [AuthModule, AssessmentModule, AiModule]
     controllers:
+      FlagController:
+        deps: ["flags: FlagService"]
+        routes:
+          - {m: "listFlags(user: AuthUser, query: ListQuery) : Page<FlagView>", http: "GET /staff/flags", roles: [DE]}
+          - {m: "handleFlag(user: AuthUser, flagId: string, dto: HandleFlagInput) : FlagView", http: "PATCH /staff/flags/{flagId}", roles: [DE]}
       ReliabilityController:
         deps: ["reliability: ReliabilityService"]
         routes:
           - {m: "getBlindSamples(user: AuthUser, occupationId: string) : BlindSample[]", http: "GET /staff/occupations/{occupationId}/blind-samples", roles: [DE]}
           - {m: "submitBlindRatings(user: AuthUser, dto: BlindRatingInput) : void", http: "POST /staff/blind-ratings", roles: [DE]}
           - {m: "getAgreementReport(user: AuthUser, occupationId: string) : AgreementReport", http: "GET /staff/occupations/{occupationId}/agreement", roles: [DE, CA]}
+          - {m: "requestRegrade(user: AuthUser, occupationId: string) : JobAccepted", http: "POST /staff/occupations/{occupationId}/regrade", roles: [CA], status: 202}
     providers:
-      AssessmentService:
-        deps: ["prisma: PrismaService", "rules: RuleEngine", "gradingQueue: Queue «grading»"]
-        methods: ["+recordClosed(tx, run, node, answer) : Judgement[]", "+requestGrading(tx, runId, segment) : void  «when a node closes or a phase ends»"]
-      GradingProcessor:
-        kind: processor
-        queue: grading
-        deps: ["prisma: PrismaService", "panel: JudgePanelService", "stream: StreamService", "noteQueue: Queue «feedback-note»"]
-        methods: ["+process(job) : Promise<void>  «one judgement per segment × observed sub-skill»"]
-      FlagJudgeProcessor:
-        kind: processor
-        queue: flag-judge
-        deps: ["prisma: PrismaService", "panel: JudgePanelService"]
-        methods: ["+process(job) : Promise<void>  «yes/no conditions → story flags in run.state (on only, D-129)»"]
-      JudgePanelService:
-        deps: ["gateway: ModelGatewayService", "prompts: PromptBuilder", "deid: DeIdentifierService", "checks: OutputCheckService"]
-        methods: ["+grade(transcript, subSkills, signs) : PanelResult  «A/B/C → 0/1/2, flags, verified quotes»", "+askYesNo(transcript, questions) : boolean[]", "-callJudge(slot, prompt) : JudgeOutcome  «retry ≤ 2»", "-combine(outcomes) : Level  «median of 3; 2 judges → lower (D-132)»"]
-      ScoringService:
-        deps: ["prisma: PrismaService", "rules: RuleEngine", "data: GameData"]
-        methods: ["+groupPoints(run) : GroupPoints  «penalty only on judged written answers; hints never lower a score»", "+sceneScore(run) : number  «0–100»"]
-      FeedbackNoteProcessor:
-        kind: processor
-        queue: feedback-note
-        deps: ["prisma: PrismaService", "gateway: ModelGatewayService", "prompts: PromptBuilder", "checks: OutputCheckService", "stream: StreamService"]
-        methods: ["+process(job) : Promise<void>  «“look back at the shift” note, stored in run.state»"]
+      FlagService:
+        writes: [CONTENT_FLAG]
+        deps: ["prisma: PrismaService", "notifications: NotificationService"]
+        methods: ["+flag(tx, runId, dto) : void  «a player marks a run event as wrong content; notifies the DEs»", "+list(user, query) : Page<FlagView>", "+handle(user, flagId, dto) : FlagView"]
       ReliabilityService:
-        deps: ["prisma: PrismaService"]
-        methods: ["+samples(user, occupationId) : BlindSample[]  «play-test segments, AI levels hidden»", "+submit(user, dto) : void  «judgement rows with rated_by, beside the AI rows»", "+report(occupationId) : AgreementReport  «Cohen's kappa expert–AI and expert–expert»"]
-    exports: [AssessmentService, ScoringService]
+        writes: [BLIND_RATING]
+        deps: ["prisma: PrismaService", "regradeQueue: Queue «regrade»"]
+        methods: ["+samples(user, occupationId) : BlindSample[]  «play-test segments, AI levels hidden»", "+submit(user, dto) : void  «BLIND_RATING rows beside the AI ASSESSMENT rows»", "+report(occupationId) : AgreementReport  «Cohen's kappa expert–AI and expert–expert»", "+requestRegrade(user, occupationId) : JobAccepted"]
+      RegradeProcessor:
+        kind: processor
+        queue: regrade
+        writes: [REFERENCE_REGRADE]
+        deps: ["prisma: PrismaService", "panel: JudgePanelService", "jobs: AiJobService", "stream: StreamService"]
+        methods: ["+process(job) : Promise<void>  «re-run the reference answers through the panel after a prompt or model change; store level and model»"]
+    exports: [FlagService]
 
   # ───────────────────────── AI, feedback, monitoring ─────────────────────────
   AiModule:
     component: ai
+    owns: [PROMPT_TEMPLATE, MODEL_CONFIG, MODEL_SLOT, MODEL_PRICE, FILLS_SLOT, AI_JOB, MODEL_CALL]
     imports: [AuthModule]
     controllers:
       SystemPromptController:
         deps: ["prompts: PromptService"]
         routes:
-          - {m: "getSystemPrompts(user: AuthUser, occupationId: string) : SystemPrompt[]", http: "GET /staff/occupations/{occupationId}/prompts", roles: [CA, DE]}
-          - {m: "saveSystemPrompt(user: AuthUser, occupationId: string, dto: PromptInput) : SystemPrompt", http: "PUT /staff/occupations/{occupationId}/prompts", roles: [CA, DE]}
+          - {m: "getSystemPrompts(user: AuthUser) : SystemPrompt[]", http: "GET /staff/prompts", roles: [CA, DE]}
+          - {m: "saveSystemPrompt(user: AuthUser, key: string, dto: PromptInput) : SystemPrompt", http: "PUT /staff/prompts/{key}", roles: [CA, DE]}
     providers:
       ModelGatewayService:
-        deps: ["providers: ModelProvider[]", "cost: CostLedgerService", "metrics: MetricsService", "settings: SettingsService"]
+        deps: ["providers: ModelProvider[]", "config: ModelConfigService", "cost: CostLedgerService", "metrics: MetricsService", "settings: SettingsService"]
         note: "model families from the deployment config; judges ≠ narrator family"
         methods: ["+complete(task, prompt, ctx) : ModelReply"]
       ModelProvider:
@@ -569,25 +817,37 @@ modules:
         note: "narrator (Qwen, DeepSeek), local models"
       PromptBuilder:
         deps: ["prompts: PromptService"]
-        methods: ["+narrator(occupationId, card, state) : Prompt  «narrator.v3»", "+judge(occupationId, transcript, questions) : Prompt", "+yesNo(conditions, transcript) : Prompt", "+feedbackNote(occupationId, transcript) : Prompt"]
+        methods: ["+narrator(card, state) : Prompt  «narrator.v3»", "+judge(transcript, questions) : Prompt", "+yesNo(conditions, transcript) : Prompt", "+feedbackNote(transcript) : Prompt", "+interviewer(guide, turns) : Prompt", "+generation(section, interview) : Prompt", "+revision(section, instruction) : Prompt", "+presentation(seed) : Prompt", "+image(request) : Prompt"]
       PromptService:
+        writes: [PROMPT_TEMPLATE]
         deps: ["prisma: PrismaService", "audit: AuditLogService"]
-        note: "occupation.prompts; each save logged; 409 if baseVersion is old"
-        methods: ["+list(user, occupationId) : SystemPrompt[]", "+save(user, occupationId, dto) : SystemPrompt", "+current(occupationId, kind) : string"]
+        note: "PROMPT_TEMPLATE (key, version, role, body) is global in the ERD, not per occupation; each save is a new version and an audit entry; 409 if baseVersion is old"
+        methods: ["+list(user) : SystemPrompt[]", "+save(user, key, dto) : SystemPrompt", "+current(key) : string"]
       DeIdentifierService:
         methods: ["+strip(text) : string  «name → {ten} placeholder»"]
       OutputCheckService:
         methods: ["+checkNarration(beats, facts) : CheckResult  «R1–R4»", "+verifyQuotes(outcome, transcript) : boolean", "+checkNote(note) : CheckResult"]
       CostLedgerService:
+        writes: [MODEL_CALL]
+        deps: ["prisma: PrismaService", "config: ModelConfigService"]
+        note: "MODEL_CALL: requested and returned model, token counts by kind, cost at the price of that date, latency, finish reason"
+        methods: ["+record(job, reply) : void", "+sessionCost(runId) : number"]
+      AiJobService:
+        writes: [AI_JOB]
         deps: ["prisma: PrismaService"]
-        note: "ai_call"
-        methods: ["+record(task, runId, reply) : void", "+sessionCost(runId) : number"]
-    exports: [ModelGatewayService, PromptBuilder, DeIdentifierService, OutputCheckService]
+        note: "AI_JOB: one row per queued unit of AI work (grading, narration, generation, regrade…), the parent of its MODEL_CALL rows"
+        methods: ["+start(kind, runId?, promptKey?) : AiJob", "+finish(job, status, error?) : void", "+retry(job) : void  «D-92: switch to a model of the same role; no model left → the run pauses»"]
+      ModelConfigService:
+        writes: [MODEL_CONFIG, MODEL_SLOT, MODEL_PRICE, FILLS_SLOT]
+        deps: ["prisma: PrismaService", "audit: AuditLogService"]
+        note: "which model fills which role (narrator, three judges, image) with a call profile and a dated price list; judge families differ from the narrator family (DC-01)"
+        methods: ["+forSlot(slot) : ModelConfig[]  «ordered by FILLS_SLOT.priority»", "+priceOn(model, date) : ModelPrice", "+configure(admin, slot, models) : void"]
+    exports: [ModelGatewayService, PromptBuilder, DeIdentifierService, OutputCheckService, AiJobService, ModelConfigService]
 
   FeedbackModule:
     component: operations
-    note: "feedback: occupation rating, app feedback, wrong-content flag"
-    imports: [AuthModule]
+    owns: [OCCUPATION_RATING, RATING_ATTRIBUTE, APP_FEEDBACK, SCORES_ATTR]
+    note: "OCCUPATION_RATING (5 attributes, FR-19) and APP_FEEDBACK (FR-20); wrong-content flags live in QualityModule"
     controllers:
       FeedbackController:
         deps: ["feedback: FeedbackService"]
@@ -597,16 +857,24 @@ modules:
       FeedbackInboxController:
         deps: ["feedback: FeedbackService"]
         routes:
-          - {m: "listFeedback(user: AuthUser, query: ListQuery) : Page<FeedbackView>", http: "GET /staff/feedback", roles: [DE, SA]}
-          - {m: "handleFeedback(user: AuthUser, feedbackId: string, dto: HandleFeedbackInput) : FeedbackView", http: "PATCH /staff/feedback/{feedbackId}", roles: [DE, SA]}
+          - {m: "listFeedback(user: AuthUser, query: ListQuery) : Page<FeedbackView>", http: "GET /admin/feedback", roles: [SA]}
+          - {m: "handleFeedback(user: AuthUser, feedbackId: string, dto: HandleFeedbackInput) : FeedbackView", http: "PATCH /admin/feedback/{feedbackId}", roles: [SA]}
     exports: [FeedbackService]
     providers:
+      FeedbackDataSeeder:
+        kind: command
+        writes: [RATING_ATTRIBUTE]
+        deps: ["prisma: PrismaService"]
+        note: "CLI: loads the 5 rating attributes"
+        methods: ["+run() : LoadReport"]
       FeedbackService:
+        writes: [OCCUPATION_RATING, SCORES_ATTR, APP_FEEDBACK]
         deps: ["prisma: PrismaService", "settings: SettingsService", "notifications: NotificationService"]
-        methods: ["+send(user, dto) : FeedbackView  «RATING only after every level»", "+flag(tx, runId, dto) : void  «kind FLAG; notifies the DEs»", "+ratingSummary(occupationId) : RatingSummary  «withheld below threshold»", "+inbox(user, query) : Page<FeedbackView>  «DE: flags; SA: app feedback»", "+handle(user, id, dto) : FeedbackView"]
+        methods: ["+send(user, dto) : FeedbackView  «RATING only after every level; one SCORES_ATTR row per attribute»", "+ratingSummary(occupationId) : RatingSummary  «withheld below threshold»", "+inbox(user, query) : Page<FeedbackView>  «APP_FEEDBACK for the system admin»", "+handle(user, id, dto) : FeedbackView"]
 
   MonitoringModule:
     component: operations
+    owns: []
     imports: [AuthModule]
     controllers:
       StatisticsController:
@@ -667,7 +935,16 @@ views:
   BlindSample: "runId, segment, transcript, subSkills[]"
   AgreementReport: "occupationId, samples: integer, kappaExpertAi: number, kappaExpertExpert: number, bySubSkill[] {subSkill, kappa: number}"
   SystemPrompt: "kind, version: integer, text, changedBy?, changedAt?"
-  FeedbackView: "id, kind: RATING|APP|FLAG, occupationId?, runId?, text?, scores?: object, status: NEW|HANDLED, createdAt"
+  FeedbackView: "id, kind: RATING|APP, occupationId?, text?, scores?: object, status: NEW|HANDLED, createdAt"
+  FlagView: "id, runId, nodeCode?, reason, status: NEW|HANDLED, createdAt"
+  ImportView: "id, source: ONET|ESCO, version, status, importedAt, issues[] {id, sourceRef, reason, resolvedAt?}"
+  InterviewView: "id, scenarioId?, roundNo: integer, status, summary?, fieldCoverage[], turns[] {seq: integer, role, text, at}"
+  CriteriaView: "occupationId, versionNo: integer, criteria[] {seq: integer, text}"
+  RevalidationView: "id, scenarioId, versionNo: integer, reason, dueAt, result?, resolvedAt?"
+  PresentationView: "id, scenarioId, versionNo: integer, status, scenes[] {position: integer, nodeCode?, assetId, storageUrl}"
+  AssetView: "id, kind, source, storageKey, biasStatus: PENDING|PASSED|FAILED, batchNo?: integer"
+  TriageView: "id, runId, selection, signals[], decision?, reviewedAt?"
+  LevelPackView: "id, levelId, versionNo: integer, status, pack: object, rowVersion: integer, residents[] {slot, relation, isFixed: boolean}"
   RatingSummary: "responses: integer, withheld: boolean, averages?: object"
   OccupationStatistics: "plays: integer, completionRate: number, averageScore: number, stuckRateByLevel[] {levelNo: integer, rate: number}, flags: integer, ratings: RatingSummary"
   Metrics: "runs: integer, costUsd: number, costPerRunP95Usd: number, costCeilingUsd: number, narrationLatencyP95Ms: integer, gradingLatencyP95Ms: integer, failedCalls: integer"

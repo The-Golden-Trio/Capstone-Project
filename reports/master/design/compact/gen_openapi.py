@@ -24,6 +24,12 @@ INT_NAMES = {"coins", "health", "score", "points", "qty", "version", "attempt", 
 TEXT_KEYS = {"npcId"}
 errors = []
 
+# Routes of the approved contract (api/openapi.yaml, 11/11). Any route not found there is marked proposed.
+APPROVED = yaml.safe_load((ROOT.parent.parent / "api" / "openapi.yaml").read_text())
+_norm = lambda path: re.sub(r"\{[^}]+\}", "{}", path)
+APPROVED_OPS = {(m.upper(), _norm(pth)) for pth, ops in APPROVED["paths"].items() for m in ops
+                if m in ("get", "post", "put", "patch", "delete")}
+
 
 # ───────────── field-spec parser ─────────────
 def split_top(text):
@@ -140,6 +146,11 @@ for mname, mod in nest["modules"].items():
             method, path = r["http"].split(" ", 1)
             op = {"tags": [tag], "operationId": op_id, "summary": re.sub(r"(?<!^)([A-Z])", r" \1", op_id).capitalize(),
                   "x-roles": [ROLE_LONG[x] for x in r["roles"]]}
+            if (method.upper(), _norm(path)) not in APPROVED_OPS:
+                op["x-status"] = "proposed"
+                op["summary"] += " (proposed)"
+            else:
+                op["x-status"] = "approved"
             if r["roles"] == ["Pub"]:
                 op["security"] = []
             parameters = [{"name": p, "in": "path", "required": True,
@@ -197,8 +208,8 @@ if errors:
 
 doc = {
     "openapi": "3.1.0",
-    "info": {"title": "JobQuest API (compact ERD)", "version": "2.0.0",
-             "description": "Generated from nest-modules.yaml (compact ERD, 19 tables). All paths are under /api/v1. "
+    "info": {"title": "JobQuest API", "version": "2.0.0",
+             "description": "Generated from nest-modules.yaml (Chen ERD, 19 NestJS modules). x-status marks a route as approved (present in the 11/11 contract api/openapi.yaml) or proposed. All paths are under /api/v1. "
                             "x-roles lists the roles allowed; staff routes also check the occupation assignment. "
                             "Long AI work returns 202 and the result arrives on GET /stream (Server-Sent Events). "
                             "All content is in Vietnamese."},
@@ -226,7 +237,7 @@ html = f"""<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JobQuest API (compact ERD) · Swagger</title>
+  <title>JobQuest API · Swagger</title>
   <link rel="stylesheet" href="{SWAGGER_UI}/swagger-ui.css">
 </head>
 <body>

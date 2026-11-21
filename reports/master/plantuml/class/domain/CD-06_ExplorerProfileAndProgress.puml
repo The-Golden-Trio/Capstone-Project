@@ -1,0 +1,259 @@
+@startuml CD-06_ExplorerProfileAndProgress
+title CD-06 · Domain model · Explorer profile and progression\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections H, I); the ERD is unchanged</size>
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype polyline
+skinparam nodesep 35
+skinparam ranksep 55
+skinparam class {
+  BackgroundColor<<entity>> #FFFFFF
+  BackgroundColor<<weak>> #F3F6FA
+  BackgroundColor<<assoc>> #EAF3EA
+  BackgroundColor<<pending>> #FFE3C2
+  BorderColor<<pending>> #E8710A
+  BackgroundColor<<vang>> #FFF3C4
+  BackgroundColor<<stub>> #F2F2F2
+  BorderColor<<stub>> #AAAAAA
+  FontColor<<stub>> #777777
+}
+
+class GtkmCard <<entity>> {
+  - code : String {id}
+  - clusterNo : Int
+  - text : String
+  - sortOrder : Int
+  - riasecAxis : RiasecAxis
+}
+class GtkmAttempt <<entity>> {
+  - id : uuid {id}
+  - isCurrent : Boolean
+  - startedAt : DateTime
+  - completedAt : DateTime
+  --
+  +complete() : void  «FR-04, no AI call»
+}
+class GoalQuestion <<entity>> {
+  - code : String {id}
+  - text : String
+  - sortOrder : Int
+}
+class GoalOption <<weak>> {
+  - seq : Int {partial id}
+  - text : String
+}
+class ExplorerGoal <<entity>> {
+  - id : uuid {id}
+  - text : String
+  - setAt : DateTime
+  - baselineTier : Int  «0..5  D-114»
+  - updatedAt : DateTime
+  - deletedAt : DateTime
+}
+class Hobby <<entity>> {
+  - code : String {id}
+  - name : String
+}
+class DistressTerm <<pending>> {
+  - term : String {id}
+  - updatedAt : DateTime
+}
+class ZodiacSign <<entity>> {
+  - code : String {id}
+  - name : String
+  - dates.startMd : String
+  - dates.endMd : String
+  - element : ZodiacElement
+  - modality : ZodiacModality
+  - rulers : String [0..*]
+  - motto : String
+  - traits : String [0..*]
+  - description : String
+  - caution : String
+}
+class Achievement <<pending>> {
+  - code : String {id}
+  - kind : String  «enum?»
+  - name : String
+  - condition : String
+}
+class SuggestionEvent <<entity>> {
+  - id : uuid {id}
+  - triggerKind : String  «enum?»
+  - isFlatProfile : Boolean
+  - createdAt : DateTime
+}
+class LevelEnrolment <<entity>> {
+  - id : uuid {id}
+  - roundNo : Int
+  - entryRoute : String  «enum?»
+  - companyChoice : String  «enum?»
+  - status : String  «enum?»
+  - startedAt : DateTime
+  - completedAt : DateTime
+  / onboardKind : String  «enum?»
+}
+class ScenarioBest <<weak>> {
+  - bestPoints : Int
+  - completions : Int
+  / replayPayRate : Decimal
+  --
+  +recordRun(run: ScenarioRun) : Int  «D-119 pay only the difference»
+}
+class AnswersCard <<assoc>> {
+  - value : Int  «1..3  D-104»
+}
+class Invited <<assoc>> {
+  - shownAt : DateTime
+  - response : String  «enum?»
+}
+class Chooses <<assoc>> {
+  - freeText : String
+}
+class Progresses <<assoc>> {
+  - points : Int
+  - rawPoints : Int
+  - tier : Int  «0..5  D-114»
+  / scoredScenarios : Int
+}
+class Boosts <<assoc>> {
+  - rate : Decimal
+}
+class Earns <<assoc>> {
+  - achievedAt : DateTime
+  - pinOrder : Int
+}
+class Suggests <<assoc>> {
+  - box : String  «enum?»
+  - rank : Int
+  - grade : String  «enum?»
+  - reason : String
+  - isExploration : Boolean
+  - clickedAt : DateTime
+}
+class Casts <<vang>> {
+  - drawKind : String
+}
+class EarnedKeyword <<assoc>> {
+  - proficiency : Proficiency
+  - achievedAt : DateTime
+}
+enum Proficiency {
+  FAMILIAR
+  PROFICIENT
+  EXPERT
+}
+note right of Proficiency : schema.prisma Proficiency; D-118
+enum RiasecAxis {
+  R
+  I
+  A
+  S
+  E
+  C
+}
+note right of RiasecAxis : D-104 (6 RIASEC axes)
+enum ZodiacElement {
+  FIRE
+  EARTH
+  AIR
+  WATER
+}
+note right of ZodiacElement : Hoàng đạo 12 cung
+enum ZodiacModality {
+  CARDINAL
+  FIXED
+  MUTABLE
+}
+note right of ZodiacModality : Hoàng đạo 12 cung
+class Company <<stub>> {
+  CD-02
+}
+class Explorer <<stub>> {
+  CD-01
+}
+class InterestRegion <<stub>> {
+  CD-02
+}
+class Keyword <<stub>> {
+  CD-02
+}
+class NpcCard <<stub>> {
+  CD-05
+}
+class Occupation <<stub>> {
+  CD-02
+}
+class OccupationLevel <<stub>> {
+  CD-02
+}
+class Scenario <<stub>> {
+  CD-03
+}
+class ScenarioRun <<stub>> {
+  CD-07
+}
+class SoftSkillGroup <<stub>> {
+  CD-02
+}
+class StaffMember <<stub>> {
+  CD-01
+}
+
+GtkmCard "0..*" -- "0..1" InterestRegion : CARD_REGION
+Explorer "1" o-- "0..*" GtkmAttempt : TAKES
+GtkmAttempt "0..*" -- "18" GtkmCard : ANSWERS_CARD
+(GtkmAttempt, GtkmCard) .. AnswersCard
+Explorer "0..*" -- "0..*" Occupation : INVITED
+(Explorer, Occupation) .. Invited
+GoalQuestion "1" *-- "0..*" GoalOption : HAS_OPTION_Q
+GtkmAttempt "0..*" -- "0..*" GoalOption : CHOOSES
+(GtkmAttempt, GoalOption) .. Chooses
+GoalOption "0..*" -- "0..1" SoftSkillGroup : OPTION_TARGETS
+Explorer "1" o-- "0..*" ExplorerGoal : SETS_GOAL
+ExplorerGoal "0..*" -- "0..1" GtkmAttempt : GOAL_FROM
+Explorer "0..*" -- "0..5" Hobby : LIKES
+StaffMember "0..1" -- "0..*" DistressTerm : MAINTAINS_TERM
+Explorer "1..*" -- "7" SoftSkillGroup : PROGRESSES
+(Explorer, SoftSkillGroup) .. Progresses
+ZodiacSign "1..*" -- "2" SoftSkillGroup : BOOSTS
+(ZodiacSign, SoftSkillGroup) .. Boosts
+Achievement "0..*" -- "0..1" OccupationLevel : ACH_LEVEL
+Explorer "0..*" -- "0..*" Achievement : EARNS
+(Explorer, Achievement) .. Earns
+Explorer "1" -- "0..*" SuggestionEvent : RECEIVES
+SuggestionEvent "0..*" -- "0..1" OccupationLevel : TRIGGERED_AT
+SuggestionEvent "0..*" -- "0..9" Occupation : SUGGESTS
+(SuggestionEvent, Occupation) .. Suggests
+Explorer "1" o-- "0..*" LevelEnrolment : ENROLS
+LevelEnrolment "0..*" -- "1" OccupationLevel : IN_LEVEL
+LevelEnrolment "0..*" -- "1" Company : AT_COMPANY
+LevelEnrolment "0..*" -[#B8860B]- "0..*" NpcCard : CASTS
+(LevelEnrolment, NpcCard) .. Casts
+diamond D_EarnedKeyword
+Explorer "0..*" -- D_EarnedKeyword
+Keyword "0..*" -- D_EarnedKeyword
+OccupationLevel "1" -- D_EarnedKeyword
+D_EarnedKeyword .. EarnedKeyword
+note bottom of D_EarnedKeyword : EARNED_KEYWORD
+Explorer "1" -- "0..*" ScenarioBest : BEST_FOR_EXPLORER
+Scenario "1" -- "0..*" ScenarioBest : BEST_FOR_SCENARIO
+SoftSkillGroup "1" -- "0..*" ScenarioBest : BEST_FOR_GROUP
+ScenarioBest "0..*" -- "1" ScenarioRun : BEST_RUN
+note bottom of AnswersCard : { 18 answers once the attempt is complete }
+note bottom of EarnedKeyword : { unique (explorer, keyword) }
+note bottom of ScenarioBest : {id = (scenario, explorer, softSkillGroup)}  identified by several owners
+note bottom of DistressTerm : «pending A28» H4
+note bottom of Achievement : «pending A28» D3: about 100 achievements
+note bottom of Casts : «research only» fixed roles per level: N4 still open
+legend bottom
+  | Notation | Meaning |
+  | white / light blue class | entity / weak entity (composition ◆ from its owner) |
+  | green class | association class (an ERD relationship that carries attributes) |
+  | orange | «pending A28»: research still open, drawn as in the ERD |
+  | grey class | defined in another diagram (CD-0x) |
+  | /attr | derived attribute; attr : T [0..*] is multi-valued; a.b is a composite attribute |
+  | String «enum?» | enum-like column with no values in the ERD or research yet |
+  | method «D-xx» | a domain rule with its source; data = Prisma model, pure rules = game-core |
+  | types | inferred from names (the ERD has none): proposals, not decisions |
+endlegend
+@enduml

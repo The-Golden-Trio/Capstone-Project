@@ -1,0 +1,281 @@
+@startuml CL-03_ScenarioAuthoringAndLifecycle
+title CL-03 · NestJS modules — Scenario authoring and lifecycle
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "ScenarioModule" <<Rectangle>> {
+  class ScenarioModule <<module>> {
+    imports: AuthModule, LifecycleModule, AiModule
+    controllers: ScenarioController, SeedController, InterviewController, GenerationController, LevelPackController, ReferenceAnswerController
+    providers: ScenarioService, SeedService, SeedValidator, InterviewService, GenerationService, GenerationProcessor, LevelPackService, ReferenceAnswerService
+    exports: —
+  }
+  class ScenarioController <<controller>> {
+    -scenarios : ScenarioService
+    --
+    +listScenarios(user: AuthUser, query: ListQuery) : Page<ScenarioListItem>  «GET /staff/scenarios» [CA,DE]
+    +openScenario(user: AuthUser, dto: OpenScenarioInput) : ScenarioDetail  «POST /staff/scenarios» [CA]
+    +getScenario(user: AuthUser, scenarioId: string) : ScenarioDetail  «GET /staff/scenarios/{scenarioId}» [CA,DE]
+    +assignAuthor(user: AuthUser, scenarioId: string, dto: AssignAuthorInput) : ScenarioDetail  «PUT /staff/scenarios/{scenarioId}/author» [CA]
+    +getScenarioHistory(user: AuthUser, scenarioId: string) : LifecycleEntry[]  «GET /staff/scenarios/{scenarioId}/history» [CA,DE]
+  }
+  class SeedController <<controller>> {
+    -seeds : SeedService
+    --
+    +saveSeed(user: AuthUser, scenarioId: string, dto: SeedInput) : ScenarioDetail  «PUT /staff/scenarios/{scenarioId}/seed» [DE]
+    +checkSeed(user: AuthUser, scenarioId: string) : CheckReport  «POST /staff/scenarios/{scenarioId}/checks» [DE]
+    +submitScenario(user: AuthUser, scenarioId: string) : ScenarioDetail  «POST /staff/scenarios/{scenarioId}/submit» [DE]
+  }
+  class InterviewController <<controller>> {
+    -interviews : InterviewService
+    --
+    +startInterview(user: AuthUser, scenarioId: string, dto: StartInterviewInput) : InterviewView  «POST /staff/scenarios/{scenarioId}/interviews» [DE]
+    +answerInterview(user: AuthUser, interviewId: string, dto: InterviewTurnInput) : InterviewView | JobAccepted  «POST /staff/interviews/{interviewId}/turns» [DE]
+    +confirmInterview(user: AuthUser, interviewId: string) : InterviewView  «POST /staff/interviews/{interviewId}/confirm» [DE]
+  }
+  class GenerationController <<controller>> {
+    -generation : GenerationService
+    --
+    +requestGeneration(user: AuthUser, scenarioId: string, dto: GenerationInput) : JobAccepted  «POST /staff/scenarios/{scenarioId}/generations» [DE]
+    +requestRevision(user: AuthUser, scenarioId: string, dto: RevisionInput) : JobAccepted  «POST /staff/scenarios/{scenarioId}/revisions» [DE]
+  }
+  class LevelPackController <<controller>> {
+    -packs : LevelPackService
+    --
+    +getLevelPack(user: AuthUser, levelId: string) : LevelPackView  «GET /staff/levels/{levelId}/pack» [CA,DE]
+    +saveLevelPack(user: AuthUser, levelId: string, dto: LevelPackInput) : LevelPackView  «PUT /staff/levels/{levelId}/pack» [DE]
+  }
+  class ReferenceAnswerController <<controller>> {
+    -references : ReferenceAnswerService
+    --
+    +writeReferenceAnswer(user: AuthUser, scenarioId: string, dto: ReferenceAnswerInput) : void  «POST /staff/scenarios/{scenarioId}/reference-answers» [DE]
+  }
+  class ScenarioService {
+    -prisma : PrismaService
+    -lifecycle : ScenarioStateMachine
+    -access : AccessPolicyService
+    -notifications : NotificationService
+    --
+    +list(user, query) : Page<ScenarioListItem>
+    +open(user, dto) : ScenarioDetail  «409 if the slot code is active»
+    +get(user, id) : ScenarioDetail
+    +assignAuthor(user, id, dto) : ScenarioDetail
+    +history(id) : LifecycleEntry[]
+  }
+  class SeedService {
+    <i>one seed document in, rows out: slots, facts, artefacts, actions, timeline, ambient, flags, checks, nodes, options, probes and observed items are written in one transaction</i>
+    -prisma : PrismaService
+    -validator : SeedValidator
+    -lifecycle : ScenarioStateMachine
+    -notifications : NotificationService
+    --
+    +save(user, id, dto) : ScenarioDetail  «DRAFT only, author only, 412 on rowVersion»
+    +check(id) : CheckReport
+    +submit(user, id) : ScenarioDetail
+  }
+  class SeedValidator {
+    <i>seed rules: open/mid/end nodes, end node is a written format, ≥ 1 closed node, ≤ 1 timed node, 3–6 observed sub-skills, limits said aloud, facts referenced exist, budget shares sum to 100%</i>
+    -data : GameData
+    --
+    +check(seed, level) : CheckReport
+  }
+  class InterviewService {
+    <i>AI interviews the Domain Expert round by round (TOPIC_GUIDE) and tracks which seed fields are covered (fieldCoverage)</i>
+    -prisma : PrismaService
+    -access : AccessPolicyService
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -deid : DeIdentifierService
+    -jobs : AiJobService
+    -stream : StreamService
+    --
+    +start(user, scenarioId, dto) : InterviewView
+    +answer(user, interviewId, dto) : InterviewView | JobAccepted
+    +confirm(user, interviewId) : InterviewView  «confirmedAt; the summary feeds generation»
+    +saveGuide(admin, content) : TopicGuide  «new version»
+  }
+  class GenerationService {
+    -prisma : PrismaService
+    -access : AccessPolicyService
+    -lifecycle : ScenarioStateMachine
+    -generationQueue : Queue «generation»
+    --
+    +request(user, scenarioId, dto) : JobAccepted  «DRAFT only; section by section»
+    +revise(user, scenarioId, dto) : JobAccepted  «only the requested part»
+  }
+  class GenerationProcessor <<processor · generation>> {
+    -prisma : PrismaService
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -deid : DeIdentifierService
+    -checks : OutputCheckService
+    -validator : SeedValidator
+    -jobs : AiJobService
+    -stream : StreamService
+    --
+    +process(job) : Promise<void>  «generate or revise → check output → store input, output, fieldProvenance, checkResult → publish content.ready»
+  }
+  class LevelPackService {
+    -prisma : PrismaService
+    -access : AccessPolicyService
+    -lifecycle : ScenarioStateMachine
+    --
+    +get(user, levelId) : LevelPackView
+    +save(user, levelId, dto) : LevelPackView  «412 on rowVersion; new version per approved change»
+  }
+  class ReferenceAnswerService {
+    <i>expert-written answers with the level each sub-skill deserves; they become the regression set</i>
+    -prisma : PrismaService
+    -access : AccessPolicyService
+    --
+    +write(user, scenarioId, dto) : void  «WRITES_REF; REF_GRADE rows»
+  }
+  class "ScenarioModule DTOs" as ScenarioModule_DTOs <<dto>> {
+    AssignAuthorInput { authorId }
+    GenerationInput { section, interviewId? }
+    InterviewTurnInput { text }
+    LevelPackInput { pack, rowVersion }
+    ListQuery { cursor?, limit?: integer, status?, kind? }
+    OpenScenarioInput { levelId, kind, code, npcId? }
+    ReferenceAnswerInput { nodeCode, text, difficultyStratum }
+    RevisionInput { section, instruction }
+    SeedInput { seed, rowVersion }
+    StartInterviewInput { topicGuideVersion?: integer }
+    CheckReport
+    InterviewView
+    JobAccepted
+    LevelPackView
+    LifecycleEntry
+    ScenarioDetail
+    ScenarioListItem
+  }
+}
+
+package "LifecycleModule" <<Rectangle>> {
+  class LifecycleModule <<module>> {
+    imports: —
+    controllers: —
+    providers: ScenarioStateMachine
+    exports: ScenarioStateMachine
+  }
+  class ScenarioStateMachine {
+    <i>TRANSITIONS = SM-01 (scenario); every transition is written to LIFECYCLE_LOG in the same transaction. The ERD also logs level pack, occupation and NPC chapter changes; SM-01 has no transitions for them (A29)</i>
+    -prisma : PrismaService
+    --
+    +apply(tx, scenarioId, action, actor) : ScenarioStatus
+    +logChange(tx, subject: SubjectRef, from, to, actor, reason?) : void  «scenario, level pack, occupation or NPC chapter: exactly one»
+    +allowedActions(status, role) : LifecycleAction[]
+    +history(scenarioId) : LifecycleEntry[]
+  }
+  enum LifecycleAction {
+    OPEN
+    SUBMIT
+    START_REVIEW
+    REQUEST_CHANGES
+    REJECT
+    APPROVE
+    BUILD_DRAFT
+    REPORT_ISSUE
+    PASS_PLAYTEST
+    PUBLISH
+    DELETE
+  }
+}
+
+class AccessPolicyService <<CL-01 · AuthModule>>
+class AiJobService <<CL-07 · AiModule>>
+class DeIdentifierService <<CL-07 · AiModule>>
+class ModelGatewayService <<CL-07 · AiModule>>
+class OutputCheckService <<CL-07 · AiModule>>
+class PromptBuilder <<CL-07 · AiModule>>
+class Action <<domain · CD-03>>
+class Ambient <<domain · CD-03>>
+class Artefact <<domain · CD-03>>
+class Check <<domain · CD-03>>
+class ExpertInterview <<domain · CD-04>>
+class Fact <<domain · CD-03>>
+class GenerationRun <<domain · CD-04>>
+class InterviewTurn <<domain · CD-04>>
+class LevelPack <<domain · CD-03>>
+class LifecycleLog <<domain · CD-04>>
+class Node <<domain · CD-03>>
+class ObservedItem <<domain · CD-03>>
+class Option <<domain · CD-03>>
+class RefGrade <<domain · CD-03>>
+class ReferenceAnswer <<domain · CD-03>>
+class ResidentSlot <<domain · CD-03>>
+class ReviewProbe <<domain · CD-03>>
+class Scenario <<domain · CD-03>>
+class ScenarioSlot <<domain · CD-03>>
+class Scores <<domain · CD-03>>
+class StoryFlag <<domain · CD-03>>
+class TimelineEvent <<domain · CD-03>>
+class TopicGuide <<domain · CD-04>>
+
+ScenarioController --> ScenarioService
+ScenarioController ..> ScenarioModule_DTOs
+SeedController --> SeedService
+SeedController ..> ScenarioModule_DTOs
+InterviewController --> InterviewService
+InterviewController ..> ScenarioModule_DTOs
+GenerationController --> GenerationService
+GenerationController ..> ScenarioModule_DTOs
+LevelPackController --> LevelPackService
+LevelPackController ..> ScenarioModule_DTOs
+ReferenceAnswerController --> ReferenceAnswerService
+ReferenceAnswerController ..> ScenarioModule_DTOs
+ScenarioService ..> Scenario : «write»
+ScenarioService --> ScenarioStateMachine
+ScenarioService --> AccessPolicyService
+SeedService ..> Scenario : «write»
+SeedService ..> ScenarioSlot : «write»
+SeedService ..> Fact : «write»
+SeedService ..> Artefact : «write»
+SeedService ..> Action : «write»
+SeedService ..> TimelineEvent : «write»
+SeedService ..> Ambient : «write»
+SeedService ..> StoryFlag : «write»
+SeedService ..> Check : «write»
+SeedService ..> Node : «write»
+SeedService ..> Option : «write»
+SeedService ..> ReviewProbe : «write»
+SeedService ..> ObservedItem : «write»
+SeedService ..> Scores : «write»
+SeedService --> SeedValidator
+SeedService --> ScenarioStateMachine
+InterviewService ..> ExpertInterview : «write»
+InterviewService ..> InterviewTurn : «write»
+InterviewService ..> TopicGuide : «write»
+InterviewService --> AccessPolicyService
+InterviewService --> ModelGatewayService
+InterviewService --> PromptBuilder
+InterviewService --> DeIdentifierService
+InterviewService --> AiJobService
+GenerationService ..> GenerationRun : «write»
+GenerationService --> AccessPolicyService
+GenerationService --> ScenarioStateMachine
+GenerationProcessor ..> GenerationRun : «write»
+GenerationProcessor --> ModelGatewayService
+GenerationProcessor --> PromptBuilder
+GenerationProcessor --> DeIdentifierService
+GenerationProcessor --> OutputCheckService
+GenerationProcessor --> SeedValidator
+GenerationProcessor --> AiJobService
+LevelPackService ..> LevelPack : «write»
+LevelPackService ..> ResidentSlot : «write»
+LevelPackService --> AccessPolicyService
+LevelPackService --> ScenarioStateMachine
+ReferenceAnswerService ..> ReferenceAnswer : «write»
+ReferenceAnswerService ..> RefGrade : «write»
+ReferenceAnswerService --> AccessPolicyService
+ScenarioStateMachine ..> LifecycleLog : «write»
+legend bottom
+  | Arrow | Meaning |
+  | A --> B | association: A holds B through constructor injection (a controller holds its services) |
+  | A ..> Entity : «write» | A writes the domain class (the module owns it; see CD-01 … CD-08) |
+  | Controller ..> DTOs | the controller's routes take and return these types |
+  | A ..\|> I | A realizes the interface or port I |
+  | grey class | defined in another diagram (CL-0x · module, or domain · CD-0x) |
+endlegend
+@enduml

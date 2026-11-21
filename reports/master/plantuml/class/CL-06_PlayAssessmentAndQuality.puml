@@ -1,16 +1,16 @@
-@startuml CL-05_PlayAndAssessment
-title CL-05 · NestJS modules — Play and assessment
+@startuml CL-06_PlayAssessmentAndQuality
+title CL-06 · NestJS modules — Play, assessment and quality
 hide empty members
 skinparam classAttributeIconSize 0
 left to right direction
 
 package "PlayModule" <<Rectangle>> {
   class PlayModule <<module>> {
-    imports: AssessmentModule, AiModule, CareerModule, LifeModule, FeedbackModule
+    imports: AssessmentModule, AiModule, CareerModule, LifeModule, QualityModule
     controllers: ShiftRunController
     providers: RunService, TurnService, SummaryService, NarrationProcessor
     exports: RunService
-    <i>run, run_turn: one scene = one shift; AI-4 narrates, the engine decides. Paths match the shift-run API already in apps/api</i>
+    <i>SCENARIO_RUN and its append-only RUN_EVENT list: one scene = one shift; AI-4 narrates, the engine decides. Paths match the shift-run API already in apps/api</i>
   }
   class ShiftRunController <<controller>> {
     -runs : RunService
@@ -35,7 +35,7 @@ package "PlayModule" <<Rectangle>> {
     -health : HealthService
     -bonds : BondService
     -sideQuests : SideQuestService
-    -feedback : FeedbackService
+    -flags : FlagService
     --
     +tasks(query) : ShiftTask[]
     +start(user, dto) : RunView  «resume if IN_PROGRESS; health, items and cast set the budget»
@@ -44,7 +44,7 @@ package "PlayModule" <<Rectangle>> {
     +scene(user, id) : SceneView
     +transcript(user, id, after?) : TurnLine[]
     +note(user, id, dto) : void
-    +flag(user, id, dto) : void  «feedback kind FLAG»
+    +flag(user, id, dto) : void  «delegates to FlagService (CONTENT_FLAG)»
   }
   class TurnService {
     <i>turnId from the client makes retries safe; NPC lines arrive on /stream (turn.lines, turn.done)</i>
@@ -75,6 +75,7 @@ package "PlayModule" <<Rectangle>> {
     -checks : OutputCheckService
     -stream : StreamService
     -flagQueue : Queue «flag-judge»
+    -jobs : AiJobService
     --
     +process(job) : Promise<void>  «reply · bridge · reaction · probe → lines [{speaker, text, expression}]; R1–R4, regenerate ≤ 2»
   }
@@ -98,18 +99,11 @@ package "PlayModule" <<Rectangle>> {
 
 package "AssessmentModule" <<Rectangle>> {
   class AssessmentModule <<module>> {
-    imports: AuthModule, AiModule
-    controllers: ReliabilityController
-    providers: AssessmentService, GradingProcessor, FlagJudgeProcessor, JudgePanelService, ScoringService, FeedbackNoteProcessor, ReliabilityService
-    exports: AssessmentService, ScoringService
-    <i>judgement: three-judge panel on yes/no questions, story flags, expert blind ratings</i>
-  }
-  class ReliabilityController <<controller>> {
-    -reliability : ReliabilityService
-    --
-    +getBlindSamples(user: AuthUser, occupationId: string) : BlindSample[]  «GET /staff/occupations/{occupationId}/blind-samples» [DE]
-    +submitBlindRatings(user: AuthUser, dto: BlindRatingInput) : void  «POST /staff/blind-ratings» [DE]
-    +getAgreementReport(user: AuthUser, occupationId: string) : AgreementReport  «GET /staff/occupations/{occupationId}/agreement» [DE,CA]
+    imports: AiModule
+    controllers: —
+    providers: AssessmentService, GradingProcessor, FlagJudgeProcessor, JudgePanelService, ScoringService, FeedbackNoteProcessor
+    exports: AssessmentService, ScoringService, JudgePanelService
+    <i>ASSESSMENT per evidence segment × sub-skill: three-judge panel on yes/no questions (JUDGE_RESULT), conduct flags, story flags, feedback notes</i>
   }
   class AssessmentService {
     -prisma : PrismaService
@@ -122,6 +116,7 @@ package "AssessmentModule" <<Rectangle>> {
   class GradingProcessor <<processor · grading>> {
     -prisma : PrismaService
     -panel : JudgePanelService
+    -jobs : AiJobService
     -stream : StreamService
     -noteQueue : Queue «feedback-note»
     --
@@ -130,6 +125,7 @@ package "AssessmentModule" <<Rectangle>> {
   class FlagJudgeProcessor <<processor · flag-judge>> {
     -prisma : PrismaService
     -panel : JudgePanelService
+    -jobs : AiJobService
     --
     +process(job) : Promise<void>  «yes/no conditions → story flags in run.state (on only, D-129)»
   }
@@ -157,45 +153,111 @@ package "AssessmentModule" <<Rectangle>> {
     -gateway : ModelGatewayService
     -prompts : PromptBuilder
     -checks : OutputCheckService
+    -jobs : AiJobService
     -stream : StreamService
     --
-    +process(job) : Promise<void>  «“look back at the shift” note, stored in run.state»
-  }
-  class ReliabilityService {
-    -prisma : PrismaService
-    --
-    +samples(user, occupationId) : BlindSample[]  «play-test segments, AI levels hidden»
-    +submit(user, dto) : void  «judgement rows with rated_by, beside the AI rows»
-    +report(occupationId) : AgreementReport  «Cohen's kappa expert–AI and expert–expert»
-  }
-  class "AssessmentModule DTOs" as AssessmentModule_DTOs <<dto>> {
-    BlindRatingInput { ratings[] {runId, segment, subSkill, level, flags[]} }
-    AgreementReport
-    BlindSample
+    +process(job) : Promise<void>  «“look back at the shift” notes, one FEEDBACK_NOTE row each»
   }
 }
 
-class BondService <<CL-04 · LifeModule>>
-class DeIdentifierService <<CL-06 · AiModule>>
-class FeedbackService <<CL-06 · FeedbackModule>>
-class HealthService <<CL-04 · LifeModule>>
-class ModelGatewayService <<CL-06 · AiModule>>
-class OutputCheckService <<CL-06 · AiModule>>
-class PlayerLevelService <<CL-04 · CareerModule>>
-class ProfileService <<CL-04 · CareerModule>>
-class PromptBuilder <<CL-06 · AiModule>>
-class SideQuestService <<CL-04 · LifeModule>>
-class WalletService <<CL-04 · LifeModule>>
+package "QualityModule" <<Rectangle>> {
+  class QualityModule <<module>> {
+    imports: AuthModule, AssessmentModule, AiModule
+    controllers: FlagController, ReliabilityController
+    providers: FlagService, ReliabilityService, RegradeProcessor
+    exports: FlagService
+    <i>grading quality: wrong-content flags from players, expert blind ratings against the AI judges, regrade of the reference answers</i>
+  }
+  class FlagController <<controller>> {
+    -flags : FlagService
+    --
+    +listFlags(user: AuthUser, query: ListQuery) : Page<FlagView>  «GET /staff/flags» [DE]
+    +handleFlag(user: AuthUser, flagId: string, dto: HandleFlagInput) : FlagView  «PATCH /staff/flags/{flagId}» [DE]
+  }
+  class ReliabilityController <<controller>> {
+    -reliability : ReliabilityService
+    --
+    +getBlindSamples(user: AuthUser, occupationId: string) : BlindSample[]  «GET /staff/occupations/{occupationId}/blind-samples» [DE]
+    +submitBlindRatings(user: AuthUser, dto: BlindRatingInput) : void  «POST /staff/blind-ratings» [DE]
+    +getAgreementReport(user: AuthUser, occupationId: string) : AgreementReport  «GET /staff/occupations/{occupationId}/agreement» [DE,CA]
+    +requestRegrade(user: AuthUser, occupationId: string) : JobAccepted  «POST /staff/occupations/{occupationId}/regrade» [CA]
+  }
+  class FlagService {
+    -prisma : PrismaService
+    -notifications : NotificationService
+    --
+    +flag(tx, runId, dto) : void  «a player marks a run event as wrong content; notifies the DEs»
+    +list(user, query) : Page<FlagView>
+    +handle(user, flagId, dto) : FlagView
+  }
+  class ReliabilityService {
+    -prisma : PrismaService
+    -regradeQueue : Queue «regrade»
+    --
+    +samples(user, occupationId) : BlindSample[]  «play-test segments, AI levels hidden»
+    +submit(user, dto) : void  «BLIND_RATING rows beside the AI ASSESSMENT rows»
+    +report(occupationId) : AgreementReport  «Cohen's kappa expert–AI and expert–expert»
+    +requestRegrade(user, occupationId) : JobAccepted
+  }
+  class RegradeProcessor <<processor · regrade>> {
+    -prisma : PrismaService
+    -panel : JudgePanelService
+    -jobs : AiJobService
+    -stream : StreamService
+    --
+    +process(job) : Promise<void>  «re-run the reference answers through the panel after a prompt or model change; store level and model»
+  }
+  class "QualityModule DTOs" as QualityModule_DTOs <<dto>> {
+    BlindRatingInput { ratings[] {runId, segment, subSkill, level, flags[]} }
+    HandleFlagInput { status }
+    ListQuery { cursor?, limit?: integer, status?, kind? }
+    AgreementReport
+    BlindSample
+    FlagView
+    JobAccepted
+  }
+}
+
+class AiJobService <<CL-07 · AiModule>>
+class BondService <<CL-05 · LifeModule>>
+class DeIdentifierService <<CL-07 · AiModule>>
+class HealthService <<CL-05 · LifeModule>>
+class ModelGatewayService <<CL-07 · AiModule>>
+class OutputCheckService <<CL-07 · AiModule>>
+class PlayerLevelService <<CL-05 · CareerModule>>
+class ProfileService <<CL-05 · CareerModule>>
+class PromptBuilder <<CL-07 · AiModule>>
+class SideQuestService <<CL-05 · LifeModule>>
+class WalletService <<CL-05 · LifeModule>>
+class Assessment <<domain · CD-07>>
+class BlindRating <<domain · CD-08>>
+class ContentFlag <<domain · CD-07>>
+class EarnsPoints <<domain · CD-07>>
+class EvidenceSegment <<domain · CD-07>>
+class FeedbackNote <<domain · CD-07>>
+class InterestTap <<domain · CD-07>>
+class JudgeResult <<domain · CD-07>>
+class NpcMemory <<domain · CD-07>>
+class RaisesFlag <<domain · CD-07>>
+class ReferenceRegrade <<domain · CD-08>>
+class RunEvent <<domain · CD-07>>
+class ScenarioRun <<domain · CD-07>>
 
 ShiftRunController --> RunService
 ShiftRunController --> TurnService
 ShiftRunController --> SummaryService
+ShiftRunController ..> PlayModule_DTOs
+RunService ..> ScenarioRun : «write»
+RunService ..> NpcMemory : «write»
 RunService --> HealthService
 RunService --> BondService
 RunService --> SideQuestService
-RunService --> FeedbackService
+RunService --> FlagService
+TurnService ..> RunEvent : «write»
+TurnService ..> EvidenceSegment : «write»
 TurnService --> AssessmentService
 TurnService --> HealthService
+SummaryService ..> InterestTap : «write»
 SummaryService --> ScoringService
 SummaryService --> ProfileService
 SummaryService --> PlayerLevelService
@@ -204,14 +266,39 @@ SummaryService --> SideQuestService
 NarrationProcessor --> ModelGatewayService
 NarrationProcessor --> PromptBuilder
 NarrationProcessor --> OutputCheckService
-ReliabilityController --> ReliabilityService
+NarrationProcessor --> AiJobService
+AssessmentService ..> Assessment : «write»
+GradingProcessor ..> JudgeResult : «write»
 GradingProcessor --> JudgePanelService
+GradingProcessor --> AiJobService
+FlagJudgeProcessor ..> RaisesFlag : «write»
 FlagJudgeProcessor --> JudgePanelService
+FlagJudgeProcessor --> AiJobService
 JudgePanelService --> ModelGatewayService
 JudgePanelService --> PromptBuilder
 JudgePanelService --> DeIdentifierService
 JudgePanelService --> OutputCheckService
+ScoringService ..> EarnsPoints : «write»
+FeedbackNoteProcessor ..> FeedbackNote : «write»
 FeedbackNoteProcessor --> ModelGatewayService
 FeedbackNoteProcessor --> PromptBuilder
 FeedbackNoteProcessor --> OutputCheckService
+FeedbackNoteProcessor --> AiJobService
+FlagController --> FlagService
+FlagController ..> QualityModule_DTOs
+ReliabilityController --> ReliabilityService
+ReliabilityController ..> QualityModule_DTOs
+FlagService ..> ContentFlag : «write»
+ReliabilityService ..> BlindRating : «write»
+RegradeProcessor ..> ReferenceRegrade : «write»
+RegradeProcessor --> JudgePanelService
+RegradeProcessor --> AiJobService
+legend bottom
+  | Arrow | Meaning |
+  | A --> B | association: A holds B through constructor injection (a controller holds its services) |
+  | A ..> Entity : «write» | A writes the domain class (the module owns it; see CD-01 … CD-08) |
+  | Controller ..> DTOs | the controller's routes take and return these types |
+  | A ..\|> I | A realizes the interface or port I |
+  | grey class | defined in another diagram (CL-0x · module, or domain · CD-0x) |
+endlegend
 @enduml

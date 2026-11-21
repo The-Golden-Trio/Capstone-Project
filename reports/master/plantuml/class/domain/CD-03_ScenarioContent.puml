@@ -1,0 +1,330 @@
+@startuml CD-03_ScenarioContent
+title CD-03 · Domain model · Level pack and scenario content\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections D, E); the ERD is unchanged</size>
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype polyline
+skinparam nodesep 35
+skinparam ranksep 55
+skinparam class {
+  BackgroundColor<<entity>> #FFFFFF
+  BackgroundColor<<weak>> #F3F6FA
+  BackgroundColor<<assoc>> #EAF3EA
+  BackgroundColor<<pending>> #FFE3C2
+  BorderColor<<pending>> #E8710A
+  BackgroundColor<<vang>> #FFF3C4
+  BackgroundColor<<stub>> #F2F2F2
+  BorderColor<<stub>> #AAAAAA
+  FontColor<<stub>> #777777
+}
+
+class LevelPack <<entity>> {
+  - id : uuid {id}
+  - versionNo : Int
+  - status : String  «enum?»
+  - workplace : String
+  - team : String
+  - levelScope : String
+  - honestNote : String
+  - rules : String [0..*]
+  - sharedFacts : String [0..*]
+  - actionCosts : String [0..*]
+  - hrOpen : String
+  - hrClose : String
+  - followupCap : Int
+  - minutesPerPoint : Int
+  / onboardingSlides : Int
+}
+class ResidentSlot <<weak>> {
+  - slot : String {partial id}
+  - relation : String  «enum?»
+  - isFixed : Boolean
+}
+class Scenario <<pending>> {
+  - id : uuid {id}
+  - code : String
+  - title : String
+  - situationType : String  «enum?»
+  - status : ScenarioStatus
+  - playerRole : String  «enum?»
+  - limits : String [0..*]
+  - situation : String
+  - goal : String
+  - stakes : String
+  - clock.start : String
+  - clock.deadline : DateTime
+  - clock.budgetPoints : Int
+  - clock.timePoints : Int
+  - glossary : String [0..*]
+  - difficulty.ambiguity : Int
+  - difficulty.stakeholders : Int
+  - difficulty.missingInfo : Int
+  - difficulty.timePressure : Int
+  - honestDetail : String
+  - ambientMinPoints : Int
+  - waitWindow : Int
+  - reviewMax : Int
+  - promiseReminders : String [0..*]
+  - promiseEvents : String [0..*]
+  - otOffers : String [0..*]
+  - sidequestHooks : String [0..*]
+  - houseRules : String [0..*]
+  - calendar : String
+  - healthCostOverride.value : Int
+  - healthCostOverride.reason : String
+  - outcomes : String [0..*]
+  / estimatedMinutes : Int
+  --
+  +apply(action: LifecycleAction) : LifecycleLog  «SM-01»
+}
+class ScenarioSlot <<weak>> {
+  - slot : String {partial id}
+  - name : String
+  - relation : String  «enum?»
+  - source : String  «enum?»
+  - fill : String
+  - want : String
+  - pressure : String
+  - stance : String  «enum?»
+  - defaultChannel : String  «enum?»
+  - disclosureStyle : String  «enum?»
+  - voice : String
+  - approvalLine : String
+  - presentAtEnd : Boolean
+  - expertise : String [0..*]
+  - beliefs : String [0..*]
+  - concerns : String [0..*]
+}
+class Fact <<weak>> {
+  - code : String {partial id}
+  - text : String
+  - values : String [0..*]
+  - visibility : String  «enum?»
+  - unlock.slot : String
+  - unlock.questionKind : String
+  - form : String [0..*]
+  - layer : String  «enum?»
+  - required : Boolean
+}
+class Artefact <<weak>> {
+  - code : String {partial id}
+  - kind : String  «enum?»
+  - title : String
+  - body : String
+  - visibility : String  «enum?»
+  - fields : String [0..*]
+  - ticks : String [0..*]
+  - tickFlags : String [0..*]
+  - branches : String [0..*]
+  - channelMembers : String [0..*]
+}
+class Action <<weak>> {
+  - key : String {partial id}
+  - label : String
+  - kind : String  «enum?»
+  - points : Int
+  - freeOnRepeat : Boolean
+  - evidence : String
+  - requiresAll : String [0..*]
+  - requiresNone : String [0..*]
+}
+class TimelineEvent <<weak>> {
+  - at : DateTime {partial id}
+  - kind : String  «enum?»
+  - text : String
+}
+class Ambient <<weak>> {
+  - seq : Int {partial id}
+  - text : String
+  - before : String
+  - after : String
+}
+class StoryFlag <<weak>> {
+  - code : String {partial id}
+}
+class Check <<weak>> {
+  - code : String {partial id}
+  - question : String
+  - inChannel : String
+  - realtime : Boolean
+  - extract.fields : String
+  - extract.promiseTo : String
+  - onYes : Json
+}
+class Node <<weak>> {
+  - code : String {partial id}
+  - seq : Int
+  - kind : String  «enum?»
+  - points : Int
+  - channel : String  «enum?»
+  - format : String  «enum?»
+  - prompt : String
+  - timeLimitSeconds : Int
+  - riasecAxis : RiasecAxis
+  - trigger.type : String  «enum?»
+  - trigger.at : DateTime
+  - trigger.fallbackAt : DateTime
+  - trigger.action : String
+  - core : Boolean
+  - adapt : String [0..*]
+  - absorbIf : String
+  - assumes : String [0..*]
+  - closing.approveBeats : String
+  - closing.approveEvent : String
+  - closing.concern : String
+  - closing.deferHint : String
+  - timeout.reaction : String
+  - timeout.sets : String
+  - reactionBeats : String
+  - reactionAiBeats : String
+  - freeTurnAfterReaction : Boolean
+  - ifUnreached : String
+  - probe.by : String
+  - probe.direction : String
+  - probe.hooks : String
+}
+class Option <<weak>> {
+  - key : String {partial id}
+  - seq : Int
+  - text : String
+  - mustNot : Boolean
+  - isHarmful : Boolean
+  - reaction : String
+  - promise.at : DateTime
+  - promise.channel : String  «enum?»
+  - promise.to : String
+  - consensusRank : Int
+}
+class ReviewProbe <<weak>> {
+  - id : uuid {partial id}
+  - condition : String
+  - channel : String  «enum?»
+  - hook : String
+  - whenPromiseOpen : String
+}
+class ObservedItem <<weak>> {
+  - signs : String [0..*]
+  - includesPhase : String
+}
+class ReferenceAnswer <<entity>> {
+  - id : uuid {id}
+  - text : String
+  - difficultyStratum : String  «enum?»
+  - source : String  «enum?»
+  - inRegressionSet : Boolean
+  - status : String  «enum?»
+}
+class Scores <<assoc>> {
+  - level : Int  «0..2  D-116»
+}
+class RefGrade <<assoc>> {
+  - level : Int  «0..2  D-116»
+  - flags : String  «enum?»
+}
+enum ScenarioStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  APPROVED
+  IN_PLAYTEST
+  READY
+  PUBLISHED
+  RETIRED
+}
+note right of ScenarioStatus : SM-01
+enum RiasecAxis {
+  R
+  I
+  A
+  S
+  E
+  C
+}
+note right of RiasecAxis : D-104 (6 RIASEC axes)
+class Keyword <<stub>> {
+  CD-02
+}
+class LevelTask <<stub>> {
+  CD-02
+}
+class NpcCard <<stub>> {
+  CD-05
+}
+class OccupationLevel <<stub>> {
+  CD-02
+}
+class SoftSkillItem <<stub>> {
+  CD-02
+}
+class StaffMember <<stub>> {
+  CD-01
+}
+class WorkEnvironment <<stub>> {
+  CD-02
+}
+
+OccupationLevel "1" -- "0..*" LevelPack : STAGES
+StaffMember "1" -- "0..*" LevelPack : AUTHORS_PACK
+LevelPack "1" *-- "0..*" ResidentSlot : HAS_RESIDENT
+ResidentSlot "0..*" -- "0..1" NpcCard : FILLS_RESIDENT
+Scenario "1" *-- "2..6" ScenarioSlot : HAS_SLOT
+Scenario "1" *-- "0..*" Fact : HAS_FACT
+Scenario "1" *-- "0..*" Artefact : HAS_ARTEFACT
+Scenario "1" *-- "0..*" Action : HAS_ACTION
+Scenario "1" *-- "0..*" TimelineEvent : HAS_TIMELINE
+Scenario "1" *-- "0..*" Ambient : HAS_AMBIENT
+Scenario "1" *-- "0..*" StoryFlag : HAS_FLAG
+Scenario "1" *-- "0..*" Check : HAS_CHECK
+Scenario "1" -- "0..*" Node : HAS_NODE
+Scenario "1" *-- "0..*" ReviewProbe : HAS_REVIEW_PROBE
+Scenario "1" *-- "3..6" ObservedItem : HAS_OBSERVED_ITEM
+Scenario "0..*" -- "1" OccupationLevel : FOR_LEVEL
+Scenario "0..*" -- "1" LevelTask : PERFORMS_TASK
+Scenario "0..*" -- "1..2" Keyword : FOCUSES_ON
+Scenario "0..*" -- "0..*" WorkEnvironment : FITS
+StaffMember "1" -- "0..*" Scenario : AUTHORS
+ScenarioSlot "0..*" -- "0..1" NpcCard : FILLED_BY
+ScenarioSlot "0..*" -- "0..1" ResidentSlot : IS_RESIDENT
+Fact "0..*" -- "0..*" ScenarioSlot : KNOWN_BY
+Fact "0..*" -- "0..1" Artefact : UNLOCKED_BY
+Fact "0..*" -- "0..1" Node : RESERVED_FOR
+TimelineEvent "0..*" -- "0..1" Fact : UPDATES
+Action "0..*" -- "0..1" Artefact : TARGETS
+Action "0..*" -- "0..*" ScenarioSlot : INVOLVES
+Action "0..*" -- "0..*" StoryFlag : ACTION_SETS_FLAG
+Option "0..*" -- "0..*" StoryFlag : OPTION_SETS_FLAG
+Check "0..*" -- "0..*" StoryFlag : CHECK_SETS_FLAG
+Node "0..*" -- "0..*" StoryFlag : NODE_SETS_FLAG\n(setter / sets)
+Node "0..*" -- "0..*" StoryFlag : NODE_READS_FLAG\n(reader / reads)
+ReviewProbe "0..*" -- "0..*" StoryFlag : PROBE_READS_FLAG
+Check "0..*" -- "0..1" Artefact : CHECKS_ON_ARTEFACT {xor}
+Check "0..*" -- "0..1" Node : CHECKS_ON_NODE {xor}
+Check "0..*" -- "0..*" ScenarioSlot : IN_CONVERSATION
+Node "0..*" -- "0..1" ScenarioSlot : SPEAKS\n(speaks / speaker)
+Node "0..*" -- "0..1" Artefact : USES_ARTEFACT
+Node "0..*" -- "0..*" ScenarioSlot : RECHECKS\n(rechecks / rechecked)
+Node "1" -- "0..*" Option : HAS_OPTION
+Option "0..*" -- "0..*" SoftSkillItem : SCORES
+(Option, SoftSkillItem) .. Scores
+ReviewProbe "0..*" -- "0..1" ScenarioSlot : ASKED_BY
+ObservedItem "0..*" -- "1" SoftSkillItem : OBSERVES
+ObservedItem "0..*" -- "0..*" Node : EVIDENCED_AT
+ReferenceAnswer "0..*" -- "1" Node : ANSWERS_NODE
+StaffMember "0..1" -- "0..*" ReferenceAnswer : WRITES_REF
+ReferenceAnswer "0..*" -- "0..*" SoftSkillItem : REF_GRADE
+(ReferenceAnswer, SoftSkillItem) .. RefGrade
+note right of Check : {xor} a check is on an artefact or on a node\n(CHECKS_ON_ARTEFACT, CHECKS_ON_NODE)
+note bottom of Scenario : { task.level = scenario.level }
+note bottom of Node : {id = (scenario, option)}  identified by several owners
+note bottom of Scenario : «pending A28» outcomes: Seed scenario "chua chot"
+legend bottom
+  | Notation | Meaning |
+  | white / light blue class | entity / weak entity (composition ◆ from its owner) |
+  | green class | association class (an ERD relationship that carries attributes) |
+  | orange | «pending A28»: research still open, drawn as in the ERD |
+  | grey class | defined in another diagram (CD-0x) |
+  | /attr | derived attribute; attr : T [0..*] is multi-valued; a.b is a composite attribute |
+  | String «enum?» | enum-like column with no values in the ERD or research yet |
+  | method «D-xx» | a domain rule with its source; data = Prisma model, pure rules = game-core |
+  | types | inferred from names (the ERD has none): proposals, not decisions |
+endlegend
+@enduml

@@ -1,4 +1,4 @@
-"""Generate NestJS module class diagrams (CL-00 … CL-07) from nest-modules.yaml into ../../plantuml/class/compact/.
+"""Generate NestJS module class diagrams (CL-00 … CL-08) from nest-modules.yaml into ../../plantuml/class/.
 
 Routes are declared on each controller in the YAML (signature, HTTP method and path, roles).
 Checks before drawing:
@@ -7,6 +7,9 @@ Checks before drawing:
     a global module, or a known framework/library type
   * no module imports a module whose exports it does not use (staff modules may import AuthModule for its guard)
   * module imports have no cycles; every declared input DTO is used by a route
+  * ownership: every ERD entity and association class (a relationship with attributes) is owned by exactly one module,
+    every provider writes only what its module owns, and every owned name has a writer
+Domain classes come from ERD_JobQuest_Chen.puml (see gen_domain.py, CD-01 … CD-08); they appear here as «write» dependencies.
 """
 import re
 import sys
@@ -15,10 +18,25 @@ from pathlib import Path
 
 import yaml
 
+from erd_parse import parse_erd
+
 ROOT = Path(__file__).resolve().parent
-OUT = ROOT.parent.parent / "plantuml" / "class" / "compact"
+OUT = ROOT.parent.parent / "plantuml" / "class"
 OUT.mkdir(exist_ok=True)
 nest = yaml.safe_load((ROOT / "nest-modules.yaml").read_text())
+dom = yaml.safe_load((ROOT / "domain.yaml").read_text(encoding="utf-8"))
+erd_entities, erd_rels, _ = parse_erd()
+ERD_CLASSES = set(erd_entities) | {n for n, r in erd_rels.items() if r["attrs"]}
+SECTION_CD = {sec: did for did, d in dom["diagrams"].items() for sec in d["sections"]}
+
+
+def pascal(name):
+    return "".join(w.capitalize() for w in name.lower().split("_"))
+
+
+def domain_home(name):
+    item = erd_entities.get(name) or erd_rels[name]
+    return SECTION_CD[item["section"]]
 
 EXTERNAL = {"S3Client", "Redis", "JwtService", "Reflector", "OAuth2Client", "HttpService", "Transporter", "Queue",
             "Histogram", "Counter", "Gauge", "ConfigService"}
@@ -128,6 +146,27 @@ for m in graph:
     if not state.get(m):
         dfs(m, [])
 
+# ───────────── ownership check (ERD ↔ modules) ─────────────
+owner_of = {}
+for mname, mod in nest["modules"].items():
+    for n in mod.get("owns") or []:
+        if n not in ERD_CLASSES:
+            errors.append(f"{mname}: owns {n}, which is not an ERD entity or association class")
+        elif n in owner_of:
+            errors.append(f"{n} is owned by {owner_of[n]} and {mname}")
+        owner_of[n] = mname
+    written = set()
+    for pname, p in (mod.get("providers") or {}).items():
+        for n in (p or {}).get("writes") or []:
+            written.add(n)
+            if n not in (mod.get("owns") or []):
+                errors.append(f"{mname}.{pname}: writes {n}, which {mname} does not own")
+    for n in mod.get("owns") or []:
+        if n not in written:
+            errors.append(f"{mname}: owns {n} but no provider writes it")
+for n in sorted(ERD_CLASSES - set(owner_of)):
+    errors.append(f"ERD class {n} has no owner module")
+
 listed = [m for d in nest["diagrams"].values() for m in d["modules"]]
 for m in nest["modules"]:
     if listed.count(m) != 1:
@@ -223,8 +262,12 @@ def draw_module(mname, out, cross):
             t = base_type(d.split(":", 1)[1])
             if t not in GLOBAL_TYPES and t not in EXTERNAL:
                 rel.append((cname, t))
+        if any(types_in(r["m"]) for r in (c or {}).get("routes", [])):
+            rel.append((cname, f"{mname}_DTOs", "dto"))
     for pname, p in (mod.get("providers") or {}).items():
         p = p or {}
+        for n in p.get("writes") or []:
+            rel.append((pname, pascal(n), "write"))
         if p.get("implements"):
             rel.append((pname, p["implements"], "impl"))
         for d in p.get("deps", []):
@@ -232,9 +275,23 @@ def draw_module(mname, out, cross):
             if t not in GLOBAL_TYPES and t not in EXTERNAL:
                 rel.append((pname, t))
     for r in rel:
+        if len(r) == 3 and r[2] == "write":
+            continue
+        if r[1].endswith("_DTOs"):
+            continue
         if r[1] not in (mod.get("providers") or {}) and r[1] not in (mod.get("controllers") or {}):
             cross.add(r[1])
     return rel
+
+
+LEGEND = """legend bottom
+  | Arrow | Meaning |
+  | A --> B | association: A holds B through constructor injection (a controller holds its services) |
+  | A ..> Entity : «write» | A writes the domain class (the module owns it; see CD-01 … CD-08) |
+  | Controller ..> DTOs | the controller's routes take and return these types |
+  | A ..\|> I | A realizes the interface or port I |
+  | grey class | defined in another diagram (CL-0x · module, or domain · CD-0x) |
+endlegend"""
 
 
 def diagram_file(did, title):
@@ -257,9 +314,21 @@ for did, d in nest["diagrams"].items():
         owner = provider_module[t]
         owner_did = next(k for k, v in nest["diagrams"].items() if owner in v["modules"])
         out.append(f"class {t} <<{owner_did} · {owner}>>")
+    domain_used = sorted({r[1] for r in rels if len(r) == 3 and r[2] == "write"})
+    by_name = {pascal(n): n for n in ERD_CLASSES}
+    for dn in domain_used:
+        out.append(f"class {dn} <<domain · {domain_home(by_name[dn])}>>")
     out.append("")
     for r in rels:
-        out.append(f"{r[0]} ..|> {r[1]}" if len(r) == 3 else f"{r[0]} --> {r[1]}")
+        if len(r) == 3 and r[2] == "impl":
+            out.append(f"{r[0]} ..|> {r[1]}")
+        elif len(r) == 3 and r[2] == "write":
+            out.append(f"{r[0]} ..> {r[1]} : «write»")
+        elif len(r) == 3 and r[2] == "dto":
+            out.append(f"{r[0]} ..> {r[1]}")
+        else:
+            out.append(f"{r[0]} --> {r[1]}")
+    out.append(LEGEND)
     out.append("@enduml")
     name.write_text("\n".join(out) + "\n")
     written.append(name.name)

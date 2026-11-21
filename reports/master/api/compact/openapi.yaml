@@ -1,10 +1,11 @@
 openapi: 3.1.0
 info:
-  title: JobQuest API (compact ERD)
+  title: JobQuest API
   version: 2.0.0
-  description: Generated from nest-modules.yaml (compact ERD, 19 tables). All paths are under /api/v1. x-roles lists the roles
-    allowed; staff routes also check the occupation assignment. Long AI work returns 202 and the result arrives on GET /stream
-    (Server-Sent Events). All content is in Vietnamese.
+  description: Generated from nest-modules.yaml (Chen ERD, 19 NestJS modules). x-status marks a route as approved (present
+    in the 11/11 contract api/openapi.yaml) or proposed. All paths are under /api/v1. x-roles lists the roles allowed; staff
+    routes also check the occupation assignment. Long AI work returns 202 and the result arrives on GET /stream (Server-Sent
+    Events). All content is in Vietnamese.
 servers:
 - url: /api/v1
 security:
@@ -26,14 +27,32 @@ tags:
   description: CatalogueModule · CatalogueController
 - name: Occupation
   description: CatalogueModule · OccupationController
+- name: Import
+  description: ImportModule · ImportController
 - name: Scenario
   description: ScenarioModule · ScenarioController
 - name: Seed
   description: ScenarioModule · SeedController
+- name: Interview
+  description: ScenarioModule · InterviewController
+- name: Generation
+  description: ScenarioModule · GenerationController
+- name: LevelPack
+  description: ScenarioModule · LevelPackController
+- name: ReferenceAnswer
+  description: ScenarioModule · ReferenceAnswerController
 - name: Review
   description: ReviewModule · ReviewController
+- name: Criteria
+  description: ReviewModule · CriteriaController
+- name: Revalidation
+  description: ReviewModule · RevalidationController
 - name: ReviewAssignment
   description: ReviewModule · ReviewAssignmentController
+- name: Presentation
+  description: PublishingModule · PresentationController
+- name: Asset
+  description: PublishingModule · AssetController
 - name: Build
   description: PublishingModule · BuildController
 - name: Release
@@ -50,8 +69,10 @@ tags:
   description: LifeModule · NpcController
 - name: ShiftRun
   description: PlayModule · ShiftRunController
+- name: Flag
+  description: QualityModule · FlagController
 - name: Reliability
-  description: AssessmentModule · ReliabilityController
+  description: QualityModule · ReliabilityController
 - name: SystemPrompt
   description: AiModule · SystemPromptController
 - name: Feedback
@@ -74,6 +95,7 @@ paths:
       - DOMAIN_EXPERT
       - CONTENT_ADMIN
       - SYSTEM_ADMIN
+      x-status: approved
       parameters:
       - name: Last-Event-ID
         in: header
@@ -96,12 +118,13 @@ paths:
       tags:
       - Notification
       operationId: listNotifications
-      summary: List notifications
+      summary: List notifications (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
       - CONTENT_ADMIN
       - SYSTEM_ADMIN
+      x-status: proposed
       parameters:
       - name: cursor
         in: query
@@ -146,12 +169,13 @@ paths:
       tags:
       - Notification
       operationId: markNotificationRead
-      summary: Mark notification read
+      summary: Mark notification read (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
       - CONTENT_ADMIN
       - SYSTEM_ADMIN
+      x-status: proposed
       parameters:
       - name: id
         in: path
@@ -174,6 +198,7 @@ paths:
       summary: Register
       x-roles:
       - PUBLIC
+      x-status: approved
       security: []
       requestBody:
         required: true
@@ -198,6 +223,7 @@ paths:
       summary: Sign in
       x-roles:
       - PUBLIC
+      x-status: approved
       security: []
       requestBody:
         required: true
@@ -222,6 +248,7 @@ paths:
       summary: Sign in with google
       x-roles:
       - PUBLIC
+      x-status: approved
       security: []
       requestBody:
         required: true
@@ -246,6 +273,7 @@ paths:
       summary: Refresh session
       x-roles:
       - PUBLIC
+      x-status: approved
       security: []
       requestBody:
         required: true
@@ -273,6 +301,7 @@ paths:
       - DOMAIN_EXPERT
       - CONTENT_ADMIN
       - SYSTEM_ADMIN
+      x-status: approved
       responses:
         '204':
           description: Done
@@ -288,6 +317,7 @@ paths:
       summary: Request password reset
       x-roles:
       - PUBLIC
+      x-status: approved
       security: []
       requestBody:
         required: true
@@ -308,6 +338,7 @@ paths:
       summary: Confirm password reset
       x-roles:
       - PUBLIC
+      x-status: approved
       security: []
       requestBody:
         required: true
@@ -331,6 +362,7 @@ paths:
       - DOMAIN_EXPERT
       - CONTENT_ADMIN
       - SYSTEM_ADMIN
+      x-status: approved
       responses:
         '200':
           description: OK
@@ -352,6 +384,7 @@ paths:
       - DOMAIN_EXPERT
       - CONTENT_ADMIN
       - SYSTEM_ADMIN
+      x-status: approved
       requestBody:
         required: true
         content:
@@ -378,6 +411,7 @@ paths:
       summary: Delete me
       x-roles:
       - EXPLORER
+      x-status: approved
       responses:
         '204':
           description: Done
@@ -393,6 +427,7 @@ paths:
       summary: List users
       x-roles:
       - SYSTEM_ADMIN
+      x-status: approved
       parameters:
       - name: cursor
         in: query
@@ -439,6 +474,7 @@ paths:
       summary: Create staff account
       x-roles:
       - SYSTEM_ADMIN
+      x-status: approved
       requestBody:
         required: true
         content:
@@ -466,6 +502,7 @@ paths:
       summary: Update user
       x-roles:
       - SYSTEM_ADMIN
+      x-status: approved
       parameters:
       - name: userId
         in: path
@@ -499,6 +536,7 @@ paths:
       summary: Delete user
       x-roles:
       - SYSTEM_ADMIN
+      x-status: approved
       parameters:
       - name: userId
         in: path
@@ -521,6 +559,7 @@ paths:
       summary: Get user activity
       x-roles:
       - SYSTEM_ADMIN
+      x-status: approved
       parameters:
       - name: userId
         in: path
@@ -574,6 +613,7 @@ paths:
       summary: Get occupation staff
       x-roles:
       - SYSTEM_ADMIN
+      x-status: approved
       parameters:
       - name: occupationId
         in: path
@@ -599,6 +639,7 @@ paths:
       summary: Set occupation staff
       x-roles:
       - SYSTEM_ADMIN
+      x-status: approved
       parameters:
       - name: occupationId
         in: path
@@ -633,6 +674,7 @@ paths:
       summary: Get galaxy map
       x-roles:
       - EXPLORER
+      x-status: approved
       responses:
         '200':
           description: OK
@@ -652,6 +694,7 @@ paths:
       summary: Get occupation
       x-roles:
       - EXPLORER
+      x-status: approved
       parameters:
       - name: occupationId
         in: path
@@ -675,9 +718,10 @@ paths:
       tags:
       - Catalogue
       operationId: getLevel
-      summary: Get level
+      summary: Get level (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       parameters:
       - name: levelId
         in: path
@@ -705,6 +749,7 @@ paths:
       x-roles:
       - CONTENT_ADMIN
       - DOMAIN_EXPERT
+      x-status: approved
       responses:
         '200':
           description: OK
@@ -727,6 +772,7 @@ paths:
       x-roles:
       - CONTENT_ADMIN
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: occupationId
         in: path
@@ -758,10 +804,11 @@ paths:
       tags:
       - Occupation
       operationId: getLevelPackage
-      summary: Get level package
+      summary: Get level package (proposed)
       x-roles:
       - CONTENT_ADMIN
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: levelId
         in: path
@@ -780,6 +827,137 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
+  /staff/imports:
+    post:
+      tags:
+      - Import
+      operationId: startImport
+      summary: Start import
+      x-roles:
+      - CONTENT_ADMIN
+      x-status: approved
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartImportInput'
+      responses:
+        '202':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/imports/{importId}:
+    get:
+      tags:
+      - Import
+      operationId: getImport
+      summary: Get import
+      x-roles:
+      - CONTENT_ADMIN
+      x-status: approved
+      parameters:
+      - name: importId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /staff/imports/{importId}/issues/{issueId}:
+    put:
+      tags:
+      - Import
+      operationId: resolveIssue
+      summary: Resolve issue (proposed)
+      x-roles:
+      - CONTENT_ADMIN
+      x-status: proposed
+      parameters:
+      - name: importId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResolveIssueInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/imports/{importId}/adaptation:
+    put:
+      tags:
+      - Import
+      operationId: saveAdaptation
+      summary: Save adaptation (proposed)
+      x-roles:
+      - CONTENT_ADMIN
+      x-status: proposed
+      parameters:
+      - name: importId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdaptInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
   /staff/scenarios:
     get:
       tags:
@@ -789,6 +967,7 @@ paths:
       x-roles:
       - CONTENT_ADMIN
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: cursor
         in: query
@@ -835,6 +1014,7 @@ paths:
       summary: Open scenario
       x-roles:
       - CONTENT_ADMIN
+      x-status: approved
       requestBody:
         required: true
         content:
@@ -863,6 +1043,7 @@ paths:
       x-roles:
       - CONTENT_ADMIN
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: scenarioId
         in: path
@@ -888,6 +1069,7 @@ paths:
       summary: Delete scenario
       x-roles:
       - CONTENT_ADMIN
+      x-status: approved
       parameters:
       - name: scenarioId
         in: path
@@ -911,9 +1093,10 @@ paths:
       tags:
       - Scenario
       operationId: assignAuthor
-      summary: Assign author
+      summary: Assign author (proposed)
       x-roles:
       - CONTENT_ADMIN
+      x-status: proposed
       parameters:
       - name: scenarioId
         in: path
@@ -949,6 +1132,7 @@ paths:
       x-roles:
       - CONTENT_ADMIN
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: scenarioId
         in: path
@@ -974,9 +1158,10 @@ paths:
       tags:
       - Seed
       operationId: saveSeed
-      summary: Save seed
+      summary: Save seed (proposed)
       x-roles:
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: scenarioId
         in: path
@@ -1011,6 +1196,7 @@ paths:
       summary: Check seed
       x-roles:
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: scenarioId
         in: path
@@ -1037,6 +1223,7 @@ paths:
       summary: Submit scenario
       x-roles:
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: scenarioId
         in: path
@@ -1055,6 +1242,272 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
+  /staff/scenarios/{scenarioId}/interviews:
+    post:
+      tags:
+      - Interview
+      operationId: startInterview
+      summary: Start interview (proposed)
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: proposed
+      parameters:
+      - name: scenarioId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartInterviewInput'
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InterviewView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/interviews/{interviewId}/turns:
+    post:
+      tags:
+      - Interview
+      operationId: answerInterview
+      summary: Answer interview (proposed)
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: proposed
+      parameters:
+      - name: interviewId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InterviewTurnInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InterviewView'
+        '202':
+          description: Accepted; the result arrives on /stream
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/interviews/{interviewId}/confirm:
+    post:
+      tags:
+      - Interview
+      operationId: confirmInterview
+      summary: Confirm interview (proposed)
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: proposed
+      parameters:
+      - name: interviewId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InterviewView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /staff/scenarios/{scenarioId}/generations:
+    post:
+      tags:
+      - Generation
+      operationId: requestGeneration
+      summary: Request generation
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: approved
+      parameters:
+      - name: scenarioId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerationInput'
+      responses:
+        '202':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/scenarios/{scenarioId}/revisions:
+    post:
+      tags:
+      - Generation
+      operationId: requestRevision
+      summary: Request revision
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: approved
+      parameters:
+      - name: scenarioId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RevisionInput'
+      responses:
+        '202':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/levels/{levelId}/pack:
+    get:
+      tags:
+      - LevelPack
+      operationId: getLevelPack
+      summary: Get level pack (proposed)
+      x-roles:
+      - CONTENT_ADMIN
+      - DOMAIN_EXPERT
+      x-status: proposed
+      parameters:
+      - name: levelId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LevelPackView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    put:
+      tags:
+      - LevelPack
+      operationId: saveLevelPack
+      summary: Save level pack (proposed)
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: proposed
+      parameters:
+      - name: levelId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LevelPackInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LevelPackView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/scenarios/{scenarioId}/reference-answers:
+    post:
+      tags:
+      - ReferenceAnswer
+      operationId: writeReferenceAnswer
+      summary: Write reference answer
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: approved
+      parameters:
+      - name: scenarioId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceAnswerInput'
+      responses:
+        '201':
+          description: Done
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
   /staff/reviews:
     get:
       tags:
@@ -1063,6 +1516,7 @@ paths:
       summary: List my review queue
       x-roles:
       - DOMAIN_EXPERT
+      x-status: approved
       responses:
         '200':
           description: OK
@@ -1081,9 +1535,10 @@ paths:
       tags:
       - Review
       operationId: openReview
-      summary: Open review
+      summary: Open review (proposed)
       x-roles:
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: reviewId
         in: path
@@ -1107,9 +1562,10 @@ paths:
       tags:
       - Review
       operationId: decideReview
-      summary: Decide review
+      summary: Decide review (proposed)
       x-roles:
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: reviewId
         in: path
@@ -1136,14 +1592,154 @@ paths:
           $ref: '#/components/responses/Forbidden'
         '422':
           $ref: '#/components/responses/ValidationFailed'
+  /staff/occupations/{occupationId}/review-criteria:
+    get:
+      tags:
+      - Criteria
+      operationId: getReviewCriteria
+      summary: Get review criteria
+      x-roles:
+      - CONTENT_ADMIN
+      - DOMAIN_EXPERT
+      x-status: approved
+      parameters:
+      - name: occupationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CriteriaView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    put:
+      tags:
+      - Criteria
+      operationId: saveReviewCriteria
+      summary: Save review criteria (proposed)
+      x-roles:
+      - CONTENT_ADMIN
+      x-status: proposed
+      parameters:
+      - name: occupationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CriteriaInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CriteriaView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/scenarios/{scenarioId}/releases/{versionNo}/revalidations:
+    post:
+      tags:
+      - Revalidation
+      operationId: requestRevalidation
+      summary: Request revalidation (proposed)
+      x-roles:
+      - CONTENT_ADMIN
+      - SYSTEM_ADMIN
+      x-status: proposed
+      parameters:
+      - name: scenarioId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: versionNo
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RevalidationRequestInput'
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RevalidationView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/revalidations/{requestId}/result:
+    post:
+      tags:
+      - Revalidation
+      operationId: resolveRevalidation
+      summary: Resolve revalidation
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: approved
+      parameters:
+      - name: requestId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RevalidationResultInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RevalidationView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
   /staff/scenarios/{scenarioId}/reviews:
     post:
       tags:
       - ReviewAssignment
       operationId: assignReviewer
-      summary: Assign reviewer
+      summary: Assign reviewer (proposed)
       x-roles:
       - CONTENT_ADMIN
+      x-status: proposed
       parameters:
       - name: scenarioId
         in: path
@@ -1175,9 +1771,10 @@ paths:
       tags:
       - ReviewAssignment
       operationId: listOverdueReviews
-      summary: List overdue reviews
+      summary: List overdue reviews (proposed)
       x-roles:
       - CONTENT_ADMIN
+      x-status: proposed
       responses:
         '200':
           description: OK
@@ -1196,9 +1793,10 @@ paths:
       tags:
       - ReviewAssignment
       operationId: reassignReview
-      summary: Reassign review
+      summary: Reassign review (proposed)
       x-roles:
       - CONTENT_ADMIN
+      x-status: proposed
       parameters:
       - name: reviewId
         in: path
@@ -1225,6 +1823,131 @@ paths:
           $ref: '#/components/responses/Forbidden'
         '422':
           $ref: '#/components/responses/ValidationFailed'
+  /staff/scenarios/{scenarioId}/presentation/suggestions:
+    post:
+      tags:
+      - Presentation
+      operationId: requestSuggestions
+      summary: Request suggestions (proposed)
+      x-roles:
+      - CONTENT_ADMIN
+      x-status: proposed
+      parameters:
+      - name: scenarioId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '202':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /staff/scenarios/{scenarioId}/presentation:
+    put:
+      tags:
+      - Presentation
+      operationId: savePresentation
+      summary: Save presentation
+      x-roles:
+      - CONTENT_ADMIN
+      x-status: approved
+      parameters:
+      - name: scenarioId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PresentationInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PresentationView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/assets:
+    post:
+      tags:
+      - Asset
+      operationId: requestAsset
+      summary: Request asset
+      x-roles:
+      - CONTENT_ADMIN
+      x-status: approved
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssetRequestInput'
+      responses:
+        '202':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
+  /staff/assets/{assetId}/bias-check:
+    put:
+      tags:
+      - Asset
+      operationId: checkAssetBias
+      summary: Check asset bias (proposed)
+      x-roles:
+      - CONTENT_ADMIN
+      x-status: proposed
+      parameters:
+      - name: assetId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BiasCheckInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
   /staff/scenarios/{scenarioId}/builds:
     post:
       tags:
@@ -1233,6 +1956,7 @@ paths:
       summary: Build draft game
       x-roles:
       - CONTENT_ADMIN
+      x-status: approved
       parameters:
       - name: scenarioId
         in: path
@@ -1260,6 +1984,7 @@ paths:
       x-roles:
       - CONTENT_ADMIN
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: buildId
         in: path
@@ -1283,9 +2008,10 @@ paths:
       tags:
       - Build
       operationId: startPlaytestRun
-      summary: Start playtest run
+      summary: Start playtest run (proposed)
       x-roles:
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: buildId
         in: path
@@ -1312,6 +2038,7 @@ paths:
       summary: Report findings
       x-roles:
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: buildId
         in: path
@@ -1346,6 +2073,7 @@ paths:
       summary: Pass playtest
       x-roles:
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: buildId
         in: path
@@ -1364,6 +2092,41 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
+  /staff/runs/{runId}/triage:
+    post:
+      tags:
+      - Build
+      operationId: triageRun
+      summary: Triage run (proposed)
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: proposed
+      parameters:
+      - name: runId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TriageInput'
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriageView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
   /staff/scenarios/{scenarioId}/release:
     post:
       tags:
@@ -1372,6 +2135,7 @@ paths:
       summary: Publish scenario
       x-roles:
       - CONTENT_ADMIN
+      x-status: approved
       parameters:
       - name: scenarioId
         in: path
@@ -1403,9 +2167,10 @@ paths:
       tags:
       - Profile
       operationId: getProfile
-      summary: Get profile
+      summary: Get profile (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       responses:
         '200':
           description: OK
@@ -1422,9 +2187,10 @@ paths:
       tags:
       - Profile
       operationId: getJournal
-      summary: Get journal
+      summary: Get journal (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       parameters:
       - name: cursor
         in: query
@@ -1469,9 +2235,10 @@ paths:
       tags:
       - Profile
       operationId: updateGoals
-      summary: Update goals
+      summary: Update goals (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       requestBody:
         required: true
         content:
@@ -1496,9 +2263,10 @@ paths:
       tags:
       - Profile
       operationId: pinAchievements
-      summary: Pin achievements
+      summary: Pin achievements (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       requestBody:
         required: true
         content:
@@ -1523,9 +2291,10 @@ paths:
       tags:
       - GetToKnowMe
       operationId: getCards
-      summary: Get cards
+      summary: Get cards (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       responses:
         '200':
           description: OK
@@ -1541,9 +2310,10 @@ paths:
       tags:
       - GetToKnowMe
       operationId: submitGetToKnowMe
-      summary: Submit get to know me
+      summary: Submit get to know me (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       requestBody:
         required: true
         content:
@@ -1568,9 +2338,10 @@ paths:
       tags:
       - Career
       operationId: enterLevel
-      summary: Enter level
+      summary: Enter level (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       requestBody:
         required: true
         content:
@@ -1595,9 +2366,10 @@ paths:
       tags:
       - Career
       operationId: getPlayerLevel
-      summary: Get player level
+      summary: Get player level (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       parameters:
       - name: playerLevelId
         in: path
@@ -1621,9 +2393,10 @@ paths:
       tags:
       - Career
       operationId: getSuggestions
-      summary: Get suggestions
+      summary: Get suggestions (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       responses:
         '200':
           description: OK
@@ -1640,9 +2413,10 @@ paths:
       tags:
       - Shop
       operationId: getShop
-      summary: Get shop
+      summary: Get shop (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       responses:
         '200':
           description: OK
@@ -1659,9 +2433,10 @@ paths:
       tags:
       - Shop
       operationId: buyItem
-      summary: Buy item
+      summary: Buy item (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       requestBody:
         required: true
         content:
@@ -1688,9 +2463,10 @@ paths:
       tags:
       - Shop
       operationId: listInventory
-      summary: List inventory
+      summary: List inventory (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       responses:
         '200':
           description: OK
@@ -1709,9 +2485,10 @@ paths:
       tags:
       - Shop
       operationId: useItem
-      summary: Use item
+      summary: Use item (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       requestBody:
         required: true
         content:
@@ -1736,9 +2513,10 @@ paths:
       tags:
       - Npc
       operationId: listNpcs
-      summary: List npcs
+      summary: List npcs (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       responses:
         '200':
           description: OK
@@ -1757,9 +2535,10 @@ paths:
       tags:
       - Npc
       operationId: giveGift
-      summary: Give gift
+      summary: Give gift (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       parameters:
       - name: npcId
         in: path
@@ -1790,10 +2569,11 @@ paths:
       tags:
       - ShiftRun
       operationId: listShiftTasks
-      summary: List shift tasks
+      summary: List shift tasks (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: roleCode
         in: query
@@ -1823,9 +2603,10 @@ paths:
       tags:
       - ShiftRun
       operationId: startRun
-      summary: Start run
+      summary: Start run (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       requestBody:
         required: true
         content:
@@ -1850,10 +2631,11 @@ paths:
       tags:
       - ShiftRun
       operationId: getRun
-      summary: Get run
+      summary: Get run (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: runId
         in: path
@@ -1877,10 +2659,11 @@ paths:
       tags:
       - ShiftRun
       operationId: getScene
-      summary: Get scene
+      summary: Get scene (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: runId
         in: path
@@ -1904,10 +2687,11 @@ paths:
       tags:
       - ShiftRun
       operationId: getTranscript
-      summary: Get transcript
+      summary: Get transcript (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: runId
         in: path
@@ -1938,10 +2722,11 @@ paths:
       tags:
       - ShiftRun
       operationId: takeTurn
-      summary: Take turn
+      summary: Take turn (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: runId
         in: path
@@ -1979,10 +2764,11 @@ paths:
       tags:
       - ShiftRun
       operationId: resumeRun
-      summary: Resume run
+      summary: Resume run (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: runId
         in: path
@@ -2006,10 +2792,11 @@ paths:
       tags:
       - ShiftRun
       operationId: saveNote
-      summary: Save note
+      summary: Save note (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: runId
         in: path
@@ -2037,9 +2824,10 @@ paths:
       tags:
       - ShiftRun
       operationId: flagContent
-      summary: Flag content
+      summary: Flag content (proposed)
       x-roles:
       - EXPLORER
+      x-status: proposed
       parameters:
       - name: runId
         in: path
@@ -2067,10 +2855,11 @@ paths:
       tags:
       - ShiftRun
       operationId: finishRun
-      summary: Finish run
+      summary: Finish run (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: runId
         in: path
@@ -2108,10 +2897,11 @@ paths:
       tags:
       - ShiftRun
       operationId: getSummary
-      summary: Get summary
+      summary: Get summary (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: runId
         in: path
@@ -2130,6 +2920,89 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
+  /staff/flags:
+    get:
+      tags:
+      - Flag
+      operationId: listFlags
+      summary: List flags
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: approved
+      parameters:
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: kind
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Page'
+                - type: object
+                  properties:
+                    items:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/FlagView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /staff/flags/{flagId}:
+    patch:
+      tags:
+      - Flag
+      operationId: handleFlag
+      summary: Handle flag
+      x-roles:
+      - DOMAIN_EXPERT
+      x-status: approved
+      parameters:
+      - name: flagId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HandleFlagInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlagView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationFailed'
   /staff/occupations/{occupationId}/blind-samples:
     get:
       tags:
@@ -2138,6 +3011,7 @@ paths:
       summary: Get blind samples
       x-roles:
       - DOMAIN_EXPERT
+      x-status: approved
       parameters:
       - name: occupationId
         in: path
@@ -2166,6 +3040,7 @@ paths:
       summary: Submit blind ratings
       x-roles:
       - DOMAIN_EXPERT
+      x-status: approved
       requestBody:
         required: true
         content:
@@ -2186,10 +3061,11 @@ paths:
       tags:
       - Reliability
       operationId: getAgreementReport
-      summary: Get agreement report
+      summary: Get agreement report (proposed)
       x-roles:
       - DOMAIN_EXPERT
       - CONTENT_ADMIN
+      x-status: proposed
       parameters:
       - name: occupationId
         in: path
@@ -2208,15 +3084,15 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
-  /staff/occupations/{occupationId}/prompts:
-    get:
+  /staff/occupations/{occupationId}/regrade:
+    post:
       tags:
-      - SystemPrompt
-      operationId: getSystemPrompts
-      summary: Get system prompts
+      - Reliability
+      operationId: requestRegrade
+      summary: Request regrade (proposed)
       x-roles:
       - CONTENT_ADMIN
-      - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
       - name: occupationId
         in: path
@@ -2224,6 +3100,27 @@ paths:
         schema:
           type: string
           format: uuid
+      responses:
+        '202':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /staff/prompts:
+    get:
+      tags:
+      - SystemPrompt
+      operationId: getSystemPrompts
+      summary: Get system prompts (proposed)
+      x-roles:
+      - CONTENT_ADMIN
+      - DOMAIN_EXPERT
+      x-status: proposed
       responses:
         '200':
           description: OK
@@ -2237,16 +3134,18 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
+  /staff/prompts/{key}:
     put:
       tags:
       - SystemPrompt
       operationId: saveSystemPrompt
-      summary: Save system prompt
+      summary: Save system prompt (proposed)
       x-roles:
       - CONTENT_ADMIN
       - DOMAIN_EXPERT
+      x-status: proposed
       parameters:
-      - name: occupationId
+      - name: key
         in: path
         required: true
         schema:
@@ -2276,11 +3175,12 @@ paths:
       tags:
       - Feedback
       operationId: sendFeedback
-      summary: Send feedback
+      summary: Send feedback (proposed)
       x-roles:
       - EXPLORER
       - DOMAIN_EXPERT
       - CONTENT_ADMIN
+      x-status: proposed
       requestBody:
         required: true
         content:
@@ -2305,10 +3205,11 @@ paths:
       tags:
       - Feedback
       operationId: getRatingSummary
-      summary: Get rating summary
+      summary: Get rating summary (proposed)
       x-roles:
       - EXPLORER
       - CONTENT_ADMIN
+      x-status: proposed
       parameters:
       - name: occupationId
         in: path
@@ -2327,15 +3228,15 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
-  /staff/feedback:
+  /admin/feedback:
     get:
       tags:
       - FeedbackInbox
       operationId: listFeedback
-      summary: List feedback
+      summary: List feedback (proposed)
       x-roles:
-      - DOMAIN_EXPERT
       - SYSTEM_ADMIN
+      x-status: proposed
       parameters:
       - name: cursor
         in: query
@@ -2375,15 +3276,15 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '403':
           $ref: '#/components/responses/Forbidden'
-  /staff/feedback/{feedbackId}:
+  /admin/feedback/{feedbackId}:
     patch:
       tags:
       - FeedbackInbox
       operationId: handleFeedback
-      summary: Handle feedback
+      summary: Handle feedback (proposed)
       x-roles:
-      - DOMAIN_EXPERT
       - SYSTEM_ADMIN
+      x-status: proposed
       parameters:
       - name: feedbackId
         in: path
@@ -2418,6 +3319,7 @@ paths:
       summary: Get occupation statistics
       x-roles:
       - CONTENT_ADMIN
+      x-status: approved
       parameters:
       - name: occupationId
         in: path
@@ -2444,6 +3346,7 @@ paths:
       summary: Get metrics
       x-roles:
       - SYSTEM_ADMIN
+      x-status: approved
       parameters:
       - name: cursor
         in: query
@@ -2481,9 +3384,10 @@ paths:
       tags:
       - Operations
       operationId: listAiCalls
-      summary: List ai calls
+      summary: List ai calls (proposed)
       x-roles:
       - SYSTEM_ADMIN
+      x-status: proposed
       parameters:
       - name: cursor
         in: query
@@ -3072,6 +3976,213 @@ components:
           type: string
         kind:
           type: string
+    StartImportInput:
+      type: object
+      properties:
+        source:
+          type: string
+          enum:
+          - ONET
+          - ESCO
+        version:
+          type: integer
+        fileKey:
+          type: string
+      required:
+      - source
+      - version
+      - fileKey
+    ResolveIssueInput:
+      type: object
+      properties:
+        resolution:
+          type: string
+          enum:
+          - MAP
+          - SKIP
+        targetRef:
+          type: string
+      required:
+      - resolution
+    AdaptInput:
+      type: object
+      properties:
+        keywords:
+          type: array
+          items:
+            type: object
+            properties:
+              escoUri:
+                type: string
+              nameVi:
+                type: string
+            required:
+            - escoUri
+            - nameVi
+      required:
+      - keywords
+    StartInterviewInput:
+      type: object
+      properties:
+        topicGuideVersion:
+          type: integer
+    InterviewTurnInput:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+      - text
+    GenerationInput:
+      type: object
+      properties:
+        section:
+          type: string
+        interviewId:
+          type: string
+          format: uuid
+      required:
+      - section
+    RevisionInput:
+      type: object
+      properties:
+        section:
+          type: string
+        instruction:
+          type: string
+      required:
+      - section
+      - instruction
+    LevelPackInput:
+      type: object
+      properties:
+        pack:
+          type: string
+        rowVersion:
+          type: integer
+      required:
+      - pack
+      - rowVersion
+    ReferenceAnswerInput:
+      type: object
+      properties:
+        nodeCode:
+          type: string
+        text:
+          type: string
+        difficultyStratum:
+          type: string
+      required:
+      - nodeCode
+      - text
+      - difficultyStratum
+    CriteriaInput:
+      type: object
+      properties:
+        criteria:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+            required:
+            - text
+      required:
+      - criteria
+    RevalidationRequestInput:
+      type: object
+      properties:
+        reason:
+          type: string
+        dueAt:
+          type: string
+          format: date-time
+      required:
+      - reason
+      - dueAt
+    RevalidationResultInput:
+      type: object
+      properties:
+        result:
+          type: string
+          enum:
+          - STILL_ACCURATE
+          - NEEDS_CHANGE
+        note:
+          type: string
+      required:
+      - result
+    PresentationInput:
+      type: object
+      properties:
+        scenes:
+          type: array
+          items:
+            type: object
+            properties:
+              position:
+                type: integer
+              nodeCode:
+                type: string
+              assetId:
+                type: string
+                format: uuid
+            required:
+            - position
+            - assetId
+      required:
+      - scenes
+    AssetRequestInput:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum:
+          - NPC
+          - BACKGROUND
+          - SCENE
+          - ICON
+        aiPrompt:
+          type: string
+        source:
+          type: string
+          enum:
+          - LIBRARY
+          - LICENSED
+          - AI_GENERATED
+      required:
+      - kind
+      - source
+    BiasCheckInput:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - PASSED
+          - FAILED
+        note:
+          type: string
+      required:
+      - status
+    TriageInput:
+      type: object
+      properties:
+        selection:
+          type: string
+        decision:
+          type: string
+      required:
+      - selection
+      - decision
+    HandleFlagInput:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+      - status
     Session:
       type: object
       properties:
@@ -4290,11 +5401,7 @@ components:
           enum:
           - RATING
           - APP
-          - FLAG
         occupationId:
-          type: string
-          format: uuid
-        runId:
           type: string
           format: uuid
         text:
@@ -4314,6 +5421,299 @@ components:
       - kind
       - status
       - createdAt
+    FlagView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        runId:
+          type: string
+          format: uuid
+        nodeCode:
+          type: string
+        reason:
+          type: string
+        status:
+          type: string
+          enum:
+          - NEW
+          - HANDLED
+        createdAt:
+          type: string
+          format: date-time
+      required:
+      - id
+      - runId
+      - reason
+      - status
+      - createdAt
+    ImportView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        source:
+          type: string
+          enum:
+          - ONET
+          - ESCO
+        version:
+          type: integer
+        status:
+          type: string
+        importedAt:
+          type: string
+          format: date-time
+        issues:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: uuid
+              sourceRef:
+                type: string
+              reason:
+                type: string
+              resolvedAt:
+                type: string
+                format: date-time
+            required:
+            - id
+            - sourceRef
+            - reason
+      required:
+      - id
+      - source
+      - version
+      - status
+      - importedAt
+      - issues
+    InterviewView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        scenarioId:
+          type: string
+          format: uuid
+        roundNo:
+          type: integer
+        status:
+          type: string
+        summary:
+          type: string
+        fieldCoverage:
+          type: array
+          items:
+            type: string
+        turns:
+          type: array
+          items:
+            type: object
+            properties:
+              seq:
+                type: integer
+              role:
+                type: string
+              text:
+                type: string
+              at:
+                type: string
+            required:
+            - seq
+            - role
+            - text
+            - at
+      required:
+      - id
+      - roundNo
+      - status
+      - fieldCoverage
+      - turns
+    CriteriaView:
+      type: object
+      properties:
+        occupationId:
+          type: string
+          format: uuid
+        versionNo:
+          type: integer
+        criteria:
+          type: array
+          items:
+            type: object
+            properties:
+              seq:
+                type: integer
+              text:
+                type: string
+            required:
+            - seq
+            - text
+      required:
+      - occupationId
+      - versionNo
+      - criteria
+    RevalidationView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        scenarioId:
+          type: string
+          format: uuid
+        versionNo:
+          type: integer
+        reason:
+          type: string
+        dueAt:
+          type: string
+          format: date-time
+        result:
+          type: string
+        resolvedAt:
+          type: string
+          format: date-time
+      required:
+      - id
+      - scenarioId
+      - versionNo
+      - reason
+      - dueAt
+    PresentationView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        scenarioId:
+          type: string
+          format: uuid
+        versionNo:
+          type: integer
+        status:
+          type: string
+        scenes:
+          type: array
+          items:
+            type: object
+            properties:
+              position:
+                type: integer
+              nodeCode:
+                type: string
+              assetId:
+                type: string
+                format: uuid
+              storageUrl:
+                type: string
+            required:
+            - position
+            - assetId
+            - storageUrl
+      required:
+      - id
+      - scenarioId
+      - versionNo
+      - status
+      - scenes
+    AssetView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        kind:
+          type: string
+        source:
+          type: string
+        storageKey:
+          type: string
+        biasStatus:
+          type: string
+          enum:
+          - PENDING
+          - PASSED
+          - FAILED
+        batchNo:
+          type: integer
+      required:
+      - id
+      - kind
+      - source
+      - storageKey
+      - biasStatus
+    TriageView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        runId:
+          type: string
+          format: uuid
+        selection:
+          type: string
+        signals:
+          type: array
+          items:
+            type: string
+        decision:
+          type: string
+        reviewedAt:
+          type: string
+          format: date-time
+      required:
+      - id
+      - runId
+      - selection
+      - signals
+    LevelPackView:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        levelId:
+          type: string
+          format: uuid
+        versionNo:
+          type: integer
+        status:
+          type: string
+        pack:
+          type: object
+        rowVersion:
+          type: integer
+        residents:
+          type: array
+          items:
+            type: object
+            properties:
+              slot:
+                type: string
+              relation:
+                type: string
+              isFixed:
+                type: boolean
+            required:
+            - slot
+            - relation
+            - isFixed
+      required:
+      - id
+      - levelId
+      - versionNo
+      - status
+      - pack
+      - rowVersion
+      - residents
     RatingSummary:
       type: object
       properties:

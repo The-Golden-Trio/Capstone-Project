@@ -1,0 +1,214 @@
+@startuml CL-02_CatalogueAndImport
+title CL-02 · NestJS modules — Catalogue and import
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "CatalogueModule" <<Rectangle>> {
+  class CatalogueModule <<module>> {
+    imports: AuthModule
+    controllers: CatalogueController, OccupationController
+    providers: CatalogueService, OccupationService, OccupationDataLoader
+    exports: CatalogueService
+  }
+  class CatalogueController <<controller>> {
+    -catalogue : CatalogueService
+    --
+    +getGalaxyMap(user: AuthUser) : GalaxyMap  «GET /occupations» [EX]
+    +getOccupation(user: AuthUser, occupationId: string) : OccupationView  «GET /occupations/{occupationId}» [EX]
+    +getLevel(user: AuthUser, levelId: string) : LevelView  «GET /levels/{levelId}» [EX]
+  }
+  class OccupationController <<controller>> {
+    -occupations : OccupationService
+    --
+    +listMyOccupations(user: AuthUser) : StaffOccupation[]  «GET /staff/occupations» [CA,DE]
+    +updateOccupation(user: AuthUser, occupationId: string, dto: OccupationUpdateInput) : StaffOccupation  «PATCH /staff/occupations/{occupationId}» [CA,DE]
+    +getLevelPackage(user: AuthUser, levelId: string) : LevelPackage  «GET /staff/levels/{levelId}» [CA,DE]
+  }
+  class CatalogueService {
+    -prisma : PrismaService
+    -data : GameData
+    --
+    +galaxyMap(user) : GalaxyMap
+    +occupation(user, id) : OccupationView
+    +level(user, id) : LevelView
+  }
+  class OccupationService {
+    -prisma : PrismaService
+    -audit : AuditLogService
+    --
+    +listAssigned(user) : StaffOccupation[]
+    +update(user, id, dto) : StaffOccupation  «CA: status; DE: profile»
+    +levelPackage(levelId) : LevelPackage
+  }
+  class OccupationDataLoader <<command>> {
+    <i>CLI: loads occupation-data (221 occupations, levels, budgets, soft skills, work environments, 22 NPC, outfits) into the catalogue tables; O*NET and ESCO sources go through ImportModule</i>
+    -prisma : PrismaService
+    -storage : StorageService
+    --
+    +run(path) : LoadReport
+    -upsertOccupation(json) : void
+    -upsertLevels(json) : void
+    -upsertNpcs(yaml) : void
+  }
+  class "CatalogueModule DTOs" as CatalogueModule_DTOs <<dto>> {
+    OccupationUpdateInput { status?, profile? }
+    GalaxyMap
+    LevelPackage
+    LevelView
+    OccupationView
+    StaffOccupation
+  }
+}
+
+package "ImportModule" <<Rectangle>> {
+  class ImportModule <<module>> {
+    imports: AuthModule
+    controllers: ImportController
+    providers: ImportService, ImportProcessor, ReferenceSourceClient
+    exports: —
+    <i>reference data import: O*NET and ESCO files → matching → record fixes → Vietnamese keyword names (SD-09)</i>
+  }
+  class ImportController <<controller>> {
+    -imports : ImportService
+    --
+    +startImport(user: AuthUser, dto: StartImportInput) : ImportView  «POST /staff/imports» [CA]
+    +getImport(user: AuthUser, importId: string) : ImportView  «GET /staff/imports/{importId}» [CA]
+    +resolveIssue(user: AuthUser, importId: string, issueId: string, dto: ResolveIssueInput) : ImportView  «PUT /staff/imports/{importId}/issues/{issueId}» [CA]
+    +saveAdaptation(user: AuthUser, importId: string, dto: AdaptInput) : ImportView  «PUT /staff/imports/{importId}/adaptation» [CA]
+  }
+  class ImportService {
+    -prisma : PrismaService
+    -storage : StorageService
+    -importQueue : Queue «import»
+    --
+    +start(user, dto) : ImportView  «file already in object storage; enqueues the job»
+    +get(id) : ImportView
+    +resolve(user, importId, issueId, dto) : ImportView  «RESOLVES: issue closed by a staff member»
+    +saveAdaptation(user, importId, dto) : ImportView  «Vietnamese keyword names, nameViStatus»
+  }
+  class ImportProcessor <<processor · import>> {
+    -prisma : PrismaService
+    -source : ReferenceSourceClient
+    -stream : StreamService
+    --
+    +process(job) : Promise<void>  «match records to sources; unmatched ones become IMPORT_ISSUE rows; publishes import.done»
+  }
+  class ReferenceSourceClient <<adapter>> {
+    <i>looks up source identifiers (SOC code, ESCO URI) at O*NET and ESCO</i>
+    -http : HttpService
+    --
+    +lookup(source, ref) : SourceRecord | null
+  }
+  class "ImportModule DTOs" as ImportModule_DTOs <<dto>> {
+    AdaptInput { keywords[] {escoUri, nameVi} }
+    ResolveIssueInput { resolution: MAP|SKIP, targetRef? }
+    StartImportInput { source: ONET|ESCO, version, fileKey }
+    ImportView
+  }
+}
+
+class Band <<domain · CD-02>>
+class Budgets <<domain · CD-02>>
+class CheckQuestion <<domain · CD-02>>
+class Company <<domain · CD-02>>
+class CompanyType <<domain · CD-02>>
+class ConductFlag <<domain · CD-02>>
+class Department <<domain · CD-02>>
+class EscoOccupation <<domain · CD-02>>
+class EscoSkillGroup <<domain · CD-02>>
+class FallsBackTo <<domain · CD-05>>
+class ImportBatch <<domain · CD-02>>
+class ImportIssue <<domain · CD-02>>
+class InterestRegion <<domain · CD-02>>
+class Keyword <<domain · CD-02>>
+class LevelTask <<domain · CD-02>>
+class MapsToEsco <<domain · CD-02>>
+class MapsToOnet <<domain · CD-02>>
+class NeedsSkill <<domain · CD-02>>
+class NpcAbility <<domain · CD-05>>
+class NpcAsset <<domain · CD-05>>
+class NpcCard <<domain · CD-05>>
+class NpcChapter <<domain · CD-05>>
+class Occupation <<domain · CD-02>>
+class OccupationGroup <<domain · CD-02>>
+class OccupationLevel <<domain · CD-02>>
+class OnetOccupation <<domain · CD-02>>
+class OutfitGroup <<domain · CD-05>>
+class RelatesTo <<domain · CD-05>>
+class RequiresKeyword <<domain · CD-02>>
+class RequiresPrior <<domain · CD-02>>
+class SideActivity <<domain · CD-05>>
+class SimilarTo <<domain · CD-02>>
+class SkillTier <<domain · CD-02>>
+class SoftSkillGroup <<domain · CD-02>>
+class SoftSkillItem <<domain · CD-02>>
+class TierName <<domain · CD-02>>
+class Trains <<domain · CD-02>>
+class TransfersTo <<domain · CD-02>>
+class WorkEnvironment <<domain · CD-02>>
+class WorksIn <<domain · CD-02>>
+
+CatalogueController --> CatalogueService
+CatalogueController ..> CatalogueModule_DTOs
+OccupationController --> OccupationService
+OccupationController ..> CatalogueModule_DTOs
+OccupationService ..> Occupation : «write»
+OccupationService ..> OccupationLevel : «write»
+OccupationDataLoader ..> InterestRegion : «write»
+OccupationDataLoader ..> OccupationGroup : «write»
+OccupationDataLoader ..> Occupation : «write»
+OccupationDataLoader ..> OccupationLevel : «write»
+OccupationDataLoader ..> Band : «write»
+OccupationDataLoader ..> LevelTask : «write»
+OccupationDataLoader ..> SkillTier : «write»
+OccupationDataLoader ..> WorkEnvironment : «write»
+OccupationDataLoader ..> Department : «write»
+OccupationDataLoader ..> CompanyType : «write»
+OccupationDataLoader ..> Company : «write»
+OccupationDataLoader ..> SoftSkillGroup : «write»
+OccupationDataLoader ..> SoftSkillItem : «write»
+OccupationDataLoader ..> CheckQuestion : «write»
+OccupationDataLoader ..> ConductFlag : «write»
+OccupationDataLoader ..> RequiresPrior : «write»
+OccupationDataLoader ..> SimilarTo : «write»
+OccupationDataLoader ..> NeedsSkill : «write»
+OccupationDataLoader ..> WorksIn : «write»
+OccupationDataLoader ..> RequiresKeyword : «write»
+OccupationDataLoader ..> Trains : «write»
+OccupationDataLoader ..> TierName : «write»
+OccupationDataLoader ..> Budgets : «write»
+OccupationDataLoader ..> NpcCard : «write»
+OccupationDataLoader ..> NpcAbility : «write»
+OccupationDataLoader ..> NpcChapter : «write»
+OccupationDataLoader ..> SideActivity : «write»
+OccupationDataLoader ..> OutfitGroup : «write»
+OccupationDataLoader ..> NpcAsset : «write»
+OccupationDataLoader ..> RelatesTo : «write»
+OccupationDataLoader ..> FallsBackTo : «write»
+ImportController --> ImportService
+ImportController ..> ImportModule_DTOs
+ImportService ..> ImportBatch : «write»
+ImportService ..> ImportIssue : «write»
+ImportService ..> Keyword : «write»
+ImportService ..> MapsToOnet : «write»
+ImportService ..> MapsToEsco : «write»
+ImportProcessor ..> ImportBatch : «write»
+ImportProcessor ..> ImportIssue : «write»
+ImportProcessor ..> OnetOccupation : «write»
+ImportProcessor ..> EscoOccupation : «write»
+ImportProcessor ..> EscoSkillGroup : «write»
+ImportProcessor ..> Keyword : «write»
+ImportProcessor ..> MapsToOnet : «write»
+ImportProcessor ..> MapsToEsco : «write»
+ImportProcessor ..> TransfersTo : «write»
+ImportProcessor --> ReferenceSourceClient
+legend bottom
+  | Arrow | Meaning |
+  | A --> B | association: A holds B through constructor injection (a controller holds its services) |
+  | A ..> Entity : «write» | A writes the domain class (the module owns it; see CD-01 … CD-08) |
+  | Controller ..> DTOs | the controller's routes take and return these types |
+  | A ..\|> I | A realizes the interface or port I |
+  | grey class | defined in another diagram (CL-0x · module, or domain · CD-0x) |
+endlegend
+@enduml

@@ -1,0 +1,318 @@
+@startuml CD-05_NpcAndLife
+title CD-05 · Domain model · Tarot NPCs, side quests, economy, health and calendar\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections G, K); the ERD is unchanged</size>
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype polyline
+skinparam nodesep 35
+skinparam ranksep 55
+skinparam class {
+  BackgroundColor<<entity>> #FFFFFF
+  BackgroundColor<<weak>> #F3F6FA
+  BackgroundColor<<assoc>> #EAF3EA
+  BackgroundColor<<pending>> #FFE3C2
+  BorderColor<<pending>> #E8710A
+  BackgroundColor<<vang>> #FFF3C4
+  BackgroundColor<<stub>> #F2F2F2
+  BorderColor<<stub>> #AAAAAA
+  FontColor<<stub>> #777777
+}
+
+class NpcCard <<entity>> {
+  - arcanaNo : Int {id}
+  - code : String
+  - version : String
+  - fullName : String
+  - displayName : String
+  - gender : String  «enum?»
+  - age : Int
+  - birthday : String
+  - colourHex : String
+  - shortMeaning : String
+  - meetingPlace : String
+  - shortDesc : String
+  - faceAnchor : String
+  - profilePerson : String
+  - profilePrivate : String
+  - addressLock.exception : String
+  - addressLock.selfRef : String
+  - addressLock.callByChoice : String
+  - addressLock.offHours : String
+  - addressLock.fromIntimacy : String
+  - addressLock.fallbackCall : String
+  - gifts.likes : String
+  - gifts.dislikes : String
+  - validRoles : String [0..*]
+  - unlockRoute : String  «enum?»
+  - reviewStatus : String  «enum?»
+  - batchDone : Boolean
+}
+class NpcAbility <<weak>> {
+  - code : String {partial id}
+  - tier : Int
+  - description : String
+  - notebookText : String
+  - effect : String
+}
+class NpcChapter <<weak>> {
+  - chapterNo : Int {partial id}
+  - code : String
+  - title : String
+  - summary : String
+  - climax : String
+  - raisesToLevel : String
+  - unlock.minIntimacy : Int
+  - unlock.ticket : String
+  - unlock.milestone : String
+  - unlock.minHealth : Int
+  - xuCost : Int
+  - fixedBonus.group : String
+  - fixedBonus.amount : Int
+  - healthGain : Int
+  - status : String  «enum?»
+}
+class SideActivity <<entity>> {
+  - code : String {id}
+  - name : String
+  - kind : SideActivityKind
+  - xuCost : Int
+  - healthGain : Int
+  - bonus : String
+  - unlock : String
+}
+class OutfitGroup <<pending>> {
+  - code : String {id}
+  - name : String
+  - batchNo : Int
+  - components.base : String
+  - components.layer : String  «enum?»
+  - share : Decimal
+  - hasColourMask : Boolean
+  - accessoriesDefault : String [0..*]
+  - accessoriesAlt : String [0..*]
+}
+class NpcAsset <<weak>> {
+  - kind : String {partial id}  «enum?»
+  - code : String
+}
+class XuTransaction <<entity>> {
+  - id : uuid {id}
+  - kind : String  «enum?»
+  - amount : Int
+  - unitPricePaid : Int
+  - createdAt : DateTime
+}
+class ShopItem <<entity>> {
+  - code : String {id}
+  - itemGroup : String  «enum?»
+  - name : String
+  - price : Int
+  - priceUnit : String  «enum?»
+  - effect : String
+  - tier : Int
+  - rarity : String  «enum?»
+  - isPeriodic : Boolean
+  - periodGaps : Int
+  - decorSlot : String  «enum?»
+  - giftGroup : String  «enum?»
+  - isActive : Boolean
+}
+class InventoryItem <<entity>> {
+  - id : uuid {id}
+  - acquiredAt : DateTime
+  - usesLeft : Int
+  - usedAt : DateTime
+  --
+  +use(run: ScenarioRun) : void  «D-133 one buff item per scene, total buff capped +50%»
+}
+class HealthChange <<entity>> {
+  - id : uuid {id}
+  - delta : Int
+  - reason : String
+  - createdAt : DateTime
+}
+class CareerHabit <<pending>> {
+  - code : String {id}
+  - name : String
+  - goodSide : String
+  - badSide : String
+  - acquireRule : String
+}
+class Occasion <<entity>> {
+  - code : String {id}
+  - name : String
+  - kind : String  «enum?»
+  - monthDay : String
+  - repeatsYearly : Boolean
+}
+class Gap <<weak>> {
+  - seq : Int {partial id}
+  - gameDate : Date
+  - slotsTotal : Int
+  / slotsUsed : Int
+}
+class LifeMilestone <<pending>> {
+  - code : String {id}
+  - domain : String  «enum?»
+  - name : String
+  - prerequisite : String [0..*]
+  - scene : String
+  - priceX : Decimal
+  - parentPriceX : Decimal
+  - costSlots : Int
+  - branchGroup : String  «enum?»
+  - buffKind : String  «enum?»
+  - buffValue : Decimal
+  - locksSavings : Boolean
+  - repeatYearly : Boolean
+}
+class ExplorerMilestone <<weak>> {
+  - seq : Int {partial id}
+  - year : Int
+  - achievedAt : DateTime
+  - lostAt : DateTime
+}
+class IntimacyGain <<entity>> {
+  - id : uuid {id}
+  - source : String  «enum?»
+  - points : Int
+  - at : DateTime
+}
+class RelatesTo <<assoc>> {
+  - relation : String  «enum?»
+}
+class FallsBackTo <<pending>> {
+  - kind : String  «enum?»
+}
+class ItemNeedsCard <<assoc>> {
+  - minIntimacy : Int
+}
+class PlacesDecor <<pending>> {
+  - slot : String
+}
+class Warned <<pending>> {
+  - shownAt : DateTime
+}
+class HasHabit <<assoc>> {
+  - slotNo : Int
+  - progress : Int
+  - acquiredAt : DateTime
+}
+class Knows <<assoc>> {
+  - unlockRoute : String  «enum?»
+  - unlockedAt : DateTime
+  - metAt : DateTime
+  - intimacyPoints : Int
+  / intimacyLevel : Int
+  / chaptersDone : Int
+  - promises : String [0..*]
+  --
+  +addIntimacy(points: Int) : void  «D-133 never decreases»
+}
+enum SideActivityKind {
+  COFFEE
+  MEAL
+  TICKET
+  GROUP_TRIP
+}
+note right of SideActivityKind : ERD comment on SIDE_ACTIVITY
+class Asset <<stub>> {
+  CD-04
+}
+class CompanyType <<stub>> {
+  CD-02
+}
+class Department <<stub>> {
+  CD-02
+}
+class Explorer <<stub>> {
+  CD-01
+}
+class Occupation <<stub>> {
+  CD-02
+}
+class ScenarioRun <<stub>> {
+  CD-07
+}
+class SideQuestRun <<stub>> {
+  CD-07
+}
+class SoftSkillGroup <<stub>> {
+  CD-02
+}
+
+NpcCard "0..*" -- "0..*" NpcCard : RELATES_TO\n(from → to)
+(NpcCard, NpcCard) .. RelatesTo
+NpcCard "1" *-- "1..2" NpcAbility : HAS_ABILITY
+NpcCard "1" *-- "3" NpcChapter : HAS_CHAPTER
+NpcChapter "0..*" -- "0..1" Occasion : CHAPTER_OCCASION
+SideActivity "0..*" -- "0..*" NpcCard : ACTIVITY_WITH
+SideActivity "0..*" -- "0..1" ShopItem : NEEDS_TICKET
+NpcCard "1" *-- "0..*" NpcAsset : HAS_ASSET
+NpcAsset "0..*" -- "1" Asset : DEPICTS
+NpcAsset "0..*" -- "0..1" OutfitGroup : IN_OUTFIT
+NpcAsset "0..*" -- "0..1" NpcChapter : SCENE_OF
+OutfitGroup "0..*" -[#E8710A]- "0..1" OutfitGroup : FALLS_BACK_TO «pending»\n(outfit → fallback)
+(OutfitGroup, OutfitGroup) .. FallsBackTo
+diamond D_Dresses
+Department "1..*" -- D_Dresses
+CompanyType "0..1" -- D_Dresses
+OutfitGroup "1" -- D_Dresses
+note bottom of D_Dresses : DRESSES
+Explorer "1" o-- "0..*" XuTransaction : TRANSACTS
+XuTransaction "0..*" -- "0..1" ScenarioRun : TXN_RUN {xor}
+XuTransaction "0..*" -- "0..1" ShopItem : TXN_ITEM {xor}
+XuTransaction "0..*" -- "0..1" LifeMilestone : TXN_MILESTONE {xor}
+XuTransaction "0..*" -- "0..1" Occasion : TXN_OCCASION {xor}
+ShopItem "0..*" -- "0..1" SoftSkillGroup : ITEM_BUFFS
+ShopItem "0..*" -- "0..1" Occasion : ITEM_OCCASION
+ShopItem "0..*" -- "0..1" NpcCard : ITEM_NEEDS_CARD
+(ShopItem, NpcCard) .. ItemNeedsCard
+ShopItem "0..*" -- "0..1" LifeMilestone : ITEM_NEEDS_MILESTONE
+Explorer "1" o-- "0..*" InventoryItem : OWNS
+InventoryItem "0..*" -- "1" ShopItem : INSTANCE_OF
+InventoryItem "0..*" -- "0..1" SoftSkillGroup : ITEM_TARGET_GROUP
+InventoryItem "0..*" -- "0..1" NpcCard : ITEM_TARGET_CARD
+InventoryItem "0..*" -- "0..1" SideQuestRun : FRAMED_FROM
+Explorer "0..1" -[#E8710A]- "0..*" InventoryItem : PLACES_DECOR «pending»
+(Explorer, InventoryItem) .. PlacesDecor
+HealthChange "0..*" -- "1" Explorer : HEALTH_OF
+HealthChange "0..*" -- "0..1" ScenarioRun : HEALTH_IN_RUN
+Explorer "0..*" -[#E8710A]- "0..*" Occupation : WARNED «pending»
+(Explorer, Occupation) .. Warned
+Explorer "0..*" -- "0..3" CareerHabit : HAS_HABIT
+(Explorer, CareerHabit) .. HasHabit
+Explorer "1" *-- "0..*" Gap : HAS_GAP
+Gap "0..*" -- "0..*" Occasion : GAP_OCCASION
+LifeMilestone "1..*" -- "0..1" SoftSkillGroup : MILESTONE_BUFFS
+Explorer "1" *-- "0..*" ExplorerMilestone : REACHES
+ExplorerMilestone "0..*" -- "1" LifeMilestone : MILESTONE_OF
+ExplorerMilestone "0..*" -- "0..1" Gap : MILESTONE_IN_GAP
+Explorer "0..*" -- "1..*" NpcCard : KNOWS
+(Explorer, NpcCard) .. Knows
+IntimacyGain "0..*" -- "1" Explorer : GAIN_FOR
+IntimacyGain "0..*" -- "1" NpcCard : GAIN_CARD
+IntimacyGain "0..*" -- "0..1" ScenarioRun : GAIN_RUN {xor}
+IntimacyGain "0..*" -- "0..1" SideQuestRun : GAIN_SIDE {xor}
+IntimacyGain "0..*" -- "0..1" InventoryItem : GAIN_ITEM {xor}
+note right of XuTransaction : {xor} the reference depends on kind; may be none\n(TXN_RUN, TXN_ITEM, TXN_MILESTONE, TXN_OCCASION)
+note right of IntimacyGain : {xor} the source depends on source (run, side quest, item)\n(GAIN_RUN, GAIN_SIDE, GAIN_ITEM)
+note bottom of Knows : { the 6 cards open at the start (N1) exist for every Explorer }
+note bottom of PlacesDecor : { only items the explorer OWNS can be placed }
+note bottom of D_Dresses : { unique (department, companyType); empty companyType = default rule }
+note bottom of OutfitGroup : «pending A28» outfit groups wait for team approval
+note bottom of CareerHabit : «pending A28» S6
+note bottom of LifeMilestone : «pending A28» price (L1) and buff (L3) still open; 17 milestones decided
+note bottom of PlacesDecor : «pending A28» decor placement
+note bottom of Warned : «pending A28» S5: WHO/ILO line once per occupation
+legend bottom
+  | Notation | Meaning |
+  | white / light blue class | entity / weak entity (composition ◆ from its owner) |
+  | green class | association class (an ERD relationship that carries attributes) |
+  | orange | «pending A28»: research still open, drawn as in the ERD |
+  | grey class | defined in another diagram (CD-0x) |
+  | /attr | derived attribute; attr : T [0..*] is multi-valued; a.b is a composite attribute |
+  | String «enum?» | enum-like column with no values in the ERD or research yet |
+  | method «D-xx» | a domain rule with its source; data = Prisma model, pure rules = game-core |
+  | types | inferred from names (the ERD has none): proposals, not decisions |
+endlegend
+@enduml
