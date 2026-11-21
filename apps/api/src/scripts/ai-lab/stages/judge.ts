@@ -11,56 +11,11 @@
  * in ra KHÔNG phản ánh chất lượng câu trả lời.
  */
 import { shift } from '@datn/game-core';
-import { judgePanel } from '../../../ai/gateway/models';
 import { ModelGateway } from '../../../ai/gateway/model-gateway';
 import type { ChecklistPanelResult } from '../../../ai/judge/checklist.types';
-import { deidentifySegments } from '../../../ai/judge/checklist.segments';
+import { fakeChecklistService } from '../../../ai/judge/fake-checklist';
 import { JudgePanelService } from '../../../ai/judge/judge-panel.service';
-import { FakeClock, fakeTransport } from '../../../ai/testing/fake-model';
 import type { LabStage, LabStageInput, LabStageResult } from '../stages';
-
-function fakeService(
-  segments: readonly shift.EvidenceSegment[],
-  identity: LabStageInput['identity'],
-): JudgePanelService {
-  const sent = deidentifySegments(segments, identity).segments;
-  const firstTurn = new Map(
-    sent.map((s) => [s.id, shift.turnsOf(s)[0]] as const),
-  );
-  const reply = JSON.stringify({
-    items: shift.expectedPairs(sent).map(({ sub, segment }) => {
-      const turn = firstTurn.get(segment);
-      const quote =
-        !turn || turn.kind === 'action'
-          ? (turn?.code ?? '')
-          : turn.text.split(/\s+/).slice(0, 8).join(' ');
-      const no = { yes: false, quote: '', turn: '' };
-      return {
-        sub,
-        segment,
-        applicable: true,
-        A: { yes: true, quote, turn: turn?.code ?? '' },
-        B: no,
-        C: no,
-      };
-    }),
-    flags: [],
-  });
-  const clock = new FakeClock();
-  const slots = judgePanel({
-    openrouter: { apiKey: 'fake' },
-    allowUnconfirmedProviders: false,
-  }).slots;
-  return new JudgePanelService(
-    new ModelGateway(
-      { openrouter: 'fake' },
-      fakeTransport(() => ({ content: reply, latencyMs: 2_000 }), clock),
-      clock,
-    ),
-    slots,
-    clock,
-  );
-}
 
 const fmtLevel = (level: number | null) =>
   level === null ? 'không xét' : level.toFixed(2);
@@ -156,7 +111,7 @@ export const judgeStage: LabStage = {
           runtime.gateway as ModelGateway,
           runtime.judgeSlots,
         )
-      : fakeService(segments, input.identity);
+      : fakeChecklistService(segments, input.identity);
     const result = await service.gradeChecklist({
       jobId: `ai-lab:${input.playthrough}`,
       segments,

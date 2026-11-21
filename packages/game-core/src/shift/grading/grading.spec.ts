@@ -8,6 +8,7 @@ import type { PlayerInput, ShiftInput, ShiftState } from '../state.js';
 import { fakeChecks, fakeNarration } from '../testing/fakes.js';
 import { FAKE_EVENTS, FAKE_RULES } from '../testing/fakeRules.js';
 import {
+  closedSegments,
   evidenceSegments,
   findTurn,
   turnsOf,
@@ -273,6 +274,26 @@ function fullRun(): ShiftState {
   d.say('Nếu khách nhiều đơn hơn thì em theo dõi log, lỗi thì rollback.');
   return d.state;
 }
+
+describe('closedSegments', () => {
+  it('nút đã xong thì chấm được ngay; pha và review chờ ca kết thúc', () => {
+    const state = fullRun();
+    const mid = structuredClone(state);
+    mid.ended = false;
+    const ids = (s: ShiftState) =>
+      closedSegments(s, ctx, OBSERVES).map((x) => x.id);
+    expect(ids(mid)).not.toContain('pha');
+    expect(ids(mid)).toContain('n1');
+    const done = structuredClone(state);
+    done.ended = true;
+    expect(ids(done)).toContain('pha');
+  });
+
+  it('nút chưa xong không có đoạn đóng', () => {
+    const early = new Run().send({ type: 'START' }).say('Dạ em coi liền anh.');
+    expect(closedSegments(early.state, ctx, OBSERVES)).toEqual([]);
+  });
+});
 
 describe('evidenceSegments', () => {
   const state = fullRun();

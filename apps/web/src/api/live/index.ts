@@ -12,6 +12,7 @@ import type {
 } from '../port';
 import { ApiError } from '../port';
 import type {
+  ChecklistGrade,
   Me,
   RatingForm,
   SceneView,
@@ -207,6 +208,13 @@ export const liveAccount: AccountService = {
 };
 
 /* ── Ca làm ────────────────────────────────────────────────────────── */
+
+/** Khối `grading` của `GET /shift-runs/:id/summary` (đề xuất, chưa vào hợp đồng). */
+interface LiveGrading {
+  status: 'PENDING' | 'READY' | 'NOT_AVAILABLE';
+  subs: ChecklistGrade['subs'];
+  flags: Array<ChecklistGrade['flags'][number] & { segment: string }>;
+}
 
 interface LiveRun {
   id: string;
@@ -427,11 +435,14 @@ export const livePlay: PlayService = {
   summary: async (runId) => {
     const [run, story] = await Promise.all([
       http<LiveRun>(`/shift-runs/${runId}`),
-      http<import('@datn/game-core').shift.ShiftSummary>(
-        `/shift-runs/${runId}/summary`,
-      ),
+      http<
+        import('@datn/game-core').shift.ShiftSummary & {
+          grading: LiveGrading;
+        }
+      >(`/shift-runs/${runId}/summary`),
     ]);
     const { code, band } = seedPath(run.seedId);
+    const { grading, ...storyOnly } = story;
     return {
       runId,
       title: run.title,
@@ -439,16 +450,17 @@ export const livePlay: PlayService = {
       occupationName: null,
       levelNo: band,
       enrolmentId: null,
-      story,
+      story: storyOnly,
       reflection: { prompts: [], answered: true },
-      // Luồng ca làm chưa chấm điểm (đề xuất API 11/11, mục "Chưa có").
+      // AI-5 chấm theo checklist từng đoạn; chưa có điểm số (thiếu trần nhóm).
       grade: {
-        status: 'NOT_AVAILABLE',
+        status: grading.status,
         score: null,
         ending: null,
         feedback: null,
         softSkills: [],
         keywordsGained: [],
+        checklist: { subs: grading.subs, flags: grading.flags },
       },
     };
   },

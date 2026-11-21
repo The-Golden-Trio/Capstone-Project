@@ -343,7 +343,23 @@ export interface RunSummary {
     feedback: { result: string; comment: string; improve: string } | null;
     softSkills: SoftSkillDelta[];
     keywordsGained: KeywordRef[];
+    /**
+     * Chấm theo checklist của AI-5 (luồng ca làm): mức 0–2 từng mục con và cờ.
+     * Chưa có điểm số vì chưa có trần nhóm của từng màn. Chỉ có ở live.
+     */
+    checklist?: ChecklistGrade;
   };
+}
+
+export interface ChecklistGrade {
+  subs: Array<{
+    sub: string;
+    name: string;
+    group: number;
+    /** Trung bình các đoạn, 0–2; `null` khi mọi đoạn không xét. */
+    level: number | null;
+  }>;
+  flags: Array<{ code: string; name: string; group: number; quote: string }>;
 }
 
 /* ── Get to know me ────────────────────────────────────────────────── */

@@ -5,12 +5,18 @@
  */
 import { randomUUID } from 'node:crypto';
 import { fixtureShiftContext } from '@datn/game-core/testing';
+import {
+  FakeChecklistJudge,
+  type ShiftJudge,
+} from '../ai/judge/fake-checklist';
 import { FakeShiftChecker, FakeShiftNarrator } from '../ai/shift/fake';
 import type { ShiftNarrator } from '../ai/shift/types';
+import { ShiftSegmentGrader } from '../assessment/shift-grading.processor';
 import { ShiftTurnProcessor } from '../assessment/shift-turn.processor';
 import { Problem } from '../core/problem';
-import type { ShiftTurnJob } from '../core/queues';
+import type { ShiftGradeJob, ShiftTurnJob } from '../core/queues';
 import { ShiftLogService } from '../core/shift-log.service';
+import type { Job } from 'bullmq';
 import type { StreamEvent } from '../notification/stream.service';
 import type { TurnDto } from './shift.dto';
 import { ShiftRunService } from './shift-run.service';
@@ -26,7 +32,10 @@ type TurnInput = TurnDto extends infer T
     : never
   : never;
 
-function setup(narrator: ShiftNarrator = new FakeShiftNarrator()) {
+function setup(
+  narrator: ShiftNarrator = new FakeShiftNarrator(),
+  judge: ShiftJudge = new FakeChecklistJudge(),
+) {
   const prisma = memoryPrisma();
   void prisma.userAccount.create({
     data: { id: USER, displayName: 'Nam', username: 'nam', email: null },
@@ -38,10 +47,16 @@ function setup(narrator: ShiftNarrator = new FakeShiftNarrator()) {
   };
   const jobs: ShiftTurnJob[] = [];
   const published: StreamEvent[] = [];
-  const log = new ShiftLogService(prisma as never, content as never);
+  const gradeJobs: ShiftGradeJob[] = [];
   const queues = {
     enqueueShiftTurn: async (job: ShiftTurnJob) => void jobs.push(job),
+    enqueueShiftGrading: async (job: ShiftGradeJob) => void gradeJobs.push(job),
   };
+  const log = new ShiftLogService(
+    prisma as never,
+    content as never,
+    queues as never,
+  );
   const service = new ShiftRunService(
     prisma as never,
     content as never,
@@ -62,9 +77,27 @@ function setup(narrator: ShiftNarrator = new FakeShiftNarrator()) {
     narrator,
     new FakeShiftChecker(),
   );
+  const grader = new ShiftSegmentGrader(
+    prisma as never,
+    log,
+    stream as never,
+    judge,
+  );
   const drain = async () => {
     for (let job = jobs.shift(); job; job = jobs.shift())
       await processor.run(job);
+  };
+  const gradingJob = (data: ShiftGradeJob, attemptsMade = 0, attempts = 5) =>
+    ({
+      name: 'shift-segment',
+      data,
+      attemptsMade,
+      opts: { attempts },
+    }) as unknown as Job<ShiftGradeJob>;
+  /** Chạy các job chấm đã xếp hàng, như worker `grading`. */
+  const drainGrading = async () => {
+    for (let job = gradeJobs.shift(); job; job = gradeJobs.shift())
+      await grader.process(gradingJob(job));
   };
   const play = async (runId: string, turn: TurnInput) => {
     const res = await service.submitTurn(USER, runId, {
@@ -74,7 +107,18 @@ function setup(narrator: ShiftNarrator = new FakeShiftNarrator()) {
     await drain();
     return res;
   };
-  return { prisma, service, jobs, published, drain, play };
+  return {
+    prisma,
+    service,
+    jobs,
+    gradeJobs,
+    grader,
+    gradingJob,
+    published,
+    drain,
+    drainGrading,
+    play,
+  };
 }
 
 async function problemOf(promise: Promise<unknown>) {
@@ -86,6 +130,60 @@ async function problemOf(promise: Promise<unknown>) {
     throw err;
   }
   throw new Error('Không ném lỗi');
+}
+
+/** Chơi trọn ca L3.m2 tới `FINISHED`; trả lượt chơi. */
+async function playToEnd(
+  service: ShiftRunService,
+  play: (runId: string, turn: TurnInput) => Promise<unknown>,
+) {
+  const { run } = await service.start(USER, { taskId: SEED });
+  await play(run.id, { kind: 'say', text: 'Dạ.' });
+  await service.addNote(USER, run.id, 'Nhớ xem log trước');
+  await play(run.id, { kind: 'action', key: 'open_log' });
+  await play(run.id, { kind: 'action', key: 'talk_mentor' });
+  await play(run.id, {
+    kind: 'say',
+    text: 'Lỗi do vòng lặp gọi DB 901 lần, khách ít đơn vẫn nhanh.',
+  });
+  await play(run.id, {
+    kind: 'action',
+    key: 'write_patch',
+    fields: { mo_ta: 'Bỏ vòng lặp, gom một truy vấn.' },
+  });
+  await play(run.id, { kind: 'action', key: 'open_code' });
+  while ((await service.scene(USER, run.id)).mode === 'phase')
+    await play(run.id, { kind: 'action', key: 'wait' });
+  await play(run.id, { kind: 'choose', option: 'c', elapsedMs: 5000 });
+  await play(run.id, { kind: 'say', text: 'Dạ em đang sửa chị.' });
+  await service.flag(USER, run.id, {
+    activityKey: 'n1',
+    reason: 'Câu thoại hơi gượng',
+  });
+  await play(run.id, { kind: 'action', key: 'chot_nguyen_nhan' });
+  await play(run.id, {
+    kind: 'save_artefact',
+    artefact: 'ghi_chu_su_co',
+    fields: { hien_tuong: 'Chậm', nguyen_nhan: 'Vòng lặp', da_lam: 'Vá' },
+    ticks: ['h3', 'h4'],
+  });
+  await play(run.id, { kind: 'action', key: 'gui_anh_an' });
+  await play(run.id, { kind: 'confirm_end' });
+  await play(run.id, {
+    kind: 'save_artefact',
+    artefact: 'email_an',
+    fields: {
+      nguyen_nhan: 'Vòng lặp',
+      huong_xu_ly: 'Gom truy vấn',
+      rui_ro: 'Theo dõi log, lỗi thì rollback.',
+    },
+  });
+  await play(run.id, {
+    kind: 'say',
+    text: 'Em theo dõi log và rollback nếu lỗi.',
+  });
+
+  return run;
 }
 
 describe('luồng ca làm (API + worker)', () => {
@@ -231,61 +329,66 @@ describe('luồng ca làm (API + worker)', () => {
     });
   });
 
-  it('chơi trọn ca: FINISHED, tổng kết chưa chấm; ghi chú và báo lỗi nằm cùng chuỗi', async () => {
-    const { service, play, prisma } = setup();
-    const { run } = await service.start(USER, { taskId: SEED });
-    await play(run.id, { kind: 'say', text: 'Dạ.' });
-    await service.addNote(USER, run.id, 'Nhớ xem log trước');
-    await play(run.id, { kind: 'action', key: 'open_log' });
-    await play(run.id, { kind: 'action', key: 'talk_mentor' });
-    await play(run.id, {
-      kind: 'say',
-      text: 'Lỗi do vòng lặp gọi DB 901 lần, khách ít đơn vẫn nhanh.',
-    });
-    await play(run.id, {
-      kind: 'action',
-      key: 'write_patch',
-      fields: { mo_ta: 'Bỏ vòng lặp, gom một truy vấn.' },
-    });
-    await play(run.id, { kind: 'action', key: 'open_code' });
-    while ((await service.scene(USER, run.id)).mode === 'phase')
-      await play(run.id, { kind: 'action', key: 'wait' });
-    await play(run.id, { kind: 'choose', option: 'c', elapsedMs: 5000 });
-    await play(run.id, { kind: 'say', text: 'Dạ em đang sửa chị.' });
-    await service.flag(USER, run.id, {
-      activityKey: 'n1',
-      reason: 'Câu thoại hơi gượng',
-    });
-    await play(run.id, { kind: 'action', key: 'chot_nguyen_nhan' });
-    await play(run.id, {
-      kind: 'save_artefact',
-      artefact: 'ghi_chu_su_co',
-      fields: { hien_tuong: 'Chậm', nguyen_nhan: 'Vòng lặp', da_lam: 'Vá' },
-      ticks: ['h3', 'h4'],
-    });
-    await play(run.id, { kind: 'action', key: 'gui_anh_an' });
-    await play(run.id, { kind: 'confirm_end' });
-    await play(run.id, {
-      kind: 'save_artefact',
-      artefact: 'email_an',
-      fields: {
-        nguyen_nhan: 'Vòng lặp',
-        huong_xu_ly: 'Gom truy vấn',
-        rui_ro: 'Theo dõi log, lỗi thì rollback.',
-      },
-    });
-    await play(run.id, {
-      kind: 'say',
-      text: 'Em theo dõi log và rollback nếu lỗi.',
-    });
+  it('chơi trọn ca: FINISHED, chấm từng đoạn bằng AI-5, tổng kết có mức; ghi chú và báo lỗi nằm cùng chuỗi', async () => {
+    const {
+      service,
+      play,
+      prisma,
+      gradeJobs,
+      grader,
+      gradingJob,
+      drainGrading,
+      published,
+    } = setup();
+    const run = await playToEnd(service, play);
 
     expect((await service.get(USER, run.id)).status).toBe('FINISHED');
     // Ca làm chưa chấm: không ghi completedAt, nên tiến độ và mở cấp của luồng cũ không tính nó.
     expect(
       prisma.scenarioRun.rows.find((r) => r.id === run.id)?.completedAt,
     ).toBeNull();
+    // Nút n1, n2, n3 đóng thì đoạn xếp hàng ngay; pha chờ hết ca.
+    const requested = prisma.runEvent.rows
+      .filter((r) => r.runId === run.id && r.type === 'GRADING_REQUESTED')
+      .map((r) => r.payload.data.segment as string);
+    expect(requested).toEqual(
+      expect.arrayContaining(['n1', 'n2', 'n3', 'pha']),
+    );
+    expect(new Set(requested).size).toBe(requested.length);
+    expect(gradeJobs.length).toBe(requested.length);
+    const pending = await service.summary(USER, run.id);
+    expect(pending.grading.status).toBe('PENDING');
+    expect(pending.grading.segments.every((s) => s.status === 'queued')).toBe(
+      true,
+    );
+
+    await drainGrading();
+    expect(published.filter((e) => e.type === 'judgement.ready').length).toBe(
+      requested.length,
+    );
+    expect(published.filter((e) => e.type === 'summary.ready').length).toBe(1);
     const summary = await service.summary(USER, run.id);
     expect(summary).toMatchObject({ graded: false, seedId: SEED });
+    expect(summary.grading.status).toBe('READY');
+    expect(summary.grading.subs.map((s) => s.sub)).toEqual(
+      expect.arrayContaining(['4.2', '7.1', '1.5', '7.4', '1.1']),
+    );
+    expect(prisma.usageCost.rows.length).toBeGreaterThan(0);
+    expect(
+      prisma.aiJob.rows
+        .filter((j) => j.kind === 'SHIFT_GRADING')
+        .every((j) => j.status === 'SUCCEEDED'),
+    ).toBe(true);
+    // Job giao hai lần: không ghi trùng kết quả của đoạn.
+    const countGraded = () =>
+      prisma.runEvent.rows.filter(
+        (r) => r.runId === run.id && r.type === 'SEGMENT_GRADED',
+      ).length;
+    expect(countGraded()).toBe(requested.length);
+    await grader.process(
+      gradingJob({ aiJobId: `${run.id}-n2`, runId: run.id, segment: 'n2' }),
+    );
+    expect(countGraded()).toBe(requested.length);
     expect(summary.nodes.every((n) => n.status === 'done')).toBe(true);
     expect((await service.scene(USER, run.id)).notes).toEqual([
       expect.objectContaining({ text: 'Nhớ xem log trước' }),
@@ -295,5 +398,55 @@ describe('luồng ca làm (API + worker)', () => {
     expect(events.some((r) => r.type === 'CONTENT_FLAGGED')).toBe(true);
     // Mở lại sau khi xong: lượt mới.
     expect((await service.start(USER, { taskId: SEED })).created).toBe(true);
+  });
+
+  const pendingJudge = {
+    gradeChecklist: async () => ({
+      jobId: 'x',
+      status: 'pending',
+      reason: 'one_judge_down',
+      panelSize: 2,
+      slots: [],
+      records: [],
+      cost: { usd: 0, basis: 'actual' },
+      redactions: [],
+      segmentsSent: [],
+    }),
+  } as unknown as ShiftJudge;
+
+  it('panel chưa đủ judge: ném lỗi để BullMQ thử lại, chưa ghi kết quả (D-108)', async () => {
+    const { service, play, prisma, gradeJobs, grader, gradingJob } = setup(
+      undefined,
+      pendingJudge,
+    );
+    const run = await playToEnd(service, play);
+    const job = gradeJobs[0];
+    await expect(grader.process(gradingJob(job))).rejects.toThrow(
+      /chưa chấm được/,
+    );
+    expect(
+      prisma.runEvent.rows.some(
+        (r) => r.runId === run.id && r.type === 'SEGMENT_GRADED',
+      ),
+    ).toBe(false);
+    expect(prisma.aiJob.rows.find((j) => j.id === job.aiJobId)?.lastError).toBe(
+      'one_judge_down',
+    );
+  });
+
+  it('hết lượt thử: ghi đoạn hỏng, không chấm thay (D-92); summary NOT_AVAILABLE khi mọi đoạn đã xong', async () => {
+    const { service, play, gradeJobs, grader, gradingJob, published } = setup(
+      undefined,
+      pendingJudge,
+    );
+    const run = await playToEnd(service, play);
+    for (const job of gradeJobs.splice(0))
+      await grader.onFailed(gradingJob(job, 5), new Error('hết lượt'));
+    const summary = await service.summary(USER, run.id);
+    expect(summary.grading).toMatchObject({
+      status: 'NOT_AVAILABLE',
+      reason: 'failed',
+    });
+    expect(published.filter((e) => e.type === 'summary.ready').length).toBe(1);
   });
 });

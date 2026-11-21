@@ -280,6 +280,61 @@ export default function SummaryPage() {
   );
 }
 
+const LEVEL_TEXT = ['Chưa thể hiện', 'Có thể hiện', 'Thể hiện rõ'] as const;
+
+/** Mức trung bình 0–2 của một kỹ năng trong ca, làm tròn tới nấc gần nhất. */
+function levelText(level: number | null): string {
+  if (level === null) return 'Không xét trong ca này';
+  return LEVEL_TEXT[Math.min(2, Math.max(0, Math.round(level)))];
+}
+
+/** Kết quả AI-5 theo checklist: mức từng kỹ năng và cờ hành vi, chưa quy ra điểm. */
+function ChecklistBlock({ s }: { s: RunSummary }) {
+  const checklist = s.grade.checklist;
+  if (!checklist) return null;
+  return (
+    <Panel className="mt-8">
+      <PanelHeader
+        eyebrow="Kỹ năng mềm"
+        title="Bạn đã thể hiện thế nào trong ca này"
+        description="Ba giám khảo AI đọc lời bạn nói và việc bạn làm, rồi trả lời các câu có/không. Chưa quy ra điểm."
+      />
+      <ul className="divide-y-2 divide-dashed divide-toon-ink/20">
+        {checklist.subs.map((sub) => (
+          <li
+            key={sub.sub}
+            className="flex items-center justify-between gap-3 py-2 text-sm"
+          >
+            <span className="font-bold text-toon-ink">{sub.name}</span>
+            <span className="shrink-0 font-semibold text-toon-ink-soft">
+              {levelText(sub.level)}
+              {sub.level !== null && ` (${sub.level.toFixed(1)}/2)`}
+            </span>
+          </li>
+        ))}
+      </ul>
+      {checklist.flags.length > 0 && (
+        <div className="mt-4 rounded-2xl border-[3px] border-toon-ink bg-toon-coral-light p-3 text-sm">
+          <p className="font-toon text-base font-extrabold">Cần để ý</p>
+          <ul className="mt-1 list-disc space-y-1 pl-5 font-semibold">
+            {checklist.flags.map((f, i) => (
+              <li key={`${f.code}-${i}`}>
+                {f.name}
+                {f.quote && <q className="ml-1 italic">{f.quote}</q>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <p className="mt-3 flex items-start gap-2 text-xs font-semibold text-toon-ink-soft">
+        <Sparkles size={20} className="shrink-0" aria-hidden />
+        Nội dung đánh giá này do AI tạo, chỉ để bạn tham khảo, không gửi cho
+        trường hay nhà tuyển dụng.
+      </p>
+    </Panel>
+  );
+}
+
 function GradeBlock({ s }: { s: RunSummary }) {
   const g = s.grade;
   // Bản demo chấm bằng heuristic mẫu (D-92: không phải đường chấm thay AI).
@@ -320,6 +375,7 @@ function GradeBlock({ s }: { s: RunSummary }) {
         </p>
       </Panel>
     );
+  if (g.checklist && g.score === null) return <ChecklistBlock s={s} />;
   const ending = g.ending ? ENDING_TONES[g.ending.type] : null;
   const stamp =
     g.ending?.type === 'BAD'

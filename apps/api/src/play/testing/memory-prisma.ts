@@ -104,6 +104,10 @@ export function memoryPrisma() {
       finishedAt: null,
       lastError: null,
     })),
+    usageCost: new Table(
+      () => ({}),
+      () => false,
+    ),
     userAccount: new Table(() => ({})),
     shiftSeedDoc: new Table(
       () => ({}),

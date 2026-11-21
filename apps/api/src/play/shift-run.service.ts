@@ -21,6 +21,13 @@ import {
   type LoadedShift,
   type ShiftRecord,
 } from '../core/shift-log.service';
+import {
+  gradingView,
+  requestedSegments,
+  settledSegments,
+  type ShiftGradingView,
+} from '../assessment/shift-grading.view';
+import { gradingJobId } from '../core/shift-log.service';
 import { PrismaService } from '../prisma/prisma.service';
 import type { StartShiftDto, TurnDto } from './shift.dto';
 
@@ -278,12 +285,47 @@ export class ShiftRunService {
     );
   }
 
-  /** Tổng kết theo truyện, chưa chấm điểm. Tính lại từ chuỗi sự kiện mỗi lần đọc. */
-  async summary(userId: string, runId: string): Promise<shift.ShiftSummary> {
-    const { state, ctx } = await this.log.load(runId, userId);
+  /**
+   * Tổng kết theo truyện kèm khối `grading` (mức từng mục con và cờ, chấm bằng
+   * AI-5 ở worker). Chưa có điểm nhóm: chưa có trần nhóm của từng màn.
+   * Tính lại từ chuỗi sự kiện mỗi lần đọc.
+   */
+  async summary(
+    userId: string,
+    runId: string,
+  ): Promise<shift.ShiftSummary & { grading: ShiftGradingView }> {
+    const { state, ctx, records } = await this.log.load(runId, userId);
     if (!state.ended)
       throw new Problem(404, 'SUMMARY_NOT_READY', 'Ca chưa kết thúc');
-    return shift.shiftSummary(state, ctx);
+    await this.requeueStalled(runId, records);
+    return {
+      ...shift.shiftSummary(state, ctx),
+      grading: gradingView(records, ctx.seed.observes ?? []),
+    };
+  }
+
+  /** Lưới an toàn: job chấm đã ghi mà chưa vào queue (đẩy hụt sau commit) thì đẩy lại. */
+  private async requeueStalled(
+    runId: string,
+    records: readonly ShiftRecord[],
+  ): Promise<void> {
+    const settled = settledSegments(records);
+    const waiting = requestedSegments(records).filter((s) => !settled.has(s));
+    if (waiting.length === 0) return;
+    const queued = await this.prisma.aiJob.findMany({
+      where: {
+        id: { in: waiting.map((s) => gradingJobId(runId, s)) },
+        status: 'QUEUED',
+      },
+      select: { id: true },
+    });
+    for (const { id } of queued) {
+      const segment = waiting.find((s) => gradingJobId(runId, s) === id);
+      if (segment)
+        await this.queues
+          .enqueueShiftGrading({ aiJobId: id, runId, segment })
+          .catch(() => undefined);
+    }
   }
 
   /* ── Lượt ── */
