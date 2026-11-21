@@ -1,4 +1,4 @@
-import { costOf, upperBoundUsd } from './cost';
+import { costOf, failedCallCost, upperBoundUsd } from './cost';
 import type { Price } from './gateway.types';
 
 const qwenImplicit: Price = {
@@ -37,5 +37,12 @@ describe('chi phí một lượt gọi', () => {
     const chars = 12_000;
     const actual = costOf({ input: Math.ceil(chars / 2.5), cachedInput: 0, cacheWrite: 0, output: 300, reasoning: 0 }, qwenImplicit);
     expect(upperBoundUsd(chars, 300, qwenImplicit)).toBeGreaterThanOrEqual(actual.usd);
+  });
+
+  it('lượt gọi lỗi: bị từ chối trước khi chạy thì 0, có thể đã chạy thì ghi cận trên', () => {
+    for (const kind of ['auth', 'quota', 'bad_request', 'rate_limited', 'overloaded'] as const)
+      expect(failedCallCost(kind, 0.01)).toEqual({ usd: 0, basis: 'list' });
+    for (const kind of ['timeout', 'network', 'server', 'content_filtered'] as const)
+      expect(failedCallCost(kind, 0.01)).toEqual({ usd: 0.01, basis: 'upper_bound' });
   });
 });

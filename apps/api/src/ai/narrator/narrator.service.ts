@@ -48,7 +48,7 @@ import {
   type Scenario,
 } from '@datn/game-core';
 import { CircuitBreaker } from '../gateway/circuit-breaker';
-import { costOf, upperBoundUsd, type Cost } from '../gateway/cost';
+import { costOf, failedCallCost, upperBoundUsd, type Cost } from '../gateway/cost';
 import {
   GatewayError,
   systemClock,
@@ -292,11 +292,10 @@ export class NarratorService {
           break;
         }
 
-        if (job.budgetUsd !== undefined) {
-          const chars = messages.flatMap((m) => m.parts).reduce((n, p) => n + p.text.length, 0);
-          const worst = upperBoundUsd(chars, maxOutputTokens, spec.price);
-          if (spent + worst > job.budgetUsd) return done({ status: 'unavailable', reason: 'budget' });
-        }
+        const chars = messages.flatMap((m) => m.parts).reduce((n, p) => n + p.text.length, 0);
+        const worst = upperBoundUsd(chars, maxOutputTokens, spec.price);
+        if (job.budgetUsd !== undefined && spent + worst > job.budgetUsd)
+          return done({ status: 'unavailable', reason: 'budget' });
 
         const temperature = NARRATOR_PROFILE.temperature[spec.provider];
         const record: NarratorCallRecord = {
@@ -338,6 +337,8 @@ export class NarratorService {
               : new GatewayError('network', String(err), spec.provider);
           record.error = { kind: error.kind, status: error.status, message: error.message };
           record.latencyMs = this.clock.now() - record.startedAt;
+          record.cost = failedCallCost(error.kind, worst);
+          spent += record.cost.usd;
           this.breaker.recordFailure(spec.provider, error.kind);
 
           if (error.kind === 'content_filtered') return done({ status: 'blocked' });

@@ -15,7 +15,7 @@ import { Inject, Injectable, Logger, Optional } from '@nestjs/common';
 import { deidentify, normalizeVi, shift } from '@datn/game-core';
 import { z } from 'zod';
 import { CircuitBreaker } from '../gateway/circuit-breaker';
-import { costOf, upperBoundUsd } from '../gateway/cost';
+import { costOf, failedCallCost, upperBoundUsd } from '../gateway/cost';
 import {
   GatewayError,
   systemClock,
@@ -179,16 +179,12 @@ export class ShiftCheckerService implements ShiftChecker {
         const remaining = deadline - this.clock.now();
         if (remaining < 1_500)
           return { status: 'unavailable', reason: 'deadline' };
-        if (opts.budgetUsd !== undefined) {
-          const chars = messages
-            .flatMap((m) => m.parts)
-            .reduce((n, p) => n + p.text.length, 0);
-          if (
-            spent + upperBoundUsd(chars, MAX_OUTPUT_TOKENS, spec.price) >
-            opts.budgetUsd
-          )
-            return { status: 'unavailable', reason: 'budget' };
-        }
+        const chars = messages
+          .flatMap((m) => m.parts)
+          .reduce((n, p) => n + p.text.length, 0);
+        const worst = upperBoundUsd(chars, MAX_OUTPUT_TOKENS, spec.price);
+        if (opts.budgetUsd !== undefined && spent + worst > opts.budgetUsd)
+          return { status: 'unavailable', reason: 'budget' };
         let result;
         try {
           result = await this.gateway.complete({
@@ -204,6 +200,7 @@ export class ShiftCheckerService implements ShiftChecker {
             err instanceof GatewayError
               ? err
               : new GatewayError('network', String(err), spec.provider);
+          spent += failedCallCost(error.kind, worst).usd;
           this.breaker.recordFailure(spec.provider, error.kind);
           if (error.kind === 'content_filtered')
             return { status: 'unavailable', reason: 'blocked' };
