@@ -5,13 +5,14 @@
  * phải biết mỗi lượt tốn bao nhiêu — từ số token nhà cung cấp trả về, không
  * từ ước đoán.
  */
-import type { Price, TokenUsage } from './gateway.types';
+import type { GatewayErrorKind, Price, TokenUsage } from './gateway.types';
 
 export interface Cost {
   usd: number;
   /**
-   * `list`: tính đủ theo bảng giá. `upper_bound`: có token trúng cache mà chưa
-   * biết tỉ lệ giảm giá, nên tính như không trúng — con số thật thấp hơn.
+   * `list`: tính đủ theo bảng giá. `upper_bound`: con số thật thấp hơn hoặc
+   * bằng — có token trúng cache mà chưa biết tỉ lệ giảm giá, hoặc lượt gọi lỗi
+   * không trả về số token (`failedCallCost`).
    */
   basis: 'list' | 'upper_bound';
 }
@@ -42,6 +43,28 @@ export function costOf(usage: TokenUsage, price: Price): Cost {
  * Số thật lấy từ `usage` sau khi gọi.
  */
 export const estimateTokensHigh = (chars: number): number => Math.ceil(chars / 2);
+
+/**
+ * Lỗi mà nhà cung cấp từ chối trước khi model chạy, nên không tính tiền. Các lỗi
+ * còn lại (quá giờ, đứt kết nối, lỗi server, bị lọc nội dung) có thể đến sau
+ * khi model đã đọc đề và viết, nên phải tính là đã tốn.
+ */
+const REJECTED_BEFORE_RUN: ReadonlySet<GatewayErrorKind> = new Set([
+  'auth',
+  'quota',
+  'bad_request',
+  'rate_limited',
+  'overloaded',
+]);
+
+/**
+ * Chi phí ghi cho một lượt gọi lỗi: không có `usage` nên không biết số thật.
+ * Lỗi có thể đã bị tính tiền thì ghi cận trên, để sổ chi phí và trần mỗi phiên
+ * (NFR-11) không bỏ sót.
+ */
+export function failedCallCost(kind: GatewayErrorKind, upperUsd: number): Cost {
+  return REJECTED_BEFORE_RUN.has(kind) ? { usd: 0, basis: 'list' } : { usd: upperUsd, basis: 'upper_bound' };
+}
 
 /** Lượt gọi này tốn tối đa bao nhiêu, nếu không trúng cache và viết hết `maxOutputTokens`. */
 export function upperBoundUsd(inputChars: number, maxOutputTokens: number, price: Price): number {

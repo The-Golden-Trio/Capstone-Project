@@ -37,7 +37,12 @@ import {
   type Deidentified,
   type KnownIdentity,
 } from '@datn/game-core';
-import { costOf, upperBoundUsd, type Cost } from '../gateway/cost';
+import {
+  costOf,
+  failedCallCost,
+  upperBoundUsd,
+  type Cost,
+} from '../gateway/cost';
 import {
   GatewayError,
   systemClock,
@@ -425,7 +430,8 @@ export class JudgePanelService {
             err instanceof GatewayError
               ? err
               : new GatewayError('network', String(err), spec.provider);
-          budget.settle(upper, 0);
+          record.cost = failedCallCost(error.kind, upper);
+          budget.settle(upper, record.cost.usd);
           record.error = {
             kind: error.kind,
             status: error.status,
@@ -592,7 +598,8 @@ export class JudgePanelService {
               err instanceof GatewayError
                 ? err
                 : new GatewayError('network', String(err), spec.provider);
-            budget.settle(upper, 0);
+            record.cost = failedCallCost(error.kind, upper);
+            budget.settle(upper, record.cost.usd);
             record.error = {
               kind: error.kind,
               status: error.status,
