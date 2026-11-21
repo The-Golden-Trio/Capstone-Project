@@ -1,0 +1,142 @@
+{
+  "_note": "Đây là câu giả do nhóm viết để thử AI, không phải lời của người chơi thật.",
+  "name": "lam-nhanh-quen-hen",
+  "seed": "SWE_BACKEND.L3.m2",
+  "title": "Làm nhanh, quên hẹn: hứa giờ rồi trễ, email thiếu rollback",
+  "intent": "Đường D4 và D5: người chơi vá nhanh, hứa chị Linh báo lúc 11:30 rồi không gọi lại, chọn phương án hứa chắc ở n1, email chỉ có hướng xử lý mà không có cách kiểm hay rollback. Kỳ vọng: chị Linh tự nhắc khi trễ hẹn và bật tre_hen; anh An hoãn duyệt ở n3; mục Nhìn lại ca hỏi về tre_hen và hua_chac_trua.",
+  "steps": [
+    {
+      "do": "start"
+    },
+    {
+      "do": "say",
+      "text": "Dạ anh, em coi liền."
+    },
+    {
+      "do": "action",
+      "key": "open_log"
+    },
+    {
+      "do": "action",
+      "key": "open_code"
+    },
+    {
+      "do": "action",
+      "key": "talk_support"
+    },
+    {
+      "do": "say",
+      "text": "Chị ơi em tìm ra lỗi rồi, em sửa nhanh thôi. 11 rưỡi em gọi báo chị nha."
+    },
+    {
+      "do": "end_conversation"
+    },
+    {
+      "do": "action",
+      "key": "write_patch",
+      "fields": {
+        "mo_ta": "Bỏ vòng lặp, gom thành một truy vấn lấy hết chi tiết đơn."
+      }
+    },
+    {
+      "do": "action",
+      "key": "run_staging"
+    },
+    {
+      "do": "action",
+      "key": "wait"
+    },
+    {
+      "do": "choose",
+      "option": "b",
+      "elapsedMs": 4000
+    },
+    {
+      "do": "say",
+      "text": "Dạ chị yên tâm, trưa là xong chắc chắn ạ.",
+      "ifAwait": "node_reply"
+    },
+    {
+      "do": "action",
+      "key": "open_bang"
+    },
+    {
+      "do": "action",
+      "key": "rewrite_patch",
+      "fields": {
+        "mo_ta": "Bỏ vòng lặp, gom thành một truy vấn lấy hết chi tiết đơn. Thêm kiểm tra kết quả."
+      }
+    },
+    {
+      "do": "action",
+      "key": "chot_nguyen_nhan"
+    },
+    {
+      "do": "save_artefact",
+      "artefact": "ghi_chu_su_co",
+      "fields": {
+        "hien_tuong": "API lịch sử đơn chậm.",
+        "nguyen_nhan": "Lấy chi tiết từng đơn trong vòng lặp, 901 lần với khách 900 đơn.",
+        "da_lam": "Đã gom truy vấn."
+      },
+      "ticks": ["h3"]
+    },
+    {
+      "do": "say",
+      "text": "Dạ em thấy trong log là 901 query nên em nghĩ vậy ạ.",
+      "ifAwait": "probe_answer"
+    },
+    {
+      "do": "action",
+      "key": "message_su_co",
+      "fields": {
+        "noi_dung": "Em đang chạy thử bản vá trên staging, chưa đưa lên production, chờ anh An duyệt."
+      }
+    },
+    {
+      "do": "action",
+      "key": "run_staging"
+    },
+    {
+      "do": "say",
+      "text": "Dạ chị Linh, em xin lỗi chị, em mải làm bản vá nên quên gọi chị lúc 11 rưỡi. Bản sửa đang chạy thử, em chưa dám nói giờ xong.",
+      "ifAwait": "conversation"
+    },
+    {
+      "do": "end_conversation",
+      "ifAwait": "conversation"
+    },
+    {
+      "do": "action",
+      "key": "gui_anh_an"
+    },
+    {
+      "do": "confirm_end",
+      "ifAwait": "confirm_end"
+    },
+    {
+      "do": "save_artefact",
+      "artefact": "email_an",
+      "fields": {
+        "nguyen_nhan": "Vòng lặp gọi DB từng đơn.",
+        "huong_xu_ly": "Gom thành một truy vấn, đã chạy thử trên staging.",
+        "rui_ro": "Chắc không có rủi ro gì."
+      }
+    },
+    {
+      "do": "say",
+      "text": "Dạ nếu có lỗi thì em coi lại anh ạ.",
+      "ifAwait": "probe_answer"
+    },
+    {
+      "do": "say",
+      "text": "Dạ lúc đó em bận làm bản vá nên quên gọi chị. Em xin lỗi ạ.",
+      "ifAwait": "probe_answer"
+    },
+    {
+      "do": "say",
+      "text": "Dạ em sẽ nhắn chị ngay để báo tình hình.",
+      "ifAwait": "probe_answer"
+    }
+  ]
+}

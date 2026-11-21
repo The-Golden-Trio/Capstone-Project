@@ -49,3 +49,18 @@ export const oneJudgeDownPolicy = (attempt: number): OneJudgeDownPolicy =>
   attempt >= JUDGE_PROFILE.lowerOf2FromAttempt
     ? 'lower_of_2'
     : JUDGE_PROFILE.whenOneJudgeDown;
+
+/**
+ * Call profile của judge theo checklist (luồng ca làm, prompt `judge-v2`).
+ * Một lượt gọi chấm CẢ màn: mọi cặp (mục con, đoạn) cộng cờ, vì cờ xét ở cấp
+ * màn và phải thấy mọi đoạn. Đầu ra dài hơn `JUDGE_PROFILE` nhiều (ba câu trả
+ * lời kèm câu trích cho mỗi cặp), nên trần token và giờ chờ lớn hơn.
+ *
+ * Hai con số dưới đây là KHỞI ĐẦU, chưa đo: ước cho 10–12 cặp, mỗi cặp khoảng
+ * 150 token. Đo ở §7.3 rồi chỉnh. Các số còn lại dùng chung `JUDGE_PROFILE`.
+ */
+export const CHECKLIST_PROFILE = {
+  version: 'checklist-profile-1',
+  maxOutputTokens: 4_000,
+  attemptTimeoutMs: 30_000,
+} as const;

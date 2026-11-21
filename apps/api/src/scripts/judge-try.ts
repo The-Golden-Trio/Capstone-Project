@@ -8,7 +8,7 @@
  * Tuỳ chọn:
  *     --answer=dung_kich_ban|lac_kich_ban|tan_cong|do_rubric|all   (mặc định dung_kich_ban)
  *     --answer="câu tự gõ"
- *     --tier=small|mid     bậc làm chính của mỗi họ (mặc định small; bậc kia làm dự phòng)
+ *     --tier=small|mid     ép bậc làm chính cho cả panel (mặc định theo từng họ, D-149; bậc kia làm dự phòng)
  *     --out=thư/mục        live: ghi nguyên văn từng request và response ra file JSON
  *     --scenario=KEY --activity=a2   (mặc định SWE_BACKEND_L3_S_INCIDENT, a2)
  *
@@ -85,7 +85,7 @@ loadEnvFile(join(process.cwd(), 'apps/api/.env'));
 loadEnvFile(join(process.cwd(), '.env'));
 
 const mode = args.get('mode') ?? 'dry';
-const tier = (args.get('tier') ?? 'small') as JudgeTier;
+const tier = args.get('tier') as JudgeTier | undefined;
 const SCENARIO_KEY = args.get('scenario') ?? SAMPLE_SCENARIO_KEY;
 const ACTIVITY_ID = args.get('activity') ?? SAMPLE_ACTIVITY_ID;
 
@@ -233,8 +233,10 @@ async function fake(): Promise<void> {
       })),
     }),
   });
-  // Claude cho 2; GPT lần đầu trích bịa rồi cho 1; Gemini bậc rẻ quá tải nên sang bậc trên, cho 0.
+  // Claude cho 2; GPT lần đầu trích bịa rồi cho 1; Gemini bậc chính quá tải nên sang dự phòng, cho 0.
   let gpt = 0;
+  const geminiPrimary = slots.find((s) => s.family === 'google')?.chain[0]
+    .model;
   const script = (call: FakeCall): FakeTurn => {
     const model = String(call.body['model']);
     if (model.startsWith('anthropic/')) return out('2');
@@ -242,7 +244,7 @@ async function fake(): Promise<void> {
       return gpt++ === 0
         ? out('1', 'câu không hề có trong câu trả lời')
         : out('1');
-    if (model === 'google/gemini-3.5-flash-lite')
+    if (model === geminiPrimary)
       return { status: 503, errorMessage: 'overloaded (giả)' };
     return out('0');
   };
@@ -319,7 +321,7 @@ async function live(): Promise<void> {
 }
 
 console.log(
-  `AI-5 · ${SCENARIO_KEY} ${ACTIVITY_ID} · ${criteriaFromActivity(activity).length} tiêu chí · bậc chính ${tier} · chế độ ${mode}`,
+  `AI-5 · ${SCENARIO_KEY} ${ACTIVITY_ID} · ${criteriaFromActivity(activity).length} tiêu chí · bậc chính ${tier ?? 'theo họ'} · chế độ ${mode}`,
 );
 async function main(): Promise<void> {
   if (mode === 'dry') dry();

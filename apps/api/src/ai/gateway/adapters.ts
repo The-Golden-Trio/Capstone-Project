@@ -5,6 +5,7 @@
  * Từng tham số gửi đi đều có lý do ghi ngay tại chỗ. Tham số KHÔNG gửi cũng
  * có lý do — bỏ trống một tham số là một quyết định, không phải quên.
  */
+import { toAnthropicSchema } from './anthropic-schema';
 import {
   GatewayError,
   type ChatMessage,
@@ -290,7 +291,11 @@ export const openRouterAdapter: ProviderAdapter = {
             type: 'json_schema',
             json_schema: {
               name: request.json.name,
-              schema: request.json.schema,
+              // Claude chỉ nhận kiểu "có thể null" viết bằng `anyOf`.
+              schema:
+                spec.family === 'anthropic'
+                  ? toAnthropicSchema(request.json.schema)
+                  : request.json.schema,
               strict: true,
             },
           }

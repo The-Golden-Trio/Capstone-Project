@@ -23,12 +23,17 @@
  * Một ghế hỏng hẳn thì job chấm thử lại vài lần rồi gộp hai judge (D-132,
  * `oneJudgeDownPolicy`).
  *
+ * `gradeChecklist` là đường chấm của luồng ca làm (D-116, prompt `judge-v2`):
+ * cùng ba ghế và cùng luật chờ/gộp, nhưng judge chỉ trả lời câu có/không kèm
+ * câu trích, còn mức do code (game-core `shift/grading`) quy ra.
+ *
  * Theo CL-04 service này thuộc AssessmentModule (chạy ở worker). Prototype
  * chưa có module đó, nên tạm đặt trong AiModule như NarratorService.
  */
 import { Inject, Injectable, Logger, Optional } from '@nestjs/common';
 import {
   deidentify,
+  shift,
   type Deidentified,
   type KnownIdentity,
 } from '@datn/game-core';
@@ -43,9 +48,27 @@ import {
 } from '../gateway/gateway.types';
 import { ModelGateway } from '../gateway/model-gateway';
 import type { JudgeSlot } from '../gateway/models';
+import {
+  buildChecklistMessages,
+  checklistJsonSchema,
+} from './checklist.prompt';
+import { CallBudget } from './call-budget';
+import { checkChecklistOutput } from './checklist.output';
+import { combineChecklist } from './checklist.combine';
+import { deidentifySegments } from './checklist.segments';
+import type {
+  ChecklistCallRecord,
+  ChecklistGradeInput,
+  ChecklistPanelResult,
+  ChecklistSlotOutcome,
+} from './checklist.types';
 import { combineJudgments, type PanelVerdict } from './judge-combine';
 import { checkJudgeOutput, type JudgeProblem } from './judge.output';
-import { JUDGE_PROFILE, type OneJudgeDownPolicy } from './judge.profile';
+import {
+  CHECKLIST_PROFILE,
+  JUDGE_PROFILE,
+  type OneJudgeDownPolicy,
+} from './judge.profile';
 import {
   buildJudgeMessages,
   judgeJsonSchema,
@@ -53,6 +76,7 @@ import {
 } from './judge.prompt';
 import type { Judgment, RubricCriterion } from './judge.types';
 import { JUDGE_PROMPT_VERSION } from './prompts/judge.v1';
+import { CHECKLIST_PROMPT_VERSION } from './prompts/judge.v2';
 
 export const JUDGE_SLOTS = Symbol('JUDGE_SLOTS');
 export const JUDGE_CLOCK = Symbol('JUDGE_CLOCK');
@@ -128,6 +152,9 @@ const chunk = <T>(items: readonly T[], size: number): T[][] => {
   return out;
 };
 
+const inputChars = (messages: readonly ChatMessage[]): number =>
+  messages.flatMap((m) => m.parts).reduce((n, p) => n + p.text.length, 0);
+
 /** Lỗi do cấu hình hay do chính request: thử lại cùng model là vô ích. */
 const GIVE_UP_ON_MODEL: ReadonlySet<GatewayErrorKind> = new Set([
   'auth',
@@ -173,13 +200,9 @@ export class JudgePanelService {
         return (
           sum +
           batches.reduce((s, batch) => {
-            const chars = buildJudgeMessages({
-              ...input,
-              answer,
-              criteria: batch,
-            })
-              .flatMap((m) => m.parts)
-              .reduce((n, p) => n + p.text.length, 0);
+            const chars = inputChars(
+              buildJudgeMessages({ ...input, answer, criteria: batch }),
+            );
             return (
               s +
               upperBoundUsd(chars, JUDGE_PROFILE.maxOutputTokens, spec.price)
@@ -197,9 +220,10 @@ export class JudgePanelService {
         };
     }
 
+    const budget = new CallBudget(input.budgetUsd);
     const slots = await Promise.all(
       this.slots.map((slot) =>
-        this.runSlot(slot, batches, { ...input, answer }, records),
+        this.runSlot(slot, batches, { ...input, answer }, records, budget),
       ),
     );
     const verdict = combineJudgments(
@@ -219,18 +243,280 @@ export class JudgePanelService {
     return { ...base, ...verdict, slots, cost: totalCost(records) };
   }
 
+  /**
+   * Chấm một ca làm theo checklist (D-116, prompt `judge-v2`).
+   *
+   * Mỗi ghế nhận CẢ màn trong một lượt gọi (cờ xét ở cấp màn nên phải thấy
+   * mọi đoạn) và trả lời có/không kèm câu trích. Code kiểm câu trích và quy
+   * ra mức; panel gộp mức bằng trung vị của ba, mức thấp hơn của hai (D-132).
+   * Đoạn hết giờ ở câu đếm giờ có mức 0 mà không qua judge (D-86).
+   */
+  async gradeChecklist(
+    input: ChecklistGradeInput,
+  ): Promise<ChecklistPanelResult> {
+    const { segments, redactions } = deidentifySegments(
+      input.segments,
+      input.identity,
+    );
+    const turn = { segments, observes: input.observes };
+    const pairs = shift.expectedPairs(segments);
+    const records: ChecklistCallRecord[] = [];
+    const base = {
+      jobId: input.jobId,
+      records,
+      redactions,
+      segmentsSent: segments,
+    };
+    const options = {
+      disagreementThreshold: JUDGE_PROFILE.disagreementThreshold,
+      whenOneJudgeDown:
+        input.whenOneJudgeDown ?? JUDGE_PROFILE.whenOneJudgeDown,
+    };
+
+    // Không đoạn nào cần judge: không gọi model, không cần ghế nào.
+    if (pairs.length === 0) {
+      const verdict = combineChecklist({
+        segments,
+        observes: input.observes,
+        panel: [],
+        options,
+      });
+      if (verdict.status === 'graded')
+        return { ...base, ...verdict, slots: [], cost: zero };
+    }
+
+    if (this.slots.length === 0)
+      return {
+        ...base,
+        status: 'unavailable',
+        reason: 'no_model',
+        slots: [],
+        cost: zero,
+      };
+
+    if (input.budgetUsd !== undefined) {
+      // Chặn trước khi tiêu: mỗi ghế, một lượt gọi, bậc chính, không trúng cache.
+      const chars = inputChars(buildChecklistMessages(turn));
+      const worst = this.slots.reduce(
+        (sum, { chain }) =>
+          sum +
+          upperBoundUsd(
+            chars,
+            CHECKLIST_PROFILE.maxOutputTokens,
+            chain[0].price,
+          ),
+        0,
+      );
+      if (worst > input.budgetUsd)
+        return {
+          ...base,
+          status: 'unavailable',
+          reason: 'budget',
+          slots: [],
+          cost: zero,
+        };
+    }
+
+    const budget = new CallBudget(input.budgetUsd);
+    const slots = await Promise.all(
+      this.slots.map((slot) =>
+        this.runChecklistSlot(slot, turn, pairs, input, records, budget),
+      ),
+    );
+    const verdict = combineChecklist({
+      segments,
+      observes: input.observes,
+      panel: slots.flatMap((s) =>
+        s.status === 'ok' && s.checked ? [s.checked] : [],
+      ),
+      options,
+    });
+    if (verdict.status !== 'graded')
+      this.logger.warn(
+        `Chưa chấm được checklist ${input.jobId} (${verdict.reason}): ${slots.map((s) => `${s.family}=${s.status}`).join(', ')}`,
+      );
+
+    return { ...base, ...verdict, slots, cost: totalCost(records) };
+  }
+
+  private async runChecklistSlot(
+    { slot, family, chain }: JudgeSlot,
+    turn: Parameters<typeof buildChecklistMessages>[0],
+    pairs: ReadonlyArray<{ sub: string; segment: string }>,
+    input: ChecklistGradeInput,
+    records: ChecklistCallRecord[],
+    budget: CallBudget,
+  ): Promise<ChecklistSlotOutcome> {
+    const baseMessages = buildChecklistMessages(turn);
+    const schema = checklistJsonSchema(turn.segments);
+    let attempts = 0;
+    let lastError: string | null = null;
+    let lastModel: string | null = null;
+
+    for (const spec of chain) {
+      let messages: ChatMessage[] = baseMessages;
+      let accepted: shift.CheckedOutput | null = null;
+
+      for (
+        let retry = 0;
+        retry <= JUDGE_PROFILE.maxRetries && !accepted;
+        retry++
+      ) {
+        const upper = upperBoundUsd(
+          inputChars(messages),
+          CHECKLIST_PROFILE.maxOutputTokens,
+          spec.price,
+        );
+        if (!budget.reserve(upper)) {
+          lastError = outOfBudget(spec.key, lastError);
+          this.logger.warn(`Ghế ${slot}: ${lastError}`);
+          return {
+            slot,
+            family,
+            status: 'failed',
+            modelKey: lastModel,
+            attempts,
+            checked: null,
+            error: lastError,
+          };
+        }
+        lastModel = spec.key;
+        attempts++;
+        const temperature =
+          spec.supports.temperature === false
+            ? null
+            : JUDGE_PROFILE.temperature;
+        const record: ChecklistCallRecord = {
+          slot,
+          family,
+          batch: 1,
+          attempt: retry + 1,
+          modelKey: spec.key,
+          promptVersion: CHECKLIST_PROMPT_VERSION,
+          profileVersion: CHECKLIST_PROFILE.version,
+          contentVersion: input.contentVersion ?? null,
+          temperature,
+          startedAt: this.clock.now(),
+          latencyMs: null,
+          outcome: 'error',
+          problems: [],
+          error: null,
+          finishReason: null,
+          usage: null,
+          cost: null,
+          requestId: null,
+          output: null,
+          quotesRejected: 0,
+        };
+        records.push(record);
+
+        let result;
+        try {
+          result = await this.gateway.complete({
+            model: spec,
+            messages,
+            temperature: JUDGE_PROFILE.temperature,
+            maxOutputTokens: CHECKLIST_PROFILE.maxOutputTokens,
+            json: { name: 'checklist', schema },
+            timeoutMs: CHECKLIST_PROFILE.attemptTimeoutMs,
+          });
+        } catch (err) {
+          const error =
+            err instanceof GatewayError
+              ? err
+              : new GatewayError('network', String(err), spec.provider);
+          budget.settle(upper, 0);
+          record.error = {
+            kind: error.kind,
+            status: error.status,
+            message: error.message,
+          };
+          record.latencyMs = this.clock.now() - record.startedAt;
+          lastError = `${spec.key}: ${error.kind} — ${error.message}`;
+
+          if (error.kind === 'content_filtered')
+            return {
+              slot,
+              family,
+              status: 'blocked',
+              modelKey: spec.key,
+              attempts,
+              checked: null,
+              error: lastError,
+            };
+          if (GIVE_UP_ON_MODEL.has(error.kind)) {
+            this.logger.error(`Ghế ${slot}: ${lastError}`);
+            break;
+          }
+          continue;
+        }
+
+        record.latencyMs = result.latencyMs;
+        record.finishReason = result.finishReason;
+        record.usage = result.usage;
+        record.cost = costOf(result.usage, spec.price);
+        budget.settle(upper, record.cost.usd);
+        record.requestId = result.requestId;
+        record.output = result.text;
+
+        const check = checkChecklistOutput(result.text, {
+          pairs,
+          finishReason: result.finishReason,
+        });
+        if (check.ok) {
+          const checked = shift.checkOutput(turn.segments, check.output);
+          record.outcome = 'accepted';
+          record.quotesRejected = checked.rejected.length;
+          accepted = checked;
+        } else {
+          record.outcome = 'rejected';
+          record.problems = check.problems;
+          lastError = `${spec.key}: ${check.problems.map((p) => `${p.rule} ${p.detail}`).join('; ')}`;
+          messages = [
+            ...baseMessages,
+            ...retryMessages(
+              result.text,
+              check.problems.map((p) => `${p.rule}: ${p.detail}`),
+            ),
+          ];
+        }
+      }
+
+      if (accepted)
+        return {
+          slot,
+          family,
+          status: 'ok',
+          modelKey: spec.key,
+          attempts,
+          checked: accepted,
+          error: null,
+        };
+    }
+
+    return {
+      slot,
+      family,
+      status: 'failed',
+      modelKey: lastModel,
+      attempts,
+      checked: null,
+      error: lastError,
+    };
+  }
+
   private async runSlot(
     { slot, family, chain }: JudgeSlot,
     batches: readonly RubricCriterion[][],
     turn: GradeInput & { answer: string },
     records: JudgeCallRecord[],
+    budget: CallBudget,
   ): Promise<SlotOutcome> {
     let attempts = 0;
     let lastError: string | null = null;
     let lastModel: string | null = null;
 
     for (const spec of chain) {
-      lastModel = spec.key;
       const judgments: Judgment[] = [];
       let modelFailed = false;
 
@@ -244,6 +530,25 @@ export class JudgePanelService {
           retry <= JUDGE_PROFILE.maxRetries && !accepted;
           retry++
         ) {
+          const upper = upperBoundUsd(
+            inputChars(messages),
+            JUDGE_PROFILE.maxOutputTokens,
+            spec.price,
+          );
+          if (!budget.reserve(upper)) {
+            lastError = outOfBudget(spec.key, lastError);
+            this.logger.warn(`Ghế ${slot}: ${lastError}`);
+            return {
+              slot,
+              family,
+              status: 'failed',
+              modelKey: lastModel,
+              attempts,
+              judgments: [],
+              error: lastError,
+            };
+          }
+          lastModel = spec.key;
           attempts++;
           const temperature =
             spec.supports.temperature === false
@@ -287,6 +592,7 @@ export class JudgePanelService {
               err instanceof GatewayError
                 ? err
                 : new GatewayError('network', String(err), spec.provider);
+            budget.settle(upper, 0);
             record.error = {
               kind: error.kind,
               status: error.status,
@@ -316,6 +622,7 @@ export class JudgePanelService {
           record.finishReason = result.finishReason;
           record.usage = result.usage;
           record.cost = costOf(result.usage, spec.price);
+          budget.settle(upper, record.cost.usd);
           record.requestId = result.requestId;
           record.output = result.text;
 
@@ -371,6 +678,9 @@ export class JudgePanelService {
     };
   }
 }
+
+const outOfBudget = (modelKey: string, previous: string | null): string =>
+  `${modelKey}: hết ngân sách trước lượt gọi tiếp${previous ? ` (lỗi trước đó: ${previous})` : ''}`;
 
 const zero: Cost = { usd: 0, basis: 'list' };
 

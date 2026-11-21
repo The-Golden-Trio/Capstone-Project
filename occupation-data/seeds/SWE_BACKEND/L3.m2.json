@@ -2,6 +2,7 @@
   "id": "SWE_BACKEND.L3.m2",
   "version": 4,
   "_source": "research/reports/Seed mẫu Back-end L3 m2.md (bản 4), soạn theo Luật dẫn truyện bản 3. Các mục có \"_draft\" là nội dung soạn nháp thay cho phần ghi \"như bản 3\" (bản 3 không có trong repo), chờ DE duyệt (BR-05).",
+  "_draft": "Cả seed chưa DE duyệt (BR-05): nội dung do nhóm soạn theo Seed mẫu Back-end L3 m2 bản 4, chưa có chuyên gia nghề đọc; không xuất bản khi chưa duyệt.",
   "level_ref": "SWE_BACKEND.L3",
   "title": "Sự cố hệ thống giờ cao điểm!",
   "task_ref": "L3#3",
@@ -1009,5 +1010,73 @@
       "hook": "khách đã nghe chị hứa trưa xong; hỏi nếu trưa chưa lên được thì chị nói sao"
     }
   ],
-  "review_max": 2
+  "review_max": 2,
+  "_draft_observes": "observes (khối E1): AI soạn nháp ngày 19/11/2026 để chạy thử AI-5, chờ DE duyệt (BR-05). Mục con, from và signs đều có thể đổi.",
+  "observes": [
+    {
+      "sub": "4.2",
+      "from": ["n2", "pha"],
+      "signs": {
+        "A": "nêu nguyên nhân là API lấy chi tiết từng đơn trong một vòng lặp, kèm số liệu trong màn: 901 lần hỏi cơ sở dữ liệu cho khách MP-0042 (900 đơn); nói trong chat, trong ghi chú sự cố hay trong mô tả bản vá đều được",
+        "B": "loại khả năng \"DB quá tải giờ cao điểm\" bằng dữ kiện: khách chỉ có 3 đơn cùng giờ vẫn nhanh (4 lần hỏi)",
+        "C": "nêu cách kiểm để chắc nguyên nhân, ví dụ chạy thử trên staging sau khi sửa và so số lần hỏi cơ sở dữ liệu",
+        "not": [
+          "\"Chắc DB quá tải\" hay \"chắc server yếu\" mà không có dữ kiện nào của màn không phải nguyên nhân kèm bằng chứng",
+          "chỉ chép lại câu anh An nói ở đầu ca (\"API chậm từ 8 giờ\") không phải nguyên nhân"
+        ]
+      }
+    },
+    {
+      "sub": "7.1",
+      "from": ["n2", "n3", "review"],
+      "signs": {
+        "A": "báo anh An (hoặc kênh #su-co) về sự cố và nguyên nhân tìm ra; ở \"Nhìn lại ca\", nói thẳng với chị Linh lúc đó mình kẹt gì",
+        "B": "nhận phần của mình: API lịch sử đơn do mình viết ba tuần trước, gọi cơ sở dữ liệu trong vòng lặp và không giới hạn số đơn trả về; hoặc nhận mình đã để chị Linh chờ quá hẹn",
+        "C": "nêu việc cụ thể để sửa hoặc để lần sau không lặp lại, ví dụ thêm phân trang, test với khách có nhiều đơn, đặt nhắc giờ hẹn",
+        "not": [
+          "\"Chắc DB có vấn đề\" không phải là nhận lỗi",
+          "chỉ nói \"API chậm\" mà không nói đó là phần mình viết thì chưa đủ B",
+          "đổ cho việc khác (\"tại anh An gọi họp\") khi được hỏi vì sao trễ hẹn không phải là nhận lỗi"
+        ]
+      }
+    },
+    {
+      "sub": "1.5",
+      "from": ["pha", "n1"],
+      "signs": {
+        "A": "chủ động báo chị Linh (người đang chờ để trả lời khách Minh Phát) rằng bên kỹ thuật đã thấy lỗi, đang sửa hoặc đã sửa xong",
+        "B": "nói hiện trạng cụ thể: đã tìm ra nguyên nhân (vòng lặp gọi cơ sở dữ liệu), đang viết bản vá hoặc đã chạy thử trên staging",
+        "C": "hẹn mốc báo tiếp: một giờ cụ thể (ví dụ 11:30) hoặc khi có tin (sửa xong, anh An duyệt)",
+        "not": [
+          "chỉ nói \"em đang xem\" không nêu hiện trạng thì chưa đủ B",
+          "hứa chắc \"trưa xong\" là hứa kết quả, không phải cập nhật hiện trạng"
+        ]
+      }
+    },
+    {
+      "sub": "7.4",
+      "from": ["pha", "review"],
+      "signs": {
+        "A": "cam kết nói rõ làm gì và khi nào, ví dụ \"em báo chị lúc 11:30\" hoặc \"có tin anh An duyệt em báo chị ngay\"; ở \"Nhìn lại ca\", nói rõ giờ nào sẽ báo lại chị Linh",
+        "B": "nói điều kiện hoặc giới hạn trong tầm kiểm soát, ví dụ \"nếu chạy thử staging ổn\" hoặc \"còn chờ anh An duyệt\"",
+        "C": "nói sẽ báo lại thế nào nếu không kịp, ví dụ \"nếu chưa xong em nhắn chị trước 11:30\"",
+        "not": [
+          "\"Dạ chắc trưa xong\" là hứa chắc không điều kiện (cờ C7), không phải điều kiện",
+          "\"Em sẽ cố\" mà không nói khi nào thì chưa đủ A"
+        ]
+      }
+    },
+    {
+      "sub": "1.1",
+      "from": ["n3"],
+      "signs": {
+        "A": "phần đầu email nêu điều chính: nguyên nhân (API gọi cơ sở dữ liệu trong vòng lặp, 901 lần cho MP-0042) và hướng xử lý",
+        "B": "nói rõ anh An cần làm gì, ví dụ duyệt để đưa bản sửa lên production",
+        "C": "kèm con số từ màn, ví dụ 901 lần hỏi giảm còn 2, 4,40 giây còn 0,18 giây",
+        "not": [
+          "mở đầu dài về bối cảnh rồi mới tới nguyên nhân ở cuối thì chưa đạt A; câu chào và xin lỗi làm phiền không tính là mở đầu chậm"
+        ]
+      }
+    }
+  ]
 }
