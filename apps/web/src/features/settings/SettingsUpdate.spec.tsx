@@ -19,6 +19,9 @@ it('lưu tên, giai đoạn và kiểm tra xác nhận mật khẩu trước khi
   fireEvent.click(screen.getByRole('button', { name: 'Lưu hồ sơ' }));
   await waitFor(() => expect(player().me.displayName).toBe('An'));
   expect(player().me.stage).toBe('sinh_vien');
+  const security = screen.getByText('Bảo mật', { selector: 'summary' });
+  expect(security.closest('details')?.open).toBe(false);
+  fireEvent.click(security);
   fireEvent.change(screen.getByLabelText('Mật khẩu hiện tại'), {
     target: { value: 'mat-khau-123' },
   });

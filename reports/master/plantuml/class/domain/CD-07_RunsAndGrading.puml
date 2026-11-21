@@ -1,0 +1,225 @@
+@startuml CD-07_RunsAndGrading
+title CD-07 · Domain model · Runs and grading\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections J); the ERD is unchanged</size>
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype polyline
+skinparam nodesep 35
+skinparam ranksep 55
+skinparam class {
+  BackgroundColor<<entity>> #FFFFFF
+  BackgroundColor<<weak>> #F3F6FA
+  BackgroundColor<<assoc>> #EAF3EA
+  BackgroundColor<<pending>> #FFE3C2
+  BorderColor<<pending>> #E8710A
+  BackgroundColor<<vang>> #FFF3C4
+  BackgroundColor<<stub>> #F2F2F2
+  BorderColor<<stub>> #AAAAAA
+  FontColor<<stub>> #777777
+}
+
+class ScenarioRun <<entity>> {
+  - id : uuid {id}
+  - isPlaytest : Boolean
+  - status : RunStatus
+  - startedAt : DateTime
+  - endedAt : DateTime
+  / timeBudget : Int
+  - healthBefore : Int
+  - healthAfter : Int
+  / healthTier : String  «enum?»
+  - ot.count : Int
+  - ot.hours : Decimal
+  - ot.paid : Int
+  / buffTotal : Int
+  - buffBreakdown : String [0..*]
+  - feedbackText : String
+  - realismRating : Int
+  --
+  +append(event: RunEvent) : void  «SD-01, run = append-only events»
+  +fold() : RunState  «§5.3.1, game-core»
+  +finish() : void  «SD-02»
+  +startOvertime() : void  «D-133 at most 2 per scene»
+}
+class RunEvent <<weak>> {
+  - seq : Int {partial id}
+  - type : String  «enum?»
+  - payload : Json
+  - at : DateTime
+  - provenance.model : String
+  - provenance.promptVersion : String
+  - provenance.cost : Decimal
+  - provenance.latency : Int
+}
+class EvidenceSegment <<weak>> {
+  - seq : Int {partial id}
+  - kind : String  «enum?»
+  - phaseNo : Int
+  - fromSeq : Int
+  - toSeq : Int
+  - hintUsed : Boolean
+}
+class Assessment <<weak>> {
+  - level : Int  «0..2  D-116»
+  - weight : Decimal
+  - status : String  «enum?»
+  - offExample : String
+  - gradedAt : DateTime
+  --
+  +combine(judges: JudgeResult[]) : Int  «D-116, D-132»
+}
+class JudgeResult <<weak>> {
+  - judgeSlot : String {partial id}  «enum?»
+  - model : String
+  - level : Int  «0..2  D-116»
+  - answers : String [0..*]
+  - reason : String
+}
+class FeedbackNote <<weak>> {
+  - seq : Int {partial id}
+  - kind : String  «enum?»
+  - text : String
+}
+class ContentFlag <<entity>> {
+  - id : uuid {id}
+  - eventSeq : Int
+  - reason : String
+  - status : String  «enum?»
+  - at : DateTime
+}
+class InterestTap <<weak>> {
+  - nodeCode : String {partial id}
+  - axis : RiasecAxis
+  - value : Int  «1..3  D-106»
+  - tappedAt : DateTime
+}
+class NpcMemory <<entity>> {
+  - id : uuid {id}
+  - text : String
+  - createdAt : DateTime
+}
+class SideQuestRun <<entity>> {
+  - id : uuid {id}
+  - status : String  «enum?»
+  - startedAt : DateTime
+  - completedAt : DateTime
+  - bonusCredited : Boolean
+}
+class RaisesFlag <<assoc>> {
+  - quote : String
+  - turnRef : String
+}
+class EarnsPoints <<assoc>> {
+  - cap : Int
+  - raw : Int
+  - buffed : Int
+  - credited : Int
+}
+enum RunStatus {
+  IN_PROGRESS
+  FINISHED
+  ABANDONED
+}
+note right of RunStatus : schema.prisma RunStatus
+enum RiasecAxis {
+  R
+  I
+  A
+  S
+  E
+  C
+}
+note right of RiasecAxis : D-104 (6 RIASEC axes)
+class AiJob <<stub>> {
+  CD-08
+}
+class ConductFlag <<stub>> {
+  CD-02
+}
+class Explorer <<stub>> {
+  CD-01
+}
+class Gap <<stub>> {
+  CD-05
+}
+class InventoryItem <<stub>> {
+  CD-05
+}
+class LevelEnrolment <<stub>> {
+  CD-06
+}
+class Node <<stub>> {
+  CD-03
+}
+class NpcCard <<stub>> {
+  CD-05
+}
+class NpcChapter <<stub>> {
+  CD-05
+}
+class ReviewProbe <<stub>> {
+  CD-03
+}
+class ScenarioBuild <<stub>> {
+  CD-04
+}
+class ScenarioRelease <<stub>> {
+  CD-04
+}
+class SideActivity <<stub>> {
+  CD-05
+}
+class SoftSkillGroup <<stub>> {
+  CD-02
+}
+class SoftSkillItem <<stub>> {
+  CD-02
+}
+class UserAccount <<stub>> {
+  CD-01
+}
+
+UserAccount "1" -- "0..*" ScenarioRun : PLAYS
+ScenarioRun "0..*" -- "0..1" ScenarioRelease : OF_RELEASE {xor}
+ScenarioRun "0..*" -- "0..1" ScenarioBuild : OF_BUILD {xor}
+ScenarioRun "0..*" -- "0..1" LevelEnrolment : IN_ENROLMENT
+ScenarioRun "1" *-- "0..*" RunEvent : HAS_EVENT
+ScenarioRun "1" -- "0..*" EvidenceSegment : HAS_SEGMENT
+ScenarioRun "1" *-- "0..*" FeedbackNote : HAS_NOTE
+ScenarioRun "1" *-- "0..*" InterestTap : HAS_TAP
+EvidenceSegment "0..*" -- "0..1" Node : SEGMENT_AT_NODE {xor}
+EvidenceSegment "0..*" -- "0..1" ReviewProbe : SEGMENT_AT_PROBE {xor}
+EvidenceSegment "1" -- "0..*" Assessment : ASSESSMENT_OF_SEGMENT
+SoftSkillItem "1" -- "0..*" Assessment : ASSESSMENT_OF_ITEM
+Assessment "1" -- "0..*" JudgeResult : HAS_JUDGE
+Assessment "0..*" -- "0..1" AiJob : GRADED_BY_JOB
+ScenarioRun "0..*" -- "0..*" ConductFlag : RAISES_FLAG
+(ScenarioRun, ConductFlag) .. RaisesFlag
+ScenarioRun "0..*" -- "0..*" SoftSkillGroup : EARNS_POINTS
+(ScenarioRun, SoftSkillGroup) .. EarnsPoints
+FeedbackNote "0..*" -- "0..1" SoftSkillItem : NOTE_ITEM
+ContentFlag "0..*" -- "1" ScenarioRun : FLAGS_CONTENT
+ScenarioRun "0..1" -- "0..1" InventoryItem : USES_ITEM
+NpcMemory "0..*" -- "1" NpcCard : REMEMBERS\n(memory / rememberer)
+NpcMemory "0..*" -- "1" ScenarioRun : MEMORY_FROM
+NpcMemory "0..*" -- "0..*" NpcCard : PRESENT\n(memory / present)
+Explorer "1" -- "0..*" SideQuestRun : PLAYS_SIDE
+SideQuestRun "0..*" -- "0..1" NpcChapter : OF_CHAPTER {xor}
+SideQuestRun "0..*" -- "0..1" SideActivity : OF_ACTIVITY {xor}
+SideQuestRun "0..*" -- "0..1" Gap : IN_GAP
+note right of ScenarioRun : {xor} a run plays a release, or a build when isPlaytest\n(OF_RELEASE, OF_BUILD)
+note right of EvidenceSegment : {xor} a segment sits at a node or at a review probe (by kind)\n(SEGMENT_AT_NODE, SEGMENT_AT_PROBE)
+note right of SideQuestRun : {xor} a side quest run is of an NPC chapter or of a side activity\n(OF_CHAPTER, OF_ACTIVITY)
+note bottom of EvidenceSegment : {id = (assessment, scenarioRun)}  identified by several owners
+note bottom of Assessment : {id = (judgeResult, evidenceSegment, softSkillItem)}  identified by several owners
+legend bottom
+  | Notation | Meaning |
+  | white / light blue class | entity / weak entity (composition ◆ from its owner) |
+  | green class | association class (an ERD relationship that carries attributes) |
+  | orange | «pending A28»: research still open, drawn as in the ERD |
+  | grey class | defined in another diagram (CD-0x) |
+  | /attr | derived attribute; attr : T [0..*] is multi-valued; a.b is a composite attribute |
+  | String «enum?» | enum-like column with no values in the ERD or research yet |
+  | method «D-xx» | a domain rule with its source; data = Prisma model, pure rules = game-core |
+  | types | inferred from names (the ERD has none): proposals, not decisions |
+endlegend
+@enduml

@@ -40,6 +40,7 @@ import {
   TaskList,
 } from './Parts';
 import { PaySection } from './PaySection';
+import { keepHyphenated } from '../../lib/text';
 
 const regions = {
   ky_thuat: 'Kỹ thuật',
@@ -122,7 +123,7 @@ export default function OccupationPage() {
               id="occupation-title"
               className="font-toon text-3xl font-extrabold leading-tight text-toon-paper sm:text-4xl lg:text-5xl"
             >
-              {o.name}
+              {keepHyphenated(o.name)}
             </h1>
             <div className="mt-4 max-w-xl text-toon-star-soft">
               <BriefText text={o.summary} firstSentence />

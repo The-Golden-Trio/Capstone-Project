@@ -14,27 +14,34 @@ The report establishes the evidence base for this approach, reviews existing res
 | API | Application Programming Interface |
 | ASVS | Application Security Verification Standard |
 | BR | Business Rule |
+| BVA | Boundary Value Analysis |
 | CDN | Content Delivery Network |
 | DC | Design Constraint |
+| DT | Decision Table |
 | DR | Data Requirement |
 | ECD | Evidence-Centered Design |
+| EP | Equivalence Partitioning |
+| ERD | Entity–Relationship Diagram |
 | ESCO | European Skills, Competences, Qualifications and Occupations |
 | FR | Functional Requirement |
 | HCMUT | Ho Chi Minh City University of Technology |
 | I-CVI | Item-level Content Validity Index |
 | JWT | JSON Web Token |
 | LLM | Large Language Model |
+| MC/DC | Modified Condition/Decision Coverage |
 | MBTI | Myers–Briggs Type Indicator |
 | MOET | Ministry of Education and Training (Vietnam) |
 | NFR | Non-functional Requirement |
 | O\*NET | Occupational Information Network |
 | OWASP | Open Worldwide Application Security Project |
+| REST | Representational State Transfer |
 | RIASEC | Realistic, Investigative, Artistic, Social, Enterprising, Conventional |
 | RJP | Realistic Job Preview |
 | RP | Research Problem |
 | S-CVI/Ave | Scale-level Content Validity Index, averaging method |
 | SCCT | Social Cognitive Career Theory |
 | SDT | Self-Determination Theory |
+| SM | State Machine (as in SM-01) |
 | SSE | Server-Sent Events |
 | TLS | Transport Layer Security |
 | UC | Use Case |
@@ -1944,7 +1951,7 @@ Authentication. The platform must register, sign in, recover, and delete account
 
 : Comparison of authentication solutions.
 
-**Decision: the platform's own module — argon2id, JWT access and refresh tokens in httpOnly cookies, and optional Google sign-in.** Passwords are hashed with argon2id [155]; a fifteen-minute access token and a rotating refresh token with reuse detection [156] live in httpOnly, SameSite cookies that scripts cannot read; Google ID tokens are verified with google-auth-library. Accounts stay in the platform's database in Vietnam, which an external identity service would hold abroad, and occupation-scoped authorisation must live in the application whichever service is used. The module is completed against ASVS 5.0 level 2 [157]: single-use, short-lived reset tokens; an inactivity limit; account status checked on every refresh and staff request; rate limiting of sign-in; and a second factor for staff. The remaining risk is the security work that Keycloak would supply ready-made, which is why the module is held to ASVS level 2 and tested against it.
+**Decision: the platform's own module — argon2id, JWT bearer access and refresh tokens, and optional Google sign-in.** Passwords are hashed with argon2id [155]; a fifteen-minute access token and a rotating refresh token with reuse detection [156] are sent as bearer tokens, the short-lived access token being held in memory by the application; Google ID tokens are verified with google-auth-library. Accounts stay in the platform's database in Vietnam, which an external identity service would hold abroad, and occupation-scoped authorisation must live in the application whichever service is used. The module is completed against ASVS 5.0 level 2 [157]: single-use, short-lived reset tokens; an inactivity limit; account status checked on every refresh and staff request; rate limiting of sign-in; and a second factor for staff. The remaining risk is the security work that Keycloak would supply ready-made, which is why the module is held to ASVS level 2 and tested against it.
 
 Validation and code organisation. Every input and every model output must be checked against a schema (NFR-17, FR-11), and one copy of the rules and contracts must serve both applications, the API, and the worker (FR-15).
 
@@ -2149,7 +2156,7 @@ Summary. The table summarises the selected stack and the requirements each choic
 | Backend framework | NestJS 11 on Node.js | Waiting without blocking (NFR-01, NFR-02); modules and role guards (FR-41); queue and SSE integration |
 | Database | PostgreSQL + Prisma 7 | Cross-record rules (FR-25, FR-33, FR-40); atomic, immutable publication (NFR-16); thresholded statistics (NFR-06) |
 | Job queue, messaging | Redis + BullMQ | Durable, retried, prioritised, rate-limited model work (NFR-04, NFR-11, FR-43) |
-| Authentication | argon2id, JWT in httpOnly cookies, Google sign-in | NFR-17, FR-01, FR-41; identity data in Vietnam (DC-03) |
+| Authentication | argon2id, JWT bearer tokens, Google sign-in | NFR-17, FR-01, FR-41; identity data in Vietnam (DC-03) |
 | Validation, code organisation | Zod 4, Nx monorepo | One copy of rules and schemas (FR-15, NFR-17) |
 | Packaging, hosting | Docker, host in Vietnam | DC-03, NFR-05; portable scaling and availability (NFR-18) |
 | Model access | Own adapter layer, OpenAI-compatible format, native adapters where needed | Provider replaceable (DC-02, NFR-12); judge families kept apart (DC-01) |
@@ -2228,6 +2235,22 @@ Notification, scheduler, and import. Notification sends email and in-app notices
 
 Data stores. The operational database is the system of record: relational tables for accounts, assignments, runs, events, evidence, reviews, ratings, and logs, and documents for content. The queue store holds jobs, rate limits, budget counters, and the publish–subscribe channel feeding event streams — nothing that cannot be rebuilt from the database. The object store holds assets and exports. Prototype: the database, with 19 tables.
 
+Modules of the code. The components above are realised by the 19 NestJS modules of Section 5.3.4, and the table gives which modules form each component. A scheduled job lives in the module that owns its data; for example, `ReleaseScheduler` publishes due releases from the publishing module.
+
+| Component | NestJS modules |
+|---|---|
+| Game core | `GameCoreModule`, with the *game-core* package |
+| Identity and access | `AuthModule`, `UserModule` |
+| Exploration | `CareerModule`, `LifeModule`, `PlayModule` |
+| Assessment | `AssessmentModule`, `QualityModule` |
+| Content lifecycle | `CatalogueModule`, `ScenarioModule`, `LifecycleModule`, `ReviewModule`, `PublishingModule` |
+| Reference-data import | `ImportModule` |
+| AI orchestration and model gateway | `AiModule` |
+| Analytics and operations | `QualityModule`, `FeedbackModule`, `MonitoringModule`, `CoreModule` |
+| Notification and scheduler | `NotificationModule`, with the scheduled jobs of the modules above |
+
+: Components of Section 5.3.1 and the NestJS modules that realise them.
+
 System overview. The figure below shows the whole system as deployed: the two browser applications, the content delivery network, the reverse proxy, the API and worker processes with the modules inside them, the three data stores, and the external services. The dashed border is the boundary of DC-03; only de-identified text crosses it, through the model gateway. The numbered arrows follow one written answer from submission to what the explorer sees, the path detailed below.
 
 ![System overview of JobQuest: components, technologies, and hosting, with the numbered path of one written answer. Blue arrows are the request path; orange arrows the background AI path; the dashed border is the hosting boundary of DC-03.](latex/figures/jobquest_arch_overview.png)
@@ -2296,7 +2319,7 @@ Realisation of the non-functional requirements and design constraints. The table
 | NFR-14 | Every judgment records its judges; a change of any judge model recomputes agreement by stratum against the reference set | Analytics; AI orchestration; Operations | No |
 | NFR-15 | Publication copies the approved version into a hashed release, compared with what is served; canon content served verbatim; run-time narration shown only after the rule checks, with the expert's default follow-up when a follow-up fails them; feedback notes redrafted until they pass; a model of another family reviews the logs | Content lifecycle; AI orchestration; Game core | Partly; releases immutable |
 | NFR-16 | Lifecycle module as sole writer; transition and log in one transaction; a trigger refuses updates to published releases | Content lifecycle; database | No |
-| NFR-17 | Argon2id; HTTPS with strict transport security; httpOnly, SameSite cookies, rotation, idle expiry; answers passed to models as delimited data, outputs schema-validated; prompt-injection tests in the regression suite, against the leading OWASP risk for language-model applications [166] | Identity and access; AI orchestration; reverse proxy | Partly; hashing, cookies, rotation |
+| NFR-17 | Argon2id; HTTPS with strict transport security; short-lived bearer access tokens held in memory, rotating refresh tokens, idle expiry; answers passed to models as delimited data, outputs schema-validated; prompt-injection tests in the regression suite, against the leading OWASP risk for language-model applications [166] | Identity and access; AI orchestration; reverse proxy | Partly; hashing, bearer tokens, rotation |
 | NFR-18 | Stateless API replicas with health checks and rolling deployment; backups with point-in-time recovery; uptime monitoring; announced maintenance | All tiers | No |
 | NFR-19 | Document-based interfaces; accessible 2D map; accessible primitives in the staff application; automated and manual audits | Both applications | No |
 | DC-01 | Registry records each model's provider and family; configuration rejects either shared by the narrator and a judge, or by two judges; panel rechecked at job time | Model gateway; Operations; AI orchestration | No |
@@ -2322,7 +2345,7 @@ Each tier scales by its own mechanism, summarised below for Stage 4.
 | Tier | Load at Stage 4 | How it scales | Why it can |
 |---|---|---|---|
 | Content delivery network | All static files and published releases | Cache by version with long lifetimes | Releases are immutable, so caches never need purging and content reads never reach the database |
-| API | 500 to 1,000 requests per second; about 5,000 open result streams | Replicas behind the load balancer, scaled on CPU and open connections; at least two per zone | Stateless: sessions travel in cookies and results arrive through Redis publish–subscribe, so any replica can serve any explorer |
+| API | 500 to 1,000 requests per second; about 5,000 open result streams | Replicas behind the load balancer, scaled on CPU and open connections; at least two per zone | Stateless: sessions travel in bearer tokens and results arrive through Redis publish–subscribe, so any replica can serve any explorer |
 | Workers | 80 to 90 model calls per second; 250 to 700 in flight | Scaled on queue length; each worker runs many I/O-bound jobs concurrently; in-flight calls capped per provider | Jobs are independent and idempotent; the queue absorbs bursts [168] |
 | Model providers | About 5,100 requests per minute; 7 to 8 million tokens per minute at about 1,500 tokens per call | Several providers per role within DC-01, so quotas add up; priorities: live grading and narration first, feedback notes next, authoring work last | The binding constraint is isolated in its own tier and limited without slowing the rest |
 | PostgreSQL | Under 500 writes per second; about 0.3 TB of run data per season at about 60 KB per run | Vertical growth behind a connection pooler; read replica for analytics; run events partitioned by month | All transactions stay within one primary; heavy reads move to the replica; old partitions are compressed or archived |
@@ -2336,7 +2359,7 @@ The architecture scales for seven reasons. Processing tiers are stateless, so ca
 
 Reliability and operations. Availability of 99.5% a month is proposed for Stages 1 and 2 and 99.9% once two zones run (NFR-18). The write-ahead log is archived continuously and backups taken nightly, both copied to a second region in Vietnam, for a proposed recovery point of five minutes and recovery time of one hour. Deployments roll replica by replica behind health checks, with backward-compatible migrations so old and new versions run side by side. Monitoring tracks queue length, 95th-percentile latency per provider, cost per session, and error rates, alerting at the thresholds of NFR-01, NFR-02, and NFR-11. A web application firewall and TLS guard the entry, secrets are held in a secret manager, and the egress proxy admits only allowlisted model endpoints.
 
-From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free *game-core* shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and httpOnly cookie sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
+From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free *game-core* shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and bearer-token sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
 
 ### 5.3.2 Sitemap Design
 
@@ -2386,6 +2409,153 @@ Import reference data. The uploaded O\*NET and ESCO files are stored in object s
 
 ![Sequence of importing reference data (SD-09): upload, matching against O\*NET and ESCO, resolution of unmatched records, and adaptation.](latex/figures/SD-09_ContentAdmin_ImportReferenceData.png)
 
+### 5.3.4 Class Diagrams
+
+The class diagrams have two layers, and neither is drawn by hand. The domain layer states what the system stores: its classes are the entities of the entity–relationship diagram of Section 5.3.5, read as UML. The module layer states how the NestJS modules of Section 5.3.1 are built: controllers, services, queue processors, guards, ports, and the data transfer objects of the interface of Section 5.3.7. Scripts in the report's `design/compact` folder generate both layers as PlantUML, the domain layer from the entity–relationship diagram and a small file of added rules, the module layer from one description of the modules and their routes, so a change is made at the source and the diagrams are regenerated. The entity–relationship diagram itself is not changed by this step.
+
+Domain model. A class is an entity, named in PascalCase (`SCENARIO_SLOT` becomes `ScenarioSlot`), and an attribute keeps its name in camelCase. The table gives how Chen notation is read as UML.
+
+| Chen notation | UML in the domain diagrams |
+|---|---|
+| Subclass relationship from `USER_ACCOUNT` to `EXPLORER` and `STAFF_MEMBER` | Generalization marked `{overlapping, incomplete}`: one account may be both an explorer and a staff member |
+| Identifying relationship with a single owner | Composition: the part dies with its whole |
+| Weak entity with two or more owners (`SCENARIO_BEST`, `ASSESSMENT`) | Ordinary associations to each owner, with the note `{id = (…)}`, because UML composition allows one owner |
+| Relationship with attributes | Association class on the association |
+| Ternary relationship (`DRESSES`, `EARNED_KEYWORD`) | N-ary diamond, with an association class when it has attributes |
+| Several optional relationships that alternate towards one target (`LOGS_*`, `REVIEWS_*`, `TXN_*`) | Separate associations constrained by `{xor}` |
+| `<<derived>>`, `<<multi>>`, `<<key>>` | `/attribute`, `attribute [0..*]`, `{id}` or `{partial id}` |
+| Composite attribute | Flattened, as in `salary.enterpriseMin` |
+
+: Reading of Chen notation as UML in the domain diagrams.
+
+Three things are added to the entity–relationship diagram, each marked as an addition. Attribute types are inferred from column names (a name ending in `_at` is a date and time, one beginning `is_` a boolean) and are a proposal, not a decision. Enumerations are drawn only where a source states the values: the schema of the prototype, SM-01, a note in the diagram, or the project hub. Methods carry the business rule they implement, with its source («D-113», «SM-01»); pure rules live in *game-core*, and rules that touch the database live in the service that owns the table. Eight diagrams cover the 113 entities and 35 association classes.
+
+| Diagram | Content | Groups of Section 5.3.5 |
+|---|---|---|
+| CD-01 | Identity | A |
+| CD-02 | Catalogue, reference data, soft skills, keywords | B, C |
+| CD-03 | Level pack and scenario content | D, E |
+| CD-04 | AI drafting, review, presentation, play-test, release, lifecycle | F |
+| CD-05 | Tarot NPCs, side quests, economy, health, calendar | G, K |
+| CD-06 | Explorer profile and progression | H, I |
+| CD-07 | Runs and grading | J |
+| CD-08 | Grading quality, feedback, AI operations | L |
+
+: Domain class diagrams and the entity groups they cover.
+
+![Domain classes of scenario content (CD-03): a scenario is composed of slots, facts, artefacts, actions, nodes with options, and reference answers.](latex/figures/CD-03_ScenarioContent.png){landscape}
+
+![Domain classes of authoring, review, and release (CD-04): drafting with AI, review assignments and criteria versions, presentation, play-test, and the immutable release.](latex/figures/CD-04_AuthoringReviewRelease.png){landscape}
+
+![Domain classes of runs and grading (CD-07): a run as an ordered list of events with provenance, evidence segments, assessments, judge results, and feedback notes.](latex/figures/CD-07_RunsAndGrading.png){landscape}
+
+Module structure. The platform has 19 NestJS modules. The figure shows which module imports which; an arrow points from the importing module to the imported one, and a global module needs no arrow. The API and worker processes load the same modules, and the label of each module in the figure says which processes run it. Modules that serve staff routes also import the identity module for the guard that checks occupation assignment (FR-40), and those arrows are left out for legibility.
+
+![Module map (CL-00): the 19 NestJS modules, the processes that run them, and their imports.](latex/figures/CL-00_ModuleMap.png)
+
+Each module is the only writer of the tables it owns, and each table has exactly one owner. The table gives the owners, the processes, and the number of routes of each module.
+
+| Module | Processes | Writes tables of | Routes |
+|---|---|---|---|
+| AuthModule | API | Group A except assignment, through the one account store | 7 |
+| UserModule | API | Assignment of staff to occupations (`ASSIGNED_TO`) | 10 |
+| CatalogueModule | API | Groups B and G (occupations, soft skills, tiers, NPC cards, outfits), loaded by a data-loading command | 6 |
+| ImportModule | Worker, API | O\*NET and ESCO import, `KEYWORD` | 4 |
+| ScenarioModule | Worker, API | Groups D and E, expert interviews, generation runs | 16 |
+| LifecycleModule | Shared | `LIFECYCLE_LOG`; the SM-01 state machine | 0 |
+| ReviewModule | API | Review criteria, reviews, revalidation | 10 |
+| PublishingModule | Worker, API | Assets, presentation, builds, play-test findings, releases | 12 |
+| CareerModule | API | Groups H and I | 9 |
+| LifeModule | API | Group K and side quests | 6 |
+| PlayModule | Worker, API | Runs and run events (group J) | 11 |
+| AssessmentModule | Worker | Assessments, judge results, feedback notes | 0 |
+| QualityModule | Worker, API | Content flags, blind ratings, regrading | 6 |
+| AiModule | API | Prompts, models, jobs, model calls (group L) | 2 |
+| FeedbackModule | API | Occupation ratings, app feedback | 4 |
+| MonitoringModule | API | None; reads usage, cost, and errors | 3 |
+| CoreModule | Global, shared | Activity log, platform settings | 0 |
+| NotificationModule | Global, worker, API | Notifications; the event stream | 3 |
+| GameCoreModule | Global, shared | None; a snapshot of reference tables built once at start-up for *game-core*, which never reads the database | 0 |
+
+: NestJS modules, the processes that run them, the tables they write, and their routes.
+
+Eight module diagrams, CL-01 to CL-08, show the classes inside the modules. In them an association is constructor injection, a dashed arrow labelled «write» marks a table the module owns, a dashed arrow with a hollow head is a realization (a model port, a guard), and a dashed arrow from a controller to data transfer objects shows the types of its routes. The generator refuses a design in which two routes share a method and path, a type in a route signature is undefined, a dependency is not provided, an import is unused or circular, an entity has no owner, or a module writes a table it does not own.
+
+Correspondence with the sequence diagrams. Every message of the sequence diagrams SD-01 to SD-09 is matched to a method. The table gives the main entry and the chain behind it for each diagram.
+
+| Diagram | Entry | Chain of methods |
+|---|---|---|
+| SD-01 Answer an activity | `ShiftRunController.takeTurn` | `RuleEngine.validateAnswer` → `AssessmentService.requestGrading` → `DeIdentifierService.strip` → `JudgePanelService.grade` and `combine` → `NarrationProcessor.process` → `OutputCheckService.verifyQuotes`, `checkNarration` → `CostLedgerService.record` → `StreamService.publish`; the feedback note by `FeedbackNoteProcessor.process` |
+| SD-02 Finish a scenario | `ShiftRunController.finishRun` | `SummaryService.finish` → `ScoringService.groupPoints` → `PlayerLevelService.completeIfDone` → `SideQuestService.eligible` → `ProfileService.applyRun` |
+| SD-03 Get-to-know-me quiz | `GetToKnowMeController.submitGetToKnowMe` | `GetToKnowMeService.submit` (self-reported RIASEC) → `SuggestionService.forPlayer` |
+| SD-04 Access the platform | `AuthController.signIn`, `signInWithGoogle`, `register` | `PasswordService.verify`, `GoogleOAuthService.exchangeCode` → `AccountStore` → `TokenService.issue` → `AuditLogService.log` |
+| SD-05 Generate scenario content | `GenerationController.requestGeneration` | `GenerationProcessor.process` → `ModelGatewayService.complete`; `SeedValidator.check` before `SeedController.submitScenario` |
+| SD-06 Review a scenario | `ReviewController.decideReview` | `AccessPolicyService.isReviewerOf` → `ReviewService.decide` → `ScenarioStateMachine.apply` |
+| SD-07 Gamify and play-test | `PresentationController.requestSuggestions` | `SuggestionProcessor.process`; `AssetProcessor.process` → `AssetService.checkBias`; `BuildController.buildDraftGame` |
+| SD-08 Publish a scenario | `ReleaseController.publishScenario` | `BuildSnapshotter.hash` → `ReleaseService` → `StorageService.putObject`; `ReleaseScheduler.publishDueReleases` |
+| SD-09 Import reference data | `ImportController.startImport` | `ImportProcessor.process` → `ReferenceSourceClient.lookup` → `NotificationService.notify` |
+
+: Entry method and chain of methods for each sequence diagram.
+
+Design points still open. Drawing the classes from the entity–relationship diagram and the game design research exposed places where the requirements of Chapter 4 and the diagrams of Section 5.3.3 still describe the earlier design. This report does not change them; each waits for a decision of the team and is recorded in the project's list of open issues (items A28 and A29).
+
+- Requirements: FR-03 (five suggested occupations from the quiz; the research gives two or three regions to try), FR-22 and FR-35 (the expert chooses answer formats and the engine derives hints and outfits), FR-33 (one scenario per task; the research allows several scenarios for one task), DR-03 (a fixed adjacency table; the research computes it per player), and DR-12 (a portrait text per RIASEC type, which the research dropped).
+- Sequence diagrams: three messages have no method because the design behind them changed — "Pick ending by score" in SD-02, "Pick portrait for top type" in SD-03, and "Get situation options" in SD-05, replaced by the expert interview — and "Use default follow-up" in SD-01 contradicts the rule that no step is replaced by a non-AI path (D-92); the resumption of a paused run takes its place.
+- Naming: the AI classes follow the design (`ModelGatewayService`, `ModelProvider`) and differ from the prototype code (`ModelGateway`, `ProviderAdapter`).
+- Lifecycle log: `LIFECYCLE_LOG` is written for scenarios, level packs, occupations, and NPC chapters, but SM-01 defines transitions only for scenarios.
+
+### 5.3.5 Database Design
+
+The operational database is PostgreSQL, the system of record of Section 5.3.1. Redis and the object store hold nothing that cannot be rebuilt from it. The data model is one entity–relationship model in Chen notation, kept as a single source file and printed as six views, ERD-01 to ERD-06, drawn from the data requirements of Section 4.3.4 and the game design research. It has 113 entities, 236 relationships, and 27 derived attributes, in twelve groups, A to L. Scenario content is modelled at authoring time as entities (group E: facts, nodes, options, reference answers), and publication copies the approved content into one immutable entity, `SCENARIO_RELEASE`, whose `content` attribute is what explorers play. A weak entity is drawn with its owner, so a run event, which has meaning only inside its run, is identified by the run and its sequence number.
+
+The full model is too large to read on one page, so it is split into six views by group. Each entity is drawn with all its attributes in one view only; in the others it appears as a stub with its key attributes. Each relationship is drawn once, in the view of the group that declares it. The views are generated from `ERD_JobQuest_Chen.puml` by `design/compact/gen_erd.py`, and that file stays the source of truth.
+
+![Entity–relationship diagram, Chen notation. ERD-01: identity (A) and grading quality, feedback, and AI operations (L).](latex/figures/ERD-01_IdentityQualityAndAiOps.png){landscape}
+
+![Entity–relationship diagram, Chen notation. ERD-02: occupation catalogue (B) and reference data, soft skills, and keywords (C).](latex/figures/ERD-02_CatalogueReferenceAndKeywords.png){landscape}
+
+![Entity–relationship diagram, Chen notation. ERD-03: level pack (D) and scenario content (E).](latex/figures/ERD-03_LevelPackAndScenarioContent.png){landscape}
+
+![Entity–relationship diagram, Chen notation. ERD-04: AI drafting, review, presentation, play-test, and release (F).](latex/figures/ERD-04_AuthoringReviewAndRelease.png){landscape}
+
+![Entity–relationship diagram, Chen notation. ERD-05: Tarot NPCs and side quests (G) and economy, health, and calendar (K).](latex/figures/ERD-05_NpcEconomyAndLife.png){landscape}
+
+![Entity–relationship diagram, Chen notation. ERD-06: explorer profile (H), progression (I), and runs and grading (J).](latex/figures/ERD-06_ExplorerProgressRunsAndGrading.png){landscape}
+
+The table below gives each group and the view that shows it.
+
+| Group | Subject | Main entities | Entities | Data requirements | View |
+|---|---|---|---|---|---|
+| A | Identity and assignment | `USER_ACCOUNT` with subclasses `EXPLORER` and `STAFF_MEMBER`, `USER_IDENTITY`, `AUTH_SESSION`, `AUDIT_LOG` | 7 | DR-16 | ERD-01 |
+| B | Catalogue, occupation profile, work environments | `OCCUPATION_GROUP`, `OCCUPATION`, `OCCUPATION_LEVEL`, `LEVEL_TASK`, `COMPANY` | 11 | DR-01, DR-15 | ERD-02 |
+| C | Reference data, soft skills, keywords, grading library | `IMPORT_BATCH`, `ONET_OCCUPATION`, `ESCO_SKILL_GROUP`, `KEYWORD`, `SOFT_SKILL_GROUP` | 10 | DR-01, DR-02 | ERD-02 |
+| D | Level pack | `LEVEL_PACK`, `RESIDENT_SLOT` | 2 | DR-04 | ERD-03 |
+| E | Scenario content | `SCENARIO`, `FACT`, `NODE`, `OPTION`, `REFERENCE_ANSWER` | 14 | DR-04, DR-09 | ERD-03 |
+| F | AI drafting, review, presentation, play-test, release | `GENERATION_RUN`, `REVIEW`, `CRITERIA_VERSION`, `SCENARIO_BUILD`, `SCENARIO_RELEASE`, `LIFECYCLE_LOG` | 18 | DR-05, DR-13, DR-14, DR-19 | ERD-04 |
+| G | Tarot NPCs, side quests, character assets | `NPC_CARD`, `NPC_CHAPTER`, `SIDE_ACTIVITY` | 6 | DR-04 | ERD-05 |
+| H | Explorer profile | `GTKM_ATTEMPT`, `EXPLORER_GOAL`, `ACHIEVEMENT`, `SUGGESTION_EVENT` | 10 | DR-12 | ERD-06 |
+| I | Progression | `LEVEL_ENROLMENT`, `SCENARIO_BEST` | 2 | DR-06 | ERD-06 |
+| J | Runs and grading | `SCENARIO_RUN`, `RUN_EVENT`, `ASSESSMENT`, `JUDGE_RESULT`, `FEEDBACK_NOTE`, `CONTENT_FLAG` | 10 | DR-06, DR-07, DR-11 | ERD-06 |
+| K | Economy, health, calendar, NPC relationship | `XU_TRANSACTION`, `SHOP_ITEM`, `HEALTH_CHANGE`, `GAP`, `LIFE_MILESTONE` | 10 | D-133 | ERD-05 |
+| L | Grading quality, feedback, AI operations | `BLIND_RATING`, `OCCUPATION_RATING`, `APP_FEEDBACK`, `PROMPT_TEMPLATE`, `MODEL_CONFIG`, `AI_JOB`, `MODEL_CALL`, `PLATFORM_SETTING` | 13 | DR-08, DR-10, DR-17, DR-18 | ERD-01 |
+
+: Groups of the entity–relationship diagram, their entities, and the data requirements they serve.
+
+Group K has no functional requirement in Section 4.3.2; it follows decision D-133 and the economy and health research, and its tests are traced to them (Section 5.3.9).
+
+Properties the schema must keep. Most are enforced by constraints and transactions rather than by the diagram, and each has a test in Section 5.3.9.
+
+- A run is an append-only list of events. `RUN_EVENT` carries its model, prompt version, cost, and latency as provenance, and the state of a run is the fold of its events (DR-06, DR-07).
+- Balance is the sum of the ledger `XU_TRANSACTION`, which is only appended to; the explorer's `balance` is derived from it and never stored as the authority.
+- Every change of state in SM-01 writes a `LIFECYCLE_LOG` row in the same transaction; a release is never updated after publication (NFR-16).
+- Each occupation has exactly one content administrator and at least one domain expert, and a Google identity links to one account (DR-16); each review links to the `CRITERIA_VERSION` it used (DR-19).
+- Every model call goes through the model gateway and appears in `MODEL_CALL` with the check result of its output (NFR-11, DR-10).
+- The 27 derived attributes can be recomputed from source data. They are `zodiacSign`, `balance`, `healthValue`, `consecutiveOt`, `gapSlotsLeft`, `riasecSelf`, and `riasecTried` of `EXPLORER`; `difficultyTier` and `isSeniorEntry` of `OCCUPATION`; `xuPerMission`, `mainMissionCount`, and `sideQuestBudget` of `OCCUPATION_LEVEL`; `minBand` of `REQUIRES_PRIOR`; `maxProficiency` of `REQUIRES_KEYWORD`; `isFocus` and `requiredTier` of `BUDGETS`; `onboardingSlides` of `LEVEL_PACK`; `estimatedMinutes` of `SCENARIO`; `scoredScenarios` of `SUGGESTION_EVENT`; `onboardKind` of `LEVEL_ENROLMENT`; `replayPayRate` of `SCENARIO_BEST`; `timeBudget`, `healthTier`, and `buffTotal` of `SCENARIO_RUN`; `slotsUsed` of `GAP`; and `intimacyLevel` and `chaptersDone` of `KNOWS`.
+
+Personal data lies in groups A, H, I, J, K, and L (accounts, quiz answers, runs, economy, ratings, and feedback). Deleting an account removes the explorer's rows by cascade and clears the personal fields of the account, and rows authored by staff are kept (NFR-05, Section 5.3.10). Only de-identified text of runs is sent to a model provider.
+
+Entries still waiting for a decision. Some entities are drawn from research that is still marked as a draft or as to be decided: `DEPARTMENT`, the outfit entities, `CHECK_QUESTION`, `CONDUCT_FLAG`, `SKILL_TIER` and its tier names, `ACHIEVEMENT`, `DISTRESS_TERM`, `CAREER_HABIT`, `LIFE_MILESTONE`, and `SCENARIO.outcomes`. Prices of shop items, the amount of health recovered, and the cost of replaying a scenario have no figure yet, so tests check the relations between them, not their values. Two readings of the diagram also need confirming: the `(min,max)` labels count the partners of the neighbouring entity in 13 relationships and the entity itself in the rest, and some lookup tables are drawn as having at least one row on the other side. They are items A28 and A29 of the open issues. The prototype's database does not follow this diagram yet, so migrating from it is part of the implementation (Chapter 6).
+
 ### 5.3.6 AI Model Design
 
 JobQuest does not design, train, or fine-tune a model (Section 5.2.3). This section designs how existing language models are composed with rules, data, and expert oversight into the AI components of the platform. Only its structure is fixed here: each part is written once its content has been verified, and the parts that depend on the game design stay parameterised until the game design is fixed. The parts fall into four groups: the overview (parts 1 and 2), the components and their data (parts 3 to 6), scoring and model calls (parts 7 to 10), and operation (parts 11 to 15).
@@ -2405,6 +2575,136 @@ JobQuest does not design, train, or fine-tune a model (Section 5.2.3). This sect
 13. Cost and time: the cost of a playthrough and the time budget of each call.
 14. Feedback loop and versions: how expert rulings improve the rubrics and the calibration examples, and how versions of models, prompts, and rubrics are tracked.
 15. Deferred AI functions: the AI functions left for a later phase and where they attach to the design.
+
+### 5.3.7 API Design
+
+The interface between the two applications and the API is a REST interface over HTTPS, described in OpenAPI 3.1. The contract is generated from the same module description as the class diagrams of Section 5.3.4, so each operation has exactly one controller method of the same name; it is delivered with the report as `api/compact/openapi.yaml`, with a browsable `swagger.html`. The earlier contract of 11 November, `api/openapi.yaml`, is kept as history.
+
+Conventions. They follow from the architecture of Section 5.3.1.
+
+| Convention | Rule | Requirement |
+|---|---|---|
+| Base path and format | All paths are under `/api/v1`; bodies are JSON in UTF-8; all content is Vietnamese, with no language selection | NFR-08 |
+| Authentication | A bearer access token from `/auth/*`; a refresh token rotates on use; sign-out revokes the session | NFR-17 |
+| Authorization | Each operation lists its roles in `x-roles`; staff routes also check that the caller is assigned to the occupation concerned | FR-40 |
+| Errors | Problem Details (RFC 9457) with a stable `code` such as `NOT_ASSIGNED`; `401`, `403`, and `422` are declared on every operation that can return them | NFR-17 |
+| Slow work | Work that calls a model (grading, follow-ups, generation, suggestions, assets) returns `202 Accepted` with a job identifier; the result arrives on the event stream `GET /stream` (Server-Sent Events), which accepts `Last-Event-ID` so a reconnecting client replays what it missed | NFR-01, NFR-02, NFR-04 |
+| Idempotent turns | A turn carries a client-generated `turnId`; a retry with the same identifier records nothing twice | NFR-03, NFR-13 |
+| State changes | A scenario changes state only through action endpoints that follow SM-01; an action not allowed in the current state returns `409 INVALID_TRANSITION` | NFR-16 |
+| Scoring | Rubric levels are 0, 1, and 2 (D-116); the server alone decides a score | Driver DR-2 of Section 5.3.1 |
+| Configuration | Models and platform settings come from the deployment, not from this interface; the set of models active at start-up is recorded | FR-42 |
+
+: Conventions of the interface.
+
+Operations. The contract has 109 operations in 15 modules; four modules (lifecycle, assessment, core, and game core) have none. Each operation carries `x-status`: `approved` if it is in the contract of 11 November, `proposed` if it is new. The table gives the resources of each module and the count of each kind.
+
+| Module | Resources | Roles | Operations | Approved | Proposed |
+|---|---|---|---|---|---|
+| Auth | `/auth` (register, sign in, Google, refresh, sign out, password reset) | Public, all signed-in | 7 | 7 | 0 |
+| User | `/me`, `/admin/users`, `/admin/occupations` (staffing) | All, system administrator | 10 | 10 | 0 |
+| Catalogue | `/occupations`, `/levels`; staff profile and level package | Explorer, content administrator, domain expert | 6 | 4 | 2 |
+| Import | `/staff/imports` | Content administrator | 4 | 2 | 2 |
+| Scenario | `/staff/scenarios` (open, assign, seed, generation, reference answers), `/staff/interviews`, `/staff/levels/{id}/pack` | Content administrator, domain expert | 16 | 9 | 7 |
+| Review | `/staff/reviews`, review criteria, revalidation, review assignment | Content administrator, domain expert, system administrator | 10 | 3 | 7 |
+| Publishing | Presentation, assets, builds, play-test, release | Content administrator, domain expert | 12 | 8 | 4 |
+| Career | `/profile`, `/get-to-know-me`, `/career` | Explorer | 9 | 0 | 9 |
+| Life | `/shop`, `/inventory`, `/npcs` | Explorer | 6 | 0 | 6 |
+| Play | `/shift-runs` | Explorer, domain expert (play-test) | 11 | 0 | 11 |
+| Quality | `/staff/flags`, blind ratings, regrading | Domain expert, content administrator | 6 | 4 | 2 |
+| Ai | `/staff/prompts` | Content administrator, domain expert | 2 | 0 | 2 |
+| Feedback | Occupation ratings, `/feedback`, `/admin/feedback` | Explorer, system administrator | 4 | 0 | 4 |
+| Monitoring | Statistics, `/admin/ai-calls`, `/admin/metrics` | Content administrator, system administrator | 3 | 2 | 1 |
+| Notification | `/stream`, `/notifications` | All signed-in | 3 | 1 | 2 |
+| Total | | | 109 | 50 | 59 |
+
+: Operations of the interface by module, and how many are in the contract of 11 November.
+
+Most proposed operations belong to the explorer modules, because the contract of 11 November describes the earlier play flow under `/runs`, and the shift flow of the game design (`/shift-runs`) was proposed outside it in `docs/plans/2026-11-11_de-xuat-api-choi-ca-lam.md`. Fifty-eight operations of that contract have no counterpart in this design. The proposed operations for staff come from the sequence diagrams SD-05 to SD-09 and group F of the data model: interviews and generation of drafts, the level pack, review criteria and assignment, revalidation of a published scenario (FR-27), presentation and assets, and triage of play-test findings. They are not in force until the team approves them.
+
+One turn. The turn of SD-01 is a single operation, `POST /shift-runs/{runId}/turns`, with a body of `turnId`, `kind` (one of `action`, `say`, `choose`, `hint`, `timeout`, `overtime`, and the other kinds the engine accepts), and the fields that kind needs, such as `text` for a spoken or written answer. The server validates the turn with *game-core*, stores it in PostgreSQL, and enqueues the job. A closed answer returns `200` with the result at once. A free-text answer returns `202` with `jobId`, `turnId`, and the `streamEvent` on which the lines of the narrator and the judged result will arrive; the stream event types are `turn.lines`, `turn.done`, `judgement.ready`, `summary.ready`, `provider.delay`, `run.paused`, and `notification`. `POST /shift-runs/{runId}/resume` restarts a run that paused because no model was available, and `POST /shift-runs/{runId}/finish` returns the summary or `202` while feedback notes are still being written.
+
+### 5.3.9 Test Case Design
+
+The test plan covers the whole data model of Section 5.3.5, including parts that have no code yet. It tests against the design, not against the prototype, whose database does not follow the data model. The plan is a separate document, `docs/plans/2026-11-20_testing-plan.md`, with twelve files of test cases, one per group of the data model; this section gives its strategy and a sample. It is a proposal that waits for the team's approval.
+
+Principles. Four rules shape every test case.
+
+- Each case has one of four states. *Runnable*: the code already follows the design. *Awaiting implementation*: the design is fixed but the code is missing or differs, so the case is written first as an acceptance criterion. *Blocked, awaiting decision*: it rests on an entry of the data model or the research still marked as to be decided, so only the aim and the reason are recorded. *Blocked, contradiction*: two sources disagree and the research has not ruled; none remains after 20 November.
+- Where a number is not yet fixed (shop prices, health recovery, the cost of replaying a scenario, the factor by which a hint lowers a score), the test checks the relation (a ceiling, never negative, never falling), not the value.
+- There is no test path without AI (D-92). The fake model (`AI_MODE=fake`) checks the flow only: queue, events, failover, provenance. The quality of grading is measured by the method of Section 7.3 and is not repeated here.
+- Where research and an older requirement disagree, cases follow the research and say so. Twelve such readings (for example that side quests are not graded, and that several scenarios may share a task) are listed in the plan; they are a way of reading for writing tests, not decisions of the team.
+
+Techniques. The table gives the techniques and where the project uses each.
+
+| Family | Technique | Used when | Example in the project |
+|---|---|---|---|
+| Black box | Equivalence partitioning (EP) | Inputs fall into classes treated alike | The nine question formats; four health tiers |
+| | Boundary values (BVA) | There is a range, a ceiling, or a count | Health from 0 to 100; buff ceiling of +50%; at most three career habits |
+| | Decision table (DT) | Several conditions decide one outcome | Entering an adjacent occupation; the three occupation suggestions |
+| | State transition (ST) | An object has a lifecycle | SM-01; review assignments; judge seats |
+| | Use case (UC) | A business flow is tested end to end | Play one scenario |
+| White box | Statement, branch, and condition coverage; MC/DC; basis path | A function has many branches | The SM-01 guard; unlocking, overtime, and buff rules; the step function of the shift engine |
+| | Data flow (def–use) | A value is derived | The 27 derived attributes of Section 5.3.5 |
+| Grey box | API plus a check of constraints in the database | An invariant lives in the schema | Append-only run events; log in the same transaction; unique keys |
+| Experience | Error guessing, checklist, exploratory | Error-prone places, or a ready-made question set | Checklist of NPC profiles; probe set of Section 7.3 |
+
+: Test design techniques and their use.
+
+Levels and types. Unit tests exercise the pure functions of *game-core* and services with an in-memory database; integration tests exercise the API with PostgreSQL, Redis, and a worker under the fake model; system tests drive the explorer and staff applications in a browser; acceptance tests are the play-test of FR-26 and the checks by content administrators and domain experts. Non-functional types are in the next table.
+
+| Type | Content | Requirement | Measured in |
+|---|---|---|---|
+| Performance | Load, stress, and soak on submitting a turn, the queue, and the event stream | NFR-01, NFR-02 | Section 7.2 and the plan |
+| Security | Hashed passwords; rotating tokens; roles and assignment; prompt injection; de-identification before every model call; account deletion | NFR-05, NFR-17 | The plan |
+| Reliability | A failing or slow model switches to another of the same role; with none left the run pauses and keeps its progress, with a notice within ten seconds; closing the browser mid-scenario and resuming; a worker dying mid-job | NFR-03, NFR-04 | The plan, by fault injection |
+| Accessibility and reach | WCAG 2.1 AA by automated and manual audit; mobile on a slow network; Vietnamese with diacritics; AI label | NFR-19, NFR-13, NFR-08, NFR-07 | Section 7.1 and the plan |
+| Privacy of statistics | Aggregates hidden below a threshold; play-tests excluded | NFR-06, DR-11 | The plan |
+| Cost | Ceiling per session | NFR-11 | The plan |
+| Maintainability | A new occupation needs no code; the log of states is complete; a published release is immutable | NFR-10, NFR-15, NFR-16 | The plan |
+
+: Non-functional test types and the requirements they verify.
+
+Coverage by group. The plan has 180 test cases and 38 white-box targets, shown below by group of the data model.
+
+| Group | Subject | Test cases | White-box targets | Main techniques |
+|---|---|---|---|---|
+| A | Identity, assignment | 14 | 3 | EP, BVA, DT, ST, GB |
+| B | Catalogue, occupation profile | 14 | 1 | EP, BVA, DT, GB |
+| C | Reference data, soft skills, keywords | 15 | 2 | EP, BVA, DT, GB, EG |
+| D | Level pack | 8 | 1 | EP, BVA, DT |
+| E | Scenario content | 22 | 4 | EP, BVA, DT, UC, GB |
+| F | Authoring, review, publishing | 15 | 6 | ST, DT, UC, GB |
+| G | NPCs, side quests, assets | 15 | 2 | ST, checklist, BVA |
+| H | Explorer profile | 15 | 3 | EP, BVA, DT, UC |
+| I | Progression | 10 | 2 | BVA, DT, ST, UC |
+| J | Runs and grading | 17 | 8 | ST, GB, UC, BVA |
+| K | Economy and health | 17 | 1 | BVA, DT, property-based |
+| L | Grading quality, feedback, AI operations | 18 | 5 | ST, GB, fault injection |
+
+: Test cases and white-box targets by group of the data model.
+
+Each functional requirement is traced to a group, from FR-01, FR-02, FR-40, and FR-41 in group A to FR-19, FR-20, FR-28, FR-29, FR-39, FR-42, and FR-43 in group L; group K follows D-133 and the research, since no requirement covers it.
+
+Test case format. A case is a card in a shortened form of IEEE 829: source, level, type and technique, priority, precondition, input, steps, expected result, postcondition, automation, and state. The three samples below are translated from the plan.
+
+| Field | TC-F-ST-02 Invalid transitions are refused | TC-J-GB-03 Submitting a turn calls no model | TC-L-GB-01 Cost ledger and ceiling per session |
+|---|---|---|---|
+| Source | SM-01; DR-13 | Section 5.3.1; NFR-01, NFR-02 | NFR-11; DR-10; `MODEL_CALL`, `MODEL_PRICE` |
+| Level, type, technique | Unit, functional, black box, state transition | Integration, performance and architecture, grey box | Unit and integration, cost, grey box |
+| Priority | High | High | High |
+| Input | The 51 remaining (from, to) pairs of 64; an action with the right name in the wrong state | 50 submitted turns, including free-text answers to grade | Calls before, at, and after a price's start date; a chain of calls bringing the total to the ceiling minus ε, the ceiling, and the ceiling plus ε; token types for cache read, cache write, and reasoning |
+| Expected result | An action outside the table is refused, the state is unchanged, no log row is written; `allowedActions` of each state equals the set of valid actions; publication is disabled in every state but Ready; Retired has no way out | Every model call occurs in the worker after the API has replied; the answer is stored in PostgreSQL before the job is enqueued; the result reaches the client by the event stream | Each call has one `MODEL_CALL` row with tokens by five types and a cost at the price in force; a call that could exceed the ceiling, judged by an upper bound before the call, is blocked, so the total never exceeds it |
+| Automation | `scenario-state-machine.spec.ts` | `shift-run.flow.spec.ts` | `cost.spec.ts` |
+| State | Runnable | Runnable for `/shift-runs` | Runnable for the cost functions; prices by start date await implementation |
+
+: Three sample test cards.
+
+Coverage criteria, proposed. No project sets a coverage threshold yet and the continuous integration does not measure it. The plan proposes branch coverage of at least 85% for the pure functions of *game-core* and 75% for the multi-branch services of the API, 90% for the model gateway and the judges, MC/DC for the guards of SM-01 and the rules of unlocking, overtime, and buffs, and one def–use case for each of the 27 derived attributes. Mutation testing is optional.
+
+Entry and exit, and defects. A round of testing starts when the design of the part is fixed or its cases are marked blocked, the environment is ready, and the fixtures exist. It ends when every high-priority case of the group has run and passed, no high-severity defect is open, and coverage meets the threshold for the part that has code; cases still awaiting implementation are listed and do not count as passed. A defect is recorded with the case, the group, a severity (high when progress is lost, a score is wrong, personal data leaks, or an invariant is broken), the steps, and the design source it breaks. A defect that shows a missing or wrong design is not mended by changing the design to fit; it goes to the list of open issues.
+
+Environment and priority. Tests of the database run on a local PostgreSQL, never on the shared database of the project. The plan proposes a PostgreSQL and Redis service in the continuous integration, a browser test tool (a new dependency), data factories for the entities, and coverage in the build; each needs the team's agreement. Cases are written and run in this order: groups F, J, and E first, since they have code and carry the highest risk; then A and L (access, cost, failover); then H, I, C, D, and G, which depend on research not yet connected to the runtime; and K last, whose cases serve as acceptance criteria until it is built. Two risks are named: the schema changes to follow the data model, which would break integration tests written now, so they are written at the level of behaviour with data access behind an interface; and the grading by models, which does not repeat exactly, so it is measured by agreement (Section 7.3) and not by comparing strings.
+
 ### 5.3.10 Policies for the Processing of the Proposed System and Third Parties
 
 This section sets the rules under which JobQuest processes personal data and shares any data with third parties, completing the policies of Section 4.1.4. Its central problem is a conflict between two parts of the design. The system of record must be in Vietnam (DC-03), as Vietnam's Law on Personal Data Protection and its implementing decree require [99][100]; but scoring and narration depend on language models whose providers all process requests outside Vietnam. Under the law, using a platform abroad to process data collected in Vietnam is a transfer of personal data abroad, whichever region the provider is asked to use. The policies below decide what may cross that border, under what conditions, and what the platform owes its users when it does.

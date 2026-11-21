@@ -2,7 +2,7 @@ import {
   renderWithProviders,
   signInDemo,
 } from '../../test/renderWithProviders';
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { expect, it } from 'vitest';
 import { player } from '../../api/demo/store';
 import FeedbackPage from './FeedbackPage';
@@ -24,6 +24,9 @@ it('gửi góp ý qua demo, hiện thành công và mở lời nhắn mới vớ
   fireEvent.click(screen.getByRole('button', { name: 'Gửi góp ý' }));
   expect(await screen.findByText('Lời nhắn đã đến nơi')).toBeTruthy();
   expect(screen.getByText('Đã nhận góp ý của bạn. Cảm ơn bạn!')).toBeTruthy();
+  expect(document.activeElement).toBe(
+    screen.getByRole('region', { name: /^Lời nhắn đã đến nơi$/ }),
+  );
   expect(player().feedback).toEqual([
     {
       category: 'bug',
@@ -36,4 +39,9 @@ it('gửi góp ý qua demo, hiện thành công và mở lời nhắn mới vớ
     (screen.getByLabelText(/Lời nhắn của bạn/) as HTMLTextAreaElement).value,
   ).toBe('');
   expect((screen.getByLabelText(/Màn nào/) as HTMLInputElement).value).toBe('');
+  await waitFor(() =>
+    expect(document.activeElement).toBe(
+      screen.getByLabelText(/Lời nhắn của bạn/),
+    ),
+  );
 });

@@ -1,7 +1,7 @@
 import {
   useState,
   type ComponentProps,
-  type HTMLAttributes,
+  type DetailsHTMLAttributes,
   type ReactNode,
   type SelectHTMLAttributes,
 } from 'react';
@@ -157,7 +157,7 @@ export function Foldout({
   title,
   children,
   ...rest
-}: HTMLAttributes<HTMLDetailsElement> & { title: string }) {
+}: DetailsHTMLAttributes<HTMLDetailsElement> & { title: string }) {
   return (
     <details
       {...rest}
@@ -166,23 +166,26 @@ export function Foldout({
         rest.className,
       )}
     >
-      <summary className="cursor-pointer font-toon font-bold">{title}</summary>
-      <div className="mt-3 min-w-0">{children}</div>
+      <summary className="cursor-pointer font-toon font-bold text-toon-ink focus-visible:shadow-toon-focus">
+        {title}
+      </summary>
+      <div className="mt-3 min-w-0 text-toon-ink">{children}</div>
     </details>
   );
 }
 export function ReadMore({ text }: { text: string }) {
-  const words = text.trim().split(/\s+/);
-  return words.length <= 35 ? (
+  const boundary = /[.!?…](?:["”’)]*)\s+/u.exec(text);
+  const splitAt = boundary ? boundary.index + boundary[0].length : text.length;
+  return text.trim().split(/\s+/).length <= 35 || splitAt === text.length ? (
     <p>{text}</p>
   ) : (
     <div>
-      <p>{words.slice(0, 35).join(' ')}…</p>
+      <p>{text.slice(0, splitAt).trim()}</p>
       <details className="mt-2">
         <summary className="cursor-pointer font-bold underline underline-offset-4">
           Xem thêm
         </summary>
-        <p className="mt-2">{words.slice(35).join(' ')}</p>
+        <p className="mt-2">{text.slice(splitAt)}</p>
       </details>
     </div>
   );

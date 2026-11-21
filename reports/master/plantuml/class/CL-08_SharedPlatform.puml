@@ -1,0 +1,169 @@
+@startuml CL-08_SharedPlatform
+title CL-08 · NestJS modules — Shared platform
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "CoreModule" <<Rectangle>> {
+  class CoreModule <<module>> {
+    imports: BullModule.forRootAsync(), BullModule.registerQueue(...QUEUES), ConfigModule.forRoot({ validate }), PrometheusModule.register()
+    controllers: —
+    providers: PrismaService, StorageService, SettingsService, AuditLogService, MetricsService, HttpMetricsInterceptor
+    exports: PrismaService, BullModule, StorageService, SettingsService, AuditLogService, MetricsService
+    <i>@Global()</i>
+    <i>infrastructure: database, queues, object storage, settings from env, audit log, Prometheus metrics</i>
+  }
+  class PrismaService {
+    <i>extends PrismaClient · every table of ERD_JobQuest_Chen</i>
+    --
+    +onModuleInit() : Promise<void>
+    +$transaction(fn) : Promise<T>
+  }
+  enum QUEUES {
+    narration
+    flag-judge
+    grading
+    feedback-note
+    email
+    import
+    generation
+    suggestion
+    asset
+    regrade
+  }
+  class StorageService {
+    -s3 : S3Client
+    --
+    +putObject(key, body, contentType) : Promise<string>
+    +signedUrl(key, ttlSeconds) : Promise<string>
+  }
+  class SettingsService {
+    -config : ConfigService
+    -prisma : PrismaService
+    --
+    +get<K>(key: K) : AppSettings[K]  «costCeilingUsd, ratingMinResponses, idleTimeoutMinutes»
+    +set(admin, key, value) : void  «one PLATFORM_SETTING row per change, with version»
+  }
+  class AuditLogService {
+    <i>AUDIT_LOG: account actions and prompt saves; scenario transitions go to LIFECYCLE_LOG</i>
+    -prisma : PrismaService
+    --
+    +log(tx, actorId, action, target, detail?) : Promise<void>
+    +list(target, page: ListQuery) : Page<AuditEntry>
+  }
+  class MetricsService {
+    -httpDuration : Histogram
+    -aiCallDuration : Histogram
+    -queueDepth : Gauge
+    --
+    +observeHttp(route, status, seconds) : void
+    +observeAiCall(task, seconds, ok) : void
+  }
+  class HttpMetricsInterceptor <<interceptor>> {
+    -metrics : MetricsService
+    --
+    +intercept(ctx, next) : Observable<unknown>
+  }
+}
+
+package "NotificationModule" <<Rectangle>> {
+  class NotificationModule <<module>> {
+    imports: —
+    controllers: StreamController, NotificationController
+    providers: StreamService, NotificationService, EmailProcessor, ReminderScheduler
+    exports: StreamService, NotificationService
+    <i>@Global()</i>
+    <i>everything pushed to a user: SSE stream, in-app notifications, e-mail (notification)</i>
+  }
+  class StreamController <<controller>> {
+    -stream : StreamService
+    --
+    +openEventStream(user: AuthUser, lastEventId?: string) : Observable<MessageEvent>  «GET /stream» [EX,DE,CA,SA]
+  }
+  class NotificationController <<controller>> {
+    -notifications : NotificationService
+    --
+    +listNotifications(user: AuthUser, query: ListQuery) : Page<NotificationView>  «GET /notifications» [EX,DE,CA,SA]
+    +markNotificationRead(user: AuthUser, id: string) : void  «POST /notifications/{id}/read» [EX,DE,CA,SA]
+  }
+  class StreamService {
+    -pub : Redis
+    -sub : Redis
+    --
+    +publish(userId, event: StreamEvent) : Promise<void>
+    +events(userId, lastEventId?) : Observable<MessageEvent>
+  }
+  class NotificationService {
+    -prisma : PrismaService
+    -emailQueue : Queue «email»
+    --
+    +notify(userId, template, payload, channels) : Promise<void>
+    +list(user, query) : Page<NotificationView>
+    +markRead(user, id) : void
+  }
+  class EmailProcessor <<processor · email>> {
+    -smtp : Transporter
+    --
+    +process(job) : Promise<void>
+  }
+  class ReminderScheduler <<cron>> {
+    -prisma : PrismaService
+    -notifications : NotificationService
+    --
+    +remindReviewDeadlines() : Promise<void>  «@Cron hourly»
+  }
+  class "NotificationModule DTOs" as NotificationModule_DTOs <<dto>> {
+    ListQuery { cursor?, limit?: integer, status?, kind? }
+    NotificationView
+  }
+}
+
+package "GameCoreModule" <<Rectangle>> {
+  class GameCoreModule <<module>> {
+    imports: —
+    controllers: —
+    providers: —
+    exports: RuleEngine, GameData
+    <i>@Global()</i>
+    <i>wraps @jobquest/game-core, also bundled in the Explorer and Staff apps (play-test)</i>
+  }
+  class RuleEngine <<library>> {
+    +advanceClock(state, cost, health, items) : SceneState  «time points, timed nodes cut long actions»
+    +dueNode(seed, state) : NodeRef | null  «trigger by time, player or fact»
+    +validateAnswer(node, answer) : ValidationResult
+    +closedLevels(node, answer) : SubSkillLevel[]  «option profiles → 0/1/2 + flags»
+    +engineHint(seed, state) : Hint | null  «tier 1 unread source, tier 2 unused fact»
+    +groupPoints(caps, levels, band, sign, items) : GroupPoints  «cap × (avg/2 − penalty × flags), zodiac ×1.12 on gains»
+    +tierOf(points, highest) : Tier  «0·500·1500·3000·6000·10000, never drops»
+    +coverage(have: KeywordMap, need: KeywordMap) : number
+    +coinsFor(level, playIndex) : number  «100 × √(salary ÷ 13 M), 60–250; replay 50% / 25%»
+    +healthAfter(health, drain, ot) : number
+  }
+  class GameData <<library>> {
+    <i>snapshot of the reference tables (SOFT_SKILL_*, SKILL_TIER, CONDUCT_FLAG, ZODIAC_SIGN, GTKM_CARD, SHOP_ITEM, ACHIEVEMENT, LIFE_MILESTONE…); built once at start by a factory provider from PrismaService, so game-core itself never touches the database</i>
+    --
+    +subSkill(code) : SubSkillDef
+    +zodiacOf(birthDate) : Sign
+    +item(code) : ShopItemDef
+    +achievement(code) : AchievementDef
+    +tiers() : SkillTierDef[]
+  }
+}
+
+class AuditLog <<domain · CD-01>>
+class Notification <<domain · CD-08>>
+class PlatformSetting <<domain · CD-08>>
+
+SettingsService ..> PlatformSetting : «write»
+AuditLogService ..> AuditLog : «write»
+NotificationController ..> NotificationModule_DTOs
+NotificationService ..> Notification : «write»
+legend bottom
+  | Arrow | Meaning |
+  | A --> B | association: A holds B through constructor injection (a controller holds its services) |
+  | A ..> Entity : «write» | A writes the domain class (the module owns it; see CD-01 … CD-08) |
+  | Controller ..> DTOs | the controller's routes take and return these types |
+  | A ..\|> I | A realizes the interface or port I |
+  | grey class | defined in another diagram (CL-0x · module, or domain · CD-0x) |
+endlegend
+@enduml

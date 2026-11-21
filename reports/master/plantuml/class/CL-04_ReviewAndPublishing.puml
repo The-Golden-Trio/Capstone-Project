@@ -1,0 +1,299 @@
+@startuml CL-04_ReviewAndPublishing
+title CL-04 · NestJS modules — Review and publishing
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "ReviewModule" <<Rectangle>> {
+  class ReviewModule <<module>> {
+    imports: AuthModule, LifecycleModule
+    controllers: ReviewController, CriteriaController, RevalidationController, ReviewAssignmentController
+    providers: ReviewService, ReviewAssignmentService, CriteriaService, RevalidationService
+    exports: —
+  }
+  class ReviewController <<controller>> {
+    -reviews : ReviewService
+    --
+    +listMyReviewQueue(user: AuthUser) : ReviewQueueItem[]  «GET /staff/reviews» [DE]
+    +openReview(user: AuthUser, reviewId: string) : ReviewView  «GET /staff/reviews/{reviewId}» [DE]
+    +decideReview(user: AuthUser, reviewId: string, dto: ReviewDecisionInput) : ScenarioDetail  «POST /staff/reviews/{reviewId}/decision» [DE]
+  }
+  class CriteriaController <<controller>> {
+    -criteria : CriteriaService
+    --
+    +getReviewCriteria(user: AuthUser, occupationId: string) : CriteriaView  «GET /staff/occupations/{occupationId}/review-criteria» [CA,DE]
+    +saveReviewCriteria(user: AuthUser, occupationId: string, dto: CriteriaInput) : CriteriaView  «PUT /staff/occupations/{occupationId}/review-criteria» [CA]
+  }
+  class RevalidationController <<controller>> {
+    -revalidations : RevalidationService
+    --
+    +requestRevalidation(user: AuthUser, scenarioId: string, versionNo: integer, dto: RevalidationRequestInput) : RevalidationView  «POST /staff/scenarios/{scenarioId}/releases/{versionNo}/revalidations» [CA,SA]
+    +resolveRevalidation(user: AuthUser, requestId: string, dto: RevalidationResultInput) : RevalidationView  «POST /staff/revalidations/{requestId}/result» [DE]
+  }
+  class ReviewAssignmentController <<controller>> {
+    -assignments : ReviewAssignmentService
+    --
+    +assignReviewer(user: AuthUser, scenarioId: string, dto: AssignReviewerInput) : ReviewView  «POST /staff/scenarios/{scenarioId}/reviews» [CA]
+    +listOverdueReviews(user: AuthUser) : ReviewQueueItem[]  «GET /staff/reviews/overdue» [CA]
+    +reassignReview(user: AuthUser, reviewId: string, dto: AssignReviewerInput) : ReviewView  «POST /staff/reviews/{reviewId}/reassign» [CA]
+  }
+  class ReviewService {
+    <i>REVIEW answers every REVIEW_CRITERION of the CRITERIA_VERSION that was current when it was assigned</i>
+    -prisma : PrismaService
+    -lifecycle : ScenarioStateMachine
+    -access : AccessPolicyService
+    -notifications : NotificationService
+    --
+    +queue(user) : ReviewQueueItem[]
+    +open(user, reviewId) : ReviewView  «SUBMITTED → IN_REVIEW»
+    +decide(user, reviewId, dto) : ScenarioDetail  «422 if a criterion is unanswered»
+  }
+  class ReviewAssignmentService {
+    <i>an assignment reviews a scenario or a level pack (REVIEWS_SCENARIO / REVIEWS_PACK, exactly one)</i>
+    -prisma : PrismaService
+    -access : AccessPolicyService
+    -notifications : NotificationService
+    --
+    +assign(user, scenarioId, dto) : ReviewView  «reviewer ≠ author»
+    +overdue(user) : ReviewQueueItem[]
+    +reassign(user, reviewId, dto) : ReviewView  «old row → REASSIGNED, REASSIGNS link»
+  }
+  class CriteriaService {
+    -prisma : PrismaService
+    -audit : AuditLogService
+    --
+    +current(occupationId) : CriteriaView
+    +save(user, occupationId, dto) : CriteriaView  «a new CRITERIA_VERSION; old reviews keep theirs»
+  }
+  class RevalidationService {
+    -prisma : PrismaService
+    -lifecycle : ScenarioStateMachine
+    -notifications : NotificationService
+    --
+    +request(user, scenarioId, versionNo, dto) : RevalidationView  «on a PUBLISHED release; notifies the DEs»
+    +resolve(user, requestId, dto) : RevalidationView  «STILL_ACCURATE keeps PUBLISHED; NEEDS_CHANGE → retire (SM-01)»
+  }
+  class "ReviewModule DTOs" as ReviewModule_DTOs <<dto>> {
+    AssignReviewerInput { reviewerId, deadlineAt }
+    CriteriaInput { criteria[] {text} }
+    RevalidationRequestInput { reason, dueAt }
+    RevalidationResultInput { result: STILL_ACCURATE|NEEDS_CHANGE, note? }
+    ReviewDecisionInput { decision, answers[], comment? }
+    CriteriaView
+    RevalidationView
+    ReviewQueueItem
+    ReviewView
+    ScenarioDetail
+  }
+}
+
+package "PublishingModule" <<Rectangle>> {
+  class PublishingModule <<module>> {
+    imports: AuthModule, LifecycleModule, PlayModule, AiModule
+    controllers: PresentationController, AssetController, BuildController, ReleaseController
+    providers: PresentationService, SuggestionProcessor, AssetService, AssetProcessor, TriageService, BuildService, BuildSnapshotter, ReleaseService, ReleaseScheduler
+    exports: —
+  }
+  class PresentationController <<controller>> {
+    -presentations : PresentationService
+    --
+    +requestSuggestions(user: AuthUser, scenarioId: string) : JobAccepted  «POST /staff/scenarios/{scenarioId}/presentation/suggestions» [CA]
+    +savePresentation(user: AuthUser, scenarioId: string, dto: PresentationInput) : PresentationView  «PUT /staff/scenarios/{scenarioId}/presentation» [CA]
+  }
+  class AssetController <<controller>> {
+    -assets : AssetService
+    --
+    +requestAsset(user: AuthUser, dto: AssetRequestInput) : JobAccepted | AssetView  «POST /staff/assets» [CA]
+    +checkAssetBias(user: AuthUser, assetId: string, dto: BiasCheckInput) : AssetView  «PUT /staff/assets/{assetId}/bias-check» [CA]
+  }
+  class BuildController <<controller>> {
+    -builds : BuildService
+    -triage : TriageService
+    --
+    +buildDraftGame(user: AuthUser, scenarioId: string) : Build  «POST /staff/scenarios/{scenarioId}/builds» [CA]
+    +getBuild(user: AuthUser, buildId: string) : Build  «GET /staff/builds/{buildId}» [CA,DE]
+    +startPlaytestRun(user: AuthUser, buildId: string) : RunView  «POST /staff/builds/{buildId}/runs» [DE]
+    +reportFindings(user: AuthUser, buildId: string, dto: FindingsInput) : ScenarioDetail  «POST /staff/builds/{buildId}/findings» [DE]
+    +passPlaytest(user: AuthUser, buildId: string) : ScenarioDetail  «POST /staff/builds/{buildId}/pass» [DE]
+    +triageRun(user: AuthUser, runId: string, dto: TriageInput) : TriageView  «POST /staff/runs/{runId}/triage» [DE]
+  }
+  class ReleaseController <<controller>> {
+    -releases : ReleaseService
+    --
+    +publishScenario(user: AuthUser, scenarioId: string, dto: PublishInput) : Build  «POST /staff/scenarios/{scenarioId}/release» [CA]
+    +deleteScenario(user: AuthUser, scenarioId: string) : ScenarioDetail  «DELETE /staff/scenarios/{scenarioId}» [CA]
+  }
+  class PresentationService {
+    <i>the Content Admin picks task types, NPCs and backgrounds (SD-07); the engine derives outfits, the admin only chooses scene pictures</i>
+    -prisma : PrismaService
+    -access : AccessPolicyService
+    -suggestions : Queue «suggestion»
+    --
+    +requestSuggestions(user, scenarioId) : JobAccepted
+    +save(user, scenarioId, dto) : PresentationView  «scenes in order, FROM a node or not»
+  }
+  class SuggestionProcessor <<processor · suggestion>> {
+    -prisma : PrismaService
+    -gateway : ModelGatewayService
+    -prompts : PromptBuilder
+    -checks : OutputCheckService
+    -jobs : AiJobService
+    -stream : StreamService
+    --
+    +process(job) : Promise<void>  «suggest task types, NPCs and backgrounds → publish suggestions.ready»
+  }
+  class AssetService {
+    -prisma : PrismaService
+    -storage : StorageService
+    -assetQueue : Queue «asset»
+    --
+    +request(user, dto) : JobAccepted | AssetView
+    +checkBias(user, assetId, dto) : AssetView  «CHECKS_BIAS: a staff member signs off»
+  }
+  class AssetProcessor <<processor · asset>> {
+    -prisma : PrismaService
+    -gateway : ModelGatewayService
+    -storage : StorageService
+    -jobs : AiJobService
+    -stream : StreamService
+    --
+    +process(job) : Promise<void>  «generate image → store → biasCheck PENDING»
+  }
+  class TriageService {
+    -prisma : PrismaService
+    -access : AccessPolicyService
+    --
+    +triage(user, runId, dto) : TriageView  «selection by signals and threshold version»
+  }
+  class BuildService {
+    -prisma : PrismaService
+    -lifecycle : ScenarioStateMachine
+    -snapshots : BuildSnapshotter
+    -runs : RunService
+    -notifications : NotificationService
+    --
+    +build(user, scenarioId) : Build  «APPROVED → IN_PLAYTEST»
+    +get(id) : Build
+    +startPlaytest(user, buildId) : RunView
+    +reportFindings(user, buildId, dto) : ScenarioDetail  «PLAYTEST_FINDING rows; → DRAFT or APPROVED»
+    +pass(user, buildId) : ScenarioDetail  «→ READY»
+  }
+  class BuildSnapshotter {
+    -prisma : PrismaService
+    --
+    +snapshot(tx, scenarioId) : BuildContent  «seed + level package»
+    +hash(content) : string
+  }
+  class ReleaseService {
+    <i>SCENARIO_RELEASE is immutable and numbered per scenario; it is built from exactly one SCENARIO_BUILD</i>
+    -prisma : PrismaService
+    -lifecycle : ScenarioStateMachine
+    -storage : StorageService
+    --
+    +publish(user, scenarioId, dto) : Build  «READY only; sets effectiveAt»
+    +delete(user, scenarioId) : ScenarioDetail  «→ RETIRED»
+    +publishDue(now) : number
+  }
+  class ReleaseScheduler <<cron>> {
+    -releases : ReleaseService
+    --
+    +publishDueReleases() : Promise<void>  «@Cron every 5 min»
+  }
+  class "PublishingModule DTOs" as PublishingModule_DTOs <<dto>> {
+    AssetRequestInput { kind: NPC|BACKGROUND|SCENE|ICON, aiPrompt?, source: LIBRARY|LICENSED|AI_GENERATED }
+    BiasCheckInput { status: PASSED|FAILED, note? }
+    FindingsInput { runId, findings[] {kind, text} }
+    PresentationInput { scenes[] {position: integer, nodeCode?, assetId} }
+    PublishInput { effectiveFrom }
+    TriageInput { selection, decision }
+    AssetView
+    Build
+    JobAccepted
+    PresentationView
+    RunView
+    ScenarioDetail
+    TriageView
+  }
+}
+
+class AccessPolicyService <<CL-01 · AuthModule>>
+class AiJobService <<CL-07 · AiModule>>
+class ModelGatewayService <<CL-07 · AiModule>>
+class OutputCheckService <<CL-07 · AiModule>>
+class PromptBuilder <<CL-07 · AiModule>>
+class RunService <<CL-06 · PlayModule>>
+class ScenarioStateMachine <<CL-03 · LifecycleModule>>
+class AnswersCriterion <<domain · CD-04>>
+class Asset <<domain · CD-04>>
+class CriteriaVersion <<domain · CD-04>>
+class PlaytestFinding <<domain · CD-04>>
+class Presentation <<domain · CD-04>>
+class PresentationScene <<domain · CD-04>>
+class RevalidationRequest <<domain · CD-04>>
+class Review <<domain · CD-04>>
+class ReviewAssignment <<domain · CD-04>>
+class ReviewComment <<domain · CD-04>>
+class ReviewCriterion <<domain · CD-04>>
+class ScenarioBuild <<domain · CD-04>>
+class ScenarioRelease <<domain · CD-04>>
+class TriageItem <<domain · CD-04>>
+
+ReviewController --> ReviewService
+ReviewController ..> ReviewModule_DTOs
+CriteriaController --> CriteriaService
+CriteriaController ..> ReviewModule_DTOs
+RevalidationController --> RevalidationService
+RevalidationController ..> ReviewModule_DTOs
+ReviewAssignmentController --> ReviewAssignmentService
+ReviewAssignmentController ..> ReviewModule_DTOs
+ReviewService ..> Review : «write»
+ReviewService ..> ReviewComment : «write»
+ReviewService ..> AnswersCriterion : «write»
+ReviewService --> ScenarioStateMachine
+ReviewService --> AccessPolicyService
+ReviewAssignmentService ..> ReviewAssignment : «write»
+ReviewAssignmentService --> AccessPolicyService
+CriteriaService ..> CriteriaVersion : «write»
+CriteriaService ..> ReviewCriterion : «write»
+RevalidationService ..> RevalidationRequest : «write»
+RevalidationService --> ScenarioStateMachine
+PresentationController --> PresentationService
+PresentationController ..> PublishingModule_DTOs
+AssetController --> AssetService
+AssetController ..> PublishingModule_DTOs
+BuildController --> BuildService
+BuildController --> TriageService
+BuildController ..> PublishingModule_DTOs
+ReleaseController --> ReleaseService
+ReleaseController ..> PublishingModule_DTOs
+PresentationService ..> Presentation : «write»
+PresentationService ..> PresentationScene : «write»
+PresentationService --> AccessPolicyService
+SuggestionProcessor ..> Presentation : «write»
+SuggestionProcessor --> ModelGatewayService
+SuggestionProcessor --> PromptBuilder
+SuggestionProcessor --> OutputCheckService
+SuggestionProcessor --> AiJobService
+AssetService ..> Asset : «write»
+AssetProcessor ..> Asset : «write»
+AssetProcessor --> ModelGatewayService
+AssetProcessor --> AiJobService
+TriageService ..> TriageItem : «write»
+TriageService --> AccessPolicyService
+BuildService ..> ScenarioBuild : «write»
+BuildService ..> PlaytestFinding : «write»
+BuildService --> ScenarioStateMachine
+BuildService --> BuildSnapshotter
+BuildService --> RunService
+ReleaseService ..> ScenarioRelease : «write»
+ReleaseService --> ScenarioStateMachine
+ReleaseScheduler --> ReleaseService
+legend bottom
+  | Arrow | Meaning |
+  | A --> B | association: A holds B through constructor injection (a controller holds its services) |
+  | A ..> Entity : «write» | A writes the domain class (the module owns it; see CD-01 … CD-08) |
+  | Controller ..> DTOs | the controller's routes take and return these types |
+  | A ..\|> I | A realizes the interface or port I |
+  | grey class | defined in another diagram (CL-0x · module, or domain · CD-0x) |
+endlegend
+@enduml

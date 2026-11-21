@@ -1,0 +1,122 @@
+@startuml CD-01_Identity
+title CD-01 · Domain model · Identity and access\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections A); the ERD is unchanged</size>
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype polyline
+skinparam nodesep 35
+skinparam ranksep 55
+skinparam class {
+  BackgroundColor<<entity>> #FFFFFF
+  BackgroundColor<<weak>> #F3F6FA
+  BackgroundColor<<assoc>> #EAF3EA
+  BackgroundColor<<pending>> #FFE3C2
+  BorderColor<<pending>> #E8710A
+  BackgroundColor<<vang>> #FFF3C4
+  BackgroundColor<<stub>> #F2F2F2
+  BorderColor<<stub>> #AAAAAA
+  FontColor<<stub>> #777777
+}
+
+class UserAccount <<entity>> {
+  - id : uuid {id}
+  - email : String
+  - passwordHash : String
+  - displayName : String
+  - dateOfBirth : Date
+  - roles : Role [0..*]
+  - status : AccountStatus
+  - createdAt : DateTime
+  - deletedAt : DateTime
+  --
+  +hasRole(role: Role) : Boolean
+}
+class Explorer <<entity>> {
+  - nickname : String
+  - addressForm : String  «enum?»
+  - stage : String  «enum?»
+  - knowsTarget : Boolean
+  - crestSeed : String
+  / zodiacSign : ZodiacSign
+  / balance : Int
+  - savings : Int
+  - savingsLocked : Boolean
+  / healthValue : Int
+  - healthCap : Int
+  / consecutiveOt : Int
+  - slowRecovery : Boolean
+  - gameDate : Date
+  / gapSlotsLeft : Int
+  / riasecSelf : Json
+  / riasecTried : Json
+  --
+  +addSkillPoints(group: SoftSkillGroup, raw: Int) : Int  «D-113 +12%, D-114 cap 10.000»
+  +currentBalance() : Int  «D-133 ledger is append-only»
+}
+class StaffMember <<entity>> {
+}
+class UserIdentity <<weak>> {
+  - provider : String {partial id}  «enum?»
+  - subject : String
+}
+class AuthSession <<entity>> {
+  - id : uuid {id}
+  - refreshHash : String
+  - createdAt : DateTime
+  - expiresAt : DateTime
+  - revokedAt : DateTime
+}
+class PasswordResetToken <<entity>> {
+  - tokenHash : String {id}
+  - expiresAt : DateTime
+  - usedAt : DateTime
+}
+class AuditLog <<entity>> {
+  - id : uuid {id}
+  - action : String
+  - subjectType : String
+  - subjectRef : String
+  - detail : Json
+  - at : DateTime
+}
+class AssignedTo <<assoc>> {
+  - role : Role
+  - assignedAt : DateTime
+}
+enum Role {
+  EXPLORER
+  DOMAIN_EXPERT
+  CONTENT_ADMIN
+  SYSTEM_ADMIN
+}
+note right of Role : apps/api/prisma/schema.prisma UserRoleKind; A22
+enum AccountStatus {
+  ACTIVE
+  DISABLED
+  DELETED
+}
+note right of AccountStatus : schema.prisma AccountStatus
+class Occupation <<stub>> {
+  CD-02
+}
+
+UserAccount "1" *-- "0..*" UserIdentity : HAS_IDENTITY
+UserAccount "1" o-- "0..*" AuthSession : OPENS
+UserAccount "1" o-- "0..*" PasswordResetToken : REQUESTS_RESET
+UserAccount "0..1" -- "0..*" AuditLog : PERFORMS
+StaffMember "0..*" -- "0..*" Occupation : ASSIGNED_TO
+(StaffMember, Occupation) .. AssignedTo
+UserAccount <|-- Explorer : {overlapping, incomplete}
+UserAccount <|-- StaffMember
+note bottom of AssignedTo : { at most one CONTENT_ADMIN per Occupation }  FR-40
+legend bottom
+  | Notation | Meaning |
+  | white / light blue class | entity / weak entity (composition ◆ from its owner) |
+  | green class | association class (an ERD relationship that carries attributes) |
+  | orange | «pending A28»: research still open, drawn as in the ERD |
+  | grey class | defined in another diagram (CD-0x) |
+  | /attr | derived attribute; attr : T [0..*] is multi-valued; a.b is a composite attribute |
+  | String «enum?» | enum-like column with no values in the ERD or research yet |
+  | method «D-xx» | a domain rule with its source; data = Prisma model, pure rules = game-core |
+  | types | inferred from names (the ERD has none): proposals, not decisions |
+endlegend
+@enduml

@@ -8,7 +8,12 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { isProblem } from '../../api/client';
 import { staffApi } from '../../api/endpoints';
-import type { Build, Presentation, TaskType } from '../../api/types';
+import type {
+  Build,
+  Presentation,
+  ScenarioContent,
+  TaskType,
+} from '../../api/types';
 import {
   Card,
   LinkButton,
@@ -16,8 +21,10 @@ import {
   ProblemAlert,
   SelectField,
 } from '../../components/ui';
+import type { Hint } from '../../features/authoring/lint';
 import { AssetPicker } from '../../features/gamify/AssetPicker';
 import { ContentReadOnly } from '../../features/shared/ContentReadOnly';
+import { HintList } from '../../features/shared/Guidance';
 import { HistoryTimeline } from '../../features/shared/HistoryTimeline';
 import { StatusBadge } from '../../features/shared/StatusBadge';
 import { useLoad } from '../../hooks/useLoad';
@@ -30,6 +37,10 @@ import { formatDateTime, TASK_TYPE_LABEL } from '../../lib/labels';
  */
 export function GamifyPage() {
   const { scenarioId = '' } = useParams();
+  return <GamifyScenario key={scenarioId} scenarioId={scenarioId} />;
+}
+
+function GamifyScenario({ scenarioId }: { scenarioId: string }) {
   const detail = useLoad(() => staffApi.getScenario(scenarioId), [scenarioId]);
   const saved = useLoad(
     () => staffApi.getPresentation(scenarioId),
@@ -38,6 +49,7 @@ export function GamifyPage() {
   const assets = useLoad(() => staffApi.listAssets(), []);
   const [p, setP] = useState<Presentation | null>(null);
   const [dirty, setDirty] = useState(false);
+  const [notice, setNotice] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<unknown>();
   const [build, setBuild] = useState<Build | null>(null);
@@ -77,6 +89,7 @@ export function GamifyPage() {
   const save = async () => {
     if (!p) return;
     setBusy('save');
+    setNotice('');
     setError(undefined);
     try {
       await staffApi.savePresentation(scenarioId, {
@@ -84,6 +97,7 @@ export function GamifyPage() {
         npcs: p.npcs.filter((n) => n.avatarAssetId),
       });
       setDirty(false);
+      setNotice('Đã lưu trình bày.');
     } catch (e) {
       setError(e);
     } finally {
@@ -113,13 +127,14 @@ export function GamifyPage() {
   if (!d) return <ProblemAlert error={detail.error} />;
   const pool = assets.data ?? [];
   const missingNpc = p?.npcs.some((n) => !n.avatarAssetId);
+  const formatHints = content && p ? presentationHints(content, p) : [];
 
   return (
     <>
       <PageHeader
         title={`Trình bày: ${d.taskTitle}`}
         description={
-          <span className="flex items-center gap-2">
+          <span className="flex flex-wrap items-center gap-2">
             <StatusBadge status={d.status} /> L{d.levelNo} · tác giả{' '}
             {d.authorName ?? '—'}
           </span>
@@ -141,7 +156,10 @@ export function GamifyPage() {
             : 'Chỉ thiết kế trình bày khi scenario đã được duyệt.'}
         </Notice>
       )}
-      <ProblemAlert error={error ?? assets.error ?? saved.error} />
+      <ProblemAlert
+        error={error ?? detail.error ?? assets.error ?? saved.error}
+      />
+      {notice && <Notice tone="success">{notice}</Notice>}
       {build && (
         <Notice tone="success">
           Đã dựng bản nháp lúc {formatDateTime(build.builtAt)} · hash{' '}
@@ -149,7 +167,7 @@ export function GamifyPage() {
           Tác giả đã được báo để chơi thử.
         </Notice>
       )}
-      <div className="grid gap-4 lg:grid-cols-[1fr_360px]">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_360px]">
         <div>
           {content && p ? (
             <ContentReadOnly
@@ -259,7 +277,7 @@ export function GamifyPage() {
                     key={n.npcKey}
                     kind="NPC"
                     allowNone={false}
-                    label={`Avatar: ${content?.cast?.find((m) => m.npcKey === n.npcKey)?.name ?? n.npcKey}`}
+                    label={`Avatar: ${npcLabel(content?.cast, n.npcKey)}`}
                     assets={pool}
                     value={n.avatarAssetId || null}
                     disabled={!editable}
@@ -276,6 +294,17 @@ export function GamifyPage() {
               </div>
             </Card>
           )}
+          {p && (
+            <Card title="Dạng trình bày">
+              <p className="mb-2 text-[12px] text-ink-faint">
+                Kiểm theo luật định dạng của seed; không chặn lưu hay dựng.
+              </p>
+              <HintList
+                hints={formatHints}
+                empty="Dạng đã chọn khớp luật định dạng."
+              />
+            </Card>
+          )}
           <Card title="Lịch sử">
             <HistoryTimeline scenarioId={scenarioId} refreshKey={historyKey} />
           </Card>
@@ -283,4 +312,39 @@ export function GamifyPage() {
       </div>
     </>
   );
+}
+
+function npcLabel(cast: ScenarioContent['cast'], npcKey: string): string {
+  const m = cast?.find((x) => x.npcKey === npcKey);
+  if (!m) return npcKey;
+  return m.name ? `${m.roleInScene} · ${m.name}` : m.roleInScene;
+}
+
+/**
+ * Gợi ý theo dạng CA chọn (Seed §D3): nút kết luôn là dạng viết, mỗi màn có
+ * ít nhất một nút dạng đóng.
+ */
+function presentationHints(content: ScenarioContent, p: Presentation): Hint[] {
+  const out: Hint[] = [];
+  const typeOf = (key: string) =>
+    p.activities.find((a) => a.activityKey === key)?.taskType;
+  for (const a of content.activities)
+    if (!a.forwardTo && typeOf(a.key) && typeOf(a.key) !== 'FREE_TEXT')
+      out.push({
+        id: 'END_WRITTEN',
+        path: `activities.${a.key}`,
+        message: `Activity kết ${a.key} đang trình bày dạng ${TASK_TYPE_LABEL[typeOf(a.key) as TaskType]}; nút kết luôn là dạng viết.`,
+        source: 'Seed §D3',
+        severity: 'warn',
+      });
+  if (!p.activities.some((a) => a.taskType !== 'FREE_TEXT'))
+    out.push({
+      id: 'NO_CLOSED_FORMAT',
+      path: 'activities',
+      message:
+        'Mọi activity đều trình bày tự luận; mỗi màn nên có ít nhất một dạng đóng nếu DE cho phép.',
+      source: 'Seed §D3',
+      severity: 'info',
+    });
+  return out;
 }

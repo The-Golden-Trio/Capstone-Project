@@ -24,6 +24,9 @@ it('giữ hai buff và giới hạn của chòm sao, lưu giai đoạn rồi m�
     screen.getByText('Mặt cần để ý · Tìm hiểu thêm').closest('details')?.open,
   ).toBe(false);
   fireEvent.click(screen.getByRole('button', { name: 'Tiếp tục' }));
+  expect(document.activeElement).toBe(
+    screen.getByRole('heading', { name: /^Bạn đang ở giai đoạn nào\?$/ }),
+  );
   const submit = screen.getByRole('button', { name: 'Lưu và tiếp tục' });
   expect(submit.hasAttribute('disabled')).toBe(true);
   fireEvent.click(screen.getByRole('radio', { name: 'Sinh viên' }));
@@ -62,5 +65,10 @@ it('thiếu ngày sinh thì bỏ chòm sao; có thể bỏ qua giai đoạn mà 
       name: 'Bạn đã biết muốn thử nghề nào chưa?',
     }),
   ).toBeTruthy();
+  expect(document.activeElement).toBe(
+    screen.getByRole('heading', {
+      name: /^Bạn đã biết muốn thử nghề nào chưa\?$/,
+    }),
+  );
   expect(save).not.toHaveBeenCalled();
 });

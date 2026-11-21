@@ -1,0 +1,278 @@
+@startuml CD-04_AuthoringReviewRelease
+title CD-04 · Domain model · AI drafting, review, presentation, play-test and release\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections F); the ERD is unchanged</size>
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype polyline
+skinparam nodesep 35
+skinparam ranksep 55
+skinparam class {
+  BackgroundColor<<entity>> #FFFFFF
+  BackgroundColor<<weak>> #F3F6FA
+  BackgroundColor<<assoc>> #EAF3EA
+  BackgroundColor<<pending>> #FFE3C2
+  BorderColor<<pending>> #E8710A
+  BackgroundColor<<vang>> #FFF3C4
+  BackgroundColor<<stub>> #F2F2F2
+  BorderColor<<stub>> #AAAAAA
+  FontColor<<stub>> #777777
+}
+
+class TopicGuide <<entity>> {
+  - version : Int {id}
+  - content : Text
+  - createdAt : DateTime
+}
+class ExpertInterview <<entity>> {
+  - id : uuid {id}
+  - roundNo : Int
+  - status : String  «enum?»
+  - summary : String
+  - confirmedAt : DateTime
+  - fieldCoverage : String [0..*]
+}
+class InterviewTurn <<weak>> {
+  - seq : Int {partial id}
+  - role : String  «enum?»
+  - text : String
+  - at : DateTime
+  - seedFieldRefs : String [0..*]
+}
+class GenerationRun <<entity>> {
+  - id : uuid {id}
+  - section : String  «enum?»
+  - input : Json
+  - output : Json
+  - fieldProvenance : String [0..*]
+  - checkResult : String [0..*]
+  - revisionCount : Int
+  - deEdits : String
+  - status : String  «enum?»
+  - createdAt : DateTime
+}
+class CriteriaVersion <<weak>> {
+  - versionNo : Int {partial id}
+  - createdAt : DateTime
+}
+class ReviewCriterion <<weak>> {
+  - seq : Int {partial id}
+  - text : String
+}
+class ReviewAssignment <<entity>> {
+  - id : uuid {id}
+  - deadline : DateTime
+  - status : AssignmentStatus
+  - assignedAt : DateTime
+  --
+  +reassign(to: StaffMember) : ReviewAssignment  «SD-06»
+}
+class Review <<entity>> {
+  - id : uuid {id}
+  - decision : ReviewDecision
+  - comment : String
+  - decidedAt : DateTime
+}
+class ReviewComment <<weak>> {
+  - seq : Int {partial id}
+  - targetField : String
+  - text : String
+}
+class Asset <<entity>> {
+  - id : uuid {id}
+  - kind : AssetKind
+  - storageKey : String
+  - source : AssetSource
+  - aiPrompt : String
+  - biasCheck.status : BiasCheckStatus
+  - biasCheck.checkedAt : DateTime
+  - batchNo : Int
+  - qaChecklist : String [0..*]
+}
+class Presentation <<entity>> {
+  - id : uuid {id}
+  - versionNo : Int
+  - status : String  «enum?»
+}
+class PresentationScene <<weak>> {
+  - position : Int {partial id}
+}
+class ScenarioBuild <<entity>> {
+  - id : uuid {id}
+  - content : Json
+  - builtAt : DateTime
+}
+class PlaytestFinding <<entity>> {
+  - id : uuid {id}
+  - kind : String  «enum?»
+  - text : String
+  - createdAt : DateTime
+}
+class TriageItem <<entity>> {
+  - id : uuid {id}
+  - selection : String  «enum?»
+  - signals : String [0..*]
+  - thresholdVersion : String
+  - decision : String  «enum?»
+  - reviewedAt : DateTime
+}
+class ScenarioRelease <<weak>> {
+  - versionNo : Int {partial id}
+  - content : Json
+  - effectiveAt : DateTime
+  - releaseNote : String
+  - publishedAt : DateTime
+}
+class RevalidationRequest <<entity>> {
+  - id : uuid {id}
+  - reason : String
+  - dueAt : DateTime
+  - result : String  «enum?»
+  - resolvedAt : DateTime
+}
+class LifecycleLog <<entity>> {
+  - id : uuid {id}
+  - fromStatus : ScenarioStatus
+  - toStatus : ScenarioStatus
+  - reason : String
+  - checks : String [0..*]
+  - at : DateTime
+}
+class AnswersCriterion <<assoc>> {
+  - answer : CriterionAnswer
+  - note : String
+}
+enum ScenarioStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  APPROVED
+  IN_PLAYTEST
+  READY
+  PUBLISHED
+  RETIRED
+}
+note right of ScenarioStatus : SM-01
+enum ReviewDecision {
+  APPROVE
+  REQUEST_CHANGES
+  REJECT
+}
+note right of ReviewDecision : SD-06, schema.prisma ReviewDecision
+enum CriterionAnswer {
+  MET
+  NOT_MET
+}
+note right of CriterionAnswer : schema.prisma CriterionVerdict
+enum AssignmentStatus {
+  ACTIVE
+  COMPLETED
+  REASSIGNED
+}
+note right of AssignmentStatus : schema.prisma AssignmentStatus
+enum AssetKind {
+  NPC
+  BACKGROUND
+  SCENE
+  ICON
+}
+note right of AssetKind : schema.prisma AssetKind
+enum AssetSource {
+  LIBRARY
+  LICENSED
+  AI_GENERATED
+}
+note right of AssetSource : schema.prisma AssetSource
+enum BiasCheckStatus {
+  PENDING
+  PASSED
+  FAILED
+}
+note right of BiasCheckStatus : schema.prisma BiasCheckStatus
+class AiJob <<stub>> {
+  CD-08
+}
+class LevelPack <<stub>> {
+  CD-03
+}
+class Node <<stub>> {
+  CD-03
+}
+class NpcChapter <<stub>> {
+  CD-05
+}
+class Occupation <<stub>> {
+  CD-02
+}
+class Scenario <<stub>> {
+  CD-03
+}
+class ScenarioRun <<stub>> {
+  CD-07
+}
+class StaffMember <<stub>> {
+  CD-01
+}
+class UserAccount <<stub>> {
+  CD-01
+}
+
+StaffMember "1" -- "0..*" ExpertInterview : INTERVIEWS
+ExpertInterview "0..*" -- "0..1" Scenario : INTERVIEW_FOR_SCENARIO {xor}
+ExpertInterview "0..*" -- "0..1" LevelPack : INTERVIEW_FOR_PACK {xor}
+ExpertInterview "0..*" -- "1" TopicGuide : FOLLOWS_GUIDE
+ExpertInterview "1" *-- "0..*" InterviewTurn : HAS_TURN
+GenerationRun "0..*" -- "1" Scenario : GENERATES
+GenerationRun "0..1" -- "0..1" AiJob : RUN_BY_JOB
+Occupation "0..1" -- "0..*" CriteriaVersion : DEFINES
+CriteriaVersion "1" -- "0..*" ReviewCriterion : HAS_CRITERION
+ReviewAssignment "0..*" -- "0..1" Scenario : REVIEWS_SCENARIO {xor}
+ReviewAssignment "0..*" -- "0..1" LevelPack : REVIEWS_PACK {xor}
+ReviewAssignment "0..*" -- "1" StaffMember : REVIEWER\n(reviewed / reviewer)
+ReviewAssignment "0..*" -- "1" StaffMember : ASSIGNER\n(assigned / assigner)
+ReviewAssignment "0..1" -- "0..1" ReviewAssignment : REASSIGNS\n(replaced → replacement)
+ReviewAssignment "1" o-- "0..1" Review : DECIDES
+Review "0..*" -- "1" CriteriaVersion : USES_CRITERIA
+Review "0..*" -- "0..*" ReviewCriterion : ANSWERS_CRITERION
+(Review, ReviewCriterion) .. AnswersCriterion
+Review "0..1" *-- "0..*" ReviewComment : HAS_COMMENT
+Presentation "0..*" -- "1" Scenario : PRESENTS
+Presentation "1" *-- "0..*" PresentationScene : HAS_SCENE
+PresentationScene "0..*" -- "0..1" Node : SCENE_AT
+PresentationScene "0..*" -- "1" Asset : SCENE_ASSET
+StaffMember "0..1" -- "0..*" Asset : CHECKS_BIAS
+ScenarioBuild "0..*" -- "1" Scenario : BUILDS
+ScenarioBuild "0..*" -- "1" Presentation : FROM_PRESENTATION
+ScenarioBuild "0..*" -- "1" StaffMember : BUILT_BY
+PlaytestFinding "0..*" -- "1" ScenarioBuild : FINDING_ON
+PlaytestFinding "0..*" -- "0..1" ScenarioRun : FINDING_FROM
+PlaytestFinding "0..*" -- "1" StaffMember : REPORTS
+TriageItem "0..*" -- "1" ScenarioRun : TRIAGES
+TriageItem "0..*" -- "0..1" StaffMember : TRIAGED_BY
+Scenario "1" *-- "0..*" ScenarioRelease : RELEASES
+ScenarioRelease "1" -- "1" ScenarioBuild : RELEASED_FROM
+StaffMember "1" -- "0..*" ScenarioRelease : PUBLISHES
+RevalidationRequest "0..*" -- "1" ScenarioRelease : REVALIDATES
+RevalidationRequest "0..*" -- "1" UserAccount : REQUESTS_REVAL
+LifecycleLog "0..*" -- "0..1" Scenario : LOGS_SCENARIO {xor}
+LifecycleLog "0..*" -- "0..1" LevelPack : LOGS_PACK {xor}
+LifecycleLog "0..*" -- "0..1" Occupation : LOGS_OCCUPATION {xor}
+LifecycleLog "0..*" -- "0..1" NpcChapter : LOGS_CHAPTER {xor}
+LifecycleLog "0..*" -- "1" UserAccount : ACTOR
+note right of LifecycleLog : {xor} a log row is about exactly one of scenario, level pack, occupation or NPC chapter\n(LOGS_SCENARIO, LOGS_PACK, LOGS_OCCUPATION, LOGS_CHAPTER)
+note right of ReviewAssignment : {xor} an assignment reviews a scenario or a level pack\n(REVIEWS_SCENARIO, REVIEWS_PACK)
+note right of ExpertInterview : {xor} an interview is for a scenario or a level pack\n(INTERVIEW_FOR_SCENARIO, INTERVIEW_FOR_PACK)
+note bottom of ScenarioBuild : { presentation.scenario = build.scenario }
+note bottom of AnswersCriterion : { criterion belongs to the review's criteria version }
+note bottom of ScenarioRelease : { a release is built from exactly one build }
+note bottom of CriteriaVersion : {id = (occupation, reviewCriterion)}  identified by several owners
+legend bottom
+  | Notation | Meaning |
+  | white / light blue class | entity / weak entity (composition ◆ from its owner) |
+  | green class | association class (an ERD relationship that carries attributes) |
+  | orange | «pending A28»: research still open, drawn as in the ERD |
+  | grey class | defined in another diagram (CD-0x) |
+  | /attr | derived attribute; attr : T [0..*] is multi-valued; a.b is a composite attribute |
+  | String «enum?» | enum-like column with no values in the ERD or research yet |
+  | method «D-xx» | a domain rule with its source; data = Prisma model, pure rules = game-core |
+  | types | inferred from names (the ERD has none): proposals, not decisions |
+endlegend
+@enduml

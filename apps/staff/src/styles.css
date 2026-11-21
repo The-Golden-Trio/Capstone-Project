@@ -148,3 +148,31 @@
 .staff-navigation-drawer[open] {
   animation: staff-drawer-in 0.2s ease-out both;
 }
+
+/* Let long content wrap; horizontal tables keep their own scroll regions. */
+.staff-workspace {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (prefers-reduced-motion: reduce) {
+  .staff-navigation-drawer[open] {
+    animation: none;
+  }
+}
+
+/* Keep keyboard/scroll targets clear of the sticky app header and action bars. */
+.staff-workspace :is(button, input, textarea, select, summary, a, [tabindex]) {
+  scroll-margin-block: 6rem 5rem;
+}
+@media (max-width: 767px) {
+  .staff-workspace > .staff-sticky-header {
+    position: static;
+  }
+}
+
+/* A bottom-sticky review footer would cover criteria in the stacked layout. */
+@media (max-width: 1023px) {
+  .staff-review-decisions {
+    position: static;
+  }
+}

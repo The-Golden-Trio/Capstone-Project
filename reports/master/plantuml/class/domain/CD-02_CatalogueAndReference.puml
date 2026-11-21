@@ -1,0 +1,284 @@
+@startuml CD-02_CatalogueAndReference
+title CD-02 · Domain model · Catalogue, reference data, soft skills and keywords\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections B, C); the ERD is unchanged</size>
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype polyline
+skinparam nodesep 35
+skinparam ranksep 55
+skinparam class {
+  BackgroundColor<<entity>> #FFFFFF
+  BackgroundColor<<weak>> #F3F6FA
+  BackgroundColor<<assoc>> #EAF3EA
+  BackgroundColor<<pending>> #FFE3C2
+  BorderColor<<pending>> #E8710A
+  BackgroundColor<<vang>> #FFF3C4
+  BackgroundColor<<stub>> #F2F2F2
+  BorderColor<<stub>> #AAAAAA
+  FontColor<<stub>> #777777
+}
+
+class InterestRegion <<entity>> {
+  - code : String {id}
+  - name : String
+  - sortOrder : Int
+}
+class OccupationGroup <<entity>> {
+  - code : String {id}
+  - name : String
+  - colourHex : String
+  - sortOrder : Int
+}
+class Occupation <<entity>> {
+  - id : uuid {id}
+  - code : String
+  - name : String
+  - summary : String
+  - status : String  «enum?»
+  - downsides : String [0..*]
+  - difficultyK : Decimal
+  / difficultyTier : String  «enum?»
+  / isSeniorEntry : Boolean
+  - riasecProfile : Decimal [0..*]
+}
+class OccupationLevel <<weak>> {
+  - levelNo : Int {partial id}
+  - title : String
+  - experience.fromYears : Int
+  - experience.toYears : Int
+  - scope : String
+  - basis : String  «enum?»
+  - evidenceGrade : String  «enum?»
+  - coreOutput : String
+  - salary.enterpriseMin : Decimal
+  - salary.enterpriseMax : Decimal
+  - salary.publicMin : Decimal
+  - salary.publicMax : Decimal
+  / xuPerMission : Int
+  / mainMissionCount : Int
+  / sideQuestBudget : Int
+}
+class Band <<entity>> {
+  - bandNo : Int {id}
+  - baseBudget : Int
+  - penaltyRate : Decimal
+  - lifestyleX : Decimal
+}
+class LevelTask <<weak>> {
+  - seq : Int {partial id}
+  - text : String
+}
+class SkillTier <<entity>> {
+  - tier : Int {id}  «0..5  D-114»
+  - minPoints : Int
+  --
+  +tierFor(points: Int) : Int  «D-114»
+}
+class WorkEnvironment <<entity>> {
+  - code : String {id}
+  - name : String
+  - shifts : String  «enum?»
+  - workweek : String
+  - overtime : String  «enum?»
+  - overtimePay : String
+  - peakSeason : String [0..*]
+  - healthCost : Int
+  - evidence.grade : String  «enum?»
+  - evidence.sources : String
+}
+class Department <<pending>> {
+  - code : String {partial id}
+  - name : String
+  - relationFit : String [0..*]
+  - baseOutfit : String
+  - layers : String [0..*]
+  - accessories : String [0..*]
+  - colourRule : String
+  - sourceKind : String  «enum?»
+}
+class CompanyType <<entity>> {
+  - code : String {id}
+  - name : String
+}
+class Company <<entity>> {
+  - code : String {id}
+  - name : String
+  - colourHex : String
+  - profile.product : String
+  - profile.customers : String
+  - profile.culture : String
+  - profile.rules : String
+}
+class ImportBatch <<entity>> {
+  - id : uuid {id}
+  - source : String  «enum?»
+  - version : String
+  - fileKey : String
+  - status : String  «enum?»
+  - importedAt : DateTime
+}
+class ImportIssue <<weak>> {
+  - sourceRef : String {partial id}
+  - reason : String
+  - resolvedAt : DateTime
+}
+class OnetOccupation <<entity>> {
+  - socCode : String {id}
+  - title : String
+}
+class EscoOccupation <<entity>> {
+  - escoUri : String {id}
+  - nameEn : String
+}
+class EscoSkillGroup <<entity>> {
+  - escoUri : String {id}
+  - name.en : String
+  - name.vi : String
+  - level : Int
+  - kind : String  «enum?»
+  - isSoftOverlap : Boolean
+}
+class Keyword <<entity>> {
+  - escoUri : String {id}
+  - name.vi : String
+  - name.en : String
+  - nameViStatus : String  «enum?»
+  - skillType : String  «enum?»
+  - description : String
+}
+class SoftSkillGroup <<pending>> {
+  - code : String {id}
+  - name : String
+  - sortOrder : Int
+  - onetElements : String [0..*]
+}
+class SoftSkillItem <<pending>> {
+  - code : String {id}
+  - name : String
+  - indicator : String
+  - considerCondition : String
+}
+class CheckQuestion <<pending>> {
+  - slot : String {partial id}
+  - text : String
+}
+class ConductFlag <<pending>> {
+  - code : String {id}
+  - name : String
+  - description : String
+}
+class RequiresPrior <<assoc>> {
+  - kind : String  «enum?»
+  - reason : String
+  / minBand : Int
+}
+class SimilarTo <<assoc>> {
+  - sim : Decimal
+  - computedAt : DateTime
+}
+class NeedsSkill <<assoc>> {
+  - zNeed : Decimal
+}
+class WorksIn <<assoc>> {
+  - weight : Decimal
+  - weightStatus : String  «enum?»
+}
+class MapsToOnet <<assoc>> {
+  - isPrimary : Boolean
+}
+class MapsToEsco <<assoc>> {
+  - matchMethod : String  «enum?»
+  - isPrimary : Boolean
+  - note : String
+}
+class TransfersTo <<assoc>> {
+  - s : Decimal
+  - credit : Decimal
+}
+class RequiresKeyword <<assoc>> {
+  - kind : String  «enum?»
+  - rank : Int
+  / maxProficiency : Proficiency
+  - isHandPicked : Boolean
+  - pickReason : String
+  - isOptionalSupplement : Boolean
+}
+class Trains <<assoc>> {
+  - proficiency : Proficiency
+}
+class TierName <<pending>> {
+  - name : String
+}
+class Budgets <<assoc>> {
+  - points : Int
+  - isAdjusted : Boolean
+  / isFocus : Boolean
+  / requiredTier : Int
+}
+enum Proficiency {
+  FAMILIAR
+  PROFICIENT
+  EXPERT
+}
+note right of Proficiency : schema.prisma Proficiency; D-118
+class StaffMember <<stub>> {
+  CD-01
+}
+
+InterestRegion "1" o-- "1..*" OccupationGroup : IN_REGION
+OccupationGroup "1" o-- "1..*" Occupation : IN_GROUP
+Occupation "1" -- "1..*" OccupationLevel : HAS_LEVEL
+OccupationLevel "0..*" -- "1" Band : AT_BAND
+OccupationLevel "1" -- "0..*" LevelTask : HAS_TASK
+Occupation "0..*" -- "0..*" Occupation : REQUIRES_PRIOR\n(dependent → prerequisite)
+(Occupation, Occupation) .. RequiresPrior
+Occupation "0..*" -- "0..*" Occupation : SIMILAR_TO\n(source → target)
+(Occupation, Occupation) .. SimilarTo
+Occupation "1..*" -- "1..*" SoftSkillGroup : NEEDS_SKILL
+(Occupation, SoftSkillGroup) .. NeedsSkill
+Occupation "0..*" -- "0..*" WorkEnvironment : WORKS_IN
+(Occupation, WorkEnvironment) .. WorksIn
+WorkEnvironment "1" *-- "2..4" Department : HAS_DEPARTMENT
+WorkEnvironment "0..*" -- "0..*" CompanyType : OFFERS_TYPE
+Company "0..*" -- "1" WorkEnvironment : LOCATED_IN
+Company "0..*" -- "1" CompanyType : OF_TYPE
+StaffMember "0..1" -- "0..*" ImportBatch : RUNS_IMPORT
+ImportBatch "1" *-- "0..*" ImportIssue : HAS_ISSUE
+StaffMember "0..1" -- "0..*" ImportIssue : RESOLVES
+Occupation "0..*" -- "1..2" OnetOccupation : MAPS_TO_ONET
+(Occupation, OnetOccupation) .. MapsToOnet
+Occupation "0..*" -- "1..2" EscoOccupation : MAPS_TO_ESCO
+(Occupation, EscoOccupation) .. MapsToEsco
+EscoSkillGroup "0..1" o-- "0..*" EscoSkillGroup : PARENT_OF\n(parent → child)
+Keyword "0..*" -- "1..*" EscoSkillGroup : IN_SKILL_GROUP
+EscoSkillGroup "0..*" -- "0..*" EscoSkillGroup : TRANSFERS_TO\n(from → to)
+(EscoSkillGroup, EscoSkillGroup) .. TransfersTo
+Occupation "1..*" -- "5..10" Keyword : REQUIRES_KEYWORD
+(Occupation, Keyword) .. RequiresKeyword
+OccupationLevel "0..*" -- "0..5" Keyword : TRAINS
+(OccupationLevel, Keyword) .. Trains
+SoftSkillGroup "1" o-- "1..*" SoftSkillItem : ITEM_OF
+SoftSkillGroup "0..*" -[#E8710A]- "0..*" SkillTier : TIER_NAME «pending»
+(SoftSkillGroup, SkillTier) .. TierName
+OccupationLevel "1..*" -- "7" SoftSkillGroup : BUDGETS
+(OccupationLevel, SoftSkillGroup) .. Budgets
+SoftSkillItem "0..1" *-[#E8710A]- "0..*" CheckQuestion : HAS_QUESTION «pending»
+SoftSkillItem "0..*" -[#E8710A]- "0..*" ConductFlag : COMMON_FLAG «pending»
+note bottom of OccupationLevel : {id = (occupation, levelTask)}  identified by several owners
+note bottom of Department : «pending A28» 353 departments, needs team approval (Hồ sơ NPC §5.7, §8)
+note bottom of SoftSkillGroup : «pending A28» onet_elements: B2 (Hồ sơ cơ chế game) still open
+note bottom of SoftSkillItem : «pending A28» consider_condition: Seed scenario E2 is a draft
+note bottom of CheckQuestion : «pending A28» yes/no question library, Seed scenario E2
+note bottom of ConductFlag : «pending A28» 13 common flags, Seed scenario E2
+note bottom of TierName : «pending A28» H5: 35 tier names
+legend bottom
+  | Notation | Meaning |
+  | white / light blue class | entity / weak entity (composition ◆ from its owner) |
+  | green class | association class (an ERD relationship that carries attributes) |
+  | orange | «pending A28»: research still open, drawn as in the ERD |
+  | grey class | defined in another diagram (CD-0x) |
+  | /attr | derived attribute; attr : T [0..*] is multi-valued; a.b is a composite attribute |
+  | String «enum?» | enum-like column with no values in the ERD or research yet |
+  | method «D-xx» | a domain rule with its source; data = Prisma model, pure rules = game-core |
+  | types | inferred from names (the ERD has none): proposals, not decisions |
+endlegend
+@enduml

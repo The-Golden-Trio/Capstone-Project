@@ -1,6 +1,6 @@
 import { profile } from '@datn/game-core';
 import { ApiError, type QuizService } from '../port';
-import type { QuizResult, RiasecAxis, RegionId } from '../types';
+import type { QuizAnswers, QuizResult, RiasecAxis, RegionId } from '../types';
 import { baseCatalogue } from './data';
 import riasecJson from './fixtures/riasec.json';
 import { quizForm, reasons } from './content';
@@ -16,6 +16,76 @@ export function pearson(a: number[], b: number[]): number {
   );
   return denom ? numerator / denom : 0;
 }
+/** Kết quả quiz từ câu trả lời (dùng cả khi dựng người chơi mẫu). */
+export function resultOf(answers: QuizAnswers): QuizResult {
+  const axes = profile.RIASEC_AXES;
+  const selfReported = Object.fromEntries(
+    axes.map((axis) => [
+      axis,
+      profile.axisMean(
+        quizForm.cards
+          .filter((c) => c.axis === axis)
+          .flatMap((c) => (answers.cards[c.id] ? [answers.cards[c.id]] : [])),
+      ) ?? 2,
+    ]),
+  ) as Record<RiasecAxis, number>;
+  const vector = axes.map((a) => selfReported[a]);
+  const flat = profile.isFlatProfile(vector);
+  const ranked = baseCatalogue.occupations
+    .map((o) => ({
+      ...o,
+      fit: pearson(
+        vector,
+        axes.map((a) => scores[o.code][a]),
+      ),
+    }))
+    .sort((a, b) => b.fit - a.fit || a.code.localeCompare(b.code));
+  const regions: readonly RegionId[] = flat
+    ? (['ky_thuat', 'sang_tao', 'suc_khoe'] as const)
+    : [...baseCatalogue.regions]
+        .sort(
+          (a, b) =>
+            (answers.cards[`c3-${b.id}`] ?? 2) -
+              (answers.cards[`c3-${a.id}`] ?? 2) ||
+            Math.max(
+              ...ranked.filter((o) => o.regionId === b.id).map((o) => o.fit),
+            ) -
+              Math.max(
+                ...ranked.filter((o) => o.regionId === a.id).map((o) => o.fit),
+              ),
+        )
+        .slice(0, 3)
+        .map((r) => r.id);
+  const topAxis = [...axes].sort(
+    (a, b) => selfReported[b] - selfReported[a],
+  )[0];
+  const chosen = flat
+    ? regions
+        .map((id) => ranked.find((o) => o.regionId === id)!)
+        .filter(Boolean)
+    : ranked.filter((o) => regions.includes(o.regionId)).slice(0, 3);
+  const result: QuizResult = {
+    selfReported,
+    flat,
+    regions: [...regions],
+    goals: clone(answers.goals),
+    interests: answers.interests
+      .filter((i) => quizForm.interests.includes(i))
+      .slice(0, 5),
+    suggestions: chosen.map((o) => ({
+      code: o.code,
+      name: o.name,
+      group: o.group,
+      regionId: o.regionId,
+      playable: o.playable,
+      reason: flat
+        ? 'Bạn chưa nghiêng rõ về hướng nào, thử vài kiểu khác nhau nhé'
+        : reasons[topAxis],
+    })),
+  };
+  return result;
+}
+
 export const quiz: QuizService = {
   form: service(() => quizForm),
   submit: service((answers) => {
@@ -26,73 +96,7 @@ export const quiz: QuizService = {
         'INVALID_TAP',
         'Mỗi thẻ cần chọn một trong ba mức.',
       );
-    const axes = profile.RIASEC_AXES;
-    const selfReported = Object.fromEntries(
-      axes.map((axis) => [
-        axis,
-        profile.axisMean(
-          quizForm.cards
-            .filter((c) => c.axis === axis)
-            .flatMap((c) => (answers.cards[c.id] ? [answers.cards[c.id]] : [])),
-        ) ?? 2,
-      ]),
-    ) as Record<RiasecAxis, number>;
-    const vector = axes.map((a) => selfReported[a]);
-    const flat = profile.isFlatProfile(vector);
-    const ranked = baseCatalogue.occupations
-      .map((o) => ({
-        ...o,
-        fit: pearson(
-          vector,
-          axes.map((a) => scores[o.code][a]),
-        ),
-      }))
-      .sort((a, b) => b.fit - a.fit || a.code.localeCompare(b.code));
-    const regions: readonly RegionId[] = flat
-      ? (['ky_thuat', 'sang_tao', 'suc_khoe'] as const)
-      : [...baseCatalogue.regions]
-          .sort(
-            (a, b) =>
-              (answers.cards[`c3-${b.id}`] ?? 2) -
-                (answers.cards[`c3-${a.id}`] ?? 2) ||
-              Math.max(
-                ...ranked.filter((o) => o.regionId === b.id).map((o) => o.fit),
-              ) -
-                Math.max(
-                  ...ranked
-                    .filter((o) => o.regionId === a.id)
-                    .map((o) => o.fit),
-                ),
-          )
-          .slice(0, 3)
-          .map((r) => r.id);
-    const topAxis = [...axes].sort(
-      (a, b) => selfReported[b] - selfReported[a],
-    )[0];
-    const chosen = flat
-      ? regions
-          .map((id) => ranked.find((o) => o.regionId === id)!)
-          .filter(Boolean)
-      : ranked.filter((o) => regions.includes(o.regionId)).slice(0, 3);
-    const result: QuizResult = {
-      selfReported,
-      flat,
-      regions: [...regions],
-      goals: clone(answers.goals),
-      interests: answers.interests
-        .filter((i) => quizForm.interests.includes(i))
-        .slice(0, 5),
-      suggestions: chosen.map((o) => ({
-        code: o.code,
-        name: o.name,
-        group: o.group,
-        regionId: o.regionId,
-        playable: o.playable,
-        reason: flat
-          ? 'Bạn chưa nghiêng rõ về hướng nào, thử vài kiểu khác nhau nhé'
-          : reasons[topAxis],
-      })),
-    };
+    const result = resultOf(answers);
     p.quiz = result;
     p.goals = result.goals;
     p.interests = result.interests;

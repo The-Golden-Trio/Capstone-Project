@@ -1492,7 +1492,7 @@ TC9 Feasibility & $\bullet$ registration, Google sign-in, rotating refresh token
 \end{longtable}
 }
 
-\textbf{Decision: the platform's own module --- argon2id, JWT access and refresh tokens in httpOnly cookies, and optional Google sign-in.} Passwords are hashed with argon2id\cite{r155}; a fifteen-minute access token and a rotating refresh token with reuse detection\cite{r156} live in httpOnly, SameSite cookies that scripts cannot read; Google ID tokens are verified with google-auth-library. Accounts stay in the platform's database in Vietnam, which an external identity service would hold abroad, and occupation-scoped authorisation must live in the application whichever service is used. The module is completed against ASVS 5.0 level 2\cite{r157}: single-use, short-lived reset tokens; an inactivity limit; account status checked on every refresh and staff request; rate limiting of sign-in; and a second factor for staff. The remaining risk is the security work that Keycloak would supply ready-made, which is why the module is held to ASVS level 2 and tested against it.
+\textbf{Decision: the platform's own module --- argon2id, JWT bearer access and refresh tokens, and optional Google sign-in.} Passwords are hashed with argon2id\cite{r155}; a fifteen-minute access token and a rotating refresh token with reuse detection\cite{r156} are sent as bearer tokens, the short-lived access token being held in memory by the application; Google ID tokens are verified with google-auth-library. Accounts stay in the platform's database in Vietnam, which an external identity service would hold abroad, and occupation-scoped authorisation must live in the application whichever service is used. The module is completed against ASVS 5.0 level 2\cite{r157}: single-use, short-lived reset tokens; an inactivity limit; account status checked on every refresh and staff request; rate limiting of sign-in; and a second factor for staff. The remaining risk is the security work that Keycloak would supply ready-made, which is why the module is held to ASVS level 2 and tested against it.
 
 Validation and code organisation. Every input and every model output must be checked against a schema (NFR-17, FR-11), and one copy of the rules and contracts must serve both applications, the API, and the worker (FR-15).
 
@@ -1779,7 +1779,7 @@ Items awaiting game design. Several items cannot be settled before the game desi
 Summary. The table summarises the selected stack and the requirements each choice serves.
 
 {\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.204\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.311\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.479\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.204\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.310\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.481\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \caption{Selected technology stack.} \\
 \hline
 \textbf{Component} & \textbf{Technology} & \textbf{Requirements served} \\ \hline
@@ -1795,7 +1795,7 @@ Staff application & TanStack Query, React Aria & Queues and statistics (FR-21 to
 Backend framework & NestJS 11 on Node.js & Waiting without blocking (NFR-01, NFR-02); modules and role guards (FR-41); queue and SSE integration \\ \hline
 Database & PostgreSQL + Prisma 7 & Cross-record rules (FR-25, FR-33, FR-40); atomic, immutable publication (NFR-16); thresholded statistics (NFR-06) \\ \hline
 Job queue, messaging & Redis + BullMQ & Durable, retried, prioritised, rate-limited model work (NFR-04, NFR-11, FR-43) \\ \hline
-Authentication & argon2id, JWT in httpOnly cookies, Google sign-in & NFR-17, FR-01, FR-41; identity data in Vietnam (DC-03) \\ \hline
+Authentication & argon2id, JWT bearer tokens, Google sign-in & NFR-17, FR-01, FR-41; identity data in Vietnam (DC-03) \\ \hline
 Validation, code organisation & Zod 4, Nx monorepo & One copy of rules and schemas (FR-15, NFR-17) \\ \hline
 Packaging, hosting & Docker, host in Vietnam & DC-03, NFR-05; portable scaling and availability (NFR-18) \\ \hline
 Model access & Own adapter layer, OpenAI-compatible format, native adapters where needed & Provider replaceable (DC-02, NFR-12); judge families kept apart (DC-01) \\ \hline
@@ -1891,6 +1891,29 @@ Operations. Telemetry of usage, cost, latency, and errors (DR-10); failed jobs a
 Notification, scheduler, and import. Notification sends email and in-app notices: reset links, review assignments, reminders, play-test invitations. The scheduler runs recurring jobs: review reminders and overdue notices (FR-34), annual revalidation (BR-15), retention, refreshing statistics, and the reconciliation that re-queues any narration or scoring request left without a result. The importer loads O*NET and ESCO and lists unresolved records (FR-31). Prototype: absent.
 
 Data stores. The operational database is the system of record: relational tables for accounts, assignments, runs, events, evidence, reviews, ratings, and logs, and documents for content. The queue store holds jobs, rate limits, budget counters, and the publish--subscribe channel feeding event streams --- nothing that cannot be rebuilt from the database. The object store holds assets and exports. Prototype: the database, with 19 tables.
+
+Modules of the code. The components above are realised by the 19 NestJS modules of Section 5.3.4, and the table gives which modules form each component. A scheduled job lives in the module that owns its data; for example, `ReleaseScheduler` publishes due releases from the publishing module.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.349\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.646\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Components of Section 5.3.1 and the NestJS modules that realise them.} \\
+\hline
+\textbf{Component} & \textbf{NestJS modules} \\ \hline
+\endfirsthead
+\hline
+\textbf{Component} & \textbf{NestJS modules} \\ \hline
+\endhead
+Game core & `GameCoreModule`, with the \textit{game-core} package \\ \hline
+Identity and access & `AuthModule`, `UserModule` \\ \hline
+Exploration & `CareerModule`, `LifeModule`, `PlayModule` \\ \hline
+Assessment & `AssessmentModule`, `QualityModule` \\ \hline
+Content lifecycle & `CatalogueModule`, `ScenarioModule`, `LifecycleModule`, `ReviewModule`, `PublishingModule` \\ \hline
+Reference-data import & `ImportModule` \\ \hline
+AI orchestration and model gateway & `AiModule` \\ \hline
+Analytics and operations & `QualityModule`, `FeedbackModule`, `MonitoringModule`, `CoreModule` \\ \hline
+Notification and scheduler & `NotificationModule`, with the scheduled jobs of the modules above \\ \hline
+\end{longtable}
+}
 
 System overview. The figure below shows the whole system as deployed: the two browser applications, the content delivery network, the reverse proxy, the API and worker processes with the modules inside them, the three data stores, and the external services. The dashed border is the boundary of DC-03; only de-identified text crosses it, through the model gateway. The numbered arrows follow one written answer from submission to what the explorer sees, the path detailed below.
 
@@ -1994,7 +2017,7 @@ NFR-13 & Explorer bundle under a performance budget; on-demand 3D chunk and 2D f
 NFR-14 & Every judgment records its judges; a change of any judge model recomputes agreement by stratum against the reference set & Analytics; AI orchestration; Operations & No \\ \hline
 NFR-15 & Publication copies the approved version into a hashed release, compared with what is served; canon content served verbatim; run-time narration shown only after the rule checks, with the expert's default follow-up when a follow-up fails them; feedback notes redrafted until they pass; a model of another family reviews the logs & Content lifecycle; AI orchestration; Game core & Partly; releases immutable \\ \hline
 NFR-16 & Lifecycle module as sole writer; transition and log in one transaction; a trigger refuses updates to published releases & Content lifecycle; database & No \\ \hline
-NFR-17 & Argon2id; HTTPS with strict transport security; httpOnly, SameSite cookies, rotation, idle expiry; answers passed to models as delimited data, outputs schema-validated; prompt-injection tests in the regression suite, against the leading OWASP risk for language-model applications\cite{r166} & Identity and access; AI orchestration; reverse proxy & Partly; hashing, cookies, rotation \\ \hline
+NFR-17 & Argon2id; HTTPS with strict transport security; short-lived bearer access tokens held in memory, rotating refresh tokens, idle expiry; answers passed to models as delimited data, outputs schema-validated; prompt-injection tests in the regression suite, against the leading OWASP risk for language-model applications\cite{r166} & Identity and access; AI orchestration; reverse proxy & Partly; hashing, bearer tokens, rotation \\ \hline
 NFR-18 & Stateless API replicas with health checks and rolling deployment; backups with point-in-time recovery; uptime monitoring; announced maintenance & All tiers & No \\ \hline
 NFR-19 & Document-based interfaces; accessible 2D map; accessible primitives in the staff application; automated and manual audits & Both applications & No \\ \hline
 DC-01 & Registry records each model's provider and family; configuration rejects either shared by the narrator and a judge, or by two judges; panel rechecked at job time & Model gateway; Operations; AI orchestration & No \\ \hline
@@ -2025,7 +2048,7 @@ Infrastructure and scalability. JobQuest's load is not where web systems usually
 Each tier scales by its own mechanism, summarised below for Stage 4.
 
 {\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.243\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.291\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.302\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.242\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.290\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.304\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \caption{Scaling mechanism of each tier at Stage 4.} \\
 \hline
 \textbf{Tier} & \textbf{Load at Stage 4} & \textbf{How it scales} & \textbf{Why it can} \\ \hline
@@ -2034,7 +2057,7 @@ Each tier scales by its own mechanism, summarised below for Stage 4.
 \textbf{Tier} & \textbf{Load at Stage 4} & \textbf{How it scales} & \textbf{Why it can} \\ \hline
 \endhead
 Content delivery network & All static files and published releases & Cache by version with long lifetimes & Releases are immutable, so caches never need purging and content reads never reach the database \\ \hline
-API & 500 to 1,000 requests per second; about 5,000 open result streams & Replicas behind the load balancer, scaled on CPU and open connections; at least two per zone & Stateless: sessions travel in cookies and results arrive through Redis publish--subscribe, so any replica can serve any explorer \\ \hline
+API & 500 to 1,000 requests per second; about 5,000 open result streams & Replicas behind the load balancer, scaled on CPU and open connections; at least two per zone & Stateless: sessions travel in bearer tokens and results arrive through Redis publish--subscribe, so any replica can serve any explorer \\ \hline
 Workers & 80 to 90 model calls per second; 250 to 700 in flight & Scaled on queue length; each worker runs many I/O-bound jobs concurrently; in-flight calls capped per provider & Jobs are independent and idempotent; the queue absorbs bursts\cite{r168} \\ \hline
 Model providers & About 5,100 requests per minute; 7 to 8 million tokens per minute at about 1,500 tokens per call & Several providers per role within DC-01, so quotas add up; priorities: live grading and narration first, feedback notes next, authoring work last & The binding constraint is isolated in its own tier and limited without slowing the rest \\ \hline
 PostgreSQL & Under 500 writes per second; about 0.3 TB of run data per season at about 60 KB per run & Vertical growth behind a connection pooler; read replica for analytics; run events partitioned by month & All transactions stay within one primary; heavy reads move to the replica; old partitions are compressed or archived \\ \hline
@@ -2048,7 +2071,7 @@ The architecture scales for seven reasons. Processing tiers are stateless, so ca
 
 Reliability and operations. Availability of 99.5\% a month is proposed for Stages 1 and 2 and 99.9\% once two zones run (NFR-18). The write-ahead log is archived continuously and backups taken nightly, both copied to a second region in Vietnam, for a proposed recovery point of five minutes and recovery time of one hour. Deployments roll replica by replica behind health checks, with backward-compatible migrations so old and new versions run side by side. Monitoring tracks queue length, 95th-percentile latency per provider, cost per session, and error rates, alerting at the thresholds of NFR-01, NFR-02, and NFR-11. A web application firewall and TLS guard the entry, secrets are held in a secret manager, and the egress proxy admits only allowlisted model endpoints.
 
-From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free \textit{game-core} shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and httpOnly cookie sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
+From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free \textit{game-core} shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and bearer-token sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
 
 \subsubsection{Sitemap Design}
 
@@ -2140,7 +2163,249 @@ Import reference data. The uploaded O*NET and ESCO files are stored in object st
 \caption{Sequence of importing reference data (SD-09): upload, matching against O*NET and ESCO, resolution of unmatched records, and adaptation}
 \end{figure}
 
-\setcounter{subsubsection}{5}
+\subsubsection{Class Diagrams}
+
+The class diagrams have two layers, and neither is drawn by hand. The domain layer states what the system stores: its classes are the entities of the entity--relationship diagram of Section 5.3.5, read as UML. The module layer states how the NestJS modules of Section 5.3.1 are built: controllers, services, queue processors, guards, ports, and the data transfer objects of the interface of Section 5.3.7. Scripts in the report's `design/compact` folder generate both layers as PlantUML, the domain layer from the entity--relationship diagram and a small file of added rules, the module layer from one description of the modules and their routes, so a change is made at the source and the diagrams are regenerated. The entity--relationship diagram itself is not changed by this step.
+
+Domain model. A class is an entity, named in PascalCase (`SCENARIO\_SLOT` becomes `ScenarioSlot`), and an attribute keeps its name in camelCase. The table gives how Chen notation is read as UML.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.463\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.532\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Reading of Chen notation as UML in the domain diagrams.} \\
+\hline
+\textbf{Chen notation} & \textbf{UML in the domain diagrams} \\ \hline
+\endfirsthead
+\hline
+\textbf{Chen notation} & \textbf{UML in the domain diagrams} \\ \hline
+\endhead
+Subclass relationship from `USER\_ACCOUNT` to `EXPLORER` and `STAFF\_MEMBER` & Generalization marked `\{overlapping, incomplete\}`: one account may be both an explorer and a staff member \\ \hline
+Identifying relationship with a single owner & Composition: the part dies with its whole \\ \hline
+Weak entity with two or more owners (`SCENARIO\_BEST`, `ASSESSMENT`) & Ordinary associations to each owner, with the note `\{id = (…)\}`, because UML composition allows one owner \\ \hline
+Relationship with attributes & Association class on the association \\ \hline
+Ternary relationship (`DRESSES`, `EARNED\_KEYWORD`) & N-ary diamond, with an association class when it has attributes \\ \hline
+Several optional relationships that alternate towards one target (`LOGS\_\textit{`, `REVIEWS\_}`, `TXN\_*`) & Separate associations constrained by `\{xor\}` \\ \hline
+`<<derived>>`, `<<multi>>`, `<<key>>` & `/attribute`, `attribute [0..*]`, `\{id\}` or `\{partial id\}` \\ \hline
+Composite attribute & Flattened, as in `salary.enterpriseMin` \\ \hline
+\end{longtable}
+}
+
+Three things are added to the entity--relationship diagram, each marked as an addition. Attribute types are inferred from column names (a name ending in `\_at` is a date and time, one beginning `is\_` a boolean) and are a proposal, not a decision. Enumerations are drawn only where a source states the values: the schema of the prototype, SM-01, a note in the diagram, or the project hub. Methods carry the business rule they implement, with its source («D-113», «SM-01»); pure rules live in \textit{game-core}, and rules that touch the database live in the service that owns the table. Eight diagrams cover the 113 entities and 35 association classes.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.192\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.612\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.192\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Domain class diagrams and the entity groups they cover.} \\
+\hline
+\textbf{Diagram} & \textbf{Content} & \textbf{Groups of Section 5.3.5} \\ \hline
+\endfirsthead
+\hline
+\textbf{Diagram} & \textbf{Content} & \textbf{Groups of Section 5.3.5} \\ \hline
+\endhead
+CD-01 & Identity & A \\ \hline
+CD-02 & Catalogue, reference data, soft skills, keywords & B, C \\ \hline
+CD-03 & Level pack and scenario content & D, E \\ \hline
+CD-04 & AI drafting, review, presentation, play-test, release, lifecycle & F \\ \hline
+CD-05 & Tarot NPCs, side quests, economy, health, calendar & G, K \\ \hline
+CD-06 & Explorer profile and progression & H, I \\ \hline
+CD-07 & Runs and grading & J \\ \hline
+CD-08 & Grading quality, feedback, AI operations & L \\ \hline
+\end{longtable}
+}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CD-03_ScenarioContent.png}
+\caption{Domain classes of scenario content (CD-03): a scenario is composed of slots, facts, artefacts, actions, nodes with options, and reference answers}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CD-04_AuthoringReviewRelease.png}
+\caption{Domain classes of authoring, review, and release (CD-04): drafting with AI, review assignments and criteria versions, presentation, play-test, and the immutable release}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CD-07_RunsAndGrading.png}
+\caption{Domain classes of runs and grading (CD-07): a run as an ordered list of events with provenance, evidence segments, assessments, judge results, and feedback notes}
+\end{figure}
+\end{landscape}
+
+Module structure. The platform has 19 NestJS modules. The figure shows which module imports which; an arrow points from the importing module to the imported one, and a global module needs no arrow. The API and worker processes load the same modules, and the label of each module in the figure says which processes run it. Modules that serve staff routes also import the identity module for the guard that checks occupation assignment (FR-40), and those arrows are left out for legibility.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/CL-00_ModuleMap.png}
+\caption{Module map (CL-00): the 19 NestJS modules, the processes that run them, and their imports}
+\end{figure}
+
+Each module is the only writer of the tables it owns, and each table has exactly one owner. The table gives the owners, the processes, and the number of routes of each module.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.249\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.483\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.114\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{NestJS modules, the processes that run them, the tables they write, and their routes.} \\
+\hline
+\textbf{Module} & \textbf{Processes} & \textbf{Writes tables of} & \textbf{Routes} \\ \hline
+\endfirsthead
+\hline
+\textbf{Module} & \textbf{Processes} & \textbf{Writes tables of} & \textbf{Routes} \\ \hline
+\endhead
+AuthModule & API & Group A except assignment, through the one account store & 7 \\ \hline
+UserModule & API & Assignment of staff to occupations (`ASSIGNED\_TO`) & 10 \\ \hline
+CatalogueModule & API & Groups B and G (occupations, soft skills, tiers, NPC cards, outfits), loaded by a data-loading command & 6 \\ \hline
+ImportModule & Worker, API & O*NET and ESCO import, `KEYWORD` & 4 \\ \hline
+ScenarioModule & Worker, API & Groups D and E, expert interviews, generation runs & 16 \\ \hline
+LifecycleModule & Shared & `LIFECYCLE\_LOG`; the SM-01 state machine & 0 \\ \hline
+ReviewModule & API & Review criteria, reviews, revalidation & 10 \\ \hline
+PublishingModule & Worker, API & Assets, presentation, builds, play-test findings, releases & 12 \\ \hline
+CareerModule & API & Groups H and I & 9 \\ \hline
+LifeModule & API & Group K and side quests & 6 \\ \hline
+PlayModule & Worker, API & Runs and run events (group J) & 11 \\ \hline
+AssessmentModule & Worker & Assessments, judge results, feedback notes & 0 \\ \hline
+QualityModule & Worker, API & Content flags, blind ratings, regrading & 6 \\ \hline
+AiModule & API & Prompts, models, jobs, model calls (group L) & 2 \\ \hline
+FeedbackModule & API & Occupation ratings, app feedback & 4 \\ \hline
+MonitoringModule & API & None; reads usage, cost, and errors & 3 \\ \hline
+CoreModule & Global, shared & Activity log, platform settings & 0 \\ \hline
+NotificationModule & Global, worker, API & Notifications; the event stream & 3 \\ \hline
+GameCoreModule & Global, shared & None; a snapshot of reference tables built once at start-up for \textit{game-core}, which never reads the database & 0 \\ \hline
+\end{longtable}
+}
+
+Eight module diagrams, CL-01 to CL-08, show the classes inside the modules. In them an association is constructor injection, a dashed arrow labelled «write» marks a table the module owns, a dashed arrow with a hollow head is a realization (a model port, a guard), and a dashed arrow from a controller to data transfer objects shows the types of its routes. The generator refuses a design in which two routes share a method and path, a type in a route signature is undefined, a dependency is not provided, an import is unused or circular, an entity has no owner, or a module writes a table it does not own.
+
+Correspondence with the sequence diagrams. Every message of the sequence diagrams SD-01 to SD-09 is matched to a method. The table gives the main entry and the chain behind it for each diagram.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.156\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.300\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.539\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Entry method and chain of methods for each sequence diagram.} \\
+\hline
+\textbf{Diagram} & \textbf{Entry} & \textbf{Chain of methods} \\ \hline
+\endfirsthead
+\hline
+\textbf{Diagram} & \textbf{Entry} & \textbf{Chain of methods} \\ \hline
+\endhead
+SD-01 Answer an activity & `ShiftRunController.takeTurn` & `RuleEngine.validateAnswer` → `AssessmentService.requestGrading` → `DeIdentifierService.strip` → `JudgePanelService.grade` and `combine` → `NarrationProcessor.process` → `OutputCheckService.verifyQuotes`, `checkNarration` → `CostLedgerService.record` → `StreamService.publish`; the feedback note by `FeedbackNoteProcessor.process` \\ \hline
+SD-02 Finish a scenario & `ShiftRunController.finishRun` & `SummaryService.finish` → `ScoringService.groupPoints` → `PlayerLevelService.completeIfDone` → `SideQuestService.eligible` → `ProfileService.applyRun` \\ \hline
+SD-03 Get-to-know-me quiz & `GetToKnowMeController.submitGetToKnowMe` & `GetToKnowMeService.submit` (self-reported RIASEC) → `SuggestionService.forPlayer` \\ \hline
+SD-04 Access the platform & `AuthController.signIn`, `signInWithGoogle`, `register` & `PasswordService.verify`, `GoogleOAuthService.exchangeCode` → `AccountStore` → `TokenService.issue` → `AuditLogService.log` \\ \hline
+SD-05 Generate scenario content & `GenerationController.requestGeneration` & `GenerationProcessor.process` → `ModelGatewayService.complete`; `SeedValidator.check` before `SeedController.submitScenario` \\ \hline
+SD-06 Review a scenario & `ReviewController.decideReview` & `AccessPolicyService.isReviewerOf` → `ReviewService.decide` → `ScenarioStateMachine.apply` \\ \hline
+SD-07 Gamify and play-test & `PresentationController.requestSuggestions` & `SuggestionProcessor.process`; `AssetProcessor.process` → `AssetService.checkBias`; `BuildController.buildDraftGame` \\ \hline
+SD-08 Publish a scenario & `ReleaseController.publishScenario` & `BuildSnapshotter.hash` → `ReleaseService` → `StorageService.putObject`; `ReleaseScheduler.publishDueReleases` \\ \hline
+SD-09 Import reference data & `ImportController.startImport` & `ImportProcessor.process` → `ReferenceSourceClient.lookup` → `NotificationService.notify` \\ \hline
+\end{longtable}
+}
+
+Design points still open. Drawing the classes from the entity--relationship diagram and the game design research exposed places where the requirements of Chapter 4 and the diagrams of Section 5.3.3 still describe the earlier design. This report does not change them; each waits for a decision of the team and is recorded in the project's list of open issues (items A28 and A29).
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Requirements: FR-03 (five suggested occupations from the quiz; the research gives two or three regions to try), FR-22 and FR-35 (the expert chooses answer formats and the engine derives hints and outfits), FR-33 (one scenario per task; the research allows several scenarios for one task), DR-03 (a fixed adjacency table; the research computes it per player), and DR-12 (a portrait text per RIASEC type, which the research dropped).
+  \item Sequence diagrams: three messages have no method because the design behind them changed --- ``Pick ending by score'' in SD-02, ``Pick portrait for top type'' in SD-03, and ``Get situation options'' in SD-05, replaced by the expert interview --- and ``Use default follow-up'' in SD-01 contradicts the rule that no step is replaced by a non-AI path (D-92); the resumption of a paused run takes its place.
+  \item Naming: the AI classes follow the design (`ModelGatewayService`, `ModelProvider`) and differ from the prototype code (`ModelGateway`, `ProviderAdapter`).
+  \item Lifecycle log: `LIFECYCLE\_LOG` is written for scenarios, level packs, occupations, and NPC chapters, but SM-01 defines transitions only for scenarios.
+\end{itemize}
+
+\subsubsection{Database Design}
+
+The operational database is PostgreSQL, the system of record of Section 5.3.1. Redis and the object store hold nothing that cannot be rebuilt from it. The data model is one entity--relationship model in Chen notation, kept as a single source file and printed as six views, ERD-01 to ERD-06, drawn from the data requirements of Section 4.3.4 and the game design research. It has 113 entities, 236 relationships, and 27 derived attributes, in twelve groups, A to L. Scenario content is modelled at authoring time as entities (group E: facts, nodes, options, reference answers), and publication copies the approved content into one immutable entity, `SCENARIO\_RELEASE`, whose `content` attribute is what explorers play. A weak entity is drawn with its owner, so a run event, which has meaning only inside its run, is identified by the run and its sequence number.
+
+The full model is too large to read on one page, so it is split into six views by group. Each entity is drawn with all its attributes in one view only; in the others it appears as a stub with its key attributes. Each relationship is drawn once, in the view of the group that declares it. The views are generated from `ERD\_JobQuest\_Chen.puml` by `design/compact/gen\_erd.py`, and that file stays the source of truth.
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/ERD-01_IdentityQualityAndAiOps.png}
+\caption{Entity--relationship diagram, Chen notation. ERD-01: identity (A) and grading quality, feedback, and AI operations (L)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/ERD-02_CatalogueReferenceAndKeywords.png}
+\caption{Entity--relationship diagram, Chen notation. ERD-02: occupation catalogue (B) and reference data, soft skills, and keywords (C)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/ERD-03_LevelPackAndScenarioContent.png}
+\caption{Entity--relationship diagram, Chen notation. ERD-03: level pack (D) and scenario content (E)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/ERD-04_AuthoringReviewAndRelease.png}
+\caption{Entity--relationship diagram, Chen notation. ERD-04: AI drafting, review, presentation, play-test, and release (F)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/ERD-05_NpcEconomyAndLife.png}
+\caption{Entity--relationship diagram, Chen notation. ERD-05: Tarot NPCs and side quests (G) and economy, health, and calendar (K)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/ERD-06_ExplorerProgressRunsAndGrading.png}
+\caption{Entity--relationship diagram, Chen notation. ERD-06: explorer profile (H), progression (I), and runs and grading (J)}
+\end{figure}
+\end{landscape}
+
+The table below gives each group and the view that shows it.
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.098\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.172\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.330\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.160\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.108\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Groups of the entity--relationship diagram, their entities, and the data requirements they serve.} \\
+\hline
+\textbf{Group} & \textbf{Subject} & \textbf{Main entities} & \textbf{Entities} & \textbf{Data requirements} & \textbf{View} \\ \hline
+\endfirsthead
+\hline
+\textbf{Group} & \textbf{Subject} & \textbf{Main entities} & \textbf{Entities} & \textbf{Data requirements} & \textbf{View} \\ \hline
+\endhead
+A & Identity and assignment & `USER\_ACCOUNT` with subclasses `EXPLORER` and `STAFF\_MEMBER`, `USER\_IDENTITY`, `AUTH\_SESSION`, `AUDIT\_LOG` & 7 & DR-16 & ERD-01 \\ \hline
+B & Catalogue, occupation profile, work environments & `OCCUPATION\_GROUP`, `OCCUPATION`, `OCCUPATION\_LEVEL`, `LEVEL\_TASK`, `COMPANY` & 11 & DR-01, DR-15 & ERD-02 \\ \hline
+C & Reference data, soft skills, keywords, grading library & `IMPORT\_BATCH`, `ONET\_OCCUPATION`, `ESCO\_SKILL\_GROUP`, `KEYWORD`, `SOFT\_SKILL\_GROUP` & 10 & DR-01, DR-02 & ERD-02 \\ \hline
+D & Level pack & `LEVEL\_PACK`, `RESIDENT\_SLOT` & 2 & DR-04 & ERD-03 \\ \hline
+E & Scenario content & `SCENARIO`, `FACT`, `NODE`, `OPTION`, `REFERENCE\_ANSWER` & 14 & DR-04, DR-09 & ERD-03 \\ \hline
+F & AI drafting, review, presentation, play-test, release & `GENERATION\_RUN`, `REVIEW`, `CRITERIA\_VERSION`, `SCENARIO\_BUILD`, `SCENARIO\_RELEASE`, `LIFECYCLE\_LOG` & 18 & DR-05, DR-13, DR-14, DR-19 & ERD-04 \\ \hline
+G & Tarot NPCs, side quests, character assets & `NPC\_CARD`, `NPC\_CHAPTER`, `SIDE\_ACTIVITY` & 6 & DR-04 & ERD-05 \\ \hline
+H & Explorer profile & `GTKM\_ATTEMPT`, `EXPLORER\_GOAL`, `ACHIEVEMENT`, `SUGGESTION\_EVENT` & 10 & DR-12 & ERD-06 \\ \hline
+I & Progression & `LEVEL\_ENROLMENT`, `SCENARIO\_BEST` & 2 & DR-06 & ERD-06 \\ \hline
+J & Runs and grading & `SCENARIO\_RUN`, `RUN\_EVENT`, `ASSESSMENT`, `JUDGE\_RESULT`, `FEEDBACK\_NOTE`, `CONTENT\_FLAG` & 10 & DR-06, DR-07, DR-11 & ERD-06 \\ \hline
+K & Economy, health, calendar, NPC relationship & `XU\_TRANSACTION`, `SHOP\_ITEM`, `HEALTH\_CHANGE`, `GAP`, `LIFE\_MILESTONE` & 10 & D-133 & ERD-05 \\ \hline
+L & Grading quality, feedback, AI operations & `BLIND\_RATING`, `OCCUPATION\_RATING`, `APP\_FEEDBACK`, `PROMPT\_TEMPLATE`, `MODEL\_CONFIG`, `AI\_JOB`, `MODEL\_CALL`, `PLATFORM\_SETTING` & 13 & DR-08, DR-10, DR-17, DR-18 & ERD-01 \\ \hline
+\end{longtable}
+}
+
+Group K has no functional requirement in Section 4.3.2; it follows decision D-133 and the economy and health research, and its tests are traced to them (Section 5.3.9).
+
+Properties the schema must keep. Most are enforced by constraints and transactions rather than by the diagram, and each has a test in Section 5.3.9.
+
+\begin{itemize}[leftmargin=1.5em]
+  \item A run is an append-only list of events. `RUN\_EVENT` carries its model, prompt version, cost, and latency as provenance, and the state of a run is the fold of its events (DR-06, DR-07).
+  \item Balance is the sum of the ledger `XU\_TRANSACTION`, which is only appended to; the explorer's `balance` is derived from it and never stored as the authority.
+  \item Every change of state in SM-01 writes a `LIFECYCLE\_LOG` row in the same transaction; a release is never updated after publication (NFR-16).
+  \item Each occupation has exactly one content administrator and at least one domain expert, and a Google identity links to one account (DR-16); each review links to the `CRITERIA\_VERSION` it used (DR-19).
+  \item Every model call goes through the model gateway and appears in `MODEL\_CALL` with the check result of its output (NFR-11, DR-10).
+  \item The 27 derived attributes can be recomputed from source data. They are `zodiacSign`, `balance`, `healthValue`, `consecutiveOt`, `gapSlotsLeft`, `riasecSelf`, and `riasecTried` of `EXPLORER`; `difficultyTier` and `isSeniorEntry` of `OCCUPATION`; `xuPerMission`, `mainMissionCount`, and `sideQuestBudget` of `OCCUPATION\_LEVEL`; `minBand` of `REQUIRES\_PRIOR`; `maxProficiency` of `REQUIRES\_KEYWORD`; `isFocus` and `requiredTier` of `BUDGETS`; `onboardingSlides` of `LEVEL\_PACK`; `estimatedMinutes` of `SCENARIO`; `scoredScenarios` of `SUGGESTION\_EVENT`; `onboardKind` of `LEVEL\_ENROLMENT`; `replayPayRate` of `SCENARIO\_BEST`; `timeBudget`, `healthTier`, and `buffTotal` of `SCENARIO\_RUN`; `slotsUsed` of `GAP`; and `intimacyLevel` and `chaptersDone` of `KNOWS`.
+\end{itemize}
+
+Personal data lies in groups A, H, I, J, K, and L (accounts, quiz answers, runs, economy, ratings, and feedback). Deleting an account removes the explorer's rows by cascade and clears the personal fields of the account, and rows authored by staff are kept (NFR-05, Section 5.3.10). Only de-identified text of runs is sent to a model provider.
+
+Entries still waiting for a decision. Some entities are drawn from research that is still marked as a draft or as to be decided: `DEPARTMENT`, the outfit entities, `CHECK\_QUESTION`, `CONDUCT\_FLAG`, `SKILL\_TIER` and its tier names, `ACHIEVEMENT`, `DISTRESS\_TERM`, `CAREER\_HABIT`, `LIFE\_MILESTONE`, and `SCENARIO.outcomes`. Prices of shop items, the amount of health recovered, and the cost of replaying a scenario have no figure yet, so tests check the relations between them, not their values. Two readings of the diagram also need confirming: the `(min,max)` labels count the partners of the neighbouring entity in 13 relationships and the entity itself in the rest, and some lookup tables are drawn as having at least one row on the other side. They are items A28 and A29 of the open issues. The prototype's database does not follow this diagram yet, so migrating from it is part of the implementation (Chapter 6).
 
 \subsubsection{AI Model Design}
 
@@ -2164,7 +2429,180 @@ JobQuest does not design, train, or fine-tune a model (Section 5.2.3). This sect
   \item Deferred AI functions: the AI functions left for a later phase and where they attach to the design.
 \end{enumerate}
 
-\setcounter{subsubsection}{9}
+\subsubsection{API Design}
+
+The interface between the two applications and the API is a REST interface over HTTPS, described in OpenAPI 3.1. The contract is generated from the same module description as the class diagrams of Section 5.3.4, so each operation has exactly one controller method of the same name; it is delivered with the report as `api/compact/openapi.yaml`, with a browsable `swagger.html`. The earlier contract of 11 November, `api/openapi.yaml`, is kept as history.
+
+Conventions. They follow from the architecture of Section 5.3.1.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.204\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.620\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Conventions of the interface.} \\
+\hline
+\textbf{Convention} & \textbf{Rule} & \textbf{Requirement} \\ \hline
+\endfirsthead
+\hline
+\textbf{Convention} & \textbf{Rule} & \textbf{Requirement} \\ \hline
+\endhead
+Base path and format & All paths are under `/api/v1`; bodies are JSON in UTF-8; all content is Vietnamese, with no language selection & NFR-08 \\ \hline
+Authentication & A bearer access token from `/auth/*`; a refresh token rotates on use; sign-out revokes the session & NFR-17 \\ \hline
+Authorization & Each operation lists its roles in `x-roles`; staff routes also check that the caller is assigned to the occupation concerned & FR-40 \\ \hline
+Errors & Problem Details (RFC 9457) with a stable `code` such as `NOT\_ASSIGNED`; `401`, `403`, and `422` are declared on every operation that can return them & NFR-17 \\ \hline
+Slow work & Work that calls a model (grading, follow-ups, generation, suggestions, assets) returns `202 Accepted` with a job identifier; the result arrives on the event stream `GET /stream` (Server-Sent Events), which accepts `Last-Event-ID` so a reconnecting client replays what it missed & NFR-01, NFR-02, NFR-04 \\ \hline
+Idempotent turns & A turn carries a client-generated `turnId`; a retry with the same identifier records nothing twice & NFR-03, NFR-13 \\ \hline
+State changes & A scenario changes state only through action endpoints that follow SM-01; an action not allowed in the current state returns `409 INVALID\_TRANSITION` & NFR-16 \\ \hline
+Scoring & Rubric levels are 0, 1, and 2 (D-116); the server alone decides a score & Driver DR-2 of Section 5.3.1 \\ \hline
+Configuration & Models and platform settings come from the deployment, not from this interface; the set of models active at start-up is recorded & FR-42 \\ \hline
+\end{longtable}
+}
+
+Operations. The contract has 109 operations in 15 modules; four modules (lifecycle, assessment, core, and game core) have none. Each operation carries `x-status`: `approved` if it is in the contract of 11 November, `proposed` if it is new. The table gives the resources of each module and the count of each kind.
+
+{\footnotesize
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.156\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.258\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.187\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.138\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Operations of the interface by module, and how many are in the contract of 11 November.} \\
+\hline
+\textbf{Module} & \textbf{Resources} & \textbf{Roles} & \textbf{Operations} & \textbf{Approved} & \textbf{Proposed} \\ \hline
+\endfirsthead
+\hline
+\textbf{Module} & \textbf{Resources} & \textbf{Roles} & \textbf{Operations} & \textbf{Approved} & \textbf{Proposed} \\ \hline
+\endhead
+Auth & `/auth` (register, sign in, Google, refresh, sign out, password reset) & Public, all signed-in & 7 & 7 & 0 \\ \hline
+User & `/me`, `/admin/users`, `/admin/occupations` (staffing) & All, system administrator & 10 & 10 & 0 \\ \hline
+Catalogue & `/occupations`, `/levels`; staff profile and level package & Explorer, content administrator, domain expert & 6 & 4 & 2 \\ \hline
+Import & `/staff/imports` & Content administrator & 4 & 2 & 2 \\ \hline
+Scenario & `/staff/scenarios` (open, assign, seed, generation, reference answers), `/staff/interviews`, `/staff/levels/\{id\}/pack` & Content administrator, domain expert & 16 & 9 & 7 \\ \hline
+Review & `/staff/reviews`, review criteria, revalidation, review assignment & Content administrator, domain expert, system administrator & 10 & 3 & 7 \\ \hline
+Publishing & Presentation, assets, builds, play-test, release & Content administrator, domain expert & 12 & 8 & 4 \\ \hline
+Career & `/profile`, `/get-to-know-me`, `/career` & Explorer & 9 & 0 & 9 \\ \hline
+Life & `/shop`, `/inventory`, `/npcs` & Explorer & 6 & 0 & 6 \\ \hline
+Play & `/shift-runs` & Explorer, domain expert (play-test) & 11 & 0 & 11 \\ \hline
+Quality & `/staff/flags`, blind ratings, regrading & Domain expert, content administrator & 6 & 4 & 2 \\ \hline
+Ai & `/staff/prompts` & Content administrator, domain expert & 2 & 0 & 2 \\ \hline
+Feedback & Occupation ratings, `/feedback`, `/admin/feedback` & Explorer, system administrator & 4 & 0 & 4 \\ \hline
+Monitoring & Statistics, `/admin/ai-calls`, `/admin/metrics` & Content administrator, system administrator & 3 & 2 & 1 \\ \hline
+Notification & `/stream`, `/notifications` & All signed-in & 3 & 1 & 2 \\ \hline
+Total &  &  & 109 & 50 & 59 \\ \hline
+\end{longtable}
+}
+
+Most proposed operations belong to the explorer modules, because the contract of 11 November describes the earlier play flow under `/runs`, and the shift flow of the game design (`/shift-runs`) was proposed outside it in `docs/plans/2026-11-11\_de-xuat-api-choi-ca-lam.md`. Fifty-eight operations of that contract have no counterpart in this design. The proposed operations for staff come from the sequence diagrams SD-05 to SD-09 and group F of the data model: interviews and generation of drafts, the level pack, review criteria and assignment, revalidation of a published scenario (FR-27), presentation and assets, and triage of play-test findings. They are not in force until the team approves them.
+
+One turn. The turn of SD-01 is a single operation, `POST /shift-runs/\{runId\}/turns`, with a body of `turnId`, `kind` (one of `action`, `say`, `choose`, `hint`, `timeout`, `overtime`, and the other kinds the engine accepts), and the fields that kind needs, such as `text` for a spoken or written answer. The server validates the turn with \textit{game-core}, stores it in PostgreSQL, and enqueues the job. A closed answer returns `200` with the result at once. A free-text answer returns `202` with `jobId`, `turnId`, and the `streamEvent` on which the lines of the narrator and the judged result will arrive; the stream event types are `turn.lines`, `turn.done`, `judgement.ready`, `summary.ready`, `provider.delay`, `run.paused`, and `notification`. `POST /shift-runs/\{runId\}/resume` restarts a run that paused because no model was available, and `POST /shift-runs/\{runId\}/finish` returns the summary or `202` while feedback notes are still being written.
+
+\setcounter{subsubsection}{8}
+
+\subsubsection{Test Case Design}
+
+The test plan covers the whole data model of Section 5.3.5, including parts that have no code yet. It tests against the design, not against the prototype, whose database does not follow the data model. The plan is a separate document, `docs/plans/2026-11-20\_testing-plan.md`, with twelve files of test cases, one per group of the data model; this section gives its strategy and a sample. It is a proposal that waits for the team's approval.
+
+Principles. Four rules shape every test case.
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Each case has one of four states. \textit{Runnable}: the code already follows the design. \textit{Awaiting implementation}: the design is fixed but the code is missing or differs, so the case is written first as an acceptance criterion. \textit{Blocked, awaiting decision}: it rests on an entry of the data model or the research still marked as to be decided, so only the aim and the reason are recorded. \textit{Blocked, contradiction}: two sources disagree and the research has not ruled; none remains after 20 November.
+  \item Where a number is not yet fixed (shop prices, health recovery, the cost of replaying a scenario, the factor by which a hint lowers a score), the test checks the relation (a ceiling, never negative, never falling), not the value.
+  \item There is no test path without AI (D-92). The fake model (`AI\_MODE=fake`) checks the flow only: queue, events, failover, provenance. The quality of grading is measured by the method of Section 7.3 and is not repeated here.
+  \item Where research and an older requirement disagree, cases follow the research and say so. Twelve such readings (for example that side quests are not graded, and that several scenarios may share a task) are listed in the plan; they are a way of reading for writing tests, not decisions of the team.
+\end{itemize}
+
+Techniques. The table gives the techniques and where the project uses each.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.228\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.249\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.359\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Test design techniques and their use.} \\
+\hline
+\textbf{Family} & \textbf{Technique} & \textbf{Used when} & \textbf{Example in the project} \\ \hline
+\endfirsthead
+\hline
+\textbf{Family} & \textbf{Technique} & \textbf{Used when} & \textbf{Example in the project} \\ \hline
+\endhead
+Black box & Equivalence partitioning (EP) & Inputs fall into classes treated alike & The nine question formats; four health tiers \\ \hline
+ & Boundary values (BVA) & There is a range, a ceiling, or a count & Health from 0 to 100; buff ceiling of +50\%; at most three career habits \\ \hline
+ & Decision table (DT) & Several conditions decide one outcome & Entering an adjacent occupation; the three occupation suggestions \\ \hline
+ & State transition (ST) & An object has a lifecycle & SM-01; review assignments; judge seats \\ \hline
+ & Use case (UC) & A business flow is tested end to end & Play one scenario \\ \hline
+White box & Statement, branch, and condition coverage; MC/DC; basis path & A function has many branches & The SM-01 guard; unlocking, overtime, and buff rules; the step function of the shift engine \\ \hline
+ & Data flow (def--use) & A value is derived & The 27 derived attributes of Section 5.3.5 \\ \hline
+Grey box & API plus a check of constraints in the database & An invariant lives in the schema & Append-only run events; log in the same transaction; unique keys \\ \hline
+Experience & Error guessing, checklist, exploratory & Error-prone places, or a ready-made question set & Checklist of NPC profiles; probe set of Section 7.3 \\ \hline
+\end{longtable}
+}
+
+Levels and types. Unit tests exercise the pure functions of \textit{game-core} and services with an in-memory database; integration tests exercise the API with PostgreSQL, Redis, and a worker under the fake model; system tests drive the explorer and staff applications in a browser; acceptance tests are the play-test of FR-26 and the checks by content administrators and domain experts. Non-functional types are in the next table.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.216\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.461\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Non-functional test types and the requirements they verify.} \\
+\hline
+\textbf{Type} & \textbf{Content} & \textbf{Requirement} & \textbf{Measured in} \\ \hline
+\endfirsthead
+\hline
+\textbf{Type} & \textbf{Content} & \textbf{Requirement} & \textbf{Measured in} \\ \hline
+\endhead
+Performance & Load, stress, and soak on submitting a turn, the queue, and the event stream & NFR-01, NFR-02 & Section 7.2 and the plan \\ \hline
+Security & Hashed passwords; rotating tokens; roles and assignment; prompt injection; de-identification before every model call; account deletion & NFR-05, NFR-17 & The plan \\ \hline
+Reliability & A failing or slow model switches to another of the same role; with none left the run pauses and keeps its progress, with a notice within ten seconds; closing the browser mid-scenario and resuming; a worker dying mid-job & NFR-03, NFR-04 & The plan, by fault injection \\ \hline
+Accessibility and reach & WCAG 2.1 AA by automated and manual audit; mobile on a slow network; Vietnamese with diacritics; AI label & NFR-19, NFR-13, NFR-08, NFR-07 & Section 7.1 and the plan \\ \hline
+Privacy of statistics & Aggregates hidden below a threshold; play-tests excluded & NFR-06, DR-11 & The plan \\ \hline
+Cost & Ceiling per session & NFR-11 & The plan \\ \hline
+Maintainability & A new occupation needs no code; the log of states is complete; a published release is immutable & NFR-10, NFR-15, NFR-16 & The plan \\ \hline
+\end{longtable}
+}
+
+Coverage by group. The plan has 180 test cases and 38 white-box targets, shown below by group of the data model.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.114\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.335\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.114\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.147\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.285\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Test cases and white-box targets by group of the data model.} \\
+\hline
+\textbf{Group} & \textbf{Subject} & \textbf{Test cases} & \textbf{White-box targets} & \textbf{Main techniques} \\ \hline
+\endfirsthead
+\hline
+\textbf{Group} & \textbf{Subject} & \textbf{Test cases} & \textbf{White-box targets} & \textbf{Main techniques} \\ \hline
+\endhead
+A & Identity, assignment & 14 & 3 & EP, BVA, DT, ST, GB \\ \hline
+B & Catalogue, occupation profile & 14 & 1 & EP, BVA, DT, GB \\ \hline
+C & Reference data, soft skills, keywords & 15 & 2 & EP, BVA, DT, GB, EG \\ \hline
+D & Level pack & 8 & 1 & EP, BVA, DT \\ \hline
+E & Scenario content & 22 & 4 & EP, BVA, DT, UC, GB \\ \hline
+F & Authoring, review, publishing & 15 & 6 & ST, DT, UC, GB \\ \hline
+G & NPCs, side quests, assets & 15 & 2 & ST, checklist, BVA \\ \hline
+H & Explorer profile & 15 & 3 & EP, BVA, DT, UC \\ \hline
+I & Progression & 10 & 2 & BVA, DT, ST, UC \\ \hline
+J & Runs and grading & 17 & 8 & ST, GB, UC, BVA \\ \hline
+K & Economy and health & 17 & 1 & BVA, DT, property-based \\ \hline
+L & Grading quality, feedback, AI operations & 18 & 5 & ST, GB, fault injection \\ \hline
+\end{longtable}
+}
+
+Each functional requirement is traced to a group, from FR-01, FR-02, FR-40, and FR-41 in group A to FR-19, FR-20, FR-28, FR-29, FR-39, FR-42, and FR-43 in group L; group K follows D-133 and the research, since no requirement covers it.
+
+Test case format. A case is a card in a shortened form of IEEE 829: source, level, type and technique, priority, precondition, input, steps, expected result, postcondition, automation, and state. The three samples below are translated from the plan.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.261\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.241\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.334\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Three sample test cards.} \\
+\hline
+\textbf{Field} & \textbf{TC-F-ST-02 Invalid transitions are refused} & \textbf{TC-J-GB-03 Submitting a turn calls no model} & \textbf{TC-L-GB-01 Cost ledger and ceiling per session} \\ \hline
+\endfirsthead
+\hline
+\textbf{Field} & \textbf{TC-F-ST-02 Invalid transitions are refused} & \textbf{TC-J-GB-03 Submitting a turn calls no model} & \textbf{TC-L-GB-01 Cost ledger and ceiling per session} \\ \hline
+\endhead
+Source & SM-01; DR-13 & Section 5.3.1; NFR-01, NFR-02 & NFR-11; DR-10; `MODEL\_CALL`, `MODEL\_PRICE` \\ \hline
+Level, type, technique & Unit, functional, black box, state transition & Integration, performance and architecture, grey box & Unit and integration, cost, grey box \\ \hline
+Priority & High & High & High \\ \hline
+Input & The 51 remaining (from, to) pairs of 64; an action with the right name in the wrong state & 50 submitted turns, including free-text answers to grade & Calls before, at, and after a price's start date; a chain of calls bringing the total to the ceiling minus ε, the ceiling, and the ceiling plus ε; token types for cache read, cache write, and reasoning \\ \hline
+Expected result & An action outside the table is refused, the state is unchanged, no log row is written; `allowedActions` of each state equals the set of valid actions; publication is disabled in every state but Ready; Retired has no way out & Every model call occurs in the worker after the API has replied; the answer is stored in PostgreSQL before the job is enqueued; the result reaches the client by the event stream & Each call has one `MODEL\_CALL` row with tokens by five types and a cost at the price in force; a call that could exceed the ceiling, judged by an upper bound before the call, is blocked, so the total never exceeds it \\ \hline
+Automation & `scenario-state-machine.spec.ts` & `shift-run.flow.spec.ts` & `cost.spec.ts` \\ \hline
+State & Runnable & Runnable for `/shift-runs` & Runnable for the cost functions; prices by start date await implementation \\ \hline
+\end{longtable}
+}
+
+Coverage criteria, proposed. No project sets a coverage threshold yet and the continuous integration does not measure it. The plan proposes branch coverage of at least 85\% for the pure functions of \textit{game-core} and 75\% for the multi-branch services of the API, 90\% for the model gateway and the judges, MC/DC for the guards of SM-01 and the rules of unlocking, overtime, and buffs, and one def--use case for each of the 27 derived attributes. Mutation testing is optional.
+
+Entry and exit, and defects. A round of testing starts when the design of the part is fixed or its cases are marked blocked, the environment is ready, and the fixtures exist. It ends when every high-priority case of the group has run and passed, no high-severity defect is open, and coverage meets the threshold for the part that has code; cases still awaiting implementation are listed and do not count as passed. A defect is recorded with the case, the group, a severity (high when progress is lost, a score is wrong, personal data leaks, or an invariant is broken), the steps, and the design source it breaks. A defect that shows a missing or wrong design is not mended by changing the design to fit; it goes to the list of open issues.
+
+Environment and priority. Tests of the database run on a local PostgreSQL, never on the shared database of the project. The plan proposes a PostgreSQL and Redis service in the continuous integration, a browser test tool (a new dependency), data factories for the entities, and coverage in the build; each needs the team's agreement. Cases are written and run in this order: groups F, J, and E first, since they have code and carry the highest risk; then A and L (access, cost, failover); then H, I, C, D, and G, which depend on research not yet connected to the runtime; and K last, whose cases serve as acceptance criteria until it is built. Two risks are named: the schema changes to follow the data model, which would break integration tests written now, so they are written at the level of behaviour with data access behind an interface; and the grading by models, which does not repeat exactly, so it is measured by agreement (Section 7.3) and not by comparing strings.
 
 \subsubsection{Policies for the Processing of the Proposed System and Third Parties}
 

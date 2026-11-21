@@ -294,7 +294,9 @@ export default function PlayPage() {
 
       <Dialog
         open={writing !== null}
-        onClose={() => setWriting(null)}
+        onClose={() => {
+          if (!s.sending) setWriting(null);
+        }}
         title={writing?.label ?? ''}
         size="lg"
         theme="toon"
@@ -304,6 +306,14 @@ export default function PlayPage() {
             : undefined
         }
       >
+        {writing && s.error && (
+          <p
+            role="alert"
+            className="mb-3 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-sm font-bold"
+          >
+            {s.error} Bản nháp vẫn còn; bạn có thể gửi lại.
+          </p>
+        )}
         {writing?.form && (
           <ArtefactForm
             form={writing.form}
@@ -472,7 +482,7 @@ function EndCard({ onNext }: { onNext: () => void }) {
           Ca làm đã khép lại
         </p>
         <p className="text-sm font-semibold text-toon-ink-soft">
-          Trước khi xem kết quả, cho game hỏi bạn một câu ngắn.
+          Trước khi xem kết quả, bạn có thể kể vài cảm nhận ngắn.
         </p>
       </div>
       <ToonButton size="lg" onClick={onNext}>

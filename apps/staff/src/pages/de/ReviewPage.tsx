@@ -6,14 +6,17 @@ import {
   LoadingBlock as Loading,
   PageHeader,
 } from '@datn/ui';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { isProblem } from '../../api/client';
 import { staffApi } from '../../api/endpoints';
 import type { ReviewDecisionInput } from '../../api/types';
 import { Card, Notice, ProblemAlert, TextArea } from '../../components/ui';
 import { cx } from '../../lib/cx';
+import { REVIEW_CHECKLIST } from '../../features/authoring/guidance';
+import { lintContent } from '../../features/authoring/lint';
 import { ContentReadOnly } from '../../features/shared/ContentReadOnly';
+import { Checklist, HintList } from '../../features/shared/Guidance';
 import { StatusBadge } from '../../features/shared/StatusBadge';
 import { useSkillNames } from '../../features/shared/useSkillNames';
 import { useLoad } from '../../hooks/useLoad';
@@ -52,6 +55,10 @@ const DECISIONS: Record<
  */
 export function ReviewPage() {
   const { scenarioId = '' } = useParams();
+  return <ReviewScenario key={scenarioId} scenarioId={scenarioId} />;
+}
+
+function ReviewScenario({ scenarioId }: { scenarioId: string }) {
   const view = useLoad(
     () => staffApi.openScenarioForReview(scenarioId),
     [scenarioId],
@@ -67,6 +74,11 @@ export function ReviewPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<unknown>();
   const [done, setDone] = useState<string | null>(null);
+  const reviewed = view.data?.scenario.content;
+  const hints = useMemo(
+    () => (reviewed ? lintContent(reviewed) : []),
+    [reviewed],
+  );
 
   if (view.loading && !view.data) return <Loading />;
   if (!view.data) {
@@ -129,7 +141,7 @@ export function ReviewPage() {
       <PageHeader
         title={`Duyệt: ${s.taskTitle}`}
         description={
-          <span className="flex items-center gap-2">
+          <span className="flex flex-wrap items-center gap-2">
             <StatusBadge status={s.status} /> L{s.levelNo} · tác giả{' '}
             {s.authorName ?? '—'}
             {s.assignment && (
@@ -140,10 +152,14 @@ export function ReviewPage() {
       />
       {done && <Notice tone="success">{done}</Notice>}
       <ProblemAlert error={error} />
-      <div className="grid gap-4 lg:grid-cols-[1fr_380px]">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_380px]">
         <div>
           {s.content ? (
-            <ContentReadOnly content={s.content} skillName={skillName} />
+            <ContentReadOnly
+              content={s.content}
+              skillName={skillName}
+              hints={hints}
+            />
           ) : (
             <Notice>Scenario chưa có nội dung.</Notice>
           )}
@@ -154,8 +170,11 @@ export function ReviewPage() {
               <ul className="space-y-2 text-[13px]">
                 {previousReviews.map((r, i) => (
                   <li key={i}>
-                    <span className="font-medium">{r.decision}</span> ·{' '}
-                    {formatDateTime(r.decidedAt)}
+                    <span className="font-medium">
+                      {DECISIONS[r.decision as ReviewDecisionInput['decision']]
+                        ?.label ?? r.decision}
+                    </span>{' '}
+                    · {formatDateTime(r.decidedAt)}
                     {r.comment && (
                       <p className="text-ink-muted">“{r.comment}”</p>
                     )}
@@ -164,6 +183,23 @@ export function ReviewPage() {
               </ul>
             </Card>
           )}
+          <Card title="Gợi ý của máy">
+            <p className="mb-2 text-[12px] text-ink-faint">
+              Dấu hiệu bề mặt theo hướng dẫn soạn trong research; không thay
+              phán đoán của bạn.
+            </p>
+            <HintList hints={hints} empty="Máy không thấy gì cần lưu ý." />
+          </Card>
+          <Card title="Điểm kiểm bằng mắt">
+            <p className="mb-2 text-[12px] text-ink-faint">
+              Gợi ý để rà nội dung, chỉ lưu trên trình duyệt này và không gửi
+              đi. Quyết định dựa trên tiêu chí duyệt bên dưới.
+            </p>
+            <Checklist
+              items={REVIEW_CHECKLIST}
+              storageKey={`jq.staff.reviewcheck.${scenarioId}.${s.version}`}
+            />
+          </Card>
           <Card title={`Tiêu chí duyệt (v${criteria.versionNo})`}>
             <ol className="space-y-3">
               {criteria.criteria.map((c, i) => {
@@ -219,7 +255,7 @@ export function ReviewPage() {
               </p>
             )}
             {canDecide && (
-              <div className="staff-action-bar">
+              <div className="staff-action-bar staff-review-decisions">
                 {(
                   Object.keys(DECISIONS) as Array<
                     ReviewDecisionInput['decision']

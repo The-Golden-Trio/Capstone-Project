@@ -30,6 +30,7 @@ export function CataloguePage() {
   const resource = useCaResource(loader);
   const mutation = useCaMutation();
   const [query, setQuery] = useState('');
+  const [page, setPage] = useState(1);
   const [manageDomains, setManageDomains] = useState(false);
   const [domainId, setDomainId] = useState('');
   const [status, setStatus] = useState('');
@@ -49,6 +50,13 @@ export function CataloguePage() {
         (!region || o.region === region) &&
         foldVietnamese(`${o.name} ${o.code}`).includes(foldVietnamese(query)),
     ) ?? [];
+  const pageSize = 25;
+  const pageCount = Math.max(1, Math.ceil(visible.length / pageSize));
+  const currentPage = Math.min(page, pageCount);
+  const pageItems = visible.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize,
+  );
   return (
     <CaWorkspace
       code="C02"
@@ -102,7 +110,10 @@ export function CataloguePage() {
               <Button
                 variant={domainId === '' ? 'subtle' : 'ghost'}
                 className="w-full justify-start"
-                onClick={() => setDomainId('')}
+                onClick={() => {
+                  setPage(1);
+                  setDomainId('');
+                }}
               >
                 Tất cả ({data.occupations.length})
               </Button>
@@ -111,7 +122,10 @@ export function CataloguePage() {
                   key={d.id}
                   type="button"
                   aria-pressed={domainId === d.id}
-                  onClick={() => setDomainId(d.id)}
+                  onClick={() => {
+                    setPage(1);
+                    setDomainId(d.id);
+                  }}
                   className={`flex w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-left text-xs ${domainId === d.id ? 'bg-night-700 text-ink' : 'text-ink-muted hover:bg-night-800'}`}
                 >
                   <span>{d.name}</span>
@@ -131,13 +145,19 @@ export function CataloguePage() {
                   type="search"
                   placeholder="Tên hoặc mã nghề…"
                   value={query}
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={(e) => {
+                    setPage(1);
+                    setQuery(e.target.value);
+                  }}
                 />
               </Field>
               <Field label="Vòng đời">
                 <Select
                   value={status}
-                  onChange={(e) => setStatus(e.target.value)}
+                  onChange={(e) => {
+                    setPage(1);
+                    setStatus(e.target.value);
+                  }}
                 >
                   <option value="">Tất cả trạng thái</option>
                   <option value="DRAFT">DRAFT · Bản nháp</option>
@@ -148,7 +168,10 @@ export function CataloguePage() {
               <Field label="Vùng nghề">
                 <Select
                   value={region}
-                  onChange={(e) => setRegion(e.target.value)}
+                  onChange={(e) => {
+                    setPage(1);
+                    setRegion(e.target.value);
+                  }}
                 >
                   <option value="">Tất cả vùng</option>
                   {[
@@ -188,7 +211,7 @@ export function CataloguePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {visible.map((o) => (
+                  {pageItems.map((o) => (
                     <tr
                       key={o.id}
                       className="border-t border-line align-top hover:bg-night-800/30"
@@ -288,9 +311,39 @@ export function CataloguePage() {
                   ))}
                 </tbody>
               </table>
+              {visible.length > 0 && (
+                <nav
+                  aria-label="Phân trang danh mục nghề"
+                  className="flex flex-wrap items-center justify-between gap-3 border-t border-line p-3"
+                >
+                  <span role="status" className="text-xs text-ink-muted">
+                    {(currentPage - 1) * pageSize + 1}–
+                    {Math.min(currentPage * pageSize, visible.length)} /{' '}
+                    {visible.length} nghề · Trang {currentPage}/{pageCount}
+                  </span>
+                  <div className="flex gap-2">
+                    <Button
+                      variant="subtle"
+                      size="sm"
+                      disabled={currentPage === 1}
+                      onClick={() => setPage(currentPage - 1)}
+                    >
+                      Trang trước
+                    </Button>
+                    <Button
+                      variant="subtle"
+                      size="sm"
+                      disabled={currentPage === pageCount}
+                      onClick={() => setPage(currentPage + 1)}
+                    >
+                      Trang sau
+                    </Button>
+                  </div>
+                </nav>
+              )}
               {!visible.length && (
                 <EmptyState
-                  title="Không có nghề phù hợp"
+                  title="Không tìm thấy nghề"
                   description="Thử đổi nhóm nghề, bộ lọc hoặc từ khoá tìm kiếm."
                 />
               )}

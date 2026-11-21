@@ -8,103 +8,105 @@ package "AuthModule" <<Rectangle>> {
   class AuthModule <<module>> {
     imports: JwtModule
     controllers: AuthController
-    providers: AuthService, TokenService, PasswordService, GoogleOAuthService, ActivityLogService, AccessPolicyService, JwtAuthGuard, RolesGuard, OccupationAccessGuard
-    exports: TokenService, PasswordService, ActivityLogService, AccessPolicyService, OccupationAccessGuard
+    providers: AuthService, TokenService, PasswordService, GoogleOAuthService, AccountStore, AccessPolicyService, JwtAuthGuard, RolesGuard, OccupationAccessGuard
+    exports: TokenService, PasswordService, AccountStore, AccessPolicyService, OccupationAccessGuard
   }
   class AuthController <<controller>> {
     -auth : AuthService
     --
     +register(dto: RegisterInput) : Session  «POST /auth/register» [Pub]
     +signIn(dto: SignInInput) : Session  «POST /auth/sign-in» [Pub]
-    +signInWithGoogle(dto: SignInWithGoogleInput) : Session  «POST /auth/google» [Pub]
-    +refreshSession(dto: RefreshSessionInput) : Session  «POST /auth/refresh» [Pub]
+    +signInWithGoogle(dto: GoogleSignInInput) : Session  «POST /auth/google» [Pub]
+    +refreshSession(dto: RefreshInput) : Session  «POST /auth/refresh» [Pub]
     +signOut(user: AuthUser) : void  «POST /auth/sign-out» [EX,DE,CA,SA]
-    +requestPasswordReset(dto: RequestPasswordResetInput) : void  «POST /auth/password-reset» [Pub]
-    +confirmPasswordReset(dto: ConfirmPasswordResetInput) : void  «POST /auth/password-reset/confirm» [Pub]
+    +requestPasswordReset(dto: PasswordResetInput) : void  «POST /auth/password-reset» [Pub]
+    +confirmPasswordReset(dto: PasswordResetConfirmInput) : void  «POST /auth/password-reset/confirm» [Pub]
   }
   class AuthService {
-    -prisma : PrismaService
+    -accounts : AccountStore
     -tokens : TokenService
     -passwords : PasswordService
     -google : GoogleOAuthService
-    -notifications : NotificationService
-    -activity : ActivityLogService
+    -audit : AuditLogService
     --
-    +register(dto: RegisterInput) : Session
-    +signIn(dto: SignInInput) : Session
-    +signInWithGoogle(dto: SignInWithGoogleInput) : Session
-    +refresh(dto: RefreshSessionInput) : Session
-    +signOut(user: AuthUser) : void
-    +requestPasswordReset(dto: RequestPasswordResetInput) : void
-    +confirmPasswordReset(dto: ConfirmPasswordResetInput) : void
+    +register(dto) : Session  «USER_ACCOUNT + EXPLORER in one transaction»
+    +signIn(dto) : Session
+    +signInWithGoogle(dto) : Session
+    +refresh(dto) : Session
+    +signOut(user) : void
+    +requestPasswordReset(dto) : void
+    +confirmPasswordReset(dto) : void
   }
   class TokenService {
+    <i>AUTH_SESSION (refresh hash, rotated) and PASSWORD_RESET_TOKEN (single use)</i>
     -jwt : JwtService
     -prisma : PrismaService
     -settings : SettingsService
     --
-    +issue(account: UserAccount) : Session
-    +verifyAccess(token: string) : AuthUser
-    +rotate(refreshToken: string) : Session
-    +revokeAll(userId: string) : Promise<void>
+    +issue(account) : Session
+    +verifyAccess(token) : AuthUser
+    +rotate(refreshToken) : Session
+    +revokeAll(userId) : void
   }
   class PasswordService {
-    +hash(plain: string) : Promise<string>
-    +verify(plain: string, hash: string) : Promise<boolean>
+    +hash(plain) : Promise<string>
+    +verify(plain, hash) : Promise<boolean>
   }
   class GoogleOAuthService {
     -oauth : OAuth2Client
     --
-    +exchangeCode(code: string, redirectUri: string) : GoogleProfile
+    +exchangeCode(code, redirectUri) : GoogleProfile
   }
-  class ActivityLogService {
+  class AccountStore {
+    <i>the only writer of the identity tables; sign-in, profile and admin screens all go through it</i>
     -prisma : PrismaService
     --
-    +log(actorId: string, action: string, target?: Target) : Promise<void>
-    +list(userId: string, page: PageQuery) : Page<ActivityLogEntry>
+    +findByEmail(email) : Account | null
+    +createExplorer(tx, data) : Account  «USER_ACCOUNT + EXPLORER (subclass, same id)»
+    +createStaff(tx, data) : Account  «USER_ACCOUNT + STAFF_MEMBER»
+    +linkIdentity(tx, userId, provider, subject) : void
+    +update(tx, userId, patch) : Account
+    +softDelete(tx, userId) : void  «status DELETED, deletedAt, personal data cleared»
   }
   class AccessPolicyService {
+    <i>reads ASSIGNED_TO, SCENARIO.author, REVIEW_ASSIGNMENT</i>
     -prisma : PrismaService
     --
-    +occupationOf(ref: ResourceRef) : Promise<string>
-    +isAssigned(userId: string, occupationId: string, role?: StaffRole) : Promise<boolean>
-    +isAuthorOf(userId: string, scenarioId: string) : Promise<boolean>
-    +isReviewerOf(userId: string, scenarioId: string) : Promise<boolean>
+    +occupationOf(ref) : Promise<string>
+    +isAssigned(userId, occupationId, role?) : boolean
+    +isAuthorOf(userId, scenarioId) : boolean
+    +isReviewerOf(userId, scenarioId) : boolean
   }
   class JwtAuthGuard <<guard>> {
-    <i>APP_GUARD; skips @Public()</i>
     -tokens : TokenService
     -reflector : Reflector
     --
-    +canActivate(ctx: ExecutionContext) : boolean
+    +canActivate(ctx) : boolean
   }
   class RolesGuard <<guard>> {
-    <i>APP_GUARD; reads @Roles()</i>
     -reflector : Reflector
     --
-    +canActivate(ctx: ExecutionContext) : boolean
+    +canActivate(ctx) : boolean
   }
   class OccupationAccessGuard <<guard>> {
-    <i>on every /staff route; resolves occupation from occupationId, scenarioId, buildId …</i>
+    <i>on every /staff route</i>
     -access : AccessPolicyService
     --
-    +canActivate(ctx: ExecutionContext) : Promise<boolean>
+    +canActivate(ctx) : Promise<boolean>
   }
   class Decorators <<decorator>> {
     @Public()
-    @Roles(...roles: Role[])
+    @Roles(...roles)
     @CurrentUser() : AuthUser
   }
   class "AuthModule DTOs" as AuthModule_DTOs <<dto>> {
-    ActivityLogEntry
-    ConfirmPasswordResetInput
-    Page
-    RefreshSessionInput
-    RegisterInput
-    RequestPasswordResetInput
+    GoogleSignInInput { code, redirectUri, birthDate? }
+    PasswordResetConfirmInput { token, newPassword }
+    PasswordResetInput { email }
+    RefreshInput { refreshToken }
+    RegisterInput { email, password, nickname, birthDate }
+    SignInInput { email, password }
     Session
-    SignInInput
-    SignInWithGoogleInput
   }
 }
 
@@ -112,108 +114,112 @@ package "UserModule" <<Rectangle>> {
   class UserModule <<module>> {
     imports: AuthModule
     controllers: MeController, UserAdminController, StaffingController
-    providers: AccountService, RecordService, UserAdminService, StaffingService
+    providers: AccountService, UserAdminService, StaffingService
     exports: —
-    <i>accounts: the explorer's own account and record, and account and staffing management by the System Admin</i>
   }
   class MeController <<controller>> {
-    -account : AccountService
-    -record : RecordService
+    -accounts : AccountService
     --
     +getMe(user: AuthUser) : Me  «GET /me» [EX,DE,CA,SA]
     +updateMe(user: AuthUser, dto: UpdateMeInput) : Me  «PATCH /me» [EX,DE,CA,SA]
     +deleteMe(user: AuthUser) : void  «DELETE /me» [EX]
-    +getMyRecord(user: AuthUser) : PrivateRecord  «GET /me/record» [EX]
-    +listMyPastFeedback(user: AuthUser, query: ListMyPastFeedbackQuery) : Page<ScenarioSummary>  «GET /me/feedback» [EX]
   }
   class UserAdminController <<controller>> {
     -users : UserAdminService
-    -activity : ActivityLogService
     --
-    +listUsers(user: AuthUser, query: ListUsersQuery) : Page<UserAdminView>  «GET /admin/users» [SA]
-    +createStaffAccount(user: AuthUser, dto: CreateStaffAccountInput) : UserAdminView  «POST /admin/users» [SA]
+    +listUsers(user: AuthUser, query: ListQuery) : Page<UserAdminView>  «GET /admin/users» [SA]
+    +createStaffAccount(user: AuthUser, dto: CreateStaffInput) : UserAdminView  «POST /admin/users» [SA]
     +updateUser(user: AuthUser, userId: string, dto: UpdateUserInput) : UserAdminView  «PATCH /admin/users/{userId}» [SA]
     +deleteUser(user: AuthUser, userId: string) : void  «DELETE /admin/users/{userId}» [SA]
-    +getUserActivity(user: AuthUser, userId: string, query: GetUserActivityQuery) : Page<ActivityLogEntry>  «GET /admin/users/{userId}/activity» [SA]
+    +getUserActivity(user: AuthUser, userId: string, query: ListQuery) : Page<AuditEntry>  «GET /admin/users/{userId}/activity» [SA]
   }
   class StaffingController <<controller>> {
     -staffing : StaffingService
     --
-    +listOccupationsForStaffing(user: AuthUser) : OccupationStaffingRow[]  «GET /admin/occupations» [SA]
     +getOccupationStaff(user: AuthUser, occupationId: string) : OccupationStaff  «GET /admin/occupations/{occupationId}/staff» [SA]
-    +setOccupationStaff(user: AuthUser, occupationId: string, dto: OccupationStaff) : OccupationStaff  «PUT /admin/occupations/{occupationId}/staff» [SA]
+    +setOccupationStaff(user: AuthUser, occupationId: string, dto: StaffingInput) : OccupationStaff  «PUT /admin/occupations/{occupationId}/staff» [SA]
   }
   class AccountService {
-    -prisma : PrismaService
+    -accounts : AccountStore
     -passwords : PasswordService
     -tokens : TokenService
     --
-    +getMe(user: AuthUser) : Me
-    +update(user: AuthUser, dto: UpdateMeInput) : Me
-    +deleteExplorer(user: AuthUser) : void
-  }
-  class RecordService {
-    -prisma : PrismaService
-    --
-    +getRecord(user: AuthUser) : PrivateRecord
-    +listPastFeedback(user: AuthUser, page: PageQuery) : Page<ScenarioSummary>
+    +getMe(user) : Me
+    +update(user, dto) : Me
+    +deleteExplorer(user) : void  «soft delete; the account row stays for the ledger and run history»
   }
   class UserAdminService {
-    -prisma : PrismaService
+    -accounts : AccountStore
     -tokens : TokenService
+    -audit : AuditLogService
     -notifications : NotificationService
-    -activity : ActivityLogService
     --
-    +list(query: ListUsersQuery) : Page<UserAdminView>
-    +createStaff(admin: AuthUser, dto: CreateStaffAccountInput) : UserAdminView
-    +update(admin: AuthUser, userId: string, dto: UpdateUserInput) : UserAdminView
-    +delete(admin: AuthUser, userId: string) : void
+    +list(query) : Page<UserAdminView>
+    +createStaff(admin, dto) : UserAdminView
+    +update(admin, userId, dto) : UserAdminView
+    +delete(admin, userId) : void  «staff are anonymised»
+    +activity(userId, query) : Page<AuditEntry>
   }
   class StaffingService {
     -prisma : PrismaService
     -notifications : NotificationService
     --
-    +listOccupations() : OccupationStaffingRow[]
-    +get(occupationId: string) : OccupationStaff
-    +set(admin: AuthUser, occupationId: string, dto: OccupationStaff) : OccupationStaff
+    +get(occupationId) : OccupationStaff
+    +set(admin, occupationId, dto) : OccupationStaff  «one active CA, ≥ 1 DE»
   }
   class "UserModule DTOs" as UserModule_DTOs <<dto>> {
-    ActivityLogEntry
-    CreateStaffAccountInput
+    CreateStaffInput { email, displayName, roles[] }
+    ListQuery { cursor?, limit?: integer, status?, kind? }
+    StaffingInput { contentAdminId, domainExpertIds[] }
+    UpdateMeInput { nickname?, currentPassword?, newPassword? }
+    UpdateUserInput { status?: ACTIVE|DISABLED, roles?[]: EXPLORER|DOMAIN_EXPERT|CONTENT_ADMIN|SYSTEM_ADMIN }
+    AuditEntry
     Me
     OccupationStaff
-    OccupationStaffingRow
-    Page
-    PrivateRecord
-    ScenarioSummary
-    UpdateMeInput
-    UpdateUserInput
     UserAdminView
-    GetUserActivityQuery { cursor?, limit? }
-    ListMyPastFeedbackQuery { cursor?, limit? }
-    ListUsersQuery { role?, status?, q?, cursor?, limit? }
   }
 }
 
-class NotificationService <<CL-07 · NotificationModule>>
+class AssignedTo <<domain · CD-01>>
+class AuthSession <<domain · CD-01>>
+class Explorer <<domain · CD-01>>
+class PasswordResetToken <<domain · CD-01>>
+class StaffMember <<domain · CD-01>>
+class UserAccount <<domain · CD-01>>
+class UserIdentity <<domain · CD-01>>
 
 AuthController --> AuthService
+AuthController ..> AuthModule_DTOs
+AuthService --> AccountStore
 AuthService --> TokenService
 AuthService --> PasswordService
 AuthService --> GoogleOAuthService
-AuthService --> NotificationService
-AuthService --> ActivityLogService
+TokenService ..> AuthSession : «write»
+TokenService ..> PasswordResetToken : «write»
+AccountStore ..> UserAccount : «write»
+AccountStore ..> Explorer : «write»
+AccountStore ..> StaffMember : «write»
+AccountStore ..> UserIdentity : «write»
 JwtAuthGuard --> TokenService
 OccupationAccessGuard --> AccessPolicyService
 MeController --> AccountService
-MeController --> RecordService
+MeController ..> UserModule_DTOs
 UserAdminController --> UserAdminService
-UserAdminController --> ActivityLogService
+UserAdminController ..> UserModule_DTOs
 StaffingController --> StaffingService
+StaffingController ..> UserModule_DTOs
+AccountService --> AccountStore
 AccountService --> PasswordService
 AccountService --> TokenService
+UserAdminService --> AccountStore
 UserAdminService --> TokenService
-UserAdminService --> NotificationService
-UserAdminService --> ActivityLogService
-StaffingService --> NotificationService
+StaffingService ..> AssignedTo : «write»
+legend bottom
+  | Arrow | Meaning |
+  | A --> B | association: A holds B through constructor injection (a controller holds its services) |
+  | A ..> Entity : «write» | A writes the domain class (the module owns it; see CD-01 … CD-08) |
+  | Controller ..> DTOs | the controller's routes take and return these types |
+  | A ..\|> I | A realizes the interface or port I |
+  | grey class | defined in another diagram (CL-0x · module, or domain · CD-0x) |
+endlegend
 @enduml

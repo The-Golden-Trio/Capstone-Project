@@ -1,0 +1,422 @@
+# Overlay for gen_domain.py. The ERD (plantuml/erd/ERD_JobQuest_Chen.puml) stays the source of truth and is
+# never edited; this file only holds what an ERD cannot say and that a class diagram needs:
+# which diagram a section goes to, how to read the (min,max) labels, aggregation, {xor} groups,
+# attribute types, enum values, OCL constraints and domain methods (each with its source).
+
+diagrams:
+  CD-01: {title: "Identity and access", file: CD-01_Identity, sections: [A]}
+  CD-02: {title: "Catalogue, reference data, soft skills and keywords", file: CD-02_CatalogueAndReference, sections: [B, C]}
+  CD-03: {title: "Level pack and scenario content", file: CD-03_ScenarioContent, sections: [D, E]}
+  CD-04: {title: "AI drafting, review, presentation, play-test and release", file: CD-04_AuthoringReviewRelease, sections: [F]}
+  CD-05: {title: "Tarot NPCs, side quests, economy, health and calendar", file: CD-05_NpcAndLife, sections: [G, K]}
+  CD-06: {title: "Explorer profile and progression", file: CD-06_ExplorerProfileAndProgress, sections: [H, I]}
+  CD-07: {title: "Runs and grading", file: CD-07_RunsAndGrading, sections: [J]}
+  CD-08: {title: "Grading quality, feedback and AI operations", file: CD-08_QualityFeedbackAndAiOps, sections: [L]}
+
+# The ERD mixes two conventions for the label next to an entity. Default ("count"): the label is how many of THAT entity
+# sit at its end of the association. Relationships listed here use "partners": the label next to E is how many partners
+# each E has (so it is the multiplicity at the OTHER end). Reading follows the domain meaning of each case.
+partners_reading:
+  MAPS_TO_ONET: "D-123: an occupation maps to 1-2 O*NET codes"
+  MAPS_TO_ESCO: "D-123: an occupation maps to 1-2 ESCO occupations"
+  REQUIRES_KEYWORD: "D-118/D-120: 5-10 output keywords per occupation"
+  TRAINS: "a level trains 0-5 keywords"
+  BUDGETS: "D-114: every level budgets all 7 soft skill groups"
+  FOCUSES_ON: "a scenario focuses on 1-2 keywords"
+  ANSWERS_CARD: "Get to know me has 18 cards"
+  LIKES: "an explorer likes at most 5 hobbies"
+  PROGRESSES: "an explorer has points in all 7 groups"
+  BOOSTS: "D-113: a zodiac sign boosts 2 groups"
+  SUGGESTS: "a suggestion shows at most 9 occupations"
+  HAS_HABIT: "S6: at most 3 habits per explorer"
+  SCORES_ATTR: "FR-19: 5 rating attributes per rating"
+
+# Whole-part without existence dependence (the part is a strong entity with its own id): aggregation.
+# Value = the entity that is the whole. Identifying relationships of the ERD become composition instead.
+aggregation:
+  IN_REGION: INTEREST_REGION
+  IN_GROUP: OCCUPATION_GROUP
+  PARENT_OF: ESCO_SKILL_GROUP
+  ITEM_OF: SOFT_SKILL_GROUP
+  OPENS: USER_ACCOUNT
+  REQUESTS_RESET: USER_ACCOUNT
+  TAKES: EXPLORER
+  SETS_GOAL: EXPLORER
+  ENROLS: EXPLORER
+  TRANSACTS: EXPLORER
+  OWNS: EXPLORER
+  CALLS: AI_JOB
+  DECIDES: REVIEW_ASSIGNMENT
+
+# Roles for relationships that join an entity to itself or repeat a pair. First role belongs to the first end
+# (file order of the ERD link), the second to the other end.
+roles:
+  REQUIRES_PRIOR: [dependent, prerequisite]
+  SIMILAR_TO: [source, target]
+  PARENT_OF: [parent, child]
+  TRANSFERS_TO: [from, to]
+  RELATES_TO: [from, to]
+  REASSIGNS: [replaced, replacement]
+  FALLS_BACK_TO: [outfit, fallback]
+  REVIEWER: [reviewed, reviewer]
+  ASSIGNER: [assigned, assigner]
+  NODE_SETS_FLAG: [setter, sets]
+  NODE_READS_FLAG: [reader, reads]
+  SPEAKS: [speaks, speaker]
+  RECHECKS: [rechecks, rechecked]
+  REMEMBERS: [memory, rememberer]
+  PRESENT: [memory, present]
+
+# Alternatives drawn as separate 0..1 associations that exactly one of which is set ({xor}).
+xor_groups:
+  LOGS: {rels: [LOGS_SCENARIO, LOGS_PACK, LOGS_OCCUPATION, LOGS_CHAPTER], text: "a log row is about exactly one of scenario, level pack, occupation or NPC chapter"}
+  REVIEWS: {rels: [REVIEWS_SCENARIO, REVIEWS_PACK], text: "an assignment reviews a scenario or a level pack"}
+  INTERVIEW_FOR: {rels: [INTERVIEW_FOR_SCENARIO, INTERVIEW_FOR_PACK], text: "an interview is for a scenario or a level pack"}
+  RUN_OF: {rels: [OF_RELEASE, OF_BUILD], text: "a run plays a release, or a build when isPlaytest"}
+  SEGMENT_AT: {rels: [SEGMENT_AT_NODE, SEGMENT_AT_PROBE], text: "a segment sits at a node or at a review probe (by kind)"}
+  CHECKS_ON: {rels: [CHECKS_ON_ARTEFACT, CHECKS_ON_NODE], text: "a check is on an artefact or on a node"}
+  SIDE_OF: {rels: [OF_CHAPTER, OF_ACTIVITY], text: "a side quest run is of an NPC chapter or of a side activity"}
+  TXN: {rels: [TXN_RUN, TXN_ITEM, TXN_MILESTONE, TXN_OCCASION], text: "the reference depends on kind; may be none"}
+  GAIN: {rels: [GAIN_RUN, GAIN_SIDE, GAIN_ITEM], text: "the source depends on source (run, side quest, item)"}
+
+# OCL-style constraints that the ERD only states in comments or cannot state. Shown as notes.
+constraints:
+  ASSIGNED_TO: "{ at most one CONTENT_ADMIN per Occupation }  FR-40"
+  KNOWS: "{ the 6 cards open at the start (N1) exist for every Explorer }"
+  PERFORMS_TASK: "{ task.level = scenario.level }"
+  FROM_PRESENTATION: "{ presentation.scenario = build.scenario }"
+  ANSWERS_CRITERION: "{ criterion belongs to the review's criteria version }"
+  PLACES_DECOR: "{ only items the explorer OWNS can be placed }"
+  ANSWERS_CARD: "{ 18 answers once the attempt is complete }"
+  RELEASED_FROM: "{ a release is built from exactly one build }"
+  EARNED_KEYWORD: "{ unique (explorer, keyword) }"
+  DRESSES: "{ unique (department, companyType); empty companyType = default rule }"
+
+# Attribute types. The ERD has none; these are inferred from names, rules and research, so read them as proposals.
+# Lookup order: types_by_entity["ENTITY.attr"] -> types_by_name[attr] -> pattern rules -> String.
+type_patterns:
+  - {re: "^id$", type: uuid}
+  - {re: "_id$", type: uuid}
+  - {re: "_at$", type: DateTime}
+  - {re: "^(is|has)_", type: Boolean}
+  - {re: "_date$", type: Date}
+types_by_name:
+  at: DateTime
+  deadline: DateTime
+  effective_from: DateTime
+  date_of_birth: Date
+  game_date: Date
+  price_date: Date
+  # booleans
+  batch_done: Boolean
+  knows_target: Boolean
+  savings_locked: Boolean
+  slow_recovery: Boolean
+  free_on_repeat: Boolean
+  free_turn_after_reaction: Boolean
+  hint_used: Boolean
+  in_regression_set: Boolean
+  locks_savings: Boolean
+  repeat_yearly: Boolean
+  repeats_yearly: Boolean
+  required: Boolean
+  realtime: Boolean
+  core: Boolean
+  present_at_end: Boolean
+  must_not: Boolean
+  bonus_credited: Boolean
+  has_colour_mask: Boolean
+  # integers
+  age: Int
+  amount: Int
+  arcana_no: Int
+  attempts: Int
+  balance: Int
+  band_no: Int
+  base_budget: Int
+  batch_no: Int
+  best_points: Int
+  buff_total: Int
+  buffed: Int
+  cap: Int
+  chapter_no: Int
+  chapters_done: Int
+  cluster_no: Int
+  completions: Int
+  consecutive_ot: Int
+  consensus_rank: Int
+  cost_slots: Int
+  credited: Int
+  delta: Int
+  event_seq: Int
+  from_seq: Int
+  to_seq: Int
+  followup_cap: Int
+  ambient_min_points: Int
+  wait_window: Int
+  review_max: Int
+  gap_slots_left: Int
+  health_after: Int
+  health_before: Int
+  health_cap: Int
+  health_cost: Int
+  health_gain: Int
+  health_value: Int
+  intimacy_level: Int
+  intimacy_points: Int
+  level_no: Int
+  main_mission_count: Int
+  min_points: Int
+  min_intimacy: Int
+  min_band: Int
+  minutes_per_point: Int
+  phase_no: Int
+  pin_order: Int
+  position: Int
+  price: Int
+  progress: Int
+  rank: Int
+  raw: Int
+  raw_points: Int
+  revision_count: Int
+  round_no: Int
+  savings: Int
+  scored_scenarios: Int
+  seq: Int
+  slot_no: Int
+  slots_total: Int
+  slots_used: Int
+  sort_order: Int
+  time_limit_seconds: Int
+  uses_left: Int
+  version_no: Int
+  xu_cost: Int
+  xu_per_mission: Int
+  side_quest_budget: Int
+  estimated_minutes: Int
+  period_gaps: Int
+  latency: Int
+  unit_price_paid: Int
+  realism_rating: Int
+  score: Int
+  points: Int
+  level: Int
+  year: Int
+  time_budget: Int
+  onboarding_slides: Int
+  hr_open: String
+  hr_close: String
+  # decimals
+  replay_pay_rate: Decimal
+  weight: Decimal
+  penalty_rate: Decimal
+  lifestyle_x: Decimal
+  difficulty_k: Decimal
+  z_need: Decimal
+  sim: Decimal
+  credit: Decimal
+  s: Decimal
+  rate: Decimal
+  price_x: Decimal
+  parent_price_x: Decimal
+  buff_value: Decimal
+  cost: Decimal
+  cache_read: Decimal
+  cache_write: Decimal
+  reasoning: Decimal
+  share: Decimal
+  # json
+  payload: Json
+  detail: Json
+  input: Json
+  output: Json
+types_by_entity:
+  # the same name means different things in different entities
+  TOPIC_GUIDE.version: Int
+  TOPIC_GUIDE.content: Text
+  SCENARIO_BUILD.content: Json
+  SCENARIO_RELEASE.content: Json
+  PLATFORM_SETTING.version: Int
+  PLATFORM_SETTING.value: Json
+  PROMPT_TEMPLATE.version: Int
+  PROMPT_TEMPLATE.body: Text
+  IMPORT_BATCH.version: String
+  NPC_CARD.version: String
+  NPC_CARD.birthday: String
+  LEVEL_PACK.version_no: Int
+  ANSWERS_CARD.value: Int
+  CHECK.on_yes: Json
+  MODEL_PRICE.input: Decimal
+  MODEL_PRICE.output: Decimal
+  MODEL_CALL.cost: Decimal
+  MODEL_CONFIG.tier: String
+  NPC_ABILITY.tier: Int
+  SHOP_ITEM.tier: Int
+  SKILL_TIER.tier: Int
+  PROGRESSES.tier: Int
+  EXPLORER_GOAL.baseline_tier: Int
+  ESCO_SKILL_GROUP.level: Int
+  ZODIAC_SIGN.dates.start_md: String
+  ZODIAC_SIGN.dates.end_md: String
+  OCCUPATION_LEVEL.salary.enterprise_min: Decimal
+  OCCUPATION_LEVEL.salary.enterprise_max: Decimal
+  OCCUPATION_LEVEL.salary.public_min: Decimal
+  OCCUPATION_LEVEL.salary.public_max: Decimal
+  OCCUPATION_LEVEL.experience.from_years: Int
+  OCCUPATION_LEVEL.experience.to_years: Int
+  SCENARIO_RUN.ot.count: Int
+  SCENARIO_RUN.ot.hours: Decimal
+  SCENARIO_RUN.ot.paid: Int
+  MODEL_CONFIG.call_profile.max_tokens: Int
+  MODEL_CONFIG.call_profile.timeout: Int
+  MODEL_CONFIG.call_profile.retries: Int
+  MODEL_CONFIG.call_profile.temperature: Decimal
+  MODEL_CALL.tokens.uncached: Int
+  MODEL_CALL.tokens.cache_read: Int
+  MODEL_CALL.tokens.cache_write: Int
+  MODEL_CALL.tokens.output: Int
+  MODEL_CALL.tokens.reasoning: Int
+  RUN_EVENT.provenance.cost: Decimal
+  RUN_EVENT.provenance.latency: Int
+  NPC_CHAPTER.fixed_bonus.amount: Int
+  NPC_CHAPTER.unlock.min_intimacy: Int
+  NPC_CHAPTER.unlock.min_health: Int
+  SCENARIO.clock.budget_points: Int
+  SCENARIO.clock.time_points: Int
+  SCENARIO.difficulty.ambiguity: Int
+  SCENARIO.difficulty.stakeholders: Int
+  SCENARIO.difficulty.missing_info: Int
+  SCENARIO.difficulty.time_pressure: Int
+  SCENARIO.health_cost_override.value: Int
+  NODE.points: Int
+  ACTION.points: Int
+  SHOP_ITEM.price: Int
+  CASTS.draw_kind: String
+  EXPLORER.zodiac_sign: ZodiacSign
+  EXPLORER.riasec_self: Json
+  EXPLORER.riasec_tried: Json
+  BUDGETS.required_tier: Int
+  REQUIRES_KEYWORD.max_proficiency: Proficiency
+  OCCUPATION.riasec_profile: Decimal
+  INTEREST_TAP.value: Int
+
+# Enumerations. "values" come from a cited source; any enum-like column not listed here is drawn as
+# `String «enum?»`, meaning the ERD and research name no values yet.
+enums:
+  Role:
+    use: [USER_ACCOUNT.roles, ASSIGNED_TO.role]
+    values: [EXPLORER, DOMAIN_EXPERT, CONTENT_ADMIN, SYSTEM_ADMIN]
+    source: "apps/api/prisma/schema.prisma UserRoleKind; A22"
+  AccountStatus:
+    use: [USER_ACCOUNT.status]
+    values: [ACTIVE, DISABLED, DELETED]
+    source: "schema.prisma AccountStatus"
+  ScenarioStatus:
+    use: [SCENARIO.status, LIFECYCLE_LOG.from_status, LIFECYCLE_LOG.to_status]
+    values: [DRAFT, SUBMITTED, IN_REVIEW, APPROVED, IN_PLAYTEST, READY, PUBLISHED, RETIRED]
+    source: "SM-01"
+  ReviewDecision:
+    use: [REVIEW.decision]
+    values: [APPROVE, REQUEST_CHANGES, REJECT]
+    source: "SD-06, schema.prisma ReviewDecision"
+  CriterionAnswer:
+    use: [ANSWERS_CRITERION.answer]
+    values: [MET, NOT_MET]
+    source: "schema.prisma CriterionVerdict"
+  AssignmentStatus:
+    use: [REVIEW_ASSIGNMENT.status]
+    values: [ACTIVE, COMPLETED, REASSIGNED]
+    source: "schema.prisma AssignmentStatus"
+  AssetKind:
+    use: [ASSET.kind]
+    values: [NPC, BACKGROUND, SCENE, ICON]
+    source: "schema.prisma AssetKind"
+  AssetSource:
+    use: [ASSET.source]
+    values: [LIBRARY, LICENSED, AI_GENERATED]
+    source: "schema.prisma AssetSource"
+  BiasCheckStatus:
+    use: [ASSET.bias_check.status]
+    values: [PENDING, PASSED, FAILED]
+    source: "schema.prisma BiasCheckStatus"
+  RunStatus:
+    use: [SCENARIO_RUN.status]
+    values: [IN_PROGRESS, FINISHED, ABANDONED]
+    source: "schema.prisma RunStatus"
+  Proficiency:
+    use: [TRAINS.proficiency, EARNED_KEYWORD.proficiency]
+    values: [FAMILIAR, PROFICIENT, EXPERT]
+    source: "schema.prisma Proficiency; D-118"
+  RiasecAxis:
+    use: [GTKM_CARD.riasec_axis, NODE.riasec_axis, INTEREST_TAP.axis]
+    values: [R, I, A, S, E, C]
+    source: "D-104 (6 RIASEC axes)"
+  SideActivityKind:
+    use: [SIDE_ACTIVITY.kind]
+    values: [COFFEE, MEAL, TICKET, GROUP_TRIP]
+    source: "ERD comment on SIDE_ACTIVITY"
+  ZodiacElement:
+    use: [ZODIAC_SIGN.element]
+    values: [FIRE, EARTH, AIR, WATER]
+    source: "Hoàng đạo 12 cung"
+  ZodiacModality:
+    use: [ZODIAC_SIGN.modality]
+    values: [CARDINAL, FIXED, MUTABLE]
+    source: "Hoàng đạo 12 cung"
+# Columns whose value is a 0..2 or 0..3 scale rather than an enum.
+scales:
+  ASSESSMENT.level: "0..2  D-116"
+  JUDGE_RESULT.level: "0..2  D-116"
+  SCORES.level: "0..2  D-116"
+  REF_GRADE.level: "0..2  D-116"
+  BLIND_RATING.level: "0..2  D-116"
+  REFERENCE_REGRADE.level: "0..2  D-116"
+  ANSWERS_CARD.value: "1..3  D-104"
+  INTEREST_TAP.value: "1..3  D-106"
+  SCORES_ATTR.score: "1..5  FR-19"
+  SKILL_TIER.tier: "0..5  D-114"
+  PROGRESSES.tier: "0..5  D-114"
+  EXPLORER_GOAL.baseline_tier: "0..5  D-114"
+# Column names that are enum-like when no enum above covers them.
+enum_candidates: [status, kind, role, type, source, decision, result, tier, relation, visibility, format, channel,
+                  provider, family, section, selection, gender, review_status, unlock_route, draw_kind,
+                  trigger_kind, finish_reason, shifts, overtime, skill_type, box, grade, response, match_method,
+                  entry_route, onboard_kind, company_choice, item_group, rarity, price_unit, decor_slot, gift_group,
+                  buff_kind, branch_group, domain, stage, address_form, situation_type, player_role, stance,
+                  default_channel, disclosure_style, layer, difficulty_stratum, difficulty_tier, health_tier,
+                  basis, evidence_grade, weight_status, name_vi_status, judge_slot, source_kind, flags]
+
+# Domain behaviour (the ERD has none). Each method has a source and is a rule, not an invented feature.
+# Implementation notes: the data of a class is the Prisma model; a pure rule lives in packages/game-core,
+# a rule that touches the database lives in the service that owns the table (see CL-0x).
+methods:
+  USER_ACCOUNT:
+    - "+hasRole(role: Role) : Boolean"
+  EXPLORER:
+    - "+addSkillPoints(group: SoftSkillGroup, raw: Int) : Int  «D-113 +12%, D-114 cap 10.000»"
+    - "+currentBalance() : Int  «D-133 ledger is append-only»"
+  XU_TRANSACTION: []
+  SKILL_TIER:
+    - "+tierFor(points: Int) : Int  «D-114»"
+  SCENARIO:
+    - "+apply(action: LifecycleAction) : LifecycleLog  «SM-01»"
+  SCENARIO_RELEASE: []
+  SCENARIO_RUN:
+    - "+append(event: RunEvent) : void  «SD-01, run = append-only events»"
+    - "+fold() : RunState  «§5.3.1, game-core»"
+    - "+finish() : void  «SD-02»"
+    - "+startOvertime() : void  «D-133 at most 2 per scene»"
+  ASSESSMENT:
+    - "+combine(judges: JudgeResult[]) : Int  «D-116, D-132»"
+  SCENARIO_BEST:
+    - "+recordRun(run: ScenarioRun) : Int  «D-119 pay only the difference»"
+  REVIEW_ASSIGNMENT:
+    - "+reassign(to: StaffMember) : ReviewAssignment  «SD-06»"
+  GTKM_ATTEMPT:
+    - "+complete() : void  «FR-04, no AI call»"
+  KNOWS:
+    - "+addIntimacy(points: Int) : void  «D-133 never decreases»"
+  INVENTORY_ITEM:
+    - "+use(run: ScenarioRun) : void  «D-133 one buff item per scene, total buff capped +50%»"
+  AI_JOB:
+    - "+retry() : void  «D-92 switch model of the same role»"

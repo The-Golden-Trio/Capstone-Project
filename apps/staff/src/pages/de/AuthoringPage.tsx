@@ -21,10 +21,27 @@ import type {
 } from '../../api/types';
 import { Card, Notice, ProblemAlert } from '../../components/ui';
 import { ContextForm } from '../../features/authoring/ContextForm';
-import { setAtPath } from '../../features/authoring/draft';
+import { cleanContent, setAtPath } from '../../features/authoring/draft';
+import {
+  REVIEW_CHECKLIST,
+  SCENE_PRINCIPLES,
+} from '../../features/authoring/guidance';
+import {
+  activityIndexOfPath,
+  lintContent,
+  tabOfPath,
+  type EditorTab,
+} from '../../features/authoring/lint';
 import { ReferenceAnswers } from '../../features/authoring/ReferenceAnswers';
 import { RevisionDialog } from '../../features/authoring/RevisionDialog';
 import { ScenarioEditor } from '../../features/authoring/ScenarioEditor';
+import {
+  Checklist,
+  HintList,
+  PrincipleList,
+  Stepper,
+  type StepState,
+} from '../../features/shared/Guidance';
 import { HistoryTimeline } from '../../features/shared/HistoryTimeline';
 import { StatusBadge } from '../../features/shared/StatusBadge';
 import { useEventStream } from '../../hooks/useEventStream';
@@ -41,6 +58,10 @@ type Tab = 'context' | 'content' | 'references' | 'checks' | 'history';
  */
 export function AuthoringPage() {
   const { scenarioId = '' } = useParams();
+  return <AuthoringScenario key={scenarioId} scenarioId={scenarioId} />;
+}
+
+function AuthoringScenario({ scenarioId }: { scenarioId: string }) {
   const me = useAuth((s) => s.me);
   const detail = useLoad(() => staffApi.getScenario(scenarioId), [scenarioId]);
   const options = useLoad(
@@ -70,6 +91,8 @@ export function AuthoringPage() {
   const [report, setReport] = useState<CheckReport | null>(null);
   const [conflict, setConflict] = useState(false);
   const [historyKey, setHistoryKey] = useState(0);
+  const [editorTab, setEditorTab] = useState<EditorTab>('activities');
+  const [openActivity, setOpenActivity] = useState(0);
 
   const d = detail.data;
   const content = draft ?? d?.content ?? null;
@@ -86,6 +109,16 @@ export function AuthoringPage() {
       name: names.get(id) ?? id,
     }));
   }, [options.data, d?.skillIds]);
+
+  const hints = useMemo(() => (content ? lintContent(content) : []), [content]);
+
+  /** Nhảy tới chỗ cần sửa theo đường dẫn kiểu `activities[1].items[0]`. */
+  const openPath = (path: string) => {
+    setTab('content');
+    setEditorTab(tabOfPath(path));
+    const i = activityIndexOfPath(path);
+    if (i !== null) setOpenActivity(i);
+  };
 
   const accept = (next: ScenarioDetail) => {
     detail.setData(next);
@@ -167,7 +200,11 @@ export function AuthoringPage() {
     run('save', async () => {
       if (!d || !content) return;
       accept(
-        await staffApi.saveScenarioContent(scenarioId, d.version, content),
+        await staffApi.saveScenarioContent(
+          scenarioId,
+          d.version,
+          cleanContent(content),
+        ),
       );
       setNotice('Đã lưu.');
     });
@@ -261,7 +298,32 @@ export function AuthoringPage() {
           </span>
         </Notice>
       )}
-      <ProblemAlert error={error} />
+      <ProblemAlert error={error ?? detail.error} />
+
+      <Stepper
+        onSelect={(id) => setTab(id === 'submit' ? 'checks' : id)}
+        steps={(
+          [
+            ['context', 'Ngữ cảnh', Boolean(d.content)],
+            ['content', 'Nội dung', Boolean(d.content) && !dirty],
+            ['references', 'Câu mẫu', false],
+            ['checks', 'Kiểm tra', report?.passed === true],
+            ['submit', 'Nộp duyệt', d.status !== 'DRAFT'],
+          ] as const
+        ).map(([id, label, done]) => ({
+          id,
+          label,
+          state: (id === currentTab
+            ? 'current'
+            : done
+              ? 'done'
+              : 'todo') as StepState,
+          note:
+            id === 'content' && hints.length > 0
+              ? `${hints.length} gợi ý`
+              : undefined,
+        }))}
+      />
 
       <Tabs
         idBase="authoring"
@@ -315,6 +377,12 @@ export function AuthoringPage() {
               content={content}
               readOnly={readOnly}
               skills={skills}
+              levelNo={d.levelNo}
+              hints={hints}
+              tab={editorTab}
+              onTabChange={setEditorTab}
+              openActivity={openActivity}
+              onOpenActivity={setOpenActivity}
               onChange={(next) => {
                 setDraft(next);
                 setDirty(true);
@@ -348,27 +416,73 @@ export function AuthoringPage() {
         )}
 
         {currentTab === 'checks' && (
-          <Card title="Kiểm tra tự động">
-            {!report ? (
-              <p className="text-ink-faint">
-                Bấm “Kiểm tra” để chạy luật trên bản đã lưu.
-              </p>
-            ) : report.passed ? (
-              <Notice tone="success">Đạt mọi luật. Có thể nộp duyệt.</Notice>
-            ) : (
-              <ul className="space-y-1">
-                {report.failedRules.map((f, i) => (
-                  <li
-                    key={i}
-                    className="rounded-lg bg-danger/10 px-3 py-1.5 text-[13px] text-danger"
-                  >
-                    <code className="font-mono text-[12px]">{f.rule}</code> ·{' '}
-                    {f.path}: {f.message}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </Card>
+          <div className="grid gap-4 lg:grid-cols-2">
+            <div className="space-y-4">
+              <Card title="Luật máy chủ · bắt buộc để nộp">
+                {!report ? (
+                  <p className="text-ink-faint">
+                    Bấm “Kiểm tra” để chạy luật trên bản đã lưu.
+                  </p>
+                ) : report.passed ? (
+                  <Notice tone="success">
+                    Đạt mọi luật. Có thể nộp duyệt.
+                  </Notice>
+                ) : (
+                  <ul className="space-y-1">
+                    {report.failedRules.map((f, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 rounded-lg bg-danger/10 px-3 py-1.5 text-[13px] text-danger"
+                      >
+                        <span className="min-w-0 flex-1">
+                          <code className="font-mono text-[12px]">
+                            {f.rule}
+                          </code>{' '}
+                          · {f.path}: {f.message}
+                        </span>
+                        {f.path && (
+                          <button
+                            type="button"
+                            onClick={() => openPath(f.path)}
+                            className="shrink-0 text-[12px] font-semibold text-info hover:underline"
+                          >
+                            Mở
+                          </button>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Card>
+              <Card title="Gợi ý theo research · không chặn nộp">
+                <p className="mb-2 text-[12px] text-ink-faint">
+                  Chạy ngay trên bản đang sửa. Máy chỉ bắt được dấu hiệu bề mặt;
+                  quyết định sửa hay không là của bạn.
+                </p>
+                <HintList
+                  hints={hints}
+                  onOpen={(h) => openPath(h.path)}
+                  empty="Không còn gợi ý nào."
+                />
+              </Card>
+            </div>
+            <div className="space-y-4">
+              <Card title="Tự rà trước khi nộp">
+                <p className="mb-2 text-[12px] text-ink-faint">
+                  Những điều máy không kiểm được. Chỉ lưu trên trình duyệt này,
+                  không gửi đi.
+                </p>
+                <Checklist
+                  key={`${scenarioId}:${d.version}`}
+                  items={REVIEW_CHECKLIST}
+                  storageKey={`jq.staff.selfcheck.${scenarioId}.${d.version}`}
+                />
+              </Card>
+              <Card title="Một màn là gì">
+                <PrincipleList items={SCENE_PRINCIPLES} />
+              </Card>
+            </div>
+          </div>
         )}
 
         {currentTab === 'history' && (

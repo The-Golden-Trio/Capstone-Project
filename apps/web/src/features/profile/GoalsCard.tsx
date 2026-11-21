@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import {
@@ -15,7 +15,6 @@ import {
   EmptyMessage,
   PaperCard,
   CardHeading,
-  Foldout,
 } from './ProfileKit';
 
 import { api } from '../../api';
@@ -33,12 +32,23 @@ export function GoalsCard({
   const qc = useQueryClient();
   const { toast } = useToast();
   const [editing, setEditing] = useState(false);
+  const editButton = useRef<HTMLButtonElement>(null);
+  const editor = useRef<HTMLFormElement>(null);
+  const wasEditing = useRef(false);
+  useEffect(() => {
+    if (editing)
+      editor.current?.querySelector<HTMLElement>('input, textarea')?.focus();
+    else if (wasEditing.current) editButton.current?.focus();
+    wasEditing.current = editing;
+  }, [editing, form.data]);
   const [draft, setDraft] = useState<QuizAnswers['goals']>(record.goals ?? {});
   const save = useMutation({
     mutationFn: () => api.progress.updateGoals(draft),
-    onSuccess: () => {
-      void qc.invalidateQueries({ queryKey: keys.record });
-      void qc.invalidateQueries({ queryKey: keys.quizResult });
+    onSuccess: async () => {
+      await Promise.all([
+        qc.invalidateQueries({ queryKey: keys.record }),
+        qc.invalidateQueries({ queryKey: keys.quizResult }),
+      ]);
       setEditing(false);
       toast({ tone: 'success', title: 'Đã lưu mục tiêu' });
     },
@@ -51,9 +61,11 @@ export function GoalsCard({
         action={
           !editing && (
             <ToonButton
+              ref={editButton}
               variant="ghost"
               size="sm"
               onClick={() => {
+                save.reset();
                 setDraft(record.goals ?? {});
                 setEditing(true);
               }}
@@ -77,6 +89,7 @@ export function GoalsCard({
         <LoadingBlock />
       ) : editing ? (
         <form
+          ref={editor}
           className="space-y-6"
           onSubmit={(event) => {
             event.preventDefault();
@@ -154,35 +167,37 @@ export function GoalsCard({
             >
               Lưu mục tiêu
             </ToonButton>
-            <ToonButton variant="ghost" onClick={() => setEditing(false)}>
+            <ToonButton
+              variant="ghost"
+              disabled={save.isPending}
+              onClick={() => setEditing(false)}
+            >
               Huỷ
             </ToonButton>
           </div>
         </form>
       ) : (
-        <Foldout title="Xem mục tiêu đã kể">
-          <dl className="space-y-4">
-            {form.data.goals.map((question) => (
-              <div key={question.id}>
-                <dt className="font-toon text-xs font-bold uppercase tracking-wider">
-                  {question.label}
-                </dt>
-                <dd className="mt-1 break-words text-sm text-toon-ink-soft">
-                  <ReadMore
-                    text={
-                      [
-                        ...(record.goals?.[question.id]?.picked ?? []),
-                        record.goals?.[question.id]?.note,
-                      ]
-                        .filter(Boolean)
-                        .join(' · ') || 'Chưa kể'
-                    }
-                  />
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </Foldout>
+        <dl aria-label="Mục tiêu đã kể" className="space-y-4">
+          {form.data.goals.map((question) => (
+            <div key={question.id}>
+              <dt className="font-toon text-xs font-bold uppercase tracking-wider">
+                {question.label}
+              </dt>
+              <dd className="mt-1 break-words text-sm text-toon-ink-soft">
+                <ReadMore
+                  text={
+                    [
+                      ...(record.goals?.[question.id]?.picked ?? []),
+                      record.goals?.[question.id]?.note,
+                    ]
+                      .filter(Boolean)
+                      .join(' · ') || 'Chưa kể'
+                  }
+                />
+              </dd>
+            </div>
+          ))}
+        </dl>
       )}
       {!quizDone && (
         <Link

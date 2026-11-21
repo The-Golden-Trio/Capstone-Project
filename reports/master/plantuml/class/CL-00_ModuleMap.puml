@@ -6,47 +6,50 @@ package "Identity & access" {
   [AuthModule\n<size:10>CL-01 · api</size>] as AuthModule
   [UserModule\n<size:10>CL-01 · api</size>] as UserModule
 }
-package "Exploration" {
-  [QuizModule\n<size:10>CL-03 · api</size>] as QuizModule
-  [PlayModule\n<size:10>CL-03 · api</size>] as PlayModule
-  [FeedbackModule\n<size:10>CL-03 · api</size>] as FeedbackModule
-}
-package "Assessment" {
-  [AssessmentModule\n<size:10>CL-04 · worker</size>] as AssessmentModule
-  [QualityModule\n<size:10>CL-04 · worker · api</size>] as QualityModule
-}
 package "Content lifecycle" {
   [CatalogueModule\n<size:10>CL-02 · api</size>] as CatalogueModule
-  [ImportModule\n<size:10>CL-02 · worker · api</size>] as ImportModule
-  [LifecycleModule\n<size:10>CL-05 · shared</size>] as LifecycleModule
-  [ScenarioModule\n<size:10>CL-05 · worker · api</size>] as ScenarioModule
-  [ReviewModule\n<size:10>CL-05 · api</size>] as ReviewModule
-  [PublishingModule\n<size:10>CL-06 · worker · api</size>] as PublishingModule
+  [LifecycleModule\n<size:10>CL-03 · shared</size>] as LifecycleModule
+  [ScenarioModule\n<size:10>CL-03 · worker · api</size>] as ScenarioModule
+  [ReviewModule\n<size:10>CL-04 · api</size>] as ReviewModule
+  [PublishingModule\n<size:10>CL-04 · worker · api</size>] as PublishingModule
 }
-package "Monitoring" {
-  [MonitoringModule\n<size:10>CL-07 · api</size>] as MonitoringModule
+package "Import" {
+  [ImportModule\n<size:10>CL-02 · worker · api</size>] as ImportModule
+}
+package "Exploration" {
+  [CareerModule\n<size:10>CL-05 · api</size>] as CareerModule
+  [LifeModule\n<size:10>CL-05 · api</size>] as LifeModule
+  [PlayModule\n<size:10>CL-06 · worker · api</size>] as PlayModule
+}
+package "Assessment" {
+  [AssessmentModule\n<size:10>CL-06 · worker</size>] as AssessmentModule
+  [QualityModule\n<size:10>CL-06 · worker · api</size>] as QualityModule
 }
 package "AI orchestration · Model gateway" {
-  [AiModule\n<size:10>CL-04 · api</size>] as AiModule
+  [AiModule\n<size:10>CL-07 · api</size>] as AiModule
+}
+package "Monitoring" {
+  [FeedbackModule\n<size:10>CL-07 · api</size>] as FeedbackModule
+  [MonitoringModule\n<size:10>CL-07 · api</size>] as MonitoringModule
 }
 package "Shared platform" {
-  [CoreModule\n<size:10>CL-07 · global · shared</size>] as CoreModule
-  [NotificationModule\n<size:10>CL-07 · global · worker · api</size>] as NotificationModule
-  [GameCoreModule\n<size:10>CL-07 · global · shared</size>] as GameCoreModule
+  [CoreModule\n<size:10>CL-08 · global · shared</size>] as CoreModule
+  [NotificationModule\n<size:10>CL-08 · global · worker · api</size>] as NotificationModule
+  [GameCoreModule\n<size:10>CL-08 · global · shared</size>] as GameCoreModule
 }
-CatalogueModule ..> FeedbackModule
-PlayModule ..> CatalogueModule
-PlayModule ..> AssessmentModule
-PlayModule ..> QualityModule
-AssessmentModule ..> AiModule
 ScenarioModule ..> LifecycleModule
-ScenarioModule ..> ReviewModule
 ScenarioModule ..> AiModule
 ReviewModule ..> LifecycleModule
-ReviewModule ..> CatalogueModule
 PublishingModule ..> LifecycleModule
-PublishingModule ..> AiModule
 PublishingModule ..> PlayModule
+PublishingModule ..> AiModule
+CareerModule ..> CatalogueModule
+PlayModule ..> AssessmentModule
+PlayModule ..> AiModule
+PlayModule ..> CareerModule
+PlayModule ..> LifeModule
+PlayModule ..> QualityModule
+AssessmentModule ..> AiModule
 QualityModule ..> AssessmentModule
-MonitoringModule ..> FeedbackModule
+QualityModule ..> AiModule
 @enduml

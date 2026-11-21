@@ -5,13 +5,14 @@
  * riêng. Không ghi tên trục, không hiện biểu đồ, bỏ qua được.
  */
 import { useEffect, useRef, useState } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { Coffee } from 'lucide-react';
 import {
   Character,
   SceneBackdrop,
   ToonButton,
   ToonLikeScale,
+  toonButtonClasses,
   cn,
   type LikeValue,
 } from '@datn/ui';
@@ -61,12 +62,39 @@ export default function ReflectPage() {
         </p>
       </SceneBackdrop>
     );
+  if (!summary.data)
+    return (
+      <SceneBackdrop
+        src={TOON_BACKDROPS.cafe}
+        dim={0.9}
+        className="theme-toon grid min-h-dvh place-items-center p-4"
+      >
+        <div className="toon-card w-full max-w-md p-6 text-center">
+          <h1 className="font-toon text-2xl font-extrabold">
+            Chưa tải được phần nhìn lại
+          </h1>
+          <p role="alert" className="mt-3 text-sm font-semibold">
+            {errorText(summary.error)}
+          </p>
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+            <ToonButton
+              loading={summary.isFetching}
+              onClick={() => void summary.refetch()}
+            >
+              Thử lại
+            </ToonButton>
+            <Link
+              to={`/play/${runId}/summary`}
+              className={toonButtonClasses({ variant: 'secondary' })}
+            >
+              Bỏ qua và xem kết quả
+            </Link>
+          </div>
+        </div>
+      </SceneBackdrop>
+    );
   const prompts = summary.data?.reflection.prompts ?? [];
-  if (
-    !summary.data ||
-    summary.data.reflection.answered ||
-    prompts.length === 0
-  ) {
+  if (summary.data.reflection.answered || prompts.length === 0) {
     return <Navigate to={`/play/${runId}/summary`} replace />;
   }
 
@@ -101,68 +129,77 @@ export default function ReflectPage() {
               Bạn muốn làm việc này hằng ngày? Không đúng sai.
             </p>
 
-            <ol className="mt-6 flex flex-col gap-5">
-              {prompts.map((p, i) => (
-                <li
-                  key={p.key}
-                  className="rounded-2xl border-[2.5px] border-toon-ink bg-toon-cream p-4"
-                >
-                  <p className="mb-3 flex gap-2.5 font-semibold text-toon-ink">
-                    <span
-                      aria-hidden
-                      className="grid size-7 shrink-0 place-items-center rounded-lg border-[2.5px] border-toon-ink bg-toon-sky font-toon text-sm font-extrabold"
-                    >
-                      {i + 1}
-                    </span>
-                    {p.recap}
-                  </p>
-                  <ToonLikeScale
-                    label={p.recap}
-                    value={answers[p.key] ?? null}
-                    onChange={(v) => setAnswers((a) => ({ ...a, [p.key]: v }))}
-                  />
-                </li>
-              ))}
-            </ol>
+            <fieldset
+              disabled={reflect.isPending}
+              className="mt-6 min-w-0 border-0 p-0"
+              aria-busy={reflect.isPending}
+            >
+              <legend className="sr-only">Cảm nhận sau ca</legend>
+              <ol className="flex flex-col gap-5">
+                {prompts.map((p, i) => (
+                  <li
+                    key={p.key}
+                    className="rounded-2xl border-[2.5px] border-toon-ink bg-toon-cream p-4"
+                  >
+                    <p className="mb-3 flex gap-2.5 font-semibold text-toon-ink">
+                      <span
+                        aria-hidden
+                        className="grid size-7 shrink-0 place-items-center rounded-lg border-[2.5px] border-toon-ink bg-toon-sky font-toon text-sm font-extrabold"
+                      >
+                        {i + 1}
+                      </span>
+                      {p.recap}
+                    </p>
+                    <ToonLikeScale
+                      label={p.recap}
+                      value={answers[p.key] ?? null}
+                      onChange={(v) =>
+                        setAnswers((a) => ({ ...a, [p.key]: v }))
+                      }
+                    />
+                  </li>
+                ))}
+              </ol>
 
-            <section className="mt-6" aria-labelledby="realism">
-              <h2
-                id="realism"
-                className="font-toon text-lg font-extrabold text-toon-ink"
-              >
-                Riêng màn chơi này: có giống công việc thật không?
-              </h2>
-              <div
-                role="radiogroup"
-                aria-label="Màn chơi có giống thực tế không"
-                className="mt-3 grid gap-2.5 sm:grid-cols-3"
-              >
-                {REALISM.map((r) => {
-                  const active = realism === r.key;
-                  return (
-                    <label
-                      key={r.key}
-                      className={cn(
-                        'flex cursor-pointer items-center justify-center rounded-2xl border-[3px] border-toon-ink px-3 py-2.5 text-center font-toon text-base font-extrabold text-toon-ink transition-[transform,box-shadow] has-focus-visible:shadow-toon-focus',
-                        active
-                          ? '-translate-y-0.5 bg-toon-mint shadow-toon'
-                          : 'bg-toon-paper shadow-toon-sm hover:-translate-y-0.5',
-                      )}
-                    >
-                      <input
-                        type="radio"
-                        name="realism"
-                        value={r.key}
-                        checked={active}
-                        onChange={() => setRealism(r.key)}
-                        className="sr-only"
-                      />
-                      {r.label}
-                    </label>
-                  );
-                })}
-              </div>
-            </section>
+              <section className="mt-6" aria-labelledby="realism">
+                <h2
+                  id="realism"
+                  className="font-toon text-lg font-extrabold text-toon-ink"
+                >
+                  Riêng màn chơi này: có giống công việc thật không?
+                </h2>
+                <div
+                  role="radiogroup"
+                  aria-label="Màn chơi có giống thực tế không"
+                  className="mt-3 grid gap-2.5 sm:grid-cols-3"
+                >
+                  {REALISM.map((r) => {
+                    const active = realism === r.key;
+                    return (
+                      <label
+                        key={r.key}
+                        className={cn(
+                          'flex cursor-pointer items-center justify-center rounded-2xl border-[3px] border-toon-ink px-3 py-2.5 text-center font-toon text-base font-extrabold text-toon-ink transition-[transform,box-shadow] has-focus-visible:shadow-toon-focus',
+                          active
+                            ? '-translate-y-0.5 bg-toon-mint shadow-toon'
+                            : 'bg-toon-paper shadow-toon-sm hover:-translate-y-0.5',
+                        )}
+                      >
+                        <input
+                          type="radio"
+                          name="realism"
+                          value={r.key}
+                          checked={active}
+                          onChange={() => setRealism(r.key)}
+                          className="sr-only"
+                        />
+                        {r.label}
+                      </label>
+                    );
+                  })}
+                </div>
+              </section>
+            </fieldset>
 
             {reflect.isError && (
               <p
@@ -174,7 +211,11 @@ export default function ReflectPage() {
             )}
 
             <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-              <ToonButton variant="ghost" onClick={toSummary}>
+              <ToonButton
+                variant="ghost"
+                disabled={reflect.isPending}
+                onClick={toSummary}
+              >
                 Bỏ qua
               </ToonButton>
               <ToonButton

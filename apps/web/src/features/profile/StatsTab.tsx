@@ -7,21 +7,16 @@ import {
   InkStar,
   regionColor,
 } from '@datn/ui';
-import {
-  Foldout,
-  Notice,
-  EmptyMessage,
-  PaperCard,
-  CardHeading,
-  StatCard,
-} from './ProfileKit';
+import { Foldout, Notice, EmptyMessage, StatCard } from './ProfileKit';
 
 import { errorText, useCatalogue } from '../../api/hooks';
 import type { CatalogueOccupation, PlayerRecord } from '../../api/types';
+import { useRecordContext } from './useRecordContext';
 import { constellationPoints, timeCells } from './recordView';
 export function StatsTab({ record }: { record: PlayerRecord }) {
   const catalogue = useCatalogue();
   const stats = record.stats;
+  const context = useRecordContext(record);
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
@@ -39,11 +34,10 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
         />
         <StatCard label="Nhóm ngành đã ghé" value={stats.groupsVisited} />
       </div>
-      <PaperCard>
-        <CardHeading
-          title="Những vì sao đã ghé"
-          description="Chấm sáng: nghề đã thử. Vùng còn tối: chơi thêm để mở."
-        />
+      <Foldout title="Những vì sao đã ghé">
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Chấm sáng: nghề đã thử. Vùng còn tối: chơi thêm để mở.
+        </p>
         {catalogue.isError ? (
           <EmptyMessage
             title="Chưa vẽ được bản đồ"
@@ -94,12 +88,11 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
             })}
           </div>
         )}
-      </PaperCard>
-      <PaperCard>
-        <CardHeading
-          title="Thời gian trong từng vùng"
-          description="Mỗi ô đầy là 30 phút. Ô cuối ghi lại cả phần phút lẻ."
-        />
+      </Foldout>
+      <Foldout title="Thời gian theo vùng">
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Mỗi ô đầy là 30 phút. Ô cuối ghi lại cả phần phút lẻ.
+        </p>
         {!stats.minutes ? (
           <EmptyMessage
             className="grayscale opacity-60"
@@ -162,23 +155,24 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
         ) : (
           <LoadingBlock text="Đang lấy danh mục vùng nghề…" />
         )}
-      </PaperCard>
-      <PaperCard>
-        <CardHeading
-          title="Những việc bạn thích làm"
-          description="Năm việc được chọn “Thích” nhiều nhất sau ca làm."
-        />
+      </Foldout>
+      <Foldout title="Việc bạn thích">
+        <p className="mb-4 text-sm text-toon-ink-soft">
+          Năm việc được chọn “Thích” nhiều nhất sau ca làm.
+        </p>
         {stats.favouriteTasks.length ? (
-          <ol className="space-y-3">
+          <ol className="grid gap-3 sm:grid-cols-2">
             {[...stats.favouriteTasks]
               .sort((a, b) => b.likes - a.likes)
               .slice(0, 5)
               .map((task, index) => (
                 <li
                   key={task.text}
-                  className="flex gap-3 rounded-lg border border-toon-ink p-3"
+                  className="rounded-xl border-2 border-toon-ink bg-toon-cream p-4"
                 >
-                  <span className="text-toon-ink-soft">{index + 1}.</span>
+                  <p className="mb-2 text-xs font-bold text-toon-maroon">
+                    {index + 1}. {context.taskGroup(task.text)}
+                  </p>
                   <p className="min-w-0 flex-1 text-sm">{task.text}</p>
                   <span className="shrink-0 text-xs text-toon-ink-soft">
                     {task.likes} lần thích
@@ -193,7 +187,7 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
             description="Trả lời câu hỏi thích tới đâu sau một ca để ghi lại việc bạn muốn thử tiếp."
           />
         )}
-      </PaperCard>
+      </Foldout>
     </div>
   );
 }

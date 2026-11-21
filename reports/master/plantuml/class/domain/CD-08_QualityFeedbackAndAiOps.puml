@@ -1,0 +1,183 @@
+@startuml CD-08_QualityFeedbackAndAiOps
+title CD-08 · Domain model · Grading quality, feedback and AI operations\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections L); the ERD is unchanged</size>
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam linetype polyline
+skinparam nodesep 35
+skinparam ranksep 55
+skinparam class {
+  BackgroundColor<<entity>> #FFFFFF
+  BackgroundColor<<weak>> #F3F6FA
+  BackgroundColor<<assoc>> #EAF3EA
+  BackgroundColor<<pending>> #FFE3C2
+  BorderColor<<pending>> #E8710A
+  BackgroundColor<<vang>> #FFF3C4
+  BackgroundColor<<stub>> #F2F2F2
+  BorderColor<<stub>> #AAAAAA
+  FontColor<<stub>> #777777
+}
+
+class BlindRating <<entity>> {
+  - id : uuid {id}
+  - level : Int  «0..2  D-116»
+  - flags : String [0..*]  «enum?»
+  - ratedAt : DateTime
+}
+class ReferenceRegrade <<entity>> {
+  - id : uuid {id}
+  - level : Int  «0..2  D-116»
+  - model : String
+  - runAt : DateTime
+}
+class OccupationRating <<entity>> {
+  - id : uuid {id}
+  - comment : String
+  - createdAt : DateTime
+}
+class RatingAttribute <<entity>> {
+  - code : String {id}
+  - name : String
+}
+class AppFeedback <<entity>> {
+  - id : uuid {id}
+  - text : String
+  - appVersion : String
+  - status : String  «enum?»
+  - createdAt : DateTime
+}
+class PromptTemplate <<entity>> {
+  - id : uuid {id}
+  - key : String
+  - version : Int
+  - role : String  «enum?»
+  - body : Text
+  - createdAt : DateTime
+}
+class ModelConfig <<entity>> {
+  - id : uuid {id}
+  - provider : String  «enum?»
+  - model : String
+  - family : String  «enum?»
+  - tier : String
+  - pinnedSnapshot : String
+  - callProfile.maxTokens : Int
+  - callProfile.temperature : Decimal
+  - callProfile.reasoning : Decimal
+  - callProfile.timeout : Int
+  - callProfile.retries : Int
+  - isActive : Boolean
+}
+class ModelSlot <<entity>> {
+  - role : String {id}  «enum?»
+}
+class ModelPrice <<weak>> {
+  - effectiveFrom : DateTime {partial id}
+  - input : Decimal
+  - cacheRead : Decimal
+  - cacheWrite : Decimal
+  - output : Decimal
+  - reasoning : Decimal
+}
+class AiJob <<entity>> {
+  - id : uuid {id}
+  - kind : String  «enum?»
+  - status : String  «enum?»
+  - attempts : Int
+  - payload : Json
+  - error : String
+  - queuedAt : DateTime
+  - finishedAt : DateTime
+  --
+  +retry() : void  «D-92 switch model of the same role»
+}
+class ModelCall <<entity>> {
+  - id : uuid {id}
+  - requestedModel : String
+  - returnedModel : String
+  - promptVersion : String
+  - rubricVersion : String
+  - schemaVersion : String
+  - tokens.uncached : Int
+  - tokens.cacheRead : Int
+  - tokens.cacheWrite : Int
+  - tokens.output : Int
+  - tokens.reasoning : Int
+  - cost : Decimal
+  - priceDate : Date
+  - latency : Int
+  - finishReason : String  «enum?»
+  - checkResult : String
+}
+class Notification <<entity>> {
+  - id : uuid {id}
+  - kind : String  «enum?»
+  - text : String
+  - createdAt : DateTime
+  - readAt : DateTime
+}
+class PlatformSetting <<entity>> {
+  - key : String {id}
+  - version : Int
+  - value : Json
+  - changedAt : DateTime
+}
+class ScoresAttr <<assoc>> {
+  - score : Int  «1..5  FR-19»
+}
+class FillsSlot <<assoc>> {
+  - priority : String
+}
+class Assessment <<stub>> {
+  CD-07
+}
+class Explorer <<stub>> {
+  CD-01
+}
+class Occupation <<stub>> {
+  CD-02
+}
+class ReferenceAnswer <<stub>> {
+  CD-03
+}
+class ScenarioRun <<stub>> {
+  CD-07
+}
+class StaffMember <<stub>> {
+  CD-01
+}
+class UserAccount <<stub>> {
+  CD-01
+}
+
+BlindRating "0..*" -- "1" Assessment : RATES_BLIND
+BlindRating "0..*" -- "1" StaffMember : RATER
+ReferenceRegrade "0..*" -- "1" ReferenceAnswer : REGRADES
+ReferenceRegrade "0..*" -- "1" AiJob : REGRADE_JOB
+Explorer "1" -- "0..*" OccupationRating : RATES
+OccupationRating "0..*" -- "1" Occupation : RATING_FOR
+OccupationRating "0..*" -- "5" RatingAttribute : SCORES_ATTR
+(OccupationRating, RatingAttribute) .. ScoresAttr
+UserAccount "1" -- "0..*" AppFeedback : SENDS_FEEDBACK
+StaffMember "0..1" -- "0..*" AppFeedback : HANDLES
+StaffMember "0..1" -- "0..*" PromptTemplate : EDITS_PROMPT
+ModelConfig "0..*" -- "0..*" ModelSlot : FILLS_SLOT
+(ModelConfig, ModelSlot) .. FillsSlot
+ModelConfig "1" *-- "0..*" ModelPrice : PRICED
+AiJob "0..*" -- "0..1" ScenarioRun : JOB_FOR_RUN
+AiJob "0..*" -- "0..1" PromptTemplate : JOB_PROMPT
+AiJob "1" o-- "0..*" ModelCall : CALLS
+ModelCall "0..*" -- "1" ModelConfig : CALL_MODEL
+UserAccount "1" -- "0..*" Notification : NOTIFIES
+StaffMember "0..1" -- "0..*" PlatformSetting : CHANGES_SETTING
+legend bottom
+  | Notation | Meaning |
+  | white / light blue class | entity / weak entity (composition ◆ from its owner) |
+  | green class | association class (an ERD relationship that carries attributes) |
+  | orange | «pending A28»: research still open, drawn as in the ERD |
+  | grey class | defined in another diagram (CD-0x) |
+  | /attr | derived attribute; attr : T [0..*] is multi-valued; a.b is a composite attribute |
+  | String «enum?» | enum-like column with no values in the ERD or research yet |
+  | method «D-xx» | a domain rule with its source; data = Prisma model, pure rules = game-core |
+  | types | inferred from names (the ERD has none): proposals, not decisions |
+endlegend
+@enduml

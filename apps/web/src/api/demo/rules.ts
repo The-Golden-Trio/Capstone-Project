@@ -103,6 +103,8 @@ export async function myOccupation(
     highestCompleted: null,
   };
   if (!p) return fresh;
+  const shown = p.showcase?.occupations[code];
+  if (shown) return { ...shown };
   const enrolments = p.enrolments.filter((e) => e.code === code);
   const runs = p.runs.filter((r) =>
     context(r.taskId).seed.level_ref.startsWith(`${code}.`),

@@ -1,0 +1,308 @@
+@startuml CL-05_ExplorerCareerAndLife
+title CL-05 · NestJS modules — Explorer career and life
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+
+package "CareerModule" <<Rectangle>> {
+  class CareerModule <<module>> {
+    imports: CatalogueModule
+    controllers: ProfileController, GetToKnowMeController, CareerController
+    providers: ProfileDataSeeder, ProfileService, GetToKnowMeService, LevelAccessService, PlayerLevelService, SuggestionService, AchievementService
+    exports: ProfileService, PlayerLevelService
+    <i>EXPLORER profile and progression: Get to know me, goals, 7 soft skill groups, keywords, level enrolments, best score per scenario, suggestions, achievements</i>
+  }
+  class ProfileController <<controller>> {
+    -profiles : ProfileService
+    -achievements : AchievementService
+    --
+    +getProfile(user: AuthUser) : ProfileView  «GET /profile» [EX]
+    +getJournal(user: AuthUser, query: ListQuery) : Page<JournalEntry>  «GET /profile/journal» [EX]
+    +updateGoals(user: AuthUser, dto: GoalsInput) : ProfileView  «PUT /profile/goals» [EX]
+    +pinAchievements(user: AuthUser, dto: PinInput) : ProfileView  «PUT /profile/pins» [EX]
+  }
+  class GetToKnowMeController <<controller>> {
+    -gtkm : GetToKnowMeService
+    --
+    +getCards(user: AuthUser) : CardSet  «GET /get-to-know-me» [EX]
+    +submitGetToKnowMe(user: AuthUser, dto: GetToKnowMeInput) : GetToKnowMeResult  «POST /get-to-know-me» [EX]
+  }
+  class CareerController <<controller>> {
+    -levels : PlayerLevelService
+    -suggestions : SuggestionService
+    --
+    +enterLevel(user: AuthUser, dto: EnterLevelInput) : LevelEntry  «POST /career/levels» [EX]
+    +getPlayerLevel(user: AuthUser, playerLevelId: string) : LevelEntry  «GET /career/levels/{playerLevelId}» [EX]
+    +getSuggestions(user: AuthUser) : Suggestions  «GET /career/suggestions» [EX]
+  }
+  class ProfileDataSeeder <<command>> {
+    <i>CLI: loads the fixed profile tables (18 cards, goal questions, hobbies, 12 zodiac signs and their boosts, achievements); the staff edit them only through a new load</i>
+    -prisma : PrismaService
+    --
+    +run(path) : LoadReport
+  }
+  class ProfileService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    -data : GameData
+    --
+    +view(user) : ProfileView  «7-group radar, tiers, strengths after ≥ 3 scenes, RIASEC self vs tried»
+    +journal(user, query) : Page<JournalEntry>
+    +updateGoals(user, dto) : ProfileView
+    +applyRun(tx, run) : TierUp[]  «PROGRESSES, riasecTried; SCENARIO_BEST keeps the best, pays only the difference»
+  }
+  class GetToKnowMeService {
+    <i>no AI; 18 cards → RIASEC self line + 2–3 interest regions; goals card</i>
+    -prisma : PrismaService
+    -data : GameData
+    --
+    +cards() : CardSet
+    +submit(user, dto) : GetToKnowMeResult
+    +setDistressTerms(staff, terms) : void  «DISTRESS_TERM list kept by staff»
+    -safetyCheck(text) : boolean  «DISTRESS_TERM list → hotline 111 message»
+  }
+  class LevelAccessService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    --
+    +access(user, levelId) : LevelAccess  «entry open · tiers · keyword coverage ≥ 50% (30% if Sim ≥ 1.2) · prerequisites D-121»
+    +explain(user, levelId) : CoverageExplanation
+  }
+  class PlayerLevelService {
+    -prisma : PrismaService
+    -access : LevelAccessService
+    -rules : RuleEngine
+    -profiles : ProfileService
+    -achievements : AchievementService
+    --
+    +enter(user, dto) : LevelEntry  «random company by industry weights; onboarding slides»
+    +get(user, id) : LevelEntry
+    +completeIfDone(tx, playerLevelId) : LevelUp | null  «keywords → output mastery (≤ 5)»
+  }
+  class SuggestionService {
+    -prisma : PrismaService
+    -catalogue : CatalogueService
+    --
+    +forPlayer(user) : Suggestions  «same field you may like · other field you do well · other field you may like»
+    -likeScore(riasec, occupation) : number
+    -doWellScore(softSkills, occupation) : number
+  }
+  class AchievementService {
+    -prisma : PrismaService
+    -data : GameData
+    -notifications : NotificationService
+    --
+    +evaluate(tx, playerId, event) : string[]
+    +pin(user, dto) : ProfileView
+  }
+  class "CareerModule DTOs" as CareerModule_DTOs <<dto>> {
+    EnterLevelInput { levelId, keepCompany? }
+    GetToKnowMeInput { cards[18]: integer, interests?[≤5], goals? }
+    GoalsInput { goals }
+    ListQuery { cursor?, limit?: integer, status?, kind? }
+    PinInput { achievementCodes[≤3] }
+    CardSet
+    GetToKnowMeResult
+    JournalEntry
+    LevelEntry
+    ProfileView
+    Suggestions
+  }
+}
+
+package "LifeModule" <<Rectangle>> {
+  class LifeModule <<module>> {
+    imports: —
+    controllers: ShopController, NpcController
+    providers: LifeDataSeeder, WalletService, HealthService, ShopService, BondService, CalendarService, SideQuestService
+    exports: WalletService, HealthService, BondService, SideQuestService, CalendarService
+    <i>xu ledger (append-only), health and overtime, shop and inventory, in-game calendar and life milestones, NPC bonds (KNOWS) and side quests (no grading)</i>
+  }
+  class ShopController <<controller>> {
+    -shop : ShopService
+    --
+    +getShop(user: AuthUser) : ShopView  «GET /shop» [EX]
+    +buyItem(user: AuthUser, dto: BuyInput) : InventoryItem[]  «POST /shop/purchases» [EX]
+    +listInventory(user: AuthUser) : InventoryItem[]  «GET /inventory» [EX]
+    +useItem(user: AuthUser, dto: UseItemInput) : InventoryItem  «POST /inventory/use» [EX]
+  }
+  class NpcController <<controller>> {
+    -bonds : BondService
+    --
+    +listNpcs(user: AuthUser) : NpcBondView[]  «GET /npcs» [EX]
+    +giveGift(user: AuthUser, npcId: string, dto: GiftInput) : NpcBondView  «POST /npcs/{npcId}/gifts» [EX]
+  }
+  class LifeDataSeeder <<command>> {
+    <i>CLI: loads shop items, occasions, career habits and the 17 life milestones; prices and buffs still marked pending in the ERD stay empty</i>
+    -prisma : PrismaService
+    --
+    +run(path) : LoadReport
+  }
+  class WalletService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    --
+    +pay(tx, run) : number  «coins of the scene; payday and bonuses follow the in-game calendar»
+    +spend(tx, playerId, amount) : void  «409 if not enough»
+  }
+  class HealthService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    --
+    +beforeRun(tx, playerId, level) : TimeAdjust  «drain, tier → spare turns»
+    +overtime(tx, run, option) : TimeAdjust
+    +rest(tx, playerId, amount) : void
+  }
+  class ShopService {
+    -prisma : PrismaService
+    -data : GameData
+    -wallet : WalletService
+    -health : HealthService
+    --
+    +view(user) : ShopView  «prices in u or X»
+    +buy(user, dto) : InventoryItem[]
+    +inventory(user) : InventoryItem[]
+    +use(user, dto) : InventoryItem  «buff for one run, decor placement, milestone»
+  }
+  class BondService {
+    <i>KNOWS carries unlockRoute, intimacyPoints, promises; intimacy never decreases; every gain is an INTIMACY_GAIN row</i>
+    -prisma : PrismaService
+    -data : GameData
+    -wallet : WalletService
+    --
+    +list(user) : NpcBondView[]
+    +gift(user, npcId, dto) : NpcBondView
+    +addAffinity(tx, playerId, npcId, amount) : Stage
+    +drawCast(playerId, slots) : NpcSlot[]
+  }
+  class CalendarService {
+    -prisma : PrismaService
+    -rules : RuleEngine
+    --
+    +advance(tx, explorer, run) : Gap  «one scene = one working day, gameDate moves»
+    +reach(tx, explorer, milestone) : void  «EXPLORER_MILESTONE; costs gap slots»
+  }
+  class SideQuestService {
+    -prisma : PrismaService
+    -bonds : BondService
+    -health : HealthService
+    --
+    +eligible(playerId, scenario) : boolean  «needs stage, ticket, milestone or occasion»
+    +complete(tx, run) : void  «fixed bonus ≤ 10% of the level budget, +6 health»
+  }
+  class "LifeModule DTOs" as LifeModule_DTOs <<dto>> {
+    BuyInput { itemCode, qty }
+    GiftInput { inventoryId }
+    UseItemInput { inventoryId, runId?, placement? }
+    InventoryItem
+    NpcBondView
+    ShopView
+  }
+}
+
+class CatalogueService <<CL-02 · CatalogueModule>>
+class Achievement <<domain · CD-06>>
+class AnswersCard <<domain · CD-06>>
+class Boosts <<domain · CD-06>>
+class CareerHabit <<domain · CD-05>>
+class Casts <<domain · CD-06>>
+class Chooses <<domain · CD-06>>
+class DistressTerm <<domain · CD-06>>
+class EarnedKeyword <<domain · CD-06>>
+class Earns <<domain · CD-06>>
+class ExplorerGoal <<domain · CD-06>>
+class ExplorerMilestone <<domain · CD-05>>
+class Gap <<domain · CD-05>>
+class GoalOption <<domain · CD-06>>
+class GoalQuestion <<domain · CD-06>>
+class GtkmAttempt <<domain · CD-06>>
+class GtkmCard <<domain · CD-06>>
+class HasHabit <<domain · CD-05>>
+class HealthChange <<domain · CD-05>>
+class Hobby <<domain · CD-06>>
+class IntimacyGain <<domain · CD-05>>
+class InventoryItem <<domain · CD-05>>
+class Invited <<domain · CD-06>>
+class ItemNeedsCard <<domain · CD-05>>
+class Knows <<domain · CD-05>>
+class LevelEnrolment <<domain · CD-06>>
+class LifeMilestone <<domain · CD-05>>
+class Occasion <<domain · CD-05>>
+class PlacesDecor <<domain · CD-05>>
+class Progresses <<domain · CD-06>>
+class ScenarioBest <<domain · CD-06>>
+class ShopItem <<domain · CD-05>>
+class SideQuestRun <<domain · CD-07>>
+class SuggestionEvent <<domain · CD-06>>
+class Suggests <<domain · CD-06>>
+class Warned <<domain · CD-05>>
+class XuTransaction <<domain · CD-05>>
+class ZodiacSign <<domain · CD-06>>
+
+ProfileController --> ProfileService
+ProfileController --> AchievementService
+ProfileController ..> CareerModule_DTOs
+GetToKnowMeController --> GetToKnowMeService
+GetToKnowMeController ..> CareerModule_DTOs
+CareerController --> PlayerLevelService
+CareerController --> SuggestionService
+CareerController ..> CareerModule_DTOs
+ProfileDataSeeder ..> GtkmCard : «write»
+ProfileDataSeeder ..> GoalQuestion : «write»
+ProfileDataSeeder ..> GoalOption : «write»
+ProfileDataSeeder ..> Hobby : «write»
+ProfileDataSeeder ..> ZodiacSign : «write»
+ProfileDataSeeder ..> Achievement : «write»
+ProfileDataSeeder ..> Boosts : «write»
+ProfileService ..> Progresses : «write»
+ProfileService ..> ExplorerGoal : «write»
+ProfileService ..> ScenarioBest : «write»
+GetToKnowMeService ..> GtkmAttempt : «write»
+GetToKnowMeService ..> AnswersCard : «write»
+GetToKnowMeService ..> Chooses : «write»
+GetToKnowMeService ..> Invited : «write»
+GetToKnowMeService ..> DistressTerm : «write»
+PlayerLevelService ..> LevelEnrolment : «write»
+PlayerLevelService ..> Casts : «write»
+PlayerLevelService ..> EarnedKeyword : «write»
+PlayerLevelService --> LevelAccessService
+PlayerLevelService --> ProfileService
+PlayerLevelService --> AchievementService
+SuggestionService ..> SuggestionEvent : «write»
+SuggestionService ..> Suggests : «write»
+SuggestionService --> CatalogueService
+AchievementService ..> Earns : «write»
+ShopController --> ShopService
+ShopController ..> LifeModule_DTOs
+NpcController --> BondService
+NpcController ..> LifeModule_DTOs
+LifeDataSeeder ..> ShopItem : «write»
+LifeDataSeeder ..> Occasion : «write»
+LifeDataSeeder ..> CareerHabit : «write»
+LifeDataSeeder ..> LifeMilestone : «write»
+LifeDataSeeder ..> ItemNeedsCard : «write»
+WalletService ..> XuTransaction : «write»
+HealthService ..> HealthChange : «write»
+HealthService ..> Warned : «write»
+HealthService ..> HasHabit : «write»
+ShopService ..> InventoryItem : «write»
+ShopService ..> PlacesDecor : «write»
+ShopService --> WalletService
+ShopService --> HealthService
+BondService ..> Knows : «write»
+BondService ..> IntimacyGain : «write»
+BondService --> WalletService
+CalendarService ..> Gap : «write»
+CalendarService ..> ExplorerMilestone : «write»
+SideQuestService ..> SideQuestRun : «write»
+SideQuestService --> BondService
+SideQuestService --> HealthService
+legend bottom
+  | Arrow | Meaning |
+  | A --> B | association: A holds B through constructor injection (a controller holds its services) |
+  | A ..> Entity : «write» | A writes the domain class (the module owns it; see CD-01 … CD-08) |
+  | Controller ..> DTOs | the controller's routes take and return these types |
+  | A ..\|> I | A realizes the interface or port I |
+  | grey class | defined in another diagram (CL-0x · module, or domain · CD-0x) |
+endlegend
+@enduml

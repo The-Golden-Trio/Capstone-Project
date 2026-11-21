@@ -9,6 +9,7 @@ import {
   type Player,
 } from './store';
 import type { RegisterInput, Session } from '../types';
+import { SHOWCASE_EMAIL, ensureShowcasePlayer } from './showcase';
 function session(p: Player): Session {
   db.current = p.me.id;
   p.refreshToken = `demo-refresh:${uid()}`;
@@ -60,7 +61,9 @@ function register(input: RegisterInput): Session {
 }
 export const auth: AuthService = {
   register: service(register),
-  signIn: service((identifier, password) => {
+  signIn: service(async (identifier, password) => {
+    if (identifier.trim().toLowerCase() === SHOWCASE_EMAIL)
+      await ensureShowcasePlayer();
     const p = db.players.find(
       (p) =>
         p.me.email === identifier.trim().toLowerCase() ||
