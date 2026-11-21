@@ -89,11 +89,32 @@ function setup(
 }
 
 describe('judgePanel (registry)', () => {
-  it('ba ghế, ba họ, bậc rẻ làm chính, bậc kia dự phòng cùng họ', () => {
+  it('ba ghế, ba họ; bậc chính rẻ, riêng Google là 3.8 Flash (D-149); bậc kia dự phòng cùng họ', () => {
     expect(SLOTS.map((s) => s.chain.map((m) => m.model))).toEqual([
       ['anthropic/claude-haiku-5.5', 'anthropic/claude-sonnet-5.5'],
-      ['openai/gpt-6-luna', 'openai/gpt-6.1-sol'],
-      ['google/gemini-3.5-flash-lite', 'google/gemini-3.8-flash'],
+      ['openai/gpt-6-luna', 'openai/gpt-6.2-sol'],
+      ['google/gemini-3.8-flash', 'google/gemini-3.5-flash-lite'],
+    ]);
+  });
+
+  it('ép primaryTier thì cả panel cùng một bậc (phép thử §7.3)', () => {
+    const settings = {
+      openrouter: { apiKey: 'or' },
+      allowUnconfirmedProviders: false,
+    };
+    const primaries = (tier: 'small' | 'mid') =>
+      judgePanel(settings, { primaryTier: tier }).slots.map(
+        (s) => s.chain[0].model,
+      );
+    expect(primaries('small')).toEqual([
+      'anthropic/claude-haiku-5.5',
+      'openai/gpt-6-luna',
+      'google/gemini-3.5-flash-lite',
+    ]);
+    expect(primaries('mid')).toEqual([
+      'anthropic/claude-sonnet-5.5',
+      'openai/gpt-6.2-sol',
+      'google/gemini-3.8-flash',
     ]);
   });
 
@@ -120,7 +141,7 @@ describe('JudgePanelService', () => {
       byModel({
         'anthropic/claude-haiku-5.5': reply('1'),
         'openai/gpt-6-luna': reply('0'),
-        'google/gemini-3.5-flash-lite': reply('0'),
+        'google/gemini-3.8-flash': reply('0'),
       }),
     );
     const r = await service.grade(input());
@@ -151,7 +172,7 @@ describe('JudgePanelService', () => {
     for (const model of [
       'anthropic/claude-haiku-5.5',
       'openai/gpt-6-luna',
-      'google/gemini-3.5-flash-lite',
+      'google/gemini-3.8-flash',
     ])
       expect(body(model)).not.toHaveProperty('temperature');
     expect(body('anthropic/claude-haiku-5.5')).toMatchObject({
@@ -169,18 +190,18 @@ describe('JudgePanelService', () => {
     expect(body('openai/gpt-6-luna')).toMatchObject({
       provider: { only: ['azure'], zdr: true },
     });
-    expect(body('google/gemini-3.5-flash-lite')).toMatchObject({
+    expect(body('google/gemini-3.8-flash')).toMatchObject({
       reasoning: { effort: 'minimal' },
       provider: { only: ['google-vertex/global'], zdr: true },
     });
   });
 
-  it('bậc dự phòng Sonnet 5.5, GPT-6.1 Sol không tắt được suy nghĩ: gửi minimal', () => {
+  it('bậc dự phòng Sonnet 5.5, GPT-6.2 Sol không tắt được suy nghĩ: gửi minimal', () => {
     const fallback = SLOTS.map((s) => s.chain[1]);
     expect(fallback.map((m) => [m.model, m.minReasoning])).toEqual([
       ['anthropic/claude-sonnet-5.5', 'minimal'],
-      ['openai/gpt-6.1-sol', 'minimal'],
-      ['google/gemini-3.8-flash', 'minimal'],
+      ['openai/gpt-6.2-sol', 'minimal'],
+      ['google/gemini-3.5-flash-lite', 'minimal'],
     ]);
   });
 
@@ -204,7 +225,7 @@ describe('JudgePanelService', () => {
       byModel({
         'anthropic/claude-haiku-5.5': reply('1'),
         'openai/gpt-6-luna': reply('1'),
-        'google/gemini-3.5-flash-lite': () =>
+        'google/gemini-3.8-flash': () =>
           gemini++ === 0 ? reply('2', ['k1'], 'em đã test kỹ') : reply('1'),
       }),
     );
@@ -212,7 +233,7 @@ describe('JudgePanelService', () => {
 
     expect(r.status).toBe('graded');
     const retry = transport.calls.filter(
-      (c) => c.body['model'] === 'google/gemini-3.5-flash-lite',
+      (c) => c.body['model'] === 'google/gemini-3.8-flash',
     );
     expect(retry).toHaveLength(2);
     expect(JSON.stringify(retry[1].body['messages'])).toContain(
@@ -232,7 +253,7 @@ describe('JudgePanelService', () => {
         },
         'anthropic/claude-sonnet-5.5': reply('1'),
         'openai/gpt-6-luna': reply('1'),
-        'google/gemini-3.5-flash-lite': reply('1'),
+        'google/gemini-3.8-flash': reply('1'),
       }),
     );
     const r = await service.grade(input());
@@ -254,9 +275,9 @@ describe('JudgePanelService', () => {
     const { transport, service } = setup(
       byModel({
         'openai/gpt-6-luna': { status: 401, errorMessage: 'bad key' },
-        'openai/gpt-6.1-sol': reply('1'),
+        'openai/gpt-6.2-sol': reply('1'),
         'anthropic/claude-haiku-5.5': reply('1'),
-        'google/gemini-3.5-flash-lite': reply('1'),
+        'google/gemini-3.8-flash': reply('1'),
       }),
     );
     await service.grade(input());
@@ -268,8 +289,8 @@ describe('JudgePanelService', () => {
   it('một họ hỏng cả hai bậc: điểm chờ (D-108), không có điểm giả', async () => {
     const { service } = setup(
       byModel({
-        'google/gemini-3.5-flash-lite': { status: 500 },
         'google/gemini-3.8-flash': { status: 500 },
+        'google/gemini-3.5-flash-lite': { status: 500 },
         'anthropic/claude-haiku-5.5': reply('2'),
         'openai/gpt-6-luna': reply('2'),
       }),
@@ -286,8 +307,8 @@ describe('JudgePanelService', () => {
   it('D-132: từ lượt thử thứ 3 của job, một họ hỏng thì gộp hai judge, lấy mức thấp hơn', async () => {
     const { service } = setup(
       byModel({
-        'google/gemini-3.5-flash-lite': { status: 500 },
         'google/gemini-3.8-flash': { status: 500 },
+        'google/gemini-3.5-flash-lite': { status: 500 },
         'anthropic/claude-haiku-5.5': reply('2'),
         'openai/gpt-6-luna': reply('1'),
       }),
@@ -307,10 +328,10 @@ describe('JudgePanelService', () => {
   it('D-132: hai họ hỏng thì vẫn chờ, kể cả ở lượt thử cuối', async () => {
     const { service } = setup(
       byModel({
-        'google/gemini-3.5-flash-lite': { status: 500 },
         'google/gemini-3.8-flash': { status: 500 },
+        'google/gemini-3.5-flash-lite': { status: 500 },
         'openai/gpt-6-luna': { status: 500 },
-        'openai/gpt-6.1-sol': { status: 500 },
+        'openai/gpt-6.2-sol': { status: 500 },
         'anthropic/claude-haiku-5.5': reply('2'),
       }),
     );

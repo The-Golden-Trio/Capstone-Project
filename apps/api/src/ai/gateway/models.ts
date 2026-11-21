@@ -269,8 +269,9 @@ export function narratorChain(settings: AiSettings): {
 /**
  * Ba họ judge (D-107, §5.2.3): ba họ có điểm tiếng Việt SEA-HELM cao nhất.
  * Mỗi họ hai bậc: `small` rẻ, `mid` mạnh hơn. Bậc nào làm chính chốt bằng phép
- * thử §7.3 — giữ bậc rẻ trừ khi nó kém rõ rệt; bậc còn lại làm dự phòng cùng
- * họ, để panel luôn đủ ba họ (DC-01).
+ * thử §7.3 — giữ bậc rẻ trừ khi nó kém rõ rệt, riêng Google đã chọn bậc
+ * `mid` trước phép thử (D-149); bậc còn lại làm dự phòng cùng họ, để panel
+ * luôn đủ ba họ (DC-01).
  *
  * Gọi qua OpenRouter (D-131): một key cho cả ba họ. Mỗi request đòi endpoint
  * không lưu dữ liệu (`zdr: true`) và chỉ một endpoint ghi sẵn (`only`), nên
@@ -297,6 +298,8 @@ interface JudgeModelRow {
   temperature: boolean;
   /** Mức suy nghĩ thấp nhất endpoint nhận; thiếu là tắt hẳn (`none`). */
   minReasoning?: 'minimal';
+  /** Ngày đọc giá từ `/endpoints/zdr`, khi khác ngày chung 12/11/2026. */
+  checkedAt?: string;
 }
 
 /**
@@ -336,13 +339,14 @@ const JUDGE_MODELS: Record<JudgeFamily, Record<JudgeTier, JudgeModelRow>> = {
       temperature: false,
     },
     mid: {
-      model: 'openai/gpt-6.1-sol',
+      model: 'openai/gpt-6.2-sol',
       host: 'azure',
       input: 2,
       output: 10,
       cachedRead: 0.1,
       temperature: false,
       minReasoning: 'minimal',
+      checkedAt: '19/11/2026',
     },
   },
   google: {
@@ -365,6 +369,17 @@ const JUDGE_MODELS: Record<JudgeFamily, Record<JudgeTier, JudgeModelRow>> = {
       minReasoning: 'minimal',
     },
   },
+};
+
+/**
+ * Bậc chính của từng họ khi không ép `primaryTier` (D-149): Google lấy
+ * Gemini 3.8 Flash vì tiếng Việt cao hơn (SEA-HELM 78,4), dù đắt hơn khoảng
+ * 2,3 lần mỗi lượt chấm.
+ */
+const DEFAULT_PRIMARY: Record<JudgeFamily, JudgeTier> = {
+  anthropic: 'small',
+  openai: 'small',
+  google: 'mid',
 };
 
 export function openRouterJudge(
@@ -396,7 +411,7 @@ export function openRouterJudge(
       outputPerMTok: row.output,
       cachedInputRatio: row.cachedRead / row.input,
       cacheWriteRatio: null,
-      source: `https://openrouter.ai/api/v1/endpoints/zdr (12/11/2026, dòng ${row.model} @ ${row.host})`,
+      source: `https://openrouter.ai/api/v1/endpoints/zdr (${row.checkedAt ?? '12/11/2026'}, dòng ${row.model} @ ${row.host})`,
       verified: true,
     },
     routing: {
@@ -459,18 +474,20 @@ export function judgePanel(
 ): { slots: JudgeSlot[]; problems: string[] } {
   if (!settings.openrouter)
     return { slots: [], problems: ['chưa có OPENROUTER_API_KEY'] };
-  const primary = options.primaryTier ?? 'small';
-  const fallback: JudgeTier = primary === 'small' ? 'mid' : 'small';
   const build = (family: JudgeFamily, tier: JudgeTier) =>
     openRouterJudge(settings.openrouter as OpenRouterSettings, family, tier, {
       allowDataCollection: settings.allowUnconfirmedProviders,
     });
 
-  const slots = JUDGE_FAMILIES.map((family, i) => ({
-    slot: i + 1,
-    family,
-    chain: [build(family, primary), build(family, fallback)],
-  }));
+  const slots = JUDGE_FAMILIES.map((family, i) => {
+    const primary = options.primaryTier ?? DEFAULT_PRIMARY[family];
+    const fallback: JudgeTier = primary === 'small' ? 'mid' : 'small';
+    return {
+      slot: i + 1,
+      family,
+      chain: [build(family, primary), build(family, fallback)],
+    };
+  });
   const problems = familyConflicts(
     slots,
     options.narratorFamilies ?? ['qwen', 'deepseek'],

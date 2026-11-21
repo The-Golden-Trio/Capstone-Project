@@ -36,7 +36,7 @@ const SLOTS = judgePanel({
 const MODELS = {
   claude: 'anthropic/claude-haiku-5.5',
   gpt: 'openai/gpt-6-luna',
-  gemini: 'google/gemini-3.5-flash-lite',
+  gemini: 'google/gemini-3.8-flash',
 };
 
 /* ── Một ca chơi L3.m2 chạy bằng engine thật và AI giả ────────────────── */
@@ -738,8 +738,8 @@ describe('JudgePanelService.gradeChecklist', () => {
 
   it('một họ hỏng cả hai bậc: chờ, rồi từ lượt thử thứ 3 gộp hai judge, lấy mức thấp hơn (D-132)', async () => {
     const script = byModel({
-      'google/gemini-3.5-flash-lite': { status: 500 },
       'google/gemini-3.8-flash': { status: 500 },
+      'google/gemini-3.5-flash-lite': { status: 500 },
       [MODELS.claude]: judgeReply(2),
       [MODELS.gpt]: judgeReply(1),
     });
