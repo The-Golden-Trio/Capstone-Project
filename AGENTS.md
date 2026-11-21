@@ -80,7 +80,7 @@
   - API `/api/v1/shift-runs` là đề xuất ngoài `openapi.yaml`, xem `docs/plans/2026-11-11_de-xuat-api-choi-ca-lam.md`.
   - Lượt chơi là `ScenarioRun.flow = 'shift'` cùng `run_event` và `ai_job`; worker xử lý queue `shift-turn`.
   - AI: AI-4 dùng `narrateScene`; bộ phán có/không dùng ghế judge của AI-5.
-  - Chưa chấm điểm. `AI_MODE=fake` chỉ dùng khi dev.
+  - Từ 21/11 chấm theo checklist từng đoạn bằng AI-5 ở worker (`ShiftSegmentGrader`, `GET /summary` có khối `grading`: mức mục con và cờ); chưa có điểm số vì chưa có trần nhóm từng màn. `AI_MODE=fake` chỉ dùng khi dev.
 - **Staff app CA/DE, cập nhật 12/11/2026** (nhánh `feat/staff-app-ca-de`, theo `docs/plans/2026-11-06_ke-hoach-staff-app-CA-DE.md`):
   - Auth là Bearer (access token trong bộ nhớ, refresh ở localStorage); danh tính theo ERD-01, `apps/web` đã đổi theo.
   - `apps/staff` có T01, T00, C01, C04, C05, C06, C07, D01, D03, D04. Luồng: CA mở scenario và giao tác giả, người duyệt → DE viết ngữ cảnh, AI sinh bản nháp (queue `generation` ở worker, SSE) → sửa, câu mẫu, kiểm (`ContentValidator`) → nộp → DE khác duyệt → CA chọn dạng task, asset → dựng bản nháp (`scenario_build`).

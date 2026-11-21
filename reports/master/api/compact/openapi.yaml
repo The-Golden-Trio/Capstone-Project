@@ -3509,6 +3509,9 @@ components:
           format: uuid
         payload:
           type: object
+          description: 'judgement.ready: {segment} (one evidence segment of a shift graded by the judge panel). summary.ready:
+            {} (every segment of the finished run is graded or failed). provider.delay: {waitingFor: narration | checks |
+            summary}. run.paused: {turnId, reason}.'
     RegisterInput:
       type: object
       properties:
@@ -5009,6 +5012,8 @@ components:
           type: object
         suggestions:
           $ref: '#/components/schemas/Suggestions'
+        grading:
+          $ref: '#/components/schemas/ShiftGrading'
       required:
       - runId
       - title
@@ -5019,6 +5024,91 @@ components:
       - healthAfter
       - lookBack
       - keywordsGained
+    ShiftGrading:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - PENDING
+          - READY
+          - NOT_AVAILABLE
+        reason:
+          type: string
+          enum:
+          - no_observes
+          - failed
+        subs:
+          type: array
+          items:
+            type: object
+            properties:
+              sub:
+                type: string
+              name:
+                type: string
+              group:
+                type: integer
+              level:
+                type: number
+              segments:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    segment:
+                      type: string
+                    level:
+                      type: integer
+                  required:
+                  - segment
+            required:
+            - sub
+            - name
+            - group
+            - segments
+        flags:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+              name:
+                type: string
+              group:
+                type: integer
+              segment:
+                type: string
+              quote:
+                type: string
+            required:
+            - code
+            - name
+            - group
+            - segment
+            - quote
+        segments:
+          type: array
+          items:
+            type: object
+            properties:
+              segment:
+                type: string
+              status:
+                type: string
+                enum:
+                - queued
+                - graded
+                - failed
+            required:
+            - segment
+            - status
+      required:
+      - status
+      - subs
+      - flags
+      - segments
     ProfileView:
       type: object
       properties:

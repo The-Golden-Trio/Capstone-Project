@@ -33,18 +33,18 @@ Hợp đồng hiện tại không có chỗ cho các phần đó. Luồng ca là
 
 ## Endpoint (dưới `/api/v1/shift-runs`)
 
-| Method, path                              | Việc                                                                                                     | Trả về                                                                                                                                                      |
-| ----------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `GET /tasks?roleCode=&band=`              | Ca làm của một cấp ở phiên bản nội dung đang phục vụ (bản đồ nghề dùng để hiện nút "Thử ca")             | `[{taskId, title, situation, goal, minutes}]`                                                                                                               |
-| `POST /` `{taskId, enrolmentId?}`         | Mở lượt; có lượt dở của cùng nhiệm vụ thì trả lượt đó                                                    | `201` / `200`; `409 SCENARIO_UNAVAILABLE`                                                                                                                   |
-| `GET /:id`                                | Tên ca, mục tiêu, vai, câu cảnh, cast, glossary, `paused`, `pendingTurnId`                               |                                                                                                                                                             |
-| `GET /:id/scene`                          | Cảnh hiện tại: đồng hồ, chế độ, nút đang mở, hành động (điểm, bật/tắt, lý do), tài liệu, sổ tay, ghi chú |                                                                                                                                                             |
-| `GET /:id/transcript?after=seq`           | Dòng thoại sau `seq`                                                                                     |                                                                                                                                                             |
-| `POST /:id/turns` `{turnId, kind, …}`     | Mọi thao tác người chơi                                                                                  | `200 {turnId, lines, scene}` · `202 {jobId, turnId, streamEvent, lines}` · `409 TURN_IN_PROGRESS` · `409 RUN_PAUSED` · `409 RUN_ENDED` · `422 TURN_INVALID` |
-| `POST /:id/resume`                        | Tiếp tục phiên tạm dừng vì hết model (D-92)                                                              | `202`; `409 NOT_PAUSED`                                                                                                                                     |
-| `POST /:id/notes` `{text}`                | Ghi chú riêng trong sổ tay (khối M); không gửi AI                                                        | `201`                                                                                                                                                       |
-| `POST /:id/flags` `{activityKey, reason}` | Báo nội dung sai                                                                                         | `201`                                                                                                                                                       |
-| `GET /:id/summary`                        | Tổng kết theo truyện, **chưa chấm điểm**                                                                 | `404 SUMMARY_NOT_READY` khi chưa xong                                                                                                                       |
+| Method, path                              | Việc                                                                                                                      | Trả về                                                                                                                                                      |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `GET /tasks?roleCode=&band=`              | Ca làm của một cấp ở phiên bản nội dung đang phục vụ (bản đồ nghề dùng để hiện nút "Thử ca")                              | `[{taskId, title, situation, goal, minutes}]`                                                                                                               |
+| `POST /` `{taskId, enrolmentId?}`         | Mở lượt; có lượt dở của cùng nhiệm vụ thì trả lượt đó                                                                     | `201` / `200`; `409 SCENARIO_UNAVAILABLE`                                                                                                                   |
+| `GET /:id`                                | Tên ca, mục tiêu, vai, câu cảnh, cast, glossary, `paused`, `pendingTurnId`                                                |                                                                                                                                                             |
+| `GET /:id/scene`                          | Cảnh hiện tại: đồng hồ, chế độ, nút đang mở, hành động (điểm, bật/tắt, lý do), tài liệu, sổ tay, ghi chú                  |                                                                                                                                                             |
+| `GET /:id/transcript?after=seq`           | Dòng thoại sau `seq`                                                                                                      |                                                                                                                                                             |
+| `POST /:id/turns` `{turnId, kind, …}`     | Mọi thao tác người chơi                                                                                                   | `200 {turnId, lines, scene}` · `202 {jobId, turnId, streamEvent, lines}` · `409 TURN_IN_PROGRESS` · `409 RUN_PAUSED` · `409 RUN_ENDED` · `422 TURN_INVALID` |
+| `POST /:id/resume`                        | Tiếp tục phiên tạm dừng vì hết model (D-92)                                                                               | `202`; `409 NOT_PAUSED`                                                                                                                                     |
+| `POST /:id/notes` `{text}`                | Ghi chú riêng trong sổ tay (khối M); không gửi AI                                                                         | `201`                                                                                                                                                       |
+| `POST /:id/flags` `{activityKey, reason}` | Báo nội dung sai                                                                                                          | `201`                                                                                                                                                       |
+| `GET /:id/summary`                        | Tổng kết theo truyện, kèm khối `grading` (21/11): mức từng mục con và cờ do AI-5 chấm theo checklist; **chưa có điểm số** | `404 SUMMARY_NOT_READY` khi chưa xong                                                                                                                       |
 
 Một số điểm cụ thể:
 
@@ -66,12 +66,14 @@ Một số điểm cụ thể:
 
 Tin trên `/stream` có dạng `{type, runId, jobId, payload}`:
 
-| `type`           | `payload`                                                          |
-| ---------------- | ------------------------------------------------------------------ |
-| `turn.lines`     | `{turnId, lines}`: dòng mới sau mỗi bước AI                        |
-| `turn.done`      | `{turnId, scene, ended}`                                           |
-| `provider.delay` | `{turnId, waitingFor: narration \| checks}`: model chạy quá 4 giây |
-| `run.paused`     | `{turnId, reason}`                                                 |
+| `type`            | `payload`                                                                       |
+| ----------------- | ------------------------------------------------------------------------------- |
+| `turn.lines`      | `{turnId, lines}`: dòng mới sau mỗi bước AI                                     |
+| `turn.done`       | `{turnId, scene, ended}`                                                        |
+| `provider.delay`  | `{turnId, waitingFor: narration \| checks}`: model chạy quá 4 giây              |
+| `run.paused`      | `{turnId, reason}`                                                              |
+| `judgement.ready` | `{segment}`: một đoạn bằng chứng (nút hay `pha`, `review`) đã chấm xong (21/11) |
+| `summary.ready`   | `{}`: ca đã hết và mọi đoạn đều có kết quả (chấm xong hoặc hỏng hẳn)            |
 
 ## Màn chơi (web)
 
@@ -89,8 +91,19 @@ Tin trên `/stream` có dạng `{type, runId, jobId, payload}`:
 2. **D-130, AI-4 contract nhịp:** engine ca làm truyền thêm chỉ dẫn trong thẻ nhân vật: "được nói ra nếu hỏi đúng chuyện" (giữ luật B2), "chỉ xác nhận khi người chơi tự nói ra" (dữ kiện `ai_only`), và hướng của lượt (ví dụ lý do hoãn duyệt). Thẻ dựng từ hồ sơ slot của seed; chưa ghép lá tarot (C1).
 3. **Bộ phán:** mới là một model (ghế judge đầu, ghế đầu hỏng thì sang ghế kế). Prompt `checker.v1-draft` cần duyệt.
 4. **Chưa có:**
-   - chấm điểm, kết cục, sự kiện ngẫu nhiên;
+   - điểm số, kết cục, sự kiện ngẫu nhiên (từ 21/11 đã có mức từng mục con và cờ theo checklist, chưa quy ra điểm vì chưa có trần nhóm từng màn);
    - mở khoá cấp: lượt ca làm hiện không xét;
    - random công ty, onboard 6 slide.
 5. **Nội dung seed:** phần gắn `_draft` cần DE duyệt (BR-05).
 6. **Hint:** Q5 ("hint không trừ điểm") khác chữ của D-83/D-86 ("giảm trọng số"). Engine chỉ ghi lại việc dùng hint.
+
+## Chấm theo checklist (21/11, đề xuất)
+
+Mỗi đoạn bằng chứng (nút `done`; `pha` và `review` khi ca kết thúc) được xếp hàng chấm khi đóng, trong cùng transaction với lượt đóng đoạn (`GRADING_REQUESTED` trong `run_event`, `ai_job.kind = SHIFT_GRADING`). Worker queue `grading` (job `shift-segment`) gọi `JudgePanelService.gradeChecklist` và ghi `SEGMENT_GRADED` (append-only, kèm model, prompt `judge-v2`, chi phí). `GET /:id/summary` trả thêm:
+
+```
+grading: { status: PENDING | READY | NOT_AVAILABLE, reason?: no_observes | failed,
+           subs: [{ sub, name, group, level (0–2 hoặc null), segments: [{ segment, level }] }],
+           flags: [{ code, name, group, segment, quote }],
+           segments: [{ segment, status: queued | graded | failed }] }
+```
