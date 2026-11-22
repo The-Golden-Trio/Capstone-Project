@@ -83,6 +83,8 @@ export function describeAwait(
     }
     case 'confirm_end':
       return 'nộp sớm trước hạn chót, bạn chắc không? /ket để xác nhận, /huy để làm tiếp';
+    case 'last_word':
+      return `${wait.prompt} Gõ tin nhắn hoặc dùng /xong để bỏ qua.`;
     case 'ai':
       return 'đang chờ AI';
     case 'ended':
@@ -118,6 +120,10 @@ export function formatForm(form: shift.ArtefactForm): string[] {
     `  Tài liệu "${form.title}":`,
     ...form.fields.map((f) => `    - ${f.label} (${f.id})`),
     ...form.ticks.map((t) => `    [ ] ${t.label} (${t.id})`),
+    ...form.selects.map(
+      (s) =>
+        `    - ${s.label} (${s.options.map((option) => option.label).join(' / ')})`,
+    ),
   ];
 }
 

@@ -2,6 +2,7 @@ import { PLAYER_SPEAKER, shift } from '@datn/game-core';
 import { fixtureShiftContext } from '@datn/game-core/testing';
 import { CircuitBreaker } from '../gateway/circuit-breaker';
 import type { ModelGateway } from '../gateway/model-gateway';
+import { buildSceneMessages } from '../narrator/scene.prompt';
 import { toSceneTurn } from '../../assessment/shift-scene';
 import {
   buildCheckerMessages,
@@ -70,6 +71,12 @@ describe('ca làm → AI-4 theo nhịp (SceneTurn)', () => {
     expect(turn.hidden).not.toContain(
       ctx.seed.facts.find((f) => f.id === 'f1')?.text,
     );
+  });
+
+  it('mã nút nội bộ dùng cho AI giả không xuất hiện trong prompt AI-4', () => {
+    const node = 'id-noi-bo-cua-nut';
+    const messages = buildSceneMessages(toSceneTurn({ ...request, node }, ctx));
+    expect(JSON.stringify(messages)).not.toContain(node);
   });
 });
 

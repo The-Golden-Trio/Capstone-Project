@@ -14,6 +14,18 @@
     },
     {
       "do": "action",
+      "key": "open_wiki"
+    },
+    {
+      "do": "action",
+      "key": "open_dashboard"
+    },
+    {
+      "do": "action",
+      "key": "open_bang"
+    },
+    {
+      "do": "action",
       "key": "open_log"
     },
     {
@@ -29,14 +41,16 @@
       "text": "Chị ơi em tìm ra lỗi rồi, em sửa nhanh thôi. 11 rưỡi em gọi báo chị nha."
     },
     {
-      "do": "end_conversation"
+      "do": "end_conversation",
+      "ifAwait": "conversation"
     },
     {
       "do": "action",
       "key": "write_patch",
       "fields": {
-        "mo_ta": "Bỏ vòng lặp, gom thành một truy vấn lấy hết chi tiết đơn."
-      }
+        "ghi_chu": "Bỏ vòng lặp, gom thành một truy vấn lấy hết chi tiết đơn."
+      },
+      "ticks": ["v1", "v2"]
     },
     {
       "do": "action",
@@ -58,14 +72,16 @@
     },
     {
       "do": "action",
-      "key": "open_bang"
-    },
-    {
-      "do": "action",
       "key": "rewrite_patch",
       "fields": {
-        "mo_ta": "Bỏ vòng lặp, gom thành một truy vấn lấy hết chi tiết đơn. Thêm kiểm tra kết quả."
-      }
+        "ghi_chu": "Bỏ vòng lặp, gom thành một truy vấn lấy hết chi tiết đơn. Thêm kiểm tra kết quả."
+      },
+      "ticks": ["v1", "v2"]
+    },
+    {
+      "do": "say",
+      "text": "Dạ chị, em đang chỉnh bản vá.",
+      "ifAwait": "node_reply"
     },
     {
       "do": "action",
@@ -79,7 +95,7 @@
         "nguyen_nhan": "Lấy chi tiết từng đơn trong vòng lặp, 901 lần với khách 900 đơn.",
         "da_lam": "Đã gom truy vấn."
       },
-      "ticks": ["h3"]
+      "ticks": ["h3=giu"]
     },
     {
       "do": "say",
@@ -120,7 +136,8 @@
       "fields": {
         "nguyen_nhan": "Vòng lặp gọi DB từng đơn.",
         "huong_xu_ly": "Gom thành một truy vấn, đã chạy thử trên staging.",
-        "rui_ro": "Chắc không có rủi ro gì."
+        "rui_ro": "Chắc không có rủi ro gì.",
+        "tieu_de": "Bản vá API lịch sử đơn"
       }
     },
     {

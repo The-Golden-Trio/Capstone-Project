@@ -22,6 +22,7 @@ const awaitKind = z.enum([
   'node_artefact',
   'probe_answer',
   'confirm_end',
+  'last_word',
   'ai',
   'ended',
 ]);

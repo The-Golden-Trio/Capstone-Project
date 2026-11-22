@@ -127,7 +127,7 @@ const err = (message: string): Plan => ({ kind: 'error', message });
 const sameKey = (a: string, b: string) => a.toLowerCase() === b.toLowerCase();
 
 /** Chờ trả lời bằng chữ thì lời `say` ghi `ifAwait`, để chạy lại không vỡ khi nhánh AI khác. */
-const BRANCHING_AWAITS = ['node_reply', 'probe_answer'];
+const BRANCHING_AWAITS = ['node_reply', 'probe_answer', 'last_word'];
 
 export function planCommand(
   command: EngineCommand,
@@ -232,6 +232,11 @@ export function planCommand(
         : err('Chỉ dùng /huy khi engine hỏi có nộp sớm không.');
 
     case 'xong':
+      if (waiting === 'last_word')
+        return {
+          kind: 'step',
+          step: { do: 'end_conversation', ifAwait: waiting },
+        };
       return waiting === 'conversation'
         ? { kind: 'step', step: { do: 'end_conversation' } }
         : err('Không có cuộc trò chuyện nào đang mở.');

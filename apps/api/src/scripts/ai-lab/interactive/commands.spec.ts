@@ -326,14 +326,20 @@ describe('định dạng', () => {
       { do: 'start' },
       { do: 'say', text: 'Dạ' },
       { do: 'action', key: 'open_log' },
-      { do: 'action', key: 'write_patch', fields: { mo_ta: 'Gom truy vấn.' } },
+      { do: 'action', key: 'open_wiki' },
+      { do: 'action', key: 'open_bang' },
+      { do: 'action', key: 'open_dashboard' },
+      { do: 'action', key: 'open_code' },
+      { do: 'action', key: 'talk_support' },
+      { do: 'end_conversation' },
+      { do: 'action', key: 'write_patch', ticks: ['v1'] },
       { do: 'action', key: 'run_staging' },
       { do: 'action', key: 'wait' },
     );
     expect(choosing.state.await.kind).toBe('node_choice');
     const options = formatOptions(view(choosing)).join('\n');
     expect(options).toContain('a) ');
-    expect(options).toContain('30 giây');
+    expect(options).toContain('40 giây');
   });
 
   it('/tt in cờ, dữ kiện, lời hứa, khúc mắc, nút và yêu cầu AI đang chờ', async () => {

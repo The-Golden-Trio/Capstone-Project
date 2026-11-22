@@ -40,6 +40,11 @@ function formInput(
   return [
     ...(artefact.fields ?? []).map((f) => fields?.[f.id] ?? ''),
     ...(artefact.ticks ?? []).map((t) => (ticks?.includes(t.id) ? 'c' : 'k')),
+    ...artefact.selects.flatMap((select) => [
+      select.options.find(({ id }) => ticks?.includes(`${select.id}=${id}`))
+        ?.id ?? '',
+      ...(select.reason ? [fields?.[`${select.id}__why`] ?? ''] : []),
+    ]),
   ];
 }
 
@@ -121,7 +126,7 @@ describe('playInteractive', () => {
   it('chơi trọn ca ở chế độ fake: in tóm tắt và bước chấm, ghi hai file chạy lại được', async () => {
     const lines = typedLines(await appliedSteps('lam-tot'));
     // Chèn lệnh sai, lệnh xem trạng thái và nhận xét ở ranh giới giữa các bước (không giữa form).
-    const split = lines.indexOf('/xong') + 1;
+    const split = lines.indexOf('/lam talk_support');
     const input = [
       '/giup',
       '/bay',
@@ -291,7 +296,7 @@ describe('playInteractive', () => {
       });
       const h = harness([], { reader, now });
       const played = await h.run();
-      expect(h.text()).toContain('Đồng hồ: 30 giây');
+      expect(h.text()).toContain('Đồng hồ: 40 giây');
       const choose = played.result.steps
         .map((s) => s.step)
         .find((s) => s.do === 'choose');
@@ -300,7 +305,7 @@ describe('playInteractive', () => {
 
     it('chọn trễ: tính là hết giờ (D-86) và nói rõ', async () => {
       const { reader, now } = timed([...toChoice, '/chon a', '/thoat'], {
-        '/chon a': 31_000,
+        '/chon a': 41_000,
       });
       const h = harness([], { reader, now });
       const played = await h.run();
@@ -312,11 +317,11 @@ describe('playInteractive', () => {
     it('lệnh sai không reset đồng hồ', async () => {
       const { reader, now } = timed(
         [...toChoice, '/chon z', '/chon a', '/thoat'],
-        { '/chon z': 20_000, '/chon a': 12_000 },
+        { '/chon z': 25_000, '/chon a': 17_000 },
       );
       const h = harness([], { reader, now });
       const played = await h.run();
-      // 20s + 12s = 32s kể từ lúc phương án hiện ra, dù /chon z báo lỗi giữa chừng.
+      // 25s + 17s = 42s kể từ lúc phương án hiện ra, dù /chon z báo lỗi giữa chừng.
       expect(played.result.steps.map((s) => s.step.do)).toContain('timeout');
     });
   });
