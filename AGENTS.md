@@ -81,6 +81,7 @@
   - Lượt chơi là `ScenarioRun.flow = 'shift'` cùng `run_event` và `ai_job`; worker xử lý queue `shift-turn`.
   - AI: AI-4 dùng `narrateScene`; bộ phán có/không dùng ghế judge của AI-5.
   - Chưa chấm điểm. `AI_MODE=fake` chỉ dùng khi dev.
+  - **22/11/2026 (`feat/shift-minh-phat-play`).** Seed `SWE_BACKEND.L3.m2` lên bản 5.2 theo lượt chơi mẫu và dùng các trường schema mới đang chờ nhóm chốt. Tài liệu trong ca mở thành cửa sổ IDE, wiki, log, terminal và mail. Demo chơi trọn ca bằng AI giả có kịch bản (`FAKE_SCRIPTS`). [Lượt chơi mẫu 5.2](research/reports/Lượt%20chơi%20mẫu%20Back-end%20L3%20m2%20bản%205.2.md) · [Đặc tả tích hợp, §A](docs/plans/2026-11-22_tich-hop-luot-choi-mau-ban-5-2.md).
 - **Staff app CA/DE, cập nhật 12/11/2026** (nhánh `feat/staff-app-ca-de`, theo `docs/plans/2026-11-06_ke-hoach-staff-app-CA-DE.md`):
   - Auth là Bearer (access token trong bộ nhớ, refresh ở localStorage); danh tính theo ERD-01, `apps/web` đã đổi theo.
   - `apps/staff` có T01, T00, C01, C04, C05, C06, C07, D01, D03, D04. Luồng: CA mở scenario và giao tác giả, người duyệt → DE viết ngữ cảnh, AI sinh bản nháp (queue `generation` ở worker, SSE) → sửa, câu mẫu, kiểm (`ContentValidator`) → nộp → DE khác duyệt → CA chọn dạng task, asset → dựng bản nháp (`scenario_build`).
