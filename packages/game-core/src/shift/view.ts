@@ -5,12 +5,19 @@
 import {
   actionAvailability,
   factText,
+  flagSet,
   nodeOf,
   nowOf,
+  optionText,
   slotOf,
   type ShiftContext,
 } from './context.js';
-import type { Channel } from './schema.js';
+import type {
+  ArtefactField,
+  ArtefactSelect,
+  ArtefactView,
+  Channel,
+} from './schema.js';
 import { clockAt } from './time.js';
 import type { AwaitState, ShiftState } from './state.js';
 import { TURNS_PER_POINT } from './engine.js';
@@ -18,8 +25,10 @@ import { TURNS_PER_POINT } from './engine.js';
 export interface ArtefactForm {
   id: string;
   title: string;
-  fields: Array<{ id: string; label: string }>;
+  fields: ArtefactField[];
   ticks: Array<{ id: string; label: string }>;
+  selects: ArtefactSelect[];
+  view?: ArtefactView;
   prefill?: { fields: Record<string, string>; ticks: string[] };
 }
 
@@ -27,6 +36,8 @@ export interface SceneView {
   seedId: string;
   title: string;
   goal: string;
+  introSlides: Array<{ title: string; body: string }>;
+  bots: Array<{ id: string; name: string }>;
   clock: {
     time: string;
     start: string;
@@ -80,13 +91,21 @@ export interface SceneView {
     kind: string;
     body?: string[];
     lines?: string[];
+    view?: ArtefactView;
+    /** Labels of the form (fields, ticks, selects) so a saved form can be shown read-only. */
+    form?: ArtefactForm;
     saved?: { fields: Record<string, string>; ticks: string[]; status: string };
   }>;
   notebook: {
     facts: Array<{ id: string; text: string; time: string }>;
     promises: Array<{ id: string; label: string; status: string }>;
   };
-  cast: Array<{ slot: string; name: string; relation: string }>;
+  cast: Array<{
+    slot: string;
+    name: string;
+    relation: string;
+    status?: string;
+  }>;
   glossary: Array<{ term: string; plain: string }>;
   suspended: { key: string; label: string; remaining: number } | null;
   hintsUsed: number;
@@ -106,6 +125,8 @@ function formOf(
     title: artefact.title,
     fields: artefact.fields ?? [],
     ticks: artefact.ticks ?? [],
+    selects: artefact.selects,
+    ...(artefact.view ? { view: artefact.view } : {}),
     ...(saved ? { prefill: { fields: saved.fields, ticks: saved.ticks } } : {}),
   };
 }
@@ -138,11 +159,14 @@ export function sceneView(s: ShiftState, ctx: ShiftContext): SceneView {
 
   const node = s.activeNode ? nodeOf(ctx, s.activeNode) : null;
   const awaitingChoice = s.await.kind === 'node_choice';
+  const flags = flagSet(s);
 
   return {
     seedId: seed.id,
     title: seed.title,
     goal: seed.goal,
+    introSlides: seed.intro_slides ?? [],
+    bots: seed.bots,
     clock: {
       time: nowOf(s, ctx),
       start: seed.clock.start,
@@ -173,7 +197,10 @@ export function sceneView(s: ShiftState, ctx: ShiftContext): SceneView {
           channel: node.channel,
           prompt: node.prompt,
           options: awaitingChoice
-            ? node.options.map((o) => ({ key: o.key, text: o.text }))
+            ? node.options.map((o) => ({
+                key: o.key,
+                text: optionText(o, flags),
+              }))
             : [],
           timeLimitSeconds: awaitingChoice
             ? node.time_limit_seconds
@@ -205,8 +232,10 @@ export function sceneView(s: ShiftState, ctx: ShiftContext): SceneView {
           id: a.id,
           title: a.title,
           kind: a.kind,
+          ...(a.view ? { view: a.view } : {}),
           ...(a.kind === 'document' ? { body: a.body ?? [] } : {}),
           ...(saved?.lines ? { lines: saved.lines } : {}),
+          ...(a.kind === 'form' ? { form: formOf(ctx, s, a.id) } : {}),
           ...(saved && a.kind === 'form'
             ? {
                 saved: {
@@ -241,6 +270,7 @@ export function sceneView(s: ShiftState, ctx: ShiftContext): SceneView {
       slot: c.slot,
       name: c.name,
       relation: c.relation,
+      status: s.presence?.[c.slot],
     })),
     glossary: seed.glossary,
     suspended: suspendedOf(s, ctx),

@@ -256,6 +256,18 @@ export function evidenceSegments(
       label: f.label,
       text: saved.fields[f.id] ?? '',
     }));
+    for (const select of artefact.selects) {
+      if (!select.reason) continue;
+      const text = saved.fields[`${select.id}__why`] ?? '';
+      const option = select.options.find(({ id }) =>
+        saved.ticks.includes(`${select.id}=${id}`),
+      );
+      if (!option && !text) continue;
+      fields.push({
+        label: option ? `${select.label} (${option.label})` : select.label,
+        text,
+      });
+    }
     return {
       at,
       rank: 1,
@@ -293,13 +305,20 @@ export function evidenceSegments(
     const option = closed
       ? node.options.find((o) => o.key === progress.choice)
       : undefined;
+    const optionTexts = new Set(
+      option
+        ? [option.text, ...option.text_if.map((variant) => variant.text)].map(
+            normalizeQuote,
+          )
+        : [],
+    );
     const parts: Sortable[] = [];
     let optionSkipped = false;
     for (const l of s.transcript) {
       if (l.context !== context) continue;
       if (l.kind === 'player') {
-        // Dòng đầu bằng đúng chữ phương án là lựa chọn của nút đóng: không chấm.
-        if (option && !optionSkipped && l.text === option.text) {
+        // Exclude the chosen option while retaining the player's free reply.
+        if (!optionSkipped && optionTexts.has(normalizeQuote(l.text))) {
           optionSkipped = true;
           continue;
         }

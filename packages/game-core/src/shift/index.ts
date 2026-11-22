@@ -30,8 +30,9 @@ export {
   fakeChecks,
   type FakeCheckRules,
   type FakeEventRules,
+  type FakeScript,
 } from './testing/fakes.js';
-export { FAKE_RULES, FAKE_EVENTS } from './testing/fakeRules.js';
+export { FAKE_RULES, FAKE_EVENTS, FAKE_SCRIPTS } from './testing/fakeRules.js';
 
 /* ── Chấm theo checklist có/không (D-116; AI-5 trả lời câu hỏi, code quy ra mức) ── */
 export * from './grading/library.js';

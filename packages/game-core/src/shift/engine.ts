@@ -23,16 +23,18 @@ import {
   flagSet,
   nextAmbient,
   nodeOf,
+  optionText,
   pointOf,
   previousDone,
   slotOf,
   type ShiftContext,
 } from './context.js';
-import { matches, resolvedFlag } from './flags.js';
+import { matches, resolvedFlag, withDerivedFlags } from './flags.js';
 import { clockAt } from './time.js';
 import {
   EXPRESSIONS,
   SCENE_SPEAKER,
+  type Artefact,
   type Beat,
   type Channel,
   type CheckQuestion,
@@ -47,6 +49,8 @@ import type {
   NodeStep,
   Op,
   PlayerInput,
+  PromiseRecord,
+  SavedArtefact,
   ShiftInput,
   ShiftState,
   TranscriptLine,
@@ -83,7 +87,11 @@ export function initialState(ctx: ShiftContext): ShiftState {
     seedId: seed.id,
     seedVersion: seed.version,
     points: 0,
-    flags: [],
+    flags:
+      seed.version >= 5
+        ? [...withDerivedFlags(new Set(), seed.derived_flags)].sort()
+        : [],
+    ...(seed.version >= 5 ? { persistentFlags: [], presence: {} } : {}),
     facts: [],
     factText: {},
     opened: [],
@@ -180,10 +188,40 @@ class Runner {
   readonly effects: Effect[] = [];
   private shown: TranscriptLine[] = [];
 
+  /** Published runs always replay their original seed and its engine rules. */
+  private get legacy(): boolean {
+    return this.ctx.seed.version < 5;
+  }
+
   constructor(
     readonly s: ShiftState,
     private readonly ctx: ShiftContext,
-  ) {}
+  ) {
+    if (!this.legacy && !s.persistentFlags) {
+      const derived = new Set(ctx.seed.derived_flags.map((rule) => rule.flag));
+      const artefactFlags = new Set(
+        Object.values(s.artefacts).flatMap((artefact) => artefact.flags),
+      );
+      const completedKeys = [
+        ...s.actionLog
+          .filter(
+            (entry, index) => this.completionPoint(entry, index) !== undefined,
+          )
+          .map((entry) => entry.key),
+        ...Object.values(s.nodes).flatMap((node) =>
+          node.status === 'done' && node.action ? [node.action] : [],
+        ),
+      ];
+      const actionFlags = new Set(
+        completedKeys.flatMap((key) => actionOf(ctx, key)?.sets ?? []),
+      );
+      s.persistentFlags = s.flags.filter(
+        (flag) =>
+          !derived.has(flag) &&
+          (!artefactFlags.has(flag) || actionFlags.has(flag)),
+      );
+    }
+  }
 
   apply(input: ShiftInput): void {
     if (input.type === 'NARRATION' || input.type === 'CHECKS')
@@ -230,7 +268,11 @@ class Runner {
 
       case 'node_reply':
         if (input.type !== 'SAY') throw invalid('Hãy trả lời');
-        this.playerLine(input.text, `node:${wait.node}`);
+        this.playerLine(
+          input.text,
+          `node:${wait.node}`,
+          this.legacy ? undefined : nodeOf(this.ctx, wait.node).channel,
+        );
         return this.front(
           {
             op: 'narrate',
@@ -285,9 +327,15 @@ class Runner {
             op: 'open_node',
             node: wait.node,
             via: 'player',
+            ...(wait.action ? { action: wait.action } : {}),
           });
         if (input.type === 'CANCEL_END') return; // về lại pha, hàng việc rỗng
         throw invalid('Hãy xác nhận hoặc huỷ');
+
+      case 'last_word':
+        if (input.type === 'SAY') return this.lastWord(input.text);
+        if (input.type === 'END_CONVERSATION') return;
+        throw invalid('Hãy nhắn hoặc bỏ qua');
 
       default:
         throw invalid('Không nhận thao tác lúc này');
@@ -390,7 +438,7 @@ class Runner {
       case 'advance':
         return this.advance(op.points, op.key, op.resume);
       case 'due':
-        return this.due();
+        return this.due(op.afterAction);
       case 'open_conversation':
         return this.openConversation(op.slots, op.channel, op.byNpc);
       case 'close_conversation':
@@ -398,11 +446,13 @@ class Runner {
       case 'complete_action':
         return this.completeAction(op.key);
       case 'open_node':
-        return this.openNode(op.node, op.via);
+        return this.openNode(op.node, op.via, op.action);
       case 'node':
         return this.nodeStep(op.node, op.step);
       case 'review':
         return this.review(op.index, op.picked);
+      case 'finish_shift':
+        return this.finishShift();
       case 'refresh':
         return this.refreshConcerns();
       case 'end':
@@ -432,6 +482,10 @@ class Runner {
     if (!availability.ok)
       throw new ShiftRuleError('TURN_INVALID', availability.reason);
     const points = availability.points;
+    const due: Op =
+      ctx.seed.player_first_at_fallback && points > 0
+        ? { op: 'due', afterAction: true }
+        : { op: 'due' };
 
     // Làm việc khác thì cuộc trò chuyện đang mở đóng lại (A1, bản 3).
     const close: Op[] =
@@ -452,7 +506,7 @@ class Runner {
             byNpc: false,
           },
           { op: 'complete_action', key: action.key },
-          { op: 'due' },
+          due,
         );
       }
       case 'meeting':
@@ -466,7 +520,7 @@ class Runner {
             byNpc: false,
           },
           { op: 'complete_action', key: action.key },
-          { op: 'due' },
+          due,
         );
       case 'trigger': {
         const node = nodeOf(ctx, action.target ?? '');
@@ -476,23 +530,33 @@ class Runner {
         if (node.kind === 'end' && s.points < budget)
           return this.push(...ops, {
             op: 'await',
-            await: { kind: 'confirm_end', node: node.id },
+            await: {
+              kind: 'confirm_end',
+              node: node.id,
+              ...(this.legacy || node.trigger.action === action.key
+                ? {}
+                : { action: action.key }),
+            },
           });
         return this.push(...ops, {
           op: 'open_node',
           node: node.id,
           via: 'player',
+          ...(this.legacy ? {} : { action: action.key }),
         });
       }
       case 'write':
       case 'rewrite':
       case 'message': {
         const artefact = this.artefact(action.target ?? '');
-        const fields = this.requireFields(artefact.fields ?? [], input.fields);
+        const ticks = this.legacy
+          ? (input.ticks ?? [])
+          : this.validTicks(artefact, input.ticks ?? []);
+        const fields = this.requireFields(artefact, input.fields, ticks);
         // Chữ người chơi gõ lúc bắt đầu hành động; xong mới lưu (A1b).
         s.artefacts[artefact.id] = {
           fields,
-          ticks: input.ticks ?? [],
+          ticks,
           status: 'draft',
           flags: s.artefacts[artefact.id]?.flags ?? [],
         };
@@ -505,20 +569,92 @@ class Runner {
       ...close,
       { op: 'advance', points, key: action.key },
       { op: 'complete_action', key: action.key },
-      { op: 'due' },
+      due,
     );
   }
 
   private requireFields(
-    fields: Array<{ id: string; label: string }>,
+    artefact: Artefact,
     given: Record<string, string> | undefined,
+    ticks: string[],
   ): Record<string, string> {
+    const fieldIds = [
+      ...(artefact.fields ?? []).map((field) => field.id),
+      ...artefact.selects
+        .filter((select) => select.reason)
+        .map((select) => `${select.id}__why`),
+    ];
     const out: Record<string, string> = {};
-    for (const field of fields)
-      out[field.id] = (given?.[field.id] ?? '').trim().slice(0, 4000);
-    if (fields.length > 0 && Object.values(out).every((v) => v.length === 0))
+    for (const id of fieldIds)
+      out[id] = (given?.[id] ?? '').trim().slice(0, 4000);
+    if (
+      fieldIds.length > 0 &&
+      (this.legacy || ticks.length === 0) &&
+      Object.values(out).every((v) => v.length === 0)
+    )
       throw new ShiftRuleError('TURN_INVALID', 'Tài liệu còn trống');
     return out;
+  }
+
+  private validTicks(artefact: Artefact, given: string[]): string[] {
+    if (this.legacy)
+      return given.filter((tick) =>
+        artefact.ticks?.some(({ id }) => id === tick),
+      );
+    const selected = new Set<string>();
+    const switches = new Set(artefact.ticks?.map((tick) => tick.id));
+    const choices = new Map<string, Artefact['selects'][number]>(
+      artefact.selects.flatMap((select) =>
+        select.options.map(
+          (option) => [`${select.id}=${option.id}`, select] as const,
+        ),
+      ),
+    );
+    return [...new Set(given)].filter((tick) => {
+      const select = choices.get(tick);
+      if (!select) return switches.has(tick);
+      if (selected.has(select.id))
+        throw new ShiftRuleError(
+          'TURN_INVALID',
+          `Chỉ chọn một phương án cho ${select.label}`,
+        );
+      selected.add(select.id);
+      return true;
+    });
+  }
+
+  private saveArtefact(
+    artefact: Artefact,
+    fields: Record<string, string>,
+    ticks: string[],
+    source: 'node' | 'write' | 'rewrite' | 'message',
+  ): void {
+    const previous = this.s.artefacts[artefact.id];
+    const tickFlags = ticks.flatMap((tick) =>
+      Object.hasOwn(artefact.tick_flags, tick)
+        ? [artefact.tick_flags[tick]]
+        : [],
+    );
+    if (this.legacy && (source === 'rewrite' || source === 'node') && previous)
+      this.s.flags = this.s.flags.filter(
+        (flag) => !previous.flags.includes(flag),
+      );
+    const saved: SavedArtefact = {
+      fields,
+      ticks,
+      status: 'saved',
+      savedAt: this.s.points,
+      flags: this.legacy
+        ? source === 'node'
+          ? tickFlags
+          : source === 'message'
+            ? (previous?.flags ?? [])
+            : []
+        : [...new Set(tickFlags)],
+    };
+    this.s.artefacts[artefact.id] = saved;
+    if (!this.legacy) this.refreshConcerns();
+    else if (source === 'node') this.addFlags(tickFlags);
   }
 
   private artefact(id: string) {
@@ -531,11 +667,12 @@ class Runner {
     const { s, ctx } = this;
     const action = actionOf(ctx, key);
     if (!action) return;
-    const entry = [...s.actionLog]
-      .reverse()
-      .find((e) => e.key === key && e.points >= 0);
+    const entry = [...s.actionLog].reverse().find((e) => e.key === key);
     const points = entry?.points ?? action.points;
     const context = `action:${key}`;
+    const beats =
+      action.beats_if.find((variant) => matches(variant.if, flagSet(s)))
+        ?.beats ?? action.beats;
 
     switch (action.kind) {
       case 'talk':
@@ -551,10 +688,12 @@ class Runner {
           `${again ? 'Bạn xem lại' : 'Bạn mở'} ${artefact.title}.`,
           context,
         );
-        const fact = artefact.unlocks.find(
-          (id) => !s.facts.some((f) => f.id === id),
-        );
-        if (fact) s.facts.push({ id: fact, at: s.points });
+        const unlocks = this.legacy
+          ? artefact.unlocks
+              .filter((id) => !s.facts.some((fact) => fact.id === id))
+              .slice(0, 1)
+          : artefact.unlocks;
+        this.unlockFacts(unlocks);
         break;
       }
       case 'write':
@@ -562,11 +701,7 @@ class Runner {
         const artefact = this.artefact(action.target ?? '');
         const saved = s.artefacts[artefact.id];
         if (!saved) break;
-        // Sửa lại thì cờ của tài liệu tính lại từ bản mới (A12).
-        if (action.kind === 'rewrite') this.dropFlags(saved.flags);
-        saved.status = 'saved';
-        saved.savedAt = s.points;
-        saved.flags = [];
+        this.saveArtefact(artefact, saved.fields, saved.ticks, action.kind);
         this.line(
           'scene',
           SCENE_SPEAKER,
@@ -586,8 +721,7 @@ class Runner {
         const artefact = this.artefact(action.target ?? '');
         const saved = s.artefacts[artefact.id];
         if (!saved) break;
-        saved.status = 'saved';
-        saved.savedAt = s.points;
+        this.saveArtefact(artefact, saved.fields, saved.ticks, action.kind);
         s.channelMessages.push(s.points);
         const text = Object.values(saved.fields).join('\n');
         this.playerLine(text, context, 'group');
@@ -645,6 +779,12 @@ class Runner {
     }
 
     this.addFlags(action.sets);
+    if (!this.legacy && entry) entry.completedAt = s.points;
+    this.unlockFacts(action.unlocks);
+    this.keepActionPromises(action.key);
+    this.showBeats(beats, context, s.conversation?.channel ?? 'chat', {
+      singleFact: !this.legacy,
+    });
     if (
       points >= ctx.seed.ambient_min_points &&
       action.kind !== 'talk' &&
@@ -660,6 +800,12 @@ class Runner {
 
   /* ── Đồng hồ ── */
 
+  private setPoints(points: number): void {
+    this.s.points = points;
+    if (!this.legacy && !this.s.shiftOver)
+      this.applyTimeline('silent', 'notice');
+  }
+
   /**
    * Cho đồng hồ chạy. Gặp mốc có giờ ở giữa hành động thì cắt đôi: xử lý
    * mốc trước, rồi chạy tiếp phần còn lại (A1b). Đang trong nút thì giữ lại.
@@ -669,7 +815,7 @@ class Runner {
     if (key && !resume) s.actionLog.push({ at: s.points, key, points });
     const end = s.points + points;
     for (let t = s.points + 1; t < end; t++) {
-      s.points = t;
+      this.setPoints(t);
       if (!s.activeNode && this.hasInterrupt()) {
         s.suspended = key ? { key, remaining: end - t } : null;
         const entry = [...s.actionLog].reverse().find((e) => e.key === key);
@@ -681,7 +827,7 @@ class Runner {
         return;
       }
     }
-    s.points = end;
+    this.setPoints(end);
     if (key) s.suspended = null;
   }
 
@@ -708,7 +854,9 @@ class Runner {
   }
 
   /** Nút tới hạn: hạn chót, nút theo giờ, hay giờ dự phòng của nút do người chơi bật. */
-  private dueNode(): { node: string; via: 'time' | 'fallback' } | null {
+  private dueNode(
+    afterAction = false,
+  ): { node: string; via: 'time' | 'fallback' } | null {
     const { s, ctx } = this;
     if (s.shiftOver) return null;
     const end = ctx.seed.nodes.find((n) => n.kind === 'end');
@@ -718,28 +866,49 @@ class Runner {
       s.points >= ctx.seed.clock.budget
     )
       return { node: end.id, via: 'fallback' };
+    let next: { node: string; via: 'time' | 'fallback'; at: number } | null =
+      null;
     for (const node of ctx.seed.nodes) {
       if (s.nodes[node.id].status !== 'pending') continue;
-      if (!previousDone(s, ctx, node.id)) return null;
-      const t = node.trigger;
-      if (t.by === 'time' && t.at && pointOf(t.at, ctx) <= s.points)
-        return { node: node.id, via: 'time' };
+      if (!previousDone(s, ctx, node.id)) continue;
+      const { by, at, fallback_at } = node.trigger;
+      const clock =
+        by === 'time' ? at : by === 'player' ? fallback_at : undefined;
+      if (!clock) continue;
+      const point = pointOf(clock, ctx);
+      // At the exact fallback point, a completed action gives the player a turn to trigger the node.
+      // A fallback reached during an unfinished action still interrupts it.
       if (
-        t.by === 'player' &&
-        t.fallback_at &&
-        pointOf(t.fallback_at, ctx) <= s.points
+        by === 'player' &&
+        ctx.seed.player_first_at_fallback &&
+        afterAction &&
+        point === s.points
       )
-        return { node: node.id, via: 'fallback' };
-      return null;
+        continue;
+      if (point <= s.points && (!next || point < next.at))
+        next = {
+          node: node.id,
+          via: by === 'time' ? 'time' : 'fallback',
+          at: point,
+        };
     }
-    return null;
+    return next;
+  }
+
+  private promisePoint(
+    promise: Pick<PromiseRecord, 'dueAt' | 'event'>,
+  ): number | undefined {
+    return (
+      promise.dueAt ??
+      this.s.events.find((event) => event.name === promise.event)?.at
+    );
   }
 
   private duePromise() {
     const { s } = this;
     return s.promises.find((p) => {
       if (p.status !== 'open') return false;
-      const base = p.dueAt ?? s.events.find((e) => e.name === p.event)?.at;
+      const base = this.promisePoint(p);
       return base !== undefined && base + PROMISE_WINDOW.after <= s.points;
     });
   }
@@ -748,23 +917,18 @@ class Runner {
    * Xử lý các mốc đã tới hạn, đúng thứ tự khi trùng giờ (A1b): mốc im →
    * nút / sự kiện theo giờ → nhắc lời hứa → báo sắp hết giờ.
    */
-  private due(): void {
+  private due(afterAction = false): void {
     const { s, ctx } = this;
     if (s.ended || s.activeNode) return;
 
-    ctx.seed.timeline.forEach((item, i) => {
-      if (
-        item.kind !== 'silent' ||
-        s.timelineDone.includes(i) ||
-        pointOf(item.at, ctx) > s.points
-      )
-        return;
-      s.timelineDone.push(i);
-      if (item.fact_update)
-        s.factText[item.fact_update.fact] = item.fact_update.text;
-    });
+    if (this.legacy)
+      this.applyTimeline(
+        'silent',
+        ...(s.conversation ? [] : ['notice' as const]),
+      );
+    else if (!s.shiftOver && !s.conversation) this.flushNotices();
 
-    const node = this.dueNode();
+    const node = this.dueNode(afterAction);
     if (node) {
       if (node.via === 'fallback' && nodeOf(ctx, node.node).kind === 'end')
         this.skipUnreached(node.node);
@@ -777,33 +941,22 @@ class Runner {
       return;
     }
 
-    if (!s.shiftOver) {
-      ctx.seed.timeline.forEach((item, i) => {
-        if (
-          item.kind !== 'scene' ||
-          s.timelineDone.includes(i) ||
-          pointOf(item.at, ctx) > s.points
-        )
-          return;
-        s.timelineDone.push(i);
-        if (item.text) this.line('scene', SCENE_SPEAKER, item.text, 'timeline');
-      });
-    }
+    if (!s.shiftOver) this.applyTimeline('scene');
 
     const promise = this.duePromise();
     if (promise) {
-      const base =
-        promise.dueAt ??
-        s.events.find((e) => e.name === promise.event)?.at ??
-        s.points;
-      const kept = s.contacts.some(
-        (c) =>
-          c.slot === promise.to &&
-          c.at >=
-            base - (promise.dueAt !== undefined ? PROMISE_WINDOW.before : 0) &&
-          c.at <= base + PROMISE_WINDOW.after &&
-          c.at >= promise.madeAt,
-      );
+      const base = this.promisePoint(promise) ?? s.points;
+      const kept =
+        !promise.byAction &&
+        s.contacts.some(
+          (c) =>
+            c.slot === promise.to &&
+            c.at >=
+              base -
+                (promise.dueAt !== undefined ? PROMISE_WINDOW.before : 0) &&
+            c.at <= base + PROMISE_WINDOW.after &&
+            c.at >= promise.madeAt,
+        );
       if (kept) {
         promise.status = 'kept';
         this.front({ op: 'due' });
@@ -846,6 +999,60 @@ class Runner {
       s.warned = true;
       this.showBeats([ctx.seed.clock.warning], 'timeline');
     }
+  }
+
+  private applyTimeline(
+    ...kinds: Array<ShiftContext['seed']['timeline'][number]['kind']>
+  ): void {
+    const { s, ctx } = this;
+    const due = ctx.seed.timeline
+      .map((item, index) => ({ item, index, point: pointOf(item.at, ctx) }))
+      .filter(
+        ({ item, index, point }) =>
+          kinds.includes(item.kind) &&
+          !s.timelineDone.includes(index) &&
+          point <= s.points,
+      );
+    if (!this.legacy) due.sort((a, b) => a.point - b.point);
+    for (const { item, index, point } of due) {
+      s.timelineDone.push(index);
+      if (item.fact_update && (!this.legacy || item.kind === 'silent'))
+        s.factText[item.fact_update.fact] = item.fact_update.text;
+      if (item.presence) {
+        const { slot, text } = item.presence;
+        const presence = (s.presence ??= {});
+        if (text === null) delete presence[slot];
+        else presence[slot] = text;
+      }
+      if (!this.legacy && item.kind === 'notice' && item.text) {
+        (s.pendingNotices ??= []).push(index);
+        continue;
+      }
+      this.unlockFacts(
+        item.unlocks,
+        this.legacy || item.kind === 'scene' ? s.points : point,
+      );
+      if (item.kind !== 'silent' && item.text)
+        this.showSpeech(item.speaker ?? SCENE_SPEAKER, item.text, 'timeline', {
+          ...(item.channel ? { channel: item.channel } : {}),
+        });
+    }
+  }
+
+  private flushNotices(): void {
+    const { s, ctx } = this;
+    this.applyTimeline('silent', 'notice');
+    for (const index of s.pendingNotices ?? []) {
+      const item = ctx.seed.timeline[index];
+      if (item?.text) {
+        this.unlockFacts(item.unlocks);
+        this.showSpeech(item.speaker ?? SCENE_SPEAKER, item.text, 'timeline', {
+          at: pointOf(item.at, ctx),
+          ...(item.channel ? { channel: item.channel } : {}),
+        });
+      }
+    }
+    delete s.pendingNotices;
   }
 
   /** Hết giờ: nút giữa chưa tới thì không xét (D2). */
@@ -903,7 +1110,7 @@ class Runner {
       conv.turns > TURNS_PER_POINT &&
       (conv.turns - 1) % TURNS_PER_POINT === 0
     )
-      s.points += 1;
+      this.setPoints(s.points + 1);
     this.playerLine(clean, `conv:${conv.id}`, conv.channel);
 
     const realtime = ctx.seed.conversation_checks.filter(
@@ -940,6 +1147,8 @@ class Runner {
     const conv = s.conversation;
     if (!conv) return;
     s.conversation = null;
+    // Notices held back during the conversation show as soon as it ends.
+    if (!this.legacy && !s.shiftOver) this.flushNotices();
     if (conv.turns === 0) return;
     const scope = s.transcript
       .filter((l) => l.kind === 'player' && l.context === `conv:${conv.id}`)
@@ -976,14 +1185,24 @@ class Runner {
   private openNode(
     id: string,
     via: 'start' | 'time' | 'player' | 'fallback',
+    action?: string,
   ): void {
     const { s } = this;
     const node = nodeOf(this.ctx, id);
     if (s.nodes[id].status !== 'pending') return;
-    s.nodes[id] = { status: 'active', via, openedAt: s.points };
+    const triggerAction =
+      !this.legacy && via === 'player'
+        ? (action ?? node.trigger.action)
+        : undefined;
+    s.nodes[id] = {
+      status: 'active',
+      via,
+      openedAt: s.points,
+      ...(triggerAction ? { action: triggerAction } : {}),
+    };
     s.activeNode = id;
-    // Nút tốn điểm; mốc nào rơi vào lúc đang trong nút thì giữ lại tới khi xong.
-    s.points += node.points;
+    // Timed state updates still apply while the node holds back announcements.
+    this.setPoints(s.points + node.points);
     this.front({ op: 'node', node: id, step: 'lead' });
   }
 
@@ -1002,7 +1221,9 @@ class Runner {
             matches(a.if, flags),
         );
         if (lead)
-          this.showBeats(lead.beats, context, node.channel, node.speaker);
+          this.showBeats(lead.beats, context, node.channel, {
+            defaultSpeaker: node.speaker,
+          });
         if (node.format === 'free_reply')
           return this.front({
             op: 'await',
@@ -1075,7 +1296,13 @@ class Runner {
           .map((l) => l.text);
         const scope = [artefactText, ...said].filter(Boolean).join('\n');
         if (!scope) return;
-        return this.front({ op: 'check', questions, scope, source: context });
+        return this.front({
+          op: 'check',
+          questions,
+          scope,
+          source: context,
+          ...(this.legacy ? {} : { channel: node.channel }),
+        });
       }
 
       case 'closing': {
@@ -1099,12 +1326,9 @@ class Runner {
         if (concern?.resolve_when && matches(concern.resolve_when, flags)) {
           this.addFlags([resolvedFlag(concern.id)]);
           progress.approved = true;
-          this.showBeats(
-            closing.approve_beats,
-            context,
-            node.channel,
-            node.speaker,
-          );
+          this.showBeats(closing.approve_beats, context, node.channel, {
+            defaultSpeaker: node.speaker,
+          });
           if (closing.approve_event) this.emitEvent(closing.approve_event);
         } else {
           progress.approved = false;
@@ -1125,12 +1349,26 @@ class Runner {
         progress.status = 'done';
         progress.doneAt = s.points;
         s.activeNode = null;
+        if (progress.action) this.completeAction(progress.action);
         this.refreshConcerns();
         if (node.kind === 'end') {
+          if (!this.legacy) this.flushNotices();
           s.shiftOver = true;
-          for (const p of s.promises)
-            if (p.status === 'open') p.status = 'carried';
-          return this.front({ op: 'review', index: 0, picked: [] });
+          const lastWord = ctx.seed.last_word;
+          this.front({ op: 'finish_shift' });
+          if (
+            lastWord &&
+            s.promises.some((promise) => this.isLastWordPromise(promise))
+          )
+            this.front({
+              op: 'await',
+              await: {
+                kind: 'last_word',
+                to: lastWord.to,
+                prompt: lastWord.prompt,
+              },
+            });
+          return;
         }
         return this.front({ op: 'due' });
       }
@@ -1157,7 +1395,7 @@ class Runner {
         throw new ShiftRuleError('TURN_INVALID', 'Không có phương án này');
       progress.choice = chosen.key;
       progress.elapsedMs = elapsedMs;
-      this.playerLine(chosen.text, context, node.channel);
+      this.playerLine(optionText(chosen, flagSet(s)), context, node.channel);
       reaction = chosen.reaction;
       sets = chosen.sets;
       if (chosen.promise) {
@@ -1168,6 +1406,8 @@ class Runner {
             ? pointOf(chosen.promise.at, ctx)
             : undefined,
           event: chosen.promise.event,
+          byAction: chosen.promise.by_action,
+          label: chosen.promise.label,
         });
       }
     }
@@ -1200,27 +1440,12 @@ class Runner {
     fields: Record<string, string>,
     ticks: string[],
   ): void {
-    const { s, ctx } = this;
+    const { ctx } = this;
     const node = nodeOf(ctx, id);
     const artefact = this.artefact(node.artefact ?? '');
-    const clean = this.requireFields(artefact.fields ?? [], fields);
-    const validTicks = ticks.filter((t) =>
-      (artefact.ticks ?? []).some((x) => x.id === t),
-    );
-    const previous = s.artefacts[artefact.id];
-    if (previous) this.dropFlags(previous.flags);
-    s.artefacts[artefact.id] = {
-      fields: clean,
-      ticks: validTicks,
-      status: 'saved',
-      savedAt: s.points,
-      flags: [],
-    };
-    const tickFlags = validTicks
-      .map((t) => artefact.tick_flags[t])
-      .filter((f): f is string => Boolean(f));
-    s.artefacts[artefact.id].flags.push(...tickFlags);
-    this.addFlags(tickFlags);
+    const validTicks = this.validTicks(artefact, ticks);
+    const clean = this.requireFields(artefact, fields, validTicks);
+    this.saveArtefact(artefact, clean, validTicks, 'node');
     this.line(
       'scene',
       SCENE_SPEAKER,
@@ -1257,6 +1482,38 @@ class Runner {
   }
 
   /* ── Nhìn lại ca và kết ── */
+
+  private isLastWordPromise(promise: PromiseRecord): boolean {
+    const lastWord = this.ctx.seed.last_word;
+    return Boolean(
+      lastWord &&
+      promise.status === 'open' &&
+      !promise.byAction &&
+      promise.to === lastWord.to &&
+      promise.event === lastWord.event &&
+      this.s.events.some((event) => event.name === lastWord.event),
+    );
+  }
+
+  private lastWord(text: string): void {
+    const lastWord = this.ctx.seed.last_word;
+    if (!lastWord || !text.trim())
+      throw new ShiftRuleError('TURN_INVALID', 'Câu trả lời trống');
+    this.playerLine(text, 'last_word', lastWord.channel);
+    for (const promise of this.s.promises)
+      if (this.isLastWordPromise(promise)) promise.status = 'kept';
+    this.showBeats(lastWord.reply, 'last_word', lastWord.channel);
+  }
+
+  private finishShift(): void {
+    for (const promise of this.s.promises)
+      if (promise.status === 'open') promise.status = 'carried';
+    const flags = flagSet(this.s);
+    for (const item of this.ctx.seed.epilogue)
+      if (matches(item.if, flags))
+        this.showBeats(item.beats, 'epilogue', 'chat');
+    this.front({ op: 'review', index: 0, picked: [] });
+  }
 
   private review(index: number, picked: string[]): void {
     const { s, ctx } = this;
@@ -1401,8 +1658,13 @@ class Runner {
     }
     if (source.startsWith('artefact:')) {
       const saved = s.artefacts[source.slice('artefact:'.length)];
-      if (saved)
+      if (saved) {
         saved.flags.push(...set.filter((f) => !saved.flags.includes(f)));
+        if (!this.legacy) {
+          this.refreshConcerns();
+          return;
+        }
+      }
     }
     this.addFlags(set);
   }
@@ -1410,38 +1672,44 @@ class Runner {
   /* ── Cờ, lời hứa, sự kiện ── */
 
   private addFlags(flags: string[]): void {
-    const { s } = this;
+    const target = this.s.persistentFlags ?? this.s.flags;
     let changed = false;
     for (const flag of flags)
-      if (!s.flags.includes(flag)) {
-        s.flags.push(flag);
+      if (!target.includes(flag)) {
+        target.push(flag);
         changed = true;
       }
-    if (changed) {
-      s.flags.sort();
-      this.refreshConcerns();
-    }
-  }
-
-  /** Chỉ dùng khi tài liệu được sửa lại: cờ của bản cũ tính lại (A12). */
-  private dropFlags(flags: string[]): void {
-    this.s.flags = this.s.flags.filter((f) => !flags.includes(f));
+    if (changed) this.refreshConcerns();
   }
 
   /** Khúc mắc không giấu tới nút nào thì gỡ ngay khi điều kiện đạt (A9). */
   private refreshConcerns(): void {
     const { s, ctx } = this;
-    const flags = flagSet(s);
+    const { persistentFlags } = s;
+    const flags = persistentFlags
+      ? withDerivedFlags(
+          new Set([
+            ...persistentFlags,
+            ...Object.values(s.artefacts).flatMap((artefact) => artefact.flags),
+          ]),
+          ctx.seed.derived_flags,
+        )
+      : flagSet(s);
     for (const slot of ctx.seed.cast)
       for (const concern of slot.concerns) {
         if (concern.hold_until || !concern.resolve_when) continue;
         const flag = resolvedFlag(concern.id);
-        if (!flags.has(flag) && matches(concern.resolve_when, flags)) {
-          s.flags.push(flag);
+        if (
+          !flags.has(flag) &&
+          !persistentFlags?.includes(flag) &&
+          matches(concern.resolve_when, flags)
+        ) {
+          persistentFlags?.push(flag);
           flags.add(flag);
+          if (persistentFlags) withDerivedFlags(flags, ctx.seed.derived_flags);
         }
       }
-    s.flags.sort();
+    s.flags = [...flags].sort();
   }
 
   private findConcern(id: string) {
@@ -1452,35 +1720,118 @@ class Runner {
     return undefined;
   }
 
-  /** Hứa mới với cùng một người thì thay lời hứa cũ (A12). */
-  private addPromise(p: {
-    to: string;
-    channel: Channel;
-    dueAt?: number;
-    event?: string;
-  }): void {
-    const { s, ctx } = this;
+  private addPromise(
+    p: Pick<
+      PromiseRecord,
+      'to' | 'channel' | 'dueAt' | 'event' | 'byAction'
+    > & { label?: string },
+  ): void {
+    const { s } = this;
     if (p.dueAt === undefined && !p.event) return;
-    s.promises = s.promises.filter(
-      (old) => !(old.to === p.to && old.status === 'open'),
-    );
-    const name = slotOf(ctx, p.to).name;
-    const when =
-      p.dueAt !== undefined
-        ? clockAt(p.dueAt, ctx.seed.clock.start, ctx.pack.minutes_per_point)
-        : (ctx.seed.promise_events.find((e) => e.id === p.event)?.text ??
-          p.event ??
-          '');
+    if (
+      !this.legacy &&
+      !p.byAction &&
+      s.promises.some(
+        (old) =>
+          old.status === 'open' &&
+          !old.byAction &&
+          old.to === p.to &&
+          old.dueAt === p.dueAt &&
+          old.event === p.event &&
+          old.channel === p.channel,
+      )
+    )
+      return;
+    // Only a new contact promise replaces the open contact promise for that person.
+    const previousCount = s.promises.length;
+    if (!p.byAction)
+      s.promises = s.promises.filter(
+        (old) => !(old.to === p.to && old.status === 'open' && !old.byAction),
+      );
+    let number = (this.legacy ? s.promises.length : previousCount) + 1;
+    if (!this.legacy)
+      while (s.promises.some((old) => old.id === `p${number}`)) number++;
+    const kept = !this.legacy && this.actionAlreadyKept(p);
     s.promises.push({
-      id: `p${s.promises.length + 1}`,
+      id: `p${number}`,
       to: p.to,
       channel: p.channel,
       dueAt: p.dueAt,
       event: p.event,
+      ...(p.byAction ? { byAction: p.byAction } : {}),
       madeAt: s.points,
-      status: 'open',
-      label: `${when}: báo ${name}`,
+      status: kept ? 'kept' : 'open',
+      label: p.label ?? this.promiseLabel(p),
     });
+  }
+
+  private promiseLabel(
+    promise: Pick<PromiseRecord, 'to' | 'channel' | 'dueAt' | 'event'>,
+  ): string {
+    const { ctx } = this;
+    const name = slotOf(ctx, promise.to).name;
+    if (promise.dueAt === undefined) {
+      const event =
+        ctx.seed.promise_events.find(({ id }) => id === promise.event)?.text ??
+        promise.event ??
+        '';
+      return this.legacy
+        ? `${event}: báo ${name}`
+        : `Báo ${name} ${event}`.trimEnd();
+    }
+    const time = clockAt(
+      promise.dueAt,
+      ctx.seed.clock.start,
+      ctx.pack.minutes_per_point,
+    );
+    if (this.legacy) return `${time}: báo ${name}`;
+    const verb =
+      promise.channel === 'call'
+        ? 'Gọi'
+        : promise.channel === 'chat'
+          ? 'Nhắn'
+          : 'Báo';
+    return `${verb} ${name} lúc ${time.padStart(5, '0')}`;
+  }
+
+  private completionPoint(
+    entry: ShiftState['actionLog'][number],
+    index: number,
+  ): number | undefined {
+    if (entry.completedAt !== undefined) return entry.completedAt;
+    // Older snapshots only logged the start and the original cost.
+    const { s } = this;
+    if (
+      s.suspended?.key === entry.key &&
+      !s.actionLog.some((later, i) => i > index && later.key === entry.key)
+    )
+      return undefined;
+    const point = entry.at + entry.points;
+    return point <= s.points ? point : undefined;
+  }
+
+  private actionAlreadyKept(
+    promise: Pick<PromiseRecord, 'byAction' | 'dueAt' | 'event'>,
+  ): boolean {
+    const { byAction } = promise;
+    if (!byAction) return false;
+    const base = this.promisePoint(promise);
+    const inWindow = (at: number | undefined) =>
+      at !== undefined &&
+      (base === undefined || at <= base + PROMISE_WINDOW.after);
+    return (
+      this.s.actionLog.some(
+        (entry, index) =>
+          entry.key === byAction &&
+          inWindow(this.completionPoint(entry, index)),
+      ) ||
+      Object.values(this.s.nodes).some(
+        (node) =>
+          node.action === byAction &&
+          node.status === 'done' &&
+          inWindow(node.doneAt),
+      )
+    );
   }
 
   /**
@@ -1491,7 +1842,7 @@ class Runner {
   private keepPromises(slot: string): void {
     const { s } = this;
     for (const p of s.promises) {
-      if (p.status !== 'open' || p.to !== slot) continue;
+      if (p.status !== 'open' || p.to !== slot || p.byAction) continue;
       if (p.dueAt !== undefined) {
         if (
           s.points >= p.dueAt - PROMISE_WINDOW.before &&
@@ -1510,6 +1861,16 @@ class Runner {
     }
   }
 
+  private keepActionPromises(action: string): void {
+    const { s } = this;
+    for (const promise of s.promises) {
+      if (promise.status !== 'open' || promise.byAction !== action) continue;
+      const base = this.promisePoint(promise);
+      if (base !== undefined && s.points <= base + PROMISE_WINDOW.after)
+        promise.status = 'kept';
+    }
+  }
+
   private emitEvent(name: string): void {
     this.s.events.push({ name, at: this.s.points });
   }
@@ -1522,11 +1883,12 @@ class Runner {
     text: string,
     context: string,
     extra: Partial<Pick<TranscriptLine, 'expression' | 'channel'>> = {},
+    at = this.s.points,
   ): void {
     const { s } = this;
     const entry: TranscriptLine = {
       seq: s.transcript.length,
-      at: s.points,
+      at,
       kind,
       speaker,
       text,
@@ -1552,22 +1914,57 @@ class Runner {
     beats: Beat[],
     context: string,
     channel?: Channel,
-    defaultSpeaker?: string,
+    {
+      defaultSpeaker,
+      singleFact = false,
+    }: { defaultSpeaker?: string; singleFact?: boolean } = {},
   ): void {
-    const { s, ctx } = this;
+    let canReveal = true;
     for (const beat of beats) {
       const speaker = beat.speaker || defaultSpeaker || SCENE_SPEAKER;
-      const isScene = speaker === SCENE_SPEAKER;
-      this.line(isScene ? 'scene' : 'npc', speaker, beat.text, context, {
+      const revealed = this.showSpeech(speaker, beat.text, context, {
         expression: beat.expression,
         ...(channel ? { channel } : {}),
+        canReveal,
       });
-      // Hết ca ("Nhìn lại ca") thì không mở thêm dữ kiện: sổ tay chỉ ghi điều biết được trong ca.
-      if (!isScene && !s.shiftOver) {
-        const fact = detectReveal(s, ctx, speaker, beat.text);
-        if (fact) s.facts.push({ id: fact.id, at: s.points });
+      if (singleFact && revealed) canReveal = false;
+    }
+  }
+
+  private showSpeech(
+    speaker: string,
+    text: string,
+    context: string,
+    {
+      canReveal = true,
+      at,
+      ...extra
+    }: Partial<Pick<TranscriptLine, 'expression' | 'channel' | 'at'>> & {
+      canReveal?: boolean;
+    } = {},
+  ): boolean {
+    const { s, ctx } = this;
+    const kind =
+      speaker === SCENE_SPEAKER
+        ? 'scene'
+        : ctx.seed.bots.some((bot) => bot.id === speaker)
+          ? 'system'
+          : 'npc';
+    this.line(kind, speaker, text, context, extra, at);
+    if (canReveal && kind === 'npc' && !s.shiftOver) {
+      const fact = detectReveal(s, ctx, speaker, text);
+      if (fact) {
+        this.unlockFacts([fact.id]);
+        return true;
       }
     }
+    return false;
+  }
+
+  private unlockFacts(ids: string[], at = this.s.points): void {
+    const { s } = this;
+    for (const id of ids)
+      if (!s.facts.some((fact) => fact.id === id)) s.facts.push({ id, at });
   }
 
   private flushShown(): void {

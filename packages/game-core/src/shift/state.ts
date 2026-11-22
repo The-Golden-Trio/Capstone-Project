@@ -80,6 +80,7 @@ export type NarrateTask = 'reply' | 'bridge' | 'reaction' | 'probe';
 export interface NarrateRequest {
   requestId: string;
   task: NarrateTask;
+  node?: string;
   slot: string;
   present: string[];
   channel: Channel;
@@ -127,7 +128,7 @@ export interface CheckRequest {
 
 export interface TranscriptLine {
   seq: number;
-  /** Số điểm đã dùng lúc dòng hiện ra. */
+  /** Story time in spent points. Delayed timeline notices retain their scheduled time. */
   at: number;
   kind: 'npc' | 'scene' | 'player' | 'system';
   speaker: string;
@@ -155,7 +156,8 @@ export type AwaitState =
   | { kind: 'node_choice'; node: string }
   | { kind: 'node_artefact'; node: string; artefact: string }
   | { kind: 'probe_answer'; node?: string; review?: string }
-  | { kind: 'confirm_end'; node: string }
+  | { kind: 'confirm_end'; node: string; action?: string }
+  | { kind: 'last_word'; to: string; prompt: string }
   | { kind: 'ai' }
   | { kind: 'ended' };
 
@@ -176,6 +178,7 @@ export interface PromiseRecord {
   dueAt?: number;
   /** Hứa theo sự kiện. */
   event?: string;
+  byAction?: string;
   madeAt: number;
   status: 'open' | 'kept' | 'late' | 'carried';
   remindedAt?: number;
@@ -198,6 +201,7 @@ export interface NodeProgress {
   /** `skipped`: chưa tới vì hết thời gian, không xét (D2). */
   status: 'pending' | 'active' | 'done' | 'skipped';
   via?: 'start' | 'time' | 'player' | 'fallback';
+  action?: string;
   openedAt?: number;
   doneAt?: number;
   choice?: string;
@@ -233,7 +237,7 @@ export type Op =
       channel?: Channel;
     }
   | { op: 'advance'; points: number; key?: string; resume?: boolean }
-  | { op: 'due' }
+  | { op: 'due'; afterAction?: boolean }
   | {
       op: 'open_conversation';
       slots: string[];
@@ -246,9 +250,11 @@ export type Op =
       op: 'open_node';
       node: string;
       via: 'start' | 'time' | 'player' | 'fallback';
+      action?: string;
     }
   | { op: 'node'; node: string; step: NodeStep }
   | { op: 'await'; await: AwaitState }
+  | { op: 'finish_shift' }
   | { op: 'review'; index: number; picked: string[] }
   | { op: 'refresh' }
   | { op: 'end' };
@@ -260,10 +266,13 @@ export interface ShiftState {
   seedVersion: number;
   points: number;
   flags: string[];
+  /** Flags kept independently of artefact saves. Older snapshots may omit this. */
+  persistentFlags?: string[];
   /** Dữ kiện người chơi đã biết, theo thứ tự mở (sổ tay, khối M). */
   facts: Array<{ id: string; at: number }>;
   /** Dữ kiện đổi theo đồng hồ (timeline). */
   factText: Record<string, string>;
+  presence?: Record<string, string>;
   opened: string[];
   artefacts: Record<string, SavedArtefact>;
   conversation: Conversation | null;
@@ -273,6 +282,8 @@ export interface ShiftState {
   /** Đã qua nút kết: bỏ cảnh timeline, nhịp báo hết giờ; lời hứa treo chuyển sang "Nhìn lại ca". */
   shiftOver: boolean;
   timelineDone: number[];
+  /** Notices whose state changes applied and whose text and fact unlocks are still queued. */
+  pendingNotices?: number[];
   ambientUsed: string[];
   warned: boolean;
   promises: PromiseRecord[];
@@ -282,7 +293,13 @@ export interface ShiftState {
   channelMessages: number[];
   transcript: TranscriptLine[];
   /** Nhật ký hành động có mã (bằng chứng cho judge). */
-  actionLog: Array<{ at: number; key: string; points: number; cut?: boolean }>;
+  actionLog: Array<{
+    at: number;
+    key: string;
+    points: number;
+    cut?: boolean;
+    completedAt?: number;
+  }>;
   /** Hành động dài đang dở vì bị chen ngang. */
   suspended: { key: string; remaining: number } | null;
   hints: Array<{ at: number; tier: 1 | 2; text: string }>;
