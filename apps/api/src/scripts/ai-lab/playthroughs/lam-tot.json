@@ -2,15 +2,19 @@
   "_note": "Đây là câu giả do nhóm viết để thử AI, không phải lời của người chơi thật.",
   "name": "lam-tot",
   "seed": "SWE_BACKEND.L3.m2",
-  "title": "Làm tốt: điều tra, hẹn báo lại, vá đủ ba ý, email có cách kiểm và rollback",
-  "intent": "Đường đẹp của L3.m2: mở đủ nguồn, nói nguyên nhân kèm bằng chứng với anh An, báo #su-co, hẹn báo lại chị Linh vào 11:30 (và giữ lời), viết bản vá đủ ba ý, chạy thử staging, ghi chú sự cố, rồi gửi email có cách kiểm và cách lùi lại. Kỳ vọng: các cờ nguyen_nhan_da_noi_voi_mentor, da_loai_db_bang_chung, hua_bao_lai, bv.*, email.*, n3.* bật; anh An duyệt; không có tre_hen.",
+  "title": "Làm tốt: giữ lời và xin duyệt bản sửa",
+  "intent": "Đi theo lượt chơi mẫu bản 5.2: phát hiện nguyên nhân, giữ tương thích app 2.x, giữ ba lời hứa và được anh An duyệt sau 26 điểm.",
   "steps": [
     {
       "do": "start"
     },
     {
       "do": "say",
-      "text": "Dạ em chào anh, em vào coi log ngay đây. Có gì em nhắn anh nha."
+      "text": "dạ em coi liền a. sao a nghĩ là DB quá tải vậy ạ"
+    },
+    {
+      "do": "action",
+      "key": "open_wiki"
     },
     {
       "do": "action",
@@ -18,7 +22,7 @@
     },
     {
       "do": "action",
-      "key": "open_bang"
+      "key": "open_dashboard"
     },
     {
       "do": "action",
@@ -26,39 +30,35 @@
     },
     {
       "do": "action",
-      "key": "talk_mentor"
-    },
-    {
-      "do": "say",
-      "text": "Anh ơi, log ghi mở lịch sử đơn của khách MP-0042 là hệ thống hỏi cơ sở dữ liệu 901 lần, còn khách ít đơn cùng giờ thì chỉ 4 lần và vẫn nhanh. Số query tăng theo số đơn, CPU của DB mới 24% nên em thấy không phải DB quá tải. Trong code em đang lấy chi tiết từng đơn trong một vòng lặp."
-    },
-    {
-      "do": "end_conversation"
-    },
-    {
-      "do": "action",
-      "key": "message_su_co",
-      "fields": {
-        "noi_dung": "Em đang xử lý API lịch sử đơn chậm. Nguyên nhân là vòng lặp lấy chi tiết từng đơn (khách 900 đơn thì 901 truy vấn). Em đang viết bản vá, chưa đưa lên production, chờ anh An duyệt rồi mới lên."
-      }
-    },
-    {
-      "do": "action",
       "key": "talk_support"
     },
     {
       "do": "say",
-      "text": "Chị Linh ơi, bên kỹ thuật tìm ra lỗi rồi, em đang sửa. Chị nói với khách là bên em đã thấy nguyên nhân và đang xử lý. Em chưa hứa giờ xong được, nhưng 11 rưỡi em gọi báo chị nha."
+      "text": "chị ơi khách phàn nàn gì vậy chị"
     },
     {
-      "do": "end_conversation"
+      "do": "say",
+      "text": "sao hnay mới bị vậy chị, hôm qua có gì thay đổi k ạ"
+    },
+    {
+      "do": "say",
+      "text": "dạ em coi log rồi, lỗi ở API bên em chứ k phải mạng khách đâu chị. 11h30 em gọi báo chị nha"
+    },
+    {
+      "do": "action",
+      "key": "talk_mentor"
+    },
+    {
+      "do": "say",
+      "text": "a ơi khách MP-0042 900 đơn mà API hỏi CSDL 901 lần, Bà Ba 240 đơn hỏi 241 lần. CPU DB có 24% à. em nghĩ do bước 2 trong code em lấy món từng đơn 1"
     },
     {
       "do": "action",
       "key": "write_patch",
       "fields": {
-        "mo_ta": "Bỏ vòng lặp gọi cơ sở dữ liệu cho từng đơn, thay bằng một truy vấn gom lấy chi tiết tất cả các đơn của khách. Giới hạn số đơn trả về mỗi lần bằng phân trang, mỗi trang 50 đơn. App cũ không gửi số trang thì mặc định trả trang 1 với limit 200 và có has_more để app cũ tải tiếp."
-      }
+        "ghi_chu": "gom truy vấn cho hết vòng lặp + phân trang"
+      },
+      "ticks": ["v1", "v2"]
     },
     {
       "do": "action",
@@ -70,13 +70,58 @@
     },
     {
       "do": "choose",
-      "option": "a",
-      "elapsedMs": 9000
+      "option": "c",
+      "elapsedMs": 25000
     },
     {
       "do": "say",
-      "text": "Dạ chị, em đang chạy thử bản sửa, khoảng 11 rưỡi em gọi báo chị kết quả nha.",
+      "text": "dạ file em gửi liền ạ. 11h30 em vẫn gọi chị như hẹn nha",
       "ifAwait": "node_reply"
+    },
+    {
+      "do": "action",
+      "key": "xuat_file_action"
+    },
+    {
+      "do": "action",
+      "key": "rewrite_patch",
+      "fields": {
+        "ghi_chu": "gom truy vấn cho hết vòng lặp + phân trang. app 2.x k gửi số trang thì vẫn trả đủ đơn (cho máy tính bảng của khách)"
+      },
+      "ticks": ["v1", "v2", "v3"]
+    },
+    {
+      "do": "say",
+      "text": "dạ em có bản sửa chạy thử rồi chị, đang chỉnh thêm cho máy tính bảng bên Minh Phát. mà phải có a An duyệt mới đưa lên được, a họp tới 11h20. 11h30 em gọi chị như hẹn nha",
+      "ifAwait": "node_reply"
+    },
+    {
+      "do": "save_artefact",
+      "artefact": "ghi_chu_su_co",
+      "fields": {
+        "hien_tuong": "Từ 8:00, mở lịch sử đơn của khách nhiều đơn bị chậm: Minh Phát 4,4 giây, Bà Ba 1,3 giây; khách ít đơn vẫn 0,2 giây. Từ 11:12 app bắt đầu tự ngắt với Minh Phát.",
+        "nguyen_nhan": "API lịch sử đơn (phần em viết) lấy món của từng đơn trong vòng lặp, nên số lần hỏi CSDL bằng số đơn cộng 1 (901/900, 241/240, code bước 2). Tối qua gộp tài khoản nên Minh Phát lên 900 đơn, lỗi mới lộ ra.",
+        "da_lam": "Viết bản vá gom truy vấn và phân trang, chạy thử staging còn 0,18 giây. Đang chỉnh thêm cho app 2.x. Đã gửi chị Linh danh sách đơn của Minh Phát để đặt giùm khách.",
+        "h1__why": "CPU 24–26%, dưới 80%; khách ít đơn cùng giờ vẫn nhanh",
+        "h2__why": "Thời gian trong log do máy chủ đo, chưa tính mạng",
+        "h3__why": "901/900, 241/240, code bước 2",
+        "h4__why": "Trả cả 900 đơn một lần",
+        "h5__why": "Build bắt đầu 10:05, còn chậm từ 8:00",
+        "h6__why": ""
+      },
+      "ticks": [
+        "h1=loai",
+        "h2=loai",
+        "h3=giu",
+        "h4=giu",
+        "h5=loai",
+        "h6=chua_ro"
+      ]
+    },
+    {
+      "do": "say",
+      "text": "dạ log vẫn trả 200, đủ 900 đơn nên chắc dữ liệu k hỏng, chỉ là nhiều đơn hơn. em đổi thành loại ạ",
+      "ifAwait": "probe_answer"
     },
     {
       "do": "action",
@@ -84,29 +129,11 @@
     },
     {
       "do": "say",
-      "text": "Chị Linh ơi, em báo chị đúng hẹn nè. Bản sửa chạy thử trên staging đã nhanh, em đang chờ anh An duyệt. Chị nói với khách là sắp xong, em báo ngay khi lên."
-    },
-    {
-      "do": "end_conversation"
+      "text": "chị ơi bản sửa xong rồi, em chạy thử lại rồi gửi a An duyệt. có duyệt em báo chị liền nha"
     },
     {
       "do": "action",
-      "key": "chot_nguyen_nhan"
-    },
-    {
-      "do": "save_artefact",
-      "artefact": "ghi_chu_su_co",
-      "fields": {
-        "hien_tuong": "API lịch sử đơn chậm từ 8:00, từ 0,2 giây lên hơn 4 giây, nặng nhất với khách sỉ nhiều đơn.",
-        "nguyen_nhan": "API gọi cơ sở dữ liệu một lần cho mỗi đơn (901 truy vấn với khách 900 đơn, khách 3 đơn chỉ 4 truy vấn). DB không quá tải: CPU 24%, 38/200 kết nối. API cũng trả hết đơn, không giới hạn số đơn, nên khách càng nhiều đơn càng chậm.",
-        "da_lam": "Đã gom thành một truy vấn, thêm phân trang, giữ cách xử lý cho app cũ, chạy thử trên staging."
-      },
-      "ticks": ["h3", "h4"]
-    },
-    {
-      "do": "say",
-      "text": "Em loại DB quá tải bằng số liệu: CPU DB 24%, số query tăng đúng theo số đơn của khách chứ không theo giờ cao điểm. Mạng khách cũng không phải vì khách ít đơn cùng lúc vẫn nhanh.",
-      "ifAwait": "probe_answer"
+      "key": "run_staging"
     },
     {
       "do": "action",
@@ -120,25 +147,21 @@
       "do": "save_artefact",
       "artefact": "email_an",
       "fields": {
-        "nguyen_nhan": "API lịch sử đơn gọi cơ sở dữ liệu một lần cho mỗi đơn và không giới hạn số đơn trả về.",
-        "huong_xu_ly": "Gom thành một truy vấn, thêm phân trang 50 đơn mỗi trang, app cũ không gửi số trang thì trả trang 1 với limit 200. Đã chạy thử trên staging, thời gian về 0,18 giây.",
-        "rui_ro": "Sau khi anh duyệt và lên production em theo dõi thời gian phản hồi và số query trên dashboard 30 phút đầu. Nếu lỗi em rollback, deploy lại bản cũ ngay. Rủi ro chính là app cũ nên em đã kiểm riêng request không gửi số trang."
+        "tieu_de": "Sự cố API lịch sử đơn, xin duyệt bản sửa",
+        "nguyen_nhan": "API lịch sử đơn (phần em viết) lấy món của từng đơn bằng một lần hỏi CSDL riêng, nên Minh Phát 900 đơn phải hỏi 901 lần, mất 4,4 giây. Trưa đông thì quá 5 giây và app tự ngắt, đã bị từ 11:12. CPU DB chỉ 24–26% nên không phải quá tải.",
+        "huong_xu_ly": "Gom truy vấn còn 2 lần hỏi, phân trang 50 đơn cho app 3.x, app 2.x không gửi số trang thì vẫn trả đủ đơn. Chạy thử trên staging với MP-0042: app 3.x từ 4,4 giây còn 0,18 giây, app 2.x còn 1,12 giây, đều chỉ 2 lần hỏi. Anh duyệt giúp em đưa lên production nha.",
+        "rui_ro": "Nếu lên rồi có lỗi, em bấm Rollback trên công cụ deploy, khoảng 2 phút là về bản cũ."
       }
     },
     {
       "do": "say",
-      "text": "Nếu khách nhiều đơn hơn nữa thì có phân trang nên số query vẫn là 2, thời gian không tăng theo số đơn. Với app cũ, em đã chạy thử request không gửi page và nó trả limit 200 kèm has_more.",
+      "text": "dạ lên xong em canh log 15p, xem Minh Phát mở lịch sử dưới 2s và chỉ hỏi CSDL 2 lần. k đúng vậy là em rollback liền",
       "ifAwait": "probe_answer"
     },
     {
       "do": "say",
-      "text": "Dạ chị, em báo chị đúng hẹn 11 rưỡi rồi, bản sửa đã chạy thử và anh An duyệt rồi nên chị nói khách là đã xử lý xong ạ.",
-      "ifAwait": "probe_answer"
-    },
-    {
-      "do": "say",
-      "text": "Dạ em sẽ báo chị ngay khi bản sửa lên production ạ.",
-      "ifAwait": "probe_answer"
+      "text": "chị ơi a An duyệt rồi, em đưa lên liền nha. chị báo khách là bên em đang đưa bản sửa lên ạ",
+      "ifAwait": "last_word"
     }
   ]
 }

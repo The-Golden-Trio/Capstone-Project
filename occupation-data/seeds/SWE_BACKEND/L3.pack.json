@@ -1,18 +1,18 @@
 {
   "id": "SWE_BACKEND.L3",
-  "_source": "research/reports/Seed mẫu Back-end L3 m2.md (bản 4), mục Gói cấp",
+  "_source": "research/reports/Lượt chơi mẫu Back-end L3 m2 bản 5.2.md (sáu slide giới thiệu)",
   "company": {
     "name": "Giao Nhanh",
-    "profile": "Công ty hư cấu: startup giao đồ ăn và đi chợ hộ, khoảng 120 nhân viên, văn phòng quận 1 TP.HCM. Team Back-end có 6 người."
+    "profile": "Startup đi chợ hộ và giao đồ ăn ở TP.HCM, khoảng 120 người. Ngoài khách lẻ, nhiều quán ăn đặt rau thịt mỗi ngày qua app. Trong công ty gọi họ là **khách sỉ**."
   },
   "workplace": "Văn phòng, giờ hành chính 8:30–17:30. Có chat nội bộ và kênh #su-co để báo sự cố. Anh An và chị Linh đều có trong kênh.",
   "team": "Team Back-end 6 người, lo API cho app đặt đơn và app nội bộ.",
-  "level_scope": "Kỹ sư Back-end L3, khoảng 2–3 năm. Tự làm tính năng và sửa lỗi phần mình; lên hệ thống thật cần người duyệt.",
+  "level_scope": "Kỹ sư Back-end khoảng 2–3 năm. Bạn tự sửa phần mình viết, nhưng đưa lên hệ thống thật thì phải có anh An duyệt. Tuần này bạn **trực sự cố** cho team: có gì hỏng thì bạn là người coi đầu tiên.",
   "resident_npcs": ["mentor", "support"],
   "rules": [
     {
       "id": "r1",
-      "text": "Đụng tới production thì nhắn #su-co trước, và anh An duyệt rồi mới đưa lên.",
+      "text": "Đụng tới hệ thống thật thì nhắn kênh #su-co trước, và phải có anh An duyệt.",
       "told_at": "n0"
     },
     {
@@ -21,9 +21,9 @@
       "told_at": "n0"
     }
   ],
-  "honest_note": "Trực sự cố nghĩa là có lúc phải bỏ dở việc đang làm, và lỗi của mình viết có thể lộ ra trước cả team.",
+  "honest_note": "Trực sự cố nghĩa là có lúc phải bỏ dở việc đang làm. Lỗi trong code mình viết có thể lộ ra trước cả team, và người đang chờ bạn thường là người đang bị khách ép.",
   "shared_facts": [],
   "minutes_per_point": 5,
   "followup_cap": 1,
-  "_draft": "Cả gói cấp chưa DE duyệt (BR-05): nhóm soạn theo Seed scenario khối G; riêng honest_note và team là soạn nháp"
+  "_draft": "Cả gói cấp chưa DE duyệt (BR-05). Chi tiết văn phòng, lịch làm việc và quy mô team được giữ từ gói cấp bản 4."
 }

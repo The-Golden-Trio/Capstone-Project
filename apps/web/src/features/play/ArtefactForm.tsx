@@ -16,12 +16,14 @@ export function ArtefactForm({
   busy,
   onSubmit,
   onCancel,
+  onDraftChange,
 }: {
   form: Form;
   submitLabel: string;
   busy: boolean;
   onSubmit: (fields: Record<string, string>, ticks: string[]) => void;
   onCancel?: () => void;
+  onDraftChange?: (draft: NonNullable<Form['prefill']>) => void;
 }) {
   const [fields, setFields] = useState<Record<string, string>>(() => ({
     ...(form.prefill?.fields ?? {}),
@@ -93,9 +95,11 @@ export function ArtefactForm({
               aria-describedby={missing ? errorId : undefined}
               value={fields[f.id] ?? ''}
               maxLength={4000}
-              onChange={(e) =>
-                setFields((v) => ({ ...v, [f.id]: e.target.value }))
-              }
+              onChange={(e) => {
+                const next = { ...fields, [f.id]: e.target.value };
+                setFields(next);
+                onDraftChange?.({ fields: next, ticks });
+              }}
               className="min-h-24"
             />
           </ToonField>
@@ -111,13 +115,13 @@ export function ArtefactForm({
                 key={t.id}
                 label={t.label}
                 checked={ticks.includes(t.id)}
-                onChange={(e) =>
-                  setTicks((v) =>
-                    e.target.checked
-                      ? [...v, t.id]
-                      : v.filter((x) => x !== t.id),
-                  )
-                }
+                onChange={(e) => {
+                  const next = e.target.checked
+                    ? [...ticks, t.id]
+                    : ticks.filter((id) => id !== t.id);
+                  setTicks(next);
+                  onDraftChange?.({ fields, ticks: next });
+                }}
               />
             ))}
           </fieldset>

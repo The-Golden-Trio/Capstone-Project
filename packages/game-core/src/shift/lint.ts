@@ -3,16 +3,22 @@
  * sạch. Phần ý nghĩa (lời có đúng vai không, có lộ đáp án không) vẫn cần
  * người duyệt bằng mắt.
  */
-import { flagsOf, resolvedFlag } from './flags.js';
+import { flagsOf, resolvedFlag, withDerivedFlags } from './flags.js';
 import type { LevelPack, ShiftSeed } from './schema.js';
 import { pointAt, toMinutes } from './time.js';
 
 export function lintSeed(seed: ShiftSeed, pack: LevelPack): string[] {
   const issues: string[] = [];
   const slots = new Set(seed.cast.map((c) => c.slot));
+  const speakers = new Set([
+    ...slots,
+    ...seed.bots.map((bot) => bot.id),
+    'canh',
+  ]);
   const nodes = new Map(seed.nodes.map((n, i) => [n.id, i]));
   const artefacts = new Set(seed.artefacts.map((a) => a.id));
   const facts = new Set(seed.facts.map((f) => f.id));
+  const actions = new Set(seed.actions.map((action) => action.key));
   const point = (t: string) =>
     pointAt(t, seed.clock.start, pack.minutes_per_point);
 
@@ -26,7 +32,10 @@ export function lintSeed(seed: ShiftSeed, pack: LevelPack): string[] {
     );
 
   // A1: ngân sách đủ cho đường ngắn nhất qua mọi nút cộng 30% dư.
-  const shortest = seed.nodes.reduce((sum, n) => sum + n.points, 0);
+  const shortest = seed.nodes.reduce(
+    (sum, n) => sum + (n.interjection ? 0 : n.points),
+    0,
+  );
   if (seed.clock.budget < Math.ceil(shortest * 1.3))
     issues.push(
       `clock: ngân sách ${seed.clock.budget} không đủ cho đường ngắn nhất ${shortest} + 30%`,
@@ -34,6 +43,13 @@ export function lintSeed(seed: ShiftSeed, pack: LevelPack): string[] {
 
   // Cờ: mọi cờ được nhắc tới phải được khai hoặc có nguồn bật.
   const defined = new Set<string>([...seed.story_flags, 'tre_hen']);
+  for (const rule of seed.derived_flags) defined.add(rule.flag);
+  try {
+    withDerivedFlags(new Set(), seed.derived_flags);
+  } catch (error) {
+    if (!(error instanceof Error)) throw error;
+    issues.push(error.message);
+  }
   for (const c of seed.conversation_checks) defined.add(c.flag);
   for (const a of seed.artefacts) {
     for (const c of a.checks) defined.add(c.flag);
@@ -51,6 +67,8 @@ export function lintSeed(seed: ShiftSeed, pack: LevelPack): string[] {
   const referenced: Array<[string, string]> = [];
   const ref = (where: string, list: string[]) =>
     list.forEach((f) => referenced.push([where, f]));
+  for (const rule of seed.derived_flags)
+    ref(`derived_flags.${rule.flag}`, rule.any_of.flatMap(flagsOf));
   for (const c of seed.cast) {
     for (const k of c.concerns)
       ref(`cast.${c.slot}.${k.id}`, flagsOf(k.resolve_when ?? undefined));
@@ -58,6 +76,9 @@ export function lintSeed(seed: ShiftSeed, pack: LevelPack): string[] {
   }
   for (const n of seed.nodes) {
     n.adapt.forEach((a, i) => ref(`${n.id}.adapt[${i}]`, flagsOf(a.if)));
+    for (const option of n.options)
+      for (const variant of option.text_if)
+        ref(`${n.id}.${option.key}.text_if`, flagsOf(variant.if));
     n.probe?.hooks.forEach((h, i) =>
       ref(`${n.id}.probe[${i}]`, [
         ...flagsOf(h.if),
@@ -67,9 +88,13 @@ export function lintSeed(seed: ShiftSeed, pack: LevelPack): string[] {
   }
   for (const a of seed.artefacts)
     a.branches?.forEach((b, i) => ref(`${a.id}.branch[${i}]`, flagsOf(b.if)));
-  for (const a of seed.actions)
+  for (const a of seed.actions) {
     if (a.requires) ref(`action.${a.key}`, flagsOf(a.requires));
+    for (const variant of a.beats_if)
+      ref(`action.${a.key}.beats_if`, flagsOf(variant.if));
+  }
   for (const r of seed.review) ref(`review.${r.id}`, flagsOf(r.if));
+  seed.epilogue.forEach((item, i) => ref(`epilogue[${i}]`, flagsOf(item.if)));
   for (const [where, flag] of referenced)
     if (!defined.has(flag))
       issues.push(`${where}: cờ "${flag}" không có nguồn bật`);
@@ -105,10 +130,17 @@ export function lintSeed(seed: ShiftSeed, pack: LevelPack): string[] {
       issues.push(`${n.id}: nút chọn cần ít nhất 2 phương án`);
     if (n.format === 'timed_choice' && !n.timeout)
       issues.push(`${n.id}: nút đếm giờ thiếu cách xử lý hết giờ`);
+    for (const option of n.options) {
+      const action = option.promise?.by_action;
+      if (action && !actions.has(action))
+        issues.push(
+          `${n.id}.${option.key}: hành động giữ lời ${action} không có`,
+        );
+    }
   }
   if (seed.nodes.filter((n) => n.format === 'timed_choice').length > 1)
     issues.push('Màn có nhiều hơn 1 nút đếm giờ');
-  if (seed.nodes[seed.nodes.length - 1].kind !== 'end')
+  if (seed.nodes.filter((node) => !node.interjection).at(-1)?.kind !== 'end')
     issues.push('Nút cuối phải là nút kết');
 
   for (const f of seed.facts) {
@@ -130,6 +162,9 @@ export function lintSeed(seed: ShiftSeed, pack: LevelPack): string[] {
     for (const u of a.unlocks)
       if (!facts.has(u)) issues.push(`${a.id}: mở dữ kiện ${u} không có`);
   for (const a of seed.actions) {
+    for (const id of a.unlocks)
+      if (!facts.has(id))
+        issues.push(`action.${a.key}: mở dữ kiện ${id} không có`);
     if (
       ['open', 'write', 'rewrite', 'run', 'message'].includes(a.kind) &&
       !artefacts.has(a.target ?? '')
@@ -140,6 +175,19 @@ export function lintSeed(seed: ShiftSeed, pack: LevelPack): string[] {
     if (a.kind === 'trigger' && !nodes.has(a.target ?? ''))
       issues.push(`action.${a.key}: nút ${a.target} không có`);
   }
+  seed.timeline.forEach((item, i) => {
+    for (const id of item.unlocks)
+      if (!facts.has(id))
+        issues.push(`timeline[${i}]: mở dữ kiện ${id} không có`);
+    if (item.speaker && !speakers.has(item.speaker))
+      issues.push(`timeline[${i}]: speaker ${item.speaker} không có`);
+    if (item.presence && !slots.has(item.presence.slot))
+      issues.push(
+        `timeline[${i}]: slot ${item.presence.slot} không có trong cast`,
+      );
+  });
+  if (seed.last_word && !slots.has(seed.last_word.to))
+    issues.push(`last_word: slot ${seed.last_word.to} không có trong cast`);
 
   // A2: quy định phải được nói ra trước nút dùng nó.
   const toldOk = (t: string) =>

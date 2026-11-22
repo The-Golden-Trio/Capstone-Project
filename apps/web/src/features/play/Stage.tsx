@@ -5,7 +5,14 @@
  * thoại (hay Space/Enter) để qua nhịp (seed khối C3).
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { History, MessageCircle, Phone, Users, UserRound } from 'lucide-react';
+import {
+  Bot,
+  History,
+  MessageCircle,
+  Phone,
+  Users,
+  UserRound,
+} from 'lucide-react';
 import {
   CaptionStrip,
   Character,
@@ -20,7 +27,8 @@ import {
   cn,
   type Expression,
 } from '@datn/ui';
-import type { ShiftRun, TranscriptLine } from '../../api/types';
+import type { SceneView, ShiftRun, TranscriptLine } from '../../api/types';
+import { splitTerms, TermTooltip } from './desktop/TermTooltip';
 import {
   TOON_BACKDROPS,
   backdropFor,
@@ -73,6 +81,10 @@ export function Stage({
   waitingLabel,
   conversationChannel,
   quiet = false,
+  inactive = false,
+  bots = [],
+  castStatus = [],
+  glossary = [],
   onAdvance,
 }: {
   run: ShiftRun;
@@ -84,6 +96,10 @@ export function Stage({
   conversationChannel?: TranscriptLine['channel'] | null;
   /** Đang chọn phương án có đếm giờ: cất các câu cũ để chỉ còn câu hỏi. */
   quiet?: boolean;
+  inactive?: boolean;
+  bots?: SceneView['bots'];
+  castStatus?: SceneView['cast'];
+  glossary?: SceneView['glossary'];
   onAdvance: () => void;
 }) {
   const cast = useMemo(() => castCharacters(run.cast), [run.cast]);
@@ -93,12 +109,26 @@ export function Stage({
   }, [run.cast]);
 
   // Người đứng trên sân khấu: người đang nói, hoặc người nói gần nhất.
+  const botNames = useMemo(
+    () => new Map(bots.map(({ id, name }) => [id, name])),
+    [bots],
+  );
+  const statuses = useMemo(
+    () => new Map(castStatus.map(({ slot, status }) => [slot, status])),
+    [castStatus],
+  );
   const onStage = useMemo(() => {
     for (let i = lines.length - 1; i >= 0; i--)
       if (lines[i].kind === 'npc') return lines[i];
     return null;
   }, [lines]);
   const speaking = current?.kind === 'npc' ? current : null;
+  const currentName =
+    current?.kind === 'system'
+      ? (botNames.get(current.speaker) ?? current.speaker)
+      : current?.kind === 'scene'
+        ? 'Cảnh'
+        : nameOf(current?.speaker ?? '');
   const actor = onStage ? cast.get(onStage.speaker) : undefined;
   const expression = (speaking?.expression ?? 'binh_thuong') as Expression;
 
@@ -108,10 +138,13 @@ export function Stage({
 
   // Bàn phím: Space/Enter qua nhịp, trừ khi đang gõ trong ô nhập.
   useEffect(() => {
+    if (inactive) return;
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement;
       if (
-        t.closest('input, textarea, select, button, [contenteditable], dialog')
+        t.closest(
+          'input, textarea, select, button, [contenteditable], dialog, [role="dialog"]',
+        )
       )
         return;
       if (e.key === ' ' || e.key === 'Enter') {
@@ -122,7 +155,7 @@ export function Stage({
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [tw, queued, onAdvance]);
+  }, [tw, queued, onAdvance, inactive]);
 
   const tap = () => {
     if (!tw.done) tw.finish();
@@ -165,6 +198,9 @@ export function Stage({
             current={current}
             nameOf={nameOf}
             cast={cast}
+            botNames={botNames}
+            statuses={statuses}
+            glossary={glossary}
           />
         </div>
 
@@ -172,16 +208,16 @@ export function Stage({
         <div className="relative z-20 px-3 pb-3 pt-5 sm:px-5 sm:pb-4">
           {/* Đọc trọn câu một lần cho trình đọc màn hình, không theo từng chữ đang gõ. */}
           <p className="sr-only" aria-live="polite">
-            {current
-              ? `${current.kind === 'scene' ? 'Cảnh' : nameOf(current.speaker)}: ${current.text}`
-              : ''}
+            {current ? `${currentName}: ${current.text}` : ''}
           </p>
-          <button
-            id="stage-dialog"
-            type="button"
-            onClick={tap}
-            className="block w-full rounded-[22px] text-left focus-visible:outline-none focus-visible:shadow-toon-focus"
-          >
+          <div className="relative">
+            <button
+              id="stage-dialog"
+              type="button"
+              onClick={tap}
+              aria-label={tw.done ? 'Nghe nhịp tiếp theo' : 'Hiện trọn câu'}
+              className="absolute inset-0 z-[1] rounded-[22px] focus-visible:outline-none focus-visible:shadow-toon-focus"
+            />
             {current ? (
               <DialogueBox
                 narration={current.kind === 'scene'}
@@ -220,9 +256,10 @@ export function Stage({
                         </span>
                       )}
                       <NameTag
-                        name={nameOf(current.speaker)}
+                        name={currentName}
                         color={cast.get(current.speaker)?.color}
                       />
+                      <Presence text={statuses.get(current.speaker)} />
                     </span>
                   )
                 }
@@ -235,8 +272,16 @@ export function Stage({
                 }
                 className="min-h-20 sm:min-h-28"
               >
-                <p className="max-h-[26dvh] overflow-y-auto break-words pr-6">
-                  {tw.visible}
+                <p className="stage-dialogue-text max-h-[26dvh] overflow-y-auto break-words pr-6">
+                  {speaking ? (
+                    <GlossaryText
+                      text={speaking.text}
+                      visible={tw.visible.length}
+                      glossary={glossary}
+                    />
+                  ) : (
+                    tw.visible
+                  )}
                   {!tw.done && (
                     <span
                       aria-hidden
@@ -256,7 +301,7 @@ export function Stage({
                 {waitingLabel && <WaitingNote label={waitingLabel} />}
               </DialogueBox>
             )}
-          </button>
+          </div>
         </div>
       </SceneBackdrop>
     </section>
@@ -305,17 +350,28 @@ function Backlog({
   nameOf,
   cast,
   quiet,
+  botNames,
+  statuses,
+  glossary,
 }: {
   quiet: boolean;
   lines: TranscriptLine[];
   current: TranscriptLine | null;
   nameOf: (slot: string) => string;
   cast: Map<string, ToonCharacter>;
+  botNames: Map<string, string>;
+  statuses: Map<string, string | undefined>;
+  glossary: SceneView['glossary'];
 }) {
   const [open, setOpen] = useState(false);
   const end = useRef<HTMLDivElement>(null);
   const past = lines.filter((l) => l !== current);
-  const recent = quiet ? [] : past.slice(-BACKLOG_VISIBLE);
+  const latest = past.slice(-BACKLOG_VISIBLE);
+  const recent = quiet
+    ? latest.filter(
+        (line) => line.kind === 'system' && botNames.has(line.speaker),
+      )
+    : latest;
   useEffect(() => {
     if (!open) return;
     end.current?.scrollIntoView({ block: 'end' });
@@ -325,6 +381,9 @@ function Backlog({
       line={l}
       name={l.kind === 'npc' ? nameOf(l.speaker) : ''}
       look={l.kind === 'npc' ? cast.get(l.speaker) : undefined}
+      bot={l.kind === 'system' ? botNames.get(l.speaker) : undefined}
+      status={statuses.get(l.speaker)}
+      glossary={glossary}
     />
   );
   return (
@@ -383,10 +442,16 @@ function Line({
   line,
   name,
   look,
+  bot,
+  status,
+  glossary,
 }: {
   line: TranscriptLine;
   name: string;
   look?: ToonCharacter;
+  bot?: string;
+  status?: string;
+  glossary: SceneView['glossary'];
 }) {
   if (line.kind === 'player') {
     return (
@@ -402,6 +467,17 @@ function Line({
   }
   if (line.kind === 'scene') {
     return <CaptionStrip>{line.text}</CaptionStrip>;
+  }
+  if (line.kind === 'system' && bot) {
+    return (
+      <div className="flex items-start gap-2 rounded-xl border-2 border-toon-ink bg-[#e2eeef] px-3 py-2 text-toon-ink shadow-toon-sm">
+        <Bot size={20} className="mt-0.5 shrink-0 text-[#28596a]" aria-hidden />
+        <div className="min-w-0">
+          <p className="font-toon text-sm font-extrabold">{bot}</p>
+          <p className="break-words text-sm font-semibold">{line.text}</p>
+        </div>
+      </div>
+    );
   }
   if (line.kind === 'system') {
     return (
@@ -422,12 +498,51 @@ function Line({
         >
           {name}
         </span>
+        <Presence text={status} />
         <SpeechBubble tone={look?.bubble ?? 'paper'} className="break-words">
-          {line.text}
+          <GlossaryText text={line.text} glossary={glossary} />
         </SpeechBubble>
       </div>
     </div>
   );
+}
+
+function Presence({ text }: { text?: string }) {
+  return text ? (
+    <span className="inline-block rounded-full border border-toon-ink bg-[#ffe4a3] px-2 py-0.5 text-xs font-bold leading-tight text-toon-ink">
+      {text}
+    </span>
+  ) : null;
+}
+
+function GlossaryText({
+  text,
+  glossary,
+  visible = text.length,
+}: {
+  text: string;
+  glossary: SceneView['glossary'];
+  visible?: number;
+}) {
+  const meanings = new Map(
+    glossary.map(({ term, plain }) => [term.toLowerCase(), plain]),
+  );
+  let offset = 0;
+  return splitTerms(
+    text,
+    glossary.map(({ term }) => term),
+  ).map((part, i) => {
+    const rendered = part.slice(0, Math.max(0, visible - offset));
+    offset += part.length;
+    if (!rendered) return null;
+    const meaning =
+      i % 2 && rendered === part ? meanings.get(part.toLowerCase()) : undefined;
+    return meaning ? (
+      <TermTooltip key={i} token={part} text={meaning} />
+    ) : (
+      rendered
+    );
+  });
 }
 
 /** Mặt nhân vật cắt tròn từ tranh đứng. */

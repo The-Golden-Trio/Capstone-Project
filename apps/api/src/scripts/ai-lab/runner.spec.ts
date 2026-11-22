@@ -62,14 +62,20 @@ describe('runPlaythrough với bản giả', () => {
         'nguyen_nhan_da_noi_voi_mentor',
         'da_loai_db_bang_chung',
         'hua_bao_lai',
-        'bv.bo_vong_lap',
-        'bv.phan_trang',
-        'bv.giu_app_cu',
-        'email.co_cach_kiem',
+        'bv.v1',
+        'bv.v2',
+        'bv.v3',
+        'n3.co_cach_kiem',
         'email.co_rollback',
       ]),
     );
     expect(result.state.flags).not.toContain('tre_hen');
+    expect(result.state.points).toBe(26);
+    expect(result.summary.promises.map((p) => p.status)).toEqual([
+      'kept',
+      'kept',
+      'kept',
+    ]);
     expect(result.summary.nodes.find((n) => n.id === 'n3')?.approved).toBe(
       true,
     );
@@ -92,7 +98,7 @@ describe('runPlaythrough với bản giả', () => {
     const result = await run(shipped('lac-de-tan-cong'));
     expect(result.outcome).toBe('ended');
     expect(result.state.flags).not.toContain('nguyen_nhan_da_noi_voi_mentor');
-    expect(result.state.flags).not.toContain('bv.bo_vong_lap');
+    expect(result.state.flags).not.toContain('bv.v1');
     expect(result.state.flags).not.toContain('email.co_rollback');
   });
 
@@ -122,7 +128,7 @@ describe('runPlaythrough: vòng giải yêu cầu AI', () => {
         seen.push(opts ?? {});
         return {
           status: 'ok',
-          value: shift.fakeNarration(req),
+          value: shift.fakeNarration(req, shift.FAKE_SCRIPTS[SEED]),
           provenance: { adapter: 'test', costUsd: 0.1 },
         };
       },
@@ -211,12 +217,13 @@ describe('runPlaythrough: vòng giải yêu cầu AI', () => {
       script([
         { do: 'start' },
         { do: 'say', text: 'Dạ em coi log anh nha.' },
-        { do: 'action', key: 'write_patch', fields: { mo_ta: 'bỏ vòng lặp' } },
+        { do: 'action', key: 'talk_mentor' },
+        { do: 'say', text: 'Anh duyệt giúp em đưa bản sửa lên nhé.' },
       ]),
       fakePorts({ checker }),
     );
     expect(result.outcome).toBe('paused');
-    expect(result.state.flags).not.toContain('bv.bo_vong_lap');
+    expect(result.state.flags).not.toContain('xin_duyet');
   });
 
   it('báo hiệu từng bước, dòng hiện ra và lượt gọi cho người quan sát', async () => {

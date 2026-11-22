@@ -1,5 +1,6 @@
 import { profile, type shift } from '@datn/game-core';
 import { ApiError } from '../port';
+import { hasRunResult, stateOf } from './rules';
 import type { Showcase } from './showcase';
 import type {
   AppFeedbackInput,
@@ -23,6 +24,8 @@ export interface Enrolment {
 export interface SavedRun {
   id: string;
   taskId: string;
+  seedVersion?: number;
+  stale?: true;
   enrolmentId: string | null;
   events: shift.ShiftInput[];
   notes: Array<{ text: string; at: string }>;
@@ -32,6 +35,7 @@ export interface SavedRun {
   grade: RunSummary['grade'] | null;
   at: string;
   turnId: string;
+  turnStarts?: Record<string, number>;
   paused: boolean;
 }
 export interface Player {
@@ -72,6 +76,35 @@ function read(): Database {
   }
 }
 export const db = read();
+const inspectedRuns = new WeakSet<SavedRun>();
+
+function prepareRuns(p: Player): void {
+  let changed = false;
+  const runs = p.runs.filter((run) => {
+    if (!inspectedRuns.has(run)) {
+      inspectedRuns.add(run);
+      // A run already in storage predates versioning if it has no version.
+      if (run.seedVersion === undefined) run.stale = true;
+      try {
+        stateOf(run);
+      } catch (error) {
+        if (!(error instanceof ApiError) || error.code !== 'TASK_NOT_FOUND')
+          throw error;
+        run.stale = true;
+        changed = true;
+        return false;
+      }
+      if (run.stale) changed = true;
+    }
+    return !run.stale || hasRunResult(run);
+  });
+  if (runs.length !== p.runs.length) {
+    p.runs = runs;
+    changed = true;
+  }
+  if (changed) save();
+}
+
 export function save() {
   const raw = JSON.stringify(db);
   memory.set(KEY, raw);
@@ -104,6 +137,7 @@ export function player(): Player {
       'UNAUTHENTICATED',
       'Bạn cần đăng nhập để tiếp tục.',
     );
+  prepareRuns(p);
   return p;
 }
 export const newSkills = (): SoftSkillState[] =>
@@ -124,6 +158,8 @@ export const service =
   <T extends unknown[], R>(fn: (...args: T) => R | Promise<R>) =>
   async (...args: T): Promise<R> => {
     await wait();
+    const current = db.players.find((p) => p.me.id === db.current);
+    if (current) prepareRuns(current);
     if (beforeService) await beforeService();
     return clone(await fn(...args));
   };

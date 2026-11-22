@@ -60,12 +60,14 @@ export function ActionTray({
   disabled,
   onPick,
   suspended,
+  cast,
 }: {
   actions: Action[];
   minutesPerPoint: number;
   disabled: boolean;
   onPick: (a: Action) => void;
   suspended?: { label: string; remaining: number } | null;
+  cast: SceneView['cast'];
 }) {
   const idBase = useId();
   const groups = GROUP_ORDER.map((g) => ({
@@ -115,6 +117,11 @@ export function ActionTray({
                 action={a}
                 minutesPerPoint={minutesPerPoint}
                 disabled={disabled}
+                status={
+                  a.kind === 'talk'
+                    ? cast.find((person) => person.slot === a.target)?.status
+                    : undefined
+                }
                 onPick={onPick}
               />
             </li>
@@ -130,11 +137,13 @@ function ActionButton({
   minutesPerPoint,
   disabled,
   onPick,
+  status,
 }: {
   action: Action;
   minutesPerPoint: number;
   disabled: boolean;
   onPick: (a: Action) => void;
+  status?: string;
 }) {
   const meta = KIND[a.kind] ?? KIND.run;
   const Icon = meta.icon;
@@ -170,7 +179,14 @@ function ActionButton({
           )}
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block">{a.label}</span>
+          <span className="block">
+            {a.label}
+            {status && (
+              <span className="mt-0.5 block text-xs font-semibold text-toon-ink-soft">
+                {status}
+              </span>
+            )}
+          </span>
           {!a.enabled && a.reason && (
             <span
               id={`why-${a.key}`}

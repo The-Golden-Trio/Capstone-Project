@@ -2,19 +2,19 @@
   "packs": {
     "SWE_BACKEND.L3": {
       "id": "SWE_BACKEND.L3",
-      "_source": "research/reports/Seed mẫu Back-end L3 m2.md (bản 4), mục Gói cấp",
+      "_source": "research/reports/Lượt chơi mẫu Back-end L3 m2 bản 5.2.md (sáu slide giới thiệu)",
       "company": {
         "name": "Giao Nhanh",
-        "profile": "Công ty hư cấu: startup giao đồ ăn và đi chợ hộ, khoảng 120 nhân viên, văn phòng quận 1 TP.HCM. Team Back-end có 6 người."
+        "profile": "Startup đi chợ hộ và giao đồ ăn ở TP.HCM, khoảng 120 người. Ngoài khách lẻ, nhiều quán ăn đặt rau thịt mỗi ngày qua app. Trong công ty gọi họ là **khách sỉ**."
       },
       "workplace": "Văn phòng, giờ hành chính 8:30–17:30. Có chat nội bộ và kênh #su-co để báo sự cố. Anh An và chị Linh đều có trong kênh.",
       "team": "Team Back-end 6 người, lo API cho app đặt đơn và app nội bộ.",
-      "level_scope": "Kỹ sư Back-end L3, khoảng 2–3 năm. Tự làm tính năng và sửa lỗi phần mình; lên hệ thống thật cần người duyệt.",
+      "level_scope": "Kỹ sư Back-end khoảng 2–3 năm. Bạn tự sửa phần mình viết, nhưng đưa lên hệ thống thật thì phải có anh An duyệt. Tuần này bạn **trực sự cố** cho team: có gì hỏng thì bạn là người coi đầu tiên.",
       "resident_npcs": ["mentor", "support"],
       "rules": [
         {
           "id": "r1",
-          "text": "Đụng tới production thì nhắn #su-co trước, và anh An duyệt rồi mới đưa lên.",
+          "text": "Đụng tới hệ thống thật thì nhắn kênh #su-co trước, và phải có anh An duyệt.",
           "told_at": "n0"
         },
         {
@@ -23,22 +23,50 @@
           "told_at": "n0"
         }
       ],
-      "honest_note": "Trực sự cố nghĩa là có lúc phải bỏ dở việc đang làm, và lỗi của mình viết có thể lộ ra trước cả team.",
+      "honest_note": "Trực sự cố nghĩa là có lúc phải bỏ dở việc đang làm. Lỗi trong code mình viết có thể lộ ra trước cả team, và người đang chờ bạn thường là người đang bị khách ép.",
       "shared_facts": [],
       "minutes_per_point": 5,
       "followup_cap": 1,
-      "_draft": "honest_note và team: soạn nháp, chờ DE duyệt (BR-05)"
+      "_draft": "Cả gói cấp chưa DE duyệt (BR-05). Chi tiết văn phòng, lịch làm việc và quy mô team được giữ từ gói cấp bản 4."
     }
   },
   "seeds": {
     "SWE_BACKEND.L3.m2": {
       "id": "SWE_BACKEND.L3.m2",
-      "version": 4,
-      "_source": "research/reports/Seed mẫu Back-end L3 m2.md (bản 4), soạn theo Luật dẫn truyện bản 3. Các mục có \"_draft\" là nội dung soạn nháp thay cho phần ghi \"như bản 3\" (bản 3 không có trong repo), chờ DE duyệt (BR-05).",
+      "version": 5,
+      "player_first_at_fallback": true,
+      "_source": "research/reports/Lượt chơi mẫu Back-end L3 m2 bản 5.2.md",
+      "_draft": "Cả seed chưa DE duyệt (BR-05): nhóm soạn theo lượt chơi mẫu bản 5.2. Các nhánh ngoài lượt chơi mẫu được soạn nháp.",
       "level_ref": "SWE_BACKEND.L3",
-      "title": "Sự cố hệ thống giờ cao điểm!",
+      "title": "Chín trăm đơn của Minh Phát",
       "task_ref": "L3#3",
-      "player_role": "API lịch sử đơn là phần bạn viết ba tuần trước. Tuần này bạn trực sự cố của team, báo cho anh An, mentor của bạn.",
+      "intro_slides": [
+        {
+          "title": "Giao Nhanh",
+          "body": "Startup đi chợ hộ và giao đồ ăn ở TP.HCM, khoảng 120 người. Ngoài khách lẻ, nhiều quán ăn đặt rau thịt mỗi ngày qua app. Trong công ty gọi họ là **khách sỉ**."
+        },
+        {
+          "title": "Back-end làm gì?",
+          "body": "Mỗi lần bạn bấm một nút trong app, app gửi một **yêu cầu** tới máy chủ. Hãy hình dung máy chủ là bếp sau của nhà hàng: **API** là người nhận order, **cơ sở dữ liệu** là kho. Kỹ sư Back-end viết cách người nhận order vào kho lấy đồ cho nhanh và đúng. Bạn không cần biết viết code: mọi thứ cần cho ca làm đều có trong tài liệu, wiki và lời đồng nghiệp."
+        },
+        {
+          "title": "Những người bạn gặp",
+          "body": "**Anh An**, trưởng nhóm Back-end, cũng là người kèm bạn từ ngày vào. Nói ngắn, thẳng.\n**Chị Linh**, trưởng nhóm chăm sóc khách hàng (CS). Không rành kỹ thuật, lo thì nói nhiều."
+        },
+        {
+          "title": "Vai của bạn",
+          "body": "Kỹ sư Back-end khoảng 2–3 năm. Bạn tự sửa phần mình viết, nhưng đưa lên hệ thống thật thì phải có anh An duyệt. Tuần này bạn **trực sự cố** cho team: có gì hỏng thì bạn là người coi đầu tiên."
+        },
+        {
+          "title": "Quy định của team",
+          "body": "(1) Đụng tới hệ thống thật thì nhắn kênh **#su-co** trước, và phải có anh An duyệt.\n(2) Không hứa giờ xong với khách khi chưa chắc."
+        },
+        {
+          "title": "Điều nên biết trước",
+          "body": "Trực sự cố nghĩa là có lúc phải bỏ dở việc đang làm. Lỗi trong code mình viết có thể lộ ra trước cả team, và người đang chờ bạn thường là người đang bị khách ép."
+        }
+      ],
+      "player_role": "API lịch sử đơn là phần bạn viết ba tuần trước, anh An review. Tuần này bạn trực sự cố cho team; có gì thì báo anh An.",
       "limits": {
         "decide_alone": [
           "Xem log",
@@ -54,14 +82,14 @@
         ],
         "not_allowed": [
           {
-            "action": "Hứa giờ xong với khách",
+            "action": "Hứa giờ xong với khách khi chưa chắc",
             "told_at": "n0"
           }
         ]
       },
-      "situation": "Sáng đầu tuần, bạn vừa ngồi xuống thì app nội bộ báo đỏ: API lịch sử đơn chậm hẳn.",
-      "goal": "Tìm ra vì sao API chậm và báo anh An hướng xử lý trước 12:00.",
-      "stakes": "Tới trưa vẫn chậm thì đơn giờ cao điểm sẽ rớt.",
+      "situation": "Sáng thứ Hai, bạn vừa họp đầu tuần xong, quay về bàn thì thấy app giám sát báo đỏ: API lịch sử đơn có yêu cầu chậm quá 4 giây.",
+      "goal": "Tìm ra vì sao API lịch sử đơn chậm và gửi anh An hướng xử lý trước 12:00.",
+      "stakes": "Minh Phát có thể ngưng hợp đồng nếu đến trưa lịch sử đơn vẫn chậm.",
       "clock": {
         "start": "9:40",
         "deadline": "12:00",
@@ -69,53 +97,77 @@
         "warn_remaining": 6,
         "warning": {
           "speaker": "canh",
-          "text": "Góc màn hình chỉ gần trưa, nhóm chat bắt đầu hỏi ai đặt cơm.",
+          "text": "Đồng hồ góc màn hình nhảy sang 11:30, nhóm chat bắt đầu réo ai đặt cơm.",
           "expression": "binh_thuong"
         }
       },
       "glossary": [
         {
-          "term": "Log",
-          "plain": "Nhật ký máy chủ tự ghi lại mọi việc nó làm, dùng để tra lỗi."
+          "term": "API",
+          "plain": "Phần máy chủ nhận yêu cầu từ app, lấy thông tin cần thiết và trả về cho app."
         },
         {
-          "term": "Staging",
-          "plain": "Bản chạy thử giống hệ thống thật, sửa gì ở đây không ảnh hưởng khách."
+          "term": "request",
+          "plain": "Yêu cầu app gửi tới máy chủ khi người dùng làm một việc, ví dụ mở lịch sử đơn."
         },
         {
-          "term": "Production",
-          "plain": "Hệ thống thật mà khách đang dùng."
+          "term": "DB",
+          "plain": "Kho chứa mọi dữ liệu: khách, đơn, món trong đơn."
+        },
+        {
+          "term": "release",
+          "plain": "Đợt đưa phiên bản mới của phần mềm lên hệ thống."
+        },
+        {
+          "term": "production",
+          "plain": "Hệ thống thật khách đang dùng."
+        },
+        {
+          "term": "#su-co",
+          "plain": "Kênh chat nội bộ để báo sự cố và các thay đổi trên hệ thống thật."
+        },
+        {
+          "term": "CS",
+          "plain": "Bộ phận chăm sóc khách hàng, nhận phản ánh và hỗ trợ khi khách gặp sự cố."
+        },
+        {
+          "term": "staging",
+          "plain": "Hệ thống chạy thử giống hệ thống thật; thay đổi ở đây không ảnh hưởng khách."
+        },
+        {
+          "term": "log",
+          "plain": "Nhật ký máy chủ tự ghi lại để đội kỹ thuật tra cứu."
+        },
+        {
+          "term": "index",
+          "plain": "Chỉ mục, giống mục lục trong kho, giúp tìm dữ liệu nhanh hơn."
+        },
+        {
+          "term": "phân trang",
+          "plain": "Chỉ trả một phần danh sách mỗi lần; app gửi số trang để xin tiếp."
+        },
+        {
+          "term": "gom truy vấn",
+          "plain": "Gửi cả danh sách cần lấy trong một lần hỏi CSDL."
+        },
+        {
+          "term": "rollback",
+          "plain": "Quay về bản trước khi bản vừa đưa lên gây lỗi."
         }
       ],
-      "_draft_glossary": "glossary: soạn nháp, chờ DE duyệt (BR-05)",
       "facts": [
         {
           "id": "f1",
-          "text": "API lịch sử đơn chậm từ 8:00: thường 0,2 giây, giờ hơn 4 giây.",
-          "values": ["0,2 giây", "4 giây"],
+          "text": "API lịch sử đơn chậm từ 8:00 (0,2 giây → hơn 4 giây).",
+          "values": ["8:00", "0,2 giây", "4 giây"],
           "visibility": "shown",
           "known_by": ["mentor", "support"],
           "required": true
         },
         {
-          "id": "f3",
-          "text": "API do bạn viết ba tuần trước, anh An review.",
-          "values": ["ba tuần"],
-          "visibility": "shown",
-          "known_by": ["mentor"],
-          "required": true
-        },
-        {
-          "id": "f6",
-          "text": "Anh An gấp release module thanh toán lúc 14:00.",
-          "values": ["14:00", "2 giờ chiều"],
-          "visibility": "shown",
-          "known_by": ["mentor"]
-        },
-        {
           "id": "f2",
-          "text": "Bộ phận hỗ trợ đã nhận 3 phàn nàn.",
-          "values": ["phàn nàn"],
+          "text": "Chị Linh: 3 cuộc phàn nàn, đều từ Minh Phát.",
+          "values": ["ba cuộc", "3 cuộc phàn nàn"],
           "visibility": "on_ask",
           "unlock": {
             "by": "ask",
@@ -124,22 +176,17 @@
           "known_by": ["support"]
         },
         {
-          "id": "f4",
-          "text": "Khách sỉ Minh Phát (MP-0042) có 900 đơn trong lịch sử.",
-          "values": ["900 đơn", "MP-0042"],
-          "visibility": "on_ask",
-          "unlock": {
-            "by": "ask",
-            "slots": ["support"],
-            "artefact": "bang_so_lieu"
-          },
-          "known_by": ["support"],
+          "id": "f3",
+          "text": "API lịch sử đơn là phần bạn viết ba tuần trước, anh An review.",
+          "values": ["ba tuần"],
+          "visibility": "shown",
+          "known_by": ["mentor"],
           "required": true
         },
         {
-          "id": "f5",
-          "text": "Mở lịch sử đơn của MP-0042 thì hệ thống hỏi cơ sở dữ liệu 901 lần; khách 3 đơn chỉ 4 lần.",
-          "values": ["901"],
+          "id": "f4",
+          "text": "Minh Phát (MP-0042) có 900 đơn, mở lịch sử mất khoảng 4,4 giây.",
+          "values": ["MP-0042", "900 đơn", "4,4 giây"],
           "visibility": "on_ask",
           "unlock": {
             "by": "artefact",
@@ -149,9 +196,47 @@
           "required": true
         },
         {
+          "id": "f5",
+          "text": "Log: MP-0042 900 đơn, hỏi 901 lần, 4,4 giây · C-0510 (Bà Ba) 240 đơn, hỏi 241 lần, 1,3 giây · khách vài đơn 0,2 giây.",
+          "values": ["901 lần", "241 lần", "C-0510"],
+          "visibility": "on_ask",
+          "unlock": {
+            "by": "artefact",
+            "artefact": "log_api"
+          },
+          "known_by": [],
+          "required": true
+        },
+        {
+          "id": "f6",
+          "text": "Anh An gấp release 14:00.",
+          "values": ["14:00", "2h chiều"],
+          "visibility": "shown",
+          "known_by": ["mentor"]
+        },
+        {
+          "id": "f7",
+          "text": "Anh An xác nhận số lần hỏi CSDL khớp số đơn cộng một, do API lấy món từng đơn trong vòng lặp; DB không quá tải.",
+          "values": ["900 đơn mà hỏi 901 lần", "khớp số đơn cộng một"],
+          "visibility": "ai_only",
+          "known_by": ["mentor"],
+          "required": true
+        },
+        {
+          "id": "f8",
+          "text": "Code: bước 2 hỏi CSDL riêng cho mỗi đơn · chưa dùng page, trả hết đơn một lần.",
+          "values": ["bước 2", "page"],
+          "visibility": "on_ask",
+          "unlock": {
+            "by": "artefact",
+            "artefact": "code_api"
+          },
+          "known_by": []
+        },
+        {
           "id": "f9",
-          "text": "Minh Phát doạ huỷ hợp đồng nếu trưa còn chậm.",
-          "values": ["huỷ hợp đồng", "hủy hợp đồng"],
+          "text": "Chị Linh: 12 cuộc phàn nàn từ Minh Phát. Họ doạ ngưng hợp đồng nếu trưa còn lỗi.",
+          "values": ["ngưng hợp đồng"],
           "visibility": "on_ask",
           "unlock": {
             "by": "ask",
@@ -162,193 +247,693 @@
         },
         {
           "id": "f10",
-          "text": "App bản cũ không gửi số trang khi xem lịch sử đơn; nhiều khách sỉ vẫn dùng app cũ.",
-          "values": ["app cũ", "app bản cũ", "số trang"],
+          "text": "App 2.x không gửi số trang; vẫn chạy trên một số máy tính bảng cũ của khách sỉ. App 3.x gửi số trang.",
+          "values": ["app 2.x", "app 3.x", "số trang"],
           "visibility": "on_ask",
           "unlock": {
-            "by": "ask",
-            "slots": ["mentor"]
+            "by": "artefact",
+            "artefact": "wiki"
           },
           "known_by": ["mentor"]
         },
         {
-          "id": "f7",
-          "text": "Nguyên nhân: lấy chi tiết từng đơn trong một vòng lặp.",
-          "values": ["vòng lặp"],
-          "visibility": "ai_only",
-          "known_by": ["mentor"],
-          "required": true
+          "id": "f11",
+          "text": "Tối qua gộp 6 tài khoản chi nhánh Minh Phát làm một.",
+          "values": ["gộp sáu tài khoản", "gộp 6 tài khoản"],
+          "visibility": "on_ask",
+          "unlock": {
+            "by": "ask",
+            "slots": ["support"]
+          },
+          "known_by": ["support"]
         },
         {
-          "id": "f8",
-          "text": "API không giới hạn số đơn trả về.",
-          "values": ["không giới hạn", "giới hạn số đơn"],
-          "visibility": "ai_only",
+          "id": "f12",
+          "text": "Minh Phát dùng app 2.x trên máy tính bảng.",
+          "values": ["minh phát dùng app 2.x", "bên minh phát xài app 2.x"],
+          "visibility": "on_ask",
+          "unlock": {
+            "by": "ask",
+            "slots": ["support"]
+          },
+          "known_by": ["support"]
+        },
+        {
+          "id": "f13",
+          "text": "Bếp Minh Phát đặt lại đơn của tuần trước.",
+          "values": ["đặt lại đơn tuần trước", "đặt lại đơn của tuần trước"],
+          "visibility": "on_ask",
+          "unlock": {
+            "by": "ask",
+            "slots": ["support"]
+          },
+          "known_by": ["support"],
+          "reserved_for": "n1"
+        },
+        {
+          "id": "f14",
+          "text": "App tự ngắt sau 5 giây; giờ trưa (11:00–13:00), yêu cầu thường chậm thêm khoảng 20–30%.",
+          "values": ["5 giây", "20–30%"],
+          "visibility": "on_ask",
+          "unlock": {
+            "by": "artefact",
+            "artefact": "wiki"
+          },
           "known_by": ["mentor"]
+        },
+        {
+          "id": "f15",
+          "text": "CSDL: CPU tối đa 26% (ngưỡng 80%), kết nối 42/200.",
+          "values": ["26%", "80%", "42/200"],
+          "visibility": "on_ask",
+          "unlock": {
+            "by": "artefact",
+            "artefact": "bang_theo_doi_csdl"
+          },
+          "known_by": []
+        },
+        {
+          "id": "f16",
+          "text": "Build thanh toán #482 bắt đầu 10:05.",
+          "values": ["#482", "10:05"],
+          "visibility": "on_ask",
+          "known_by": []
+        },
+        {
+          "id": "f17",
+          "text": "Từ 11:12, app bắt đầu tự ngắt với MP-0042.",
+          "values": ["11:12", "11:15", "5 giây"],
+          "visibility": "on_ask",
+          "known_by": []
+        },
+        {
+          "id": "f18",
+          "text": "Có thể xuất danh sách đơn của một khách từ trang quản trị trong khoảng 10 phút để bên CS đặt giùm khách.",
+          "values": ["10 phút"],
+          "visibility": "on_ask",
+          "unlock": {
+            "by": "artefact",
+            "artefact": "wiki"
+          },
+          "known_by": ["mentor", "support"]
         }
       ],
       "artefacts": [
         {
-          "id": "log_api",
-          "title": "log API lịch sử đơn",
+          "id": "wiki",
+          "title": "Wiki kỹ thuật Giao Nhanh",
           "kind": "document",
+          "view": {
+            "type": "wiki",
+            "space": "Giao Nhanh",
+            "sections": [
+              {
+                "id": "S1",
+                "title": "Đọc log API",
+                "body": [
+                  "Mỗi dòng là một yêu cầu. *Kết quả* `200` nghĩa là trả lời thành công; `499` nghĩa là app đã bỏ đi trước khi có trả lời. *Thời gian trả lời* do máy chủ tự đo từ lúc nhận yêu cầu tới lúc trả xong, **chưa tính đường mạng tới khách**. *Số lần hỏi CSDL* là số lần API vào kho trong yêu cầu đó. *Số đơn trả về* là số dòng dữ liệu gửi về app."
+                ]
+              },
+              {
+                "id": "S2",
+                "title": "Đọc bảng theo dõi CSDL",
+                "body": [
+                  "CPU trên 80% kéo dài là kho quá tải. Kết nối gần đầy (gần 200/200) là kho bị nghẽn cửa. Khi kho quá tải, **mọi yêu cầu cùng chậm**, khách nào cũng vậy. Giờ trưa (11:00–13:00) đông đơn, các yêu cầu thường chậm thêm khoảng 20–30%."
+                ]
+              },
+              {
+                "id": "S3",
+                "title": "Bốn kiểu chậm hay gặp",
+                "body": [
+                  "| Kiểu | Hình dung | Dấu hiệu | Cách xử lý |",
+                  "|---|---|---|---|",
+                  "| Kho quá tải | Bếp đông quá, ai vào kho cũng phải chờ | CPU cao; mọi khách cùng chậm | Giảm tải, hoặc xin thêm máy (cần sếp kỹ thuật duyệt chi phí) |",
+                  "| Hỏi kho trong vòng lặp | Người nhận order chạy vào kho lấy từng món một, 900 món là 900 chuyến | Số lần hỏi tăng theo số dòng dữ liệu; khách càng nhiều dòng càng chậm, khách ít vẫn nhanh | **Gom truy vấn**: cầm cả danh sách vào kho, lấy một chuyến |",
+                  "| Trả quá nhiều một lần | Bưng cả trăm món ra một lượt | Một yêu cầu trả hàng trăm dòng | **Phân trang**: mỗi lần trả một phần, app xin tiếp khi người dùng kéo xuống. Chỉ app biết gửi số trang mới xin tiếp được |",
+                  "| Mỗi lần hỏi kho chậm | Kho không có mục lục, mỗi chuyến tìm lâu | Số lần hỏi ít nhưng mỗi lần lâu | Thêm **chỉ mục (index)** |"
+                ]
+              },
+              {
+                "id": "S4",
+                "title": "Phiên bản app",
+                "body": [
+                  "App 3.x (từ tháng 9) gửi số trang khi xem lịch sử đơn. App 2.x không gửi, vẫn chạy trên một số máy tính bảng cũ của khách sỉ. App nào cũng **tự ngắt sau 5 giây** nếu chưa có trả lời. Đổi con số này phải ra bản app mới và chờ kho ứng dụng duyệt 2–3 ngày."
+                ]
+              },
+              {
+                "id": "S5",
+                "title": "Quy trình đưa lên production",
+                "body": [
+                  "1. Chạy thử trên staging.",
+                  "2. Gửi người phụ trách email xin duyệt (team Back-end: anh An), gồm: thay đổi gì và vì sao; kết quả chạy thử; **cách kiểm tra sau khi lên**; **cách lùi lại**.",
+                  "3. Được duyệt thì nhắn #su-co trước khi đưa lên.",
+                  "4. Sau khi lên, canh log và giám sát ít nhất 15 phút.",
+                  "",
+                  "Lùi lại: bấm \"Rollback\" trên công cụ deploy, khoảng 2 phút là production quay về bản trước."
+                ]
+              },
+              {
+                "id": "S6",
+                "title": "Hỗ trợ khách khi có sự cố",
+                "body": [
+                  "Không hứa giờ xong khi chưa chắc. Có thể xuất danh sách đơn của một khách ra file từ trang quản trị (khoảng 10 phút) để bên CS đặt giùm khách trong lúc chờ sửa."
+                ]
+              }
+            ]
+          },
           "body": [
-            "07:58:02  GET /orders/history?customer=C-1187   200  0.19s  db_queries=4",
-            "08:01:15  GET /orders/history?customer=MP-0042  200  4.38s  db_queries=901",
-            "08:01:17  GET /orders/history?customer=C-2210   200  0.21s  db_queries=4",
-            "08:14:40  GET /orders/history?customer=MP-0042  200  4.52s  db_queries=901",
-            "08:15:02  db.cpu=24%  db.connections=38/200",
-            "09:32:11  GET /orders/history?customer=C-0931   200  0.20s  db_queries=4",
-            "09:35:58  GET /orders/history?customer=MP-0042  200  4.47s  db_queries=901"
+            "S1 · Đọc log API.\nMỗi dòng là một yêu cầu. *Kết quả* `200` nghĩa là trả lời thành công; `499` nghĩa là app đã bỏ đi trước khi có trả lời. *Thời gian trả lời* do máy chủ tự đo từ lúc nhận yêu cầu tới lúc trả xong, **chưa tính đường mạng tới khách**. *Số lần hỏi CSDL* là số lần API vào kho trong yêu cầu đó. *Số đơn trả về* là số dòng dữ liệu gửi về app.",
+            "S2 · Đọc bảng theo dõi CSDL.\nCPU trên 80% kéo dài là kho quá tải. Kết nối gần đầy (gần 200/200) là kho bị nghẽn cửa. Khi kho quá tải, **mọi yêu cầu cùng chậm**, khách nào cũng vậy. Giờ trưa (11:00–13:00) đông đơn, các yêu cầu thường chậm thêm khoảng 20–30%.",
+            "S3 · Bốn kiểu chậm hay gặp.\n| Kiểu | Hình dung | Dấu hiệu | Cách xử lý |\n|---|---|---|---|\n| Kho quá tải | Bếp đông quá, ai vào kho cũng phải chờ | CPU cao; mọi khách cùng chậm | Giảm tải, hoặc xin thêm máy (cần sếp kỹ thuật duyệt chi phí) |\n| Hỏi kho trong vòng lặp | Người nhận order chạy vào kho lấy từng món một, 900 món là 900 chuyến | Số lần hỏi tăng theo số dòng dữ liệu; khách càng nhiều dòng càng chậm, khách ít vẫn nhanh | **Gom truy vấn**: cầm cả danh sách vào kho, lấy một chuyến |\n| Trả quá nhiều một lần | Bưng cả trăm món ra một lượt | Một yêu cầu trả hàng trăm dòng | **Phân trang**: mỗi lần trả một phần, app xin tiếp khi người dùng kéo xuống. Chỉ app biết gửi số trang mới xin tiếp được |\n| Mỗi lần hỏi kho chậm | Kho không có mục lục, mỗi chuyến tìm lâu | Số lần hỏi ít nhưng mỗi lần lâu | Thêm **chỉ mục (index)** |",
+            "S4 · Phiên bản app.\nApp 3.x (từ tháng 9) gửi số trang khi xem lịch sử đơn. App 2.x không gửi, vẫn chạy trên một số máy tính bảng cũ của khách sỉ. App nào cũng **tự ngắt sau 5 giây** nếu chưa có trả lời. Đổi con số này phải ra bản app mới và chờ kho ứng dụng duyệt 2–3 ngày.",
+            "S5 · Quy trình đưa lên production.\n1. Chạy thử trên staging.\n2. Gửi người phụ trách email xin duyệt (team Back-end: anh An), gồm: thay đổi gì và vì sao; kết quả chạy thử; **cách kiểm tra sau khi lên**; **cách lùi lại**.\n3. Được duyệt thì nhắn #su-co trước khi đưa lên.\n4. Sau khi lên, canh log và giám sát ít nhất 15 phút.\n\nLùi lại: bấm \"Rollback\" trên công cụ deploy, khoảng 2 phút là production quay về bản trước.",
+            "S6 · Hỗ trợ khách khi có sự cố.\nKhông hứa giờ xong khi chưa chắc. Có thể xuất danh sách đơn của một khách ra file từ trang quản trị (khoảng 10 phút) để bên CS đặt giùm khách trong lúc chờ sửa."
           ],
-          "unlocks": ["f5"],
-          "_draft": "nội dung log: soạn nháp theo f1, f5 (bản 3 không có trong repo), chờ DE duyệt"
+          "unlocks": ["f10", "f14", "f18"]
+        },
+        {
+          "id": "log_api",
+          "title": "Log API lịch sử đơn",
+          "kind": "document",
+          "view": {
+            "type": "table",
+            "columns": [
+              "Giờ",
+              "Đường dẫn và khách",
+              "Kết quả",
+              "Thời gian trả lời",
+              "Số lần hỏi CSDL",
+              "Số đơn trả về"
+            ],
+            "rows": [
+              ["07:58:02", "lịch sử đơn · C-1187", "200", "0.19s", "4", "3"],
+              [
+                "08:01:15",
+                "lịch sử đơn · MP-0042",
+                "200",
+                "4.38s",
+                "901",
+                "900"
+              ],
+              ["08:01:17", "lịch sử đơn · C-2210", "200", "0.21s", "13", "12"],
+              [
+                "08:06:40",
+                "lịch sử đơn · C-0510",
+                "200",
+                "1.27s",
+                "241",
+                "240"
+              ],
+              [
+                "08:14:40",
+                "lịch sử đơn · MP-0042",
+                "200",
+                "4.52s",
+                "901",
+                "900"
+              ],
+              ["08:20:03", "lịch sử đơn · C-0931", "200", "0.18s", "6", "5"],
+              [
+                "09:02:51",
+                "lịch sử đơn · C-0510",
+                "200",
+                "1.29s",
+                "241",
+                "240"
+              ],
+              ["09:32:11", "lịch sử đơn · C-0931", "200", "0.18s", "6", "5"],
+              [
+                "09:35:58",
+                "lịch sử đơn · MP-0042",
+                "200",
+                "4.47s",
+                "901",
+                "900"
+              ],
+              ["09:38:12", "lịch sử đơn · C-1187", "200", "0.19s", "4", "3"]
+            ],
+            "raw": [
+              "GET /orders/history?customer=C-1187  200  0.19s  db_queries=4  rows=3",
+              "GET /orders/history?customer=MP-0042  200  4.38s  db_queries=901  rows=900",
+              "GET /orders/history?customer=C-2210  200  0.21s  db_queries=13  rows=12",
+              "GET /orders/history?customer=C-0510  200  1.27s  db_queries=241  rows=240",
+              "GET /orders/history?customer=MP-0042  200  4.52s  db_queries=901  rows=900",
+              "GET /orders/history?customer=C-0931  200  0.18s  db_queries=6  rows=5",
+              "GET /orders/history?customer=C-0510  200  1.29s  db_queries=241  rows=240",
+              "GET /orders/history?customer=C-0931  200  0.18s  db_queries=6  rows=5",
+              "GET /orders/history?customer=MP-0042  200  4.47s  db_queries=901  rows=900",
+              "GET /orders/history?customer=C-1187  200  0.19s  db_queries=4  rows=3"
+            ],
+            "caption": "Trích log sáng nay"
+          },
+          "body": [
+            "Giờ | Đường dẫn và khách | Kết quả | Thời gian trả lời | Số lần hỏi CSDL | Số đơn trả về",
+            "07:58:02 | lịch sử đơn · C-1187 | 200 | 0.19s | 4 | 3",
+            "08:01:15 | lịch sử đơn · MP-0042 | 200 | 4.38s | 901 | 900",
+            "08:01:17 | lịch sử đơn · C-2210 | 200 | 0.21s | 13 | 12",
+            "08:06:40 | lịch sử đơn · C-0510 | 200 | 1.27s | 241 | 240",
+            "08:14:40 | lịch sử đơn · MP-0042 | 200 | 4.52s | 901 | 900",
+            "08:20:03 | lịch sử đơn · C-0931 | 200 | 0.18s | 6 | 5",
+            "09:02:51 | lịch sử đơn · C-0510 | 200 | 1.29s | 241 | 240",
+            "09:32:11 | lịch sử đơn · C-0931 | 200 | 0.18s | 6 | 5",
+            "09:35:58 | lịch sử đơn · MP-0042 | 200 | 4.47s | 901 | 900",
+            "09:38:12 | lịch sử đơn · C-1187 | 200 | 0.19s | 4 | 3",
+            "GET /orders/history?customer=C-1187  200  0.19s  db_queries=4  rows=3",
+            "GET /orders/history?customer=MP-0042  200  4.38s  db_queries=901  rows=900",
+            "GET /orders/history?customer=C-2210  200  0.21s  db_queries=13  rows=12",
+            "GET /orders/history?customer=C-0510  200  1.27s  db_queries=241  rows=240",
+            "GET /orders/history?customer=MP-0042  200  4.52s  db_queries=901  rows=900",
+            "GET /orders/history?customer=C-0931  200  0.18s  db_queries=6  rows=5",
+            "GET /orders/history?customer=C-0510  200  1.29s  db_queries=241  rows=240",
+            "GET /orders/history?customer=C-0931  200  0.18s  db_queries=6  rows=5",
+            "GET /orders/history?customer=MP-0042  200  4.47s  db_queries=901  rows=900",
+            "GET /orders/history?customer=C-1187  200  0.19s  db_queries=4  rows=3"
+          ],
+          "unlocks": ["f4", "f5"]
+        },
+        {
+          "id": "bang_theo_doi_csdl",
+          "title": "Bảng theo dõi CSDL",
+          "kind": "document",
+          "view": {
+            "type": "dashboard",
+            "metrics": [
+              {
+                "label": "Mức bận CPU",
+                "value": "18–26% (cao nhất 26% lúc 08:15)",
+                "note": "Cảnh báo khi trên 80%",
+                "tone": "ok"
+              },
+              {
+                "label": "Kết nối đang mở",
+                "value": "31–42 / 200",
+                "tone": "ok"
+              },
+              {
+                "label": "Lượt hỏi mỗi giây",
+                "value": "Thường 120–160; từ 08:00 có những đợt vọt lên khoảng 350",
+                "note": "Mỗi đợt kéo dài 4–5 giây",
+                "tone": "warn"
+              }
+            ],
+            "caption": "7:00–9:45"
+          },
+          "body": [
+            "Mức bận CPU · 18–26% (cao nhất 26% lúc 08:15) · Cảnh báo khi trên 80%",
+            "Kết nối đang mở · 31–42 / 200",
+            "Lượt hỏi mỗi giây · Thường 120–160; từ 08:00 có những đợt vọt lên khoảng 350 · Mỗi đợt kéo dài 4–5 giây"
+          ],
+          "unlocks": ["f15"]
         },
         {
           "id": "bang_so_lieu",
-          "title": "bảng số liệu đơn theo khách",
+          "title": "Bảng số liệu khách",
           "kind": "document",
+          "view": {
+            "type": "table",
+            "columns": [
+              "Khách",
+              "Mã",
+              "Số đơn trong lịch sử",
+              "Thời gian mở lịch sử (trung bình)"
+            ],
+            "rows": [
+              ["Minh Phát", "MP-0042", "900", "4,4 giây"],
+              ["Bà Ba", "C-0510", "240", "1,3 giây"],
+              ["Cửa hàng Hoa", "C-1187", "3", "0,2 giây"],
+              ["Bếp Nhà Lan", "C-2210", "12", "0,2 giây"],
+              ["Tạp hoá Bảy", "C-0931", "5", "0,2 giây"]
+            ]
+          },
           "body": [
-            "Khách        | Mã       | Số đơn trong lịch sử | Thời gian mở lịch sử (trung bình)",
-            "Minh Phát    | MP-0042  | 900                  | 4,4 giây",
-            "Cửa hàng Hoa | C-1187   | 3                    | 0,2 giây",
-            "Bếp Nhà Lan  | C-2210   | 12                   | 0,2 giây",
-            "Tạp hoá Bảy  | C-0931   | 5                    | 0,2 giây"
+            "Khách | Mã | Số đơn trong lịch sử | Thời gian mở lịch sử (trung bình)",
+            "Minh Phát | MP-0042 | 900 | 4,4 giây",
+            "Bà Ba | C-0510 | 240 | 1,3 giây",
+            "Cửa hàng Hoa | C-1187 | 3 | 0,2 giây",
+            "Bếp Nhà Lan | C-2210 | 12 | 0,2 giây",
+            "Tạp hoá Bảy | C-0931 | 5 | 0,2 giây"
           ],
-          "unlocks": ["f4"],
-          "_draft": "bảng số liệu: soạn nháp theo f4, f5, chờ DE duyệt"
+          "unlocks": ["f4"]
         },
         {
           "id": "code_api",
-          "title": "code API lịch sử đơn",
+          "title": "Code API lịch sử đơn",
           "kind": "document",
+          "view": {
+            "type": "code",
+            "path": "src/orders/order-history.js",
+            "language": "js",
+            "code": [
+              "// Lấy lịch sử đơn của một khách (PR #318, anh An review)",
+              "async function getOrderHistory(customerId, page) {",
+              "  // Bước 1: lấy danh sách đơn của khách, mới nhất trước",
+              "  const orders = await db.query(",
+              "    'SELECT id, created_at FROM orders WHERE customer_id = ? ORDER BY created_at DESC',",
+              "    [customerId]",
+              "  );",
+              "",
+              "  // Bước 2: với mỗi đơn, lấy các món trong đơn đó",
+              "  for (const order of orders) {",
+              "    order.items = await db.query(",
+              "      'SELECT * FROM order_items WHERE order_id = ?',",
+              "      [order.id]",
+              "    );",
+              "  }",
+              "",
+              "  // TODO: dùng `page` để phân trang (app 3.x đã gửi page)",
+              "  return orders;",
+              "}"
+            ],
+            "hovers": [
+              {
+                "token": "db.query",
+                "text": "một lần hỏi CSDL"
+              }
+            ]
+          },
           "body": [
-            "async function getOrderHistory(customerId) {",
-            "  const orders = await db.query('SELECT id FROM orders WHERE customer_id = ?', [customerId]);",
+            "// Lấy lịch sử đơn của một khách (PR #318, anh An review)",
+            "async function getOrderHistory(customerId, page) {",
+            "  // Bước 1: lấy danh sách đơn của khách, mới nhất trước",
+            "  const orders = await db.query(",
+            "    'SELECT id, created_at FROM orders WHERE customer_id = ? ORDER BY created_at DESC',",
+            "    [customerId]",
+            "  );",
+            "",
+            "  // Bước 2: với mỗi đơn, lấy các món trong đơn đó",
             "  for (const order of orders) {",
-            "    order.items = await db.query('SELECT * FROM order_items WHERE order_id = ?', [order.id]);",
+            "    order.items = await db.query(",
+            "      'SELECT * FROM order_items WHERE order_id = ?',",
+            "      [order.id]",
+            "    );",
             "  }",
+            "",
+            "  // TODO: dùng `page` để phân trang (app 3.x đã gửi page)",
             "  return orders;",
             "}"
           ],
-          "unlocks": [],
-          "_draft": "đoạn code: soạn nháp theo f7, f8, chờ DE duyệt"
+          "unlocks": ["f8"]
         },
         {
           "id": "ban_va",
-          "title": "bản vá",
+          "title": "Bản vá · API lịch sử đơn",
           "kind": "form",
+          "view": {
+            "type": "patch",
+            "path": "src/orders/order-history.js",
+            "base": [
+              "// Lấy lịch sử đơn của một khách (PR #318, anh An review)",
+              "async function getOrderHistory(customerId, page) {",
+              "  // Bước 1: lấy danh sách đơn của khách, mới nhất trước",
+              "  const orders = await db.query(",
+              "    'SELECT id, created_at FROM orders WHERE customer_id = ? ORDER BY created_at DESC',",
+              "    [customerId]",
+              "  );",
+              "",
+              "  // Bước 2: với mỗi đơn, lấy các món trong đơn đó",
+              "  for (const order of orders) {",
+              "    order.items = await db.query(",
+              "      'SELECT * FROM order_items WHERE order_id = ?',",
+              "      [order.id]",
+              "    );",
+              "  }",
+              "",
+              "  // TODO: dùng `page` để phân trang (app 3.x đã gửi page)",
+              "  return orders;",
+              "}"
+            ]
+          },
           "fields": [
             {
-              "id": "mo_ta",
-              "label": "Mô tả thay đổi"
+              "id": "ghi_chu",
+              "label": "Ghi chú cho người review",
+              "placeholder": "Em đã đổi gì và vì sao?"
             }
           ],
-          "checks": [
+          "ticks": [
             {
-              "flag": "bv.bo_vong_lap",
-              "q": "Bản vá có bỏ việc gọi cơ sở dữ liệu trong vòng lặp, thay bằng một truy vấn gom không?"
+              "id": "v1",
+              "label": "Gom truy vấn: lấy món của tất cả đơn bằng một lần hỏi CSDL, thay vì mỗi đơn một lần"
             },
             {
-              "flag": "bv.phan_trang",
-              "q": "Bản vá có giới hạn số đơn trả về mỗi lần (phân trang hoặc giới hạn) không?"
+              "id": "v2",
+              "label": "Phân trang 50 đơn: mỗi lần trả 50 đơn; app gửi số trang thì xin tiếp được"
             },
             {
-              "flag": "bv.giu_app_cu",
-              "q": "Bản vá có nói cách xử lý request không gửi số trang không?"
+              "id": "v3",
+              "label": "Giữ cách trả cũ cho app không gửi số trang: yêu cầu không có số trang thì vẫn trả đủ đơn như trước"
+            },
+            {
+              "id": "idx",
+              "label": "Thêm chỉ mục cho bảng món trong đơn: giúp mỗi lần hỏi bảng món nhanh hơn"
             }
-          ]
+          ],
+          "tick_flags": {
+            "v1": "bv.v1",
+            "v2": "bv.v2",
+            "v3": "bv.v3",
+            "idx": "bv.idx"
+          }
         },
         {
           "id": "log_staging",
-          "title": "log staging",
+          "title": "Kết quả chạy thử · MP-0042",
           "kind": "result",
+          "view": {
+            "type": "terminal",
+            "command": "GET /orders/history?customer=MP-0042"
+          },
           "branches": [
             {
               "if": {
-                "all": ["bv.bo_vong_lap", "bv.phan_trang", "bv.giu_app_cu"]
+                "all": ["bv.v1", "bv.v2", "bv.v3"]
               },
               "lines": [
-                "GET /orders/history?customer=MP-0042&page=1  0.18s  db_queries=2  page=1 size=50",
-                "GET /orders/history?customer=MP-0042  0.31s  db_queries=2  limit=200  has_more=true"
+                "GET /orders/history?customer=MP-0042&page=1   (app 3.x)              0.18s  db_queries=2  rows=50",
+                "GET /orders/history?customer=MP-0042          (app 2.x, máy tính bảng) 1.12s  db_queries=2  rows=900"
               ],
               "emits": "su_kien.staging_ok"
             },
             {
               "if": {
-                "all": ["bv.bo_vong_lap", "bv.phan_trang"]
+                "all": ["bv.v1", "bv.v2"],
+                "none": ["bv.v3"]
               },
               "lines": [
-                "GET /orders/history?customer=MP-0042&page=1  0.18s  db_queries=2  page=1 size=50",
-                "GET /orders/history?customer=MP-0042  0.18s  db_queries=2  page=1 size=50  (không gửi page → trả trang 1)"
+                "GET /orders/history?customer=MP-0042&page=1   (app 3.x)              0.18s  db_queries=2  rows=50",
+                "GET /orders/history?customer=MP-0042          (app 2.x, máy tính bảng) 0.18s  db_queries=2  rows=50",
+                "⚠ app 2.x không có nút \"xem thêm\": chỉ hiện 50 đơn gần nhất (khoảng 1 ngày của 6 quán)"
               ],
               "emits": "su_kien.staging_ok"
             },
             {
               "if": {
-                "all": ["bv.bo_vong_lap"]
+                "all": ["bv.v1"]
               },
               "lines": [
-                "GET /orders/history?customer=MP-0042&page=1  1.12s  db_queries=2  rows=900"
-              ]
+                "GET /orders/history?customer=MP-0042&page=1   (app 3.x)              1.12s  db_queries=2  rows=900",
+                "GET /orders/history?customer=MP-0042          (app 2.x, máy tính bảng) 1.12s  db_queries=2  rows=900"
+              ],
+              "emits": "su_kien.staging_ok"
             },
             {
               "if": {},
               "lines": [
-                "GET /orders/history?customer=MP-0042&page=1  4.40s  db_queries=901"
+                "GET /orders/history?customer=MP-0042&page=1   (app 3.x)              4.40s  db_queries=901  rows=900",
+                "GET /orders/history?customer=MP-0042          (app 2.x, máy tính bảng) 4.40s  db_queries=901  rows=900"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "xuat_file",
+          "title": "Danh sách đơn của Minh Phát",
+          "kind": "result",
+          "view": {
+            "type": "file",
+            "filename": "MP-0042_lich_su_don.xlsx"
+          },
+          "branches": [
+            {
+              "if": {},
+              "lines": ["MP-0042_lich_su_don.xlsx · 900 đơn · đã gửi chị Linh"]
+            }
+          ]
+        },
+        {
+          "id": "deploy_prod",
+          "title": "Đưa lên production",
+          "kind": "result",
+          "view": {
+            "type": "terminal"
+          },
+          "branches": [
+            {
+              "if": {},
+              "lines": [
+                "Đã đưa bản sửa lên production khi chưa có anh An duyệt."
               ]
             }
           ]
         },
         {
           "id": "ghi_chu_su_co",
-          "title": "ghi chú sự cố",
+          "title": "Ghi chú sự cố",
           "kind": "form",
+          "view": {
+            "type": "note"
+          },
           "fields": [
             {
               "id": "hien_tuong",
-              "label": "Hiện tượng"
+              "label": "Hiện tượng",
+              "placeholder": "Từ mấy giờ, ai bị…"
             },
             {
               "id": "nguyen_nhan",
-              "label": "Nguyên nhân nghi ngờ, kèm bằng chứng"
+              "label": "Nguyên nhân, kèm bằng chứng",
+              "placeholder": "Em nghĩ do…, vì…"
             },
             {
               "id": "da_lam",
-              "label": "Đã làm gì"
+              "label": "Đã làm gì",
+              "placeholder": "Em đã…"
             }
           ],
-          "ticks": [
+          "selects": [
             {
               "id": "h1",
-              "label": "Cơ sở dữ liệu quá tải giờ cao điểm"
+              "label": "CSDL quá tải giờ cao điểm",
+              "options": [
+                {
+                  "id": "loai",
+                  "label": "Loại"
+                },
+                {
+                  "id": "giu",
+                  "label": "Giữ"
+                },
+                {
+                  "id": "chua_ro",
+                  "label": "Chưa rõ"
+                }
+              ],
+              "reason": true
             },
             {
               "id": "h2",
-              "label": "Mạng phía khách chậm"
+              "label": "Mạng phía khách chậm",
+              "options": [
+                {
+                  "id": "loai",
+                  "label": "Loại"
+                },
+                {
+                  "id": "giu",
+                  "label": "Giữ"
+                },
+                {
+                  "id": "chua_ro",
+                  "label": "Chưa rõ"
+                }
+              ],
+              "reason": true
             },
             {
               "id": "h3",
-              "label": "API gọi cơ sở dữ liệu một lần cho mỗi đơn"
+              "label": "API hỏi CSDL một lần cho mỗi đơn",
+              "options": [
+                {
+                  "id": "loai",
+                  "label": "Loại"
+                },
+                {
+                  "id": "giu",
+                  "label": "Giữ"
+                },
+                {
+                  "id": "chua_ro",
+                  "label": "Chưa rõ"
+                }
+              ],
+              "reason": true
             },
             {
               "id": "h4",
-              "label": "API trả hết đơn, không giới hạn số đơn"
+              "label": "API trả hết đơn một lần, không giới hạn",
+              "options": [
+                {
+                  "id": "loai",
+                  "label": "Loại"
+                },
+                {
+                  "id": "giu",
+                  "label": "Giữ"
+                },
+                {
+                  "id": "chua_ro",
+                  "label": "Chưa rõ"
+                }
+              ],
+              "reason": true
             },
             {
               "id": "h5",
-              "label": "Bản build module thanh toán đang chạy làm chậm hệ thống"
+              "label": "Build module thanh toán làm chậm hệ thống",
+              "options": [
+                {
+                  "id": "loai",
+                  "label": "Loại"
+                },
+                {
+                  "id": "giu",
+                  "label": "Giữ"
+                },
+                {
+                  "id": "chua_ro",
+                  "label": "Chưa rõ"
+                }
+              ],
+              "reason": true
+            },
+            {
+              "id": "h6",
+              "label": "Dữ liệu Minh Phát bị hỏng sau khi gộp tài khoản",
+              "options": [
+                {
+                  "id": "loai",
+                  "label": "Loại"
+                },
+                {
+                  "id": "giu",
+                  "label": "Giữ"
+                },
+                {
+                  "id": "chua_ro",
+                  "label": "Chưa rõ"
+                }
+              ],
+              "reason": true
             }
           ],
           "tick_flags": {
-            "h4": "gc.h4"
-          },
-          "_draft": "danh sách giả thuyết h1–h5: soạn nháp (bản 3 không có trong repo), chờ DE duyệt"
+            "h4=giu": "gc.h4",
+            "h1=chua_ro": "gc.co_chua_ro",
+            "h2=chua_ro": "gc.co_chua_ro",
+            "h3=chua_ro": "gc.co_chua_ro",
+            "h4=chua_ro": "gc.co_chua_ro",
+            "h5=chua_ro": "gc.co_chua_ro",
+            "h6=chua_ro": "gc.co_chua_ro"
+          }
         },
         {
           "id": "tin_su_co",
-          "title": "tin nhắn kênh #su-co",
+          "title": "Tin nhắn kênh #su-co",
           "kind": "form",
+          "view": {
+            "type": "channel",
+            "channel": "#su-co"
+          },
           "fields": [
             {
               "id": "noi_dung",
@@ -359,26 +944,39 @@
         },
         {
           "id": "email_an",
-          "title": "email gửi anh An",
+          "title": "Email gửi anh An",
           "kind": "form",
+          "view": {
+            "type": "mail",
+            "to": "anh An",
+            "subject_field": "tieu_de"
+          },
           "fields": [
             {
+              "id": "tieu_de",
+              "label": "Tiêu đề",
+              "multiline": false
+            },
+            {
               "id": "nguyen_nhan",
-              "label": "Nguyên nhân"
+              "label": "Nguyên nhân",
+              "placeholder": "Em thấy nguyên nhân là…"
             },
             {
               "id": "huong_xu_ly",
-              "label": "Hướng xử lý"
+              "label": "Hướng xử lý",
+              "placeholder": "Em đề xuất…"
             },
             {
               "id": "rui_ro",
-              "label": "Rủi ro và cách lùi lại"
+              "label": "Rủi ro và cách lùi lại",
+              "placeholder": "Nếu lên rồi có lỗi thì…"
             }
           ],
           "checks": [
             {
               "flag": "email.co_cach_kiem",
-              "q": "Email có nêu cách kiểm tra hay theo dõi sau khi đưa lên production không?"
+              "q": "Email có nêu cách kiểm tra cụ thể sau khi đưa lên production, như chỉ số và ngưỡng để biết bản sửa ổn không?"
             },
             {
               "flag": "email.co_rollback",
@@ -408,7 +1006,12 @@
               "id": "rui_ro_production",
               "text": "Sợ bản sửa làm hỏng chỗ khác trên production.",
               "resolve_when": {
-                "all": ["n3.co_cach_kiem", "n3.co_rollback"]
+                "all": [
+                  "bv.v1",
+                  "bv.app_cu_ok",
+                  "n3.co_cach_kiem",
+                  "n3.co_rollback"
+                ]
               },
               "hold_until": "n3"
             }
@@ -418,7 +1021,7 @@
           "beliefs": [
             {
               "text": "Chắc DB quá tải giờ cao điểm.",
-              "drop_when": "nguyen_nhan_da_noi_voi_mentor"
+              "drop_when": "da_loai_db_bang_chung"
             }
           ],
           "disclosure_style": "nói thẳng",
@@ -463,7 +1066,17 @@
           ],
           "disclosure_style": "nói thẳng, kể dài",
           "voice": "29 tuổi, giọng Nam, lo thì nói nhiều",
-          "present_at_end": false
+          "present_at_end": true
+        }
+      ],
+      "bots": [
+        {
+          "id": "bot_deploy",
+          "name": "Bot deploy"
+        },
+        {
+          "id": "bot_giam_sat",
+          "name": "Giám sát"
         }
       ],
       "conversation_checks": [
@@ -474,9 +1087,21 @@
           "in_channel": true
         },
         {
+          "flag": "support_biet_co_ban_sua",
+          "q": "Người chơi có nói với chị Linh rằng đã có bản sửa hay bản sửa đã chạy thử không?",
+          "slots": ["support"],
+          "in_channel": true
+        },
+        {
+          "flag": "de_support_tin_sai",
+          "q": "Người chơi có để chị Linh tin sai rằng lỗi do mạng khách hoặc nói bản sửa đã được đưa lên khi điều đó chưa xảy ra không?",
+          "slots": ["support"],
+          "in_channel": false
+        },
+        {
           "slots": ["support"],
           "flag": "hua_bao_lai",
-          "q": "Người chơi có hẹn báo lại chị Linh, vào một giờ cụ thể hoặc khi có một tin (sửa xong, có duyệt) không?",
+          "q": "Người chơi có hẹn báo lại chị Linh ở một giờ cụ thể hoặc khi có một tin (ví dụ sửa xong hoặc có duyệt) không? Nếu chỉ nhắc hẹn cũ mà không nêu giờ thì không tạo hẹn mới.",
           "extract": {
             "fields": ["time", "event", "channel"],
             "promise_to": "support"
@@ -517,26 +1142,49 @@
         }
       ],
       "story_flags": [
+        "da_goi_linh",
+        "support_biet_tim_ra_loi",
+        "support_biet_co_ban_sua",
+        "de_support_tin_sai",
         "hua_bao_lai",
         "hua_chac_trua",
-        "support_biet_tim_ra_loi",
+        "cho_cau_noi_voi_khach",
         "da_bao_su_co",
         "tre_hen",
         "da_mo_log",
         "da_mo_code",
         "da_mo_bang",
+        "da_mo_wiki",
         "da_viet_ban_va",
-        "bv.bo_vong_lap",
-        "bv.phan_trang",
-        "bv.giu_app_cu",
+        "bv.v1",
+        "bv.v2",
+        "bv.v3",
+        "bv.idx",
+        "bv.app_cu_ok",
         "staging_da_chay",
+        "da_gui_file",
+        "tu_dua_len",
         "nguyen_nhan_da_noi_voi_mentor",
         "da_loai_db_bang_chung",
         "gc.h4",
+        "gc.co_chua_ro",
         "email.co_cach_kiem",
         "email.co_rollback",
         "n3.co_cach_kiem",
         "n3.co_rollback"
+      ],
+      "derived_flags": [
+        {
+          "flag": "bv.app_cu_ok",
+          "any_of": [
+            {
+              "none": ["bv.v2"]
+            },
+            {
+              "all": ["bv.v3"]
+            }
+          ]
+        }
       ],
       "actions": [
         {
@@ -551,11 +1199,48 @@
           "label": "Gọi chị Linh",
           "points": 1,
           "kind": "talk",
-          "target": "support"
+          "target": "support",
+          "sets": ["da_goi_linh"],
+          "beats": [
+            {
+              "speaker": "support",
+              "text": "Alo, Linh nghe nè em.",
+              "expression": "binh_thuong"
+            }
+          ],
+          "beats_if": [
+            {
+              "if": {
+                "all": ["da_goi_linh"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Alo em, chị nghe nè.",
+                  "expression": "lo_lang"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "message_su_co",
+          "label": "Nhắn #su-co",
+          "points": 1,
+          "kind": "message",
+          "target": "tin_su_co",
+          "sets": ["da_bao_su_co"]
+        },
+        {
+          "key": "meeting",
+          "label": "Gọi họp nhanh",
+          "points": 3,
+          "kind": "meeting",
+          "slots": ["mentor", "support"]
         },
         {
           "key": "open_log",
-          "label": "Mở log",
+          "label": "Mở log API",
           "points": 1,
           "kind": "open",
           "target": "log_api",
@@ -564,11 +1249,19 @@
         },
         {
           "key": "open_bang",
-          "label": "Mở bảng số liệu",
+          "label": "Mở bảng số liệu khách",
           "points": 1,
           "kind": "open",
           "target": "bang_so_lieu",
           "sets": ["da_mo_bang"],
+          "free_on_repeat": true
+        },
+        {
+          "key": "open_dashboard",
+          "label": "Mở bảng theo dõi CSDL",
+          "points": 1,
+          "kind": "open",
+          "target": "bang_theo_doi_csdl",
           "free_on_repeat": true
         },
         {
@@ -581,27 +1274,13 @@
           "free_on_repeat": true
         },
         {
-          "key": "message_su_co",
-          "label": "Nhắn kênh #su-co",
+          "key": "open_wiki",
+          "label": "Mở Wiki kỹ thuật",
           "points": 1,
-          "kind": "message",
-          "target": "tin_su_co",
-          "sets": ["da_bao_su_co"]
-        },
-        {
-          "key": "run_staging",
-          "label": "Chạy thử trên staging",
-          "points": 2,
-          "kind": "run",
-          "target": "log_staging",
-          "sets": ["staging_da_chay"]
-        },
-        {
-          "key": "meeting",
-          "label": "Gọi họp nhanh",
-          "points": 3,
-          "kind": "meeting",
-          "slots": ["mentor", "support"]
+          "kind": "open",
+          "target": "wiki",
+          "sets": ["da_mo_wiki"],
+          "free_on_repeat": true
         },
         {
           "key": "write_patch",
@@ -625,9 +1304,47 @@
           }
         },
         {
+          "key": "run_staging",
+          "label": "Chạy thử trên staging",
+          "points": 2,
+          "kind": "run",
+          "target": "log_staging",
+          "sets": ["staging_da_chay"]
+        },
+        {
+          "key": "xuat_file_action",
+          "label": "Xuất danh sách đơn cho chị Linh",
+          "points": 2,
+          "kind": "run",
+          "target": "xuat_file",
+          "requires": {
+            "all": ["da_mo_wiki"],
+            "none": ["da_gui_file"]
+          },
+          "sets": ["da_gui_file"],
+          "beats": [
+            {
+              "speaker": "support",
+              "text": "Chị nhận rồi nè em, để bên chị đặt giùm họ.",
+              "expression": "vui"
+            }
+          ]
+        },
+        {
+          "key": "deploy_prod_action",
+          "label": "Đưa lên production",
+          "points": 1,
+          "kind": "run",
+          "target": "deploy_prod",
+          "requires": {
+            "all": ["staging_da_chay"]
+          },
+          "sets": ["tu_dua_len"]
+        },
+        {
           "key": "wait",
           "label": "Tạm làm việc khác",
-          "points": 0,
+          "points": 1,
           "kind": "wait"
         },
         {
@@ -648,40 +1365,60 @@
       "ambient": [
         {
           "id": "am1",
-          "text": "Nhóm chat team bàn trưa nay ăn cơm tấm hay bún đậu."
+          "text": "Có người trong nhóm chat hỏi: \"Trưa nay cơm tấm hay bún đậu mấy ông?\" Ba người thả tim cơm tấm.",
+          "after": "10:35",
+          "before": "10:40"
         },
         {
           "id": "am2",
-          "text": "Máy lạnh phòng họp kế bên kêu rè rè, có người đứng dậy chỉnh."
+          "text": "Phòng họp kế bên, máy lạnh kêu rè rè, có người đứng dậy chỉnh.",
+          "after": "10:45",
+          "before": "10:50"
         },
         {
           "id": "am3",
-          "text": "Có người hỏi trong nhóm chat ai còn dư sạc laptop."
-        },
-        {
-          "id": "am4",
-          "text": "Chị lao công đi ngang, hỏi nhỏ bàn bạn có rác cần đổ không."
-        },
-        {
-          "id": "am5",
-          "text": "Bot deploy báo \"Build module thanh toán #482 đang chạy…\"",
-          "before": "11:30"
+          "text": "Có người hỏi trong nhóm chat ai còn dư sạc laptop.",
+          "after": "11:45"
         }
       ],
       "ambient_min_points": 2,
       "timeline": [
         {
-          "at": "10:30",
+          "at": "10:05",
+          "kind": "notice",
+          "speaker": "bot_deploy",
+          "text": "Build module thanh toán #482 bắt đầu chạy…",
+          "unlocks": ["f16"]
+        },
+        {
+          "at": "10:40",
+          "kind": "notice",
+          "speaker": "bot_deploy",
+          "text": "Build #482 xong ✅"
+        },
+        {
+          "at": "11:00",
           "kind": "silent",
-          "fact_update": {
-            "fact": "f2",
-            "text": "Bộ phận hỗ trợ đã nhận 12 phàn nàn."
+          "presence": {
+            "slot": "mentor",
+            "text": "Đang họp · 11:20 trả lời"
           }
         },
         {
-          "at": "11:30",
-          "kind": "scene",
-          "text": "Bot deploy báo \"Build #482 xong\". Lịch nhóm nhắc: 12:30 họp release. Anh An vẫn ngồi máy."
+          "at": "11:15",
+          "kind": "notice",
+          "speaker": "bot_giam_sat",
+          "channel": "group",
+          "text": "3 yêu cầu lịch sử đơn của MP-0042 bị app tự ngắt vì quá 5 giây (11:12–11:15).",
+          "unlocks": ["f17"]
+        },
+        {
+          "at": "11:20",
+          "kind": "silent",
+          "presence": {
+            "slot": "mentor",
+            "text": null
+          }
         }
       ],
       "promise_reminders": [
@@ -742,7 +1479,7 @@
           "text": "khi anh An duyệt bản sửa"
         }
       ],
-      "wait_window": 6,
+      "wait_window": 1,
       "nodes": [
         {
           "id": "n0",
@@ -761,17 +1498,17 @@
               "beats": [
                 {
                   "speaker": "mentor",
-                  "text": "Em ơi, API lịch sử đơn chậm từ 8 giờ, 0,2 giây lên hơn 4 giây. Chắc DB quá tải giờ cao điểm.",
+                  "text": "Lan ơi, API lịch sử đơn có request chậm từ 8h, bình thường 0,2s mà có lúc lên hơn 4s.",
                   "expression": "lo_lang"
                 },
                 {
                   "speaker": "mentor",
-                  "text": "Anh đang dí release thanh toán 2 giờ chiều, em coi giùm, trưa có hướng xử lý báo anh nha.",
-                  "expression": "binh_thuong"
+                  "text": "Chắc DB quá tải giờ cao điểm. Anh đang chạy release thanh toán 2h chiều, em coi giùm anh, trước 12h có hướng xử lý thì gửi anh nha.",
+                  "expression": "suy_nghi"
                 },
                 {
                   "speaker": "mentor",
-                  "text": "À, đụng production thì nhắn #su-co trước, anh duyệt rồi mới lên. Đừng hứa giờ với khách khi chưa chắc nha.",
+                  "text": "À, đụng production thì nhắn #su-co trước, anh duyệt rồi mới lên. Bên CS chắc sẽ hỏi em giờ xong, chưa chắc thì đừng hứa nha.",
                   "expression": "binh_thuong"
                 }
               ]
@@ -794,22 +1531,22 @@
             {
               "when": "any",
               "if": {
-                "all": ["support_biet_tim_ra_loi", "hua_bao_lai"]
+                "all": ["da_goi_linh", "support_biet_tim_ra_loi", "hua_bao_lai"]
               },
               "beats": [
                 {
                   "speaker": "support",
-                  "text": "Alo em ơi, chị Linh nè. Em nói tìm ra lỗi rồi, chị báo khách là đang sửa rồi đó.",
+                  "text": "Alo em ơi, chị Linh nè. Chị có nói với khách là bên kỹ thuật thấy lỗi rồi.",
                   "expression": "lo_lang"
                 },
                 {
                   "speaker": "support",
-                  "text": "Mà Minh Phát hổng chịu chờ nữa, họ nói trưa còn lag là huỷ hợp đồng luôn.",
+                  "text": "Mà bên Minh Phát hổng chịu chờ nữa, mười hai cuộc rồi á. Họ nói trưa còn vậy là ngưng hợp đồng luôn.",
                   "expression": "kho_chiu"
                 },
                 {
                   "speaker": "support",
-                  "text": "Chị nói với họ trưa xong được hông em?",
+                  "text": "Em nói chị nghe, trưa xong được hông em?",
                   "expression": "lo_lang"
                 }
               ]
@@ -817,22 +1554,23 @@
             {
               "when": "any",
               "if": {
-                "all": ["support_biet_tim_ra_loi"]
+                "all": ["da_goi_linh", "support_biet_tim_ra_loi"],
+                "none": ["hua_bao_lai"]
               },
               "beats": [
                 {
                   "speaker": "support",
-                  "text": "Alo em ơi, nghe em nói tìm ra lỗi rồi chị mừng quá.",
-                  "expression": "vui"
-                },
-                {
-                  "speaker": "support",
-                  "text": "Mà Minh Phát nói trưa còn lag là huỷ hợp đồng luôn á.",
+                  "text": "Alo em ơi, chị Linh nè. Chị có nói với khách là bên kỹ thuật thấy lỗi rồi.",
                   "expression": "lo_lang"
                 },
                 {
                   "speaker": "support",
-                  "text": "Chị nói với họ trưa xong được hông em?",
+                  "text": "Mà bên Minh Phát hổng chịu chờ nữa, mười hai cuộc rồi á. Họ nói trưa còn vậy là ngưng hợp đồng luôn.",
+                  "expression": "kho_chiu"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Trưa xong được hông em? Chị nói khách sao giờ?",
                   "expression": "lo_lang"
                 }
               ]
@@ -840,22 +1578,119 @@
             {
               "when": "any",
               "if": {
-                "all": ["hua_bao_lai"]
+                "all": ["da_goi_linh", "hua_bao_lai"],
+                "none": ["support_biet_tim_ra_loi"]
               },
               "beats": [
                 {
                   "speaker": "support",
-                  "text": "Alo em ơi, chị Linh nè. Chị biết em đang coi, mà khách hối quá.",
+                  "text": "Alo em ơi, chị Linh nè. Chị còn tưởng do mạng bên khách á.",
                   "expression": "lo_lang"
                 },
                 {
                   "speaker": "support",
-                  "text": "Minh Phát nói trưa còn lag là huỷ hợp đồng luôn.",
+                  "text": "Mà bên Minh Phát hổng chịu chờ nữa, mười hai cuộc rồi á. Họ nói trưa còn vậy là ngưng hợp đồng luôn.",
                   "expression": "kho_chiu"
                 },
                 {
                   "speaker": "support",
-                  "text": "Chị nói với họ trưa xong được hông em?",
+                  "text": "Em nói chị nghe, trưa xong được hông em?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["da_goi_linh"],
+                "none": ["support_biet_tim_ra_loi", "hua_bao_lai"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Alo em ơi, chị Linh nè. Chị còn tưởng do mạng bên khách á.",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Mà bên Minh Phát hổng chịu chờ nữa, mười hai cuộc rồi á. Họ nói trưa còn vậy là ngưng hợp đồng luôn.",
+                  "expression": "kho_chiu"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Trưa xong được hông em? Chị nói khách sao giờ?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["support_biet_tim_ra_loi", "hua_bao_lai"],
+                "none": ["da_goi_linh"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Alo em ơi, chị Linh nè. Chị có nói với khách là bên kỹ thuật thấy lỗi rồi.",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Mà bên Minh Phát hổng chịu chờ nữa, mười hai cuộc rồi á. Họ nói trưa còn vậy là ngưng hợp đồng luôn.",
+                  "expression": "kho_chiu"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Em nói chị nghe, trưa xong được hông em?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["support_biet_tim_ra_loi"],
+                "none": ["da_goi_linh", "hua_bao_lai"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Alo em ơi, chị Linh nè. Chị có nói với khách là bên kỹ thuật thấy lỗi rồi.",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Mà bên Minh Phát hổng chịu chờ nữa, mười hai cuộc rồi á. Họ nói trưa còn vậy là ngưng hợp đồng luôn.",
+                  "expression": "kho_chiu"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Trưa xong được hông em? Chị nói khách sao giờ?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["hua_bao_lai"],
+                "none": ["da_goi_linh", "support_biet_tim_ra_loi"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Alo em ơi, chị Linh bên chăm sóc khách hàng nè. Khách sỉ Minh Phát gọi chị nãy giờ á.",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Bên Minh Phát hổng chịu chờ nữa, mười hai cuộc rồi á. Họ nói trưa còn vậy là ngưng hợp đồng luôn.",
+                  "expression": "kho_chiu"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Em nói chị nghe, trưa xong được hông em?",
                   "expression": "lo_lang"
                 }
               ]
@@ -866,84 +1701,85 @@
               "beats": [
                 {
                   "speaker": "support",
-                  "text": "Alo em ơi, chị Linh bên hỗ trợ nè. Khách sỉ Minh Phát gọi chị nãy giờ á.",
+                  "text": "Alo em ơi, chị Linh bên chăm sóc khách hàng nè. Khách sỉ Minh Phát gọi chị nãy giờ á.",
                   "expression": "lo_lang"
                 },
                 {
                   "speaker": "support",
-                  "text": "Họ nói trưa mà còn lag là huỷ hợp đồng luôn.",
+                  "text": "Bên Minh Phát hổng chịu chờ nữa, mười hai cuộc rồi á. Họ nói trưa còn vậy là ngưng hợp đồng luôn.",
                   "expression": "kho_chiu"
                 },
                 {
                   "speaker": "support",
-                  "text": "Chị nói với họ trưa xong được hông em?",
+                  "text": "Trưa xong được hông em? Chị nói khách sao giờ?",
                   "expression": "lo_lang"
                 }
               ]
             }
           ],
           "format": "timed_choice",
-          "prompt": "Chị nói với họ trưa xong được hông em?",
-          "time_limit_seconds": 30,
+          "prompt": "Em nói chị nghe, trưa xong được hông em?",
+          "time_limit_seconds": 40,
           "options": [
             {
               "key": "a",
-              "text": "Em chưa chắc được giờ xong chị ơi. 11 rưỡi em gọi báo chị tình hình nha.",
+              "text": "Em chưa dám hứa giờ chị ạ. 11h30 em gọi báo chị tình hình nha.",
+              "text_if": [
+                {
+                  "if": {
+                    "all": ["hua_bao_lai"]
+                  },
+                  "text": "Em chưa dám hứa giờ chị ạ. Tới giờ hẹn em báo chị như đã nói."
+                }
+              ],
               "reaction": [
                 {
                   "speaker": "support",
-                  "text": "Ừ, vậy 11 rưỡi em gọi chị nha.",
+                  "text": "Ừ, vậy chị chờ em báo nha.",
                   "expression": "binh_thuong"
-                },
-                {
-                  "speaker": "support",
-                  "text": "Chị nói khách là bên kỹ thuật đang xử lý, có tin chị báo liền.",
-                  "expression": "lo_lang"
                 }
               ],
-              "sets": ["hua_bao_lai"],
-              "promise": {
-                "to": "support",
-                "at": "11:30",
-                "channel": "call"
-              },
-              "_draft": "chữ phương án và reaction: soạn nháp, chờ DE duyệt"
+              "sets": ["hua_bao_lai"]
             },
             {
               "key": "b",
-              "text": "Dạ chị cứ nói khách trưa là xong ạ.",
+              "text": "Chắc trưa là xong thôi chị.",
               "reaction": [
                 {
                   "speaker": "support",
-                  "text": "Trời, vậy chị yên tâm rồi!",
-                  "expression": "vui"
-                },
-                {
-                  "speaker": "support",
-                  "text": "Chị báo Minh Phát liền nha em.",
+                  "text": "Trời, vậy chị yên tâm rồi! Chị báo Minh Phát liền nha em.",
                   "expression": "vui"
                 }
               ],
-              "sets": ["hua_chac_trua"],
-              "_draft": "chữ phương án và reaction: soạn nháp, chờ DE duyệt"
+              "sets": ["hua_chac_trua"]
             },
             {
               "key": "c",
-              "text": "Em chưa hứa giờ được chị. Chị nói khách là bên em đang tìm nguyên nhân, có tin em báo.",
+              "text": "Giờ em chưa nói được. Nhưng khách cần lịch sử để đặt lại đơn phải không chị? Em xuất danh sách đơn của họ gửi chị trong 15 phút.",
               "reaction": [
                 {
                   "speaker": "support",
-                  "text": "Khách đòi giờ mà em…",
-                  "expression": "kho_chiu"
+                  "text": "Ờ đúng rồi, họ bấm đặt lại đơn tuần trước á.",
+                  "expression": "ngac_nhien"
                 },
                 {
                   "speaker": "support",
-                  "text": "Thôi chị nói vậy trước, có gì em báo chị liền nha.",
+                  "text": "Có file thì bên chị đặt giùm họ được.",
+                  "expression": "vui"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Mà khách vẫn hỏi chừng nào hết lag đó em.",
                   "expression": "lo_lang"
                 }
               ],
-              "sets": [],
-              "_draft": "chữ phương án và reaction: soạn nháp, chờ DE duyệt"
+              "promise": {
+                "to": "support",
+                "at": "11:10",
+                "channel": "chat",
+                "by_action": "xuat_file_action",
+                "label": "Gửi chị Linh danh sách đơn trước 11:10"
+              }
             }
           ],
           "timeout": {
@@ -962,6 +1798,195 @@
             "sets": []
           },
           "free_turn_after_reaction": true,
+          "recheck_conversation_of": ["support"],
+          "points": 1
+        },
+        {
+          "id": "e1",
+          "kind": "mid",
+          "interjection": true,
+          "trigger": {
+            "by": "time",
+            "at": "11:10"
+          },
+          "speaker": "support",
+          "channel": "chat",
+          "core": "Minh Phát gọi lên sếp chị Linh. Chị đòi cập nhật và hỏi có cách nào nhanh hơn.",
+          "adapt": [
+            {
+              "when": "any",
+              "if": {
+                "all": [
+                  "support_biet_tim_ra_loi",
+                  "support_biet_co_ban_sua",
+                  "da_gui_file"
+                ]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Lan ơi, Minh Phát gọi lên tới sếp chị rồi 😥",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Bản sửa bên em tới đâu rồi? Có cách nào lên sớm hơn hông em?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["support_biet_tim_ra_loi", "support_biet_co_ban_sua"],
+                "none": ["da_gui_file"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Lan ơi, Minh Phát gọi lên tới sếp chị rồi 😥",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Bản sửa bên em tới đâu rồi? Có cách nào lên sớm hơn hông em?",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Khách còn cần lịch sử đơn để đặt lại, em có danh sách gửi bên chị được hông?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["support_biet_tim_ra_loi", "da_gui_file"],
+                "none": ["support_biet_co_ban_sua"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Lan ơi, Minh Phát gọi lên tới sếp chị rồi 😥",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Bên em sửa tới đâu rồi? Có cách nào nhanh hơn hông em?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["support_biet_tim_ra_loi"],
+                "none": ["support_biet_co_ban_sua", "da_gui_file"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Lan ơi, Minh Phát gọi lên tới sếp chị rồi 😥",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Bên em sửa tới đâu rồi? Có cách nào nhanh hơn hông em?",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Khách còn cần lịch sử đơn để đặt lại, em có danh sách gửi bên chị được hông?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["support_biet_co_ban_sua", "da_gui_file"],
+                "none": ["support_biet_tim_ra_loi"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Lan ơi, Minh Phát gọi lên tới sếp chị rồi 😥",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Bản sửa bên em tới đâu rồi? Có cách nào lên sớm hơn hông em?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["support_biet_co_ban_sua"],
+                "none": ["support_biet_tim_ra_loi", "da_gui_file"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Lan ơi, Minh Phát gọi lên tới sếp chị rồi 😥",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Bản sửa bên em tới đâu rồi? Có cách nào lên sớm hơn hông em?",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Khách còn cần lịch sử đơn để đặt lại, em có danh sách gửi bên chị được hông?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {
+                "all": ["da_gui_file"],
+                "none": ["support_biet_tim_ra_loi", "support_biet_co_ban_sua"]
+              },
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Lan ơi, Minh Phát gọi lên tới sếp chị rồi 😥",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Vậy lỗi do mạng khách hay do bên mình em? Có tin gì mới hông?",
+                  "expression": "lo_lang"
+                }
+              ]
+            },
+            {
+              "when": "any",
+              "if": {},
+              "beats": [
+                {
+                  "speaker": "support",
+                  "text": "Lan ơi, Minh Phát gọi lên tới sếp chị rồi 😥",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Vậy lỗi do mạng khách hay do bên mình em? Có tin gì mới hông?",
+                  "expression": "lo_lang"
+                },
+                {
+                  "speaker": "support",
+                  "text": "Khách còn cần lịch sử đơn để đặt lại, em có danh sách gửi bên chị được hông?",
+                  "expression": "lo_lang"
+                }
+              ]
+            }
+          ],
+          "format": "free_reply",
           "recheck_conversation_of": ["support"],
           "points": 1
         },
@@ -1017,41 +2042,19 @@
             "direction": "vì sao",
             "hooks": [
               {
-                "if": {
-                  "all": ["nguyen_nhan_da_noi_voi_mentor"]
-                },
-                "text": "anh An cần ghi vào báo cáo vì sao loại khả năng DB quá tải, điều chính anh từng tin; hỏi em lấy gì để loại",
+                "if": {},
+                "text": "Em dựa vào đâu để loại khả năng DB quá tải?",
                 "answered_if": "da_loai_db_bang_chung"
               },
               {
                 "if": {
-                  "all": ["nguyen_nhan_da_noi_voi_mentor"]
+                  "all": ["gc.co_chua_ro"]
                 },
-                "text": "anh An thấy ghi chú còn mấy khả năng chưa đánh dấu; hỏi chung em loại mấy cái còn lại bằng gì. Không nêu tên khả năng nào",
-                "answered_if": "gc.h4"
-              },
-              {
-                "if": {
-                  "none": ["nguyen_nhan_da_noi_voi_mentor"]
-                },
-                "text": "anh An cần chắc trước khi cho sửa; hỏi em dựa vào đâu giữ hay loại một giả thuyết",
-                "answered_if": "da_loai_db_bang_chung"
-              },
-              {
-                "if": {
-                  "none": ["nguyen_nhan_da_noi_voi_mentor"]
-                },
-                "text": "anh An thấy ghi chú còn mấy khả năng chưa đánh dấu; hỏi chung em loại mấy cái còn lại bằng gì. Không nêu tên khả năng nào",
-                "answered_if": "gc.h4"
+                "text": "Mấy cái em để chưa rõ, em tính kiểm bằng gì?"
               }
             ]
           },
-          "node_checks": [
-            {
-              "flag": "gc.h4",
-              "q": "Trong nút này, người chơi có nói giữ khả năng API trả hết đơn không giới hạn, kèm lý do không?"
-            }
-          ],
+          "node_checks": [],
           "recheck_conversation_of": ["mentor"],
           "points": 1
         },
@@ -1061,7 +2064,7 @@
           "trigger": {
             "by": "player",
             "action": "gui_anh_an",
-            "fallback_at": "12:00"
+            "fallback_at": "11:45"
           },
           "speaker": "mentor",
           "channel": "chat",
@@ -1073,7 +2076,7 @@
               "beats": [
                 {
                   "speaker": "mentor",
-                  "text": "Trưa rồi nè em, gửi anh hướng xử lý nha.",
+                  "text": "Sắp trưa rồi nè em, gửi anh hướng xử lý nha.",
                   "expression": "binh_thuong"
                 }
               ]
@@ -1088,24 +2091,30 @@
             "hooks": [
               {
                 "if": {
-                  "all": ["email.co_cach_kiem", "email.co_rollback"]
+                  "none": ["bv.v1"]
                 },
-                "text": "anh An sắp duyệt; hỏi một tình huống xấu khác sau khi lên production, ví dụ khách nhiều đơn hơn hay app cũ"
+                "text": "Bản này lên rồi, gặp khách có nhiều đơn hơn nữa thì sao em?"
               },
               {
                 "if": {},
-                "text": "anh An chưa thấy cách kiểm hay cách lùi lại; hỏi nếu lên production rồi lỗi thì em làm gì"
+                "text": "Lên rồi có lỗi thì em làm gì?",
+                "answered_if": "email.co_rollback"
+              },
+              {
+                "if": {},
+                "text": "Lên rồi sao em biết là ổn?",
+                "answered_if": "email.co_cach_kiem"
               }
             ]
           },
           "node_checks": [
             {
               "flag": "n3.co_cach_kiem",
-              "q": "Trong nút này, người chơi có nêu cách kiểm tra hay theo dõi sau khi đưa lên production không?"
+              "q": "Email có nêu cách kiểm tra cụ thể sau khi đưa lên production, như chỉ số và ngưỡng để biết bản sửa ổn không?"
             },
             {
               "flag": "n3.co_rollback",
-              "q": "Trong nút này, người chơi có nêu cách lùi lại nếu bản sửa gây lỗi không (ví dụ rollback, deploy lại bản cũ)?"
+              "q": "Email có nêu cách lùi lại (rollback) nếu bản sửa gây lỗi không?"
             }
           ],
           "closing": {
@@ -1113,8 +2122,13 @@
             "approve_beats": [
               {
                 "speaker": "mentor",
-                "text": "Ok em, anh duyệt. Nhắn #su-co trước rồi đưa lên nha.",
+                "text": "Ok Lan, anh duyệt.",
                 "expression": "vui"
+              },
+              {
+                "speaker": "mentor",
+                "text": "Nhắn #su-co rồi đưa lên nha.",
+                "expression": "binh_thuong"
               }
             ],
             "defer_hint": "Anh An chưa duyệt. Nói lý do bằng nỗi lo bản sửa làm hỏng chỗ khác trên production (\"để anh coi kỹ đã\"). Không dặn cách làm, không nói người chơi còn thiếu gì.",
@@ -1123,8 +2137,96 @@
           "points": 1
         }
       ],
-      "_draft_closing": "n3.closing.approve_beats: soạn nháp (seed chỉ ghi \"anh An duyệt\"), chờ DE duyệt",
+      "last_word": {
+        "to": "support",
+        "event": "su_kien.duyet",
+        "channel": "chat",
+        "prompt": "Nhắn chị Linh trước khi kết ca?",
+        "reply": [
+          {
+            "speaker": "support",
+            "text": "Trời, vậy chị báo khách liền nha em!",
+            "expression": "vui"
+          }
+        ]
+      },
+      "epilogue": [
+        {
+          "if": {
+            "all": ["resolved_rui_ro_production"]
+          },
+          "beats": [
+            {
+              "speaker": "bot_deploy",
+              "text": "Bản sửa lên production lúc 12:06.",
+              "expression": "binh_thuong"
+            },
+            {
+              "speaker": "bot_giam_sat",
+              "text": "12:20 · MP-0042: 1,12s · 2 lần hỏi CSDL.",
+              "expression": "binh_thuong"
+            },
+            {
+              "speaker": "support",
+              "text": "Minh Phát nói mở được rồi nè em, hú hồn!",
+              "expression": "vui"
+            }
+          ]
+        },
+        {
+          "if": {
+            "none": ["resolved_rui_ro_production", "tu_dua_len"]
+          },
+          "beats": [
+            {
+              "speaker": "canh",
+              "text": "Bản sửa chưa được duyệt. Chị Linh tiếp tục hỗ trợ khách trong lúc chờ.",
+              "expression": "binh_thuong"
+            }
+          ]
+        },
+        {
+          "if": {
+            "all": ["tu_dua_len"],
+            "none": ["resolved_rui_ro_production"]
+          },
+          "beats": [
+            {
+              "speaker": "canh",
+              "text": "Bản sửa đã lên khi chưa được duyệt. Anh An kiểm tra lại thay đổi trên production.",
+              "expression": "binh_thuong"
+            }
+          ]
+        }
+      ],
       "review": [
+        {
+          "id": "tu_dua_len",
+          "if": {
+            "all": ["tu_dua_len"]
+          },
+          "by": "mentor",
+          "channel": "chat",
+          "hook": "Anh An thấy bản sửa đã lên production trước khi duyệt; hỏi lúc đó em quyết định dựa vào đâu."
+        },
+        {
+          "id": "hua_chac_trua",
+          "if": {
+            "all": ["hua_chac_trua"]
+          },
+          "by": "support",
+          "channel": "chat",
+          "hook": "khách đã nghe chị hứa trưa xong; hỏi nếu trưa chưa lên được thì chị nói sao"
+        },
+        {
+          "id": "de_support_tin_sai",
+          "if": {
+            "all": ["de_support_tin_sai"]
+          },
+          "by": "support",
+          "channel": "chat",
+          "hook": "Chị Linh đã hiểu sai tình hình khi nói lại với khách; hỏi giờ chị nên đính chính ra sao."
+        },
         {
           "id": "tre_hen",
           "if": {
@@ -1141,18 +2243,55 @@
           "by": "support",
           "channel": "chat",
           "hook": "chị Linh vẫn đang chờ tin em hẹn; hỏi giờ chị nói sao với khách"
-        },
-        {
-          "id": "hua_chac_trua",
-          "if": {
-            "all": ["hua_chac_trua"]
-          },
-          "by": "support",
-          "channel": "chat",
-          "hook": "khách đã nghe chị hứa trưa xong; hỏi nếu trưa chưa lên được thì chị nói sao"
         }
       ],
-      "review_max": 2
+      "review_max": 2,
+      "_draft_observes": "Observes soạn theo bằng chứng trong Chấm dự kiến của lượt chơi mẫu, chờ DE duyệt (BR-05). Mục R (Lường trước rủi ro) có trong WT nhưng chưa có trong thư viện checklist, chờ nhóm chốt.",
+      "observes": [
+        {
+          "sub": "4.2",
+          "from": ["pha", "n2", "n3"],
+          "signs": {
+            "A": "Nêu bước 2 lấy món từng đơn trong vòng lặp và số lần hỏi: MP-0042 900 đơn, hỏi 901 lần; Bà Ba 240 đơn, hỏi 241 lần.",
+            "B": "Loại DB quá tải bằng CPU 24–26% hoặc loại bản build thanh toán vì build bắt đầu 10:05, còn chậm từ 8:00.",
+            "C": "Dùng kết quả staging để kiểm chứng: từ 4,4 giây còn 0,18 giây (app 3.x) và 1,12 giây (app 2.x), đều chỉ 2 lần hỏi."
+          }
+        },
+        {
+          "sub": "7.1",
+          "from": ["pha", "n2", "n3"],
+          "signs": {
+            "A": "Nói với chị Linh lỗi ở API bên mình chứ không phải do mạng khách.",
+            "B": "Nhận rõ API lịch sử đơn là phần mình viết trong ghi chú hoặc email."
+          }
+        },
+        {
+          "sub": "1.5",
+          "from": ["pha", "n1", "e1"],
+          "signs": {
+            "A": "Chủ động báo chị Linh từ cuộc gọi 10:00–10:05, khi đã coi log.",
+            "B": "Nói rõ có bản sửa chạy thử rồi, đang chỉnh cho máy tính bảng và cần anh An duyệt.",
+            "C": "Hẹn 11:30 gọi báo chị Linh tình hình hoặc báo khi anh An duyệt."
+          }
+        },
+        {
+          "sub": "7.4",
+          "from": ["pha", "n1", "e1", "review"],
+          "signs": {
+            "A": "Hẹn gọi chị Linh 11:30 và gọi đúng hẹn, hoặc cam kết gửi danh sách đơn trong 15 phút ở n1-c và gửi trước 11:10.",
+            "B": "Nói rõ phải có anh An duyệt mới đưa lên được."
+          }
+        },
+        {
+          "sub": "1.1",
+          "from": ["n3"],
+          "signs": {
+            "A": "Nêu thẳng nguyên nhân và hướng xử lý ở đầu từng phần email.",
+            "B": "Yêu cầu rõ anh An duyệt bản sửa để đưa lên production.",
+            "C": "Kèm số liệu cụ thể: 901 lần hỏi, 4,4 giây còn 0,18 giây."
+          }
+        }
+      ]
     }
   }
 }

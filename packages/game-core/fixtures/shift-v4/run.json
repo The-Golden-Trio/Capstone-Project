@@ -1,0 +1,473 @@
+{
+  "source": "b67c1f95105c295d56166493dea4029ad4013fdc",
+  "traceDigests": [
+    "e61de4c53bba074f8b8d94eab94060058add0388401c8c17c2b7028cc80c44ed",
+    "d746aca2918a5e6e51d8bd3b02928017bf3e1bf65910f66276de245b58a64eb5",
+    "be001e2aa62248e765bc3720ee1830e1ff0558a280e7bbe64b5f54b3970f81a7",
+    "1406ad4f6fd8fce75295ad41f19cab77f851bd8fa8beba75e0f6fd312a64a9b4",
+    "555dab2e83504ad906eb5e663b2167a85424f61cbd40a80f0a4fb4c54707332f",
+    "4e9c65e90939fb623f4859bc9e0b0ba8b5c6d5c6a30856df7d50113c824fce5a",
+    "569a91f37a8aaf0b2ac6c179dc3e11edc49dcf100bf5678d6495ccf9564b709e",
+    "5b2cc8769c8a4c9edc5ba25656d09b1499879fc834331a1cedc2bd5d768bbf60",
+    "769eed69de5e6f8e543b743b521e93cdec9ab03807aa9e713e9877d4bc15daa3",
+    "1336981e0ade04260f1184fd8ea1bd7f0065899b97ac14e63121602cf61905df",
+    "4cc82b33aebff7a5d63ee4dc288830db0dd0f6b5f4eb7a86d062fced3bdf83f2",
+    "fd30a0285633ac087082e8eb26e23a6917920a1ac0273fd73e92554f9fc15338",
+    "2e990d1823f587b07f34d55ff6dc6b2af7d62f72ced09e8792319f520933dd24",
+    "5ac1921a482a86e7d0e80447767b33ddcbc2bcd6ca0ed4991e0b787367a4a571",
+    "9eba14dc18381149ed1ec69eb04f6f862a49b50debbafafdfb1628c1cc01059e",
+    "d9072714819e2363ef3d5249a63de5e69172d7e4aa385f48da2bedf4ae8f50a7",
+    "4d13f0d14cdb2db6d864b6309aed04a1f5bf3667de297a5b863c5e1dfb1c28f7",
+    "f98d77e30b7f9ee3d48c9334af4d681b8cf3bfd7d925a9389c7058dfc6b8cb77",
+    "d710345a33f2b3e706c8a75036d48a2f2ce5ddec4d9d48617e8c3a751a6ebe03",
+    "9f560d44019a12d3079469dec81002caa403d38f7aeb64962c6ef418b8fc81aa",
+    "48d56533ab9e99992027e26454608c5d46fb287eec870fa2f2cce2e51f4516e2",
+    "db85aaafd6e0d64d405103041cbabd006a9adb5bde2ce01dd4763e138698b8e7",
+    "d442b2365670988b93402cb580a4744f7b0355d224715c7c2c9a7a973df27890",
+    "b6c03a629e4652432cec566725236d3fc11db7c96fda95774b2251d5a93c814c",
+    "f7d753c780b4f766fce30808e262b5fb8f0b64c652c062ade271717f997d7d35",
+    "36bd1b3a92a7cab4406ad825d5cb497b154db55801c9465d6e90df3a65cce1b5",
+    "8a41395714ea1743f2c6bcfff787a88c690a2be7dfb4ebc0c2effc251e727c11",
+    "c7837a4bd7b09da7c4faddb260a4942a83dd098a4673648875ca6e14c6067a12",
+    "69abfcc23ee1165cd58f1e87e60b7d4a5af733c56f882b8fe5d30e1ba8ef8e6f",
+    "74a469fcc33a659ace559d7d4438c84ef4e8a770b8309794a4f4c1b389760d4a",
+    "f73ff90800e4a162a93ea40ef0d0ff267323caa97aef219f8c25afce695dd177",
+    "77d9467b06b19e400183f3a5d728ac0bb2364b94f9b3b3ed65830dfd4758e7ae",
+    "85e7067389dc82d3ef545027f6eed4b2e05573a698bca17d28233911bf7c23e3",
+    "5e165a9f6039320882ad741a8f32123e5dfda87426ad04c30b24d47234d99bc3",
+    "4f1079fbeb2dcee9dc291a534da04072b4e848a4fd6bb00f4d6e0ae33d68bf9b",
+    "66ebbfc966f19d15c3bcd422d1e807bca1ecab66e9f3f2fbed79b7cacb69a77b",
+    "5478b43596e7ce8f36b449b493953350677d77c99397018adf010eb3dd8ed354",
+    "77b860b105b487c09c7ef96b4a07e18cb4dc8d25516d4643690e00c6211078d8",
+    "c5bc5682ed0b33e871fc0cc9464b48a0fa584a0a671f914dab48368f16926051",
+    "bfde3b9dfa3ec0c4b25f9ec91493cc0fe629fda0ef160d9cae5f6a83e59e6a4c",
+    "dbcab389fa05b56950265fcaf4eb76ca8cd15eea3d3b96a74307c98e911724b3",
+    "983bec1c7b3ac77f2009b36dfb9fb6296edc2e6ba16eaa6c3c0d9bd0f5753495",
+    "ea24d8801dca939b384dbbba8df60e9e50fe995fb1b927a99b91ca4beabb6c87",
+    "f14862e8be80ebea394040bef4c798a46ea754b6ba2a8d57ef11dd5ff6330403",
+    "2de6515fe17e70b6acb7be3cd3ddc957c4aacee6d44d351921190c4ea90ed550",
+    "d3d02d02038916e2d21b40fe73bd329de64b5a7496e99acfc793582c5d6fe438",
+    "d98c3c8ee54ea0d9daec340519533f171a8d5ef898f55345e6709f393afbd6e5",
+    "38eff7a0b1908e484f914a93caa4a663e796db7a4e26ec70abebeea892836870",
+    "79e89962f7c30c2341283abf0a0381f2f04ff4200ea627e8eaecdce8748d3ae2",
+    "a3f66478ddfca4f5a096f560d4648f00890eae9d40d2d3fa60a63d29241b25fa"
+  ],
+  "inputs": [
+    {
+      "type": "START"
+    },
+    {
+      "type": "SAY",
+      "text": "Dạ em coi liền anh."
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r1",
+      "beats": [
+        {
+          "speaker": "mentor",
+          "text": "Ừ, mình nghe rồi.",
+          "expression": "binh_thuong"
+        }
+      ]
+    },
+    {
+      "type": "ACTION",
+      "key": "open_log"
+    },
+    {
+      "type": "ACTION",
+      "key": "open_bang"
+    },
+    {
+      "type": "ACTION",
+      "key": "open_code"
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_support"
+    },
+    {
+      "type": "SAY",
+      "text": "Chị ơi em tìm ra lỗi rồi. 11:30 em gọi báo lại chị nha."
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r2",
+      "beats": [
+        {
+          "speaker": "support",
+          "text": "Ừ, mình nghe rồi.",
+          "expression": "binh_thuong"
+        }
+      ]
+    },
+    {
+      "type": "END_CONVERSATION"
+    },
+    {
+      "type": "CHECKS",
+      "requestId": "r3",
+      "answers": [
+        {
+          "flag": "support_biet_tim_ra_loi",
+          "answer": "yes",
+          "quote": "tìm ra lỗi"
+        },
+        {
+          "flag": "hua_bao_lai",
+          "answer": "yes",
+          "quote": "báo lại",
+          "extracted": {
+            "time": "11:30",
+            "channel": "call"
+          }
+        },
+        {
+          "flag": "hua_chac_trua",
+          "answer": "no"
+        },
+        {
+          "flag": "cho_cau_noi_voi_khach",
+          "answer": "no"
+        }
+      ]
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_support"
+    },
+    {
+      "type": "SAY",
+      "text": "Chị ơi em tìm ra lỗi rồi. 11:30 em gọi báo lại chị nha."
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r4",
+      "beats": [
+        {
+          "speaker": "support",
+          "text": "Ừ, mình nghe rồi.",
+          "expression": "binh_thuong"
+        }
+      ]
+    },
+    {
+      "type": "END_CONVERSATION"
+    },
+    {
+      "type": "CHECKS",
+      "requestId": "r5",
+      "answers": [
+        {
+          "flag": "support_biet_tim_ra_loi",
+          "answer": "yes",
+          "quote": "tìm ra lỗi"
+        },
+        {
+          "flag": "hua_bao_lai",
+          "answer": "yes",
+          "quote": "báo lại",
+          "extracted": {
+            "time": "11:30",
+            "channel": "call"
+          }
+        },
+        {
+          "flag": "hua_chac_trua",
+          "answer": "no"
+        },
+        {
+          "flag": "cho_cau_noi_voi_khach",
+          "answer": "no"
+        }
+      ]
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_mentor"
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_support"
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_mentor"
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_support"
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_mentor"
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_support"
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_mentor"
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_support"
+    },
+    {
+      "type": "ACTION",
+      "key": "talk_mentor"
+    },
+    {
+      "type": "CHOOSE",
+      "option": "a",
+      "elapsedMs": 9000
+    },
+    {
+      "type": "SAY",
+      "text": "Dạ em vẫn đang sửa chị ơi."
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r6",
+      "beats": [
+        {
+          "speaker": "support",
+          "text": "Ừ, mình nghe rồi.",
+          "expression": "binh_thuong"
+        }
+      ]
+    },
+    {
+      "type": "CHECKS",
+      "requestId": "r7",
+      "answers": [
+        {
+          "flag": "support_biet_tim_ra_loi",
+          "answer": "yes",
+          "quote": "đang sửa"
+        },
+        {
+          "flag": "hua_bao_lai",
+          "answer": "yes",
+          "quote": "gọi báo chị",
+          "extracted": {
+            "time": "11:30",
+            "channel": "call"
+          }
+        },
+        {
+          "flag": "hua_chac_trua",
+          "answer": "no"
+        },
+        {
+          "flag": "cho_cau_noi_voi_khach",
+          "answer": "no"
+        }
+      ]
+    },
+    {
+      "type": "ACTION",
+      "key": "write_patch",
+      "fields": {
+        "mo_ta": "Bỏ vòng lặp, gom chi tiết đơn bằng một truy vấn. Thêm phân trang, app cũ không gửi số trang."
+      },
+      "ticks": ["old_web_tick"]
+    },
+    {
+      "type": "CHECKS",
+      "requestId": "r8",
+      "answers": [
+        {
+          "flag": "bv.bo_vong_lap",
+          "answer": "yes",
+          "quote": "bỏ vòng lặp"
+        },
+        {
+          "flag": "bv.phan_trang",
+          "answer": "yes",
+          "quote": "phân trang"
+        },
+        {
+          "flag": "bv.giu_app_cu",
+          "answer": "yes",
+          "quote": "app cũ"
+        }
+      ]
+    },
+    {
+      "type": "SAVE_ARTEFACT",
+      "artefact": "ghi_chu_su_co",
+      "fields": {
+        "hien_tuong": "API lịch sử đơn chậm.",
+        "nguyen_nhan": "API gọi DB trong vòng lặp, 901 lần.",
+        "da_lam": "Đã gom truy vấn."
+      },
+      "ticks": ["h4", "h4", "unknown"]
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r9",
+      "beats": [
+        {
+          "speaker": "mentor",
+          "text": "Ừ, để mình coi.",
+          "expression": "binh_thuong"
+        }
+      ]
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r10",
+      "beats": [
+        {
+          "speaker": "mentor",
+          "text": "Em dựa vào đâu giữ hay loại một giả thuyết?",
+          "expression": "suy_nghi"
+        }
+      ]
+    },
+    {
+      "type": "SAY",
+      "text": "Dạ em dựa vào log."
+    },
+    {
+      "type": "CHECKS",
+      "requestId": "r11",
+      "answers": [
+        {
+          "flag": "gc.h4",
+          "answer": "no"
+        },
+        {
+          "flag": "nguyen_nhan_da_noi_voi_mentor",
+          "answer": "yes",
+          "quote": "vòng lặp"
+        },
+        {
+          "flag": "da_loai_db_bang_chung",
+          "answer": "no"
+        }
+      ]
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r12",
+      "beats": [
+        {
+          "speaker": "mentor",
+          "text": "Ừ, mình nghe rồi.",
+          "expression": "binh_thuong"
+        }
+      ]
+    },
+    {
+      "type": "ACTION",
+      "key": "run_staging"
+    },
+    {
+      "type": "END_CONVERSATION"
+    },
+    {
+      "type": "ACTION",
+      "key": "gui_anh_an"
+    },
+    {
+      "type": "CONFIRM_END"
+    },
+    {
+      "type": "SAVE_ARTEFACT",
+      "artefact": "email_an",
+      "fields": {
+        "nguyen_nhan": "API gọi DB trong vòng lặp, 901 lần.",
+        "huong_xu_ly": "Gom truy vấn.",
+        "rui_ro": "Theo dõi log sau khi lên; lỗi thì rollback về bản cũ."
+      }
+    },
+    {
+      "type": "CHECKS",
+      "requestId": "r13",
+      "answers": [
+        {
+          "flag": "email.co_cach_kiem",
+          "answer": "yes",
+          "quote": "theo dõi"
+        },
+        {
+          "flag": "email.co_rollback",
+          "answer": "yes",
+          "quote": "rollback"
+        }
+      ]
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r14",
+      "beats": [
+        {
+          "speaker": "mentor",
+          "text": "Ừ, để mình coi.",
+          "expression": "binh_thuong"
+        }
+      ]
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r15",
+      "beats": [
+        {
+          "speaker": "mentor",
+          "text": "Một tình huống xấu khác sau khi lên production, ví dụ khách nhiều đơn hơn hay app cũ?",
+          "expression": "suy_nghi"
+        }
+      ]
+    },
+    {
+      "type": "SAY",
+      "text": "Dạ em theo dõi log, nếu lỗi em rollback."
+    },
+    {
+      "type": "CHECKS",
+      "requestId": "r16",
+      "answers": [
+        {
+          "flag": "n3.co_cach_kiem",
+          "answer": "yes",
+          "quote": "theo dõi"
+        },
+        {
+          "flag": "n3.co_rollback",
+          "answer": "yes",
+          "quote": "rollback"
+        }
+      ]
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r17",
+      "beats": [
+        {
+          "speaker": "support",
+          "text": "Lúc đó em kẹt gì?",
+          "expression": "suy_nghi"
+        }
+      ]
+    },
+    {
+      "type": "SAY",
+      "text": "Dạ em theo dõi log, nếu lỗi em rollback."
+    },
+    {
+      "type": "NARRATION",
+      "requestId": "r18",
+      "beats": [
+        {
+          "speaker": "support",
+          "text": "Ừ, mình nghe rồi.",
+          "expression": "binh_thuong"
+        }
+      ]
+    }
+  ]
+}

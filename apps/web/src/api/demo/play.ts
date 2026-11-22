@@ -1,6 +1,6 @@
 import { shift } from '@datn/game-core';
 import { ApiError, type PlayEvent, type PlayService } from '../port';
-import type { RunSummary, ShiftRun, TurnInput } from '../types';
+import type { RunSummary, SceneView, ShiftRun, TurnInput } from '../types';
 import { context, loadProfile } from './data';
 import { stateOf } from './rules';
 import {
@@ -33,10 +33,22 @@ function emit(id: string, event: PlayEvent) {
     }
   }
 }
-function apply(r: SavedRun, input: shift.ShiftInput) {
+
+function sceneOf(r: SavedRun, state = stateOf(r)): SceneView {
+  return {
+    ...shift.sceneView(state, context(r.taskId)),
+    paused: r.paused,
+    pendingTurnId: state.pending ? r.turnId : null,
+  };
+}
+function apply(r: SavedRun, input: shift.ShiftInput, turnId?: string) {
   try {
     const before = stateOf(r);
     const next = shift.step(before, input, context(r.taskId)).state;
+    if (turnId) {
+      r.turnId = turnId;
+      (r.turnStarts ??= {})[turnId] = before.transcript.length;
+    }
     r.events.push(input);
     save();
     return {
@@ -60,7 +72,7 @@ function drive(p: Player, r: SavedRun): Promise<void> {
         if (!pending) {
           r.paused = false;
           save();
-          const scene = shift.sceneView(stateOf(r), context(r.taskId));
+          const scene = sceneOf(r);
           emit(r.id, {
             type: 'done',
             turnId: r.turnId,
@@ -76,7 +88,10 @@ function drive(p: Player, r: SavedRun): Promise<void> {
             ? {
                 type: 'NARRATION',
                 requestId: pending.request.requestId,
-                beats: shift.fakeNarration(pending.request),
+                beats: shift.fakeNarration(
+                  pending.request,
+                  shift.FAKE_SCRIPTS[r.taskId],
+                ),
                 provenance: { adapter: 'fake' },
               }
             : {
@@ -254,7 +269,7 @@ export const play: PlayService = {
       p.runs.push(r);
       apply(r, { type: 'START' });
     }
-    if (shift.pendingRequest(stateOf(r), ctx)) void drive(p, r);
+    if (!r.paused && shift.pendingRequest(stateOf(r), ctx)) void drive(p, r);
     return runView(r);
   }),
   run: service((id) => {
@@ -268,29 +283,40 @@ export const play: PlayService = {
     const r = getRun(id);
     if (!r.paused && shift.pendingRequest(stateOf(r), context(r.taskId)))
       void drive(player(), r);
-    return shift.sceneView(stateOf(r), context(r.taskId));
+    return sceneOf(r);
   }),
   transcript: service((id, after) =>
     stateOf(getRun(id)).transcript.filter(
       (l) => after === undefined || l.seq > after,
     ),
   ),
-  turn: service((id, input) => {
+  turn: service((id, input, turnId = uid()) => {
     const p = player(),
       r = getRun(id);
-    if (jobs.has(id) || shift.pendingRequest(stateOf(r), context(r.taskId)))
-      throw new ApiError(409, 'TURN_PENDING', 'Lượt trước đang được xử lý.');
+    const state = stateOf(r);
+    const start = r.turnStarts?.[turnId];
+    if (typeof start === 'number') {
+      const markers = Object.entries(r.turnStarts ?? {});
+      const end =
+        markers[markers.findIndex(([savedId]) => savedId === turnId) + 1]?.[1];
+      const pending = turnId === r.turnId && state.pending !== null;
+      return {
+        turnId,
+        lines: state.transcript.slice(start, end),
+        scene: pending ? null : sceneOf(r, state),
+        pending,
+      };
+    }
     if (r.paused)
       throw new ApiError(409, 'RUN_PAUSED', 'Hãy tiếp tục lượt đang tạm dừng.');
-    r.turnId = uid();
-    const result = apply(r, playerInput(input));
+    if (jobs.has(id) || state.pending)
+      throw new ApiError(409, 'TURN_PENDING', 'Lượt trước đang được xử lý.');
+    const result = apply(r, playerInput(input), turnId);
     const pending =
       shift.pendingRequest(result.state, context(r.taskId)) !== null;
     if (pending) void drive(p, r);
-    const scene = pending
-      ? null
-      : shift.sceneView(result.state, context(r.taskId));
-    return { turnId: r.turnId, lines: result.lines, scene, pending };
+    const scene = pending ? null : sceneOf(r, result.state);
+    return { turnId, lines: result.lines, scene, pending };
   }),
   resume: service((id) => {
     const r = getRun(id);

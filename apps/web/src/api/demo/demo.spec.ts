@@ -99,6 +99,7 @@ describe('demo ExplorerApi', () => {
           };
           break;
         case 'conversation':
+        case 'last_word':
           input = { kind: 'end_conversation' };
           break;
         case 'node_reply':

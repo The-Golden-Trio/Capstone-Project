@@ -131,7 +131,73 @@ export type Fact = z.infer<typeof FactSchema>;
 export const ArtefactFieldSchema = z.object({
   id: z.string(),
   label: z.string(),
+  placeholder: z.string().optional(),
+  multiline: z.boolean().default(true),
 });
+
+const ArtefactSelectSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  options: z.array(z.object({ id: z.string(), label: z.string() })),
+  reason: z.boolean(),
+});
+export type ArtefactField = z.infer<typeof ArtefactFieldSchema>;
+export type ArtefactSelect = z.infer<typeof ArtefactSelectSchema>;
+
+export const ArtefactViewSchema = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('table'),
+    columns: z.array(z.string()),
+    rows: z.array(z.array(z.string())),
+    raw: z.array(z.string()).optional(),
+    caption: z.string().optional(),
+  }),
+  z.object({
+    type: z.literal('dashboard'),
+    metrics: z.array(
+      z.object({
+        label: z.string(),
+        value: z.string(),
+        note: z.string().optional(),
+        tone: z.enum(['ok', 'warn', 'bad']).optional(),
+      }),
+    ),
+    caption: z.string().optional(),
+  }),
+  z.object({
+    type: z.literal('code'),
+    path: z.string(),
+    language: z.enum(['js', 'ts', 'sql', 'text']),
+    code: z.array(z.string()),
+    hovers: z.array(z.object({ token: z.string(), text: z.string() })),
+  }),
+  z.object({
+    type: z.literal('wiki'),
+    space: z.string(),
+    sections: z.array(
+      z.object({
+        id: z.string(),
+        title: z.string(),
+        body: z.array(z.string()),
+      }),
+    ),
+  }),
+  z.object({ type: z.literal('terminal'), command: z.string().optional() }),
+  z.object({
+    type: z.literal('patch'),
+    path: z.string(),
+    base: z.array(z.string()),
+  }),
+  z.object({
+    type: z.literal('mail'),
+    to: z.string(),
+    subject_field: z.string().optional(),
+  }),
+  z.object({ type: z.literal('note') }),
+  z.object({ type: z.literal('channel'), channel: z.string() }),
+  z.object({ type: z.literal('file'), filename: z.string() }),
+]);
+export type ArtefactView = z.infer<typeof ArtefactViewSchema>;
 
 export const ArtefactBranchSchema = z.object({
   if: FlagExprSchema.default({}),
@@ -150,8 +216,12 @@ export const ArtefactSchema = z.object({
    */
   kind: z.enum(['document', 'form', 'result']),
   body: z.array(z.string()).optional(),
+  view: ArtefactViewSchema.optional(),
   fields: z.array(ArtefactFieldSchema).optional(),
-  ticks: z.array(ArtefactFieldSchema).optional(),
+  ticks: z
+    .array(ArtefactFieldSchema.pick({ id: true, label: true }))
+    .optional(),
+  selects: z.array(ArtefactSelectSchema).default([]),
   /** Câu kiểm chạy lúc lưu (A12). */
   checks: z.array(CheckQuestionSchema).default([]),
   /** Ô tick bật cờ trực tiếp: `{ h4: "gc.h4" }`. */
@@ -240,6 +310,11 @@ export const ActionSchema = z.object({
   requires: FlagExprSchema.optional(),
   /** Cờ bật khi hành động xong. */
   sets: z.array(z.string()).default([]),
+  beats: z.array(BeatSchema).default([]),
+  beats_if: z
+    .array(z.object({ if: FlagExprSchema, beats: z.array(BeatSchema) }))
+    .default([]),
+  unlocks: z.array(z.string()).default([]),
   /** Mở lại không tốn điểm (xem lại tài liệu). */
   free_on_repeat: z.boolean().default(false),
 });
@@ -255,8 +330,14 @@ export const AmbientSchema = z.object({
 export const TimelineItemSchema = z.object({
   at: ClockTimeSchema,
   /** `silent`: chỉ đổi dữ kiện, không hiện, không cắt hành động. */
-  kind: z.enum(['silent', 'scene']),
+  kind: z.enum(['silent', 'scene', 'notice']),
   text: z.string().optional(),
+  speaker: z.string().optional(),
+  channel: ChannelSchema.optional(),
+  unlocks: z.array(z.string()).default([]),
+  presence: z
+    .object({ slot: z.string(), text: z.string().nullable() })
+    .optional(),
   fact_update: z.object({ fact: z.string(), text: z.string() }).optional(),
 });
 
@@ -286,6 +367,9 @@ export const ProbeHookSchema = z.object({
 export const NodeOptionSchema = z.object({
   key: z.string(),
   text: z.string(),
+  text_if: z
+    .array(z.object({ if: FlagExprSchema, text: z.string() }))
+    .default([]),
   reaction: z.array(BeatSchema).min(1),
   sets: z.array(z.string()).default([]),
   /** Phương án là lời hứa theo giờ (A1b). */
@@ -295,14 +379,18 @@ export const NodeOptionSchema = z.object({
       at: ClockTimeSchema.optional(),
       event: z.string().optional(),
       channel: ChannelSchema,
+      by_action: z.string().optional(),
+      label: z.string().optional(),
     })
     .optional(),
   _draft: DraftNote,
 });
+export type NodeOption = z.infer<typeof NodeOptionSchema>;
 
 export const NodeSchema = z.object({
   id: z.string(),
   kind: z.enum(['open', 'mid', 'end']),
+  interjection: z.boolean().default(false),
   trigger: z.object({
     by: z.enum(['start', 'time', 'player']),
     at: ClockTimeSchema.optional(),
@@ -401,6 +489,9 @@ export const ShiftSeedSchema = z.object({
   situation: z.string(),
   goal: z.string(),
   stakes: z.string(),
+  intro_slides: z
+    .array(z.object({ title: z.string(), body: z.string() }))
+    .optional(),
   clock: z.object({
     start: ClockTimeSchema,
     deadline: ClockTimeSchema,
@@ -413,8 +504,12 @@ export const ShiftSeedSchema = z.object({
   facts: z.array(FactSchema),
   artefacts: z.array(ArtefactSchema),
   cast: z.array(CastSlotSchema).min(1),
+  bots: z.array(z.object({ id: z.string(), name: z.string() })).default([]),
   conversation_checks: z.array(ConversationCheckSchema).default([]),
   story_flags: z.array(z.string()),
+  derived_flags: z
+    .array(z.object({ flag: z.string(), any_of: z.array(FlagExprSchema) }))
+    .default([]),
   actions: z.array(ActionSchema),
   ambient: z.array(AmbientSchema).default([]),
   /** Chèn ambient sau hành động tốn từ bấy nhiêu điểm (A10, D6). */
@@ -427,7 +522,20 @@ export const ShiftSeedSchema = z.object({
     .default([]),
   /** "Tạm làm việc khác" hiện khi nút lõi kế theo giờ còn cách tối đa bấy nhiêu điểm. */
   wait_window: z.number().int().positive().default(6),
+  player_first_at_fallback: z.boolean().default(false),
   nodes: z.array(NodeSchema).min(2),
+  last_word: z
+    .object({
+      to: z.string(),
+      event: z.string(),
+      channel: ChannelSchema,
+      prompt: z.string(),
+      reply: z.array(BeatSchema),
+    })
+    .optional(),
+  epilogue: z
+    .array(z.object({ if: FlagExprSchema, beats: z.array(BeatSchema) }))
+    .default([]),
   review: z.array(ReviewItemSchema).default([]),
   review_max: z.number().int().positive().default(2),
   /** Khối E1: mục con cần chấm và đoạn bằng chứng của từng mục. */
