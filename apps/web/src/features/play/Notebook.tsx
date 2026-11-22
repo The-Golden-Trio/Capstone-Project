@@ -5,7 +5,7 @@
  */
 import { useId, useMemo, useRef, useState, type FormEvent } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { Search } from 'lucide-react';
+import { ExternalLink, FileText, Search } from 'lucide-react';
 import {
   ToonBadge,
   ToonButton,
@@ -39,11 +39,13 @@ export function Notebook({
   run,
   scene,
   lines,
+  onOpenDocument,
   className,
 }: {
   run: ShiftRun;
   scene: SceneView;
   lines: TranscriptLine[];
+  onOpenDocument: (id: string) => void;
   className?: string;
 }) {
   const [tab, setTab] = useState<Tab>('facts');
@@ -198,40 +200,25 @@ export function Notebook({
               ))}
             {tab === 'docs' &&
               (scene.documents.length ? (
-                <div className="space-y-3">
-                  {scene.documents.map((d) => (
-                    <article
-                      key={d.id}
-                      className="rounded-xl border-[2.5px] border-toon-ink bg-toon-paper p-3.5 shadow-toon-sm"
-                    >
-                      <h4 className="font-toon text-base font-extrabold text-toon-ink first-letter:uppercase">
-                        {d.title}
-                      </h4>
-                      {d.body && (
-                        <div className="mt-2 space-y-1 font-mono text-[12px] font-normal leading-relaxed text-toon-ink-soft">
-                          {d.body.map((b, i) => (
-                            <p key={i}>{b}</p>
-                          ))}
-                        </div>
-                      )}
-                      {d.lines && (
-                        <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded-lg border-2 border-toon-ink bg-[#26302b] p-2 font-mono text-[11px] font-normal text-[#b7f0c9]">
-                          {d.lines.join('\n')}
-                        </pre>
-                      )}
-                      {d.saved && (
-                        <div className="mt-2 space-y-1 text-[12px] text-toon-ink-soft">
-                          {Object.entries(d.saved.fields).map(([k, v]) => (
-                            <p key={k}>{v}</p>
-                          ))}
-                          <p className="text-[11px] font-extrabold uppercase tracking-wide text-toon-ink-faint">
-                            {d.saved.status === 'draft' ? 'Bản nháp' : 'Đã lưu'}
-                          </p>
-                        </div>
-                      )}
-                    </article>
+                <ul className="space-y-2">
+                  {scene.documents.map((doc) => (
+                    <li key={doc.id}>
+                      <button
+                        type="button"
+                        onClick={() => onOpenDocument(doc.id)}
+                        className="flex w-full items-center gap-2 rounded-xl border-2 border-toon-ink bg-toon-paper p-3 text-left font-toon font-extrabold text-toon-ink shadow-toon-sm hover:bg-toon-cream focus-visible:outline-none focus-visible:shadow-toon-focus"
+                      >
+                        <FileText size={17} className="shrink-0" aria-hidden />
+                        <span className="flex-1">{doc.title}</span>
+                        <ExternalLink
+                          size={15}
+                          className="shrink-0"
+                          aria-hidden
+                        />
+                      </button>
+                    </li>
                   ))}
-                </div>
+                </ul>
               ) : (
                 <Empty text="Tài liệu đã mở sẽ nằm ở đây, xem lại không tốn thời gian." />
               ))}
@@ -255,7 +242,7 @@ export function Notebook({
             {tab === 'more' && <MoreHeading>Người trong ca</MoreHeading>}
             {tab === 'more' && (
               <ul className="space-y-2.5">
-                {run.cast.map((c) => (
+                {scene.cast.map((c) => (
                   <li key={c.slot} className="flex items-center gap-3">
                     {looks.get(c.slot) && (
                       <Avatar
@@ -267,6 +254,11 @@ export function Notebook({
                     <span>
                       <span className="block font-toon text-base font-extrabold capitalize text-toon-ink">
                         {c.name}
+                        {c.status && (
+                          <span className="ml-1 rounded-full bg-[#ffe4a3] px-2 py-0.5 text-xs normal-case">
+                            {c.status}
+                          </span>
+                        )}
                       </span>
                       <span className="block text-xs text-toon-ink-soft">
                         {c.relation}

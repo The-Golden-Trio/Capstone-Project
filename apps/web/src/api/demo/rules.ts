@@ -6,8 +6,38 @@ import type {
 } from '../types';
 import { context, loadProfile, seedsFor } from './data';
 import type { Player, SavedRun } from './store';
-export const stateOf = (run: SavedRun) =>
-  shift.fold(context(run.taskId), run.events);
+
+export function hasRunResult(run: SavedRun): boolean {
+  return run.grade != null || run.reflection != null;
+}
+
+export function stateOf(run: SavedRun): shift.ShiftState {
+  const ctx = context(run.taskId);
+  // Both demo constructors call stateOf before appending START.
+  if (run.seedVersion === undefined && !run.stale && run.events?.length === 0)
+    run.seedVersion = ctx.seed.version;
+  if (!run.stale && run.seedVersion === ctx.seed.version) {
+    try {
+      return shift.fold(ctx, run.events);
+    } catch {
+      run.stale = true;
+    }
+  }
+  run.stale = true;
+  const initial = shift.initialState(ctx);
+  if (!hasRunResult(run)) return initial;
+
+  // Preserve the stored result without grading or interpreting old inputs.
+  run.grade ??= {
+    status: 'NOT_AVAILABLE',
+    score: null,
+    ending: null,
+    feedback: null,
+    softSkills: [],
+    keywordsGained: [],
+  };
+  return { ...initial, await: { kind: 'ended' }, ended: true, shiftOver: true };
+}
 export const completed = (p: Player, code: string, band: string): boolean => {
   const tasks = seedsFor(code, band);
   return (

@@ -13,10 +13,11 @@ const form = {
   id: 'patch',
   title: 'Bản vá',
   fields: [
-    { id: 'why', label: 'Nguyên nhân' },
-    { id: 'how', label: 'Hướng xử lý' },
+    { id: 'why', label: 'Nguyên nhân', multiline: true },
+    { id: 'how', label: 'Hướng xử lý', multiline: true },
   ],
   ticks: [],
+  selects: [],
 };
 
 it('biểu mẫu trống báo một lỗi, focus đúng ô và vẫn cho gửi khi có một phần', () => {
@@ -71,7 +72,9 @@ it('sổ tay báo không tìm thấy, tìm không dấu được và trả focus
       context: 'node:test',
     },
   ];
-  renderWithProviders(<Notebook run={run} scene={scene} lines={lines} />);
+  renderWithProviders(
+    <Notebook run={run} scene={scene} lines={lines} onOpenDocument={vi.fn()} />,
+  );
   fireEvent.click(screen.getByRole('button', { name: /^Tìm lời thoại$/ }));
   const search = screen.getByRole('textbox', { name: /Tìm trong lời thoại/ });
   fireEvent.change(search, { target: { value: 'z' } });
@@ -142,6 +145,7 @@ it('hết giờ gửi lỗi không tự spam và có thể gửi lại lượt t
       locked={false}
       onSend={send}
       onPickAction={vi.fn()}
+      onOpenNode={vi.fn()}
     />,
   );
   await act(async () => {
@@ -164,7 +168,7 @@ it('hết giờ gửi lỗi không tự spam và có thể gửi lại lượt t
   expect(screen.queryByRole('alert')).toBeNull();
 });
 
-it('xác nhận nộp sớm hiển thị phút và cho huỷ để làm tiếp', async () => {
+it('xác nhận gửi báo kết ca và cho huỷ để làm tiếp', async () => {
   await signInDemo();
   const run = await api.play.start('SWE_BACKEND.L3.m2', null);
   const original = await api.play.scene(run.runId);
@@ -174,17 +178,73 @@ it('xác nhận nộp sớm hiển thị phút và cho huỷ để làm tiếp',
       scene={{
         ...original,
         mode: 'confirm_end',
-        clock: { ...original.clock, remaining: 7, minutesPerPoint: 5 },
       }}
       busy={false}
       locked={false}
       onSend={send}
       onPickAction={vi.fn()}
+      onOpenNode={vi.fn()}
     />,
   );
-  expect(screen.getByText(/Còn 35 phút tới hạn/)).toBeTruthy();
+  expect(screen.getByText(/Gửi xong thì ca này kết thúc/)).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: /^Làm thêm$/ }));
   expect(send).toHaveBeenCalledWith({ kind: 'cancel_end' });
-  fireEvent.click(screen.getByRole('button', { name: /^Nộp luôn$/ }));
+  fireEvent.click(screen.getByRole('button', { name: /^Gửi$/ }));
   expect(send).toHaveBeenCalledWith({ kind: 'confirm_end' });
+});
+
+it('cho gửi lời nhắn cuối ca hoặc bỏ qua từ khung trả lời', async () => {
+  const send = vi.fn().mockResolvedValue(true);
+  const prompt = 'Nhắn chị Linh trước khi kết ca?';
+  const scene = {
+    mode: 'node',
+    await: { kind: 'last_word', to: 'support', prompt },
+    node: null,
+  } as SceneView;
+  renderWithProviders(
+    <Composer
+      scene={scene}
+      busy={false}
+      locked={false}
+      onSend={send}
+      onPickAction={vi.fn()}
+      onOpenNode={vi.fn()}
+    />,
+  );
+  const text = 'Chị ơi, anh An duyệt rồi ạ.';
+  fireEvent.change(screen.getByRole('textbox', { name: prompt }), {
+    target: { value: text },
+  });
+  await act(async () =>
+    fireEvent.click(screen.getByRole('button', { name: 'Gửi' })),
+  );
+  expect(send).toHaveBeenNthCalledWith(1, { kind: 'say', text });
+  fireEvent.click(screen.getByRole('button', { name: 'Bỏ qua' }));
+  expect(send).toHaveBeenNthCalledWith(2, { kind: 'end_conversation' });
+});
+
+it('không hủy xác nhận kết ca bằng Escape hoặc nút đóng khi đang gửi', () => {
+  const send = vi.fn().mockResolvedValue(true);
+  renderWithProviders(
+    <Composer
+      scene={
+        {
+          mode: 'confirm_end',
+          await: { kind: 'confirm_end', node: 'n3' },
+          node: null,
+        } as SceneView
+      }
+      busy
+      locked={false}
+      onSend={send}
+      onPickAction={vi.fn()}
+      onOpenNode={vi.fn()}
+    />,
+  );
+  fireEvent(
+    screen.getByRole('dialog'),
+    new Event('cancel', { cancelable: true }),
+  );
+  fireEvent.click(screen.getByRole('button', { name: 'Đóng' }));
+  expect(send).not.toHaveBeenCalled();
 });

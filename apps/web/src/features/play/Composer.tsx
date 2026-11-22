@@ -4,10 +4,9 @@
  * xác nhận nộp sớm.
  */
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { DoorClosed, Send, Timer } from 'lucide-react';
+import { DoorClosed, FilePenLine, Send, Timer } from 'lucide-react';
 import { ConfirmDialog, ToonButton, ToonTextarea, cn } from '@datn/ui';
 import type { SceneView, TurnInput } from '../../api/types';
-import { ArtefactForm } from './ArtefactForm';
 import { ActionTray } from './ActionPanel';
 
 export function Composer({
@@ -16,6 +15,7 @@ export function Composer({
   locked,
   onSend,
   onPickAction,
+  onOpenNode,
   spoken,
 }: {
   scene: SceneView;
@@ -25,6 +25,7 @@ export function Composer({
   onSend: (input: TurnInput) => Promise<boolean>;
   /** Chọn một việc ở pha xử lý (việc có biểu mẫu thì mở hộp soạn). */
   onPickAction: (action: SceneView['actions'][number]) => void;
+  onOpenNode: (node: NonNullable<SceneView['node']>) => void;
   /** Câu nhân vật vừa nói: câu hỏi trùng nguyên văn thì không lặp lại. */
   spoken?: string | null;
 }) {
@@ -39,14 +40,33 @@ export function Composer({
       <ConfirmDialog
         open
         title="Nộp trước hạn?"
-        description={`Còn ${scene.clock.remaining * scene.clock.minutesPerPoint} phút tới hạn ${scene.clock.deadline}. Nộp bây giờ sẽ kết thúc ca; những việc chưa làm sẽ không được xét.`}
-        confirmLabel="Nộp luôn"
+        description="Gửi xong thì ca này kết thúc."
+        confirmLabel="Gửi"
         cancelLabel="Làm thêm"
-        loading={busy}
+        loading={busy || locked}
         theme="toon"
-        onConfirm={() => onSend({ kind: 'confirm_end' })}
-        onClose={() => onSend({ kind: 'cancel_end' })}
+        onConfirm={() => {
+          if (!busy && !locked) void onSend({ kind: 'confirm_end' });
+        }}
+        onClose={() => {
+          if (!busy && !locked) void onSend({ kind: 'cancel_end' });
+        }}
       />
+    );
+  }
+
+  if (scene.mode === 'phase') {
+    return (
+      <div hidden={locked}>
+        <ActionTray
+          actions={scene.actions}
+          minutesPerPoint={scene.clock.minutesPerPoint}
+          disabled={busy || locked}
+          onPick={onPickAction}
+          suspended={scene.suspended}
+          cast={scene.cast}
+        />
+      </div>
     );
   }
 
@@ -93,16 +113,38 @@ export function Composer({
     return (
       <div className="max-h-[55dvh] overflow-y-auto p-1">
         {fresh(node.prompt) && <Prompt>{node.prompt}</Prompt>}
-        <ArtefactForm
-          key={form.id}
-          form={form}
-          submitLabel={node.kind === 'end' ? 'Gửi và kết thúc ca' : 'Gửi'}
-          busy={busy}
-          onSubmit={(fields, ticks) =>
-            onSend({ kind: 'save_artefact', artefact: form.id, fields, ticks })
-          }
-        />
+        <ToonButton
+          className="mt-1"
+          size="sm"
+          leftIcon={<FilePenLine size={16} />}
+          disabled={busy}
+          onClick={() => onOpenNode(node)}
+        >
+          Mở {form.title}
+        </ToonButton>
       </div>
+    );
+  }
+
+  if (w.kind === 'last_word') {
+    return (
+      <TextReply
+        key={`last-word-${w.to}`}
+        label={w.prompt}
+        placeholder="Viết lời nhắn…"
+        busy={busy}
+        onSend={(text) => onSend({ kind: 'say', text })}
+        extra={
+          <ToonButton
+            variant="secondary"
+            size="sm"
+            onClick={() => onSend({ kind: 'end_conversation' })}
+            disabled={busy}
+          >
+            Bỏ qua
+          </ToonButton>
+        }
+      />
     );
   }
 
@@ -115,18 +157,6 @@ export function Composer({
         placeholder={review ? 'Trả lời người hỏi…' : 'Bạn trả lời thế nào?'}
         busy={busy}
         onSend={(text) => onSend({ kind: 'say', text })}
-      />
-    );
-  }
-
-  if (scene.mode === 'phase') {
-    return (
-      <ActionTray
-        actions={scene.actions}
-        minutesPerPoint={scene.clock.minutesPerPoint}
-        disabled={busy}
-        onPick={onPickAction}
-        suspended={scene.suspended}
       />
     );
   }
