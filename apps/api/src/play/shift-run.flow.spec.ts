@@ -240,7 +240,10 @@ describe('luồng ca làm (API + worker)', () => {
       const { run } = await service.start(USER, { taskId: SEED });
       await service.addNote(USER, run.id, 'Nhớ xem log trước');
       const { steps } = loadPlaythrough(
-        join(__dirname, '../scripts/ai-lab/playthroughs/lam-tot.json'),
+        join(
+          __dirname,
+          '../../../../packages/game-core/src/shift/playthroughs/lam-tot.json',
+        ),
       );
 
       for (const step of steps) {

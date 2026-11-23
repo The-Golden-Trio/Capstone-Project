@@ -386,7 +386,10 @@ describe('định dạng', () => {
 
 describe('--play nhận đường dẫn file', () => {
   it('đường dẫn .json được nạp như tên trong thư mục', () => {
-    const dir = join(__dirname, '..', 'playthroughs');
+    const dir = join(
+      __dirname,
+      '../../../../../../packages/game-core/src/shift/playthroughs',
+    );
     const byName = selectPlaythroughs(dir, 'lam-tot')[0];
     const byPath = selectPlaythroughs(dir, join(dir, 'lam-tot.json'))[0];
     expect(byPath).toEqual(byName);

@@ -14,6 +14,7 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./playthroughs/*.json": "./src/shift/playthroughs/*.json",
     "./testing": {
       "@datn/source": "./src/testing/fixture.ts",
       "types": "./dist/testing/fixture.d.ts",

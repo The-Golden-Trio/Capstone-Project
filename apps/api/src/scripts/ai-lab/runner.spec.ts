@@ -22,7 +22,10 @@ import {
 
 const SEED = 'SWE_BACKEND.L3.m2';
 const ctx = fixtureShiftContext(SEED);
-const DIR = join(__dirname, 'playthroughs');
+const DIR = join(
+  __dirname,
+  '../../../../../packages/game-core/src/shift/playthroughs',
+);
 
 const fakePorts = (over: Partial<LabPorts> = {}): LabPorts => ({
   narrator: new FakeShiftNarrator(),

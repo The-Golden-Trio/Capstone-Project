@@ -9,7 +9,10 @@ import {
   type Playthrough,
 } from './playthrough';
 
-const DIR = join(__dirname, 'playthroughs');
+const DIR = join(
+  __dirname,
+  '../../../../../packages/game-core/src/shift/playthroughs',
+);
 
 const minimal = {
   name: 'thu',

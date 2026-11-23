@@ -17,7 +17,7 @@
  *     node apps/api/dist/ai-lab.mjs --play=interactive --out=thư/mục
  *
  * Tuỳ chọn:
- *     --play=<tên>|a,b|all|<file.json>  kịch bản trong `ai-lab/playthroughs/` hoặc đường dẫn file (mặc định all)
+ *     --play=<tên>|a,b|all|<file.json>  kịch bản trong `game-core/src/shift/playthroughs/` hoặc đường dẫn file (mặc định all)
  *     --play=interactive      tester tự chơi; thêm --seed=<mã> (mặc định SWE_BACKEND.L3.m2), xem `ai-lab/interactive/play.ts`
  *     --only=narrator|checker|judge  chỉ thử riêng một service; các service còn lại chạy bản giả
  *     --out=thư/mục           ghi nhật ký JSON từng lượt gọi (request, response nguyên văn, không có key);
@@ -88,7 +88,7 @@ loadEnvFile(join(process.cwd(), '.env'));
 
 const PLAYTHROUGH_DIR = join(
   process.cwd(),
-  'apps/api/src/scripts/ai-lab/playthroughs',
+  'packages/game-core/src/shift/playthroughs',
 );
 const DISPLAY_NAME = 'Nam';
 const IDENTITY = {

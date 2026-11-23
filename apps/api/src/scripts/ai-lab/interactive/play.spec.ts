@@ -13,7 +13,10 @@ import { playInteractive, type PlayOptions } from './play';
 
 const SEED = 'SWE_BACKEND.L3.m2';
 const ctx = fixtureShiftContext(SEED);
-const DIR = join(__dirname, '..', 'playthroughs');
+const DIR = join(
+  __dirname,
+  '../../../../../../packages/game-core/src/shift/playthroughs',
+);
 const IDENTITY = {
   names: ['Nam'],
   usernames: ['nam'],

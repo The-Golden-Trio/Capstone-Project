@@ -11,7 +11,10 @@ const IDENTITY = { names: ['Nam'], usernames: ['nam'] };
 
 async function endedRun(name: string) {
   const [playthrough] = selectPlaythroughs(
-    join(__dirname, '..', 'playthroughs'),
+    join(
+      __dirname,
+      '../../../../../../packages/game-core/src/shift/playthroughs',
+    ),
     name,
   );
   const result = await runPlaythrough(playthrough, {

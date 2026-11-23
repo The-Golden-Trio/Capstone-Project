@@ -35,7 +35,10 @@ const SEED = 'SWE_BACKEND.L3.m2';
 const ctx = fixtureShiftContext(SEED);
 const OBSERVES = ctx.seed.observes ?? [];
 const { steps } = loadPlaythrough(
-  join(__dirname, '../../scripts/ai-lab/playthroughs/lam-tot.json'),
+  join(
+    __dirname,
+    '../../../../../packages/game-core/src/shift/playthroughs/lam-tot.json',
+  ),
 );
 
 const SLOTS = judgePanel({
