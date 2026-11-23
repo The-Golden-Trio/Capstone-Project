@@ -1,4 +1,5 @@
 import {
+  act,
   cleanup,
   fireEvent,
   render,
@@ -55,6 +56,29 @@ describe('Bối cảnh và nhân vật trên sân khấu', () => {
     expect(container.querySelector('img')?.getAttribute('alt')).toBe('');
     expect(container.querySelector('[aria-hidden="true"]')).toBeNull();
     expect(screen.getByText('Đang họp nhóm')).toBeTruthy();
+  });
+
+  it('đổi ảnh thì ảnh cũ mờ dần phía trên rồi được gỡ', () => {
+    vi.useFakeTimers();
+    try {
+      const { container, rerender } = render(<SceneBackdrop src="/a.png" />);
+      expect(container.querySelector('[data-backdrop-outgoing]')).toBeNull();
+      rerender(<SceneBackdrop src="/b.png" />);
+      expect(
+        container
+          .querySelector('[data-backdrop-outgoing]')
+          ?.getAttribute('src'),
+      ).toBe('/a.png');
+      expect(container.querySelector('img')?.getAttribute('src')).toBe(
+        '/b.png',
+      );
+      act(() => {
+        vi.advanceTimersByTime(700);
+      });
+      expect(container.querySelector('[data-backdrop-outgoing]')).toBeNull();
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it('đọc tên qua figure, giữ ảnh trang trí và emote có tên riêng khi dimmed', () => {

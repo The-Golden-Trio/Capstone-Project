@@ -44,6 +44,7 @@ import {
   errorText,
 } from '../../api/hooks';
 import { sourceOf } from '../../api';
+import { startFreshRun } from '../../api/demo';
 import type { CatalogueOccupation, RegionId } from '../../api/types';
 import { GalaxyMap, type GalaxyMapHandle } from './GalaxyMap';
 import { foldVi, layoutGalaxy } from './layout';
@@ -59,6 +60,7 @@ export default function GalaxyPage() {
   const navigate = useNavigate();
   const enrol = useEnrol();
   const startSample = useStartRun();
+  const [startingAutoplay, setStartingAutoplay] = useState(false);
   const mapRef = useRef<GalaxyMapHandle>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const [params, setParams] = useSearchParams();
@@ -349,6 +351,22 @@ export default function GalaxyPage() {
                       }
                     >
                       Vào ca mẫu
+                    </ToonButton>
+                    <ToonButton
+                      size="sm"
+                      variant="secondary"
+                      className="ml-2 mt-3"
+                      loading={startingAutoplay}
+                      onClick={() => {
+                        setStartingAutoplay(true);
+                        void startFreshRun('SWE_BACKEND.L3.m2')
+                          .then((run) =>
+                            navigate(`/play/${run.runId}?autoplay=lan`),
+                          )
+                          .finally(() => setStartingAutoplay(false));
+                      }}
+                    >
+                      Xem lượt chơi mẫu
                     </ToonButton>
                   </div>
                 )}

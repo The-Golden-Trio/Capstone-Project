@@ -30,11 +30,11 @@ import {
 import type { SceneView, ShiftRun, TranscriptLine } from '../../api/types';
 import { splitTerms, TermTooltip } from './desktop/TermTooltip';
 import {
-  TOON_BACKDROPS,
-  backdropFor,
   castCharacters,
+  characterArt,
   type ToonCharacter,
 } from '../../lib/toon';
+import { botArt, sceneBackdrop } from '../../lib/presentation';
 
 const CHANNEL = {
   chat: { label: 'Tin nhắn', icon: MessageCircle },
@@ -80,6 +80,7 @@ export function Stage({
   queued,
   waitingLabel,
   conversationChannel,
+  talking,
   quiet = false,
   inactive = false,
   bots = [],
@@ -94,6 +95,8 @@ export function Stage({
   waitingLabel: string | null;
   /** Kênh của cuộc trò chuyện đang mở (đổi bối cảnh khi gặp, họp). */
   conversationChannel?: TranscriptLine['channel'] | null;
+  /** Ai đang nói với người chơi, để chọn bối cảnh riêng của seed. */
+  talking?: { channel: 'chat' | 'call' | 'meet' | 'group'; slots: string[] };
   /** Đang chọn phương án có đếm giờ: cất các câu cũ để chỉ còn câu hỏi. */
   quiet?: boolean;
   inactive?: boolean;
@@ -130,11 +133,19 @@ export function Stage({
         ? 'Cảnh'
         : nameOf(current?.speaker ?? '');
   const actor = onStage ? cast.get(onStage.speaker) : undefined;
+  const speakerLook = current ? cast.get(current.speaker) : undefined;
+  const botImage =
+    current?.kind === 'system' ? botArt(current.speaker) : undefined;
   const expression = (speaking?.expression ?? 'binh_thuong') as Expression;
 
   const tw = useTypewriter(current?.text ?? '', current?.seq ?? -1);
   const ch = current?.channel ? CHANNEL[current.channel] : null;
-  const backdrop = TOON_BACKDROPS[backdropFor(conversationChannel ?? null)];
+  const backdrop = sceneBackdrop({
+    seedId: run.taskId,
+    channel: conversationChannel,
+    talking,
+    lines,
+  });
 
   // Bàn phím: Space/Enter qua nhịp, trừ khi đang gõ trong ô nhập.
   useEffect(() => {
@@ -177,7 +188,7 @@ export function Stage({
           {actor && onStage && (
             <div className="pointer-events-none absolute -bottom-14 left-[2%] z-10 hidden h-[min(88%,560px)] md:block">
               <Character
-                src={actor.src}
+                src={characterArt(actor, speaking?.expression)}
                 name={nameOf(onStage.speaker)}
                 height="100%"
                 dimmed={!speaking}
@@ -228,13 +239,14 @@ export function Stage({
                   ) : (
                     <span className="flex items-end gap-2">
                       {/* Điện thoại không có nhân vật đứng: mặt và emote đi cùng bảng tên. */}
-                      {cast.get(current.speaker) && (
+                      {speakerLook && (
                         <span className="relative -translate-y-3 md:hidden">
                           <Avatar
-                            src={cast.get(current.speaker)?.src ?? ''}
-                            color={
-                              cast.get(current.speaker)?.color ?? '#fffaf0'
-                            }
+                            src={characterArt(
+                              speakerLook,
+                              speaking?.expression,
+                            )}
+                            color={speakerLook.color}
                             size={48}
                             className={cn(
                               speaking &&
@@ -254,6 +266,13 @@ export function Stage({
                             </span>
                           )}
                         </span>
+                      )}
+                      {botImage && (
+                        <BotAvatar
+                          src={botImage}
+                          size={48}
+                          className="-translate-y-3"
+                        />
                       )}
                       <NameTag
                         name={currentName}
@@ -471,7 +490,15 @@ function Line({
   if (line.kind === 'system' && bot) {
     return (
       <div className="flex items-start gap-2 rounded-xl border-2 border-toon-ink bg-[#e2eeef] px-3 py-2 text-toon-ink shadow-toon-sm">
-        <Bot size={20} className="mt-0.5 shrink-0 text-[#28596a]" aria-hidden />
+        {botArt(line.speaker) ? (
+          <BotAvatar src={botArt(line.speaker) ?? ''} size={32} />
+        ) : (
+          <Bot
+            size={20}
+            className="mt-0.5 shrink-0 text-[#28596a]"
+            aria-hidden
+          />
+        )}
         <div className="min-w-0">
           <p className="font-toon text-sm font-extrabold">{bot}</p>
           <p className="break-words text-sm font-semibold">{line.text}</p>
@@ -490,7 +517,9 @@ function Line({
   }
   return (
     <div className="flex max-w-[88%] items-end gap-2">
-      {look && <Avatar src={look.src} color={look.color} />}
+      {look && (
+        <Avatar src={characterArt(look, line.expression)} color={look.color} />
+      )}
       <div className="min-w-0">
         <span
           className="mb-1 ml-2 inline-block rounded-full border-2 border-toon-ink px-2 font-toon text-xs font-extrabold leading-5 text-toon-ink first-letter:uppercase"
@@ -543,6 +572,31 @@ function GlossaryText({
       rendered
     );
   });
+}
+
+/** Ảnh tròn của bot có ảnh riêng. */
+function BotAvatar({
+  src,
+  size,
+  className,
+}: {
+  src: string;
+  size: number;
+  className?: string;
+}) {
+  return (
+    <img
+      src={src}
+      alt=""
+      draggable={false}
+      width={size}
+      height={size}
+      className={cn(
+        'shrink-0 select-none rounded-full border-[2.5px] border-toon-ink bg-toon-paper object-cover shadow-toon-sm',
+        className,
+      )}
+    />
+  );
 }
 
 /** Mặt nhân vật cắt tròn từ tranh đứng. */

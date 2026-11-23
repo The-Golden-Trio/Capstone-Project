@@ -170,7 +170,7 @@ function LogTable({ view }: { view: Extract<View, { type: 'table' }> }) {
           </button>
         )}
       </header>
-      {view.caption && <p className="table-caption">{view.caption}</p>}
+      {view.caption && <p className="tool-table-caption">{view.caption}</p>}
       {raw ? (
         <pre className="table-raw" tabIndex={0} aria-label="Log dạng gốc">
           {view.raw?.join('\n')}
@@ -214,7 +214,9 @@ function DataTable({
           {rows.map((row, i) => (
             <tr key={i}>
               {row.map((value, j) => (
-                <td key={j}>{cell(value)}</td>
+                <td key={j} data-label={columns[j]}>
+                  {cell(value)}
+                </td>
               ))}
             </tr>
           ))}

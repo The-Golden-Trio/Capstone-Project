@@ -74,6 +74,7 @@
   --animate-toon-pop: toon-pop 0.32s cubic-bezier(0.3, 1.6, 0.5, 1) both;
   --animate-toon-slide: toon-slide 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-toon-wiggle: toon-wiggle 2.4s ease-in-out infinite;
+  --animate-toon-fade-out: toon-fade-out 0.6s ease-out both;
 
   @keyframes toon-bob {
     0%,
@@ -110,6 +111,14 @@
     40%,
     80% {
       transform: translateX(5px) rotate(0.6deg);
+    }
+  }
+  @keyframes toon-fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
   @keyframes toon-pop {

@@ -254,6 +254,7 @@ export function EditorTicks({
         <label key={id} className="flex items-start gap-2 text-sm">
           <input
             type="checkbox"
+            data-tick-id={id}
             className="mt-0.5 size-4 shrink-0 accent-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
             checked={draft.ticks.includes(id)}
             disabled={busy}
@@ -278,9 +279,9 @@ function EditorSelects({
   const hasReason = selects.some(({ reason }) => reason);
   return (
     <div className="overflow-x-auto">
-      <table className="w-full border-collapse text-left text-sm">
+      <table className="w-full border-collapse text-left text-sm max-sm:block">
         <caption className="sr-only">Bảng giả thuyết</caption>
-        <thead className="bg-slate-500/10">
+        <thead className="bg-slate-500/10 max-sm:sr-only">
           <tr>
             <th scope="col" className="px-3 py-2">
               Giả thuyết
@@ -295,15 +296,22 @@ function EditorSelects({
             )}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="max-sm:block">
           {selects.map((select) => (
-            <tr key={select.id} className="border-b border-slate-200 align-top">
-              <th scope="row" className="min-w-32 px-3 py-3 font-medium">
+            <tr
+              key={select.id}
+              className="border-b border-slate-200 align-top max-sm:block max-sm:space-y-2 max-sm:py-3"
+            >
+              <th
+                scope="row"
+                className="min-w-32 px-3 py-3 font-medium max-sm:block max-sm:min-w-0 max-sm:py-0"
+              >
                 {select.label}
               </th>
-              <td className="min-w-32 px-3 py-2">
+              <td className="min-w-32 px-3 py-2 max-sm:block max-sm:min-w-0 max-sm:py-0">
                 <select
                   aria-label={`Đánh giá: ${select.label}`}
+                  data-select-id={select.id}
                   className={controlClass}
                   disabled={busy}
                   value={selectedOption(select, draft.ticks)}
@@ -320,7 +328,7 @@ function EditorSelects({
                 </select>
               </td>
               {hasReason && (
-                <td className="min-w-40 px-3 py-2">
+                <td className="min-w-40 px-3 py-2 max-sm:block max-sm:min-w-0 max-sm:py-0">
                   {select.reason && (
                     <EditorField
                       field={{

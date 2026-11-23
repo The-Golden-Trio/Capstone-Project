@@ -3,3 +3,20 @@
 
 /* Quét class trong design system dùng chung. */
 @source '../../../packages/ui/src';
+
+/* Lượt chơi mẫu: viền nhấp nháy quanh phần tử sắp được bấm hoặc điền. */
+[data-autoplay-target] {
+  outline: 4px solid var(--color-toon-star, #f0b63c);
+  outline-offset: 3px;
+  animation: autoplay-pulse 0.7s ease-in-out infinite alternate;
+}
+@keyframes autoplay-pulse {
+  to {
+    outline-offset: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-autoplay-target] {
+    animation: none;
+  }
+}

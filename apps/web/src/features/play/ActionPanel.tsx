@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useEffect, useId, useState, type MouseEvent } from 'react';
 import {
   Clock3,
   FileText,
@@ -42,6 +42,31 @@ const KIND: Record<string, { icon: LucideIcon; group: ActionGroup }> = {
 export const groupOf = (kind: string): ActionGroup =>
   KIND[kind]?.group ?? 'Làm việc';
 
+/** Ngay sau khi hộp thoại hoặc khung nói đổi thành khay việc, cú chạm định qua nhịp có thể rơi vào một nút việc. */
+export const TAP_GUARD_MS = 400;
+
+function useTapGuard(disabled: boolean) {
+  const [guarded, setGuarded] = useState(false);
+  useEffect(() => {
+    if (disabled) return;
+    setGuarded(true);
+    const id = window.setTimeout(() => setGuarded(false), TAP_GUARD_MS);
+    return () => window.clearTimeout(id);
+  }, [disabled]);
+  return guarded;
+}
+
+/** Chuột và bàn phím không bị chặn: chỉ cú chạm mới có kiểu "chạm xuyên". */
+function isTouchTap(event: MouseEvent) {
+  const type = (event.nativeEvent as { pointerType?: string }).pointerType;
+  return (
+    type === 'touch' ||
+    type === 'pen' ||
+    (type === undefined &&
+      window.matchMedia?.('(pointer: coarse)').matches === true)
+  );
+}
+
 const GROUP_ORDER: ActionGroup[] = [
   'Hỏi người',
   'Xem tài liệu',
@@ -70,6 +95,7 @@ export function ActionTray({
   cast: SceneView['cast'];
 }) {
   const idBase = useId();
+  const guarded = useTapGuard(disabled);
   const groups = GROUP_ORDER.map((g) => ({
     name: g,
     items: actions.filter((a) => groupOf(a.kind) === g),
@@ -86,7 +112,7 @@ export function ActionTray({
     <div className="flex flex-col gap-3">
       {suspended && (
         <p className="rounded-xl border-2 border-toon-ink bg-[#ffe4a3] px-3 py-1.5 text-sm font-bold text-toon-ink">
-          Đang dở: {suspended.label} (còn {suspended.remaining} điểm)
+          Đang dở: {suspended.label} (còn {suspended.remaining} lượt)
         </p>
       )}
       <ToonTabs
@@ -117,6 +143,7 @@ export function ActionTray({
                 action={a}
                 minutesPerPoint={minutesPerPoint}
                 disabled={disabled}
+                guarded={guarded}
                 status={
                   a.kind === 'talk'
                     ? cast.find((person) => person.slot === a.target)?.status
@@ -136,12 +163,14 @@ function ActionButton({
   action: a,
   minutesPerPoint,
   disabled,
+  guarded,
   onPick,
   status,
 }: {
   action: Action;
   minutesPerPoint: number;
   disabled: boolean;
+  guarded: boolean;
   onPick: (a: Action) => void;
   status?: string;
 }) {
@@ -153,7 +182,12 @@ function ActionButton({
       <button
         type="button"
         disabled={off}
-        onClick={() => onPick(a)}
+        onClick={(event) => {
+          if (guarded && isTouchTap(event)) return;
+          onPick(a);
+        }}
+        data-action-key={a.key}
+        data-tap-guard={guarded || undefined}
         title={!a.enabled ? a.reason : undefined}
         aria-describedby={!a.enabled && a.reason ? `why-${a.key}` : undefined}
         className={cn(
@@ -202,7 +236,7 @@ function ActionButton({
             title={`Mất khoảng ${a.points * minutesPerPoint} phút trong ca`}
           >
             <Clock3 size={13} strokeWidth={2.6} aria-hidden />
-            {a.points * minutesPerPoint}′
+            {a.points} lượt
           </span>
         )}
       </button>

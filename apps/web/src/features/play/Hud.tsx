@@ -1,18 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
   BookOpen,
   ChevronDown,
+  Clock3,
   Lightbulb,
   Sparkles,
   Target,
 } from 'lucide-react';
-import { ToonClock, ToonIconButton, Tooltip } from '@datn/ui';
+import { ToonIconButton, ToonTurnsBar, Tooltip } from '@datn/ui';
 import type { SceneView } from '../../api/types';
 
 /**
  * Dải HUD trên cùng: thoát, tên ca và mục tiêu, nhãn AI thường trực
- * (NFR-07), đồng hồ ca làm (giờ trong truyện là chính, điểm là phụ), gợi ý.
+ * (NFR-07), thanh lượt của ca làm (chính) kèm giờ trong truyện (phụ), gợi ý.
  */
 export function Hud({
   title,
@@ -37,9 +39,10 @@ export function Hud({
   /** Nhãn thường trực: lời nhân vật do AI viết (NFR-07). */
   aiLabel: string;
 }) {
+  const [titleOpen, setTitleOpen] = useState(false);
   return (
     <header className="relative z-30 border-b-[3px] border-toon-ink bg-toon-paper">
-      <div className="mx-auto flex min-h-16 max-w-[1600px] sm:min-h-[72px] items-center gap-2 px-3 py-2 sm:gap-3 sm:px-5">
+      <div className="mx-auto grid min-h-16 max-w-[1600px] grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2 gap-y-1.5 px-3 py-2 sm:min-h-[72px] sm:grid-cols-[auto_minmax(0,1fr)_auto_auto] sm:gap-x-3 sm:px-5">
         <Tooltip content="Thoát. Tiến độ được lưu, quay lại chơi tiếp lúc nào cũng được.">
           <Link
             to={backTo}
@@ -50,7 +53,11 @@ export function Hud({
           </Link>
         </Tooltip>
         <div className="min-w-0 flex-1">
-          <h1 className="max-sm:line-clamp-2 break-words font-toon text-sm font-extrabold leading-tight text-toon-ink sm:truncate sm:text-xl">
+          {/* Chạm vào tên ca trên điện thoại để đọc trọn; đọc màn hình vốn đọc đủ chữ. */}
+          <h1
+            onClick={() => setTitleOpen((open) => !open)}
+            className={`break-words font-toon text-sm font-extrabold leading-tight text-toon-ink sm:truncate sm:text-xl ${titleOpen ? '' : 'max-sm:line-clamp-2'}`}
+          >
             {title}
           </h1>
           <p className="mt-0.5 hidden min-w-0 items-center gap-1.5 sm:flex">
@@ -70,14 +77,22 @@ export function Hud({
           </p>
         </div>
         {scene && (
-          <ToonClock
-            time={scene.clock.time}
-            deadline={scene.clock.deadline}
-            remaining={scene.clock.remaining}
-            budget={scene.clock.budget}
-            minutesPerPoint={scene.clock.minutesPerPoint}
-            compact
-          />
+          <div className="order-last col-span-full flex min-w-0 items-center gap-x-3 sm:order-none sm:col-span-1 sm:flex-col sm:items-end sm:gap-y-0.5">
+            <ToonTurnsBar
+              remaining={scene.clock.remaining}
+              budget={scene.clock.budget}
+              minutesPerPoint={scene.clock.minutesPerPoint}
+              className="max-sm:flex-1"
+            />
+            <p
+              role="group"
+              aria-label={`Bây giờ ${scene.clock.time}, hạn ${scene.clock.deadline}, còn ${scene.clock.remaining} điểm thời gian`}
+              className="flex shrink-0 items-center gap-1 text-[11px] font-bold tabular-nums text-toon-ink-soft"
+            >
+              <Clock3 size={11} strokeWidth={2.6} aria-hidden />
+              {scene.clock.time} · hạn {scene.clock.deadline}
+            </p>
+          </div>
         )}
         <div className="flex items-center gap-2">
           <ToonIconButton

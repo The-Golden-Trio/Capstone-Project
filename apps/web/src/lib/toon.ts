@@ -104,6 +104,36 @@ function preferences(name: string, relation: string): ToonCharacterId[] {
   return [...all.slice(start), ...all.slice(0, start)];
 }
 
+/**
+ * Tranh theo biểu cảm: `char-<id>-<biểu cảm>.webp` cùng khung với tranh gốc
+ * (840×1120, nền trong). Thả file vào `assets/toon/` là dùng được, không phải
+ * sửa mã; biểu cảm chưa có tranh thì dùng tranh gốc của nhân vật.
+ */
+const EXPRESSION_ART = import.meta.glob<string>(
+  '../assets/toon/char-*-*.webp',
+  {
+    eager: true,
+    import: 'default',
+  },
+);
+
+export function pickCharacterArt(
+  art: Readonly<Record<string, string>>,
+  character: Pick<ToonCharacter, 'id' | 'src'>,
+  expression?: string | null,
+): string {
+  if (!expression) return character.src;
+  return (
+    art[`../assets/toon/char-${character.id}-${expression}.webp`] ??
+    character.src
+  );
+}
+
+export const characterArt = (
+  character: Pick<ToonCharacter, 'id' | 'src'>,
+  expression?: string | null,
+) => pickCharacterArt(EXPRESSION_ART, character, expression);
+
 /** Gán tranh cho cả dàn nhân vật một ca, không trùng nếu còn tranh. */
 export function castCharacters(
   cast: Array<{ slot: string; name: string; relation: string }>,

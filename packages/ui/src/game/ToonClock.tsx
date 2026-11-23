@@ -132,7 +132,7 @@ export function ToonClock({
 
       {compact && (
         <span className="flex flex-col items-start leading-none">
-          <span className="font-toon text-lg font-extrabold tabular-nums">
+          <span className="font-toon text-base font-extrabold tabular-nums">
             {time}
           </span>
           <span className="mt-0.5 text-[11px] font-bold text-toon-ink-soft">

@@ -79,7 +79,7 @@ export function Composer({
         key={`conv-${c.id}`}
         placeholder={`Nói với ${c.people.map((p) => p.name).join(', ')}…`}
         busy={busy}
-        note={`Còn ${c.turnsLeftInPoint} lượt nói trước khi tính thêm ${scene.clock.minutesPerPoint} phút.`}
+        note={`Còn ${c.turnsLeftInPoint} câu nói trước khi tốn thêm 1 lượt.`}
         onSend={(text) => onSend({ kind: 'say', text })}
         extra={
           <ToonButton
@@ -118,6 +118,7 @@ export function Composer({
           size="sm"
           leftIcon={<FilePenLine size={16} />}
           disabled={busy}
+          data-autoplay="open-node"
           onClick={() => onOpenNode(node)}
         >
           Mở {form.title}
@@ -355,6 +356,7 @@ function Choices({
             <button
               type="button"
               disabled={busy || (limit !== null && left <= 0)}
+              data-option-key={o.key}
               onClick={() => choose(o.key)}
               className="group flex size-full items-start gap-3 rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-3 text-left font-toon-body text-[15px] font-bold leading-snug text-toon-ink shadow-toon transition-[transform,box-shadow,background-color] duration-150 hover:-translate-y-0.5 hover:bg-[#fff1c9] hover:shadow-toon-lg active:translate-y-0.5 active:shadow-toon-press focus-visible:outline-none focus-visible:shadow-toon-focus disabled:opacity-60"
             >

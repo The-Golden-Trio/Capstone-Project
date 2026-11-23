@@ -324,6 +324,16 @@ export interface SoftSkillDelta {
   tierAfter: number;
 }
 
+export interface SampleChecklist {
+  seed: string;
+  items: Array<{
+    code: string;
+    name: string;
+    level: 0 | 1 | 2;
+    evidence: string[];
+  }>;
+}
+
 export interface RunSummary {
   runId: string;
   title: string;
@@ -333,6 +343,11 @@ export interface RunSummary {
   enrolmentId: string | null;
   story: shift.ShiftSummary;
   reflection: { prompts: ReflectionPrompt[]; answered: boolean };
+  /**
+   * Chỉ demo: bảng "chấm dự kiến" chép từ kịch bản lượt chơi mẫu, không phải
+   * kết quả AI chấm (D-92). API thật không bao giờ trả trường này.
+   */
+  sampleChecklist?: SampleChecklist | null;
   /** `null` khi chưa chấm (AI-5 chạy ở worker) hoặc chưa có luật chấm. */
   grade: {
     status: 'PENDING' | 'READY' | 'NOT_AVAILABLE';

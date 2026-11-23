@@ -15,6 +15,7 @@ import {
   type SavedRun,
 } from './store';
 import { sampleGrade } from './grade-sample';
+import { sampleChecklistFor } from './sample-checklist';
 const listeners = new Map<string, Set<(e: PlayEvent) => void>>();
 const jobs = new Map<string, Promise<void>>();
 const getRun = (id: string) => {
@@ -224,8 +225,39 @@ export async function summaryOf(p: Player, r: SavedRun): Promise<RunSummary> {
     story,
     reflection: { prompts, answered: r.reflection !== null },
     grade: sampleGrade(p, r, occupation, view.levelNo!),
+    sampleChecklist: sampleChecklistFor(r),
   };
 }
+function createRun(
+  p: Player,
+  taskId: string,
+  enrolmentId: string | null,
+): SavedRun {
+  const r: SavedRun = {
+    id: uid(),
+    taskId,
+    enrolmentId,
+    events: [],
+    notes: [],
+    flags: [],
+    reflection: null,
+    realism: null,
+    grade: null,
+    at: now(),
+    turnId: uid(),
+    paused: false,
+  };
+  p.runs.push(r);
+  apply(r, { type: 'START' });
+  return r;
+}
+/** Ca mới hẳn dù đang có ca chơi dở, để lượt chơi mẫu luôn bắt đầu từ slide đầu (chỉ demo). */
+export const startFreshRun = service(async (taskId: string) => {
+  const p = player();
+  const r = createRun(p, taskId, null);
+  if (shift.pendingRequest(stateOf(r), context(taskId))) void drive(p, r);
+  return runView(r);
+});
 export const play: PlayService = {
   start: service(async (taskId, enrolmentId) => {
     const p = player(),
@@ -251,24 +283,7 @@ export const play: PlayService = {
         r.enrolmentId === enrolmentId &&
         !stateOf(r).ended,
     );
-    if (!r) {
-      r = {
-        id: uid(),
-        taskId,
-        enrolmentId,
-        events: [],
-        notes: [],
-        flags: [],
-        reflection: null,
-        realism: null,
-        grade: null,
-        at: now(),
-        turnId: uid(),
-        paused: false,
-      };
-      p.runs.push(r);
-      apply(r, { type: 'START' });
-    }
+    r ??= createRun(p, taskId, enrolmentId);
     if (!r.paused && shift.pendingRequest(stateOf(r), ctx)) void drive(p, r);
     return runView(r);
   }),

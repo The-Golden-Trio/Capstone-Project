@@ -5,7 +5,12 @@
  * kéo lên từ dưới.
  */
 import { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
 import {
   ArrowLeft,
@@ -13,6 +18,7 @@ import {
   CirclePause,
   Flag,
   PartyPopper,
+  Play,
   Users,
 } from 'lucide-react';
 import {
@@ -26,11 +32,15 @@ import {
   useToast,
 } from '@datn/ui';
 import { api, sourceOf } from '../../api';
+import { startFreshRun } from '../../api/demo';
 import { keys, useRun } from '../../api/hooks';
 import type { SceneView } from '../../api/types';
 import { Desktop } from './desktop/Desktop';
 import { DocumentViewer, InlineMarkdown } from './desktop/DocumentViewer';
 import { ArtefactEditor } from './desktop/editors';
+import { AutoplayBar } from './autoplay/AutoplayBar';
+import { autoplayScript, scriptForTask } from '../../api/demo/playthroughs';
+import { useAutoplay } from './autoplay/useAutoplay';
 import { Composer } from './Composer';
 import { Hud } from './Hud';
 import { Notebook } from './Notebook';
@@ -54,6 +64,21 @@ function RunPlayPage({ runId }: { runId: string }) {
   const [intro, setIntro] = useState(true);
   const desktop = usePlayDesktop(s, intro, runId);
   const desktopOpen = desktop.windows.length > 0;
+  const [params, setParams] = useSearchParams();
+  const demo = sourceOf('play') === 'demo';
+  const autoplayName = demo ? params.get('autoplay') : null;
+  const script = autoplayScript(autoplayName, run.data?.taskId);
+  const autoplay = useAutoplay({
+    script,
+    snapshot: {
+      scene: s.scene,
+      settled: s.ready && !s.sending && !s.waiting && !s.paused,
+      queued: s.queued,
+      spoken: s.current?.text ?? null,
+      intro,
+      fresh: s.fresh,
+    },
+  });
   const composerRef = useRef<HTMLDivElement>(null);
 
   // Nút hay ô nhập đang focus bị thay khi đổi pha (trả lời xong, kết thúc
@@ -158,7 +183,25 @@ function RunPlayPage({ runId }: { runId: string }) {
   const looks = castCharacters(r.cast);
 
   return (
-    <div className="theme-toon toon-dots relative flex h-dvh flex-col overflow-hidden">
+    <div
+      className="theme-toon toon-dots relative flex h-dvh flex-col overflow-hidden"
+      style={
+        {
+          '--autoplay-bar-h': script ? '2.75rem' : '0px',
+        } as React.CSSProperties
+      }
+    >
+      {script && (
+        <AutoplayBar
+          autoplay={autoplay}
+          summaryTo={`/play/${runId}/summary?autoplay=${autoplayName}`}
+          onExit={() => setParams({}, { replace: true })}
+          onRestart={async () => {
+            const fresh = await startFreshRun(r.taskId);
+            navigate(`/play/${fresh.runId}?autoplay=${autoplayName}`);
+          }}
+        />
+      )}
       <div className="contents" inert={intro || desktopOpen || undefined}>
         <Hud
           title={r.title}
@@ -271,6 +314,19 @@ function RunPlayPage({ runId }: { runId: string }) {
               queued={s.queued}
               waitingLabel={waitingLabel}
               conversationChannel={scene.conversation?.channel ?? null}
+              talking={
+                scene.conversation
+                  ? {
+                      channel: scene.conversation.channel,
+                      slots: scene.conversation.people.map((p) => p.slot),
+                    }
+                  : scene.node
+                    ? {
+                        channel: scene.node.channel,
+                        slots: [scene.node.speaker.slot],
+                      }
+                    : undefined
+              }
               quiet={
                 scene.mode === 'phase' || scene.await.kind === 'node_choice'
               }
@@ -385,7 +441,20 @@ function RunPlayPage({ runId }: { runId: string }) {
       />
 
       {intro && (
-        <IntroOverlay run={r} scene={scene} onStart={() => setIntro(false)} />
+        <IntroOverlay
+          run={r}
+          scene={scene}
+          onStart={() => setIntro(false)}
+          onAutoplay={
+            demo && !script && scriptForTask(r.taskId)
+              ? () =>
+                  setParams(
+                    { autoplay: scriptForTask(r.taskId) ?? '' },
+                    { replace: true },
+                  )
+              : undefined
+          }
+        />
       )}
     </div>
   );
@@ -396,10 +465,13 @@ function IntroOverlay({
   run,
   scene,
   onStart,
+  onAutoplay,
 }: {
   run: NonNullable<ReturnType<typeof useRun>['data']>;
   scene: SceneView;
   onStart: () => void;
+  /** Chỉ có ở demo khi ca có lượt chơi mẫu. */
+  onAutoplay?: () => void;
 }) {
   const [slideIndex, setSlideIndex] = useState(0);
   const slides = scene.introSlides ?? [];
@@ -413,7 +485,7 @@ function IntroOverlay({
       src={TOON_BACKDROPS.office}
       dim={0.9}
       overlay
-      className="z-40 overflow-y-auto"
+      className="top-[var(--autoplay-bar-h)] z-40 overflow-y-auto"
     >
       <div className="flex min-h-full items-center justify-center gap-6 p-4 sm:p-8">
         {hostLook && host && (
@@ -527,6 +599,16 @@ function IntroOverlay({
                 </p>
               </>
             )}
+            {onAutoplay && (
+              <ToonButton
+                size="sm"
+                variant="secondary"
+                leftIcon={<Play size={15} aria-hidden />}
+                onClick={onAutoplay}
+              >
+                Xem lượt chơi mẫu
+              </ToonButton>
+            )}
             <ToonButton
               size="lg"
               block={!slide}
@@ -536,6 +618,7 @@ function IntroOverlay({
               onClick={
                 lastSlide ? onStart : () => setSlideIndex((index) => index + 1)
               }
+              data-autoplay="intro-next"
               autoFocus
             >
               {lastSlide ? 'Vào ca' : 'Tiếp theo'}

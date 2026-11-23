@@ -1,5 +1,5 @@
 import { renderWithProviders } from '../../test/renderWithProviders';
-import { fireEvent, screen, within } from '@testing-library/react';
+import { cleanup, fireEvent, screen, within } from '@testing-library/react';
 import { Route, Routes } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 import type { RunSummary } from '../../api/types';
@@ -39,12 +39,51 @@ function summary(status: RunSummary['grade']['status']): RunSummary {
       graded: false,
       nodes: [],
       actions: [
-        { time: '10:00', label: 'Đọc log sự cố', points: 1, cut: false },
+        {
+          time: '10:00',
+          label: 'Đọc log sự cố',
+          points: 1,
+          cut: false,
+        },
       ],
+      timeline: [
+        {
+          time: '10:00–10:05',
+          label: 'Đọc log sự cố',
+          kind: 'action',
+          points: 1,
+          remaining: 27,
+          interrupts: [],
+        },
+        {
+          time: '10:50–10:55',
+          ref: 'n1',
+          label: 'Chị Linh đòi một giờ chắc chắn.',
+          kind: 'node',
+          points: 1,
+          remaining: 26,
+          interrupts: [],
+        },
+        {
+          time: '11:05–11:30',
+          label: 'Sửa lại bản vá',
+          kind: 'action',
+          points: 5,
+          remaining: 21,
+          interrupts: [
+            { ref: 'e1', label: 'Chị Linh nhắn', points: 1 },
+            { ref: 'n2', label: 'Ghi chú sự cố', points: 1 },
+          ],
+        },
+      ],
+      pointsUsed: 7,
+      budget: 28,
       facts: {
         found: [{ text: 'Có 901 query', time: '10:00' }],
+        notOpened: [{ text: 'Máy tính bảng dùng app 2.x', required: false }],
         requiredMissed: 1,
       },
+      flags: [],
       promises: [],
       concerns: [],
       artefacts: [],
@@ -249,4 +288,120 @@ it('allows retrying a failed summary without sending the player away', () => {
   expect(screen.getByLabelText('Đường dẫn').textContent).toBe(
     '/play/sample/summary',
   );
+});
+
+describe('Phần kể lại ca', () => {
+  function open(s: RunSummary, query = '') {
+    summaryState.data = s;
+    renderWithProviders(
+      <Routes>
+        <Route path="/play/:runId/summary" element={<SummaryPage />} />
+      </Routes>,
+      `/play/sample/summary${query}`,
+    );
+  }
+
+  it('liệt kê việc theo giờ với điểm và số điểm còn lại, dữ kiện đã mở và chưa mở, cờ', () => {
+    open(summary('READY'));
+    const table = screen.getByRole('table', {
+      name: 'Điểm thời gian theo giờ trong truyện',
+    });
+    expect(
+      within(table)
+        .getAllByRole('columnheader')
+        .map((cell) => cell.textContent),
+    ).toEqual(['Giờ', 'Việc', 'Điểm', 'Còn']);
+    expect(
+      within(table)
+        .getAllByRole('cell')
+        .map((cell) => cell.textContent),
+    ).toEqual([
+      '10:00–10:05',
+      'Đọc log sự cố',
+      '1',
+      '27',
+      '10:50–10:55',
+      'n1Chị Linh đòi một giờ chắc chắn.',
+      '1',
+      '26',
+      '11:05–11:30',
+      'Sửa lại bản vá3 lượt việc, bị chen bởi e1 (1) và n2 (1)',
+      '5',
+      '21',
+    ]);
+    expect(screen.getByText('Dùng 7/28 lượt, còn 21.')).toBeTruthy();
+    expect(screen.getByText('Đã mở (1)')).toBeTruthy();
+    expect(screen.getByText('Chưa mở (1)')).toBeTruthy();
+    expect(screen.getByText('Máy tính bảng dùng app 2.x')).toBeTruthy();
+    expect(screen.getByText('Không có cờ nào được bật.')).toBeTruthy();
+  });
+
+  it('không có câu hỏi nhìn lại thì bỏ phần "Hỏi lại sau ca"', () => {
+    open(summary('READY'));
+    expect(screen.queryByText('Hỏi lại sau ca')).toBeNull();
+  });
+
+  it('chỉ hiện bảng chấm dự kiến khi bản tổng kết mang theo, kèm nhãn không phải AI chấm', () => {
+    const plain = summary('READY');
+    open(plain);
+    expect(
+      screen.queryByText('Kết quả mẫu cho demo, không phải AI chấm'),
+    ).toBeNull();
+    cleanup();
+    open({
+      ...plain,
+      sampleChecklist: {
+        seed: 'SWE_BACKEND.L3.m2',
+        items: [
+          {
+            code: '4.2',
+            name: 'Tìm nguyên nhân gốc',
+            level: 2,
+            evidence: ['A: “901 lần”'],
+          },
+        ],
+      },
+    });
+    expect(
+      screen.getByText('Kết quả mẫu cho demo, không phải AI chấm'),
+    ).toBeTruthy();
+    expect(screen.getByText('A: “901 lần”')).toBeTruthy();
+  });
+
+  it('người chơi thường thấy phần nhìn lại ca đóng sẵn', () => {
+    open(summary('READY'));
+    expect(document.getElementById('nhin-lai-ca')?.hasAttribute('open')).toBe(
+      false,
+    );
+  });
+
+  it('lượt chơi mẫu (?autoplay) mở sẵn phần nhìn lại ca và cuộn tới bảng chấm dự kiến', () => {
+    const scrolled: string[] = [];
+    vi.spyOn(HTMLElement.prototype, 'scrollIntoView').mockImplementation(
+      function (this: HTMLElement) {
+        scrolled.push(this.id);
+      },
+    );
+    open(
+      {
+        ...summary('READY'),
+        sampleChecklist: {
+          seed: 'SWE_BACKEND.L3.m2',
+          items: [
+            {
+              code: '4.2',
+              name: 'Tìm nguyên nhân gốc',
+              level: 2,
+              evidence: [],
+            },
+          ],
+        },
+      },
+      '?autoplay=lan',
+    );
+    expect(document.getElementById('nhin-lai-ca')?.hasAttribute('open')).toBe(
+      true,
+    );
+    expect(scrolled).toContain('cham-du-kien');
+  });
 });

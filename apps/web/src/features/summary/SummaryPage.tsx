@@ -3,7 +3,7 @@
  * (FR-07), điểm cộng trừ từng nhóm soft skill gồm phần chòm sao, khoảnh
  * khắc lên bậc (khối D), keyword nhận được, rồi kể lại ca theo truyện.
  */
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import {
   ArrowLeft,
   Lightbulb,
@@ -35,6 +35,9 @@ export default function SummaryPage() {
   const summary = useRunSummary(runId);
   const me = useMe();
   const run = useRun(runId);
+  // Lượt chơi mẫu (demo): mở sẵn phần nhìn lại ca và cuộn tới bảng chấm dự kiến để người xem khỏi bấm.
+  const [params] = useSearchParams();
+  const sampleRun = sourceOf('play') === 'demo' && params.has('autoplay');
 
   const titleRef = useRef<HTMLHeadingElement>(null);
   const focusedRun = useRef<string | null>(null);
@@ -44,6 +47,13 @@ export default function SummaryPage() {
     titleRef.current.focus({ preventScroll: true });
     focusedRun.current = runId;
   }, [ready, runId]);
+  useEffect(() => {
+    if (!ready || !sampleRun) return;
+    (
+      document.getElementById('cham-du-kien') ??
+      document.getElementById('nhin-lai-ca')
+    )?.scrollIntoView?.({ block: 'start' });
+  }, [ready, sampleRun]);
 
   if (summary.isLoading)
     return <SummaryNotice loading title="Đang tổng kết ca làm…" />;
@@ -149,6 +159,9 @@ export default function SummaryPage() {
           </header>
 
           <GradeBlock s={s} />
+          {sourceOf('play') === 'demo' && s.sampleChecklist && (
+            <SampleChecklistPanel checklist={s.sampleChecklist} />
+          )}
 
           {(tierUps.length > 0 ||
             (s.grade.status === 'READY' && s.grade.softSkills.length > 0) ||
@@ -256,7 +269,7 @@ export default function SummaryPage() {
             aria-hidden
             className="my-8 border-t-[3px] border-dashed border-toon-ink/30"
           />
-          <Story s={s} />
+          <Story s={s} defaultOpen={sampleRun} />
 
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <Link to={back} className={toonButtonClasses({ size: 'lg' })}>
@@ -419,6 +432,73 @@ function GradeBlock({ s }: { s: RunSummary }) {
   );
 }
 
+/** Bảng "chấm dự kiến" của kịch bản mẫu: chỉ để đối chiếu kịch bản, không phải AI chấm. */
+function SampleChecklistPanel({
+  checklist,
+}: {
+  checklist: NonNullable<RunSummary['sampleChecklist']>;
+}) {
+  return (
+    <Panel
+      id="cham-du-kien"
+      className="mt-5"
+      aria-label="Chấm dự kiến theo kịch bản mẫu"
+    >
+      <PanelHeader
+        eyebrow="Kết quả mẫu cho demo, không phải AI chấm"
+        title="Chấm dự kiến theo kịch bản"
+        description="Bảng này chép từ kịch bản lượt chơi mẫu để đối chiếu. Bản chính thức do hội đồng AI chấm từ chính lời bạn viết."
+      />
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse text-left text-sm max-sm:block">
+          <caption className="sr-only">
+            Mức dự kiến cho sáu mục của checklist
+          </caption>
+          <thead className="max-sm:sr-only">
+            <tr className="border-b-[2.5px] border-toon-ink text-xs uppercase tracking-wide text-toon-ink-soft">
+              <th scope="col" className="py-1.5 pr-2 font-extrabold">
+                Mục
+              </th>
+              <th scope="col" className="py-1.5 pr-2 font-extrabold">
+                Mức
+              </th>
+              <th scope="col" className="py-1.5 font-extrabold">
+                Bằng chứng (trích lời người chơi)
+              </th>
+            </tr>
+          </thead>
+          <tbody className="max-sm:block">
+            {checklist.items.map((item) => (
+              <tr
+                key={item.code}
+                className="border-b border-dashed border-toon-ink/25 align-top max-sm:block max-sm:py-3"
+              >
+                <th
+                  scope="row"
+                  className="py-2 pr-2 font-bold max-sm:inline-block max-sm:py-0"
+                >
+                  <span className="font-toon font-extrabold">{item.code}</span>{' '}
+                  {item.name}
+                </th>
+                <td className="py-2 pr-2 max-sm:inline-block max-sm:py-0">
+                  <ToonBadge tone="mint">{item.level}</ToonBadge>
+                </td>
+                <td className="py-2 max-sm:mt-2 max-sm:block max-sm:py-0">
+                  <ul className="space-y-1 text-toon-ink-soft">
+                    {item.evidence.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Panel>
+  );
+}
+
 function FeedbackCard({
   icon,
   title,
@@ -524,11 +604,15 @@ const PROMISE: Record<string, string> = {
 };
 
 /** Kể lại ca theo truyện: các nút đã qua, dữ kiện tìm ra, lời hứa, tài liệu, phần "Nhìn lại ca". */
-function Story({ s }: { s: RunSummary }) {
+function Story({ s, defaultOpen }: { s: RunSummary; defaultOpen: boolean }) {
   const st = s.story;
   return (
     <div className="space-y-4">
-      <details className="rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4">
+      <details
+        id="nhin-lai-ca"
+        open={defaultOpen}
+        className="rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4"
+      >
         <summary className="cursor-pointer rounded focus-visible:shadow-toon-focus">
           <h2 className="inline font-toon text-xl font-extrabold">
             Nhìn lại ca làm
@@ -542,27 +626,76 @@ function Story({ s }: { s: RunSummary }) {
         </p>
         <div className="grid gap-4 lg:grid-cols-2">
           <Panel>
-            <PanelHeader level={3} title="Việc bạn đã làm" />
-            {st.actions.length ? (
-              <ol className="ml-2 border-l-[3px] border-toon-ink pl-5">
-                {st.actions.map((a, i) => (
-                  <li key={i} className="relative pb-5 last:pb-0">
-                    <span
-                      aria-hidden
-                      className="absolute -left-[29px] top-1 size-3.5 rounded-full border-[3px] border-toon-ink bg-toon-mustard"
-                    />
-                    <time className="font-toon text-sm font-extrabold tabular-nums">
-                      {a.time}
-                    </time>
-                    <p className="mt-1 font-bold">{a.label}</p>
-                    <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
-                      {a.cut
-                        ? 'Bị chen ngang giữa chừng'
-                        : `${a.points} điểm thời gian`}
-                    </p>
-                  </li>
-                ))}
-              </ol>
+            <PanelHeader
+              level={3}
+              title="Điểm thời gian"
+              description={`Dùng ${st.pointsUsed}/${st.budget} lượt, còn ${st.budget - st.pointsUsed}.`}
+            />
+            {st.timeline.length ? (
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-left text-sm">
+                  <caption className="sr-only">
+                    Điểm thời gian theo giờ trong truyện
+                  </caption>
+                  <thead>
+                    <tr className="border-b-[2.5px] border-toon-ink text-xs uppercase tracking-wide text-toon-ink-soft">
+                      <th scope="col" className="py-1.5 pr-2 font-extrabold">
+                        Giờ
+                      </th>
+                      <th scope="col" className="py-1.5 pr-2 font-extrabold">
+                        Việc
+                      </th>
+                      <th
+                        scope="col"
+                        className="py-1.5 pr-2 text-right font-extrabold"
+                      >
+                        Điểm
+                      </th>
+                      <th
+                        scope="col"
+                        className="py-1.5 text-right font-extrabold"
+                      >
+                        Còn
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="tabular-nums">
+                    {st.timeline.map((a, i) => (
+                      <tr
+                        key={i}
+                        className="border-b border-dashed border-toon-ink/25 align-top"
+                      >
+                        <td className="whitespace-nowrap py-2 pr-2 font-toon text-xs font-extrabold sm:text-sm">
+                          <time>{a.time}</time>
+                        </td>
+                        <td className="py-2 pr-2 font-bold">
+                          {a.ref && (
+                            <span className="mr-1 font-toon text-xs font-extrabold text-toon-ink-soft">
+                              {a.ref}
+                            </span>
+                          )}
+                          {a.label}
+                          {a.interrupts.length > 0 && (
+                            <span className="block text-xs font-semibold text-toon-ink-soft">
+                              {a.points -
+                                a.interrupts.reduce(
+                                  (n, i) => n + i.points,
+                                  0,
+                                )}{' '}
+                              lượt việc, bị chen bởi{' '}
+                              {a.interrupts
+                                .map((i) => `${i.ref} (${i.points})`)
+                                .join(' và ')}
+                            </span>
+                          )}
+                        </td>
+                        <td className="py-2 pr-2 text-right">{a.points}</td>
+                        <td className="py-2 text-right">{a.remaining}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             ) : (
               <p className="text-sm text-toon-ink-soft">
                 Bạn đi thẳng tới các mốc chính của ca.
@@ -581,6 +714,9 @@ function Story({ s }: { s: RunSummary }) {
                     : 'Bạn đã mở tới mọi dữ kiện quan trọng.'
                 }
               />
+              <h4 className="mb-1 text-xs font-extrabold uppercase tracking-wide text-toon-ink-soft">
+                Đã mở ({st.facts.found.length})
+              </h4>
               <ul className="space-y-2 text-sm">
                 {st.facts.found.map((f, i) => (
                   <li key={i} className="flex gap-3">
@@ -591,6 +727,35 @@ function Story({ s }: { s: RunSummary }) {
                   </li>
                 ))}
               </ul>
+              <h4 className="mb-1 mt-4 text-xs font-extrabold uppercase tracking-wide text-toon-ink-soft">
+                Chưa mở ({st.facts.notOpened.length})
+              </h4>
+              {st.facts.notOpened.length ? (
+                <ul className="space-y-2 text-sm">
+                  {st.facts.notOpened.map((f, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="text-toon-ink-soft">{f.text}</span>
+                      {f.required && (
+                        <ToonBadge tone="coral" className="shrink-0">
+                          Quan trọng
+                        </ToonBadge>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-sm text-toon-ink-soft">
+                  Không còn dữ kiện nào.
+                </p>
+              )}
+            </Panel>
+            <Panel>
+              <PanelHeader level={3} title="Cờ" />
+              <p className="text-sm font-semibold text-toon-ink-soft">
+                {st.flags.length
+                  ? st.flags.join(', ')
+                  : 'Không có cờ nào được bật.'}
+              </p>
             </Panel>
             {st.promises.length > 0 && (
               <Panel>

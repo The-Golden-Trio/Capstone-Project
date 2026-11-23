@@ -14,3 +14,4 @@ export function createDemoApi(): ExplorerApi {
 }
 export { bindExternalUser, unbindExternalUser } from './store';
 export { SHOWCASE_EMAIL, SHOWCASE_PASSWORD } from './showcase';
+export { startFreshRun } from './play';

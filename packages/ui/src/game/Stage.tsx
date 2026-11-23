@@ -4,7 +4,13 @@
  * nhân vật, bối cảnh do app truyền vào (asset nội dung), component chỉ lo
  * trình bày.
  */
-import type { CSSProperties, ReactNode } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from 'react';
 import { cn } from '../lib/cn';
 
 /** Bối cảnh phủ kín khung, giữ tâm ảnh; `dim` làm tối nhẹ để chữ nổi. */
@@ -28,6 +34,16 @@ export function SceneBackdrop({
   className?: string;
   children?: ReactNode;
 }) {
+  // Đổi ảnh thì ảnh cũ mờ dần phía trên thay vì nhảy cảnh.
+  const shown = useRef(src);
+  const [outgoing, setOutgoing] = useState<string | null>(null);
+  useEffect(() => {
+    if (shown.current === src) return;
+    setOutgoing(shown.current);
+    shown.current = src;
+    const id = window.setTimeout(() => setOutgoing(null), 650);
+    return () => window.clearTimeout(id);
+  }, [src]);
   return (
     <div
       className={cn(
@@ -43,6 +59,17 @@ export function SceneBackdrop({
         className="absolute inset-0 -z-10 size-full select-none object-cover"
         style={{ objectPosition: focus }}
       />
+      {outgoing && (
+        <img
+          key={outgoing}
+          src={outgoing}
+          alt=""
+          draggable={false}
+          data-backdrop-outgoing=""
+          className="pointer-events-none absolute inset-0 -z-10 size-full animate-toon-fade-out select-none object-cover"
+          style={{ objectPosition: focus }}
+        />
+      )}
       {dim > 0 && (
         <div
           aria-hidden

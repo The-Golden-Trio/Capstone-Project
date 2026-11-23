@@ -429,7 +429,7 @@
   color: #1d5280;
 }
 
-.table-caption {
+.tool-table-caption {
   padding: 0.55rem 1rem;
   color: #4b596a;
 }
@@ -716,9 +716,9 @@
   .desktop-window,
   .desktop-window[data-maximized='true'] {
     position: fixed;
-    inset: 0;
+    inset: var(--autoplay-bar-h, 0px) 0 0 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     border: 0;
     border-radius: 0;
   }
@@ -738,6 +738,49 @@
   }
   .play-desktop[aria-modal='true'] .desktop-dock {
     visibility: hidden;
+  }
+
+  /* Bảng log: mỗi dòng thành một thẻ đủ cả cột, không phải cuộn ngang. */
+  .tool-table .tool-table-scroll table,
+  .tool-table .tool-table-scroll tbody,
+  .tool-table .tool-table-scroll tr {
+    display: block;
+  }
+  .tool-table .tool-table-scroll thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .tool-table .tool-table-scroll tbody tr {
+    margin: 0.6rem 0.75rem;
+    overflow: hidden;
+    border: 1px solid #cfd9e4;
+    border-radius: 0.6rem;
+    background: #fff;
+  }
+  .tool-table .tool-table-scroll tbody tr:nth-child(even) {
+    background: #fff;
+  }
+  .tool-table .tool-table-scroll td {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 0.6rem;
+    padding: 0.35rem 0.7rem;
+    border-bottom: 1px solid #eef2f6;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .tool-table .tool-table-scroll td:last-child {
+    border-bottom: 0;
+  }
+  .tool-table td::before {
+    content: attr(data-label);
+    color: #536273;
+    font:
+      650 0.72rem/1.5 system-ui,
+      sans-serif;
   }
 
   .tool-ide {
