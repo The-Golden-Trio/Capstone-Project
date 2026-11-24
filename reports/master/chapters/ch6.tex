@@ -1,7 +1,7 @@
 \newpage
 \section{Implementation and Testing}
 
-This chapter reports what has been built from the design of Chapter 5 and how it has been tested. Its reference date is 21 November 2026, on the working tree of the branch \texttt{feat/cham-ca-lam-checklist}. The prototype implements part of the requirements, so each statement says whether a part is \textit{implemented} (code runs and is tested), \textit{partly implemented}, or \textit{designed only}. Numbers of lines and tests were counted on that date by the commands listed in Appendix 2; they describe the size of the work and are not a measure of quality.
+This chapter reports what has been built from the design of Chapter 5 and how it has been tested. Its reference date is 21 November 2026, on the working tree of the branch \texttt{feat/\allowbreak{}cham-\allowbreak{}ca-\allowbreak{}lam-\allowbreak{}checklist}. The prototype implements part of the requirements, so each statement says whether a part is \textit{implemented} (code runs and is tested), \textit{partly implemented}, or \textit{designed only}. Numbers of lines and tests were counted on that date by the commands listed in Appendix 6; they describe the size of the work and are not a measure of quality.
 
 \subsection{Implementation}
 
@@ -11,13 +11,7 @@ The prototype was built to show that the technologies of Section 5.2 work for th
 
 \subsubsection{Repository and tooling}
 
-The code is one monorepo managed with pnpm and Nx; continuous integration uses Node.js 22. Figure PK-01 shows the packages and how they depend on one another.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth,height=0.85\textheight,keepaspectratio]{figures/PK-01_RepositoryPackages.png}
-\caption{Repository packages and their dependencies (PK-01)}
-\end{figure}
+The code is one monorepo managed with pnpm and Nx; continuous integration uses Node.js 22. Figure PK-01 (Appendix 2) shows the packages and how they depend on one another.
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.238\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.528\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.126\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
@@ -28,15 +22,15 @@ The code is one monorepo managed with pnpm and Nx; continuous integration uses N
 \hline
 \textbf{Project} & \textbf{Role} & \textbf{Source lines (about)} & \textbf{Test files} \\ \hline
 \endhead
-\texttt{apps/api} (\texttt{@datn/api}) & NestJS 11 and Prisma 7 on PostgreSQL; the API role and, from the same build, the worker role & 24,400 & 39 \\ \hline
-\texttt{packages/game-core} & Rules shared by browser and server: run and shift engines, grading, bands, fit; no framework, network, or storage & 9,900 & 14 \\ \hline
-\texttt{apps/web} (\texttt{@datn/web}) & Explorer application: React 19, Vite, Tailwind CSS 4, React Query, zustand & 20,300 & 38 \\ \hline
-\texttt{apps/staff} (\texttt{@datn/staff}) & Staff application for content administrators and domain experts & 12,000 & 15 \\ \hline
-\texttt{packages/ui} (\texttt{@datn/ui}) & Design system and game kit & 7,600 & 14 \\ \hline
+\texttt{apps/\allowbreak{}api} (\texttt{@\allowbreak{}datn/\allowbreak{}api}) & NestJS 11 and Prisma 7 on PostgreSQL; the API role and, from the same build, the worker role & 24,400 & 39 \\ \hline
+\texttt{packages/\allowbreak{}game-\allowbreak{}core} & Rules shared by browser and server: run and shift engines, grading, bands, fit; no framework, network, or storage & 9,900 & 14 \\ \hline
+\texttt{apps/\allowbreak{}web} (\texttt{@\allowbreak{}datn/\allowbreak{}web}) & Explorer application: React 19, Vite, Tailwind CSS 4, React Query, zustand & 20,300 & 38 \\ \hline
+\texttt{apps/\allowbreak{}staff} (\texttt{@\allowbreak{}datn/\allowbreak{}staff}) & Staff application for content administrators and domain experts & 12,000 & 15 \\ \hline
+\texttt{packages/\allowbreak{}ui} (\texttt{@\allowbreak{}datn/\allowbreak{}ui}) & Design system and game kit & 7,600 & 14 \\ \hline
 \end{longtable}
 }
 
-The database schema has 72 models and 11 migrations. Occupation data is kept as sources under \texttt{occupation-data/} and built into the JSON that \texttt{game-core} reads (\texttt{pnpm data:build}); generated files are never edited by hand. The local environment is one Docker Compose file with PostgreSQL, Redis, a mail catcher, and an S3-compatible store. Commits follow Conventional Commits and are checked by a hook and by the pull-request check.
+The database schema has 72 models and 11 migrations. Occupation data is kept as sources under \texttt{occupation-\allowbreak{}data/\allowbreak{}} and built into the JSON that \texttt{game-\allowbreak{}core} reads (\texttt{pnpm data:build}); generated files are never edited by hand. The local environment is one Docker Compose file with PostgreSQL, Redis, a mail catcher, and an S3-\allowbreak{}compatible store. Commits follow Conventional Commits and are checked by a hook and by the pull-\allowbreak{}request check.
 
 \subsubsection{Modules against the module map}
 
@@ -54,14 +48,14 @@ Table of the nineteen modules of CL-00 and what exists. The prototype also keeps
 AuthModule & Implemented & Registration, sign-in, Google sign-in, refresh and sign-out, password reset, bearer tokens, authentication and role guards \\ \hline
 UserModule & Partly & Current user; the administrator's account and staffing screens are not complete \\ \hline
 CatalogueModule & Partly & Reduced to what the staff app needs \\ \hline
-ImportModule & Designed only & Reference-data import is not built \\ \hline
+ImportModule & Designed only & Reference-\allowbreak{}data import is not built \\ \hline
 LifecycleModule & Implemented & State changes of a scenario with a log \\ \hline
 ScenarioModule & Implemented & Open, assign, seed, generation by AI in the worker, reference answers, validator \\ \hline
 ReviewModule & Implemented & Review with criteria \\ \hline
 PublishingModule & Partly & Assets, presentation, and draft builds; play-test and release publication are not built \\ \hline
 CareerModule & Designed only & Quiz, career path, and recommendations run on sample data in the explorer app \\ \hline
 LifeModule & Designed only & Shop, inventory, and NPCs \\ \hline
-PlayModule & Implemented & Two flows: the activity flow (\texttt{/runs}) and the shift flow (\texttt{/shift-runs}) \\ \hline
+PlayModule & Implemented & Two flows: the activity flow (\texttt{/\allowbreak{}runs}) and the shift flow (\texttt{/\allowbreak{}shift-\allowbreak{}runs}) \\ \hline
 AssessmentModule & Implemented & Grading jobs, follow-ups, shift turns, and shift segment grading in the worker \\ \hline
 QualityModule & Designed only & Flags, blind ratings, regrading, agreement \\ \hline
 AiModule & Implemented & Gateway, narrator, judge panel, checker, generator \\ \hline
@@ -69,7 +63,7 @@ FeedbackModule & Partly & Occupation ratings (FR-19) and app feedback (FR-20); n
 MonitoringModule & Designed only & Statistics, AI-call list, metrics \\ \hline
 NotificationModule & Implemented & Event stream \\ \hline
 CoreModule & Implemented & Queues, stream, run log, error format \\ \hline
-GameCoreModule & Implemented & The package \texttt{game-core} \\ \hline
+GameCoreModule & Implemented & The package \texttt{game-\allowbreak{}core} \\ \hline
 \end{longtable}
 }
 
@@ -88,21 +82,21 @@ Table of the design mechanisms of Section 5.3.1 that exist in code.
 \hline
 \textbf{Mechanism} & \textbf{Design} & \textbf{Implementation} \\ \hline
 \endhead
-No model call inside a request & 5.3.1, DR-1 & An answer is stored with its job in one transaction and the request returns 202; a worker takes the job from a BullMQ queue (\texttt{grading}, \texttt{shift-turn}, generation) \\ \hline
-Result by server-sent events & 5.3.7 & \texttt{GET /api/v1/stream} through Redis; reconnection with \texttt{Last-Event-ID} \\ \hline
-Run as append-only events & 5.3.1, DR-2 & Table \texttt{run\_\allowbreak{}event}; state is a fold of the events through \texttt{game-core} (\texttt{foldPlay}, and the shift engine in \texttt{game-core/src/shift}); model output enters as events with model, prompt version, cost, and latency \\ \hline
-Two roles from one build & 5.3.1 & \texttt{main.js} starts the API, or the worker with \texttt{--worker}; they share only the queue and Redis \\ \hline
+No model call inside a request & 5.3.1, DR-1 & An answer is stored with its job in one transaction and the request returns 202; a worker takes the job from a BullMQ queue (\texttt{grading}, \texttt{shift-\allowbreak{}turn}, generation) \\ \hline
+Result by server-sent events & 5.3.7 & \texttt{GET /\allowbreak{}api/\allowbreak{}v1/\allowbreak{}stream} through Redis; reconnection with \texttt{Last-\allowbreak{}Event-\allowbreak{}ID} \\ \hline
+Run as append-only events & 5.3.1, DR-2 & Table \texttt{run\_\allowbreak{}event}; state is a fold of the events through \texttt{game-\allowbreak{}core} (\texttt{foldPlay}, and the shift engine in \texttt{game-\allowbreak{}core/\allowbreak{}src/\allowbreak{}shift}); model output enters as events with model, prompt version, cost, and latency \\ \hline
+Two roles from one build & 5.3.1 & \texttt{main.\allowbreak{}js} starts the API, or the worker with \texttt{-\allowbreak{}-\allowbreak{}worker}; they share only the queue and Redis \\ \hline
 Model gateway as port and adapter & DC-02, NFR-12 & Adapters per provider, a registry of models, failover to a model of the same role, circuit breaker, cost ledger, call budget \\ \hline
 Judges from different families & DC-01 & Three judge seats from three providers; the panel refuses to start, with the reason logged, if the families would coincide with the narrator's \\ \hline
 Assessment by a panel & 5.3.6, FR-11 & Panel of three judges returns marks with verbatim quotations; too few judges leaves the answer pending (D-108); in the shift flow the segments are graded against a checklist \\ \hline
-Narration and follow-up & 5.3.6, FR-12 & Narrator service with versioned prompts and rules; de-identification before the call \\ \hline
+Narration and follow-up & 5.3.6, FR-12 & Narrator service with versioned prompts and rules; de-\allowbreak{}identification before the call \\ \hline
 Content lifecycle & SM-01, NFR-16 & Lifecycle module with a log written in the transaction of each state change; validator before submission \\ \hline
 Identity and roles & 5.3.7, FR-40 & Bearer authentication, role guard, and the assignment check on staff routes \\ \hline
 Errors & 5.3.7 & Problem Details with stable codes \\ \hline
 \end{longtable}
 }
 
-A run of the activity flow against real models, done by hand on 11 November with the script \texttt{tools/dev/play-e2e.mjs}, gave the following observations: a follow-up question appeared after 1.8 to 5 seconds; the panel finished grading after 2.5 to 3.5 seconds; a level-one scenario cost about 0.0026 USD; reloading the page during a follow-up reopened the same place; and stopping the worker and starting it again let the pending job finish. These are single runs, not a benchmark; the measures and thresholds for NFR-01, NFR-02, and NFR-11 are fixed in Section 7.3.2 and have not yet been measured.
+A run of the activity flow against real models, done by hand on 11 November with the script \texttt{tools/\allowbreak{}dev/\allowbreak{}play-\allowbreak{}e2e.\allowbreak{}mjs}, gave the following observations: a follow-up question appeared after 1.8 to 5 seconds; the panel finished grading after 2.5 to 3.5 seconds; a level-one scenario cost about 0.0026 USD; reloading the page during a follow-up reopened the same place; and stopping the worker and starting it again let the pending job finish. These are single runs, not a benchmark; the measures and thresholds for NFR-01, NFR-02, and NFR-11 are fixed in Section 7.3.2 and have not yet been measured.
 
 \subsubsection{Where the prototype differs from the design}
 
@@ -119,8 +113,8 @@ Submission of a run & The activity flow sends the whole run at the end and regra
 Free-text grading in the old flow & Keyword matching & Judge panel (Section 5.3.6) & The new flow uses the panel; the keyword grader fails the agreement threshold (Section 7.3.3) \\ \hline
 Database & Tables of the prototype and of an earlier model of identity, catalogue, and authoring & ERD of twelve groups (Section 5.3.5) & Migration is the first task of the next phase \\ \hline
 Modules & Four modules outside CL-00; five of CL-00 absent & CL-00 & Remove the four, build the five \\ \hline
-Shift API & \texttt{/shift-runs} was proposed outside the contract of 11 November & Contract of Section 5.3.7 & Added to the contract as \texttt{proposed} operations; to be approved by the team \\ \hline
-Dead code & Three older modules (\texttt{skills}, \texttt{career-graph}, \texttt{persistence}) exist but are not registered in the application & None & Not to be extended; removal proposed \\ \hline
+Shift API & \texttt{/\allowbreak{}shift-\allowbreak{}runs} was proposed outside the contract of 11 November & Contract of Section 5.3.7 & Added to the contract as \texttt{proposed} operations; to be approved by the team \\ \hline
+Dead code & Three older modules (\texttt{skills}, \texttt{career-\allowbreak{}graph}, \texttt{persistence}) exist but are not registered in the application & None & Not to be extended; removal proposed \\ \hline
 Scoring of a shift & Segments are graded by checklist; no numeric score yet & Score from group ceilings per scenario & Waits for the ceilings per scenario \\ \hline
 Deployment & Local Docker Compose only & Cloud region, two zones, egress proxy (Section 5.3.1) & Stage 1 on one university server \\ \hline
 \end{longtable}
@@ -141,32 +135,32 @@ The tests in the repository are unit and component tests: Jest for the API and V
 \hline
 \textbf{Project} & \textbf{Files or suites} & \textbf{Tests} & \textbf{Passed} & \textbf{Failed} \\ \hline
 \endhead
-\texttt{apps/api} & 39 & 510 & 510 & 0 \\ \hline
-\texttt{packages/game-core} & 14 & 225 & 225 & 0 \\ \hline
-\texttt{packages/ui} & 14 & 108 & 108 & 0 \\ \hline
-\texttt{apps/web} & 38 & 118 & 118 & 0 \\ \hline
-\texttt{apps/staff} & 15 & 71 & 70 & 1 \\ \hline
+\texttt{apps/\allowbreak{}api} & 39 & 510 & 510 & 0 \\ \hline
+\texttt{packages/\allowbreak{}game-\allowbreak{}core} & 14 & 225 & 225 & 0 \\ \hline
+\texttt{packages/\allowbreak{}ui} & 14 & 108 & 108 & 0 \\ \hline
+\texttt{apps/\allowbreak{}web} & 38 & 118 & 118 & 0 \\ \hline
+\texttt{apps/\allowbreak{}staff} & 15 & 71 & 70 & 1 \\ \hline
 Total & 120 & 1,032 & 1,031 & 1 \\ \hline
 \end{longtable}
 }
 
-The one failure is a staff-application component test, \texttt{ReferenceAnswers.spec.tsx} (``keeps Không xét selected and does not turn a cleared score into zero''): the expected value \texttt{na} is read as an empty string. It is a defect of the working tree, to be fixed before the next release; it is reported here rather than hidden.
+The one failure is a staff-\allowbreak{}application component test, \texttt{ReferenceAnswers.\allowbreak{}spec.\allowbreak{}tsx} (``keeps Không xét selected and does not turn a cleared score into zero''): the expected value \texttt{na} is read as an empty string. It is a defect of the working tree, to be fixed before the next release; it is reported here rather than hidden.
 
 The tests concentrate where the design puts the risk. The shared rules have tests for the engines and for grading. The AI layer has tests of the gateway (adapters, circuit breaker, cost, model registry), of the provider contract, of the prompts, of the output parsers (including rejection of a quotation that is not in the answer), of the combination of judges, and of the checklist grading. The shift flow has a test of the whole flow through the queue with a fake model.
 
 \subsubsection{How AI is tested without hiding failures}
 
-There is no test path without AI (D-92). The fake model (\texttt{AI\_\allowbreak{}MODE=fake}) is used to check the flow only: queue, events, failover, and provenance; the log of the test run shows the expected ``no model'', ``too few judges'', and ``attempts exhausted'' paths being taken. It never stands in for a measurement of quality, which is made by the method of Section 7.3. Beyond unit tests there is an AI laboratory (\texttt{ai-lab}) that plays scripted playthroughs through the shift engine, the narrator, and the checker: one in which the player works well, one in which the player promises a time and forgets it, and one in which the player goes off topic, injects commands, and asks for the answer. It runs with fake models for free or with real models at a cost.
+There is no test path without AI (D-92). The fake model (\texttt{AI\_\allowbreak{}MODE=fake}) is used to check the flow only: queue, events, failover, and provenance; the log of the test run shows the expected ``no model'', ``too few judges'', and ``attempts exhausted'' paths being taken. It never stands in for a measurement of quality, which is made by the method of Section 7.3. Beyond unit tests there is an AI laboratory (\texttt{ai-\allowbreak{}lab}) that plays scripted playthroughs through the shift engine, the narrator, and the checker: one in which the player works well, one in which the player promises a time and forgets it, and one in which the player goes off topic, injects commands, and asks for the answer. It runs with fake models for free or with real models at a cost.
 
 \subsubsection{Continuous integration and the plan of Section 5.3.9}
 
 Each push to \texttt{main} and each pull request runs the format check, then lint, test, build, and typecheck on every project; a second check validates the commit messages and the description of the pull request. The CI environment holds placeholder database addresses and starts no database and no Redis, so no integration test runs in CI. There is no end-to-end test in the repository; the end-to-end run of Section 6.1.4 is a manual script.
 
-The 187 test cases of Section 5.3.9 and Appendix 3 are a plan. The unit tests above were written before it and carry no case identifier, so this report does not claim that any of the 187 cases is covered, and it does not report code coverage, which has not been measured. Tagging the tests with case identifiers, adding PostgreSQL and Redis to CI, and choosing an end-to-end tool are tasks of the next phase.
+The 187 test cases of Section 5.3.9 and Appendix 5 are a plan. The unit tests above were written before it and carry no case identifier, so this report does not claim that any of the 187 cases is covered, and it does not report code coverage, which has not been measured. Tagging the tests with case identifiers, adding PostgreSQL and Redis to CI, and choosing an end-to-end tool are tasks of the next phase.
 
 \subsection{Summary}
 
-The prototype implements the platform's backbone: identity and roles, the staff authoring pipeline to a draft game, the explorer's journey with the Galaxy Map, the shift play with AI narration, and AI assessment by a panel of judges, all through a queue, an event log, and a model gateway as designed. It does not yet implement reference-data import, the career and life modules, grading-quality tools, monitoring, release publication, and the migration to the new data model.
+The prototype implements the platform's backbone: identity and roles, the staff authoring pipeline to a draft game, the explorer's journey with the Galaxy Map, the shift play with AI narration, and AI assessment by a panel of judges, all through a queue, an event log, and a model gateway as designed. It does not yet implement reference-\allowbreak{}data import, the career and life modules, grading-\allowbreak{}quality tools, monitoring, release publication, and the migration to the new data model.
 
 {\small
 \begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.443\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.552\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
@@ -185,8 +179,8 @@ Feedback (FR-19, FR-20) & Implemented for explorers; administrator side not buil
 Authoring and review (FR-21 to FR-25, FR-30, FR-32 to FR-35) & Mostly implemented up to a draft game \\ \hline
 Quality and publication (FR-26 to FR-29, FR-36 to FR-39) & Assets and presentation partly; the rest designed only \\ \hline
 Import and operation (FR-31, FR-42, FR-43) & Designed only \\ \hline
-Non-functional & Measured only in part (Chapter 7); NFR-01 to NFR-04 and NFR-11 to NFR-15 wait for measurement \\ \hline
+Non-\allowbreak{}functional & Measured only in part (Chapter 7); NFR-01 to NFR-04 and NFR-11 to NFR-15 wait for measurement \\ \hline
 \end{longtable}
 }
 
-The detailed matrix from each requirement to its design elements is Appendix 1.
+The detailed matrix from each requirement to its design elements is Appendix 4.

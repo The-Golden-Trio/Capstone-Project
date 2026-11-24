@@ -15,7 +15,7 @@ This is a proposed plan for the 15-week capstone phase. It follows from the limi
 \endhead
 A. Foundation & 1 to 3 & Decide the data-model entries still waiting; migrate the database; remove the modules outside CL-00; fix the failing test; add PostgreSQL and Redis to CI; tag tests with case identifiers & The prototype follows the data model; CI runs integration tests \\ \hline
 B. Explorer completion & 4 to 7 & Build ImportModule, CareerModule, and LifeModule; define the group ceilings and the numeric score; decide FR-07; connect the explorer screens that now show sample data & An explorer plays, scores, progresses, and sees a real profile \\ \hline
-C. Staff completion & 8 to 10 & Release publication, play-test, grading-quality tools, monitoring, and the administrator's screens; author further scenarios with the experts & A scenario goes from seed to published release without developer help \\ \hline
+C. Staff completion & 8 to 10 & Release publication, play-test, grading-\allowbreak{}quality tools, monitoring, and the administrator's screens; author further scenarios with the experts & A scenario goes from seed to published release without developer help \\ \hline
 D. Measurement & 11 to 13 & Build the reference set; measure agreement, latency, cost, and failover (NFR-01, 02, 04, 11 to 15); fix mobile performance and accessibility; manual accessibility audit & Chapter 7 completed with measured results \\ \hline
 E. Pilot and delivery & 14 to 15 & Comprehension and usability sessions (NFR-09); penetration test; Stage 1 deployment; final report & Deployed system, final report \\ \hline
 \end{longtable}
@@ -36,7 +36,7 @@ R1 & Domain experts are not available in time for the reference set or authoring
 R2 & A model provider changes price, terms, or availability & Medium & Medium & Models behind the gateway and chosen by configuration (DC-02); failover; the cost ceiling per session \\ \hline
 R3 & AI agreement with experts is below the threshold & Medium & High: objective 2 is not met & Report the result honestly; adjust prompts and rubrics; the threshold is not lowered afterward \\ \hline
 R4 & The data migration breaks the prototype's flows & Medium & Medium & Migrate in steps with the integration tests of Phase A in place first; keep the demonstration mode working \\ \hline
-R5 & The legal office rules against sending de-identified text abroad & Low & High & The comparison of Section 5.3.10 names the alternatives; open-weight models in Vietnam as the fallback, at a cost in quality \\ \hline
+R5 & The legal office rules against sending de-\allowbreak{}identified text abroad & Low & High & The comparison of Section 5.3.10 names the alternatives; open-weight models in Vietnam as the fallback, at a cost in quality \\ \hline
 R6 & Scope of content grows faster than expert review & High & Medium & Publish only reviewed scenarios; one field; no AI-only publication \\ \hline
 R7 & Cost of model calls during measurement exceeds the budget & Low & Medium & The ledger and the budget per call; measure on probe sets before full runs \\ \hline
 R8 & Too few pilot users & Medium & Low & Recruit through the university early; the pilot answers usability questions, not statistical ones \\ \hline

@@ -1,6 +1,6 @@
 # Từ điển dữ liệu ERD JobQuest
 
-Giải thích từng entity, từng field và từng quan hệ của mô hình dữ liệu Chen ([ERD_JobQuest_Chen.puml](ERD_JobQuest_Chen.puml), tách thành 6 sơ đồ `ERD-01` … `ERD-06`). Viết ngày 21/11/2026 theo trạng thái file nguồn lúc đó.
+Giải thích từng entity, từng field và từng quan hệ của mô hình dữ liệu Chen ([ERD_JobQuest_Chen.puml](ERD_JobQuest_Chen.puml), tách thành 6 nhóm sơ đồ `ERD-01` … `ERD-06`, mỗi nhóm gồm 2–5 sơ đồ nhỏ `ERD-01a` … `ERD-06d`). Viết ngày 21/11/2026 theo trạng thái file nguồn lúc đó.
 
 > **Trạng thái:** đây là thiết kế đề xuất vẽ theo `research/`, chưa phải mô tả code đang chạy. Prisma hiện tại còn lệch sơ đồ này (xem [07 A28](../../../../docs/project-hub/07-van-de-mo.md)). File này viết tay, **không tự sinh**: sửa ERD thì phải cập nhật lại ở đây.
 
@@ -46,7 +46,7 @@ Như vậy số bảng khi hiện thực xấp xỉ số entity cộng với s�
 
 ## ERD-01 · Danh tính, chất lượng chấm, vận hành AI
 
-Sơ đồ: [ERD-01_IdentityQualityAndAiOps.puml](ERD-01_IdentityQualityAndAiOps.puml)
+Sơ đồ: [ERD-01a_Identity.puml](ERD-01a_Identity.puml), [ERD-01b_QualityAndFeedback.puml](ERD-01b_QualityAndFeedback.puml), [ERD-01c_AiOperations.puml](ERD-01c_AiOperations.puml)
 
 ### A. Danh tính và phân công
 
@@ -364,7 +364,7 @@ Field riêng của quan hệ:
 
 ## ERD-02 · Danh mục nghề, tham chiếu, keyword
 
-Sơ đồ: [ERD-02_CatalogueReferenceAndKeywords.puml](ERD-02_CatalogueReferenceAndKeywords.puml)
+Sơ đồ: [ERD-02a_Occupations.puml](ERD-02a_Occupations.puml), [ERD-02b_LevelsAndTasks.puml](ERD-02b_LevelsAndTasks.puml), [ERD-02c_WorkEnvironments.puml](ERD-02c_WorkEnvironments.puml), [ERD-02d_ReferenceAndKeywords.puml](ERD-02d_ReferenceAndKeywords.puml), [ERD-02e_SoftSkills.puml](ERD-02e_SoftSkills.puml)
 
 ### B. Danh mục nghề, hồ sơ nghề, nơi làm
 
@@ -710,7 +710,7 @@ Field riêng của quan hệ:
 
 ## ERD-03 · Gói cấp và nội dung màn
 
-Sơ đồ: [ERD-03_LevelPackAndScenarioContent.puml](ERD-03_LevelPackAndScenarioContent.puml)
+Sơ đồ: [ERD-03a_Scenario.puml](ERD-03a_Scenario.puml), [ERD-03b_PackAndSlots.puml](ERD-03b_PackAndSlots.puml), [ERD-03c_FactsAndActions.puml](ERD-03c_FactsAndActions.puml), [ERD-03d_Nodes.puml](ERD-03d_Nodes.puml), [ERD-03e_ProbesAndAnswers.puml](ERD-03e_ProbesAndAnswers.puml)
 
 ### D. Gói cấp
 
@@ -1074,7 +1074,7 @@ Field riêng của quan hệ:
 
 ## ERD-04 · Soạn, duyệt, trình bày, play-test, xuất bản
 
-Sơ đồ: [ERD-04_AuthoringReviewAndRelease.puml](ERD-04_AuthoringReviewAndRelease.puml)
+Sơ đồ: [ERD-04a_InterviewAndDrafting.puml](ERD-04a_InterviewAndDrafting.puml), [ERD-04b_ReviewAndLifecycle.puml](ERD-04b_ReviewAndLifecycle.puml), [ERD-04c_PresentationAndRelease.puml](ERD-04c_PresentationAndRelease.puml)
 
 ### F. Soạn bằng AI, duyệt, trình bày, play-test, xuất bản
 
@@ -1345,7 +1345,7 @@ Field riêng của quan hệ:
 
 ## ERD-05 · NPC, nhiệm vụ phụ, kinh tế, sức khoẻ, lịch
 
-Sơ đồ: [ERD-05_NpcEconomyAndLife.puml](ERD-05_NpcEconomyAndLife.puml)
+Sơ đồ: [ERD-05a_NpcCards.puml](ERD-05a_NpcCards.puml), [ERD-05b_NpcChaptersAndSideQuests.puml](ERD-05b_NpcChaptersAndSideQuests.puml), [ERD-05c_Economy.puml](ERD-05c_Economy.puml), [ERD-05d_HealthAndLife.puml](ERD-05d_HealthAndLife.puml)
 
 ### G. NPC tarot, nhiệm vụ phụ, asset nhân vật
 
@@ -1680,7 +1680,7 @@ Field riêng của quan hệ:
 
 ## ERD-06 · Hồ sơ, tiến trình, lượt chơi, chấm
 
-Sơ đồ: [ERD-06_ExplorerProgressRunsAndGrading.puml](ERD-06_ExplorerProgressRunsAndGrading.puml)
+Sơ đồ: [ERD-06a_ExplorerProfile.puml](ERD-06a_ExplorerProfile.puml), [ERD-06b_Progression.puml](ERD-06b_Progression.puml), [ERD-06c_Runs.puml](ERD-06c_Runs.puml), [ERD-06d_Grading.puml](ERD-06d_Grading.puml)
 
 ### H. Hồ sơ người chơi
 

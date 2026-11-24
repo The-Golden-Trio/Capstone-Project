@@ -37,14 +37,29 @@ def inl(text, cites=True):
         holders.append(tex)
         return f"\x00H{len(holders) - 1}\x00"
 
-    # `code`: \texttt, cho phép ngắt dòng sau dấu gạch dưới (tên bảng/cột dài không tràn ô bảng).
+    # `code`: \texttt, cho phép ngắt dòng sau _ - . / @ (tên bảng, cột, tệp dài không tràn ô bảng).
     def code(m):
-        c = m.group(1).replace("\\", "\\textbackslash{}")
-        c = re.sub(r"([&%$#{}])", r"\\\1", c).replace("_", "\\_\\allowbreak{}")
-        c = c.replace("~", "\\textasciitilde{}").replace("^", "\\textasciicircum{}")
-        return hold("\\texttt{" + c + "}")
+        out = []
+        for ch in m.group(1):
+            if ch == "\\":
+                out.append("\\textbackslash{}")
+            elif ch in "&%$#{}":
+                out.append("\\" + ch)
+            elif ch == "_":
+                out.append("\\_\\allowbreak{}")
+            elif ch in "-./@":
+                out.append(ch + "\\allowbreak{}")
+            elif ch == "~":
+                out.append("\\textasciitilde{}")
+            elif ch == "^":
+                out.append("\\textasciicircum{}")
+            else:
+                out.append(ch)
+        return hold("\\texttt{" + "".join(out) + "}")
 
     text = re.sub(r"`([^`\n]+)`", code, text)
+    # Từ dài ngoài `code` (email, tên tệp, từ ghép): cho phép ngắt sau _ - . / @.
+    text = re.sub(r"[^\s\x00]{12,}", lambda m: re.sub(r"([-._/@])(?=[^\s\x00])", "\\1\x01", m.group(0)), text)
     # Công thức trong dòng $...$: giữ nguyên cho LaTeX.
     text = re.sub(r"\$([^$\n]+?)\$", lambda m: hold("$" + m.group(1) + "$"), text)
     if cites:
@@ -59,7 +74,7 @@ def inl(text, cites=True):
     text = re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", text)
     text = re.sub(r"\*(.+?)\*", r"\\textit{\1}", text)
     text = re.sub(r'"([^"]*)"', r"``\1''", text)
-    text = fix_unicode(text).replace("\x00AST\x00", "*")
+    text = fix_unicode(text).replace("\x00AST\x00", "*").replace("\x01", "\\allowbreak{}")
     return re.sub(r"\x00H(\d+)\x00", lambda m: holders[int(m.group(1))], text)
 
 
@@ -70,13 +85,24 @@ def table(rows, caption):
     size = "\\footnotesize" if ncol >= 6 else "\\small"
     char_cm = CHAR_CM * (0.9 if ncol >= 6 else 1)
     # Mỗi cột rộng tối thiểu bằng từ dài nhất của nó; phần còn lại chia theo độ dài nội dung trung bình.
-    longest_word = [max(max((len(w) for w in re.split(r"[\s/]+|(?<=[a-z])-(?=[a-z])", r[i])), default=1) for r in cells) for i in range(ncol)]
+    def unbreakable(cell):
+        """Độ dài các đoạn không ngắt được của một ô (code và từ dài ≥ 12 ký tự ngắt được sau _ - . / @)."""
+        lens = []
+        for k, part in enumerate(re.split(r"`", cell)):
+            if k % 2:  # trong `code`
+                lens += [len(w) for w in re.split(r"[-._/@\s]+", part)]
+                continue
+            for w in re.split(r"\s+|(?<=[a-z])-(?=[a-z])", part):
+                lens += [len(x) for x in re.split(r"[-._/@]", w)] if len(w) >= 12 else [len(w)]
+        return max(lens, default=1)
+
+    longest_word = [max(unbreakable(r[i]) for r in cells) for i in range(ncol)]
     floor = [min((lw * char_cm + 0.75) / TEXT_CM, 0.30) for lw in longest_word]
     if sum(floor) > 0.9:    # quá chật: chỉ bóp các cột có từ dài, giữ nguyên cột ID
-        keep = sum(f for f, lw in zip(floor, longest_word) if lw <= 8)
+        keep = sum(f for f, lw in zip(floor, longest_word) if lw <= 12)
         if keep < 0.9 and sum(floor) > keep:
             scale = (0.9 - keep) / (sum(floor) - keep)
-            floor = [f if lw <= 8 else f * scale for f, lw in zip(floor, longest_word)]
+            floor = [f if lw <= 12 else f * scale for f, lw in zip(floor, longest_word)]
         else:  # bảng nhiều cột mà cột nào cũng chỉ có từ ngắn: co đều mọi cột
             floor = [f * 0.9 / sum(floor) for f in floor]
     want = [max(sum(len(r[i]) for r in cells) / len(cells), lw) ** 0.75 for i, lw in enumerate(longest_word)]
@@ -100,7 +126,20 @@ def table(rows, caption):
     if caption:
         out.append(f"\\caption{{{inl(caption)}}} \\\\")
     out += ["\\hline", head, "\\endfirsthead", "\\hline", head, "\\endhead"]
-    out += [" & ".join(inl(c) for c in r) + " \\\\ \\hline" for r in body]
+    def rule(k):
+        # Dòng kế tiếp có ô đầu rỗng là phần tiếp của cùng một mục (ví dụ các bước của một test case):
+        # chỉ kẻ ngang ở những cột có nội dung, để các cột còn lại trông như một ô gộp.
+        if k + 1 < len(body) and body[k + 1][0].strip() == "" and any(c.strip() for c in body[k + 1]):
+            cols_on = [i + 1 for i, c in enumerate(body[k + 1]) if c.strip()]
+            runs, start = [], cols_on[0]
+            for a, b in zip(cols_on, cols_on[1:] + [None]):
+                if b != a + 1:
+                    runs.append((start, a))
+                    start = b
+            return " ".join(f"\\cline{{{a}-{b}}}" for a, b in runs)
+        return "\\hline"
+
+    out += [" & ".join(inl(c) for c in r) + " \\\\ " + rule(k) for k, r in enumerate(body)]
     out += ["\\end{longtable}", "}"]
     return "\n".join(out)
 
