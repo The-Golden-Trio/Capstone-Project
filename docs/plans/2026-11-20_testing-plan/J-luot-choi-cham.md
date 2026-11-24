@@ -5,7 +5,7 @@ Thuộc [testing plan](../2026-11-20_testing-plan.md). Trạng thái ca kiểm g
 ## Phạm vi
 
 - **ERD:** `SCENARIO_RUN` (`is_playtest`, `status`, `time_budget`, `health_tier`, `ot`, `buff_total`, `buff_breakdown`), `RUN_EVENT` (yếu; `seq`, `type`, `payload`, `provenance`), `EVIDENCE_SEGMENT` (`hint_used`), `ASSESSMENT` (`level`, `weight`, `status`, `off_example`), `JUDGE_RESULT` (`judge_slot`, `model`, `level`, `answers`, `reason`), `FEEDBACK_NOTE`, `CONTENT_FLAG`, `INTEREST_TAP`, `NPC_MEMORY`, `SIDE_QUEST_RUN`; quan hệ `RAISES_FLAG` (`quote`, `turn_ref`), `EARNS_POINTS` (`cap`, `raw`, `buffed`, `credited`).
-- **Yêu cầu:** FR-10…FR-16; DR-06, DR-07, DR-11; NFR-01, NFR-02, NFR-03, NFR-15, NFR-17; D-92, D-116, D-132. **Use case:** UC-E11…E16. **Diagram:** `AD-01d`, `AD-01h`, `SD-01`, `SD-02`; class `CL-06` (PlayAssessmentAndQuality).
+- **Yêu cầu:** FR-10…FR-16; DR-06, DR-07, DR-11; NFR-01, NFR-02, NFR-03, NFR-04, NFR-13, NFR-15, NFR-17, NFR-19; D-92, D-116, D-132. **Use case:** UC-E11…E16. **Diagram:** `AD-01d`, `AD-01h`, `SD-01`, `SD-02`, `SD-10`, `SM-02`; class `CL-06` (PlayAssessmentAndQuality).
 - **Code:** luồng ca làm `/api/v1/shift-runs` (đề xuất ngoài `openapi.yaml`) và luồng activity `/api/v1/runs`; worker BullMQ, SSE, sổ `run_event`. `game-core/src/shift/` (`engine.ts` 1.620 dòng khoảng 289 điểm quyết định, `fold.ts`, `view.ts`, `summary.ts`), `domain/play/playRun.ts`, `domain/scenarioEngine.ts`. API: `play/run.service.ts` (553 dòng), `play/shift-run.service.ts`, `core/run-log.service.ts`, `core/shift-log.service.ts`, `assessment/grading.processor.ts` (504 dòng), `shift-turn.processor.ts`, `follow-up.service.ts`, `ai/judge/judge-combine.ts`, `judge-panel.service.ts`. **Ca làm chưa chấm điểm.** `AI_MODE=fake` chỉ dùng để kiểm luồng.
 - **Lệch thiết kế trong code:** `runs/runs.service.ts` (`complete`, `replay`) gửi run một lần khi kết thúc rồi chấm lại bằng replay; thiết kế là gửi từng lượt. Ca kiểm đi theo thiết kế.
 
@@ -279,6 +279,71 @@ Số lần thử tối đa là cấu hình; ca kiểm chạy ở biên (lần cu
 - **Hậu điều kiện:** `RUN_EVENT` đủ
 - **Tự động hoá:** Playwright (đề xuất)
 - **Trạng thái:** Chờ hiện thực (cần E2E)
+
+### TC-J-ST-02 · Trạng thái run theo SM-02: đang chơi, tạm dừng, xong, bỏ dở
+
+- **Nguồn:** SM-02 (`RunStatus`); D-92; NFR-04; SD-10; `TurnService.resume`; ERD `SCENARIO_RUN.status`
+- **Cấp · loại · kỹ thuật:** Integration · chức năng, tin cậy · chuyển trạng thái
+- **Ưu tiên:** Cao
+- **Tiền điều kiện:** run đang chơi; `AI_MODE=fake` lỗi theo kịch bản
+- **Dữ liệu vào:** đóng lượt cuối; mọi model vai narrator lỗi; khôi phục model; explorer bỏ hẳn; gửi lượt vào run đã kết thúc
+- **Các bước:** 1. Đóng lượt cuối. 2. Ở run thứ hai làm mọi model vai narrator lỗi, rồi khôi phục và gọi `resume`. 3. Ở run thứ ba bỏ hẳn. 4. Gửi lượt vào run đã xong hoặc bỏ dở.
+- **Kết quả mong đợi:** lượt cuối → `FINISHED`, không nhận lượt nữa; hết model → run vẫn `IN_PROGRESS`, đánh dấu tạm dừng, giữ tiến độ, báo explorer trong 10 giây; `resume` chơi tiếp đúng vị trí; bỏ hẳn → `ABANDONED`, giữ sự kiện; gửi lượt vào run đã kết thúc bị từ chối (`RUN_ENDED`)
+- **Hậu điều kiện:** chuỗi `RUN_EVENT` liên tục
+- **Tự động hoá:** `shift-run.flow.spec.ts` (đã có ca tạm dừng và `resume`; mở rộng)
+- **Trạng thái:** Chạy được cho tạm dừng và `resume`; `ABANDONED` chờ hiện thực. Code ghi tạm dừng vào `ai_job.status = PAUSED`, SM-02 không có trạng thái này cho job: ca kiểm đi theo thiết kế
+
+### TC-J-ST-03 · Trạng thái chấm theo SM-02: xếp hàng, đã chấm, chờ, thất bại
+
+- **Nguồn:** SM-02 (`AssessmentStatus`); D-108, D-132; SD-10; ERD `ASSESSMENT.status`
+- **Cấp · loại · kỹ thuật:** Integration · tin cậy · chuyển trạng thái
+- **Ưu tiên:** Cao
+- **Tiền điều kiện:** một đoạn đã đóng có job chấm; judge giả theo kịch bản
+- **Dữ liệu vào:** 3 judge trả lời; dưới 2 judge trước lần thử cuối; chấm lại khi có judge; hết lần thử; sửa một đánh giá đã chấm
+- **Các bước:** 1. Chạy chấm theo từng kịch bản. 2. Quan sát `status` và sự kiện trên `/stream`.
+- **Kết quả mong đợi:** `QUEUED` → `GRADED`; thiếu judge → `PENDING`, giữ câu trả lời, explorer nhận sự kiện chậm nhà cung cấp (SD-10); chấm lại → `QUEUED` → `GRADED`; hết lần thử → `FAILED`, job chạy lại được (TC-L-ST-01); sửa đánh giá đã `GRADED` bị từ chối (trạng thái cuối)
+- **Hậu điều kiện:** không chấm bằng script thay thế (D-92)
+- **Tự động hoá:** `checklist.spec.ts`, `judge-panel.service.spec.ts`, `shift-run.flow.spec.ts` (mở rộng)
+- **Trạng thái:** Chờ hiện thực cho trạng thái đầy đủ theo ERD
+
+### TC-J-EG-03 · Gửi lại cùng một lượt
+
+- **Nguồn:** SD-10 (turn id); NFR-04; `TurnService.take`; `shift-run.service.ts`, `turnRange` trong `core/shift-log.service.ts`
+- **Cấp · loại · kỹ thuật:** Integration · tin cậy · đoán lỗi
+- **Ưu tiên:** Cao
+- **Tiền điều kiện:** run đang chơi; turn id `t1` do client sinh
+- **Dữ liệu vào:** gửi `t1`; gửi lại `t1`; gửi `t1` hai lần cùng lúc; gửi `t2` khi `t1` đang xử lý
+- **Các bước:** 1. Gửi từng trường hợp. 2. Đếm sự kiện `PLAYER_INPUT` và job.
+- **Kết quả mong đợi:** `t1` được nhận, một sự kiện, một job; gửi lại `t1` trả đúng kết quả cũ, không thêm sự kiện hay job; gửi đồng thời chỉ ghi một lần; `t2` khi `t1` chưa xong bị từ chối (`TURN_IN_PROGRESS`)
+- **Hậu điều kiện:** `seq` không trùng
+- **Tự động hoá:** `shift-run.flow.spec.ts` (mở rộng)
+- **Trạng thái:** Chạy được (turn id nằm trong sự kiện `PLAYER_INPUT`; ERD chưa có thuộc tính riêng, xem report §5.3.5)
+
+### TC-J-NF-03 · Màn explorer đạt WCAG 2.1 AA
+
+- **Nguồn:** NFR-19; SITE-01
+- **Cấp · loại · kỹ thuật:** System · truy cập · audit tự động và thủ công
+- **Ưu tiên:** Vừa
+- **Tiền điều kiện:** bản build production; công cụ kiểm truy cập tự động (dependency mới, chờ nhóm đồng ý)
+- **Dữ liệu vào:** mọi màn explorer của SITE-01; một màn chơi
+- **Các bước:** 1. Audit tự động mọi màn. 2. Chơi một màn chỉ bằng bàn phím. 3. Chơi một màn bằng screen reader.
+- **Kết quả mong đợi:** không vi phạm mức A, AA; mọi điều khiển tới được bằng bàn phím, thấy focus; lời nhân vật, lựa chọn, hint, kết quả được đọc
+- **Hậu điều kiện:** vi phạm ghi thành lỗi kèm màn và tiêu chí WCAG
+- **Tự động hoá:** audit tự động trong E2E (dự kiến); phần bàn phím và screen reader thủ công
+- **Trạng thái:** Chờ hiện thực
+
+### TC-J-NF-04 · Chơi trên điện thoại, mạng chậm
+
+- **Nguồn:** NFR-13, DC-05; report §7.1.1 (hồ sơ mobile của Lighthouse)
+- **Cấp · loại · kỹ thuật:** System · tương thích, hiệu năng · đo
+- **Ưu tiên:** Vừa
+- **Tiền điều kiện:** hồ sơ mobile §7.1.1 (round trip 150 ms, 1,6 Mbit/s, CPU chậm 4 lần); một điện thoại tầm trung làm chuẩn
+- **Dữ liệu vào:** bản đồ và một màn chơi; ngắt mạng giữa lượt
+- **Các bước:** 1. Tải bản đồ, mở màn chơi dưới hồ sơ trên. 2. Chơi tới tổng kết. 3. Ngắt mạng giữa lượt rồi nối lại.
+- **Kết quả mong đợi:** màn dùng được, số đo so với mục tiêu §7.1; chơi hết màn không cần cài đặt, không mất lượt; lượt gửi lại cùng turn id và chỉ ghi một lần (TC-J-EG-03)
+- **Hậu điều kiện:** số liệu đưa vào chương đánh giá
+- **Tự động hoá:** Lighthouse (đã dùng ở §7.1); phần chơi trên máy thật thủ công
+- **Trạng thái:** Chạy được cho phần tải trang (§7.1); phần chơi trọn màn chờ hiện thực
 
 ## Mục tiêu white box
 

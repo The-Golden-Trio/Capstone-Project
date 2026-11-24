@@ -137,13 +137,15 @@ Mỗi file nhóm có: FR/UC liên quan và trạng thái code; bảng lớp tư�
 | E    | [E-noi-dung-man.md](2026-11-20_testing-plan/E-noi-dung-man.md)                               | 22 thẻ ca kiểm, 4 mục tiêu white box |
 | F    | [F-soan-duyet-xuat-ban.md](2026-11-20_testing-plan/F-soan-duyet-xuat-ban.md)                 | 15 thẻ ca kiểm, 6 mục tiêu white box |
 | G    | [G-npc-nhiem-vu-phu.md](2026-11-20_testing-plan/G-npc-nhiem-vu-phu.md)                       | 15 thẻ ca kiểm, 2 mục tiêu white box |
-| H    | [H-ho-so-nguoi-choi.md](2026-11-20_testing-plan/H-ho-so-nguoi-choi.md)                       | 15 thẻ ca kiểm, 3 mục tiêu white box |
+| H    | [H-ho-so-nguoi-choi.md](2026-11-20_testing-plan/H-ho-so-nguoi-choi.md)                       | 16 thẻ ca kiểm, 3 mục tiêu white box |
 | I    | [I-tien-trinh.md](2026-11-20_testing-plan/I-tien-trinh.md)                                   | 10 thẻ ca kiểm, 2 mục tiêu white box |
-| J    | [J-luot-choi-cham.md](2026-11-20_testing-plan/J-luot-choi-cham.md)                           | 17 thẻ ca kiểm, 8 mục tiêu white box |
+| J    | [J-luot-choi-cham.md](2026-11-20_testing-plan/J-luot-choi-cham.md)                           | 22 thẻ ca kiểm, 8 mục tiêu white box |
 | K    | [K-kinh-te-suc-khoe.md](2026-11-20_testing-plan/K-kinh-te-suc-khoe.md)                       | 17 thẻ ca kiểm, 1 mục tiêu white box |
-| L    | [L-chat-luong-cham-van-hanh-ai.md](2026-11-20_testing-plan/L-chat-luong-cham-van-hanh-ai.md) | 18 thẻ ca kiểm, 5 mục tiêu white box |
+| L    | [L-chat-luong-cham-van-hanh-ai.md](2026-11-20_testing-plan/L-chat-luong-cham-van-hanh-ai.md) | 19 thẻ ca kiểm, 5 mục tiêu white box |
 
-Tổng: 180 thẻ ca kiểm (`TC-…`) và 38 mục tiêu white box (`WB-…`), đếm bằng `rg -c '^### TC-'` và `rg -c '^### WB-'` trên các file nhóm.
+Tổng: 187 thẻ ca kiểm (`TC-…`) và 38 mục tiêu white box (`WB-…`), đếm bằng `rg -c '^### TC-'` và `rg -c '^### WB-'` trên các file nhóm.
+
+_24/11: thêm 7 thẻ sau khi rà report (SM-02, SD-10 và các NFR chưa có thẻ riêng): `TC-J-ST-02`, `TC-J-ST-03`, `TC-J-EG-03`, `TC-J-NF-03` (NFR-19), `TC-J-NF-04` (NFR-13), `TC-H-NF-01` (NFR-08), `TC-L-NF-05` (NFR-18)._
 
 ## 5. Use case testing
 
@@ -208,6 +210,7 @@ Thẻ cụ thể nằm ở file nhóm liên quan (ký hiệu `NF`); mục này l
 | Tin cậy, tiêm lỗi  | Model lỗi hoặc hết giờ thì chuyển model cùng vai; hết model thì tạm dừng giữ tiến độ, báo trong 10 s; đóng trình duyệt giữa màn rồi tiếp tục; worker chết giữa job | NFR-03, NFR-04                 | J, L    |
 | Khả dụng, truy cập | WCAG 2.1 AA gồm audit tự động và thủ công (bàn phím, screen reader); mobile, mạng chậm (dẫn chiếu §7.1); tiếng Việt đủ chữ; công bố AI                             | NFR-19, NFR-13, NFR-08, NFR-07 | H, J    |
 | Riêng tư số liệu   | Ẩn số tổng hợp dưới ngưỡng; play-test không vào số liệu tổng hợp                                                                                                   | NFR-06, DR-11                  | F, L    |
+| Khả dụng           | Giám sát uptime dịch vụ explorer, số khả dụng theo tháng so với mục tiêu cấu hình, báo trước bảo trì                                                               | NFR-18                         | L       |
 | Chi phí            | Trần chi phí mỗi phiên                                                                                                                                             | NFR-11                         | L       |
 | Bảo trì, truy xuất | Nghề mới không cần sửa code; log trạng thái đầy đủ; nội dung đã xuất bản bất biến                                                                                  | NFR-10, NFR-15, NFR-16         | E, F    |
 
