@@ -46,6 +46,44 @@ it('khung tin nhắn gồm lời hai bên và tin bot, dừng ở lời dẫn c�
   expect(seqs(threadLines(shown, bots, shown[4]))).toEqual([3, 4, 7]);
 });
 
+it('hai cuộc chat liền nhau với người khác nhau không gộp một khung', () => {
+  const shown = [
+    line(1, 'npc', 'an', { channel: 'chat', context: 'conv:c1' }),
+    line(2, 'player', 'player', { channel: 'chat', context: 'conv:c1' }),
+    line(3, 'npc', 'an', { channel: 'chat', context: 'node:review' }),
+    line(4, 'npc', 'linh', { channel: 'chat', context: 'conv:c2' }),
+    line(5, 'player', 'player', { channel: 'chat', context: 'conv:c2' }),
+    line(6, 'system', 'bot_deploy', { context: 'conv:c2' }),
+    line(7, 'npc', 'linh', { channel: 'chat', context: 'conv:c2' }),
+  ];
+  const seqs = (lines: TranscriptLine[]) => lines.map((l) => l.seq);
+  expect(seqs(threadLines(shown, bots, null))).toEqual([4, 5, 6, 7]);
+  expect(seqs(threadLines(shown.slice(0, 3), bots, null))).toEqual([3]);
+  expect(seqs(threadLines(shown.slice(0, 2), bots, null))).toEqual([1, 2]);
+});
+
+it('nhóm chat giữ đủ thành viên và lời người chơi', () => {
+  const shown = [
+    line(1, 'npc', 'an', { channel: 'group', context: 'conv:g1' }),
+    line(2, 'npc', 'linh', { channel: 'group', context: 'conv:g1' }),
+    line(3, 'player', 'player', { channel: 'group', context: 'conv:g1' }),
+    line(4, 'npc', 'binh', { channel: 'group', context: 'conv:g1' }),
+  ];
+  expect(threadLines(shown, bots, null).map((l) => l.seq)).toEqual([
+    1, 2, 3, 4,
+  ]);
+});
+
+it('một nút trong kênh chat giữ lời dẫn, câu trả lời và phản ứng', () => {
+  const shown = [
+    line(1, 'npc', 'an', { channel: 'chat', context: 'conv:c1' }),
+    line(2, 'npc', 'linh', { channel: 'chat', context: 'node:n1' }),
+    line(3, 'player', 'player', { channel: 'chat', context: 'node:n1' }),
+    line(4, 'npc', 'linh', { channel: 'chat', context: 'node:n1' }),
+  ];
+  expect(threadLines(shown, bots, null).map((l) => l.seq)).toEqual([2, 3, 4]);
+});
+
 const run: ShiftRun = {
   runId: 'run-1',
   taskId: 'SWE_BACKEND.L3.m2',

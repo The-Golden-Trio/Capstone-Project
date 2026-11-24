@@ -39,7 +39,10 @@ export function stageForm(beat: TranscriptLine | null): StageForm {
 
 /**
  * Các tin của khung tin nhắn, cũ tới mới: đi ngược từ tin mới nhất qua lời
- * NPC, lời người chơi và tin bot, dừng ở lời dẫn cảnh hay kênh khác.
+ * NPC, lời người chơi và tin bot, dừng ở lời dẫn cảnh, kênh khác, hoặc khi
+ * `context` đổi (cuộc trò chuyện hay nút khác). Hai cuộc chat liền nhau với
+ * người khác nhau không gộp một khung; nhóm chat giữ đủ thành viên vì mọi
+ * lời trong nhóm chung một `context`. Tin bot không xét `context`.
  * `notice` là tin bot đang hiện thành thẻ thông báo nên không lặp ở đây.
  */
 export function threadLines(
@@ -48,6 +51,7 @@ export function threadLines(
   notice: TranscriptLine | null,
 ): TranscriptLine[] {
   const out: TranscriptLine[] = [];
+  let context: string | null = null;
   for (let i = shown.length - 1; i >= 0 && out.length < THREAD_MAX; i--) {
     const line = shown[i];
     if (line === notice) continue;
@@ -58,6 +62,8 @@ export function threadLines(
     }
     if (line.channel ? !isThreadChannel(line.channel) : line.kind !== 'player')
       break;
+    if (context !== null && line.context !== context) break;
+    context = line.context;
     out.unshift(line);
   }
   return out;
