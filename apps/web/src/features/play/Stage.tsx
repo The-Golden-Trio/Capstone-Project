@@ -28,13 +28,25 @@ import {
   type Expression,
 } from '@datn/ui';
 import type { SceneView, ShiftRun, TranscriptLine } from '../../api/types';
-import { splitTerms, TermTooltip } from './desktop/TermTooltip';
 import {
   castCharacters,
   characterArt,
   type ToonCharacter,
 } from '../../lib/toon';
 import { botArt, sceneBackdrop } from '../../lib/presentation';
+import { Avatar, BotAvatar } from './stage/Avatar';
+import { BotNotice } from './stage/BotNotice';
+import { CallCard } from './stage/CallCard';
+import { ChatThread } from './stage/ChatThread';
+import {
+  conversationBeat,
+  isBotLine,
+  stageForm,
+  threadLines,
+} from './stage/form';
+import { GlossaryText } from './stage/GlossaryText';
+
+export { Avatar };
 
 const CHANNEL = {
   chat: { label: 'Tin nhắn', icon: MessageCircle },
@@ -120,26 +132,30 @@ export function Stage({
     () => new Map(castStatus.map(({ slot, status }) => [slot, status])),
     [castStatus],
   );
+  // Chỉ người gặp trực tiếp mới đứng trên sân khấu; chat và gọi điện có khung riêng.
   const onStage = useMemo(() => {
     for (let i = lines.length - 1; i >= 0; i--)
-      if (lines[i].kind === 'npc') return lines[i];
+      if (lines[i].kind === 'npc')
+        return !lines[i].channel || lines[i].channel === 'meet'
+          ? lines[i]
+          : null;
     return null;
   }, [lines]);
-  const speaking = current?.kind === 'npc' ? current : null;
-  const currentName =
-    current?.kind === 'system'
-      ? (botNames.get(current.speaker) ?? current.speaker)
-      : current?.kind === 'scene'
-        ? 'Cảnh'
-        : nameOf(current?.speaker ?? '');
+  const botIds = useMemo(() => new Set(bots.map(({ id }) => id)), [bots]);
+  // Tin bot hiện thành thẻ thông báo; hộp thoại giữ nhịp trò chuyện trước nó.
+  const notice = current && isBotLine(current, botIds) ? current : null;
+  const beat = conversationBeat(lines, current, botIds);
+  const form = stageForm(beat);
+  const speaking = beat?.kind === 'npc' ? beat : null;
+  const currentName = beat?.kind === 'scene' ? '' : nameOf(beat?.speaker ?? '');
   const actor = onStage ? cast.get(onStage.speaker) : undefined;
-  const speakerLook = current ? cast.get(current.speaker) : undefined;
-  const botImage =
-    current?.kind === 'system' ? botArt(current.speaker) : undefined;
+  const speakerLook = beat ? cast.get(beat.speaker) : undefined;
   const expression = (speaking?.expression ?? 'binh_thuong') as Expression;
 
-  const tw = useTypewriter(current?.text ?? '', current?.seq ?? -1);
-  const ch = current?.channel ? CHANNEL[current.channel] : null;
+  const tw = useTypewriter(beat?.text ?? '', beat?.seq ?? -1);
+  // Khung tin nhắn hiện nguyên tin, không chạy chữ.
+  const done = form === 'thread' || tw.done;
+  const ch = beat?.channel ? CHANNEL[beat.channel] : null;
   const backdrop = sceneBackdrop({
     seedId: run.taskId,
     channel: conversationChannel,
@@ -160,18 +176,54 @@ export function Stage({
         return;
       if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
-        if (!tw.done) tw.finish();
+        if (!done) tw.finish();
         else if (queued > 0) onAdvance();
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [tw, queued, onAdvance, inactive]);
+  }, [tw, done, queued, onAdvance, inactive]);
 
   const tap = () => {
-    if (!tw.done) tw.finish();
+    if (!done) tw.finish();
     else if (queued > 0) onAdvance();
   };
+
+  const thread = form === 'thread';
+  const call = form === 'call';
+  // Cuộc gọi chỉ coi là xong khi không còn cuộc trò chuyện qua điện thoại và hết nhịp chờ đọc.
+  const callLive = talking?.channel === 'call' || queued > 0;
+  const group = beat?.channel === 'group';
+  const dialogueTag =
+    beat?.kind === 'scene' ? undefined : (
+      <span className="flex items-end gap-2">
+        {/* Điện thoại không có nhân vật đứng: mặt và emote đi cùng bảng tên. */}
+        {speakerLook && !call && (
+          <span className="relative -translate-y-3 md:hidden">
+            <Avatar
+              src={characterArt(speakerLook, speaking?.expression)}
+              color={speakerLook.color}
+              size={48}
+              className={cn(
+                speaking &&
+                  EXPRESSION_MOTION[expression] === 'hop' &&
+                  'animate-toon-hop',
+                speaking &&
+                  EXPRESSION_MOTION[expression] === 'shake' &&
+                  'animate-toon-shake',
+              )}
+            />
+            {speaking && expression !== 'binh_thuong' && (
+              <span key={speaking.seq} className="absolute -left-4 -top-10">
+                <Emote expression={expression} size={40} />
+              </span>
+            )}
+          </span>
+        )}
+        <NameTag name={currentName} color={speakerLook?.color} />
+        <Presence text={statuses.get(beat?.speaker ?? '')} />
+      </span>
+    );
 
   return (
     <section
@@ -183,145 +235,168 @@ export function Stage({
         dim={0.6}
         className="flex min-h-0 flex-1 flex-col"
       >
-        <div className="relative flex min-h-0 flex-1">
-          {/* Nhân vật: lớn trên màn rộng, ẩn trên điện thoại để nhường chỗ chữ. */}
-          {actor && onStage && (
-            <div className="pointer-events-none absolute -bottom-14 left-[2%] z-10 hidden h-[min(88%,560px)] md:block">
-              <Character
-                src={characterArt(actor, speaking?.expression)}
-                name={nameOf(onStage.speaker)}
-                height="100%"
-                dimmed={!speaking}
-                flip={actor.facing === 'left'}
-                motion={speaking ? EXPRESSION_MOTION[expression] : 'none'}
-                beat={speaking?.seq}
-                emote={
-                  speaking && expression !== 'binh_thuong' ? (
-                    <Emote expression={expression} size={64} />
-                  ) : null
-                }
+        {notice && (
+          <BotNotice
+            key={notice.seq}
+            name={botNames.get(notice.speaker) ?? notice.speaker}
+            text={notice.text}
+            art={botArt(notice.speaker)}
+          />
+        )}
+        {/* Đọc trọn câu một lần cho trình đọc màn hình, không theo từng chữ đang gõ. */}
+        <p className="sr-only" aria-live="polite">
+          {beat
+            ? beat.kind === 'scene'
+              ? beat.text
+              : `${currentName}: ${beat.text}`
+            : ''}
+        </p>
+        {thread ? (
+          <div
+            className={cn(
+              'relative flex min-h-0 flex-1 justify-center px-3 pb-3 sm:px-5',
+              notice ? 'pt-3' : 'pt-14',
+            )}
+          >
+            <ChatThread
+              lines={threadLines(lines, botIds, notice)}
+              group={group}
+              partner={beat?.speaker ?? ''}
+              members={(talking?.slots ?? []).map(nameOf)}
+              nameOf={nameOf}
+              cast={cast}
+              botNames={botNames}
+              glossary={glossary}
+              more={queued > 0}
+              waiting={queued ? null : waitingLabel}
+              quiet={quiet}
+              onTap={tap}
+            />
+            <Backlog
+              recent={false}
+              quiet={quiet}
+              lines={lines}
+              current={beat}
+              notice={notice}
+              nameOf={nameOf}
+              cast={cast}
+              botNames={botNames}
+              statuses={statuses}
+              glossary={glossary}
+            />
+          </div>
+        ) : (
+          <>
+            <div
+              className={cn(
+                'relative flex min-h-0 flex-1',
+                call && 'max-md:flex-col',
+              )}
+            >
+              {call && beat && (
+                <CallCard
+                  look={speakerLook}
+                  name={currentName}
+                  callKey={beat.context}
+                  live={callLive}
+                  expression={speaking?.expression}
+                  className={cn(
+                    'max-md:mx-3 md:absolute md:left-[4%] md:top-1/2 md:-translate-y-1/2',
+                    notice ? 'max-md:mt-3' : 'max-md:mt-14',
+                  )}
+                />
+              )}
+              {/* Nhân vật: lớn trên màn rộng, ẩn trên điện thoại để nhường chỗ chữ. */}
+              {!call && actor && onStage && (
+                <div className="pointer-events-none absolute -bottom-14 left-[2%] z-10 hidden h-[min(88%,560px)] md:block">
+                  <Character
+                    src={characterArt(actor, speaking?.expression)}
+                    name={nameOf(onStage.speaker)}
+                    height="100%"
+                    dimmed={!speaking}
+                    flip={actor.facing === 'left'}
+                    motion={speaking ? EXPRESSION_MOTION[expression] : 'none'}
+                    beat={speaking?.seq}
+                    emote={
+                      speaking && expression !== 'binh_thuong' ? (
+                        <Emote expression={expression} size={64} />
+                      ) : null
+                    }
+                  />
+                </div>
+              )}
+              <Backlog
+                recent
+                tightTop={call}
+                quiet={quiet}
+                lines={lines}
+                current={beat}
+                notice={notice}
+                nameOf={nameOf}
+                cast={cast}
+                botNames={botNames}
+                statuses={statuses}
+                glossary={glossary}
               />
             </div>
-          )}
-          <Backlog
-            quiet={quiet}
-            lines={lines}
-            current={current}
-            nameOf={nameOf}
-            cast={cast}
-            botNames={botNames}
-            statuses={statuses}
-            glossary={glossary}
-          />
-        </div>
 
-        {/* Hộp thoại */}
-        <div className="relative z-20 px-3 pb-3 pt-5 sm:px-5 sm:pb-4">
-          {/* Đọc trọn câu một lần cho trình đọc màn hình, không theo từng chữ đang gõ. */}
-          <p className="sr-only" aria-live="polite">
-            {current ? `${currentName}: ${current.text}` : ''}
-          </p>
-          <div className="relative">
-            <button
-              id="stage-dialog"
-              type="button"
-              onClick={tap}
-              aria-label={tw.done ? 'Nghe nhịp tiếp theo' : 'Hiện trọn câu'}
-              className="absolute inset-0 z-[1] rounded-[22px] focus-visible:outline-none focus-visible:shadow-toon-focus"
-            />
-            {current ? (
-              <DialogueBox
-                narration={current.kind === 'scene'}
-                more={tw.done && queued > 0}
-                tag={
-                  current.kind === 'scene' ? (
-                    <NameTag name="Cảnh" color="#fff1c9" />
-                  ) : (
-                    <span className="flex items-end gap-2">
-                      {/* Điện thoại không có nhân vật đứng: mặt và emote đi cùng bảng tên. */}
-                      {speakerLook && (
-                        <span className="relative -translate-y-3 md:hidden">
-                          <Avatar
-                            src={characterArt(
-                              speakerLook,
-                              speaking?.expression,
-                            )}
-                            color={speakerLook.color}
-                            size={48}
-                            className={cn(
-                              speaking &&
-                                EXPRESSION_MOTION[expression] === 'hop' &&
-                                'animate-toon-hop',
-                              speaking &&
-                                EXPRESSION_MOTION[expression] === 'shake' &&
-                                'animate-toon-shake',
-                            )}
-                          />
-                          {speaking && expression !== 'binh_thuong' && (
-                            <span
-                              key={speaking.seq}
-                              className="absolute -left-4 -top-10"
-                            >
-                              <Emote expression={expression} size={40} />
-                            </span>
-                          )}
+            {/* Hộp thoại */}
+            <div className="relative z-20 px-3 pb-3 pt-5 sm:px-5 sm:pb-4">
+              <div className="relative">
+                <button
+                  id="stage-dialog"
+                  type="button"
+                  onClick={tap}
+                  aria-label={done ? 'Nghe nhịp tiếp theo' : 'Hiện trọn câu'}
+                  className="absolute inset-0 z-[1] rounded-[22px] focus-visible:outline-none focus-visible:shadow-toon-focus"
+                />
+                {beat ? (
+                  <DialogueBox
+                    narration={beat.kind === 'scene'}
+                    more={done && queued > 0}
+                    tag={dialogueTag}
+                    meta={
+                      ch && (
+                        <ToonBadge tone="paper" icon={<ch.icon size={12} />}>
+                          {ch.label}
+                        </ToonBadge>
+                      )
+                    }
+                    className="min-h-20 sm:min-h-28"
+                  >
+                    <p className="stage-dialogue-text max-h-[26dvh] overflow-y-auto break-words pr-6">
+                      {speaking ? (
+                        <GlossaryText
+                          text={speaking.text}
+                          visible={tw.visible.length}
+                          glossary={glossary}
+                        />
+                      ) : (
+                        tw.visible
+                      )}
+                      {!tw.done && (
+                        <span
+                          aria-hidden
+                          className="ml-0.5 inline-block w-2 animate-pulse bg-toon-ink/70"
+                        >
+                          &nbsp;
                         </span>
                       )}
-                      {botImage && (
-                        <BotAvatar
-                          src={botImage}
-                          size={48}
-                          className="-translate-y-3"
-                        />
-                      )}
-                      <NameTag
-                        name={currentName}
-                        color={cast.get(current.speaker)?.color}
-                      />
-                      <Presence text={statuses.get(current.speaker)} />
-                    </span>
-                  )
-                }
-                meta={
-                  ch && (
-                    <ToonBadge tone="paper" icon={<ch.icon size={12} />}>
-                      {ch.label}
-                    </ToonBadge>
-                  )
-                }
-                className="min-h-20 sm:min-h-28"
-              >
-                <p className="stage-dialogue-text max-h-[26dvh] overflow-y-auto break-words pr-6">
-                  {speaking ? (
-                    <GlossaryText
-                      text={speaking.text}
-                      visible={tw.visible.length}
-                      glossary={glossary}
-                    />
-                  ) : (
-                    tw.visible
-                  )}
-                  {!tw.done && (
-                    <span
-                      aria-hidden
-                      className="ml-0.5 inline-block w-2 animate-pulse bg-toon-ink/70"
-                    >
-                      &nbsp;
-                    </span>
-                  )}
-                </p>
-                {waitingLabel && !queued && (
-                  <WaitingNote label={waitingLabel} />
+                    </p>
+                    {waitingLabel && !queued && (
+                      <WaitingNote label={waitingLabel} />
+                    )}
+                  </DialogueBox>
+                ) : (
+                  <DialogueBox narration more={queued > 0}>
+                    {notice ? 'Có thông báo mới.' : 'Ca làm sắp bắt đầu.'}
+                    {waitingLabel && <WaitingNote label={waitingLabel} />}
+                  </DialogueBox>
                 )}
-              </DialogueBox>
-            ) : (
-              <DialogueBox narration>
-                Ca làm sắp bắt đầu.
-                {waitingLabel && <WaitingNote label={waitingLabel} />}
-              </DialogueBox>
-            )}
-          </div>
-        </div>
+              </div>
+            </div>
+          </>
+        )}
       </SceneBackdrop>
     </section>
   );
@@ -358,6 +433,8 @@ function TypingDots() {
  */
 /** Số câu đã qua để lại trên sân khấu; phần còn lại xem trong nhật ký. */
 const BACKLOG_VISIBLE = 2;
+/** Lời người chơi cũ hơn số câu này thì không còn giữ trên điện thoại. */
+const MOBILE_PLAYER_WINDOW = 4;
 
 /**
  * Nhật ký thoại trên sân khấu: chỉ hai câu gần nhất (mờ dần) để người chơi
@@ -366,16 +443,26 @@ const BACKLOG_VISIBLE = 2;
 function Backlog({
   lines,
   current,
+  notice,
   nameOf,
   cast,
   quiet,
+  recent: showRecent,
+  tightTop = false,
   botNames,
   statuses,
   glossary,
 }: {
   quiet: boolean;
+  /** Tắt khi khung tin nhắn đã hiện hội thoại: chỉ còn nút và tấm "Xem lại". */
+  recent: boolean;
+  /** Phía trên đã có thẻ cuộc gọi, không cần chừa chỗ cho nút lịch sử. */
+  tightTop?: boolean;
   lines: TranscriptLine[];
+  /** Nhịp đang ở hộp thoại, không lặp lại ở nhật ký. */
   current: TranscriptLine | null;
+  /** Tin bot đang hiện thành thẻ thông báo. */
+  notice: TranscriptLine | null;
   nameOf: (slot: string) => string;
   cast: Map<string, ToonCharacter>;
   botNames: Map<string, string>;
@@ -384,13 +471,23 @@ function Backlog({
 }) {
   const [open, setOpen] = useState(false);
   const end = useRef<HTMLDivElement>(null);
-  const past = lines.filter((l) => l !== current);
+  const past = lines.filter((l) => l !== current && l !== notice);
   const latest = past.slice(-BACKLOG_VISIBLE);
+  // Trên điện thoại chỉ có chỗ cho câu mới nhất, nhưng lời người chơi vừa gửi
+  // phải còn đó tới lần gửi sau, nếu chưa quá xa.
+  const lastPlayer = past
+    .slice(-MOBILE_PLAYER_WINDOW)
+    .filter((line) => line.kind === 'player')
+    .pop();
+  const visible =
+    lastPlayer && !latest.includes(lastPlayer)
+      ? [lastPlayer, ...latest]
+      : latest;
   const recent = quiet
-    ? latest.filter(
+    ? visible.filter(
         (line) => line.kind === 'system' && botNames.has(line.speaker),
       )
-    : latest;
+    : visible;
   useEffect(() => {
     if (!open) return;
     end.current?.scrollIntoView({ block: 'end' });
@@ -407,25 +504,41 @@ function Backlog({
   );
   return (
     <>
-      <div
-        className="relative z-0 ml-auto flex min-h-0 w-full flex-col justify-end px-3 pb-16 pt-14 sm:px-5 md:w-[min(58%,600px)] md:pb-8 md:pr-6"
-        aria-label="Lời thoại gần nhất"
-      >
-        <ol className="flex flex-col gap-4">
-          {recent.map((l, i) => (
-            <li
-              key={l.seq}
-              className={cn(
-                'animate-toon-slide transition-opacity',
-                // Điện thoại chỉ giữ câu gần nhất; màn rộng giữ hai câu.
-                i < recent.length - 1 && 'opacity-60 max-md:hidden',
-              )}
-            >
-              {render(l)}
-            </li>
-          ))}
-        </ol>
-      </div>
+      {showRecent && (
+        <div
+          className={cn(
+            'relative z-0 ml-auto flex min-h-0 w-full flex-col justify-end px-3 pb-16 sm:px-5 md:w-[min(58%,600px)] md:pb-8 md:pt-14 md:pr-6',
+            // Màn gọi đã có thẻ cuộc gọi chừa chỗ cho nút lịch sử ở trên.
+            tightTop ? 'pt-2 max-md:pb-8' : 'pt-14',
+          )}
+          aria-label="Lời thoại gần nhất"
+        >
+          <ol className="flex flex-col gap-4">
+            {recent.map((l, i) => (
+              <li
+                key={l.seq}
+                className={cn(
+                  'animate-toon-slide transition-opacity',
+                  // Màn gọi trên điện thoại chỉ đủ chỗ cho lời người chơi vừa gửi.
+                  tightTop &&
+                    lastPlayer &&
+                    i === recent.length - 1 &&
+                    l !== lastPlayer &&
+                    'max-md:hidden',
+                  i < recent.length - 1 &&
+                    (l === lastPlayer
+                      ? latest.includes(l)
+                        ? 'opacity-60'
+                        : 'opacity-60 md:hidden'
+                      : 'opacity-60 max-md:hidden'),
+                )}
+              >
+                {render(l)}
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
       {past.length > 0 && (
         <button
           type="button"
@@ -542,90 +655,4 @@ function Presence({ text }: { text?: string }) {
       {text}
     </span>
   ) : null;
-}
-
-function GlossaryText({
-  text,
-  glossary,
-  visible = text.length,
-}: {
-  text: string;
-  glossary: SceneView['glossary'];
-  visible?: number;
-}) {
-  const meanings = new Map(
-    glossary.map(({ term, plain }) => [term.toLowerCase(), plain]),
-  );
-  let offset = 0;
-  return splitTerms(
-    text,
-    glossary.map(({ term }) => term),
-  ).map((part, i) => {
-    const rendered = part.slice(0, Math.max(0, visible - offset));
-    offset += part.length;
-    if (!rendered) return null;
-    const meaning =
-      i % 2 && rendered === part ? meanings.get(part.toLowerCase()) : undefined;
-    return meaning ? (
-      <TermTooltip key={i} token={part} text={meaning} />
-    ) : (
-      rendered
-    );
-  });
-}
-
-/** Ảnh tròn của bot có ảnh riêng. */
-function BotAvatar({
-  src,
-  size,
-  className,
-}: {
-  src: string;
-  size: number;
-  className?: string;
-}) {
-  return (
-    <img
-      src={src}
-      alt=""
-      draggable={false}
-      width={size}
-      height={size}
-      className={cn(
-        'shrink-0 select-none rounded-full border-[2.5px] border-toon-ink bg-toon-paper object-cover shadow-toon-sm',
-        className,
-      )}
-    />
-  );
-}
-
-/** Mặt nhân vật cắt tròn từ tranh đứng. */
-export function Avatar({
-  src,
-  color,
-  size = 40,
-  className,
-}: {
-  src: string;
-  color: string;
-  size?: number;
-  className?: string;
-}) {
-  return (
-    <span
-      aria-hidden
-      className={cn(
-        'relative block shrink-0 overflow-hidden rounded-full border-[2.5px] border-toon-ink shadow-toon-sm',
-        className,
-      )}
-      style={{ width: size, height: size, backgroundColor: color }}
-    >
-      <img
-        src={src}
-        alt=""
-        draggable={false}
-        className="absolute left-1/2 top-[2%] h-[260%] w-auto max-w-none -translate-x-1/2 select-none"
-      />
-    </span>
-  );
 }
