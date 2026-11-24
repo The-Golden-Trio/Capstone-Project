@@ -378,6 +378,7 @@ function RunPlayPage({ runId }: { runId: string }) {
                     onPickAction={(action) => void desktop.pick(action)}
                     onOpenNode={desktop.openNode}
                     spoken={s.current?.text ?? null}
+                    clockHeld={autoplay.holdsClock}
                   />
                 )}
                 {s.queued > 0 && !s.paused && (

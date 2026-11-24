@@ -158,8 +158,11 @@ export function ToonIconButton({
   );
 }
 
+/** 16px dưới `sm` để iOS Safari không tự phóng to trang khi focus ô nhập. */
+const inputText = 'text-base sm:text-[15px]';
+
 const inputBase =
-  'w-full rounded-[12px] border-[3px] bg-toon-paper font-toon-body text-[15px] text-toon-ink placeholder:text-toon-ink-faint focus:outline-none focus-visible:shadow-toon-focus disabled:cursor-not-allowed disabled:bg-toon-shade disabled:text-toon-ink-faint';
+  'w-full rounded-[12px] border-[3px] bg-toon-paper font-toon-body text-toon-ink placeholder:text-toon-ink-faint focus:outline-none focus-visible:shadow-toon-focus disabled:cursor-not-allowed disabled:bg-toon-shade disabled:text-toon-ink-faint';
 
 export function ToonInput({
   invalid,
@@ -179,7 +182,9 @@ export function ToonInput({
       aria-invalid={invalid || rest['aria-invalid']}
       className={cn(
         inputBase,
-        compact ? 'h-10 py-1.5 pr-3 text-sm' : 'h-11 py-2 pr-3',
+        compact
+          ? 'h-10 py-1.5 pr-3 text-base sm:text-sm'
+          : `h-11 py-2 pr-3 ${inputText}`,
         leftIcon ? 'pl-10' : 'pl-3',
         invalid ? 'border-toon-coral' : 'border-toon-ink',
         className,
@@ -223,6 +228,7 @@ export function ToonTextarea({
         size === 'sm' ? 'min-h-14' : 'min-h-24',
         resizable ? 'resize-y' : 'resize-none',
         'px-3 py-2.5 leading-relaxed',
+        inputText,
         invalid ? 'border-toon-coral' : 'border-toon-ink',
         className,
       )}

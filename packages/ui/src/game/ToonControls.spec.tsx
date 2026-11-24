@@ -196,6 +196,29 @@ describe('Ô nhập và nhãn cartoon', () => {
     ).toBe('true');
   });
 
+  it('ô nhập 16px dưới sm để iOS không phóng to trang khi focus, kể cả compact', () => {
+    render(
+      <>
+        <ToonInput aria-label="Thường" />
+        <ToonInput aria-label="Gọn" compact />
+        <ToonTextarea aria-label="Dài" />
+      </>,
+    );
+    for (const name of ['Thường', 'Gọn', 'Dài']) {
+      const classes = screen.getByRole('textbox', { name }).className.split(' ');
+      expect(classes).toContain('text-base');
+      expect(classes.some((c) => /^text-(sm|\[1[0-5]px\])$/.test(c))).toBe(
+        false,
+      );
+    }
+    expect(screen.getByRole('textbox', { name: 'Gọn' }).className).toContain(
+      'sm:text-sm',
+    );
+    expect(screen.getByRole('textbox', { name: 'Dài' }).className).toContain(
+      'sm:text-[15px]',
+    );
+  });
+
   it('checkbox controlled đổi trạng thái, có mô tả và tôn trọng disabled', () => {
     const changed = vi.fn();
     function Example({ disabled = false }: { disabled?: boolean }) {

@@ -48,6 +48,8 @@ export interface Autoplay {
   playing: boolean;
   speed: 1 | 2;
   message: string | null;
+  /** Đang chờ người trình bày bấm tiếp: đồng hồ chọn phương án phải đứng yên. */
+  holdsClock: boolean;
   next: () => void;
   togglePlaying: () => void;
   toggleSpeed: () => void;
@@ -443,6 +445,8 @@ export function useAutoplay({
     playing,
     speed,
     message,
+    holdsClock:
+      script !== null && !playing && (status === 'idle' || status === 'error'),
     next,
     togglePlaying: () => setPlaying((value) => !value),
     toggleSpeed: () => setSpeed((value) => (value === 1 ? 2 : 1)),

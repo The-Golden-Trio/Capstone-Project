@@ -44,7 +44,7 @@ export function AutoplayBar({
         )}
       </p>
       <div className="flex shrink-0 items-center gap-1">
-        {status === 'blocked' && (
+        {(status === 'blocked' || status === 'error') && (
           <ToonButton size="sm" onClick={onRestart}>
             Bắt đầu lượt mẫu mới
           </ToonButton>
@@ -57,7 +57,7 @@ export function AutoplayBar({
             Xem tổng kết
           </Link>
         )}
-        {status !== 'blocked' && status !== 'done' && (
+        {status !== 'blocked' && status !== 'error' && status !== 'done' && (
           <>
             <ToonButton
               size="sm"

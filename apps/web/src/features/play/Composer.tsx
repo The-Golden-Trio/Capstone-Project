@@ -3,7 +3,13 @@
  * cuộc trò chuyện, trả lời nút, chọn phương án (có đếm giờ), soạn tài liệu,
  * xác nhận nộp sớm.
  */
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+} from 'react';
 import { DoorClosed, FilePenLine, Send, Timer } from 'lucide-react';
 import { ConfirmDialog, ToonButton, ToonTextarea, cn } from '@datn/ui';
 import type { SceneView, TurnInput } from '../../api/types';
@@ -17,6 +23,7 @@ export function Composer({
   onPickAction,
   onOpenNode,
   spoken,
+  clockHeld = false,
 }: {
   scene: SceneView;
   busy: boolean;
@@ -28,6 +35,8 @@ export function Composer({
   onOpenNode: (node: NonNullable<SceneView['node']>) => void;
   /** Câu nhân vật vừa nói: câu hỏi trùng nguyên văn thì không lặp lại. */
   spoken?: string | null;
+  /** Lượt mẫu đang chờ người trình bày: đồng hồ chọn phương án đứng yên. */
+  clockHeld?: boolean;
 }) {
   const norm = (t: string) => t.replace(/\s+/g, ' ').trim().toLowerCase();
   const fresh = (prompt?: string) =>
@@ -103,6 +112,7 @@ export function Composer({
         node={node}
         prompt={fresh(node.prompt)}
         busy={busy}
+        clockHeld={clockHeld}
         onSend={onSend}
       />
     );
@@ -151,10 +161,20 @@ export function Composer({
 
   if (w.kind === 'node_reply' || w.kind === 'probe_answer') {
     const review = scene.mode === 'review';
+    // Nút chọn đã hỏi bằng chính câu `prompt` rồi (kể cả khi hết giờ); lượt nói
+    // thêm là đáp lời nhân vật vừa phản ứng, không phải câu hỏi đó.
+    const answeredChoice =
+      node?.format === 'timed_choice' || node?.format === 'choice';
     return (
       <TextReply
         key={`${w.kind}-${node?.id ?? 'review'}`}
-        label={review ? 'Nhìn lại ca' : fresh(node?.prompt)}
+        label={
+          review
+            ? 'Nhìn lại ca'
+            : answeredChoice
+              ? undefined
+              : fresh(node?.prompt)
+        }
         placeholder={review ? 'Trả lời người hỏi…' : 'Bạn trả lời thế nào?'}
         busy={busy}
         onSend={(text) => onSend({ kind: 'say', text })}
@@ -243,26 +263,38 @@ function Choices({
   node,
   prompt,
   busy,
+  clockHeld,
   onSend,
 }: {
   node: NonNullable<SceneView['node']>;
   prompt?: string;
   busy: boolean;
+  clockHeld: boolean;
   onSend: (input: TurnInput) => Promise<boolean>;
 }) {
   const limit = node.timeLimitSeconds ?? null;
-  const started = useRef(performance.now());
   const [left, setLeft] = useState(limit ?? 0);
   const sent = useRef(false);
   const [timeoutFailed, setTimeoutFailed] = useState(false);
 
+  // Thời gian đã trôi, không tính lúc người trình bày giữ đồng hồ.
+  const held = useRef(clockHeld);
+  const lapse = useRef({ ms: 0, at: performance.now() });
+  const elapsed = useCallback(() => {
+    const now = performance.now();
+    if (!held.current) lapse.current.ms += now - lapse.current.at;
+    lapse.current.at = now;
+    return lapse.current.ms;
+  }, []);
+  useEffect(() => {
+    elapsed();
+    held.current = clockHeld;
+  }, [clockHeld, elapsed]);
+
   useEffect(() => {
     if (!limit) return;
     const id = window.setInterval(() => {
-      const remain = Math.max(
-        0,
-        limit - (performance.now() - started.current) / 1000,
-      );
+      const remain = Math.max(0, limit - elapsed() / 1000);
       setLeft(remain);
       if (remain <= 0 && !sent.current) {
         sent.current = true;
@@ -274,7 +306,7 @@ function Choices({
       }
     }, 100);
     return () => window.clearInterval(id);
-  }, [limit, onSend]);
+  }, [limit, onSend, elapsed]);
 
   const choose = (key: string) => {
     if (sent.current) return;
@@ -283,7 +315,7 @@ function Choices({
     void onSend({
       kind: 'choose',
       option: key,
-      elapsedMs: Math.round(performance.now() - started.current),
+      elapsedMs: Math.round(elapsed()),
     }).then((ok) => {
       if (!ok) sent.current = false;
     });

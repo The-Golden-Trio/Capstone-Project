@@ -79,6 +79,7 @@ function Harness({
         {autoplay.status}:{autoplay.index}/{autoplay.total}:{autoplay.speed}
       </output>
       <output aria-label="Nhãn">{autoplay.label}</output>
+      <output aria-label="Giữ đồng hồ">{String(autoplay.holdsClock)}</output>
     </div>
   );
 }
@@ -185,6 +186,34 @@ describe('useAutoplay', () => {
     await waitFor(() => expect(status()).toMatch(/^done:/), { timeout: 8000 });
     expect((sent() ?? '').split('|')).toHaveLength(12);
   }, 15000);
+
+  it('giữ đồng hồ chọn phương án khi chờ người trình bày, thả khi đang tự chạy', async () => {
+    const held = () => screen.getByLabelText('Giữ đồng hồ').textContent;
+    render(
+      <Harness
+        playthrough={script(
+          Array.from({ length: 12 }, (_, i) => ({
+            do: 'say' as const,
+            text: `câu ${i}`,
+          })),
+        )}
+      />,
+    );
+    expect(held()).toBe('true');
+    fireEvent.click(screen.getByText('Tự chạy'));
+    expect(held()).toBe('false');
+    fireEvent.click(screen.getByText('Tự chạy'));
+    await waitFor(() => expect(status()).toMatch(/^idle:/));
+    expect(held()).toBe('true');
+  });
+
+  it('không giữ đồng hồ khi ca đã chơi dở nên lượt mẫu bị chặn', async () => {
+    render(
+      <Harness fresh={false} playthrough={script([{ do: 'say', text: 'x' }])} />,
+    );
+    await waitFor(() => expect(status()).toBe('blocked:0/2:1'));
+    expect(screen.getByLabelText('Giữ đồng hồ').textContent).toBe('false');
+  });
 
   it('đổi tốc độ giữa 1x và 2x', () => {
     render(<Harness playthrough={script([{ do: 'say', text: 'x' }])} />);
