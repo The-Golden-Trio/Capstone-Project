@@ -1,4 +1,4 @@
-import { useEffect, useId, useState, type MouseEvent } from 'react';
+import { useEffect, useState, type MouseEvent } from 'react';
 import {
   Clock3,
   FileText,
@@ -12,40 +12,37 @@ import {
   Users,
   type LucideIcon,
 } from 'lucide-react';
-import { ToonTabPanel, ToonTabs, cn } from '@datn/ui';
+import { cn } from '@datn/ui';
 import type { SceneView } from '../../api/types';
+import { WORKBENCH_TABS, placeOf } from './workbench/model';
 
 type Action = SceneView['actions'][number];
 
-/** Nhóm việc, màu ô biểu tượng lấy từ bảng màu tô phẳng của theme. */
-export const ACTION_GROUPS = {
-  'Hỏi người': { color: '#a6d2ea', icon: MessageCircle },
-  'Xem tài liệu': { color: '#a8dbb9', icon: FileText },
-  'Làm việc': { color: '#eea7b4', icon: PenLine },
-  Chốt: { color: '#f0b63c', icon: Flag },
-} as const;
-export type ActionGroup = keyof typeof ACTION_GROUPS;
-
-const KIND: Record<string, { icon: LucideIcon; group: ActionGroup }> = {
-  talk: { icon: MessageCircle, group: 'Hỏi người' },
-  meeting: { icon: Users, group: 'Hỏi người' },
-  open: { icon: FileText, group: 'Xem tài liệu' },
-  run: { icon: Play, group: 'Làm việc' },
-  write: { icon: PenLine, group: 'Làm việc' },
-  rewrite: { icon: PenLine, group: 'Làm việc' },
-  message: { icon: Send, group: 'Làm việc' },
-  wait: { icon: Hourglass, group: 'Làm việc' },
-  trigger: { icon: Flag, group: 'Chốt' },
+const ICON: Record<string, LucideIcon> = {
+  talk: MessageCircle,
+  meeting: Users,
+  open: FileText,
+  run: Play,
+  write: PenLine,
+  rewrite: PenLine,
+  message: Send,
+  wait: Hourglass,
+  trigger: Flag,
 };
 
-/** Nhóm của một việc (dùng cả trong test để mở đúng tab). */
-export const groupOf = (kind: string): ActionGroup =>
-  KIND[kind]?.group ?? 'Làm việc';
+const colorOf = (kind: string) => {
+  const place = placeOf(kind);
+  return place === 'trigger'
+    ? '#f0b63c'
+    : (WORKBENCH_TABS.find((tab) => tab.key === place)?.color ?? '#eea7b4');
+};
+
+/** Lý do engine ghi cho mọi việc khi ca đã khép (game-core, shift/context.ts). */
 
 /** Ngay sau khi hộp thoại hoặc khung nói đổi thành khay việc, cú chạm định qua nhịp có thể rơi vào một nút việc. */
 export const TAP_GUARD_MS = 400;
 
-function useTapGuard(disabled: boolean) {
+export function useTapGuard(disabled: boolean) {
   const [guarded, setGuarded] = useState(false);
   useEffect(() => {
     if (disabled) return;
@@ -67,144 +64,107 @@ function isTouchTap(event: MouseEvent) {
   );
 }
 
-const GROUP_ORDER: ActionGroup[] = [
-  'Hỏi người',
-  'Xem tài liệu',
-  'Làm việc',
-  'Chốt',
-];
-
 /**
- * Khay chọn việc ở pha xử lý: bốn nhóm thành tab, mỗi lần chỉ thấy vài
- * việc của một nhóm để người chơi không bị một danh sách dài đập vào mắt.
- * Việc bị khoá vẫn hiện kèm lý do, để người chơi hiểu luật thay vì đoán.
+ * Danh sách việc của một tab. Việc làm được hiện trước ở dạng nút đầy đủ; việc
+ * bị khoá xuống dưới, gọn một dòng nhưng vẫn kèm lý do để người chơi hiểu luật.
  */
-export function ActionTray({
+export function ActionList({
   actions,
   minutesPerPoint,
   disabled,
   onPick,
-  suspended,
-  cast,
+  label,
 }: {
   actions: Action[];
   minutesPerPoint: number;
   disabled: boolean;
   onPick: (a: Action) => void;
-  suspended?: { label: string; remaining: number } | null;
-  cast: SceneView['cast'];
+  label: string;
 }) {
-  const idBase = useId();
   const guarded = useTapGuard(disabled);
-  const groups = GROUP_ORDER.map((g) => ({
-    name: g,
-    items: actions.filter((a) => groupOf(a.kind) === g),
-  })).filter((g) => g.items.length);
-  const [tab, setTab] = useState<ActionGroup>(
-    groups.find((g) => g.items.some((a) => a.enabled))?.name ??
-      groups[0]?.name ??
-      'Hỏi người',
-  );
-  const current = groups.find((g) => g.name === tab) ?? groups[0];
-  if (!current) return null;
-
+  if (!actions.length) return null;
+  const ordered = [
+    ...actions.filter((a) => a.enabled),
+    ...actions.filter((a) => !a.enabled),
+  ];
   return (
-    <div className="flex flex-col gap-3">
-      {suspended && (
-        <p className="rounded-xl border-2 border-toon-ink bg-[#ffe4a3] px-3 py-1.5 text-sm font-bold text-toon-ink">
-          Đang dở: {suspended.label} (còn {suspended.remaining} lượt)
-        </p>
-      )}
-      <ToonTabs
-        label="Nhóm việc"
-        variant="quiet"
-        idBase={idBase}
-        value={current.name}
-        onChange={setTab}
-        items={groups.map((g) => {
-          const Icon = ACTION_GROUPS[g.name].icon;
-          return {
-            key: g.name,
-            label: g.name,
-            icon: <Icon size={15} strokeWidth={2.6} aria-hidden />,
-            // Chỉ tab đang mở hiện số việc, để hàng tab không thành một dãy huy hiệu.
-            count:
-              g.name === current.name
-                ? g.items.filter((a) => a.enabled).length
-                : undefined,
-          };
-        })}
-      />
-      <ToonTabPanel idBase={idBase} tabKey={current.name} active>
-        <ul className="grid gap-2.5 sm:grid-cols-2">
-          {current.items.map((a) => (
-            <li key={a.key}>
-              <ActionButton
-                action={a}
-                minutesPerPoint={minutesPerPoint}
-                disabled={disabled}
-                guarded={guarded}
-                status={
-                  a.kind === 'talk'
-                    ? cast.find((person) => person.slot === a.target)?.status
-                    : undefined
-                }
-                onPick={onPick}
-              />
-            </li>
-          ))}
-        </ul>
-      </ToonTabPanel>
-    </div>
+    <ul aria-label={label} className="grid gap-2">
+      {ordered.map((a) => (
+        <li key={a.key}>
+          <ActionButton
+            action={a}
+            minutesPerPoint={minutesPerPoint}
+            disabled={disabled}
+            guarded={guarded}
+            compact={!a.enabled}
+            showReason
+            onPick={onPick}
+          />
+        </li>
+      ))}
+    </ul>
   );
 }
 
-function ActionButton({
+export function ActionButton({
   action: a,
   minutesPerPoint,
   disabled,
-  guarded,
+  guarded = false,
   onPick,
-  status,
+  compact = false,
+  showReason = false,
 }: {
   action: Action;
   minutesPerPoint: number;
   disabled: boolean;
-  guarded: boolean;
+  guarded?: boolean;
   onPick: (a: Action) => void;
-  status?: string;
+  /** Một dòng, không có ô biểu tượng to: nút gắn trên tài liệu, thẻ người, việc đang khoá. */
+  compact?: boolean;
+  /** Hiện lý do khoá thành chữ thay vì chỉ đọc cho trình đọc màn hình. */
+  showReason?: boolean;
 }) {
-  const meta = KIND[a.kind] ?? KIND.run;
-  const Icon = meta.icon;
+  const Icon = ICON[a.kind] ?? Play;
   const off = disabled || !a.enabled;
+  const why = !a.enabled && a.reason ? `why-${a.key}` : undefined;
   return (
-    <>
-      <button
-        type="button"
-        disabled={off}
-        onClick={(event) => {
-          if (guarded && isTouchTap(event)) return;
-          onPick(a);
-        }}
-        data-action-key={a.key}
-        data-tap-guard={guarded || undefined}
-        title={!a.enabled ? a.reason : undefined}
-        aria-describedby={!a.enabled && a.reason ? `why-${a.key}` : undefined}
-        className={cn(
-          'group flex size-full items-center gap-3 rounded-2xl border-[2.5px] px-2.5 py-2 text-left font-toon-body text-[15px] font-bold leading-snug transition-[transform,box-shadow,background-color] duration-150 focus-visible:outline-none focus-visible:shadow-toon-focus',
-          !off && (a.kind === 'trigger' ? 'bg-[#ffe4a3]' : 'bg-toon-paper'),
-          off
-            ? 'cursor-not-allowed border-toon-ink/40 bg-toon-sand/70 text-toon-ink-faint shadow-none'
-            : 'border-toon-ink text-toon-ink shadow-toon-sm hover:-translate-y-0.5 hover:shadow-toon active:translate-y-0.5 active:shadow-toon-press',
-        )}
-      >
+    <button
+      type="button"
+      disabled={off}
+      onClick={(event) => {
+        if (guarded && isTouchTap(event)) return;
+        onPick(a);
+      }}
+      data-action-key={a.key}
+      data-tap-guard={guarded || undefined}
+      title={!a.enabled ? a.reason : undefined}
+      aria-describedby={why}
+      className={cn(
+        'group flex w-full items-center text-left font-toon-body font-bold leading-snug transition-[transform,box-shadow,background-color] duration-150 focus-visible:outline-none focus-visible:shadow-toon-focus',
+        compact
+          ? 'min-h-11 gap-2 rounded-xl border-2 px-2.5 py-1.5 text-sm'
+          : 'min-h-14 gap-3 rounded-2xl border-[2.5px] px-2.5 py-2 text-[15px]',
+        !off && (a.kind === 'trigger' ? 'bg-[#ffe4a3]' : 'bg-toon-paper'),
+        off
+          ? 'cursor-not-allowed border-toon-ink/40 bg-toon-sand/70 text-toon-ink-soft shadow-none'
+          : 'border-toon-ink text-toon-ink shadow-toon-sm hover:-translate-y-0.5 hover:shadow-toon active:translate-y-0.5 active:shadow-toon-press',
+      )}
+    >
+      {compact ? (
+        !a.enabled ? (
+          <Lock size={14} strokeWidth={2.6} aria-hidden className="shrink-0" />
+        ) : (
+          <Icon size={15} strokeWidth={2.6} aria-hidden className="shrink-0" />
+        )
+      ) : (
         <span
           aria-hidden
           className={cn(
             'grid size-9 shrink-0 place-items-center rounded-xl border-[2.5px]',
             off ? 'border-toon-ink/40 opacity-60' : 'border-toon-ink',
           )}
-          style={{ backgroundColor: ACTION_GROUPS[meta.group].color }}
+          style={{ backgroundColor: colorOf(a.kind) }}
         >
           {!a.enabled ? (
             <Lock size={16} strokeWidth={2.6} />
@@ -212,34 +172,88 @@ function ActionButton({
             <Icon size={17} strokeWidth={2.6} />
           )}
         </span>
-        <span className="min-w-0 flex-1">
-          <span className="block">
-            {a.label}
-            {status && (
-              <span className="mt-0.5 block text-xs font-semibold text-toon-ink-soft">
-                {status}
-              </span>
-            )}
-          </span>
-          {!a.enabled && a.reason && (
-            <span
-              id={`why-${a.key}`}
-              className="mt-0.5 block text-xs font-semibold text-toon-ink-faint"
-            >
-              {a.reason}
-            </span>
-          )}
-        </span>
-        {a.enabled && a.points > 0 && (
+      )}
+      <span className="min-w-0 flex-1">
+        <span className="block">{a.label}</span>
+        {why && (
           <span
-            className="tabular inline-flex shrink-0 items-center gap-1 text-xs font-extrabold text-toon-ink-soft"
-            title={`Mất khoảng ${a.points * minutesPerPoint} phút trong ca`}
+            id={why}
+            className={cn(
+              'block text-xs font-semibold text-toon-ink-soft',
+              compact && !showReason && 'sr-only',
+              !compact && 'mt-0.5',
+            )}
           >
-            <Clock3 size={13} strokeWidth={2.6} aria-hidden />
-            {a.points} lượt
+            {a.reason}
           </span>
         )}
-      </button>
-    </>
+      </span>
+      {a.enabled && a.points > 0 && (
+        <span
+          className="tabular inline-flex shrink-0 items-center gap-1 text-xs font-extrabold text-toon-ink-soft"
+          title={`Mất khoảng ${a.points * minutesPerPoint} phút trong ca`}
+        >
+          <Clock3 size={13} strokeWidth={2.6} aria-hidden />
+          {a.points} lượt
+        </span>
+      )}
+    </button>
+  );
+}
+
+/**
+ * Nút chốt của ca (seed D1: người chơi tự chốt để sang nút tiếp). Hiện việc
+ * chốt đang mở; chưa mở được thì hiện việc chốt đầu tiên kèm lý do.
+ */
+export function TriggerButtons({
+  actions,
+  ended,
+  disabled,
+  onPick,
+  className,
+}: {
+  actions: Action[];
+  ended: boolean;
+  disabled: boolean;
+  onPick: (a: Action) => void;
+  className?: string;
+}) {
+  if (ended) return null;
+  const triggers = actions.filter((a) => a.kind === 'trigger');
+  const open = triggers.filter((a) => a.enabled);
+  const shown = open.length ? open : triggers.slice(0, 1);
+  if (!shown.length) return null;
+  return (
+    <div className={cn('flex shrink-0 items-center gap-2', className)}>
+      {shown.map((a) => {
+        const off = disabled || !a.enabled;
+        return (
+          <button
+            key={a.key}
+            type="button"
+            disabled={off}
+            data-action-key={a.key}
+            title={!a.enabled ? a.reason : undefined}
+            onClick={() => onPick(a)}
+            className={cn(
+              'inline-flex min-h-11 items-center gap-1.5 rounded-full border-[2.5px] px-3.5 py-1 font-toon text-sm font-extrabold transition-[transform,box-shadow] duration-150 focus-visible:outline-none focus-visible:shadow-toon-focus',
+              off
+                ? 'cursor-not-allowed border-toon-ink/40 bg-toon-sand/70 text-toon-ink-faint'
+                : 'border-toon-ink bg-toon-mustard text-toon-ink shadow-toon-sm hover:-translate-y-0.5 hover:shadow-toon active:translate-y-0.5 active:shadow-toon-press',
+            )}
+          >
+            {a.enabled ? (
+              <Flag size={15} strokeWidth={2.6} aria-hidden />
+            ) : (
+              <Lock size={14} strokeWidth={2.6} aria-hidden />
+            )}
+            {a.label}
+            {!a.enabled && a.reason && (
+              <span className="sr-only">: {a.reason}</span>
+            )}
+          </button>
+        );
+      })}
+    </div>
   );
 }

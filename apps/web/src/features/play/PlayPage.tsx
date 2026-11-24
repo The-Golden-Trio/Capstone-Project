@@ -1,8 +1,8 @@
 /**
- * Màn chơi một ca làm (Luật dẫn truyện bản 3, seed v2). Bố cục:
- * trái là việc làm được (pha xử lý), giữa là sân khấu hội thoại và khung
- * trả lời, phải là sổ tay. Trên điện thoại, việc và sổ tay mở thành tấm
- * kéo lên từ dưới.
+ * Màn chơi một ca làm (Luật dẫn truyện bản 3, seed v2). Bố cục: thanh trạng
+ * thái một hàng; trái là sân khấu (D-05) với khung trả lời ngay dưới lời
+ * thoại; phải là bàn làm việc (việc, người, tài liệu, sổ tay). Trên điện
+ * thoại, thanh dưới đổi giữa sân khấu và từng tab của bàn làm việc.
  */
 import { useEffect, useRef, useState } from 'react';
 import {
@@ -25,9 +25,9 @@ import {
   Character,
   Dialog,
   SceneBackdrop,
-  Sheet,
   ToonButton,
   ToonTextarea,
+  cn,
   toonButtonClasses,
   useToast,
 } from '@datn/ui';
@@ -35,12 +35,13 @@ import { api, sourceOf } from '../../api';
 import { startFreshRun } from '../../api/demo';
 import { keys, useRun } from '../../api/hooks';
 import type { SceneView } from '../../api/types';
-import { Desktop } from './desktop/Desktop';
+import { DocumentPane } from './desktop/Desktop';
 import { DocumentViewer, InlineMarkdown } from './desktop/DocumentViewer';
 import { ArtefactEditor } from './desktop/editors';
 import { AutoplayBar } from './autoplay/AutoplayBar';
 import { autoplayScript, scriptForTask } from '../../api/demo/playthroughs';
 import { useAutoplay } from './autoplay/useAutoplay';
+import { ActionButton, TriggerButtons } from './ActionPanel';
 import { Composer } from './Composer';
 import { Hud } from './Hud';
 import { Notebook } from './Notebook';
@@ -49,6 +50,15 @@ import { usePlaySession } from './usePlaySession';
 import { usePlayDesktop } from './usePlayDesktop';
 import { Avatar } from './Stage';
 import { TOON_BACKDROPS, castCharacters } from '../../lib/toon';
+import { tabLabel, type WorkbenchTab } from './workbench/model';
+import { urgentPromises } from './workbench/promises';
+import {
+  DocsPanel,
+  PeoplePanel,
+  WorkPanel,
+  blockedReason,
+} from './workbench/Panels';
+import { Workbench, WorkbenchNav, type TabBadges } from './workbench/Workbench';
 
 export default function PlayPage() {
   const { runId = '' } = useParams();
@@ -63,7 +73,10 @@ function RunPlayPage({ runId }: { runId: string }) {
   const { toast } = useToast();
   const [intro, setIntro] = useState(true);
   const desktop = usePlayDesktop(s, intro, runId);
-  const desktopOpen = desktop.windows.length > 0;
+  const viewing = desktop.windows[desktop.windows.length - 1] ?? null;
+  const [tab, setTab] = useState<WorkbenchTab>('work');
+  const [mobileScene, setMobileScene] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [params, setParams] = useSearchParams();
   const demo = sourceOf('play') === 'demo';
   const autoplayName = demo ? params.get('autoplay') : null;
@@ -97,7 +110,7 @@ function RunPlayPage({ runId }: { runId: string }) {
       ].join(':')
     : '';
   useEffect(() => {
-    if (!focusKey || intro || desktopOpen) return;
+    if (!focusKey || intro || viewing) return;
     const id = requestAnimationFrame(() => {
       const active = document.activeElement;
       const dialogue = document.getElementById('stage-dialog');
@@ -114,9 +127,18 @@ function RunPlayPage({ runId }: { runId: string }) {
       (target ?? dialogue)?.focus();
     });
     return () => cancelAnimationFrame(id);
-  }, [focusKey, intro, hasQueue, desktopOpen]);
-  const [notebook, setNotebook] = useState(false);
+  }, [focusKey, intro, hasQueue, viewing]);
   const [flagOpen, setFlagOpen] = useState(false);
+
+  // Điện thoại: hết pha xử lý (vào trò chuyện, tình huống) thì về sân khấu.
+  const mode = s.scene?.mode;
+  useEffect(() => {
+    if (mode && mode !== 'phase') setMobileScene(true);
+  }, [mode]);
+
+  useEffect(() => {
+    if (!viewing) setExpanded(false);
+  }, [viewing]);
 
   // Ca đã có diễn biến thì không hiện lại màn giới thiệu.
   useEffect(() => {
@@ -182,6 +204,136 @@ function RunPlayPage({ runId }: { runId: string }) {
 
   const looks = castCharacters(r.cast);
 
+  const blocked = blockedReason(scene, locked);
+  const busy = s.sending || !!s.paused;
+  const pick = (action: SceneView['actions'][number]) =>
+    void desktop.pick(action);
+  const badges: TabBadges = {
+    work: urgentPromises(scene),
+    notebook: scene.notebook.facts.length,
+  };
+  const showWorkbench = !mobileScene || !!viewing;
+  const openTab = (next: WorkbenchTab) => {
+    setTab(next);
+    setMobileScene(false);
+  };
+  const viewingDocument =
+    viewing?.kind === 'document'
+      ? scene.documents.find((item) => item.id === viewing.id)
+      : undefined;
+  // Việc nhắm thẳng vào tài liệu đang xem (chạy lại, sửa lại) gắn trên tài liệu đó.
+  const attached = viewingDocument
+    ? scene.actions.filter(
+        (a) => a.target === viewingDocument.id && a.kind !== 'open',
+      )
+    : [];
+
+  const viewer = viewing ? (
+    <DocumentPane
+      entry={viewing}
+      expanded={expanded}
+      onToggleExpand={() => setExpanded((value) => !value)}
+      onClose={() => desktop.close(viewing.id)}
+      backLabel={tabLabel(tab)}
+      mobileBackLabel={mobileScene ? 'Cảnh' : tabLabel(tab)}
+      toolbar={
+        attached.length ? (
+          <>
+            {attached.map((a) => (
+              <ActionButton
+                key={a.key}
+                action={a}
+                compact
+                minutesPerPoint={scene.clock.minutesPerPoint}
+                disabled={busy || !!blocked}
+                onPick={pick}
+              />
+            ))}
+          </>
+        ) : undefined
+      }
+    >
+      {viewing.kind === 'document' ? (
+        viewingDocument && <DocumentViewer document={viewingDocument} />
+      ) : (
+        <>
+          {(s.error || s.paused) && (
+            <p role="alert" className="desktop-error">
+              {s.error ?? s.paused} Bản nháp vẫn còn.
+              {s.paused && (
+                <button
+                  type="button"
+                  className="ml-2 underline"
+                  onClick={() => void s.resume()}
+                >
+                  Thử tiếp tục
+                </button>
+              )}
+            </p>
+          )}
+          <ArtefactEditor
+            form={desktop.draftFor(viewing.form)}
+            onDraftChange={(draft) =>
+              desktop.updateDraft(viewing.form.id, draft)
+            }
+            busy={s.sending || s.waiting || !!s.paused}
+            submitLabel={viewing.submitLabel}
+            onSubmit={(fields, ticks) => desktop.submit(viewing, fields, ticks)}
+            onCancel={() => desktop.close(viewing.id)}
+          />
+        </>
+      )}
+    </DocumentPane>
+  ) : null;
+
+  const triggers = (className: string) => (
+    <TriggerButtons
+      actions={scene.actions}
+      ended={scene.ended}
+      disabled={busy || !!blocked}
+      onPick={pick}
+      className={className}
+    />
+  );
+
+  const composer = (
+    <Composer
+      scene={scene}
+      busy={s.sending}
+      locked={locked}
+      onSend={s.send}
+      onOpenNode={desktop.openNode}
+      spoken={s.current?.text ?? null}
+      clockHeld={autoplay.holdsClock}
+    />
+  );
+  const reply = s.paused ? (
+    <div className="rounded-2xl border-[3px] border-toon-ink bg-[#ffe4a3] p-4 shadow-toon-sm">
+      <p className="font-toon text-lg font-extrabold text-toon-ink">
+        Ca làm tạm dừng
+      </p>
+      <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
+        Chưa gọi được mô hình dẫn truyện. Tiến độ của bạn vẫn được giữ nguyên,
+        không mất gì.
+      </p>
+      <ToonButton
+        size="sm"
+        className="mt-3"
+        leftIcon={<CirclePause size={15} strokeWidth={2.6} />}
+        onClick={() => void s.resume()}
+      >
+        Thử tiếp tục
+      </ToonButton>
+    </div>
+  ) : locked || scene.mode === 'confirm_end' ? null : scene.ended ? (
+    <EndCard onNext={() => navigate(`/play/${runId}/reflect`)} />
+  ) : scene.mode === 'phase' ? (
+    <PhaseCard onTab={openTab}>{triggers('lg:hidden')}</PhaseCard>
+  ) : (
+    composer
+  );
+  const trayOpen = !!s.error || !!reply || (s.queued > 0 && !s.paused);
+
   return (
     <div
       className="theme-toon toon-dots relative flex h-dvh flex-col overflow-hidden"
@@ -202,14 +354,11 @@ function RunPlayPage({ runId }: { runId: string }) {
           }}
         />
       )}
-      <div className="contents" inert={intro || desktopOpen || undefined}>
+      <div className="contents" inert={intro || undefined}>
         <Hud
           title={r.title}
-          goal={r.goal}
           scene={scene}
           backTo={backTo}
-          onNotebook={() => setNotebook(true)}
-          notebookCount={scene.notebook.facts.length}
           onHint={() => void s.send({ kind: 'hint' })}
           hintDisabled={locked || s.sending || !!s.paused || scene.ended}
           aiLabel={
@@ -217,61 +366,19 @@ function RunPlayPage({ runId }: { runId: string }) {
               ? 'AI giả (bản xem thử)'
               : 'Lời nhân vật do AI dẫn dắt'
           }
+          actions={triggers('max-lg:hidden')}
         />
-      </div>
 
-      <Desktop
-        documents={desktop.documents}
-        windows={desktop.windows}
-        onOpen={desktop.openDocument}
-        onRaise={desktop.raise}
-        onClose={desktop.close}
-        renderWindow={(id) => {
-          const entry = desktop.windows.find((item) => item.id === id);
-          if (!entry) return null;
-          if (entry.kind === 'document') {
-            const doc = scene.documents.find((item) => item.id === id);
-            return doc ? <DocumentViewer document={doc} /> : null;
-          }
-          return (
-            <>
-              {(s.error || s.paused) && (
-                <p role="alert" className="desktop-error">
-                  {s.error ?? s.paused} Bản nháp vẫn còn.
-                  {s.paused && (
-                    <button
-                      type="button"
-                      className="ml-2 underline"
-                      onClick={() => void s.resume()}
-                    >
-                      Thử tiếp tục
-                    </button>
-                  )}
-                </p>
-              )}
-              <ArtefactEditor
-                form={desktop.draftFor(entry.form)}
-                onDraftChange={(draft) =>
-                  desktop.updateDraft(entry.form.id, draft)
-                }
-                busy={s.sending || s.waiting || !!s.paused}
-                submitLabel={entry.submitLabel}
-                onSubmit={(fields, ticks) =>
-                  desktop.submit(entry, fields, ticks)
-                }
-                onCancel={() => desktop.close(id)}
-              />
-            </>
-          );
-        }}
-      >
-        <div
-          className="relative mx-auto flex min-h-0 w-full max-w-[1280px] flex-1 sm:p-3 lg:p-4"
-          inert={intro || undefined}
-        >
-          <main className="relative flex min-w-0 flex-1 flex-col overflow-hidden bg-toon-cream sm:rounded-[20px] sm:border-[3px] sm:border-toon-ink sm:shadow-toon">
+        <div className="relative mx-auto flex min-h-0 w-full max-w-[1600px] flex-1 lg:gap-3 lg:p-3">
+          <main
+            className={cn(
+              '@container relative flex min-w-0 flex-1 flex-col overflow-hidden bg-toon-cream lg:rounded-[20px] lg:border-[3px] lg:border-toon-ink lg:shadow-toon',
+              showWorkbench && 'max-lg:hidden',
+              viewing && expanded && 'lg:hidden',
+            )}
+          >
             {scene.conversation && (
-              <div className="pointer-events-none absolute inset-x-0 top-3 z-30 flex px-3 pr-16 sm:justify-center sm:px-48">
+              <div className="pointer-events-none absolute inset-x-0 top-3 z-30 flex px-3 pr-24 @md:px-5 @xl:pr-56">
                 <p className="inline-flex max-w-full items-center gap-2 rounded-full border-[2.5px] border-toon-ink bg-toon-paper py-1 pl-1.5 pr-3.5 text-sm font-bold text-toon-ink shadow-toon-sm">
                   <span className="flex -space-x-2">
                     {scene.conversation.people.map((p) => {
@@ -309,7 +416,7 @@ function RunPlayPage({ runId }: { runId: string }) {
               bots={scene.bots}
               castStatus={scene.cast}
               glossary={scene.glossary}
-              inactive={intro || desktopOpen}
+              inactive={intro}
               current={s.current}
               queued={s.queued}
               waitingLabel={waitingLabel}
@@ -331,101 +438,114 @@ function RunPlayPage({ runId }: { runId: string }) {
                 scene.mode === 'phase' || scene.await.kind === 'node_choice'
               }
               onAdvance={s.advance}
-            />
-            <div
-              ref={composerRef}
-              className="relative z-20 border-t-[3px] border-toon-ink bg-[#f1dcb6] px-3 py-3 sm:px-5 sm:py-4"
-            >
-              <div className="mx-auto max-w-3xl">
-                {s.error && (
-                  <p
-                    role="alert"
-                    className="mb-3 rounded-xl border-[2.5px] border-toon-ink bg-toon-coral-light px-3 py-2 text-sm font-bold text-toon-ink"
-                  >
-                    {s.error}
-                  </p>
-                )}
-                {s.paused ? (
-                  <div className="rounded-2xl border-[3px] border-toon-ink bg-[#ffe4a3] p-4 shadow-toon-sm">
-                    <p className="font-toon text-lg font-extrabold text-toon-ink">
-                      Ca làm tạm dừng
-                    </p>
-                    <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
-                      Chưa gọi được mô hình dẫn truyện. Tiến độ của bạn vẫn được
-                      giữ nguyên, không mất gì.
-                    </p>
-                    <ToonButton
-                      size="sm"
-                      className="mt-3"
-                      leftIcon={<CirclePause size={15} strokeWidth={2.6} />}
-                      onClick={() => void s.resume()}
-                    >
-                      Thử tiếp tục
-                    </ToonButton>
-                  </div>
-                ) : scene.ended ? (
-                  !locked && (
-                    <EndCard
-                      onNext={() => navigate(`/play/${runId}/reflect`)}
-                    />
-                  )
-                ) : (
-                  <Composer
-                    scene={scene}
-                    busy={s.sending}
-                    locked={locked}
-                    onSend={s.send}
-                    onPickAction={(action) => void desktop.pick(action)}
-                    onOpenNode={desktop.openNode}
-                    spoken={s.current?.text ?? null}
-                    clockHeld={autoplay.holdsClock}
-                  />
-                )}
-                {s.queued > 0 && !s.paused && (
-                  <p className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm font-bold text-toon-ink-soft">
-                    Bấm vào hộp thoại hoặc nhấn Space để nghe tiếp.
-                    {s.queued > 1 && (
-                      <button
-                        type="button"
-                        onClick={s.revealAll}
-                        className="rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-0.5 font-toon text-sm font-bold text-toon-ink shadow-toon-sm hover:-translate-y-px focus-visible:outline-none focus-visible:shadow-toon-focus"
+              clockHeld={autoplay.holdsClock}
+              footer={
+                trayOpen && (
+                  <div ref={composerRef} className="flex flex-col gap-2.5">
+                    {s.error && (
+                      <p
+                        role="alert"
+                        className="rounded-xl border-[2.5px] border-toon-ink bg-toon-coral-light px-3 py-2 text-sm font-bold text-toon-ink"
                       >
-                        Hiện hết ({s.queued})
-                      </button>
+                        {s.error}
+                      </p>
                     )}
-                  </p>
-                )}
-              </div>
-            </div>
+                    {reply}
+                    {s.queued > 0 && !s.paused && (
+                      <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm font-bold text-toon-ink-soft">
+                        Bấm vào hộp thoại hoặc nhấn Space để nghe tiếp.
+                        {s.queued > 1 && (
+                          <button
+                            type="button"
+                            onClick={s.revealAll}
+                            className="rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-0.5 font-toon text-sm font-bold text-toon-ink shadow-toon-sm hover:-translate-y-px focus-visible:outline-none focus-visible:shadow-toon-focus"
+                          >
+                            Hiện hết ({s.queued})
+                          </button>
+                        )}
+                      </p>
+                    )}
+                  </div>
+                )
+              }
+            />
+            {scene.mode === 'confirm_end' && !s.paused && composer}
           </main>
-        </div>
-      </Desktop>
 
-      <Sheet
-        open={notebook}
-        onClose={() => setNotebook(false)}
-        side="right"
-        theme="toon"
-        title="Sổ tay"
-      >
-        <Notebook
-          run={r}
-          scene={scene}
-          lines={s.shown}
-          onOpenDocument={(id) => {
-            setNotebook(false);
-            desktop.openDocument(id);
+          <Workbench
+            tab={tab}
+            onTab={setTab}
+            badges={badges}
+            viewer={viewer}
+            className={cn(
+              'overflow-hidden bg-toon-cream max-lg:flex-1 lg:shrink-0 lg:rounded-[20px] lg:border-[3px] lg:border-toon-ink lg:shadow-toon',
+              !showWorkbench && 'max-lg:hidden',
+              viewing
+                ? expanded
+                  ? 'lg:flex-1'
+                  : 'lg:w-[min(58%,880px)]'
+                : 'lg:w-[360px] xl:w-[400px]',
+            )}
+          >
+            {tab === 'work' ? (
+              <WorkPanel
+                scene={scene}
+                goal={r.goal}
+                blocked={blocked}
+                busy={busy}
+                onPick={pick}
+              />
+            ) : tab === 'people' ? (
+              <PeoplePanel
+                scene={scene}
+                blocked={blocked}
+                busy={busy}
+                onPick={pick}
+              />
+            ) : tab === 'docs' ? (
+              <DocsPanel
+                scene={scene}
+                blocked={blocked}
+                busy={busy}
+                onPick={pick}
+                onOpen={desktop.openDocument}
+              />
+            ) : (
+              <div className="flex h-full flex-col">
+                <Notebook
+                  run={r}
+                  scene={scene}
+                  lines={s.shown}
+                  onOpenDocument={desktop.openDocument}
+                  className="min-h-0 flex-1"
+                />
+                <button
+                  type="button"
+                  onClick={() => setFlagOpen(true)}
+                  className="mx-3 mb-1 inline-flex min-h-11 items-center gap-1 self-start rounded-lg px-1 text-sm font-bold text-toon-ink-soft hover:text-toon-ink focus-visible:outline-none focus-visible:shadow-toon-focus"
+                >
+                  <Flag size={13} strokeWidth={2.6} aria-hidden /> Báo nội dung
+                  sai
+                </button>
+              </div>
+            )}
+          </Workbench>
+        </div>
+
+        <WorkbenchNav
+          view={showWorkbench ? tab : 'scene'}
+          onScene={() => {
+            if (viewing) desktop.close(viewing.id);
+            setMobileScene(true);
           }}
-          className="-mx-6 -mt-2 h-[70dvh]"
+          onTab={(next) => {
+            if (viewing) desktop.close(viewing.id);
+            openTab(next);
+          }}
+          badges={badges}
+          className="lg:hidden"
         />
-        <button
-          type="button"
-          onClick={() => setFlagOpen(true)}
-          className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-toon-ink-soft"
-        >
-          <Flag size={13} strokeWidth={2.6} aria-hidden /> Báo nội dung sai
-        </button>
-      </Sheet>
+      </div>
 
       <FlagDialog
         open={flagOpen}
@@ -457,6 +577,43 @@ function RunPlayPage({ runId }: { runId: string }) {
           }
         />
       )}
+    </div>
+  );
+}
+
+/** Pha xử lý: chọn việc ở bàn làm việc; điện thoại có lối tắt tới từng tab. */
+function PhaseCard({
+  onTab,
+  children,
+}: {
+  onTab: (tab: WorkbenchTab) => void;
+  children: React.ReactNode;
+}) {
+  const shortcuts: WorkbenchTab[] = ['people', 'docs', 'work'];
+  return (
+    <div className="flex flex-col gap-3 @xl:flex-row @xl:items-center">
+      <p className="flex-1 text-sm font-bold text-toon-ink">
+        <span className="max-lg:hidden">
+          Chọn việc ở bàn làm việc bên phải: hỏi người, mở tài liệu, làm việc.
+        </span>
+        <span className="lg:hidden">Bạn muốn làm gì tiếp?</span>
+        <span className="mt-0.5 block font-semibold text-toon-ink-soft">
+          Mỗi việc ghi rõ tốn bao nhiêu lượt.
+        </span>
+      </p>
+      <div className="flex flex-wrap gap-2 lg:hidden">
+        {shortcuts.map((key) => (
+          <ToonButton
+            key={key}
+            size="sm"
+            variant="secondary"
+            onClick={() => onTab(key)}
+          >
+            {tabLabel(key)}
+          </ToonButton>
+        ))}
+      </div>
+      {children}
     </div>
   );
 }
@@ -633,7 +790,7 @@ function IntroOverlay({
 
 function EndCard({ onNext }: { onNext: () => void }) {
   return (
-    <div className="flex flex-col items-center gap-3 rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-4 text-center shadow-toon sm:flex-row sm:text-left">
+    <div className="flex flex-col items-center gap-3 text-center @xl:flex-row @xl:text-left">
       <span
         aria-hidden
         className="grid size-14 shrink-0 animate-toon-hop place-items-center rounded-2xl border-[3px] border-toon-ink bg-toon-mustard"

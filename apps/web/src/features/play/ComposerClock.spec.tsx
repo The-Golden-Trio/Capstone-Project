@@ -27,7 +27,6 @@ function setup(clockHeld: boolean) {
     busy: false,
     locked: false,
     onSend: send,
-    onPickAction: vi.fn(),
     onOpenNode: vi.fn(),
   };
   const view = render(<Composer {...props} clockHeld={clockHeld} />);
@@ -42,7 +41,9 @@ const advance = (ms: number) =>
   });
 
 const remaining = () =>
-  Number(screen.getByRole('timer').getAttribute('aria-label')?.match(/\d+/)?.[0]);
+  Number(
+    screen.getByRole('timer').getAttribute('aria-label')?.match(/\d+/)?.[0],
+  );
 
 it('đồng hồ chạy và hết giờ gửi timeout khi không có lượt mẫu', async () => {
   const { send } = setup(false);

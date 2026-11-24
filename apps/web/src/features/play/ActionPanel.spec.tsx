@@ -7,7 +7,8 @@ import {
 } from '@testing-library/react';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import type { SceneView } from '../../api/types';
-import { ActionTray, TAP_GUARD_MS } from './ActionPanel';
+import { ActionList, TAP_GUARD_MS, TriggerButtons } from './ActionPanel';
+import { WorkPanel } from './workbench/Panels';
 
 const actions = [
   {
@@ -22,12 +23,12 @@ const actions = [
 
 function tray(disabled: boolean, onPick = vi.fn()) {
   const ui = (off: boolean) => (
-    <ActionTray
+    <ActionList
+      label="Việc"
       actions={actions}
       minutesPerPoint={5}
       disabled={off}
       onPick={onPick}
-      cast={[]}
     />
   );
   const view = render(ui(disabled));
@@ -46,7 +47,7 @@ afterEach(() => {
   vi.useRealTimers();
 });
 
-it('bỏ qua cú chạm rơi vào khay việc ngay khi hộp thoại vừa khép, rồi nhận lại', () => {
+it('bỏ qua cú chạm rơi vào danh sách việc ngay khi hộp thoại vừa khép, rồi nhận lại', () => {
   const { onPick, rerender } = tray(true);
   rerender(false);
   const button = screen.getByRole('button', { name: /Mở log API/ });
@@ -78,14 +79,55 @@ it('ghi chi phí của việc bằng lượt, giữ chú thích số phút trong
 
 it('việc đang dở đếm bằng lượt', () => {
   render(
-    <ActionTray
-      actions={actions}
-      minutesPerPoint={5}
-      disabled={false}
+    <WorkPanel
+      scene={
+        {
+          actions,
+          clock: { minutesPerPoint: 5 },
+          notebook: { facts: [], promises: [] },
+          suspended: { key: 'rewrite', label: 'Sửa lại bản vá', remaining: 2 },
+        } as unknown as SceneView
+      }
+      goal="Mục tiêu"
+      blocked={null}
+      busy={false}
       onPick={vi.fn()}
-      suspended={{ label: 'Sửa lại bản vá', remaining: 2 }}
-      cast={[]}
     />,
   );
   expect(screen.getByText('Đang dở: Sửa lại bản vá (còn 2 lượt)')).toBeTruthy();
+});
+
+const trigger = (over: Partial<SceneView['actions'][number]>) =>
+  ({
+    key: 'close_shift',
+    label: 'Chốt ca',
+    kind: 'trigger',
+    points: 0,
+    enabled: true,
+    ...over,
+  }) as SceneView['actions'][number];
+
+it('nút chốt vẫn hiện khi bị khoá vì chưa đủ điều kiện, nhưng biến mất khi ca đã khép', () => {
+  const { rerender } = render(
+    <TriggerButtons
+      actions={[
+        trigger({ enabled: false, reason: 'Cần làm trước: “Viết bản vá”' }),
+      ]}
+      ended={false}
+      disabled={false}
+      onPick={vi.fn()}
+    />,
+  );
+  expect(
+    screen.getByRole('button', { name: /Chốt ca/ }).hasAttribute('disabled'),
+  ).toBe(true);
+  rerender(
+    <TriggerButtons
+      actions={[trigger({ enabled: false, reason: 'Ca đã kết thúc' })]}
+      ended
+      disabled={false}
+      onPick={vi.fn()}
+    />,
+  );
+  expect(screen.queryByRole('button')).toBeNull();
 });

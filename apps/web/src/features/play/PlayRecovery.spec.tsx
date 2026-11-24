@@ -42,7 +42,7 @@ vi.mock('./usePlaySession', async () => {
     },
   };
 });
-it('keeps an action draft and shows its send error inside the open dialog', async () => {
+it('keeps an action draft and shows its send error inside the open editor', async () => {
   await signInDemo();
   const run = await api.play.start('SWE_BACKEND.L3.m2', null);
   const scene = await api.play.scene(run.runId);
@@ -77,7 +77,7 @@ it('keeps an action draft and shows its send error inside the open dialog', asyn
     `/play/${run.runId}`,
   );
   fireEvent.click(await screen.findByRole('button', { name: /Viết bản vá/ }));
-  const dialog = within(screen.getByRole('dialog', { name: 'Viết bản vá' }));
+  const dialog = within(screen.getByRole('region', { name: 'Viết bản vá' }));
   fireEvent.change(dialog.getByRole('textbox', { name: 'Nguyên nhân' }), {
     target: { value: 'Truy vấn N+1' },
   });
@@ -136,7 +136,7 @@ it('giữ nháp khi Esc, Để sau và tải lại, cách ly theo ca và xóa kh
     );
   const open = async () => {
     fireEvent.click(await screen.findByRole('button', { name: /Viết bản vá/ }));
-    return await screen.findByRole('dialog', { name: 'Viết bản vá' });
+    return await screen.findByRole('region', { name: 'Viết bản vá' });
   };
   const valueIn = (dialog: HTMLElement) =>
     within(dialog).getByRole<HTMLTextAreaElement>('textbox', {
@@ -165,7 +165,7 @@ it('giữ nháp khi Esc, Để sau và tải lại, cách ly theo ca và xóa kh
     }).checked,
   ).toBe(true);
   fireEvent.click(screen.getByRole('link', { name: 'Chuyển ca' }));
-  expect(screen.queryByRole('dialog')).toBeNull();
+  expect(screen.queryByRole('region', { name: 'Viết bản vá' })).toBeNull();
   expect(valueIn(await open())).toBe('');
 
   fireEvent.click(screen.getByRole('link', { name: 'Về ca cũ' }));
@@ -173,6 +173,8 @@ it('giữ nháp khi Esc, Để sau và tải lại, cách ly theo ca và xóa kh
   expect(valueIn(original)).toBe('  N+1  ');
   state.send.mockResolvedValueOnce(true);
   fireEvent.click(within(original).getByRole('button', { name: 'Lưu bản vá' }));
-  await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull());
+  await waitFor(() =>
+    expect(screen.queryByRole('region', { name: 'Viết bản vá' })).toBeNull(),
+  );
   expect(valueIn(await open())).toBe('');
 });

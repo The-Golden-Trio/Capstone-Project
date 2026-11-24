@@ -93,11 +93,6 @@ export function usePlayDesktop(
     });
   }, []);
 
-  const raise = (id: string) => {
-    const entry = windows.find((item) => item.id === id);
-    if (entry) show(entry);
-  };
-
   const close = (id: string) =>
     setWindows((current) => current.filter((entry) => entry.id !== id));
 
@@ -214,7 +209,6 @@ export function usePlayDesktop(
   };
 
   return {
-    documents: scene?.documents.map(documentEntry) ?? [],
     windows,
     draftFor: (form: Form): Form => ({
       ...form,
@@ -226,7 +220,6 @@ export function usePlayDesktop(
     openDocument,
     openNode,
     pick,
-    raise,
     close: (id: string) => {
       if (
         !sending ||

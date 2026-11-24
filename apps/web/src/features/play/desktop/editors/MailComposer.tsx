@@ -10,7 +10,7 @@ export function MailComposer({
   view,
   busy,
   draft,
-  actions,
+  selects,
 }: EditorLayoutProps<EditorView<'mail'>>) {
   const subject = form.fields.find(({ id }) => id === view.subject_field);
 
@@ -44,7 +44,7 @@ export function MailComposer({
             />
           ))}
         <EditorTicks ticks={form.ticks} draft={draft} busy={busy} />
-        {actions}
+        {selects}
       </div>
     </div>
   );

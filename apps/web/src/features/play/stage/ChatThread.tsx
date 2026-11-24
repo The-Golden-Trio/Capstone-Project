@@ -25,6 +25,7 @@ export function ChatThread({
   more,
   waiting,
   quiet,
+  joined = false,
   onTap,
 }: {
   lines: TranscriptLine[];
@@ -41,6 +42,8 @@ export function ChatThread({
   /** Đang chờ người kia gõ tiếp: hiện ba chấm như đang soạn tin. */
   waiting: string | null;
   quiet: boolean;
+  /** Khung trả lời nằm ngay dưới: bỏ bo góc dưới để hai phần thành một khối. */
+  joined?: boolean;
   onTap: () => void;
 }) {
   const list = useRef<HTMLOListElement>(null);
@@ -53,7 +56,12 @@ export function ChatThread({
   }, [shown.length, waiting]);
 
   return (
-    <div className="relative z-10 flex min-h-0 w-full max-w-xl flex-1 flex-col overflow-hidden rounded-[22px] border-[3px] border-toon-ink bg-toon-paper shadow-toon-lg md:max-h-[min(100%,34rem)] md:self-center">
+    <div
+      className={cn(
+        'flex min-h-0 w-full flex-1 flex-col overflow-hidden rounded-[22px] border-[3px] border-toon-ink bg-toon-paper',
+        joined && 'rounded-b-none',
+      )}
+    >
       <header
         className="flex items-center gap-3 border-b-[3px] border-toon-ink px-4 py-2.5"
         style={{ backgroundColor: group ? '#d6ecf7' : partnerLook?.color }}
@@ -93,7 +101,7 @@ export function ChatThread({
       <ol
         ref={list}
         aria-label={group ? 'Tin nhắn nhóm chat' : 'Tin nhắn'}
-        className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto px-3 pb-4 pt-4 sm:px-4"
+        className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto px-3 pb-4 pt-4 @md:px-4"
       >
         {shown.map((line, i) => (
           <li key={line.seq} className="animate-toon-slide">

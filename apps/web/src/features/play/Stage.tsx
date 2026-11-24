@@ -4,7 +4,7 @@
  * ký thoại dạng bong bóng bên phải, hộp thoại có bảng tên ở dưới. Bấm hộp
  * thoại (hay Space/Enter) để qua nhịp (seed khối C3).
  */
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   Bot,
   History,
@@ -98,6 +98,8 @@ export function Stage({
   bots = [],
   castStatus = [],
   glossary = [],
+  clockHeld = false,
+  footer,
   onAdvance,
 }: {
   run: ShiftRun;
@@ -115,6 +117,10 @@ export function Stage({
   bots?: SceneView['bots'];
   castStatus?: SceneView['cast'];
   glossary?: SceneView['glossary'];
+  /** Lượt mẫu đang chờ người trình bày: đồng hồ cuộc gọi đứng yên. */
+  clockHeld?: boolean;
+  /** Khung trả lời gắn liền dưới hộp thoại, thành một khối với nó. */
+  footer?: ReactNode;
   onAdvance: () => void;
 }) {
   const cast = useMemo(() => castCharacters(run.cast), [run.cast]);
@@ -170,7 +176,7 @@ export function Stage({
       const t = e.target as HTMLElement;
       if (
         t.closest(
-          'input, textarea, select, button, [contenteditable], dialog, [role="dialog"]',
+          'input, textarea, select, button, [contenteditable], dialog, [role="dialog"], [data-workbench]',
         )
       )
         return;
@@ -189,6 +195,8 @@ export function Stage({
     else if (queued > 0) onAdvance();
   };
 
+  const joined = !!footer;
+  const past = lines.filter((l) => l !== beat && l !== notice);
   const thread = form === 'thread';
   const call = form === 'call';
   // Cuộc gọi chỉ coi là xong khi không còn cuộc trò chuyện qua điện thoại và hết nhịp chờ đọc.
@@ -199,7 +207,7 @@ export function Stage({
       <span className="flex items-end gap-2">
         {/* Điện thoại không có nhân vật đứng: mặt và emote đi cùng bảng tên. */}
         {speakerLook && !call && (
-          <span className="relative -translate-y-3 md:hidden">
+          <span className="relative -translate-y-3 @3xl:hidden">
             <Avatar
               src={characterArt(speakerLook, speaking?.expression)}
               color={speakerLook.color}
@@ -228,7 +236,7 @@ export function Stage({
   return (
     <section
       aria-label="Diễn biến ca làm"
-      className="relative flex min-h-0 flex-1 flex-col"
+      className="@container relative flex min-h-0 flex-1 flex-col"
     >
       <SceneBackdrop
         src={backdrop}
@@ -251,46 +259,48 @@ export function Stage({
               : `${currentName}: ${beat.text}`
             : ''}
         </p>
+        {past.length > 0 && (
+          <HistoryButton
+            lines={past}
+            nameOf={nameOf}
+            cast={cast}
+            botNames={botNames}
+            statuses={statuses}
+            glossary={glossary}
+          />
+        )}
         {thread ? (
           <div
             className={cn(
-              'relative flex min-h-0 flex-1 justify-center px-3 pb-3 sm:px-5',
+              'relative flex min-h-0 flex-1 justify-center px-3 pb-3 @md:px-5',
               notice ? 'pt-3' : 'pt-14',
             )}
           >
-            <ChatThread
-              lines={threadLines(lines, botIds, notice)}
-              group={group}
-              partner={beat?.speaker ?? ''}
-              members={(talking?.slots ?? []).map(nameOf)}
-              nameOf={nameOf}
-              cast={cast}
-              botNames={botNames}
-              glossary={glossary}
-              more={queued > 0}
-              waiting={queued ? null : waitingLabel}
-              quiet={quiet}
-              onTap={tap}
-            />
-            <Backlog
-              recent={false}
-              quiet={quiet}
-              lines={lines}
-              current={beat}
-              notice={notice}
-              nameOf={nameOf}
-              cast={cast}
-              botNames={botNames}
-              statuses={statuses}
-              glossary={glossary}
-            />
+            <div className="relative z-10 flex min-h-0 w-full max-w-xl flex-col self-end rounded-[22px] shadow-toon-lg max-h-full @3xl:max-h-[min(100%,36rem)] @3xl:self-center">
+              <ChatThread
+                lines={threadLines(lines, botIds, notice)}
+                group={group}
+                partner={beat?.speaker ?? ''}
+                members={(talking?.slots ?? []).map(nameOf)}
+                nameOf={nameOf}
+                cast={cast}
+                botNames={botNames}
+                glossary={glossary}
+                more={queued > 0}
+                waiting={queued ? null : waitingLabel}
+                quiet={quiet}
+                joined={joined}
+                onTap={tap}
+              />
+              {joined && <Tray>{footer}</Tray>}
+            </div>
           </div>
         ) : (
           <>
             <div
               className={cn(
                 'relative flex min-h-0 flex-1',
-                call && 'max-md:flex-col',
+                call && '@max-3xl:flex-col',
               )}
             >
               {call && beat && (
@@ -299,16 +309,18 @@ export function Stage({
                   name={currentName}
                   callKey={beat.context}
                   live={callLive}
+                  held={clockHeld}
+                  compact={quiet}
                   expression={speaking?.expression}
                   className={cn(
-                    'max-md:mx-3 md:absolute md:left-[4%] md:top-1/2 md:-translate-y-1/2',
-                    notice ? 'max-md:mt-3' : 'max-md:mt-14',
+                    '@max-3xl:mx-3 @3xl:absolute @3xl:left-[4%] @3xl:top-[max(3.5rem,calc(50%-7.5rem))]',
+                    notice ? '@max-3xl:mt-3' : '@max-3xl:mt-14',
                   )}
                 />
               )}
               {/* Nhân vật: lớn trên màn rộng, ẩn trên điện thoại để nhường chỗ chữ. */}
               {!call && actor && onStage && (
-                <div className="pointer-events-none absolute -bottom-14 left-[2%] z-10 hidden h-[min(88%,560px)] md:block">
+                <div className="pointer-events-none absolute -bottom-14 left-[2%] z-10 hidden h-[min(88%,560px)] @3xl:block">
                   <Character
                     src={characterArt(actor, speaking?.expression)}
                     name={nameOf(onStage.speaker)}
@@ -326,12 +338,9 @@ export function Stage({
                 </div>
               )}
               <Backlog
-                recent
+                past={past}
                 tightTop={call}
                 quiet={quiet}
-                lines={lines}
-                current={beat}
-                notice={notice}
                 nameOf={nameOf}
                 cast={cast}
                 botNames={botNames}
@@ -340,65 +349,90 @@ export function Stage({
               />
             </div>
 
-            {/* Hộp thoại */}
-            <div className="relative z-20 px-3 pb-3 pt-5 sm:px-5 sm:pb-4">
-              <div className="relative">
-                <button
-                  id="stage-dialog"
-                  type="button"
-                  onClick={tap}
-                  aria-label={done ? 'Nghe nhịp tiếp theo' : 'Hiện trọn câu'}
-                  className="absolute inset-0 z-[1] rounded-[22px] focus-visible:outline-none focus-visible:shadow-toon-focus"
-                />
-                {beat ? (
-                  <DialogueBox
-                    narration={beat.kind === 'scene'}
-                    more={done && queued > 0}
-                    tag={dialogueTag}
-                    meta={
-                      ch && (
-                        <ToonBadge tone="paper" icon={<ch.icon size={12} />}>
-                          {ch.label}
-                        </ToonBadge>
-                      )
-                    }
-                    className="min-h-20 sm:min-h-28"
-                  >
-                    <p className="stage-dialogue-text max-h-[26dvh] overflow-y-auto break-words pr-6">
-                      {speaking ? (
-                        <GlossaryText
-                          text={speaking.text}
-                          visible={tw.visible.length}
-                          glossary={glossary}
-                        />
-                      ) : (
-                        tw.visible
-                      )}
-                      {!tw.done && (
-                        <span
-                          aria-hidden
-                          className="ml-0.5 inline-block w-2 animate-pulse bg-toon-ink/70"
-                        >
-                          &nbsp;
-                        </span>
-                      )}
-                    </p>
-                    {waitingLabel && !queued && (
-                      <WaitingNote label={waitingLabel} />
+            {/* Hộp thoại và khung trả lời: một khối ở chân sân khấu */}
+            <div className="relative z-20 px-3 pb-3 pt-5 @md:px-5 @md:pb-4 [@media(max-height:760px)]:pb-2 [@media(max-height:760px)]:pt-2 [@media(max-height:760px)]:@md:pb-2">
+              <div className="relative rounded-[22px] shadow-toon-lg">
+                <div className="relative">
+                  <button
+                    id="stage-dialog"
+                    type="button"
+                    onClick={tap}
+                    aria-label={done ? 'Nghe nhịp tiếp theo' : 'Hiện trọn câu'}
+                    className={cn(
+                      'absolute inset-0 z-[1] rounded-[22px] focus-visible:outline-none focus-visible:shadow-toon-focus',
+                      joined && 'rounded-b-none',
                     )}
-                  </DialogueBox>
-                ) : (
-                  <DialogueBox narration more={queued > 0}>
-                    {notice ? 'Có thông báo mới.' : 'Ca làm sắp bắt đầu.'}
-                    {waitingLabel && <WaitingNote label={waitingLabel} />}
-                  </DialogueBox>
-                )}
+                  />
+                  {beat ? (
+                    <DialogueBox
+                      narration={beat.kind === 'scene'}
+                      more={done && queued > 0}
+                      tag={dialogueTag}
+                      meta={
+                        ch && (
+                          <ToonBadge tone="paper" icon={<ch.icon size={12} />}>
+                            {ch.label}
+                          </ToonBadge>
+                        )
+                      }
+                      className={cn(
+                        'min-h-20 shadow-none! @md:min-h-28 [@media(max-height:760px)]:min-h-16! [@media(max-height:760px)]:@md:min-h-20!',
+                        joined && 'rounded-b-none!',
+                      )}
+                    >
+                      <p className="stage-dialogue-text max-h-[26dvh] [@media(max-height:760px)]:max-h-[18dvh] overflow-y-auto break-words pr-6">
+                        {speaking ? (
+                          <GlossaryText
+                            text={speaking.text}
+                            visible={tw.visible.length}
+                            glossary={glossary}
+                          />
+                        ) : (
+                          tw.visible
+                        )}
+                        {!tw.done && (
+                          <span
+                            aria-hidden
+                            className="ml-0.5 inline-block w-2 animate-pulse bg-toon-ink/70"
+                          >
+                            &nbsp;
+                          </span>
+                        )}
+                      </p>
+                      {waitingLabel && !queued && (
+                        <WaitingNote label={waitingLabel} />
+                      )}
+                    </DialogueBox>
+                  ) : (
+                    <DialogueBox
+                      narration
+                      more={queued > 0}
+                      className={cn(
+                        'shadow-none!',
+                        joined && 'rounded-b-none!',
+                      )}
+                    >
+                      {notice ? 'Có thông báo mới.' : 'Ca làm sắp bắt đầu.'}
+                      {waitingLabel && <WaitingNote label={waitingLabel} />}
+                    </DialogueBox>
+                  )}
+                </div>
+                {joined && <Tray>{footer}</Tray>}
               </div>
             </div>
           </>
         )}
       </SceneBackdrop>
     </section>
+  );
+}
+
+/** Khay trả lời dính liền chân hộp thoại, chung viền và bóng với nó. */
+function Tray({ children }: { children: ReactNode }) {
+  return (
+    <div className="relative z-[2] rounded-b-[22px] border-[3px] border-t-0 border-toon-ink bg-[#f1dcb6] px-5 py-2.5 sm:px-7 [@media(max-height:760px)]:py-1.5">
+      {children}
+    </div>
   );
 }
 
@@ -427,42 +461,53 @@ function TypingDots() {
   );
 }
 
-/**
- * Nhật ký thoại: cuộn được, dòng mới nhất ở dưới; dòng đang ở hộp thoại
- * không lặp lại. Trên màn rộng nằm bên phải nhân vật.
- */
 /** Số câu đã qua để lại trên sân khấu; phần còn lại xem trong nhật ký. */
 const BACKLOG_VISIBLE = 2;
 /** Lời người chơi cũ hơn số câu này thì không còn giữ trên điện thoại. */
 const MOBILE_PLAYER_WINDOW = 4;
 
-/**
- * Nhật ký thoại trên sân khấu: chỉ hai câu gần nhất (mờ dần) để người chơi
- * không bị một mớ chữ đập vào mắt; toàn bộ hội thoại mở trong tấm "Xem lại".
- */
-function Backlog({
+function Transcript({
   lines,
-  current,
-  notice,
   nameOf,
   cast,
-  quiet,
-  recent: showRecent,
-  tightTop = false,
   botNames,
   statuses,
   glossary,
 }: {
-  quiet: boolean;
-  /** Tắt khi khung tin nhắn đã hiện hội thoại: chỉ còn nút và tấm "Xem lại". */
-  recent: boolean;
-  /** Phía trên đã có thẻ cuộc gọi, không cần chừa chỗ cho nút lịch sử. */
-  tightTop?: boolean;
   lines: TranscriptLine[];
-  /** Nhịp đang ở hộp thoại, không lặp lại ở nhật ký. */
-  current: TranscriptLine | null;
-  /** Tin bot đang hiện thành thẻ thông báo. */
-  notice: TranscriptLine | null;
+  nameOf: (slot: string) => string;
+  cast: Map<string, ToonCharacter>;
+  botNames: Map<string, string>;
+  statuses: Map<string, string | undefined>;
+  glossary: SceneView['glossary'];
+}) {
+  return (
+    <ol className="flex flex-col gap-4" aria-label="Lịch sử hội thoại">
+      {lines.map((l) => (
+        <li key={l.seq}>
+          <Line
+            line={l}
+            name={l.kind === 'npc' ? nameOf(l.speaker) : ''}
+            look={l.kind === 'npc' ? cast.get(l.speaker) : undefined}
+            bot={l.kind === 'system' ? botNames.get(l.speaker) : undefined}
+            status={statuses.get(l.speaker)}
+            glossary={glossary}
+          />
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+/**
+ * Nút "Xem lại hội thoại" và tấm trượt chứa toàn bộ hội thoại. Đặt ở gốc sân
+ * khấu để luôn nằm ở góc trên, kể cả khi thẻ thông báo bot đẩy cảnh xuống.
+ */
+function HistoryButton({
+  lines,
+  ...transcript
+}: {
+  lines: TranscriptLine[];
   nameOf: (slot: string) => string;
   cast: Map<string, ToonCharacter>;
   botNames: Map<string, string>;
@@ -471,7 +516,61 @@ function Backlog({
 }) {
   const [open, setOpen] = useState(false);
   const end = useRef<HTMLDivElement>(null);
-  const past = lines.filter((l) => l !== current && l !== notice);
+  useEffect(() => {
+    if (!open) return;
+    end.current?.scrollIntoView({ block: 'end' });
+  }, [open, lines.length]);
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="absolute right-3 top-3 z-40 inline-flex items-center gap-1.5 rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-1 font-toon text-sm font-bold text-toon-ink shadow-toon-sm transition-transform hover:-translate-y-px focus-visible:outline-none focus-visible:shadow-toon-focus @md:right-5"
+      >
+        <History size={15} strokeWidth={2.6} aria-hidden />
+        <span className="sr-only @xl:not-sr-only">Xem lại hội thoại</span>
+        <span className="tabular rounded-full bg-toon-cream px-1.5 text-xs">
+          {lines.length}
+        </span>
+      </button>
+      <Sheet
+        open={open}
+        onClose={() => setOpen(false)}
+        side="right"
+        theme="toon"
+        title="Hội thoại trong ca"
+      >
+        <Transcript lines={lines} {...transcript} />
+        <div ref={end} />
+      </Sheet>
+    </>
+  );
+}
+
+/**
+ * Lời thoại gần nhất trên sân khấu: chỉ hai câu cuối (mờ dần ở màn rộng) để
+ * người chơi không bị một mớ chữ đập vào mắt.
+ */
+function Backlog({
+  past,
+  quiet,
+  tightTop = false,
+  nameOf,
+  cast,
+  botNames,
+  statuses,
+  glossary,
+}: {
+  past: TranscriptLine[];
+  quiet: boolean;
+  /** Phía trên đã có thẻ cuộc gọi, không cần chừa chỗ cho nút lịch sử. */
+  tightTop?: boolean;
+  nameOf: (slot: string) => string;
+  cast: Map<string, ToonCharacter>;
+  botNames: Map<string, string>;
+  statuses: Map<string, string | undefined>;
+  glossary: SceneView['glossary'];
+}) {
   const latest = past.slice(-BACKLOG_VISIBLE);
   // Trên điện thoại chỉ có chỗ cho câu mới nhất, nhưng lời người chơi vừa gửi
   // phải còn đó tới lần gửi sau, nếu chưa quá xa.
@@ -488,85 +587,50 @@ function Backlog({
         (line) => line.kind === 'system' && botNames.has(line.speaker),
       )
     : visible;
-  useEffect(() => {
-    if (!open) return;
-    end.current?.scrollIntoView({ block: 'end' });
-  }, [open, lines.length]);
-  const render = (l: TranscriptLine) => (
-    <Line
-      line={l}
-      name={l.kind === 'npc' ? nameOf(l.speaker) : ''}
-      look={l.kind === 'npc' ? cast.get(l.speaker) : undefined}
-      bot={l.kind === 'system' ? botNames.get(l.speaker) : undefined}
-      status={statuses.get(l.speaker)}
-      glossary={glossary}
-    />
-  );
   return (
-    <>
-      {showRecent && (
-        <div
-          className={cn(
-            'relative z-0 ml-auto flex min-h-0 w-full flex-col justify-end px-3 pb-16 sm:px-5 md:w-[min(58%,600px)] md:pb-8 md:pt-14 md:pr-6',
-            // Màn gọi đã có thẻ cuộc gọi chừa chỗ cho nút lịch sử ở trên.
-            tightTop ? 'pt-2 max-md:pb-8' : 'pt-14',
-          )}
-          aria-label="Lời thoại gần nhất"
-        >
-          <ol className="flex flex-col gap-4">
-            {recent.map((l, i) => (
-              <li
-                key={l.seq}
-                className={cn(
-                  'animate-toon-slide transition-opacity',
-                  // Màn gọi trên điện thoại chỉ đủ chỗ cho lời người chơi vừa gửi.
-                  tightTop &&
-                    lastPlayer &&
-                    i === recent.length - 1 &&
-                    l !== lastPlayer &&
-                    'max-md:hidden',
-                  i < recent.length - 1 &&
-                    (l === lastPlayer
-                      ? latest.includes(l)
-                        ? 'opacity-60'
-                        : 'opacity-60 md:hidden'
-                      : 'opacity-60 max-md:hidden'),
-                )}
-              >
-                {render(l)}
-              </li>
-            ))}
-          </ol>
-        </div>
+    <div
+      className={cn(
+        'relative z-0 ml-auto flex min-h-0 w-full flex-col justify-end px-3 pb-16 @md:px-5 @3xl:w-[min(58%,600px)] @3xl:pb-8 @3xl:pr-6 @3xl:pt-14',
+        // Màn gọi đã có thẻ cuộc gọi chừa chỗ cho nút lịch sử ở trên.
+        tightTop ? 'pt-2 @max-3xl:pb-8' : 'pt-14',
+        // Chọn phương án: câu hỏi đã ở hộp thoại, không để chữ cũ lọt phía sau.
+        quiet && '@max-3xl:hidden',
       )}
-      {past.length > 0 && (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="absolute right-3 top-3 z-20 inline-flex items-center gap-1.5 rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-1 font-toon text-sm font-bold text-toon-ink shadow-toon-sm transition-transform hover:-translate-y-px focus-visible:outline-none focus-visible:shadow-toon-focus sm:right-5"
-        >
-          <History size={15} strokeWidth={2.6} aria-hidden />
-          <span className="sr-only sm:not-sr-only">Xem lại hội thoại</span>
-          <span className="tabular rounded-full bg-toon-cream px-1.5 text-xs">
-            {past.length}
-          </span>
-        </button>
-      )}
-      <Sheet
-        open={open}
-        onClose={() => setOpen(false)}
-        side="right"
-        theme="toon"
-        title="Hội thoại trong ca"
-      >
-        <ol className="flex flex-col gap-4" aria-label="Lịch sử hội thoại">
-          {past.map((l) => (
-            <li key={l.seq}>{render(l)}</li>
-          ))}
-        </ol>
-        <div ref={end} />
-      </Sheet>
-    </>
+      aria-label="Lời thoại gần nhất"
+    >
+      <ol className="flex flex-col gap-4">
+        {recent.map((l, i) => (
+          <li
+            key={l.seq}
+            className={cn(
+              'animate-toon-slide transition-opacity',
+              // Màn gọi hẹp chỉ đủ chỗ cho lời người chơi vừa gửi.
+              tightTop &&
+                lastPlayer &&
+                i === recent.length - 1 &&
+                l !== lastPlayer &&
+                '@max-3xl:hidden',
+              // Câu cũ mờ đi trên sân khấu rộng; hẹp thì chỉ giữ câu rõ nét.
+              i < recent.length - 1 &&
+                (l === lastPlayer
+                  ? latest.includes(l)
+                    ? '@3xl:opacity-60'
+                    : '@3xl:hidden'
+                  : '@max-3xl:hidden @3xl:opacity-60'),
+            )}
+          >
+            <Line
+              line={l}
+              name={l.kind === 'npc' ? nameOf(l.speaker) : ''}
+              look={l.kind === 'npc' ? cast.get(l.speaker) : undefined}
+              bot={l.kind === 'system' ? botNames.get(l.speaker) : undefined}
+              status={statuses.get(l.speaker)}
+              glossary={glossary}
+            />
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
 

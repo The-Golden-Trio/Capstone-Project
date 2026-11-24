@@ -21,7 +21,6 @@ const renderComposer = (view: SceneView, spoken: string | null) =>
       busy={false}
       locked={false}
       onSend={vi.fn()}
-      onPickAction={vi.fn()}
       onOpenNode={vi.fn()}
       spoken={spoken}
     />,
@@ -36,9 +35,9 @@ it('lượt nói thêm sau nút chọn không nhắc lại câu hỏi của nút
 it('nút trả lời tự do hiện câu hỏi, trừ khi hộp thoại vừa nói đúng câu đó', () => {
   const view = scene('free_reply');
   renderComposer(view, 'Một câu khác.');
-  expect(
-    screen.getAllByText(QUESTION).some((el) => el.tagName === 'P'),
-  ).toBe(true);
+  expect(screen.getAllByText(QUESTION).some((el) => el.tagName === 'P')).toBe(
+    true,
+  );
   cleanup();
   renderComposer(view, ` ${QUESTION.toUpperCase()} `);
   expect(screen.queryByText(QUESTION)).toBeNull();

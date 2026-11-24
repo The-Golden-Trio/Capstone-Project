@@ -37,11 +37,11 @@ export type EditorLayoutProps<View> = {
   view: View;
   busy: boolean;
   draft: Draft;
-  actions: ReactNode;
+  selects: ReactNode;
 };
 
 export const controlClass =
-  'w-full min-w-0 rounded-md border border-slate-400/60 bg-transparent px-3 py-2 text-sm placeholder:text-current/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500';
+  'w-full min-w-0 rounded-md border border-slate-400/60 bg-transparent px-3 py-2 text-sm placeholder:text-current/60 max-lg:text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500';
 
 const optionTick = (selectId: string, optionId: string) =>
   `${selectId}=${optionId}`;
@@ -149,42 +149,36 @@ export function EditorForm<View>({
         view={view}
         busy={busy}
         draft={draft}
-        actions={
-          <div className="space-y-4">
-            {selects.length > 0 && (
-              <EditorSelects selects={selects} draft={draft} busy={busy} />
-            )}
-            <div className="flex flex-wrap items-center justify-end gap-2">
-              {invalid && (
-                <p
-                  id={errorId}
-                  role="alert"
-                  className="mr-auto text-sm text-current"
-                >
-                  Viết ít nhất một phần rồi gửi nhé.
-                </p>
-              )}
-              {onCancel && (
-                <button
-                  type="button"
-                  onClick={onCancel}
-                  disabled={busy}
-                  className="rounded-md px-3 py-2 text-sm font-medium hover:bg-slate-400/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:opacity-60"
-                >
-                  Để sau
-                </button>
-              )}
-              <button
-                type="submit"
-                disabled={busy}
-                className="rounded-md bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:opacity-60"
-              >
-                {submitLabel}
-              </button>
-            </div>
-          </div>
+        selects={
+          selects.length > 0 && (
+            <EditorSelects selects={selects} draft={draft} busy={busy} />
+          )
         }
       />
+      <div className="desktop-editor-footer">
+        {invalid && (
+          <p id={errorId} role="alert" className="text-sm">
+            Viết ít nhất một phần rồi gửi nhé.
+          </p>
+        )}
+        {onCancel && (
+          <button
+            type="button"
+            onClick={onCancel}
+            disabled={busy}
+            className="rounded-md px-3 py-2 text-sm font-medium hover:bg-slate-400/15 max-lg:min-h-11 disabled:opacity-60"
+          >
+            Để sau
+          </button>
+        )}
+        <button
+          type="submit"
+          disabled={busy}
+          className="rounded-md bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 max-lg:min-h-11 disabled:opacity-60"
+        >
+          {submitLabel}
+        </button>
+      </div>
     </form>
   );
 }
@@ -279,9 +273,9 @@ function EditorSelects({
   const hasReason = selects.some(({ reason }) => reason);
   return (
     <div className="overflow-x-auto">
-      <table className="w-full border-collapse text-left text-sm max-sm:block">
+      <table className="w-full border-collapse text-left text-sm @max-lg:block">
         <caption className="sr-only">Bảng giả thuyết</caption>
-        <thead className="bg-slate-500/10 max-sm:sr-only">
+        <thead className="bg-slate-500/10 @max-lg:sr-only">
           <tr>
             <th scope="col" className="px-3 py-2">
               Giả thuyết
@@ -296,19 +290,19 @@ function EditorSelects({
             )}
           </tr>
         </thead>
-        <tbody className="max-sm:block">
+        <tbody className="@max-lg:block">
           {selects.map((select) => (
             <tr
               key={select.id}
-              className="border-b border-slate-200 align-top max-sm:block max-sm:space-y-2 max-sm:py-3"
+              className="border-b border-slate-200 align-top @max-lg:block @max-lg:space-y-2 @max-lg:py-3"
             >
               <th
                 scope="row"
-                className="min-w-32 px-3 py-3 font-medium max-sm:block max-sm:min-w-0 max-sm:py-0"
+                className="min-w-32 px-3 py-3 font-medium @max-lg:block @max-lg:min-w-0 @max-lg:py-0"
               >
                 {select.label}
               </th>
-              <td className="min-w-32 px-3 py-2 max-sm:block max-sm:min-w-0 max-sm:py-0">
+              <td className="min-w-32 px-3 py-2 @max-lg:block @max-lg:min-w-0 @max-lg:py-0">
                 <select
                   aria-label={`Đánh giá: ${select.label}`}
                   data-select-id={select.id}
@@ -328,7 +322,7 @@ function EditorSelects({
                 </select>
               </td>
               {hasReason && (
-                <td className="min-w-40 px-3 py-2 max-sm:block max-sm:min-w-0 max-sm:py-0">
+                <td className="min-w-40 px-3 py-2 @max-lg:block @max-lg:min-w-0 @max-lg:py-0">
                   {select.reason && (
                     <EditorField
                       field={{

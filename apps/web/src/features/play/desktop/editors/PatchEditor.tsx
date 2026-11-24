@@ -18,7 +18,7 @@ export function PatchEditor({
   view,
   busy,
   draft,
-  actions,
+  selects,
 }: EditorLayoutProps<EditorView<'patch'>>) {
   return (
     <div className="grid min-w-0 gap-px bg-[#454545] text-[#e5e5e5] @3xl:grid-cols-[minmax(0,1fr)_minmax(16rem,20rem)]">
@@ -39,7 +39,7 @@ export function PatchEditor({
         {form.fields.map((field) => (
           <EditorField key={field.id} field={field} draft={draft} busy={busy} />
         ))}
-        <div className="mt-auto">{actions}</div>
+        {selects}
       </div>
     </div>
   );

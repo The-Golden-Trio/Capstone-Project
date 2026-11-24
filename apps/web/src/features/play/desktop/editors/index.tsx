@@ -65,7 +65,7 @@ function GenericEditor({
   form,
   draft,
   busy,
-  actions,
+  selects,
 }: EditorLayoutProps<unknown>) {
   return (
     <div className="space-y-4 bg-white p-4 text-slate-900">
@@ -73,7 +73,7 @@ function GenericEditor({
         <EditorField key={field.id} field={field} draft={draft} busy={busy} />
       ))}
       <EditorTicks ticks={form.ticks} draft={draft} busy={busy} />
-      {actions}
+      {selects}
     </div>
   );
 }

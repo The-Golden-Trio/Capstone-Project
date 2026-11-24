@@ -16,7 +16,7 @@ export function BotNotice({
   art?: string;
 }) {
   return (
-    <div className="relative z-30 shrink-0 px-3 pt-14 sm:px-5">
+    <div className="relative z-30 shrink-0 px-3 pt-14 @md:px-5">
       <div
         role="status"
         className="mx-auto flex max-w-sm animate-toon-slide items-start gap-2.5 rounded-2xl border-[3px] border-toon-ink bg-[#e2eeef] px-3 py-2.5 text-toon-ink shadow-toon-lg"

@@ -5,6 +5,7 @@ import { ArtefactForm } from './ArtefactForm';
 import { Composer } from './Composer';
 import { Notebook } from './Notebook';
 import { Hud } from './Hud';
+import { WorkPanel } from './workbench/Panels';
 import { api } from '../../api';
 import { signInDemo } from '../../test/renderWithProviders';
 import type { SceneView } from '../../api/types';
@@ -100,28 +101,35 @@ it('sổ tay báo không tìm thấy, tìm không dấu được và trả focus
   expect(screen.getByRole('tablist', { name: /Sổ tay/ })).toBeTruthy();
 });
 
-it('mục tiêu mobile mở được nguyên văn và nhãn AI vẫn hiện', () => {
+it('mục tiêu đọc được nguyên văn ở tab Việc và nhãn AI vẫn hiện trên thanh trạng thái', () => {
   const goal = 'Tìm ra vì sao API chậm và báo anh An hướng xử lý trước 12:00.';
   renderWithProviders(
-    <Hud
-      title="Ca mẫu"
-      goal={goal}
-      scene={null}
-      backTo="/galaxy"
-      onNotebook={vi.fn()}
-      notebookCount={0}
-      onHint={vi.fn()}
-      hintDisabled={false}
-      aiLabel="AI giả (bản xem thử)"
-    />,
+    <>
+      <Hud
+        title="Ca mẫu"
+        scene={null}
+        backTo="/galaxy"
+        onHint={vi.fn()}
+        hintDisabled={false}
+        aiLabel="AI giả (bản xem thử)"
+      />
+      <WorkPanel
+        scene={
+          {
+            actions: [],
+            clock: { minutesPerPoint: 5 },
+            notebook: { facts: [], promises: [] },
+            suspended: null,
+          } as unknown as SceneView
+        }
+        goal={goal}
+        blocked={null}
+        busy={false}
+        onPick={vi.fn()}
+      />
+    </>,
   );
-  const summary = screen.getByLabelText('Mục tiêu ca làm');
-  expect(summary.closest('details')?.open).toBe(false);
-  fireEvent.click(summary);
-  // jsdom does not implement native details toggling, but the full text is present inside the expandable region.
-  expect(summary.closest('details')?.querySelector('p')?.textContent).toBe(
-    goal,
-  );
+  expect(screen.getByText(goal)).toBeTruthy();
   expect(screen.getAllByText(/AI giả/).length).toBeGreaterThan(0);
 });
 
@@ -144,7 +152,6 @@ it('hết giờ gửi lỗi không tự spam và có thể gửi lại lượt t
       busy={false}
       locked={false}
       onSend={send}
-      onPickAction={vi.fn()}
       onOpenNode={vi.fn()}
     />,
   );
@@ -182,7 +189,6 @@ it('xác nhận gửi báo kết ca và cho huỷ để làm tiếp', async () =
       busy={false}
       locked={false}
       onSend={send}
-      onPickAction={vi.fn()}
       onOpenNode={vi.fn()}
     />,
   );
@@ -207,7 +213,6 @@ it('cho gửi lời nhắn cuối ca hoặc bỏ qua từ khung trả lời', as
       busy={false}
       locked={false}
       onSend={send}
-      onPickAction={vi.fn()}
       onOpenNode={vi.fn()}
     />,
   );
@@ -237,7 +242,6 @@ it('không hủy xác nhận kết ca bằng Escape hoặc nút đóng khi đang
       busy
       locked={false}
       onSend={send}
-      onPickAction={vi.fn()}
       onOpenNode={vi.fn()}
     />,
   );

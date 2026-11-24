@@ -1,8 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import { afterEach, expect, it, vi } from 'vitest';
-import type { SceneView } from '../../api/types';
-import { Hud } from './Hud';
+import { afterEach, expect, it } from 'vitest';
+import type { SceneView } from '../../../api/types';
+import { PromiseList } from './promises';
 
 afterEach(cleanup);
 
@@ -26,21 +25,7 @@ function scene(
 }
 
 function renderHud(view: SceneView) {
-  render(
-    <MemoryRouter>
-      <Hud
-        title="Ca mẫu"
-        goal="Mục tiêu"
-        scene={view}
-        backTo="/galaxy"
-        onNotebook={vi.fn()}
-        notebookCount={0}
-        onHint={vi.fn()}
-        hintDisabled={false}
-        aiLabel="AI giả"
-      />
-    </MemoryRouter>,
-  );
+  render(<PromiseList scene={view} />);
 }
 
 const promise = (id: string, label: string, status: string) => ({
@@ -49,7 +34,7 @@ const promise = (id: string, label: string, status: string) => ({
   status,
 });
 
-it('hiện lời hẹn đang mở ngoài HUD, giờ trước, việc sau', () => {
+it('hiện lời hẹn đang mở ở tab Việc, giờ trước, việc sau', () => {
   renderHud(scene('10:05', [promise('p1', 'Gọi chị Linh lúc 11:30', 'open')]));
   const chip = screen.getByText('Hẹn 11:30 · gọi chị Linh').closest('li');
   expect(chip?.getAttribute('data-promise-state')).toBe('open');

@@ -1,4 +1,4 @@
-import { groupOf } from './ActionPanel';
+import { placeOf, tabLabel } from './workbench/model';
 import {
   renderWithProviders,
   signInDemo,
@@ -80,18 +80,22 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
       (doc) => doc.id === action.target,
     );
     if (!opened) return;
-    const viewer = await screen.findByRole('dialog', { name: opened.title });
+    const viewer = await screen.findByRole('region', { name: opened.title });
     fireEvent.keyDown(viewer, { key: 'Escape' });
 
+    // Tài liệu đã mở xem lại ở tab Tài liệu, không tốn lượt.
     const count = turn.mock.calls.length;
-    const dock = within(
-      screen.getByRole('navigation', { name: 'Tài liệu đã mở' }),
+    fireEvent.click(
+      await screen.findByRole('tab', {
+        name: (name) => name.startsWith('Tài liệu'),
+      }),
     );
-    fireEvent.click(dock.getByRole('button', { name: opened.title }));
-    const reopened = await screen.findByRole('dialog', { name: opened.title });
+    const list = within(screen.getByRole('list', { name: 'Tài liệu đã mở' }));
+    fireEvent.click(list.getByRole('button', { name: opened.title }));
+    const reopened = await screen.findByRole('region', { name: opened.title });
     expect(turn).toHaveBeenCalledTimes(count);
     fireEvent.click(
-      within(reopened).getByRole('button', { name: 'Đóng cửa sổ' }),
+      within(reopened).getByRole('button', { name: /^Đóng, về/ }),
     );
   }
 
@@ -148,7 +152,7 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
       }
       case 'node_artefact': {
         assert(scene.node?.form);
-        const editor = await screen.findByRole('dialog', {
+        const editor = await screen.findByRole('region', {
           name: scene.node.form.title,
         });
         const submit = within(editor).getByRole('button', { name: /^Gửi/ });
@@ -181,19 +185,26 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
         assert(action, `Có việc làm ở ${scene.clock.time}`);
         used.add(action.key);
         conversationSpoke = false;
-        // Khay việc: mở tab nhóm của việc rồi bấm việc trong tab đó.
-        fireEvent.click(
-          await screen.findByRole('tab', {
-            name: (name) => name.startsWith(groupOf(action.kind)),
-          }),
-        );
-        const button = within(screen.getByRole('tabpanel')).getByRole(
-          'button',
-          { name: (name) => name.startsWith(action.label) },
-        );
+        // Bàn làm việc: mở tab của việc rồi bấm việc trong tab đó; chốt ở thanh trạng thái.
+        const place = placeOf(action.kind);
+        let button: HTMLElement;
+        if (place === 'trigger') {
+          button = screen.getAllByRole('button', {
+            name: (name) => name.startsWith(action.label),
+          })[0];
+        } else {
+          fireEvent.click(
+            await screen.findByRole('tab', {
+              name: (name) => name.startsWith(tabLabel(place)),
+            }),
+          );
+          button = within(screen.getByRole('tabpanel')).getByRole('button', {
+            name: (name) => name.startsWith(action.label),
+          });
+        }
         if (action.form) {
           fireEvent.click(button);
-          const dialog = await screen.findByRole('dialog', {
+          const dialog = await screen.findByRole('region', {
             name: action.label,
           });
           fillForm(dialog);

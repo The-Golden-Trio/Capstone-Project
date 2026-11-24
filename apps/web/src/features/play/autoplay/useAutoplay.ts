@@ -6,7 +6,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { shift } from '@datn/game-core';
 import type { SceneView } from '../../../api/types';
-import { groupOf } from '../ActionPanel';
+import { placeOf } from '../workbench/model';
 import {
   AutoplayAbort,
   activeWindow,
@@ -16,6 +16,7 @@ import {
   fillEditor,
   pulse,
   query,
+  visibleQuery,
   sleep,
   typeInto,
   waitFor,
@@ -215,17 +216,14 @@ export function useAutoplay({
           const action = scene()?.actions.find((a) => a.key === step.key);
           if (!action) throw new Error(`Không thấy việc "${step.key}".`);
           const find = () =>
-            query<HTMLButtonElement>(`[data-action-key="${step.key}"]`);
+            visibleQuery<HTMLButtonElement>(`[data-action-key="${step.key}"]`);
           if (!find()) {
-            const group = groupOf(action.kind);
-            await waitFor(
-              `nhóm việc ${group}`,
-              () =>
-                Array.from(
-                  document.querySelectorAll<HTMLElement>('[role="tab"]'),
-                ).find((tab) => tab.textContent?.trim().startsWith(group)),
-              ctx,
-            ).then(click);
+            const place = placeOf(action.kind);
+            const tab = place === 'trigger' ? 'scene' : place;
+            const opener = visibleQuery<HTMLElement>(
+              `[data-workbench-tab="${tab}"]`,
+            );
+            if (opener) click(opener);
           }
           const button = await waitFor(
             `nút "${action.label}" bấm được`,

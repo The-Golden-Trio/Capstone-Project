@@ -10,7 +10,7 @@ export function ChannelComposer({
   view,
   busy,
   draft,
-  actions,
+  selects,
 }: EditorLayoutProps<EditorView<'channel'>>) {
   const channel = view.channel.startsWith('#')
     ? view.channel
@@ -36,7 +36,7 @@ export function ChannelComposer({
             />
           ))}
           <EditorTicks ticks={form.ticks} draft={draft} busy={busy} />
-          {actions}
+          {selects}
         </div>
       </div>
     </div>

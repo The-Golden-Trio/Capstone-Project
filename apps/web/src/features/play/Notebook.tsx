@@ -11,7 +11,6 @@ import {
   ToonButton,
   ToonInput,
   ToonTabPanel,
-  ToonTabs,
   ToonTextarea,
   cn,
 } from '@datn/ui';
@@ -67,9 +66,9 @@ export function Notebook({
 
   return (
     <div className={cn('flex min-h-0 flex-col', className)}>
-      {/* Ô tìm chỉ hiện khi cần, để chỗ cho dữ kiện. */}
+      {/* Ô tìm chỉ mở khi cần, để chỗ cho dữ kiện. */}
       {searching ? (
-        <div className="flex items-center gap-2 px-4 pt-4">
+        <div className="flex items-center gap-2 px-3 pt-3">
           <div className="min-w-0 flex-1">
             <ToonInput
               leftIcon={<Search size={16} strokeWidth={2.6} />}
@@ -94,28 +93,28 @@ export function Notebook({
           </ToonButton>
         </div>
       ) : (
-        <div className="flex justify-end px-4 pt-3">
-          <ToonButton
+        <div className="px-3 pt-3">
+          <button
             ref={searchButton}
-            size="sm"
-            variant="secondary"
-            leftIcon={<Search size={15} strokeWidth={2.6} />}
+            type="button"
             onClick={() => setSearching(true)}
+            className="flex min-h-11 w-full items-center gap-2 rounded-full border-2 border-dashed border-toon-ink/60 px-3.5 text-left font-toon text-sm font-bold text-toon-ink-soft hover:border-toon-ink hover:bg-toon-sand/50 hover:text-toon-ink focus-visible:outline-none focus-visible:shadow-toon-focus"
           >
+            <Search size={15} strokeWidth={2.6} aria-hidden />
             Tìm lời thoại
-          </ToonButton>
+          </button>
         </div>
       )}
       {searching && !showingResults && (
         <p
           role="status"
-          className="px-4 pt-2 text-xs font-semibold text-toon-ink-faint"
+          className="px-4 pt-2 text-xs font-semibold text-toon-ink-soft"
         >
           Nhập ít nhất 2 ký tự để tìm lời thoại.
         </p>
       )}
       {showingResults ? (
-        <div className="min-h-0 flex-1 overflow-y-auto p-4 text-sm">
+        <div className="min-h-0 flex-1 overflow-y-auto p-3 text-sm">
           <p role="status" className="mb-3 font-bold text-toon-ink-soft">
             {hits.length
               ? `${hits.length} lời thoại khớp${hits.length === 20 ? ' gần nhất' : ''}.`
@@ -145,29 +144,22 @@ export function Notebook({
         </div>
       ) : (
         <>
-          <ToonTabs
-            label="Sổ tay"
+          <NotebookTabs
             idBase={idBase}
             value={tab}
             onChange={setTab}
-            className="mx-4 mt-3"
-            variant="quiet"
             items={[
               { key: 'facts', label: 'Dữ kiện', count: nb.facts.length },
               { key: 'docs', label: 'Tài liệu', count: scene.documents.length },
               { key: 'notes', label: 'Ghi chú' },
-              {
-                key: 'more',
-                label: 'Lời hứa & tra cứu',
-                count: nb.promises.length || undefined,
-              },
+              { key: 'more', label: 'Tra cứu' },
             ]}
           />
           <ToonTabPanel
             idBase={idBase}
             tabKey={tab}
             active
-            className="toon-ruled min-h-0 flex-1 overflow-y-auto p-4 text-sm font-semibold break-words text-toon-ink"
+            className="toon-ruled min-h-0 flex-1 overflow-y-auto p-3 text-sm font-semibold break-words text-toon-ink"
           >
             {tab === 'facts' &&
               (nb.facts.length ? (
@@ -276,6 +268,76 @@ export function Notebook({
           </ToonTabPanel>
         </>
       )}
+    </div>
+  );
+}
+
+function NotebookTabs<K extends string>({
+  items,
+  value,
+  onChange,
+  idBase,
+}: {
+  items: Array<{ key: K; label: string; count?: number }>;
+  value: K;
+  onChange: (key: K) => void;
+  idBase: string;
+}) {
+  const refs = useRef<Array<HTMLButtonElement | null>>([]);
+  return (
+    <div
+      role="tablist"
+      aria-label="Sổ tay"
+      className="mx-3 mt-3 grid shrink-0 grid-cols-4 gap-1"
+    >
+      {items.map((item, index) => {
+        const active = item.key === value;
+        return (
+          <button
+            key={item.key}
+            ref={(node) => {
+              refs.current[index] = node;
+            }}
+            type="button"
+            role="tab"
+            id={`${idBase}-tab-${item.key}`}
+            aria-controls={`${idBase}-panel-${item.key}`}
+            aria-selected={active}
+            tabIndex={active ? 0 : -1}
+            onClick={() => onChange(item.key)}
+            onKeyDown={(event) => {
+              const last = items.length - 1;
+              const next =
+                event.key === 'ArrowRight'
+                  ? (index + 1) % items.length
+                  : event.key === 'ArrowLeft'
+                    ? (index + last) % items.length
+                    : event.key === 'Home'
+                      ? 0
+                      : event.key === 'End'
+                        ? last
+                        : null;
+              if (next === null) return;
+              event.preventDefault();
+              onChange(items[next].key);
+              refs.current[next]?.focus();
+            }}
+            className={cn(
+              'inline-flex min-h-11 min-w-0 items-center justify-center gap-1 rounded-full border-2 px-1 font-toon text-[13px] font-bold focus-visible:outline-none focus-visible:shadow-toon-focus',
+              active
+                ? 'border-toon-ink bg-toon-mustard text-toon-ink shadow-toon-sm'
+                : 'border-transparent text-toon-ink-soft hover:bg-toon-sand/70 hover:text-toon-ink',
+            )}
+          >
+            <span className="truncate">{item.label}</span>
+            {!!item.count && (
+              <span className="shrink-0 font-toon-body text-[11px] tabular-nums">
+                {item.count}
+              </span>
+            )}
+          </button>
+        );
+      })}
     </div>
   );
 }

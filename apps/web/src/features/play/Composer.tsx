@@ -1,7 +1,7 @@
 /**
  * Khung trả lời đổi theo việc engine đang chờ (`scene.await`): nói trong
  * cuộc trò chuyện, trả lời nút, chọn phương án (có đếm giờ), soạn tài liệu,
- * xác nhận nộp sớm.
+ * xác nhận nộp sớm. Pha xử lý chọn việc ở bàn làm việc, không ở đây.
  */
 import {
   useCallback,
@@ -13,14 +13,12 @@ import {
 import { DoorClosed, FilePenLine, Send, Timer } from 'lucide-react';
 import { ConfirmDialog, ToonButton, ToonTextarea, cn } from '@datn/ui';
 import type { SceneView, TurnInput } from '../../api/types';
-import { ActionTray } from './ActionPanel';
 
 export function Composer({
   scene,
   busy,
   locked,
   onSend,
-  onPickAction,
   onOpenNode,
   spoken,
   clockHeld = false,
@@ -30,8 +28,6 @@ export function Composer({
   /** Còn nhịp chưa đọc hoặc đang chờ AI: chưa cho trả lời. */
   locked: boolean;
   onSend: (input: TurnInput) => Promise<boolean>;
-  /** Chọn một việc ở pha xử lý (việc có biểu mẫu thì mở hộp soạn). */
-  onPickAction: (action: SceneView['actions'][number]) => void;
   onOpenNode: (node: NonNullable<SceneView['node']>) => void;
   /** Câu nhân vật vừa nói: câu hỏi trùng nguyên văn thì không lặp lại. */
   spoken?: string | null;
@@ -61,21 +57,6 @@ export function Composer({
           if (!busy && !locked) void onSend({ kind: 'cancel_end' });
         }}
       />
-    );
-  }
-
-  if (scene.mode === 'phase') {
-    return (
-      <div hidden={locked}>
-        <ActionTray
-          actions={scene.actions}
-          minutesPerPoint={scene.clock.minutesPerPoint}
-          disabled={busy || locked}
-          onPick={onPickAction}
-          suspended={scene.suspended}
-          cast={scene.cast}
-        />
-      </div>
     );
   }
 
@@ -210,7 +191,10 @@ function TextReply({
     void onSend(text.trim()).then((ok) => ok && setText(''));
   };
   return (
-    <form onSubmit={submit} className="flex flex-col gap-2">
+    <form
+      onSubmit={submit}
+      className="flex flex-col gap-2 [@media(max-height:760px)]:gap-1"
+    >
       {label && <Prompt>{label}</Prompt>}
       <div className="flex items-end gap-3">
         <label className="visually-hidden" htmlFor="composer">
@@ -236,7 +220,7 @@ function TextReply({
           }}
           size="sm"
           resizable={false}
-          className="flex-1 py-3"
+          className="flex-1 py-3 [@media(max-height:760px)]:py-1.5"
           rows={2}
         />
         <ToonButton
@@ -247,7 +231,7 @@ function TextReply({
           aria-label="Gửi"
           rightIcon={<Send size={18} strokeWidth={2.6} />}
         >
-          <span className="hidden sm:inline">Gửi</span>
+          <span className="hidden @md:inline">Gửi</span>
         </ToonButton>
       </div>
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-toon-ink-faint">
@@ -323,7 +307,7 @@ function Choices({
 
   const urgent = limit !== null && left < 8;
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2.5">
       <div className="flex items-center gap-3">
         {prompt ? (
           <Prompt className="flex-1">{prompt}</Prompt>
@@ -375,14 +359,14 @@ function Choices({
           </ToonButton>
         </div>
       )}
-      <ul className="grid gap-2.5 md:grid-cols-2">
+      <ul className="grid gap-2.5 @xl:grid-cols-2">
         {node.options.map((o, i) => (
           <li
             key={o.key}
             className={cn(
               node.options.length % 2 === 1 &&
                 i === node.options.length - 1 &&
-                'md:col-span-2',
+                '@xl:col-span-2',
             )}
           >
             <button

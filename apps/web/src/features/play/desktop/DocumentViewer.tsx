@@ -1,4 +1,4 @@
-import { useId, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import {
   Activity,
   BookOpen,
@@ -276,6 +276,13 @@ function Wiki({ view }: { view: Extract<View, { type: 'wiki' }> }) {
   const [sectionId, setSectionId] = useState(view.sections[0]?.id);
   const section =
     view.sections.find((item) => item.id === sectionId) ?? view.sections[0];
+  const nav = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    nav.current
+      ?.querySelector('[aria-current="page"]')
+      ?.scrollIntoView?.({ block: 'nearest', inline: 'nearest' });
+  }, [section?.id]);
 
   return (
     <div className="tool-wiki">
@@ -283,7 +290,7 @@ function Wiki({ view }: { view: Extract<View, { type: 'wiki' }> }) {
         <BookOpen size={18} aria-hidden />
         {view.space}
       </header>
-      <nav aria-label="Mục lục wiki">
+      <nav ref={nav} aria-label="Mục lục wiki">
         <p>Mục lục</p>
         {view.sections.map((item) => (
           <button

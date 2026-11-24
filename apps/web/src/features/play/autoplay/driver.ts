@@ -121,6 +121,12 @@ export const click = (el: HTMLElement) => el.click();
 export const query = <T extends Element>(selector: string) =>
   document.querySelector<T>(selector);
 
+/** Bố cục desktop và điện thoại cùng có trong DOM: ưu tiên bản đang hiện. */
+export const visibleQuery = <T extends HTMLElement>(selector: string) => {
+  const all = Array.from(document.querySelectorAll<T>(selector));
+  return all.find((el) => el.getClientRects().length > 0) ?? all[0] ?? null;
+};
+
 export const activeWindow = () =>
   query<HTMLElement>('.desktop-window[data-active-window]');
 
