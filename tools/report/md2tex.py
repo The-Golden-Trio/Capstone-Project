@@ -37,6 +37,14 @@ def inl(text, cites=True):
         holders.append(tex)
         return f"\x00H{len(holders) - 1}\x00"
 
+    # `code`: \texttt, cho phép ngắt dòng sau dấu gạch dưới (tên bảng/cột dài không tràn ô bảng).
+    def code(m):
+        c = m.group(1).replace("\\", "\\textbackslash{}")
+        c = re.sub(r"([&%$#{}])", r"\\\1", c).replace("_", "\\_\\allowbreak{}")
+        c = c.replace("~", "\\textasciitilde{}").replace("^", "\\textasciicircum{}")
+        return hold("\\texttt{" + c + "}")
+
+    text = re.sub(r"`([^`\n]+)`", code, text)
     # Công thức trong dòng $...$: giữ nguyên cho LaTeX.
     text = re.sub(r"\$([^$\n]+?)\$", lambda m: hold("$" + m.group(1) + "$"), text)
     if cites:
@@ -134,6 +142,8 @@ def convert(md, outdir):
 
     while i < len(lines):
         ln = lines[i]
+        if in_refs and ln.startswith("# "):
+            in_refs = False  # appendices follow the references
         if in_refs:
             m = re.match(r"\[(\d+)\] (.+)", ln)
             if m:
@@ -145,6 +155,15 @@ def convert(md, outdir):
             continue
         if ln.startswith("## References"):
             in_refs = True
+            i += 1
+            continue
+        m = re.match(r"# (.+?) \{(\+{1,2})\}$", ln)
+        if m:
+            # {+}: unnumbered section after the last chapter, before the references (plan);
+            # {++}: after the references (appendices).
+            title = m.group(1)
+            start(("ym-" if m.group(2) == "+" else "zz-") + re.sub(r"\W+", "-", title.lower()).strip("-"))
+            cur.append(f"\\newpage\n\\section*{{{inl(title)}}}\n\\addcontentsline{{toc}}{{section}}{{{inl(title)}}}")
             i += 1
             continue
         m = re.match(r"# (.+?) \{-\}$", ln)
@@ -261,12 +280,13 @@ def convert(md, outdir):
         encoding="utf-8",
     )
     front = [n for n, _ in files if n.startswith("00-")]
-    chapters = [n for n, _ in files if n.startswith("ch")]
+    chapters = [n for n, _ in files if n.startswith("ch") or n.startswith("ym-")]
+    back = [n for n, _ in files if n.startswith("zz-")]
     main = MAIN.replace("Report: Chapters 1 to 5.1", inl(rt.group(1)) if rt else "Report: Chapters 1 to 5.1")
     main = main.replace("%%FRONT%%", "\n".join(
         f"\\input{{chapters/{n}}}\n\\newpage" + ("\n\\tableofcontents\n\\newpage" if n == front[0] else "")
         for n in front
-    )).replace("%%CHAPTERS%%", "\n".join(f"\\input{{chapters/{n}}}" for n in chapters))
+    )).replace("%%CHAPTERS%%", "\n".join(f"\\input{{chapters/{n}}}" for n in chapters)).replace("%%BACK%%", "\n".join(f"\\input{{chapters/{n}}}" for n in back))
     (outdir / "main.tex").write_text(main, encoding="utf-8")
     return len(files), len(refs), nfig
 
@@ -349,6 +369,7 @@ MAIN = r"""% Sinh tự động từ report.md bằng tools/report/md2tex.py. S�
 %%CHAPTERS%%
 
 \input{references}
+%%BACK%%
 \end{document}
 """
 

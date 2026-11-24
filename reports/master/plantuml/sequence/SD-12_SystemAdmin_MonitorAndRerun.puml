@@ -1,0 +1,31 @@
+@startuml SD-12_SystemAdmin_MonitorAndRerun
+title SD-12 · System Admin — monitor usage, cost, and errors; re-run a failed AI job
+
+actor "System Admin" as Adm
+participant "Staff app" as App
+participant "Monitoring" as Mon
+database "PostgreSQL" as DB
+queue "Redis" as R
+participant "AI orchestration" as AI
+
+Adm -> App : Open monitoring screen
+App -> Mon : Request metrics
+Mon -> DB : Summarise usage, cost per session, failed jobs
+DB --> Mon : Figures
+opt cost above threshold
+  Mon --> App : Cost alert
+end
+Mon --> App : Metrics and failed job list
+App --> Adm : Show
+
+loop failed job left
+  Adm -> App : Open job, read failure cause
+  Adm -> App : Re-run failed job
+  App -> Mon : Request re-run
+  Mon -> DB : Reset job to queued, record who
+  Mon -> R : Enqueue job
+  Mon --> App : Accepted
+  R -> AI : Take job
+  AI -> DB : Store result or new failure
+end
+@enduml

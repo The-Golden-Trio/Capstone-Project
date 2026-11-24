@@ -1,10 +1,9 @@
 \newpage
-\setcounter{section}{6}
 \section{System Evaluation}
 
 This chapter evaluates what exists in the present phase against the requirements of Section 4.3.3 and the sizing assumptions of Section 5.3. What exists is the prototype: the explorer application, the API with its database, and two hand-written scenarios scored by keyword matching; the AI tier, the staff application, and the queue and workers are designed but not built. The chapter therefore separates two kinds of result. Measurements are reported for what can be measured on the prototype: the frontend (Section 7.1), the API under load (Section 7.2), and the keyword grader that the AI judge is to replace (Section 7.3.3). For the AI tier, the evaluation data, measures, and acceptance thresholds are fixed in advance (Sections 7.3.1 and 7.3.2), so that results reported later are tested against criteria chosen before the results were seen. Every measurement names the build, the machine, and the tool version, and states which requirement it bears on and what it cannot establish.
 
-All measurements were taken on 20 October 2026 on the prototype at commit `9effe15`, built in production mode, on one development machine: Apple M1 Pro with eight cores and 16 GB of memory, macOS 27.0.1, Node.js 20.19, and PostgreSQL 17 on the same machine. The API ran as a single Node.js process against a separate database seeded with the release content and 500 synthetic explorer accounts. Scripts, raw summaries, and the probe set are kept with the report in the `evaluation` folder.
+All measurements were taken on 20 October 2026 on the prototype at commit \texttt{9effe15}, built in production mode, on one development machine: Apple M1 Pro with eight cores and 16 GB of memory, macOS 27.0.1, Node.js 20.19, and PostgreSQL 17 on the same machine. The API ran as a single Node.js process against a separate database seeded with the release content and 500 synthetic explorer accounts. Scripts, raw summaries, and the probe set are kept with the report in the \texttt{evaluation} folder.
 
 \subsection{Frontend Evaluation}
 
@@ -117,16 +116,16 @@ Twice Stage 2 & 1,000 & 22,998 & 95.8 & 5.0 ms & 22.6 ms & 69.7 ms & 285 ms & 0 
 \hline
 \textbf{Endpoint} & \textbf{Requests} & \textbf{p50} & \textbf{p95} & \textbf{p99} & \textbf{Max} & \textbf{Errors} \\ \hline
 \endhead
-`GET /auth/me` & 1,391 & 3.2 ms & 8.3 ms & 20.0 ms & 60 ms & 0 \\ \hline
-`GET /content/bootstrap` & 1,391 & 3.4 ms & 7.2 ms & 12.6 ms & 36 ms & 0 \\ \hline
-`GET /content/galaxy` & 1,391 & 7.0 ms & 12.3 ms & 21.8 ms & 55 ms & 0 \\ \hline
-`GET /profile` & 1,391 & 4.7 ms & 11.6 ms & 22.3 ms & 66 ms & 0 \\ \hline
-`GET /profile/progress` & 1,386 & 6.0 ms & 12.7 ms & 25.1 ms & 68 ms & 0 \\ \hline
-`GET /profile/roles/:role` & 1,358 & 3.6 ms & 8.5 ms & 15.7 ms & 45 ms & 0 \\ \hline
-`GET /profile/runs` & 1,328 & 3.8 ms & 9.0 ms & 16.1 ms & 76 ms & 0 \\ \hline
-`GET /content/scenarios/:key` & 611 & 2.2 ms & 6.3 ms & 9.3 ms & 30 ms & 0 \\ \hline
-`POST /runs` & 611 & 5.1 ms & 11.6 ms & 29.4 ms & 70 ms & 0 \\ \hline
-`POST /runs/:id/complete` & 565 & 11.9 ms & 21.2 ms & 34.6 ms & 52 ms & 0 \\ \hline
+\texttt{GET /auth/me} & 1,391 & 3.2 ms & 8.3 ms & 20.0 ms & 60 ms & 0 \\ \hline
+\texttt{GET /content/bootstrap} & 1,391 & 3.4 ms & 7.2 ms & 12.6 ms & 36 ms & 0 \\ \hline
+\texttt{GET /content/galaxy} & 1,391 & 7.0 ms & 12.3 ms & 21.8 ms & 55 ms & 0 \\ \hline
+\texttt{GET /profile} & 1,391 & 4.7 ms & 11.6 ms & 22.3 ms & 66 ms & 0 \\ \hline
+\texttt{GET /profile/progress} & 1,386 & 6.0 ms & 12.7 ms & 25.1 ms & 68 ms & 0 \\ \hline
+\texttt{GET /profile/roles/:role} & 1,358 & 3.6 ms & 8.5 ms & 15.7 ms & 45 ms & 0 \\ \hline
+\texttt{GET /profile/runs} & 1,328 & 3.8 ms & 9.0 ms & 16.1 ms & 76 ms & 0 \\ \hline
+\texttt{GET /content/scenarios/:key} & 611 & 2.2 ms & 6.3 ms & 9.3 ms & 30 ms & 0 \\ \hline
+\texttt{POST /runs} & 611 & 5.1 ms & 11.6 ms & 29.4 ms & 70 ms & 0 \\ \hline
+\texttt{POST /runs/:id/complete} & 565 & 11.9 ms & 21.2 ms & 34.6 ms & 52 ms & 0 \\ \hline
 \end{longtable}
 }
 

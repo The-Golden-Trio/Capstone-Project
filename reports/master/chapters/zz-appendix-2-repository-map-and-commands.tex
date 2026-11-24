@@ -1,0 +1,44 @@
+\newpage
+\section*{Appendix 2 --- Repository map and commands}
+\addcontentsline{toc}{section}{Appendix 2 --- Repository map and commands}
+
+The counts of Chapter 6 were produced from the repository root with the commands below. The workspace uses pnpm and Nx.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.378\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.617\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Commands used and their purpose.} \\
+\hline
+\textbf{Purpose} & \textbf{Command} \\ \hline
+\endfirsthead
+\hline
+\textbf{Purpose} & \textbf{Command} \\ \hline
+\endhead
+Install & \texttt{pnpm install --frozen-lockfile} \\ \hline
+Run explorer and API & \texttt{pnpm start} (explorer on port 4200, API on port 3000) \\ \hline
+Run staff application & \texttt{pnpm exec nx run @datn/staff:serve} (port 4300, base path \texttt{/staff/}) \\ \hline
+Local services & \texttt{docker compose -f infra/local/dev-stack.yml up -d} (Redis, PostgreSQL, mail catcher, S3-compatible store) \\ \hline
+Run all tests & \texttt{pnpm exec nx run-many -t test} \\ \hline
+Whole gate (lint, typecheck, build, test) & \texttt{pnpm check} \\ \hline
+Rebuild occupation data & \texttt{pnpm data:build} \\ \hline
+Try the AI layer without database & \texttt{pnpm exec nx run @datn/api:ai-lab -- --mode=fake --play=all} \\ \hline
+Play a level-one scenario through HTTP & \texttt{node tools/dev/play-e2e.mjs} \\ \hline
+\end{longtable}
+}
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.349\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.646\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Map of the repository.} \\
+\hline
+\textbf{Path} & \textbf{Content} \\ \hline
+\endfirsthead
+\hline
+\textbf{Path} & \textbf{Content} \\ \hline
+\endhead
+\texttt{apps/web}, \texttt{apps/staff} & Explorer and staff applications \\ \hline
+\texttt{apps/api} & API and worker; \texttt{prisma/} holds the schema and migrations \\ \hline
+\texttt{packages/game-core}, \texttt{packages/ui} & Shared rules; design system \\ \hline
+\texttt{occupation-data/} & Sources of occupation data and the scripts that build it \\ \hline
+\texttt{reports/master/} & This report, its diagrams in \texttt{plantuml/}, the interface contract in \texttt{api/} \\ \hline
+\texttt{docs/project-hub/} & Decisions, product notes, open issues \\ \hline
+\end{longtable}
+}

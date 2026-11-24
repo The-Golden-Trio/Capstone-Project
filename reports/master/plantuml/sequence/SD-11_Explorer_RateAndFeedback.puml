@@ -1,0 +1,41 @@
+@startuml SD-11_Explorer_RateAndFeedback
+title SD-11 · Explorer — rate an occupation and send app feedback; administrator reviews
+
+actor Explorer
+actor "System Admin" as Adm
+participant "Explorer app" as App
+participant "Feedback" as Fb
+database "PostgreSQL" as DB
+
+== Rate occupation (FR-19) ==
+Explorer -> App : Open rating form of an occupation
+App -> Fb : Request form
+Fb -> DB : Check full completion of the level
+alt not fully completed
+  Fb --> App : Refused
+  App --> Explorer : Explain when the form opens
+else completed
+  Fb --> App : Five criteria
+  Explorer -> App : Give scores and comment
+  App -> Fb : Submit rating
+  Fb -> DB : Store rating, one per explorer and occupation
+  Fb --> App : Saved
+end
+Explorer -> App : View aggregated ratings
+App -> Fb : Request aggregate
+Fb -> DB : Count raters
+alt below minimum population (NFR-06)
+  Fb --> App : Withheld with reason
+else enough raters
+  Fb --> App : Aggregated scores
+end
+
+== App feedback (FR-20) ==
+Explorer -> App : Send feedback
+App -> Fb : Submit feedback
+Fb -> DB : Store with time and app version
+Fb --> App : Received
+Adm -> Fb : Open review list
+Fb -> DB : Load feedback
+Fb --> Adm : List
+@enduml

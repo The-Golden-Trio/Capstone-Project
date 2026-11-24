@@ -1,0 +1,50 @@
+\newpage
+\section{Conclusion}
+
+\subsection{Achievements}
+
+This phase set out to specify and design a complete platform and to build a prototype that carries part of it (Section 1.2). What has been done is recorded against the four specific objectives and the deliverables of the phase.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.222\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.491\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.282\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Specific objectives and the state of each at the end of the phase.} \\
+\hline
+\textbf{Objective} & \textbf{What was done} & \textbf{Status} \\ \hline
+\endfirsthead
+\hline
+\textbf{Objective} & \textbf{What was done} & \textbf{Status} \\ \hline
+\endhead
+1. Faithful tasks, by constraining AI generation with expert material & The scenario lifecycle, in which only content approved by experts reaches the explorer (SM-01); an authoring pipeline in which AI generates from the expert's context and the expert edits, adds reference answers, and a second expert reviews; a validator before submission & Designed in full; implemented up to a draft game (Section 6.1.3); fidelity not yet measured with experts \\ \hline
+2. Assessment of free text whose agreement with experts is established & A judge panel of three models from different families that must quote the answer, with a method for building the reference set and fixed acceptance thresholds (Section 7.3) & Panel implemented; the method and thresholds are fixed; agreement not yet measured; the keyword baseline was measured and fails the threshold (kappa 0.30) \\ \hline
+3. Guidance toward the next occupations from demonstrated competence & Competency recording, bands, adjacency, and the Galaxy Map in the design; the map, profile, and quiz screens in the explorer application & Designed; shown on sample data; CareerModule not built \\ \hline
+4. Free and sustainable access, with governed content & The business model and stages (Section 4.1.5); the policies for data and third parties (Section 5.3.10); the cost per scenario observed once (about 0.0026 USD for a level-one scenario) & Designed; the cost is one observation, not a budget \\ \hline
+\end{longtable}
+}
+
+The deliverables of the phase are: a requirements specification of 43 functional and 19 non-functional requirements with design constraints and data requirements (Chapter 4); an analysis with 24 activity diagrams, a use-case model, and the state machines SM-01 and SM-02 (Section 5.1); a justified technology stack for frontend, backend, and AI (Section 5.2); a design set of an architecture with component and deployment views, twelve sequence diagrams, eight domain class diagrams and nine module diagrams, a data model of twelve groups drawn in six diagrams, an interface of 109 operations, the screens and design system, and a test plan of 187 cases (Section 5.3); a prototype of about 74,000 lines that passes 1,031 of 1,032 automated tests (Chapter 6); and measurements of the prototype's frontend, backend, and AI baseline against the requirements (Chapter 7). Chapter 7 also shows what the phase did not achieve: the mobile performance target (NFR-13) is not met, the keyword baseline fails, and the AI measures are fixed but not yet taken.
+
+\subsection{Future Works}
+
+The limitations of the present work are listed below, each linked to the work that removes it. The plan of the next phase follows this section.
+
+{\small
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.081\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.377\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.435\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Limitations and the future work that removes each.} \\
+\hline
+\textbf{\#} & \textbf{Limitation} & \textbf{Future work} & \textbf{Plan} \\ \hline
+\endfirsthead
+\hline
+\textbf{\#} & \textbf{Limitation} & \textbf{Future work} & \textbf{Plan} \\ \hline
+\endhead
+L1 & The database and modules of the prototype do not follow the data model and the module map & Migrate to the twelve-group data model; remove the four modules outside CL-00; build the five that are absent; settle the entries marked as waiting for a decision & Phase A, B \\ \hline
+L2 & The activity flow sends a run at the end and a shift has no numeric score & Retire the activity flow; define the group ceilings per scenario with the domain experts and compute the score on the server & Phase A, B \\ \hline
+L3 & Release publication, play-test, grading-quality tools, import, and monitoring are not built & Build them with their staff screens and the administrator's feedback review & Phase C \\ \hline
+L4 & AI quality is not measured: agreement with experts, latency, cost, failover & Build the reference set with domain experts and take the measures of Section 7.3.2 with the AI tier running & Phase D \\ \hline
+L5 & Only one shift seed (Back-end, level three) exists, and coverage outside the first field is untested & Author and validate more scenarios with the experts of the field; extend to further fields only after the first field's measures hold & Phase C, D \\ \hline
+L6 & Mobile performance and accessibility miss the targets; there is no manual accessibility audit & Fix the five causes found in Chapter 7; build the accessible 2D map; audit with assistive technology & Phase D \\ \hline
+L7 & Tests are unit and component only; no integration or end-to-end test; no coverage figure; one failing test & Tag tests with case identifiers; add PostgreSQL and Redis to CI; choose and add an end-to-end tool; fix the failing test & Phase A, E \\ \hline
+L8 & No security test and no deployment beyond a developer's machine & Penetration test and prompt review; Stage 1 deployment on a university server with the egress allowlist & Phase E \\ \hline
+L9 & Legal questions are open: the university's role as controller, transfer notice, provider agreements & Obtain answers from the university's legal office before real users (Section 5.3.10) & Phase A to E \\ \hline
+L10 & FR-07 (starting an adjacent occupation at a higher level) is deferred & Decide with the team, then build & Phase B \\ \hline
+\end{longtable}
+}

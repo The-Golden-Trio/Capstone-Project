@@ -1,0 +1,34 @@
+@startuml DF-01_PersonalDataFlow
+title DF-01 · Flow of personal data and of text sent to model providers (DC-03, NFR-05)
+skinparam componentStyle rectangle
+
+actor Explorer
+rectangle "Inside Vietnam (cloud region)" {
+  [Explorer app\n<size:10>static bundle, no personal data</size>] as App
+  [API\n<size:10>accounts, runs, answers</size>] as Api
+  database "PostgreSQL\n<size:10>identity + answers, encrypted at rest</size>" as Pg
+  queue "Redis\n<size:10>job ids, events</size>" as Rd
+  [Worker\n<size:10>de-identifier</size>] as Wk
+  [Egress proxy\n<size:10>allowlist of model endpoints</size>] as Px
+  database "Backups\n<size:10>second region in Vietnam</size>" as Bk
+}
+cloud "Abroad" {
+  [Model providers\n<size:10>no training on data, DPA</size>] as Mp
+  [Google Identity\n<size:10>optional sign-in</size>] as Gi
+}
+
+Explorer --> App : plays
+App --> Api : identity + answer text
+Api --> Pg : store answer under account
+Api --> Rd : enqueue job (run id only)
+Rd --> Wk : job
+Wk --> Pg : read answer
+Wk --> Wk : remove identifiers\nkeep only what the task needs
+Wk --> Px : seed, rubric, de-identified text\nunder opaque run id
+Px --> Mp : only allowlisted endpoints
+Mp --> Px : scores, quotes, text
+Px --> Wk
+Wk --> Pg : result event with provenance
+Pg --> Bk : encrypted copy
+Explorer ..> Gi : only if the user chooses Google
+@enduml
