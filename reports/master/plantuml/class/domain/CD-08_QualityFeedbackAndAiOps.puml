@@ -1,5 +1,4 @@
 @startuml CD-08_QualityFeedbackAndAiOps
-title CD-08 · Domain model · Grading quality, feedback and AI operations\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections L); the ERD is unchanged</size>
 hide empty members
 skinparam classAttributeIconSize 0
 skinparam linetype polyline

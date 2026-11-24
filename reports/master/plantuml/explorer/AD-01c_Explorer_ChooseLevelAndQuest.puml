@@ -1,5 +1,4 @@
 @startuml AD-01c_Explorer_ChooseLevelAndQuest
-title AD-01c · Explorer — choose an occupation, a level, and a quest
 
 |Explorer|
 |System|

@@ -1,5 +1,4 @@
 @startuml PK-01_RepositoryPackages
-title PK-01 · Repository packages and dependencies (Nx monorepo)\n<size:11>Arrows are import dependencies. game-core depends on no framework, network, or storage.</size>
 skinparam componentStyle rectangle
 
 package "apps" {

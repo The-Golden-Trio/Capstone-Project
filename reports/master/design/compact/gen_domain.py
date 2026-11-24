@@ -402,8 +402,7 @@ def write_diagram(did):
     d = diagrams[did]
     spec = cfg["diagrams"][did]
     out = [f"@startuml {spec['file']}",
-           f"title {did} · Domain model · {spec['title']}\\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections {', '.join(spec['sections'])}); the ERD is unchanged</size>",
-           HEADER, ""]
+                      HEADER, ""]
     # enum classes used by this diagram's entities
     used_enums = []
     for ename, e in cfg["enums"].items():

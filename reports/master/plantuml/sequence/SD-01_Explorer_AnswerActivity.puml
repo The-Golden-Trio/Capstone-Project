@@ -1,5 +1,4 @@
 @startuml SD-01_Explorer_AnswerActivity
-title SD-01 · Explorer — play scenario
 
 actor Explorer
 participant "Explorer app" as App

@@ -1,5 +1,4 @@
 @startuml SD-05_DomainExpert_GenerateScenario
-title SD-05 · Content Admin, Domain Expert — generate scenario content
 
 actor "Content Admin" as CA
 actor "Domain Expert\n(author)" as DE

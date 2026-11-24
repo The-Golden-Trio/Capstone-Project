@@ -1,5 +1,4 @@
 @startuml DF-01_PersonalDataFlow
-title DF-01 · Flow of personal data and of text sent to model providers (DC-03, NFR-05)
 skinparam componentStyle rectangle
 
 actor Explorer

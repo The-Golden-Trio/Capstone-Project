@@ -1,5 +1,4 @@
 @startuml AD-02a_ContentAdmin_AccessPortal
-title AD-02a · Content Admin — access the admin portal
 
 |Content Admin|
 |System|

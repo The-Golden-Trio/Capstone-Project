@@ -17,6 +17,10 @@ from pathlib import Path
 UNICODE = {
     "—": "---", "–": "--", "−": "$-$", "ρ": "$\\rho$",
     "●": "$\\bullet$", "◐": "$\\ominus$", "○": "$\\circ$",
+    # Not available in the T5 font encoding: use the math symbols.
+    "≤": "$\\leq$", "≥": "$\\geq$", "≠": "$\\neq$", "∈": "$\\in$", "ε": "$\\varepsilon$",
+    "÷": "$\\div$", "×": "$\\times$", "±": "$\\pm$", "→": "$\\rightarrow$",
+    "✅": "$\\checkmark$", "❌": "$\\times$", "ø": "\\o{}", "ü": "\\\"u",
 }
 CHAR_CM = 0.18      # bề rộng trung bình một ký tự ở cỡ \small
 TEXT_CM = 16.0      # \textwidth của hcmut-report

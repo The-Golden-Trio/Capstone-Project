@@ -1,5 +1,4 @@
 @startuml AD-03c_DomainExpert_CheckAssessorReliability
-title AD-03c · Domain Expert — check AI grading reliability
 
 |Domain Expert|
 |System|

@@ -1,5 +1,4 @@
 @startuml SM-02_RunAssessmentJobStates
-title SM-02 · States of a run, an assessment, and an AI job\n<size:11>Statuses as stored in the prototype schema; the pause of a run is an event, not a status.</size>
 
 state "Run (RunStatus)" as RunS {
   [*] --> IN_PROGRESS : start run

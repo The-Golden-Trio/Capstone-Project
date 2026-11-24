@@ -1,5 +1,4 @@
 @startuml CL-02_CatalogueAndImport
-title CL-02 · NestJS modules — Catalogue and import
 hide empty members
 skinparam classAttributeIconSize 0
 left to right direction

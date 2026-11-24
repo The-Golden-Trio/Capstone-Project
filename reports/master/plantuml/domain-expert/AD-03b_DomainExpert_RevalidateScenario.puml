@@ -1,5 +1,4 @@
 @startuml AD-03b_DomainExpert_RevalidateScenario
-title AD-03b · Domain Expert — revalidate a published scenario
 
 |Domain Expert|
 |System|

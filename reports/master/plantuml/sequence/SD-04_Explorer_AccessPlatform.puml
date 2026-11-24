@@ -1,5 +1,4 @@
 @startuml SD-04_Explorer_AccessPlatform
-title SD-04 · Explorer — access the platform
 
 actor Explorer
 participant "Explorer app" as App

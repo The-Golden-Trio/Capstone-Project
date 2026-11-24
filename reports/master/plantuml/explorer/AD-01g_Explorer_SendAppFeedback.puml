@@ -1,5 +1,4 @@
 @startuml AD-01g_Explorer_SendAppFeedback
-title AD-01g · Explorer — send app feedback
 
 |Explorer|
 |System|

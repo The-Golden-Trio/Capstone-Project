@@ -1,5 +1,4 @@
 @startuml SD-10_Explorer_ShiftTurn
-title SD-10 · Explorer — one turn of a shift, with segment grading
 
 actor Explorer
 participant "Explorer app" as App

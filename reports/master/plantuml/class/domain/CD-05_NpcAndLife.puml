@@ -1,5 +1,4 @@
 @startuml CD-05_NpcAndLife
-title CD-05 · Domain model · Tarot NPCs, side quests, economy, health and calendar\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections G, K); the ERD is unchanged</size>
 hide empty members
 skinparam classAttributeIconSize 0
 skinparam linetype polyline

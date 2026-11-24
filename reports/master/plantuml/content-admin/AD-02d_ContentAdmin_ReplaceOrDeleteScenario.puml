@@ -1,5 +1,4 @@
 @startuml AD-02d_ContentAdmin_ReplaceOrDeleteScenario
-title AD-02d · Content Admin — replace or delete a scenario
 
 |Content Admin|
 |System|

@@ -1,7 +1,5 @@
-@startuml SM-01_ScenarioLifecycle
+@startdot SM-01_ScenarioLifecycle
 digraph SM01 {
-  label = "SM-01 - Scenario lifecycle";
-  labelloc = t;
   fontname = "Helvetica";
   rankdir = LR;
   nodesep = 0.6;
@@ -35,4 +33,4 @@ digraph SM01 {
   published   -> published   [label = "revalidate\n[still accurate]"];
   published   -> retired     [label = "delete"];
 }
-@enduml
+@enddot

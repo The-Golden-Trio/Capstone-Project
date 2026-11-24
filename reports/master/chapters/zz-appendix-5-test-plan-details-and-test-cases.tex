@@ -135,7 +135,7 @@ TC-A-EG-01 & Parallel registration of one email & Two requests with the same ema
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-A-UC-01 & UC-E01 register, log in, log out & Web app against the real API (live mode) & Main flow (register → sign in → edit profile → sign out); error flow (wrong password, email in use, expired reset token) & 1. Run the main flow: register, log in, edit the profile, log out & Each step succeeds and the session ends at log out \\ \cline{5-6}
+TC-A-UC-01 & UC-E01 register, log in, log out & Web app against the real API (live mode) & Main flow (register $\rightarrow$ sign in $\rightarrow$ edit profile $\rightarrow$ sign out); error flow (wrong password, email in use, expired reset token) & 1. Run the main flow: register, log in, edit the profile, log out & Each step succeeds and the session ends at log out \\ \cline{5-6}
  &  &  &  & 2. Log in with a wrong password & Vietnamese error message that does not reveal whether email or password was wrong \\ \cline{5-6}
  &  &  &  & 3. Register with an email already in use & Vietnamese error message; no second account \\ \cline{5-6}
  &  &  &  & 4. Use an expired reset token & Vietnamese error message; password unchanged \\ \hline
@@ -202,7 +202,7 @@ Test scenario A3, Account lifecycle, deletion, and audit. An account moves betwe
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-A-ST-01 & Account lifecycle: active, disabled, deleted & Active account with a live session & Disable; enable; delete; sign in in each state; try deleted → active & 1. Disable the account & Live sessions revoked \\ \cline{5-6}
+TC-A-ST-01 & Account lifecycle: active, disabled, deleted & Active account with a live session & Disable; enable; delete; sign in in each state; try deleted $\rightarrow$ active & 1. Disable the account & Live sessions revoked \\ \cline{5-6}
  &  &  &  & 2. Try to log in & Refused \\ \cline{5-6}
  &  &  &  & 3. Enable the account & Back to active; login works \\ \cline{5-6}
  &  &  &  & 4. Delete the account, then try to log in & Login refused \\ \cline{5-6}
@@ -364,9 +364,9 @@ TC-B-BVA-03 & Main missions per level & Output keywords per level, at most 5 & 0
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-B-BVA-04 & Side-quest budget & Table BAND.\allowbreak{}base\_\allowbreak{}budget (L1 300 to L9 2,700) & L1 with k = 1 and k = 2; L9 with k = 1 & 1. Compute the level budget for L1 with k = 1 and k = 2 (budget = base × 0.746 × k\textasciicircum{}1.4) & About 223.8 and 590.6 \\ \cline{5-6}
+TC-B-BVA-04 & Side-quest budget & Table BAND.\allowbreak{}base\_\allowbreak{}budget (L1 300 to L9 2,700) & L1 with k = 1 and k = 2; L9 with k = 1 & 1. Compute the level budget for L1 with k = 1 and k = 2 (budget = base $\times$ 0.746 $\times$ k\textasciicircum{}1.4) & About 223.8 and 590.6 \\ \cline{5-6}
  &  &  &  & 2. Compute the budget for L9 with k = 1 & Matches the formula \\ \cline{5-6}
- &  &  &  & 3. Compute the side-quest cap (10\% of the budget) & side\_\allowbreak{}quest\_\allowbreak{}budget never above 10\% of the budget; rounding is not stated, so check 0 ≤ budget ≤ 10\% \\ \hline
+ &  &  &  & 3. Compute the side-quest cap (10\% of the budget) & side\_\allowbreak{}quest\_\allowbreak{}budget never above 10\% of the budget; rounding is not stated, so check 0 $\leq$ budget $\leq$ 10\% \\ \hline
 \end{longtable}
 }
 
@@ -411,7 +411,7 @@ TC-B-EP-01 & Number of levels of a non-IT occupation & Non-IT profiles; IT occup
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-B-EP-02 & Evidence grade and overtime type & None & \texttt{evidence\_\allowbreak{}grade} ∈ \{A, B, C, D\}; each \texttt{overtime\_\allowbreak{}pay} value of the source table & 1. Enter evidence\_\allowbreak{}grade A, B, C & Accepted \\ \cline{5-6}
+TC-B-EP-02 & Evidence grade and overtime type & None & \texttt{evidence\_\allowbreak{}grade} $\in$ \{A, B, C, D\}; each \texttt{overtime\_\allowbreak{}pay} value of the source table & 1. Enter evidence\_\allowbreak{}grade A, B, C & Accepted \\ \cline{5-6}
  &  &  &  & 2. Enter evidence\_\allowbreak{}grade D & Refused \\ \cline{5-6}
  &  &  &  & 3. Compute overtime xu or health effect for each overtime\_\allowbreak{}pay value & Each gives the coefficient of the research table \\ \hline
 \end{longtable}
@@ -426,7 +426,7 @@ TC-B-EP-02 & Evidence grade and overtime type & None & \texttt{evidence\_\allowb
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-B-DT-01 & Entering a senior-\allowbreak{}entry occupation (D-121) & Target occupation has is\_\allowbreak{}senior\_\allowbreak{}entry true & The two conditions of the rule & 1. Build a player who finished an earlier level with band ≥ entry band $-$ 1 and has every soft-skill group at 60\% & Entry allowed \\ \cline{5-6}
+TC-B-DT-01 & Entering a senior-\allowbreak{}entry occupation (D-121) & Target occupation has is\_\allowbreak{}senior\_\allowbreak{}entry true & The two conditions of the rule & 1. Build a player who finished an earlier level with band $\geq$ entry band $-$ 1 and has every soft-skill group at 60\% & Entry allowed \\ \cline{5-6}
  &  &  &  & 2. Build a player with the first condition only & Entry refused \\ \cline{5-6}
  &  &  &  & 3. Build a player with the second condition only & Entry refused \\ \cline{5-6}
  &  &  &  & 4. Build a player with neither & Entry refused \\ \hline
@@ -516,7 +516,7 @@ TC-B-EG-01 & A new occupation needs no code change & CA logged in to the staff a
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-B-UC-01 & UC-E05, E06, E09, E18 explore an occupation & Explorer logged in; a published occupation exists & Main flow: open the map → choose an occupation → view the profile → view a level description → view the route & 1. Open the map, choose the occupation, view the profile, level description, and route & Profile shows daily work by level, salary, route \\ \cline{5-6}
+TC-B-UC-01 & UC-E05, E06, E09, E18 explore an occupation & Explorer logged in; a published occupation exists & Main flow: open the map $\rightarrow$ choose an occupation $\rightarrow$ view the profile $\rightarrow$ view a level description $\rightarrow$ view the route & 1. Open the map, choose the occupation, view the profile, level description, and route & Profile shows daily work by level, salary, route \\ \cline{5-6}
  &  &  &  & 2. Open a retired occupation by direct link & 404 or a Vietnamese message \\ \hline
 \end{longtable}
 }
@@ -672,7 +672,7 @@ TC-C-GB-02 & Soft-skill catalogue: 7 groups, 42 sub-items & Seeded catalogue & N
 \endhead
 TC-C-GB-03 & Budget has exactly 7 rows, cap per group & Seeded levels & Levels with 6, 7, 8 \texttt{BUDGETS} rows; fund shift of 30\% and 31\% & 1. Save levels with 6, 7, and 8 BUDGETS rows & Only the level with 7 rows is saved \\ \cline{5-6}
  &  &  &  & 2. Shift 30\% and then 31\% of the budget & A shift above 30\% is refused and the total is kept \\ \cline{5-6}
- &  &  &  & 3. Read is\_focus & Right for the focus group (× 1.6) \\ \hline
+ &  &  &  & 3. Read is\_focus & Right for the focus group ($\times$ 1.6) \\ \hline
 \end{longtable}
 }
 
@@ -714,7 +714,7 @@ Test scenario C3, Transfer credit and import. Credit between skill groups is com
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
 TC-C-DT-01 & Transfer credit between skill groups & Function takes a pair of groups and similarity s & As in the table of the steps & 1. Compute credit for the same group & 1 \\ \cline{5-6}
- &  &  &  & 2. Compute credit for another group with s ≥ 0.75 & 0.5 \\ \cline{5-6}
+ &  &  &  & 2. Compute credit for another group with s $\geq$ 0.75 & 0.5 \\ \cline{5-6}
  &  &  &  & 3. Compute credit for another group with s = 0.7499 and s = 0.5 & 0.25 and 0.25 \\ \cline{5-6}
  &  &  &  & 4. Compute credit for another group with s = 0.4999 & 0 \\ \cline{5-6}
  &  &  &  & 5. Compute credit for a keyword in several groups & The best group is used \\ \hline
@@ -780,7 +780,7 @@ TC-D-EP-01 & Number of rules in a pack & Valid sample pack & Packs with 0, 1, 2,
 \endhead
 TC-D-BVA-01 & Minutes per time point & Office-IT pack (5) and restaurant pack (2) & \texttt{minutes\_\allowbreak{}per\_\allowbreak{}point} = $-$1, 0, 1, 2, 5 & 1. Validate packs with minutes\_\allowbreak{}per\_\allowbreak{}point $-$1 and 0 & Refused \\ \cline{5-6}
  &  &  &  & 2. Validate packs with 1, 2, and 5 & Valid \\ \cline{5-6}
- &  &  &  & 3. Convert a 140-minute shift at 5 minutes per point (points = (end $-$ start) ÷ minutes\_\allowbreak{}per\_\allowbreak{}point) & 28 points, as in rule A1 \\ \hline
+ &  &  &  & 3. Convert a 140-minute shift at 5 minutes per point (points = (end $-$ start) $\div$ minutes\_\allowbreak{}per\_\allowbreak{}point) & 28 points, as in rule A1 \\ \hline
 \end{longtable}
 }
 
@@ -867,7 +867,7 @@ TC-D-EG-01 & Draw a company by industry weight & Seeded random generator (domain
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-D-UC-01 & UC-E12 view context before a scenario & Explorer entered a level; pack and scenario published & Main flow: 6-page onboard → context → start the scenario & 1. Go through the 6 onboard pages & Pages shown; no model call \\ \cline{5-6}
+TC-D-UC-01 & UC-E12 view context before a scenario & Explorer entered a level; pack and scenario published & Main flow: 6-page onboard $\rightarrow$ context $\rightarrow$ start the scenario & 1. Go through the 6 onboard pages & Pages shown; no model call \\ \cline{5-6}
  &  &  &  & 2. Read the context & It states when the goal is met without revealing the solution; honest\_note shown (BR-07) \\ \cline{5-6}
  &  &  &  & 3. Start the scenario & The scenario begins \\ \hline
 \end{longtable}
@@ -999,7 +999,7 @@ TC-E-BVA-02 & Duration and node counts & estimateMinutes of ContentValidator & E
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-E-BVA-03 & Clock: point budget, slack, ``step away'' prompt & minutes\_\allowbreak{}per\_\allowbreak{}point = 5; budget = (deadline $-$ start) ÷ minutes\_\allowbreak{}per\_\allowbreak{}point & Mandatory action points at 70\% and 71\% of the budget; next timed node 6 and 7 points away; 20\% of the budget left & 1. Lint seeds whose mandatory actions take 70\% and 71\% of the budget & Exactly 30\% slack passes; 29\% fails \\ \cline{5-6}
+TC-E-BVA-03 & Clock: point budget, slack, ``step away'' prompt & minutes\_\allowbreak{}per\_\allowbreak{}point = 5; budget = (deadline $-$ start) $\div$ minutes\_\allowbreak{}per\_\allowbreak{}point & Mandatory action points at 70\% and 71\% of the budget; next timed node 6 and 7 points away; 20\% of the budget left & 1. Lint seeds whose mandatory actions take 70\% and 71\% of the budget & Exactly 30\% slack passes; 29\% fails \\ \cline{5-6}
  &  &  &  & 2. Play until the next timed node is 6 and then 7 points away & ``Step away'' shown at 6, not at 7 \\ \cline{5-6}
  &  &  &  & 3. Play until 20\% of the budget is left & Time warning appears \\ \hline
 \end{longtable}
@@ -1203,7 +1203,7 @@ Test scenario E5, Playing a scenario. An explorer plays a full scenario and endi
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-E-UC-01 & UC-E11, E13, E14 play a scenario & Explorer entered a level; seed Back-end L3 m2 published; AI\_\allowbreak{}MODE=fake & Main flow: opening → actions → middle node → end node → shift review; side flow: work on something else, hint, follow-up; error flow: close the browser midway, lose the network, model fails & 1. Run the main flow: opening, action, middle node, end node, shift review & A turn is accepted before any model call; results arrive over SSE \\ \cline{5-6}
+TC-E-UC-01 & UC-E11, E13, E14 play a scenario & Explorer entered a level; seed Back-end L3 m2 published; AI\_\allowbreak{}MODE=fake & Main flow: opening $\rightarrow$ actions $\rightarrow$ middle node $\rightarrow$ end node $\rightarrow$ shift review; side flow: work on something else, hint, follow-up; error flow: close the browser midway, lose the network, model fails & 1. Run the main flow: opening, action, middle node, end node, shift review & A turn is accepted before any model call; results arrive over SSE \\ \cline{5-6}
  &  &  &  & 2. Run the side flows: step away, hint, extra question & Each works as designed \\ \cline{5-6}
  &  &  &  & 3. Close the browser midway and reopen & Resumes in place (NFR-03) \\ \cline{5-6}
  &  &  &  & 4. Make the model fail & A message shows and progress is kept (NFR-04) \\ \hline
@@ -1236,7 +1236,7 @@ Test scenario F1, SM-01 transitions and guards. Every valid transition works, ev
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-F-ST-01 & Every valid SM-01 transition & Scenario in the start state of each transition; the right role & The 14 transitions of SM-01, one case each, including the two in-place transitions (Draft → Draft, Published → Published) & 1. Apply the action of each of the 14 transitions, one case each, including Draft to Draft and Published to Published & The target state is reached \\ \cline{5-6}
+TC-F-ST-01 & Every valid SM-01 transition & Scenario in the start state of each transition; the right role & The 14 transitions of SM-01, one case each, including the two in-place transitions (Draft $\rightarrow$ Draft, Published $\rightarrow$ Published) & 1. Apply the action of each of the 14 transitions, one case each, including Draft to Draft and Published to Published & The target state is reached \\ \cline{5-6}
  &  &  &  & 2. Read LIFECYCLE\_\allowbreak{}LOG after each & One row (actor, action, time, states before and after) written in the same transaction; Draft to Draft is checked against the proposal (07 A23(1)) \\ \hline
 \end{longtable}
 }
@@ -1265,7 +1265,7 @@ TC-F-ST-02 & Every invalid transition is refused & None & The other 51 (from, to
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
 TC-F-DT-01 & Guards of the transitions & Scenario in the start state of the transition & As in the table of the steps & 1. Submit with the automatic check passed, then failed & Accepted; stays Draft \\ \cline{5-6}
- &  &  &  & 2. Open the review with reviewer ≠ author and an assignment & Accepted \\ \cline{5-6}
+ &  &  &  & 2. Open the review with reviewer $\neq$ author and an assignment & Accepted \\ \cline{5-6}
  &  &  &  & 3. Open the review with reviewer = author, then with no assignment & Refused in both \\ \cline{5-6}
  &  &  &  & 4. Approve with all criteria answered, then with some missing & Accepted; refused \\ \cline{5-6}
  &  &  &  & 5. Open a scenario for a task that already has the same main task and situation (G-04) & Refused \\ \hline
@@ -1283,7 +1283,7 @@ Test scenario F2, Review. Reviews are assigned, decided once, reassigned when la
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-F-DT-02 & Review outcome & Scenario In Review, right reviewer & (approve, request changes, reject) × (all criteria answered, some missing); a second decision & 1. Approve with all criteria answered & Approved \\ \cline{5-6}
+TC-F-DT-02 & Review outcome & Scenario In Review, right reviewer & (approve, request changes, reject) $\times$ (all criteria answered, some missing); a second decision & 1. Approve with all criteria answered & Approved \\ \cline{5-6}
  &  &  &  & 2. Approve with some criteria missing & Refused; stays In Review \\ \cline{5-6}
  &  &  &  & 3. Request changes & Draft \\ \cline{5-6}
  &  &  &  & 4. Reject & Retired \\ \cline{5-6}
@@ -1662,7 +1662,7 @@ TC-G-DT-04 & Three ways to open a card and the company deck & Explorer at a new 
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-G-UC-01 & UC-E10 do a side quest & Explorer on a break with 2 slots; ticket bought & Main flow: open a break → choose a side quest → play → receive reward and intimacy; error flow: no slots left, no ticket, NPC not close enough & 1. Open the break, choose a side quest, play, and receive bonus and intimacy & Each step works; the finished side quest has a generated frame \\ \cline{5-6}
+TC-G-UC-01 & UC-E10 do a side quest & Explorer on a break with 2 slots; ticket bought & Main flow: open a break $\rightarrow$ choose a side quest $\rightarrow$ play $\rightarrow$ receive reward and intimacy; error flow: no slots left, no ticket, NPC not close enough & 1. Open the break, choose a side quest, play, and receive bonus and intimacy & Each step works; the finished side quest has a generated frame \\ \cline{5-6}
  &  &  &  & 2. Try a third slot & Refused \\ \cline{5-6}
  &  &  &  & 3. Try with no ticket, and with an NPC not close enough & Cannot open \\ \hline
 \end{longtable}
@@ -1693,7 +1693,7 @@ TC-G-CL-01 & NPC profile QA set (section 9) & Cast v1.0; fake model for automati
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-G-BLK-01 & Outfit groups, departments, character images & Groups not decided & --- & 1. Target: the engine computes the outfit group from type × company × department & Cannot be written until the groups are decided \\ \hline
+TC-G-BLK-01 & Outfit groups, departments, character images & Groups not decided & --- & 1. Target: the engine computes the outfit group from type $\times$ company $\times$ department & Cannot be written until the groups are decided \\ \hline
 \end{longtable}
 }
 
@@ -1784,7 +1784,7 @@ TC-H-GB-02 & Redoing GTKM replaces the old profile & Explorer did GTKM once & A 
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-H-UC-01 & UC-E03, E04, E19 GTKM, portrait, personal profile & New explorer logged in & Main flow: 18 cards and five goal questions (about three minutes) → regions to try → map → profile; side flow: skip GTKM (D-29, optional); error flow: close midway & 1. Run the main flow: 18 cards and five goal questions, regions to try, map, profile & All text in Vietnamese \\ \cline{5-6}
+TC-H-UC-01 & UC-E03, E04, E19 GTKM, portrait, personal profile & New explorer logged in & Main flow: 18 cards and five goal questions (about three minutes) $\rightarrow$ regions to try $\rightarrow$ map $\rightarrow$ profile; side flow: skip GTKM (D-29, optional); error flow: close midway & 1. Run the main flow: 18 cards and five goal questions, regions to try, map, profile & All text in Vietnamese \\ \cline{5-6}
  &  &  &  & 2. Skip GTKM (D-29) & The app is still usable \\ \cline{5-6}
  &  &  &  & 3. Close midway and reopen & A draft is kept \\ \cline{5-6}
  &  &  &  & 4. Open another user's profile & Refused; the profile is private to its owner \\ \hline
@@ -1862,8 +1862,8 @@ Test scenario H3, Occupation suggestions. Suggestions follow the rules, give rea
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-H-DT-01 & Three occupation suggestion slots & Explorer with a RIASEC profile and some scenarios played; occupations with fit r and skill S & A trial occupation with the conditions in the steps & 1. Compute slot 1 (same field, similarity ≥ 1.2 or shared keywords ≥ 30\%, r grade A to C) & At most 3; each occupation meets the conditions \\ \cline{5-6}
- &  &  &  & 2. Compute slot 2 (other field, S grade A to C, tier ≥ 2, r ≥ 0) & At most 3, at most 2 per field \\ \cline{5-6}
+TC-H-DT-01 & Three occupation suggestion slots & Explorer with a RIASEC profile and some scenarios played; occupations with fit r and skill S & A trial occupation with the conditions in the steps & 1. Compute slot 1 (same field, similarity $\geq$ 1.2 or shared keywords $\geq$ 30\%, r grade A to C) & At most 3; each occupation meets the conditions \\ \cline{5-6}
+ &  &  &  & 2. Compute slot 2 (other field, S grade A to C, tier $\geq$ 2, r $\geq$ 0) & At most 3, at most 2 per field \\ \cline{5-6}
  &  &  &  & 3. Compute slot 3 (other field, r grade A to C, at least one unvisited field) & At most 3, at most 2 per field \\ \hline
 \end{longtable}
 }
@@ -1958,11 +1958,11 @@ Test scenario I1, Level entry and career jumps. The explorer may enter a level o
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-I-DT-01 & Unlock a level by two conditions & Target occupation has a keyword requirement per level; player has keyword levels and soft-skill tiers & As in the table of the steps & 1. Build a player with tier passed and coverage ≥ 0.5 & Entry allowed \\ \cline{5-6}
- &  &  &  & 2. Build one with tier passed, coverage 0.3 to under 0.5, similarity ≥ 1.2 & Entry allowed \\ \cline{5-6}
+TC-I-DT-01 & Unlock a level by two conditions & Target occupation has a keyword requirement per level; player has keyword levels and soft-skill tiers & As in the table of the steps & 1. Build a player with tier passed and coverage $\geq$ 0.5 & Entry allowed \\ \cline{5-6}
+ &  &  &  & 2. Build one with tier passed, coverage 0.3 to under 0.5, similarity $\geq$ 1.2 & Entry allowed \\ \cline{5-6}
  &  &  &  & 3. Build one with tier passed, coverage 0.3 to under 0.5, similarity < 1.2 & Refused \\ \cline{5-6}
  &  &  &  & 4. Build one with tier passed, coverage under 0.3 & Refused \\ \cline{5-6}
- &  &  &  & 5. Build one with tier not passed and coverage ≥ 0.5 & Refused \\ \hline
+ &  &  &  & 5. Build one with tier not passed and coverage $\geq$ 0.5 & Refused \\ \hline
 \end{longtable}
 }
 
@@ -1975,7 +1975,7 @@ TC-I-DT-01 & Unlock a level by two conditions & Target occupation has a keyword 
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-I-BVA-01 & Keyword coverage formula & Function takes owned and required levels of each target keyword & Needs \{a: 2, b: 3\}; has \{a: 3, b: 1\} (coverage 3 ÷ 5 = 0.6); has \{\} (0); has exactly what is needed (1); an extra keyword outside the target; a keyword in a similar ESCO group (credit 0.5 or 0.25, per \texttt{TC-\allowbreak{}C-\allowbreak{}DT-\allowbreak{}01}) & 1. Compute with required \{a: 2, b: 3\} and owned \{a: 3, b: 1\} & 0.6 (3 ÷ 5) \\ \cline{5-6}
+TC-I-BVA-01 & Keyword coverage formula & Function takes owned and required levels of each target keyword & Needs \{a: 2, b: 3\}; has \{a: 3, b: 1\} (coverage 3 $\div$ 5 = 0.6); has \{\} (0); has exactly what is needed (1); an extra keyword outside the target; a keyword in a similar ESCO group (credit 0.5 or 0.25, per \texttt{TC-\allowbreak{}C-\allowbreak{}DT-\allowbreak{}01}) & 1. Compute with required \{a: 2, b: 3\} and owned \{a: 3, b: 1\} & 0.6 (3 $\div$ 5) \\ \cline{5-6}
  &  &  &  & 2. Compute with owned \{\} & 0 \\ \cline{5-6}
  &  &  &  & 3. Compute with owned equal to required & 1 \\ \cline{5-6}
  &  &  &  & 4. Add an extra keyword outside the target & Coverage does not rise \\ \cline{5-6}
@@ -2034,7 +2034,7 @@ TC-I-EG-02 & Regression on career-jump validation figures & Data of 221 occupati
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-I-UC-01 & UC-E07, E08 enter a neighbouring occupation and choose a scenario & Explorer finished a source occupation & Main flow: choose a neighbouring occupation → view the screen explaining each keyword (✅ $\ominus$ ❌) → enter the allowed level; error flow: choose a level above the allowed one & 1. Choose a neighbouring occupation and view the screen that explains each keyword & Coverage, the threshold (50\%, or 30\% when very similar), and the allowed level are shown \\ \cline{5-6}
+TC-I-UC-01 & UC-E07, E08 enter a neighbouring occupation and choose a scenario & Explorer finished a source occupation & Main flow: choose a neighbouring occupation $\rightarrow$ view the screen explaining each keyword ($\checkmark$ $\ominus$ $\times$) $\rightarrow$ enter the allowed level; error flow: choose a level above the allowed one & 1. Choose a neighbouring occupation and view the screen that explains each keyword & Coverage, the threshold (50\%, or 30\% when very similar), and the allowed level are shown \\ \cline{5-6}
  &  &  &  & 2. Enter the allowed level & Entry succeeds \\ \cline{5-6}
  &  &  &  & 3. Try a level above the allowed one & Blocked \\ \hline
 \end{longtable}
@@ -2192,7 +2192,7 @@ Test scenario J2, Grading rules. Group scores, sub-item levels, hints, and bonus
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
 TC-J-BVA-01 & Group score per scenario (D-116) & Group cap 240 (for example L3); penalty factor read from BAND & As in the table, plus a change of level to see the edge of the penalty factor & 1. Score L3 with mean level 2, 1, and 0 and no flag & 240, 120, 0 \\ \cline{5-6}
- &  &  &  & 2. Score L3 with mean level 1 and one flag & 240 × (0.5 $-$ 0.35) = 36 \\ \cline{5-6}
+ &  &  &  & 2. Score L3 with mean level 1 and one flag & 240 $\times$ (0.5 $-$ 0.35) = 36 \\ \cline{5-6}
  &  &  &  & 3. Score L3 with mean level 0 and one flag & $-$84 (negative allowed) \\ \cline{5-6}
  &  &  &  & 4. Score L2, L3, L5, L6 with mean level 2 and one flag & 180, 156, 156, 120 \\ \cline{5-6}
  &  &  &  & 5. Apply the zodiac and the rounding rule & Rounded by the D-116 rule \\ \hline
@@ -2333,7 +2333,7 @@ TC-J-EP-01 & Report wrong content & Run with an event at seq 7 & Flag \texttt{se
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-J-DU-01 & time\_budget can be recomputed & Sample run with overtime and health effects & \texttt{clock}, \texttt{minutes\_\allowbreak{}per\_\allowbreak{}point}, number of overtimes, extra turns from health & 1. Recompute time\_budget from clock, minutes\_\allowbreak{}per\_\allowbreak{}point, overtime count, and extra turns from health & Point budget ± points from health and overtime \\ \cline{5-6}
+TC-J-DU-01 & time\_budget can be recomputed & Sample run with overtime and health effects & \texttt{clock}, \texttt{minutes\_\allowbreak{}per\_\allowbreak{}point}, number of overtimes, extra turns from health & 1. Recompute time\_budget from clock, minutes\_\allowbreak{}per\_\allowbreak{}point, overtime count, and extra turns from health & Point budget $\pm$ points from health and overtime \\ \cline{5-6}
  &  &  &  & 2. Compare with the stored value & Matches \\ \hline
 \end{longtable}
 }
@@ -2350,7 +2350,7 @@ Test scenario J5, Performance and play. Latency of follow-up and grading, and th
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
 TC-J-NF-02 & Latency of follow-up and grading & Real model, measured from Vietnam & At least 200 calls of each kind, taken from the evaluation runs & 1. Take at least 200 calls of each kind from evaluation runs & Calls measured \\ \cline{5-6}
- &  &  &  & 2. Measure p95 of follow-up and of grading & Follow-up ≤ 5 s and grading of essays ≤ 8 s \\ \cline{5-6}
+ &  &  &  & 2. Measure p95 of follow-up and of grading & Follow-up $\leq$ 5 s and grading of essays $\leq$ 8 s \\ \cline{5-6}
  &  &  &  & 3. Measure the time to show progress & Within 2 s \\ \hline
 \end{longtable}
 }
@@ -2364,7 +2364,7 @@ TC-J-NF-02 & Latency of follow-up and grading & Real model, measured from Vietna
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-J-UC-01 & UC-E14, E15, E16 follow-up, hint, report an error & Explorer playing Back-end L3 m2; AI\_\allowbreak{}MODE=fake & Main flow: answer → follow-up → answer → hint at another node → report wrong content; error flow: follow-up limit reached, slow model, failing model & 1. Answer, receive a follow-up, answer again & A follow-up shows progress within 2 s \\ \cline{5-6}
+TC-J-UC-01 & UC-E14, E15, E16 follow-up, hint, report an error & Explorer playing Back-end L3 m2; AI\_\allowbreak{}MODE=fake & Main flow: answer $\rightarrow$ follow-up $\rightarrow$ answer $\rightarrow$ hint at another node $\rightarrow$ report wrong content; error flow: follow-up limit reached, slow model, failing model & 1. Answer, receive a follow-up, answer again & A follow-up shows progress within 2 s \\ \cline{5-6}
  &  &  &  & 2. Use a hint at another node, then report wrong content & Each works \\ \cline{5-6}
  &  &  &  & 3. Reach the follow-up limit & No more than the limit (followup\_\allowbreak{}cap undecided: check ``there is a limit'') \\ \cline{5-6}
  &  &  &  & 4. Make the model slow, then fail & A Vietnamese message shows and progress is kept \\ \hline
@@ -2533,7 +2533,7 @@ Test scenario K2, Overtime. Overtime offers, costs, and the penalty of consecuti
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-K-DT-01 & Overtime: count and health tier & Scenario with overtime offers (ot\_offers) & Overtimes used in the scenario (0, 1, 2) × health tier (Exhausted or not) & 1. Ask for an offer with 0 overtimes used, not Exhausted & Offered; accepting gives +2 turns, $-$12 health, ot.count 1 \\ \cline{5-6}
+TC-K-DT-01 & Overtime: count and health tier & Scenario with overtime offers (ot\_offers) & Overtimes used in the scenario (0, 1, 2) $\times$ health tier (Exhausted or not) & 1. Ask for an offer with 0 overtimes used, not Exhausted & Offered; accepting gives +2 turns, $-$12 health, ot.count 1 \\ \cline{5-6}
  &  &  &  & 2. Ask with 1 used, not Exhausted & Offered; +1 turn, $-$18 health, ot.count 2 \\ \cline{5-6}
  &  &  &  & 3. Ask with 2 used, not Exhausted & Over-\allowbreak{}the-\allowbreak{}cap event: refuse, accept with double health cost, or call the Justice NPC if close enough; ot.count never above 2 \\ \cline{5-6}
  &  &  &  & 4. Ask when Exhausted & No offer \\ \hline
@@ -2677,7 +2677,7 @@ TC-K-DU-01 & Group K derived attributes can be recomputed & Sample economy and h
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
 TC-K-EG-01 & Economy invariants over random event chains & Generator of events: scenario, purchase, overtime, rest, side quest, milestone & 1,000 random sequences with a fixed seed & 1. Apply 1,000 random chains with a fixed seed & Chains applied \\ \cline{5-6}
- &  &  &  & 2. Check the invariants after each event & Health in [0, health\_\allowbreak{}cap]; balance ≥ 0; buff\_total ≤ 50\%; bonus ≤ group cap; ledgers only grow; at most 1 buff item and 2 overtimes per scenario \\ \hline
+ &  &  &  & 2. Check the invariants after each event & Health in [0, health\_\allowbreak{}cap]; balance $\geq$ 0; buff\_total $\leq$ 50\%; bonus $\leq$ group cap; ledgers only grow; at most 1 buff item and 2 overtimes per scenario \\ \hline
 \end{longtable}
 }
 
@@ -2704,7 +2704,7 @@ TC-K-EG-02 & Economy balance: a saver can buy an apartment & Current economy par
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-K-UC-01 & Break: shop, buy, use an item, overtime, summary & Explorer has xu and a break & Main flow: enter a break → buy a buff item → enter the next scenario → use the item → be offered overtime → accept → health and xu summary; error flow: not enough xu, two buffs, overtime attempted while Exhausted & 1. Enter the break and buy a buff item & Xu charged \\ \cline{5-6}
+TC-K-UC-01 & Break: shop, buy, use an item, overtime, summary & Explorer has xu and a break & Main flow: enter a break $\rightarrow$ buy a buff item $\rightarrow$ enter the next scenario $\rightarrow$ use the item $\rightarrow$ be offered overtime $\rightarrow$ accept $\rightarrow$ health and xu summary; error flow: not enough xu, two buffs, overtime attempted while Exhausted & 1. Enter the break and buy a buff item & Xu charged \\ \cline{5-6}
  &  &  &  & 2. Enter the next scenario and use the item & Buff applied \\ \cline{5-6}
  &  &  &  & 3. Be offered overtime and accept & Health and turns change as designed \\ \cline{5-6}
  &  &  &  & 4. Read the health and xu summary & Every rule is visible in Vietnamese; the interface says xu compresses pay differences so every occupation can be played \\ \cline{5-6}
@@ -2769,9 +2769,9 @@ TC-L-DT-02 & Four different model families & Seats: generate, judge A, B, C, nar
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-L-GB-01 & Cost ledger and per-session ceiling & Price table with two effective\_\allowbreak{}from dates; session ceiling configured & Calls before, at, and after \texttt{effective\_\allowbreak{}from}; a chain of calls bringing total cost to ceiling $-$ ε, the ceiling, ceiling + ε; cache-read, cache-\allowbreak{}write, and reasoning tokens & 1. Call before, at, and after effective\_\allowbreak{}from & A call at effective\_\allowbreak{}from uses the new price, earlier calls the old \\ \cline{5-6}
- &  &  &  & 2. Read MODEL\_CALL for calls using cache read, cache write, and reasoning tokens & One row per call with tokens of five kinds; cost = tokens × price at price\_date \\ \cline{5-6}
- &  &  &  & 3. Chain calls to ceiling $-$ ε, the ceiling, and ceiling + ε & A call over the ceiling is refused \\ \hline
+TC-L-GB-01 & Cost ledger and per-session ceiling & Price table with two effective\_\allowbreak{}from dates; session ceiling configured & Calls before, at, and after \texttt{effective\_\allowbreak{}from}; a chain of calls bringing total cost to ceiling $-$ $\varepsilon$, the ceiling, ceiling + $\varepsilon$; cache-read, cache-\allowbreak{}write, and reasoning tokens & 1. Call before, at, and after effective\_\allowbreak{}from & A call at effective\_\allowbreak{}from uses the new price, earlier calls the old \\ \cline{5-6}
+ &  &  &  & 2. Read MODEL\_CALL for calls using cache read, cache write, and reasoning tokens & One row per call with tokens of five kinds; cost = tokens $\times$ price at price\_date \\ \cline{5-6}
+ &  &  &  & 3. Chain calls to ceiling $-$ $\varepsilon$, the ceiling, and ceiling + $\varepsilon$ & A call over the ceiling is refused \\ \hline
 \end{longtable}
 }
 
@@ -2880,9 +2880,9 @@ TC-L-GB-03 & Blind rating and regrading the reference set & Reference set strati
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
 TC-L-NF-03 & AI evaluation thresholds fixed before running the model & Evaluation data of Section 7.3.1; real model; Inspect AI offline & The test-play set, variants lowering one criterion, probes, injection probes & 1. Run the evaluation of Section 7.3.2 on play-test sets, weakened variants, probes, and injection probes & Run completes \\ \cline{5-6}
- &  &  &  & 2. Check agreement and tracking & Weighted kappa ≥ 0.70 and within 0.10 of agreement between two raters; each weakened criterion lower in ≥ 90\% of variants \\ \cline{5-6}
- &  &  &  & 3. Check robustness and safety & Meaning-\allowbreak{}preserving probes change level in ≤ 5\%; keyword stuffing and negation never exceed the design level; no injection probe exceeds the design level \\ \cline{5-6}
- &  &  &  & 4. Check consistency, format, and generation & Krippendorff alpha ≥ 0.80 over three runs; ≥ 99\% of quotes are substrings; ≥ 99\% valid output after one retry; seeded generation beats unseeded at 5\% (McNemar) and keeps ≥ 95\% of needed facts \\ \hline
+ &  &  &  & 2. Check agreement and tracking & Weighted kappa $\geq$ 0.70 and within 0.10 of agreement between two raters; each weakened criterion lower in $\geq$ 90\% of variants \\ \cline{5-6}
+ &  &  &  & 3. Check robustness and safety & Meaning-\allowbreak{}preserving probes change level in $\leq$ 5\%; keyword stuffing and negation never exceed the design level; no injection probe exceeds the design level \\ \cline{5-6}
+ &  &  &  & 4. Check consistency, format, and generation & Krippendorff alpha $\geq$ 0.80 over three runs; $\geq$ 99\% of quotes are substrings; $\geq$ 99\% valid output after one retry; seeded generation beats unseeded at 5\% (McNemar) and keeps $\geq$ 95\% of needed facts \\ \hline
 \end{longtable}
 }
 
@@ -2992,7 +2992,7 @@ TC-L-ST-02 & App feedback: new, handled & Explorer, system admin & Feedback with
 \hline
 \textbf{ID} & \textbf{Description} & \textbf{Precondition} & \textbf{Test data} & \textbf{Step} & \textbf{Expected result} \\ \hline
 \endhead
-TC-L-UC-01 & UC-E17, E20 rate an occupation and give app feedback & Explorer finished every level of an occupation & Main flow: open the rating screen → score 5 criteria → send → view the aggregate; error flow: occupation not finished, already rated, below the threshold & 1. Open the rating screen, score 5 criteria, submit, and view the aggregate & As TC-L-DT-03 and TC-L-BVA-01 in the interface \\ \cline{5-6}
+TC-L-UC-01 & UC-E17, E20 rate an occupation and give app feedback & Explorer finished every level of an occupation & Main flow: open the rating screen $\rightarrow$ score 5 criteria $\rightarrow$ send $\rightarrow$ view the aggregate; error flow: occupation not finished, already rated, below the threshold & 1. Open the rating screen, score 5 criteria, submit, and view the aggregate & As TC-L-DT-03 and TC-L-BVA-01 in the interface \\ \cline{5-6}
  &  &  &  & 2. Try with the occupation unfinished, already rated, or below the threshold & Each refused or hidden; the label ``sample data'' shows in hybrid mode where the backend is missing \\ \hline
 \end{longtable}
 }

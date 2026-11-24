@@ -1,5 +1,4 @@
 @startuml SD-08_ContentAdmin_PublishScenario
-title SD-08 · Content Admin — publish scenario
 
 actor "Content Admin" as CA
 participant "Staff app" as App

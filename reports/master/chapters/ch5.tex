@@ -619,20 +619,20 @@ Design points still open. Drawing the classes from the entity--relationship diag
 
 \subsubsection{Database Design}
 
-The operational database is PostgreSQL, the system of record of Section 5.3.1. Redis and the object store hold nothing that cannot be rebuilt from it. The data model is one entity--relationship model in Chen notation, kept as a single source file and printed as six groups of views, ERD-01 to ERD-06, each split into two to five small diagrams (twenty-\allowbreak{}four in all), drawn from the data requirements of Section 4.3.4 and the game design research. It has 113 entities, 236 relationships, and 27 derived attributes, in twelve groups, A to L. Scenario content is modelled at authoring time as entities (group E: facts, nodes, options, reference answers), and publication copies the approved content into one immutable entity, \texttt{SCENARIO\_\allowbreak{}RELEASE}, whose \texttt{content} attribute is what explorers play. A weak entity is drawn with its owner, so a run event, which has meaning only inside its run, is identified by the run and its sequence number.
+The operational database is PostgreSQL, the system of record of Section 5.3.1. Redis and the object store hold nothing that cannot be rebuilt from it. The data model is one entity--relationship model, kept as a single source file and printed as six groups of views, ERD-01 to ERD-06, each split into two to five small diagrams (twenty-\allowbreak{}four in all), drawn from the data requirements of Section 4.3.4 and the game design research. It has 113 entities, 236 relationships, and 27 derived attributes, in twelve groups, A to L. Scenario content is modelled at authoring time as entities (group E: facts, nodes, options, reference answers), and publication copies the approved content into one immutable entity, \texttt{SCENARIO\_\allowbreak{}RELEASE}, whose \texttt{content} attribute is what explorers play. A weak entity is drawn with its owner, so a run event, which has meaning only inside its run, is identified by the run and its sequence number.
 
-The full model is too large to read on one page, so it is split into six views by group, and each view into diagrams of at most eight entities, named ERD-01a, ERD-01b, and so on (the letter follows the order of the diagrams in the group). Each entity is drawn with all its attributes in one view only; in the others it appears as a stub with its key attributes. Each relationship is drawn once, in the view of the group that declares it. The views are generated from \texttt{ERD\_\allowbreak{}JobQuest\_\allowbreak{}Chen.\allowbreak{}puml} by \texttt{design/\allowbreak{}compact/\allowbreak{}gen\_\allowbreak{}erd.\allowbreak{}py}, and that file stays the source of truth. ERD-03a, with the scenario, and ERD-06c, with the runs, are printed here; the other twenty-two diagrams are in Appendix 2.
+The full model is too large to read on one page, so it is split into six views by group, and each view into diagrams of at most eight entities, named ERD-01a, ERD-01b, and so on (the letter follows the order of the diagrams in the group). Each entity is drawn with all its attributes in one view only; in the others it appears as a stub with its key attributes. Each relationship is drawn once, in the view of the group that declares it. The views are generated from the single source file of the model by \texttt{design/\allowbreak{}compact/\allowbreak{}gen\_\allowbreak{}erd.\allowbreak{}py}, and that file stays the source of truth. ERD-03a, with the scenario, and ERD-06c, with the runs, are printed here; the other twenty-two diagrams are in Appendix 2.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/ERD-03a_Scenario.png}
-\caption{Entity--relationship diagram, Chen notation. ERD-03a: scenario}
+\caption{Entity--relationship diagram ERD-03a: Scenario}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/ERD-06c_Runs.png}
-\caption{Entity--relationship diagram, Chen notation. ERD-06c: runs}
+\caption{Entity--relationship diagram ERD-06c: Runs}
 \end{figure}
 
 The table below gives each group and the view that shows it.
@@ -956,7 +956,7 @@ A formal penetration test and an independent review of the prompts have not been
 
 \subsection{Summary}
 
-This chapter turned the requirements of Chapter 4 into a design. The analysis (Section 5.1) modelled the business processes as activity diagrams and the system as use cases for the 43 functional requirements, with tabular descriptions of the key ones, and the lifecycle of a scenario as a state machine. The technology solution (Section 5.2) chose each technology against criteria and compared it with the alternatives, for the frontend, the backend, and the AI models. The design (Section 5.3) followed the order of the template: the architecture, from drivers to components and deployment (5.3.1); the sitemaps (5.3.2); the sequence diagrams, now twelve (5.3.3); the class diagrams for the domain and for the nineteen modules (5.3.4); the database as a Chen diagram of twelve groups (5.3.5); the AI model design (5.3.6); the interface, 109 operations in fifteen modules (5.3.7); the screens and the design system (5.3.8); a test plan of 187 cases (5.3.9); and the policies and security controls for data and third parties (5.3.10).
+This chapter turned the requirements of Chapter 4 into a design. The analysis (Section 5.1) modelled the business processes as activity diagrams and the system as use cases for the 43 functional requirements, with tabular descriptions of the key ones, and the lifecycle of a scenario as a state machine. The technology solution (Section 5.2) chose each technology against criteria and compared it with the alternatives, for the frontend, the backend, and the AI models. The design (Section 5.3) followed the order of the template: the architecture, from drivers to components and deployment (5.3.1); the sitemaps (5.3.2); the sequence diagrams, now twelve (5.3.3); the class diagrams for the domain and for the nineteen modules (5.3.4); the database as an entity--relationship model of twelve groups (5.3.5); the AI model design (5.3.6); the interface, 109 operations in fifteen modules (5.3.7); the screens and the design system (5.3.8); a test plan of 187 cases (5.3.9); and the policies and security controls for data and third parties (5.3.10).
 
 The table shows where each aspect of a software system is treated, so that a reader can see what the design covers.
 

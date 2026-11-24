@@ -1,5 +1,4 @@
 @startuml UI-01_ExplorerScreenFlow
-title UI-01 · Explorer app — screen flow of the core journey (routes of apps/web)
 skinparam state {
   BackgroundColor #142b52
   FontColor white

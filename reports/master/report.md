@@ -1062,13 +1062,13 @@ Design points still open. Drawing the classes from the entity–relationship dia
 
 ### 5.3.5 Database Design
 
-The operational database is PostgreSQL, the system of record of Section 5.3.1. Redis and the object store hold nothing that cannot be rebuilt from it. The data model is one entity–relationship model in Chen notation, kept as a single source file and printed as six groups of views, ERD-01 to ERD-06, each split into two to five small diagrams (twenty-four in all), drawn from the data requirements of Section 4.3.4 and the game design research. It has 113 entities, 236 relationships, and 27 derived attributes, in twelve groups, A to L. Scenario content is modelled at authoring time as entities (group E: facts, nodes, options, reference answers), and publication copies the approved content into one immutable entity, `SCENARIO_RELEASE`, whose `content` attribute is what explorers play. A weak entity is drawn with its owner, so a run event, which has meaning only inside its run, is identified by the run and its sequence number.
+The operational database is PostgreSQL, the system of record of Section 5.3.1. Redis and the object store hold nothing that cannot be rebuilt from it. The data model is one entity–relationship model, kept as a single source file and printed as six groups of views, ERD-01 to ERD-06, each split into two to five small diagrams (twenty-four in all), drawn from the data requirements of Section 4.3.4 and the game design research. It has 113 entities, 236 relationships, and 27 derived attributes, in twelve groups, A to L. Scenario content is modelled at authoring time as entities (group E: facts, nodes, options, reference answers), and publication copies the approved content into one immutable entity, `SCENARIO_RELEASE`, whose `content` attribute is what explorers play. A weak entity is drawn with its owner, so a run event, which has meaning only inside its run, is identified by the run and its sequence number.
 
-The full model is too large to read on one page, so it is split into six views by group, and each view into diagrams of at most eight entities, named ERD-01a, ERD-01b, and so on (the letter follows the order of the diagrams in the group). Each entity is drawn with all its attributes in one view only; in the others it appears as a stub with its key attributes. Each relationship is drawn once, in the view of the group that declares it. The views are generated from `ERD_JobQuest_Chen.puml` by `design/compact/gen_erd.py`, and that file stays the source of truth. ERD-03a, with the scenario, and ERD-06c, with the runs, are printed here; the other twenty-two diagrams are in Appendix 2.
+The full model is too large to read on one page, so it is split into six views by group, and each view into diagrams of at most eight entities, named ERD-01a, ERD-01b, and so on (the letter follows the order of the diagrams in the group). Each entity is drawn with all its attributes in one view only; in the others it appears as a stub with its key attributes. Each relationship is drawn once, in the view of the group that declares it. The views are generated from the single source file of the model by `design/compact/gen_erd.py`, and that file stays the source of truth. ERD-03a, with the scenario, and ERD-06c, with the runs, are printed here; the other twenty-two diagrams are in Appendix 2.
 
-![Entity–relationship diagram, Chen notation. ERD-03a: scenario.](latex/figures/ERD-03a_Scenario.png)
+![Entity–relationship diagram ERD-03a: Scenario.](latex/figures/ERD-03a_Scenario.png)
 
-![Entity–relationship diagram, Chen notation. ERD-06c: runs.](latex/figures/ERD-06c_Runs.png)
+![Entity–relationship diagram ERD-06c: Runs.](latex/figures/ERD-06c_Runs.png)
 
 
 
@@ -1323,7 +1323,7 @@ A formal penetration test and an independent review of the prompts have not been
 
 ## 5.4 Summary
 
-This chapter turned the requirements of Chapter 4 into a design. The analysis (Section 5.1) modelled the business processes as activity diagrams and the system as use cases for the 43 functional requirements, with tabular descriptions of the key ones, and the lifecycle of a scenario as a state machine. The technology solution (Section 5.2) chose each technology against criteria and compared it with the alternatives, for the frontend, the backend, and the AI models. The design (Section 5.3) followed the order of the template: the architecture, from drivers to components and deployment (5.3.1); the sitemaps (5.3.2); the sequence diagrams, now twelve (5.3.3); the class diagrams for the domain and for the nineteen modules (5.3.4); the database as a Chen diagram of twelve groups (5.3.5); the AI model design (5.3.6); the interface, 109 operations in fifteen modules (5.3.7); the screens and the design system (5.3.8); a test plan of 187 cases (5.3.9); and the policies and security controls for data and third parties (5.3.10).
+This chapter turned the requirements of Chapter 4 into a design. The analysis (Section 5.1) modelled the business processes as activity diagrams and the system as use cases for the 43 functional requirements, with tabular descriptions of the key ones, and the lifecycle of a scenario as a state machine. The technology solution (Section 5.2) chose each technology against criteria and compared it with the alternatives, for the frontend, the backend, and the AI models. The design (Section 5.3) followed the order of the template: the architecture, from drivers to components and deployment (5.3.1); the sitemaps (5.3.2); the sequence diagrams, now twelve (5.3.3); the class diagrams for the domain and for the nineteen modules (5.3.4); the database as an entity–relationship model of twelve groups (5.3.5); the AI model design (5.3.6); the interface, 109 operations in fifteen modules (5.3.7); the screens and the design system (5.3.8); a test plan of 187 cases (5.3.9); and the policies and security controls for data and third parties (5.3.10).
 
 The table shows where each aspect of a software system is treated, so that a reader can see what the design covers.
 
@@ -3209,49 +3209,49 @@ Domain classes.
 
 Entity–relationship views.
 
-![Entity–relationship diagram, Chen notation. ERD-01a: identity and assignment.](latex/figures/ERD-01a_Identity.png)
+![Entity–relationship diagram ERD-01a: Identity and assignment.](latex/figures/ERD-01a_Identity.png)
 
-![Entity–relationship diagram, Chen notation. ERD-01b: grading quality and feedback.](latex/figures/ERD-01b_QualityAndFeedback.png){landscape}
+![Entity–relationship diagram ERD-01b: Grading quality and feedback.](latex/figures/ERD-01b_QualityAndFeedback.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-01c: aI operations.](latex/figures/ERD-01c_AiOperations.png){landscape}
+![Entity–relationship diagram ERD-01c: AI operations.](latex/figures/ERD-01c_AiOperations.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-02a: occupations and interest regions.](latex/figures/ERD-02a_Occupations.png){landscape}
+![Entity–relationship diagram ERD-02a: Occupations and interest regions.](latex/figures/ERD-02a_Occupations.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-02b: occupation levels and tasks.](latex/figures/ERD-02b_LevelsAndTasks.png){landscape}
+![Entity–relationship diagram ERD-02b: Occupation levels and tasks.](latex/figures/ERD-02b_LevelsAndTasks.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-02c: work environments.](latex/figures/ERD-02c_WorkEnvironments.png){landscape}
+![Entity–relationship diagram ERD-02c: Work environments.](latex/figures/ERD-02c_WorkEnvironments.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-02d: reference data and keywords.](latex/figures/ERD-02d_ReferenceAndKeywords.png){landscape}
+![Entity–relationship diagram ERD-02d: Reference data and keywords.](latex/figures/ERD-02d_ReferenceAndKeywords.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-02e: soft skills.](latex/figures/ERD-02e_SoftSkills.png){landscape}
+![Entity–relationship diagram ERD-02e: Soft skills.](latex/figures/ERD-02e_SoftSkills.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-03b: level pack and scenario slots.](latex/figures/ERD-03b_PackAndSlots.png)
+![Entity–relationship diagram ERD-03b: Level pack and scenario slots.](latex/figures/ERD-03b_PackAndSlots.png)
 
-![Entity–relationship diagram, Chen notation. ERD-03c: scenario facts and actions.](latex/figures/ERD-03c_FactsAndActions.png)
+![Entity–relationship diagram ERD-03c: Scenario facts and actions.](latex/figures/ERD-03c_FactsAndActions.png)
 
-![Entity–relationship diagram, Chen notation. ERD-03d: scenario nodes and options.](latex/figures/ERD-03d_Nodes.png){landscape}
+![Entity–relationship diagram ERD-03d: Scenario nodes and options.](latex/figures/ERD-03d_Nodes.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-03e: review probes and reference answers.](latex/figures/ERD-03e_ProbesAndAnswers.png){landscape}
+![Entity–relationship diagram ERD-03e: Review probes and reference answers.](latex/figures/ERD-03e_ProbesAndAnswers.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-04a: interview and AI drafting.](latex/figures/ERD-04a_InterviewAndDrafting.png){landscape}
+![Entity–relationship diagram ERD-04a: Interview and AI drafting.](latex/figures/ERD-04a_InterviewAndDrafting.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-04b: review and lifecycle log.](latex/figures/ERD-04b_ReviewAndLifecycle.png){landscape}
+![Entity–relationship diagram ERD-04b: Review and lifecycle log.](latex/figures/ERD-04b_ReviewAndLifecycle.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-04c: presentation, play-test and release.](latex/figures/ERD-04c_PresentationAndRelease.png){landscape}
+![Entity–relationship diagram ERD-04c: Presentation, play-test and release.](latex/figures/ERD-04c_PresentationAndRelease.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-05a: Tarot NPC cards.](latex/figures/ERD-05a_NpcCards.png)
+![Entity–relationship diagram ERD-05a: Tarot NPC cards.](latex/figures/ERD-05a_NpcCards.png)
 
-![Entity–relationship diagram, Chen notation. ERD-05b: nPC chapters, outfits and side quests.](latex/figures/ERD-05b_NpcChaptersAndSideQuests.png)
+![Entity–relationship diagram ERD-05b: NPC chapters, outfits and side quests.](latex/figures/ERD-05b_NpcChaptersAndSideQuests.png)
 
-![Entity–relationship diagram, Chen notation. ERD-05c: economy and inventory.](latex/figures/ERD-05c_Economy.png){landscape}
+![Entity–relationship diagram ERD-05c: Economy and inventory.](latex/figures/ERD-05c_Economy.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-05d: health, habits and life milestones.](latex/figures/ERD-05d_HealthAndLife.png){landscape}
+![Entity–relationship diagram ERD-05d: Health, habits and life milestones.](latex/figures/ERD-05d_HealthAndLife.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-06a: explorer profile.](latex/figures/ERD-06a_ExplorerProfile.png){landscape}
+![Entity–relationship diagram ERD-06a: Explorer profile.](latex/figures/ERD-06a_ExplorerProfile.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-06b: progression.](latex/figures/ERD-06b_Progression.png){landscape}
+![Entity–relationship diagram ERD-06b: Progression.](latex/figures/ERD-06b_Progression.png){landscape}
 
-![Entity–relationship diagram, Chen notation. ERD-06d: evidence and grading.](latex/figures/ERD-06d_Grading.png){landscape}
+![Entity–relationship diagram ERD-06d: Evidence and grading.](latex/figures/ERD-06d_Grading.png){landscape}
 
 Repository packages.
 

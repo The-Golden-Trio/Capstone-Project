@@ -1,5 +1,4 @@
 @startuml SD-11_Explorer_RateAndFeedback
-title SD-11 · Explorer — rate an occupation and send app feedback; administrator reviews
 
 actor Explorer
 actor "System Admin" as Adm

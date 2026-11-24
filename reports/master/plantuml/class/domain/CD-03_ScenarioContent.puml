@@ -1,5 +1,4 @@
 @startuml CD-03_ScenarioContent
-title CD-03 · Domain model · Level pack and scenario content\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections D, E); the ERD is unchanged</size>
 hide empty members
 skinparam classAttributeIconSize 0
 skinparam linetype polyline
@@ -314,7 +313,7 @@ ReferenceAnswer "0..*" -- "0..*" SoftSkillItem : REF_GRADE
 (ReferenceAnswer, SoftSkillItem) .. RefGrade
 note right of Check : {xor} a check is on an artefact or on a node\n(CHECKS_ON_ARTEFACT, CHECKS_ON_NODE)
 note bottom of Scenario : { task.level = scenario.level }
-note bottom of Node : {id = (scenario, option)}  identified by several owners
+note bottom of Node : {id = (option, scenario)}  identified by several owners
 note bottom of Scenario : «pending A28» outcomes: Seed scenario "chua chot"
 legend bottom
   | Notation | Meaning |

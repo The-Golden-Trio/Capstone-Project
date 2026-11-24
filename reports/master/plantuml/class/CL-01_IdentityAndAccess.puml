@@ -1,5 +1,4 @@
 @startuml CL-01_IdentityAndAccess
-title CL-01 · NestJS modules — Identity and access
 hide empty members
 skinparam classAttributeIconSize 0
 left to right direction

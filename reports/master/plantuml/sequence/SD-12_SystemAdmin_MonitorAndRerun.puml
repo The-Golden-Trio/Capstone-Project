@@ -1,5 +1,4 @@
 @startuml SD-12_SystemAdmin_MonitorAndRerun
-title SD-12 · System Admin — monitor usage, cost, and errors; re-run a failed AI job
 
 actor "System Admin" as Adm
 participant "Staff app" as App

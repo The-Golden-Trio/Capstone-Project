@@ -1,6 +1,5 @@
 @startuml UC-00_JobQuest
 left to right direction
-title UC-00 · JobQuest use cases
 
 actor "Explorer" as EX
 actor "Domain Expert" as DE
