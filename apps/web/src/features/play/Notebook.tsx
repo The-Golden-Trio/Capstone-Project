@@ -122,20 +122,25 @@ export function Notebook({
               : 'Không tìm thấy lời thoại. Thử từ khác hoặc bỏ dấu.'}
           </p>
           <ul className="space-y-2">
-            {hits.map((l) => (
-              <li
-                key={l.seq}
-                className="rounded-xl border-2 border-toon-ink bg-toon-paper p-2.5"
-              >
-                <span className="font-toon text-xs font-extrabold text-toon-ink-soft">
-                  {l.kind === 'player'
-                    ? 'Bạn'
-                    : (run.cast.find((c) => c.slot === l.speaker)?.name ??
-                      'Cảnh')}
-                </span>
-                <p className="font-semibold text-toon-ink">{l.text}</p>
-              </li>
-            ))}
+            {hits.map((l) => {
+              const speaker =
+                l.kind === 'player'
+                  ? 'Bạn'
+                  : run.cast.find((c) => c.slot === l.speaker)?.name;
+              return (
+                <li
+                  key={l.seq}
+                  className="rounded-xl border-2 border-toon-ink bg-toon-paper p-2.5"
+                >
+                  {speaker && (
+                    <span className="font-toon text-xs font-extrabold text-toon-ink-soft">
+                      {speaker}
+                    </span>
+                  )}
+                  <p className="font-semibold text-toon-ink">{l.text}</p>
+                </li>
+              );
+            })}
           </ul>
         </div>
       ) : (
@@ -153,7 +158,7 @@ export function Notebook({
               { key: 'notes', label: 'Ghi chú' },
               {
                 key: 'more',
-                label: 'Thêm',
+                label: 'Lời hứa & tra cứu',
                 count: nb.promises.length || undefined,
               },
             ]}

@@ -7,6 +7,39 @@
   outline: none;
 }
 
+.desktop-dock-wrap {
+  position: relative;
+  flex: none;
+}
+
+.desktop-dock-wrap::before,
+.desktop-dock-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 2px;
+  width: 2.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  z-index: 1;
+}
+
+.desktop-dock-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #f4e3c2 20%, #f4e3c200);
+}
+
+.desktop-dock-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #f4e3c2 20%, #f4e3c200);
+}
+
+.desktop-dock-wrap[data-more-start]::before,
+.desktop-dock-wrap[data-more-end]::after {
+  opacity: 1;
+}
+
 .desktop-dock {
   display: flex;
   flex: none;
@@ -16,6 +49,12 @@
   border-bottom: 2px solid #1e1b18;
   background: #f4e3c2;
   scrollbar-width: thin;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .desktop-dock {
+    scroll-behavior: smooth;
+  }
 }
 
 .desktop-dock button {
@@ -552,6 +591,20 @@
   color: #a6d6ff;
   font-size: clamp(1.1rem, 2vw, 1.55rem);
   font-weight: 700;
+}
+.metric-detail {
+  margin-top: 0.65rem;
+  color: #e9eef5;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+.metric-value + .metric-detail {
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #c6d3e0;
 }
 .metric-tone {
   margin-top: 0.42rem;

@@ -230,7 +230,7 @@ function ActionButton({
             </span>
           )}
         </span>
-        {a.points > 0 && (
+        {a.enabled && a.points > 0 && (
           <span
             className="tabular inline-flex shrink-0 items-center gap-1 text-xs font-extrabold text-toon-ink-soft"
             title={`Mất khoảng ${a.points * minutesPerPoint} phút trong ca`}

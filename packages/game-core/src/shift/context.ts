@@ -256,6 +256,55 @@ export function buildNarrateRequest(
   };
 }
 
+const quoteLabels = (actions: Action[]): string =>
+  actions
+    .slice(0, 2)
+    .map((a) => `“${a.label}”`)
+    .join(' hoặc ');
+
+/** Nói điều kiện `requires` nào đang chặn, suy từ hành động nào bật cờ đó. */
+function unmetReason(
+  ctx: ShiftContext,
+  action: Action,
+  flags: ReadonlySet<string>,
+): string {
+  const setters = (flag: string): Action[] =>
+    ctx.seed.actions.filter(
+      (a) => a.key !== action.key && a.sets.includes(flag),
+    );
+  const requires = action.requires;
+  const missing = requires?.all?.find((flag) => !flags.has(flag));
+  if (missing) {
+    const before = setters(missing);
+    return before.length
+      ? `Cần làm trước: ${quoteLabels(before)}`
+      : 'Chưa đủ điều kiện để làm lúc này';
+  }
+  if (requires?.any?.length && !requires.any.some((flag) => flags.has(flag))) {
+    const before = requires.any.flatMap(setters);
+    return before.length
+      ? `Cần làm trước: ${quoteLabels(before)}`
+      : 'Chưa đủ điều kiện để làm lúc này';
+  }
+  const done = requires?.none?.find((flag) => flags.has(flag));
+  if (done) {
+    const own = action.sets.includes(done);
+    const earlier = own ? [] : setters(done);
+    const redo = ctx.seed.actions.filter(
+      (a) => a.key !== action.key && a.requires?.all?.includes(done),
+    );
+    const said = own
+      ? 'Bạn đã làm việc này rồi'
+      : earlier.length
+        ? `Bạn đã làm ${quoteLabels(earlier)} rồi`
+        : 'Việc này đã có kết quả, không làm lại được';
+    return redo.length
+      ? `${said}. Muốn chỉnh thì dùng ${quoteLabels(redo)}`
+      : said;
+  }
+  return 'Chưa đủ điều kiện để làm lúc này';
+}
+
 /** Một hành động có làm được lúc này không, và vì sao không. */
 export function actionAvailability(
   s: ShiftState,
@@ -273,7 +322,8 @@ export function actionAvailability(
   if (s.ended || s.shiftOver) return no('Ca đã kết thúc');
   if (s.await.kind !== 'phase' && s.await.kind !== 'conversation')
     return no('Đang ở giữa một tình huống');
-  if (!matches(action.requires, flags)) return no('Chưa làm được lúc này');
+  if (!matches(action.requires, flags))
+    return no(unmetReason(ctx, action, flags));
 
   switch (action.kind) {
     case 'talk':

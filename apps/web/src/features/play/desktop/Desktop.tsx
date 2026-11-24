@@ -1,4 +1,5 @@
 import {
+  useEffect,
   useId,
   useLayoutEffect,
   useRef,
@@ -65,6 +66,8 @@ export function Desktop({
 }) {
   const titleId = useId();
   const surface = useRef<HTMLDivElement>(null);
+  const dock = useRef<HTMLElement>(null);
+  const [dockEdges, setDockEdges] = useState({ start: false, end: false });
   const opener = useRef<HTMLElement | null>(null);
   const active = windows[windows.length - 1]?.id;
   const modal = active !== undefined;
@@ -94,6 +97,33 @@ export function Desktop({
     const frame = requestAnimationFrame(() => target.focus());
     return () => cancelAnimationFrame(frame);
   }, [active]);
+
+  const hasDock = documents.length > 0;
+  useEffect(() => {
+    const el = dock.current;
+    if (!el) return;
+    const update = () => {
+      const start = el.scrollLeft > 1;
+      const end = el.scrollLeft + el.clientWidth < el.scrollWidth - 1;
+      setDockEdges((prev) =>
+        prev.start === start && prev.end === end ? prev : { start, end },
+      );
+    };
+    update();
+    el.addEventListener('scroll', update, { passive: true });
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => {
+      el.removeEventListener('scroll', update);
+      observer.disconnect();
+    };
+  }, [hasDock, documents.length]);
+
+  useEffect(() => {
+    dock.current
+      ?.querySelector('[aria-pressed="true"]')
+      ?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }, [active, documents.length]);
 
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (!active || event.defaultPrevented) return;
@@ -140,26 +170,32 @@ export function Desktop({
       aria-labelledby={modal ? titleId : undefined}
       onKeyDown={onKeyDown}
     >
-      {!!documents.length && (
-        <nav aria-label="Tài liệu đã mở" className="desktop-dock">
-          {documents.map((doc) => {
-            const Icon = ICONS[doc.type as keyof typeof ICONS] ?? FileText;
-            const open = windows.some((entry) => entry.id === doc.id);
-            return (
-              <button
-                key={doc.id}
-                type="button"
-                aria-pressed={active === doc.id}
-                title={doc.title}
-                data-open={open}
-                onClick={() => onOpen(doc.id)}
-              >
-                <Icon size={16} aria-hidden />
-                <span>{doc.title}</span>
-              </button>
-            );
-          })}
-        </nav>
+      {hasDock && (
+        <div
+          className="desktop-dock-wrap"
+          data-more-start={dockEdges.start || undefined}
+          data-more-end={dockEdges.end || undefined}
+        >
+          <nav ref={dock} aria-label="Tài liệu đã mở" className="desktop-dock">
+            {documents.map((doc) => {
+              const Icon = ICONS[doc.type as keyof typeof ICONS] ?? FileText;
+              const open = windows.some((entry) => entry.id === doc.id);
+              return (
+                <button
+                  key={doc.id}
+                  type="button"
+                  aria-pressed={active === doc.id}
+                  title={doc.title}
+                  data-open={open}
+                  onClick={() => onOpen(doc.id)}
+                >
+                  <Icon size={16} aria-hidden />
+                  <span>{doc.title}</span>
+                </button>
+              );
+            })}
+          </nav>
+        </div>
       )}
       <div className="desktop-stage">
         <div

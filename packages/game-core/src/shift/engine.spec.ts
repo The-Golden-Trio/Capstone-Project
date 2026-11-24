@@ -640,6 +640,35 @@ describe('sceneView', () => {
   });
 });
 
+describe('lý do hành động bị khoá', () => {
+  const reasons = (d: Driver) =>
+    Object.fromEntries(
+      sceneView(d.state, ctx).actions.map((a) => [a.key, a.reason]),
+    );
+
+  it('nói việc cần làm trước, lấy từ hành động bật cờ đó', () => {
+    const r = reasons(new Driver().open());
+    expect(r.rewrite_patch).toBe('Cần làm trước: “Viết bản vá”');
+    expect(r.deploy_prod_action).toBe('Cần làm trước: “Chạy thử trên staging”');
+    expect(r.xuat_file_action).toBe('Cần làm trước: “Mở Wiki kỹ thuật”');
+  });
+
+  it('việc đã làm rồi thì nói đã làm và chỉ sang hành động sửa lại', () => {
+    const d = new Driver().open().writePatch();
+    expect(reasons(d).write_patch).toBe(
+      'Bạn đã làm việc này rồi. Muốn chỉnh thì dùng “Sửa lại bản vá”',
+    );
+  });
+
+  it('việc đã làm mà không có hành động thay thế thì chỉ nói đã làm', () => {
+    const d = new Driver()
+      .open()
+      .action('open_wiki')
+      .action('xuat_file_action');
+    expect(reasons(d).xuat_file_action).toBe('Bạn đã làm việc này rồi');
+  });
+});
+
 describe('pendingRequest', () => {
   it('dựng lại đúng yêu cầu AI đang chờ từ trạng thái đã fold', async () => {
     const { pendingRequest } = await import('./engine.js');

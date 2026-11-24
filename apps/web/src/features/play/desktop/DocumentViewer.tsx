@@ -226,6 +226,17 @@ function DataTable({
   );
 }
 
+const FIGURE_MAX = 14;
+const FIGURE_WITH_NOTE = new RegExp(`^(.{1,${FIGURE_MAX}}?)\\s*\\((.+)\\)$`);
+
+/** A short value is a KPI figure; a sentence stays body text. "18–26% (cao nhất…)" splits at the parenthesis. */
+function splitMetricValue(value: string): { figure?: string; detail?: string } {
+  const text = value.trim();
+  const withNote = text.match(FIGURE_WITH_NOTE);
+  if (withNote) return { figure: withNote[1], detail: withNote[2] };
+  return text.length <= FIGURE_MAX ? { figure: text } : { detail: text };
+}
+
 function Dashboard({ view }: { view: Extract<View, { type: 'dashboard' }> }) {
   const tones = { ok: 'Bình thường', warn: 'Cần theo dõi', bad: 'Cảnh báo' };
   return (
@@ -240,7 +251,15 @@ function Dashboard({ view }: { view: Extract<View, { type: 'dashboard' }> }) {
         {view.metrics.map((metric, i) => (
           <div key={i} className="dashboard-metric" data-tone={metric.tone}>
             <dt>{metric.label}</dt>
-            <dd className="metric-value">{metric.value}</dd>
+            {(() => {
+              const { figure, detail } = splitMetricValue(metric.value);
+              return (
+                <>
+                  {figure && <dd className="metric-value">{figure}</dd>}
+                  {detail && <dd className="metric-detail">{detail}</dd>}
+                </>
+              );
+            })()}
             {metric.tone && (
               <dd className="metric-tone">{tones[metric.tone]}</dd>
             )}

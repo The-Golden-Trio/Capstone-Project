@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { shift } from '@datn/game-core';
 import {
   ArrowLeft,
+  BellRing,
   BookOpen,
   ChevronDown,
   Clock3,
@@ -120,6 +122,7 @@ export function Hud({
           </span>
         </div>
       </div>
+      {scene && <PromiseChips scene={scene} />}
       {/* Keep the full objective reachable after the intro is dismissed. */}
       <div className="flex min-w-0 items-start gap-1.5 px-3 pb-2 sm:hidden">
         <details className="min-w-0 flex-1">
@@ -152,5 +155,76 @@ export function Hud({
         </span>
       </div>
     </header>
+  );
+}
+
+type PromiseState = 'open' | 'due' | 'late';
+
+const PROMISE_STYLE: Record<PromiseState, string> = {
+  open: 'bg-toon-sky',
+  due: 'bg-toon-mustard',
+  late: 'bg-toon-coral',
+};
+
+/** Promise labels from the engine read "Gọi chị Linh lúc 11:30"; event promises have no time. */
+function promiseChip(label: string): { time?: string; what: string } {
+  const timed = label.match(/^(.*) lúc (\d{1,2}:\d{2})$/);
+  const text = timed ? timed[1] : label;
+  return {
+    time: timed?.[2],
+    what: text.charAt(0).toLowerCase() + text.slice(1),
+  };
+}
+
+function promiseState(
+  status: string,
+  time: string | undefined,
+  clock: SceneView['clock'],
+): { state: PromiseState; note?: string } {
+  if (status === 'late') return { state: 'late', note: 'trễ hẹn' };
+  if (!time) return { state: 'open' };
+  const now = shift.toMinutes(clock.time);
+  const due = shift.toMinutes(time);
+  if (now >= due) return { state: 'due', note: 'tới giờ' };
+  if (now >= due - shift.PROMISE_WINDOW.before * clock.minutesPerPoint)
+    return { state: 'due', note: 'sắp tới giờ' };
+  return { state: 'open' };
+}
+
+/** Open promises stay visible during play, not only in the notebook. */
+function PromiseChips({ scene }: { scene: SceneView }) {
+  const open = scene.notebook.promises.filter(
+    (p) => p.status === 'open' || p.status === 'late',
+  );
+  if (!open.length) return null;
+  return (
+    <ul
+      aria-label="Lời đã hứa, chưa giữ"
+      className="mx-auto flex max-w-[1600px] flex-wrap gap-1.5 px-3 pb-2 sm:px-5"
+    >
+      {open.map((p) => {
+        const { time, what } = promiseChip(p.label);
+        const { state, note } = promiseState(p.status, time, scene.clock);
+        return (
+          <li
+            key={p.id}
+            title={p.label}
+            data-promise-state={state}
+            className={`inline-flex min-w-0 max-w-full items-center gap-1.5 rounded-full border-2 border-toon-ink px-2.5 py-0.5 text-xs font-bold text-toon-ink ${PROMISE_STYLE[state]}`}
+          >
+            <BellRing
+              size={13}
+              strokeWidth={2.6}
+              aria-hidden
+              className="shrink-0"
+            />
+            <span className="min-w-0 truncate">
+              Hẹn{time ? ` ${time}` : ''} · {what}
+            </span>
+            {note && <span className="shrink-0 font-extrabold">· {note}</span>}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
