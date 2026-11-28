@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { EyeOff, LogOut, ShieldCheck, TriangleAlert } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   ToonButton,
@@ -152,123 +153,136 @@ function SettingsForm({ me }: { me: Me }) {
           </ToonButton>
         </form>
       </PaperCard>
-      <Foldout title="Bảo mật">
-        <p className="mb-5 text-sm text-toon-ink-soft">
-          Google{' '}
-          <ToonBadge tone={me.hasGoogle ? 'mint' : 'paper'}>
-            {me.hasGoogle ? 'Đã liên kết' : 'Chưa liên kết'}
-          </ToonBadge>
-        </p>
-        <form className="space-y-4" onSubmit={changePassword}>
-          <ToonField
-            label="Mật khẩu hiện tại"
-            hint={
-              me.hasGoogle
-                ? 'Nếu chỉ đăng nhập bằng Google, có thể để trống.'
-                : undefined
-            }
+      {/* Bốn phần còn lại là bốn dòng gập trong một thẻ, mỗi dòng một ký hiệu. */}
+      <PaperCard className="px-4 py-2 sm:px-6">
+        <div className="toon-rows">
+          <Foldout title="Bảo mật" icon={<ShieldCheck size={18} />}>
+            <p className="mb-5 text-sm text-toon-ink-soft">
+              Google{' '}
+              <ToonBadge tone={me.hasGoogle ? 'mint' : 'paper'}>
+                {me.hasGoogle ? 'Đã liên kết' : 'Chưa liên kết'}
+              </ToonBadge>
+            </p>
+            <form className="space-y-4" onSubmit={changePassword}>
+              <ToonField
+                label="Mật khẩu hiện tại"
+                hint={
+                  me.hasGoogle
+                    ? 'Nếu chỉ đăng nhập bằng Google, có thể để trống.'
+                    : undefined
+                }
+              >
+                <ToonPassword
+                  autoComplete="current-password"
+                  value={passwords.current}
+                  onChange={(event) =>
+                    setPasswords({ ...passwords, current: event.target.value })
+                  }
+                />
+              </ToonField>
+              <ToonField label="Mật khẩu mới" hint="Ít nhất 8 ký tự.">
+                <ToonPassword
+                  required
+                  minLength={8}
+                  autoComplete="new-password"
+                  value={passwords.next}
+                  onChange={(event) =>
+                    setPasswords({ ...passwords, next: event.target.value })
+                  }
+                />
+              </ToonField>
+              <ToonField label="Nhập lại mật khẩu mới">
+                <ToonPassword
+                  required
+                  autoComplete="new-password"
+                  value={passwords.confirm}
+                  onChange={(event) =>
+                    setPasswords({ ...passwords, confirm: event.target.value })
+                  }
+                />
+              </ToonField>
+              {passwordError && <Notice tone="danger">{passwordError}</Notice>}
+              {change.isError && (
+                <Notice tone="danger">{errorText(change.error)}</Notice>
+              )}
+              <ToonButton
+                type="submit"
+                variant="secondary"
+                loading={change.isPending}
+              >
+                Đổi mật khẩu
+              </ToonButton>
+            </form>
+          </Foldout>
+          <Foldout title="Quyền riêng tư" icon={<EyeOff size={18} />}>
+            <p className="mb-4 text-sm text-toon-ink-soft">
+              Hành trang chỉ dành cho bạn xem.
+            </p>
+            <ul className="mb-4 space-y-3 text-sm text-toon-ink-soft">
+              <li>
+                Thông tin tài khoản để đăng nhập; ngày sinh để xác định chòm sao
+                và xử lý đồng ý theo độ tuổi.
+              </li>
+              <li>
+                Lựa chọn và lịch sử ca làm để lưu tiến độ, điểm kỹ năng và giúp
+                bạn xem lại điều đã làm.
+              </li>
+              <li>
+                <ReadMore text="18 thẻ Get to know me để phác điểm xuất phát và vùng nghề có thể thử. Mục tiêu, sở thích và phần kể thêm chỉ để bạn tự nhìn lại và để nhân vật động viên khi chơi, không dùng để gợi ý nghề. Bạn có thể xoá phần kể về bạn." />
+              </li>
+            </ul>
+            <Link
+              to="/profile?tab=nhat-ky#quyen-rieng-tu"
+              className="text-sm underline underline-offset-4"
+            >
+              Xoá phần kể về bạn
+            </Link>
+            <Notice tone="ai" className="mt-5">
+              <ReadMore text="AI dẫn chuyện và chấm câu trả lời trong ca làm. Chữ tự do và mục tiêu có thể được gửi tới nhà cung cấp model để tạo nhận xét. Kết quả chỉ là thông tin tham khảo từ việc chơi." />
+            </Notice>
+          </Foldout>
+          <Foldout
+            title="Vùng nguy hiểm"
+            defaultOpen={false}
+            icon={<TriangleAlert size={18} className="text-toon-coral" />}
           >
-            <ToonPassword
-              autoComplete="current-password"
-              value={passwords.current}
-              onChange={(event) =>
-                setPasswords({ ...passwords, current: event.target.value })
-              }
-            />
-          </ToonField>
-          <ToonField label="Mật khẩu mới" hint="Ít nhất 8 ký tự.">
-            <ToonPassword
-              required
-              minLength={8}
-              autoComplete="new-password"
-              value={passwords.next}
-              onChange={(event) =>
-                setPasswords({ ...passwords, next: event.target.value })
-              }
-            />
-          </ToonField>
-          <ToonField label="Nhập lại mật khẩu mới">
-            <ToonPassword
-              required
-              autoComplete="new-password"
-              value={passwords.confirm}
-              onChange={(event) =>
-                setPasswords({ ...passwords, confirm: event.target.value })
-              }
-            />
-          </ToonField>
-          {passwordError && <Notice tone="danger">{passwordError}</Notice>}
-          {change.isError && (
-            <Notice tone="danger">{errorText(change.error)}</Notice>
-          )}
-          <ToonButton
-            type="submit"
-            variant="secondary"
-            loading={change.isPending}
+            <p className="mb-4 text-sm text-toon-ink-soft">
+              Xoá tài khoản là thao tác không thể hoàn tác.
+            </p>
+            <ToonButton
+              variant="danger"
+              onClick={() => {
+                setDeleting(true);
+                setConfirmation('');
+                setDeleteError('');
+              }}
+            >
+              Xoá tài khoản
+            </ToonButton>
+          </Foldout>
+          <Foldout
+            title="Đăng xuất"
+            defaultOpen={false}
+            icon={<LogOut size={18} />}
           >
-            Đổi mật khẩu
-          </ToonButton>
-        </form>
-      </Foldout>
-      <Foldout title="Quyền riêng tư">
-        <p className="mb-4 text-sm text-toon-ink-soft">
-          Hành trang chỉ dành cho bạn xem.
-        </p>
-        <ul className="mb-4 space-y-3 text-sm text-toon-ink-soft">
-          <li>
-            Thông tin tài khoản để đăng nhập; ngày sinh để xác định chòm sao và
-            xử lý đồng ý theo độ tuổi.
-          </li>
-          <li>
-            Lựa chọn và lịch sử ca làm để lưu tiến độ, điểm kỹ năng và giúp bạn
-            xem lại điều đã làm.
-          </li>
-          <li>
-            <ReadMore text="18 thẻ Get to know me để phác điểm xuất phát và vùng nghề có thể thử. Mục tiêu, sở thích và phần kể thêm chỉ để bạn tự nhìn lại và để nhân vật động viên khi chơi, không dùng để gợi ý nghề. Bạn có thể xoá phần kể về bạn." />
-          </li>
-        </ul>
-        <Link
-          to="/profile?tab=nhat-ky#quyen-rieng-tu"
-          className="text-sm underline underline-offset-4"
-        >
-          Xoá phần kể về bạn
-        </Link>
-        <Notice tone="ai" className="mt-5">
-          <ReadMore text="AI dẫn chuyện và chấm câu trả lời trong ca làm. Chữ tự do và mục tiêu có thể được gửi tới nhà cung cấp model để tạo nhận xét. Kết quả chỉ là thông tin tham khảo từ việc chơi." />
-        </Notice>
-      </Foldout>
-      <Foldout title="Vùng nguy hiểm">
-        <p className="mb-4 text-sm text-toon-ink-soft">
-          Xoá tài khoản là thao tác không thể hoàn tác.
-        </p>
-        <ToonButton
-          variant="danger"
-          onClick={() => {
-            setDeleting(true);
-            setConfirmation('');
-            setDeleteError('');
-          }}
-        >
-          Xoá tài khoản
-        </ToonButton>
-      </Foldout>
-      <Foldout title="Đăng xuất">
-        <p className="mb-4 text-sm text-toon-ink-soft">
-          Bạn có thể quay lại để tiếp tục hành trình.
-        </p>
-        {signOut.isError && (
-          <Notice tone="danger">{errorText(signOut.error)}</Notice>
-        )}
-        <ToonButton
-          variant="ghost"
-          loading={signOut.isPending}
-          onClick={() =>
-            signOut.mutate(undefined, { onSettled: () => navigate('/') })
-          }
-        >
-          Đăng xuất
-        </ToonButton>
-      </Foldout>
+            <p className="mb-4 text-sm text-toon-ink-soft">
+              Bạn có thể quay lại để tiếp tục hành trình.
+            </p>
+            {signOut.isError && (
+              <Notice tone="danger">{errorText(signOut.error)}</Notice>
+            )}
+            <ToonButton
+              variant="ghost"
+              loading={signOut.isPending}
+              onClick={() =>
+                signOut.mutate(undefined, { onSettled: () => navigate('/') })
+              }
+            >
+              Đăng xuất
+            </ToonButton>
+          </Foldout>
+        </div>
+      </PaperCard>
       <ConfirmDialog
         theme="toon"
         open={deleting}

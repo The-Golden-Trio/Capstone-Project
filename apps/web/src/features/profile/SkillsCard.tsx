@@ -1,7 +1,8 @@
+import { TrendingDown, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { profile } from '@datn/game-core';
-import { ToonProgress, cn } from '@datn/ui';
+import { ToonDisclosure, ToonProgress, cn } from '@datn/ui';
 import { Notice, PaperCard, CardHeading } from './ProfileKit';
 import { SkillRadar } from './ProfileArt';
 
@@ -133,38 +134,54 @@ export function SkillsCard({
       </div>
       <section
         aria-label="Tóm tắt lịch sử kỹ năng"
-        className="mt-5 rounded-xl border-2 border-toon-ink bg-toon-sky p-4 text-sm"
+        className="toon-inset mt-6 p-4 text-sm"
       >
         <h3 className="font-toon text-lg font-bold">
           Sau {summary.count} ca có lịch sử điểm
         </h3>
-        <p className="mt-2">
-          <strong>Đang mạnh lên:</strong>{' '}
-          {summary.positive
-            ? `${profile.softSkillGroup(summary.positive.id).short} được cộng ở ${summary.positive.count}/${summary.count} ca.`
-            : 'Chưa có nhóm đủ lịch sử để tóm tắt điểm cộng.'}
+        <p className="mt-2 flex items-start gap-2">
+          <TrendingUp
+            size={16}
+            strokeWidth={2.6}
+            aria-hidden
+            className="mt-0.5 shrink-0 text-toon-mint-deep"
+          />
+          <span>
+            <strong>Đang mạnh lên:</strong>{' '}
+            {summary.positive
+              ? `${profile.softSkillGroup(summary.positive.id).short} được cộng ở ${summary.positive.count}/${summary.count} ca.`
+              : 'Chưa có nhóm đủ lịch sử để tóm tắt điểm cộng.'}
+          </span>
         </p>
-        <p className="mt-2">
-          <strong>Còn chững lại:</strong>{' '}
-          {summary.negative ? (
-            <>
-              {profile.softSkillGroup(summary.negative.id).short} bị trừ ở{' '}
-              {summary.negative.runIds.map((id, i) => (
-                <span key={id}>
-                  {i > 0 && ', '}
-                  <Link
-                    to={`/play/${id}/summary`}
-                    className="rounded font-bold underline focus-visible:shadow-toon-focus"
-                  >
-                    #{timeline.runs.find((run) => run.runId === id)?.index}
-                  </Link>
-                </span>
-              ))}
-              .
-            </>
-          ) : (
-            'Chưa có nhóm đủ lịch sử với ca bị trừ điểm.'
-          )}
+        <p className="mt-2 flex items-start gap-2">
+          <TrendingDown
+            size={16}
+            strokeWidth={2.6}
+            aria-hidden
+            className="mt-0.5 shrink-0 text-toon-coral"
+          />
+          <span>
+            <strong>Còn chững lại:</strong>{' '}
+            {summary.negative ? (
+              <>
+                {profile.softSkillGroup(summary.negative.id).short} bị trừ ở{' '}
+                {summary.negative.runIds.map((id, i) => (
+                  <span key={id}>
+                    {i > 0 && ', '}
+                    <Link
+                      to={`/play/${id}/summary`}
+                      className="rounded font-bold underline focus-visible:shadow-toon-focus"
+                    >
+                      #{timeline.runs.find((run) => run.runId === id)?.index}
+                    </Link>
+                  </span>
+                ))}
+                .
+              </>
+            ) : (
+              'Chưa có nhóm đủ lịch sử với ca bị trừ điểm.'
+            )}
+          </span>
         </p>
         <p className="mt-2 text-xs text-toon-ink-soft">
           Tóm tắt từ lịch sử; mỗi nhóm cần ít nhất{' '}
@@ -177,11 +194,11 @@ export function SkillsCard({
         value={selected ?? undefined}
         onChange={setSelected}
       />
-      <details className="mt-6 rounded-xl border-2 border-toon-ink bg-toon-cream p-4">
-        <summary className="cursor-pointer font-toon font-bold">
-          Dấu vết từ các ca đã chơi
-        </summary>
-        <div className="mt-4 space-y-3">
+      <ToonDisclosure
+        summary="Dấu vết từ các ca đã chơi"
+        className="mt-4 border-t-[1.5px] border-toon-ink/12 pt-2"
+      >
+        <div className="space-y-3">
           {(['positive', 'negative'] as const).map((direction) => {
             const evidence = skillEvidence(record.softSkills, direction);
             return (
@@ -226,7 +243,7 @@ export function SkillsCard({
             );
           })}
         </div>
-      </details>
+      </ToonDisclosure>
       <Notice tone="ai" className="mt-5">
         <p>
           Điểm phản ánh câu trả lời trong tình huống đã chơi, không kết luận về

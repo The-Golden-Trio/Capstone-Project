@@ -20,8 +20,8 @@ it('lưu tên, giai đoạn và kiểm tra xác nhận mật khẩu trước khi
   await waitFor(() => expect(player().me.displayName).toBe('An'));
   expect(player().me.stage).toBe('sinh_vien');
   const security = screen.getByText('Bảo mật', { selector: 'summary' });
-  expect(security.closest('details')?.open).toBe(false);
-  fireEvent.click(security);
+  // Phần bảo mật mở sẵn: không bắt người dùng bấm mới thấy form.
+  expect(security.closest('details')?.open).toBe(true);
   fireEvent.change(screen.getByLabelText('Mật khẩu hiện tại'), {
     target: { value: 'mat-khau-123' },
   });

@@ -79,11 +79,16 @@ export default function ProfilePage() {
       >
         <PlayingCard playing={data.playing} />
         <SkillsCard record={data} sign={sign} />
-        <Foldout title="Mục tiêu của bạn">
-          <GoalsCard record={data} quizDone={me.data.quizDone} />
-        </Foldout>
-        <RiasecCard riasec={data.riasec} />
-        <KeywordsCard record={data} />
+        {/* Ba phần phụ gom vào một thẻ, mỗi phần là một dòng gập. */}
+        <PaperCard className="px-4 py-2 sm:px-6">
+          <div className="toon-rows">
+            <Foldout title="Mục tiêu của bạn">
+              <GoalsCard record={data} quizDone={me.data.quizDone} />
+            </Foldout>
+            <RiasecCard riasec={data.riasec} />
+            <KeywordsCard record={data} />
+          </div>
+        </PaperCard>
       </ToonTabPanel>
       <ToonTabPanel
         idBase="profile"
@@ -146,7 +151,7 @@ function ProfileHeader({
         )}
       </div>
       <div
-        className="min-w-0 rounded-xl border-2 border-toon-ink bg-toon-cream px-3 py-2"
+        className="min-w-0 rounded-[14px] bg-toon-sand/45 px-3 py-2"
         aria-label="Huy hiệu ghim"
       >
         <p className="mb-2 font-toon text-sm font-bold">

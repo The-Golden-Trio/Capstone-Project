@@ -6,6 +6,9 @@
  */
 import {
   forwardRef,
+  memo,
+  startTransition,
+  useLayoutEffect,
   useCallback,
   useEffect,
   useImperativeHandle,
@@ -14,8 +17,17 @@ import {
   useRef,
   useState,
 } from 'react';
-import { InkStar, regionColor, seededRandom } from '@datn/ui';
-import type { GalaxyLayout, PlacedOccupation } from './layout';
+import {
+  InkStar,
+  ToonStatus,
+  regionColor,
+  seededRandom,
+  type ToonStatusKind,
+} from '@datn/ui';
+import type { RegionId } from '../../api/types';
+import type { GalaxyLayout, PlacedGroup, PlacedOccupation } from './layout';
+import { GalaxySpiral, SPIRAL_PIXELS } from './GalaxySpiral';
+import './galaxy.css';
 
 type Detail = 'far' | 'mid' | 'near';
 const detailOf = (k: number): Detail =>
@@ -37,15 +49,51 @@ interface Props {
   highlight: Set<string> | null;
   /** Nghề được gợi ý từ Get to know me. */
   suggested: Set<string>;
+  /** Vùng đang được soi: tinh vân của vùng sáng lên, vùng khác lùi lại. */
+  focusRegion?: RegionId | null;
+  /** Bấm vào tinh vân (chỗ trống trong một vùng) để soi vùng đó. */
+  onRegion?: (id: RegionId) => void;
   className?: string;
 }
 
 export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
-  { layout, selected, onSelect, highlight, suggested, className },
+  {
+    layout,
+    selected,
+    onSelect,
+    highlight,
+    suggested,
+    focusRegion = null,
+    onRegion,
+    className,
+  },
   ref,
 ) {
   const svgRef = useRef<SVGSVGElement>(null);
   const worldRef = useRef<SVGGElement>(null);
+  // Lớp trời phía sau: dịch chậm hơn bản đồ (thị sai) để có chiều sâu.
+  const farRef = useRef<HTMLDivElement>(null);
+  const nearRef = useRef<HTMLDivElement>(null);
+  const bandRef = useRef<HTMLDivElement>(null);
+  const inkRef = useRef<SVGGElement>(null);
+  const spiralRef = useRef<HTMLDivElement>(null);
+  const spiralSize = useRef(2000);
+  const skyRef = useRef<HTMLDivElement>(null);
+  // Thẻ rê chuột giữ state riêng (TipLayer): đổi hành tinh đang rê không
+  // vẽ lại cả bản đồ.
+  const setHover = useRef<HoverSetter>(noop);
+
+  // Tâm và bán kính thiên hà: lõi nằm giữa vòng sáu vùng.
+  const galaxy = useMemo(() => {
+    const rs = layout.regions;
+    const cx = rs.reduce((t, r) => t + r.x, 0) / Math.max(1, rs.length);
+    const cy = rs.reduce((t, r) => t + r.y, 0) / Math.max(1, rs.length);
+    const radius =
+      Math.max(...rs.map((r) => Math.hypot(r.x - cx, r.y - cy) + r.radius)) *
+      1.15;
+    return { cx, cy, radius };
+  }, [layout.regions]);
+  spiralSize.current = galaxy.radius * 2;
   const view = useRef({ x: 0, y: 0, k: 0.4 });
   const [detail, setDetail] = useState<Detail>('far');
   const anim = useRef<number | null>(null);
@@ -74,10 +122,37 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
       'transform',
       `translate(${x} ${y}) scale(${k})`,
     );
-    setDetail((d) => {
-      const next = detailOf(k);
-      return d === next ? d : next;
-    });
+    const spiral = spiralRef.current;
+    if (spiral) {
+      // Canvas thiên hà có độ phân giải cố định: zoom gần thì mờ dần rồi tắt
+      // hẳn, để không lộ ô pixel và không tốn công ghép lớp.
+      const zoomPx = (k * spiralSize.current) / SPIRAL_PIXELS;
+      const fade = Math.max(0, Math.min(1, (2.2 - zoomPx) / 1));
+      spiral.style.opacity = String(fade);
+      spiral.style.visibility = fade === 0 ? 'hidden' : 'visible';
+      if (fade > 0)
+        spiral.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${k})`;
+    }
+    // Sao nền dịch bằng transform (ghép lớp trên GPU), không đổi
+    // background-position (bắt trình duyệt vẽ lại cả màn mỗi khung hình).
+    const wrap = (v: number, tile: number) =>
+      (((v % tile) + tile) % tile) - tile;
+    if (farRef.current)
+      farRef.current.style.transform = `translate3d(${wrap(x * 0.04, 240)}px, ${wrap(y * 0.04, 240)}px, 0)`;
+    if (nearRef.current)
+      nearRef.current.style.transform = `translate3d(${wrap(x * 0.1, 380)}px, ${wrap(y * 0.1, 380)}px, 0)`;
+    if (bandRef.current) {
+      const clamp = (v: number) => Math.max(-90, Math.min(90, v));
+      bandRef.current.style.transform = `translate3d(${clamp(x * 0.03)}px, ${clamp(y * 0.03)}px, 0)`;
+    }
+    inkRef.current?.setAttribute(
+      'transform',
+      `translate(${((((x * 0.16) % 400) + 400) % 400) - 200} ${((((y * 0.16) % 300) + 300) % 300) - 150})`,
+    );
+    // Qua ngưỡng phóng to thì vẽ lại nhãn và 221 hành tinh: cho chạy nền để
+    // không giật khung hình đang zoom.
+    const next = detailOf(k);
+    startTransition(() => setDetail((d) => (d === next ? d : next)));
   }, []);
 
   const size = () => {
@@ -109,23 +184,31 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
     [apply],
   );
 
+  const fitTarget = useCallback(() => {
+    const { w, h } = size();
+    const b = layout.bounds;
+    // Chừa chỗ cho bảng tìm kiếm nổi phía trên và nút phóng to phía dưới.
+    const top = w >= 640 ? 120 : 112;
+    const bottom = 56;
+    const ah = Math.max(120, h - top - bottom);
+    const k = Math.min(w / (b.maxX - b.minX), ah / (b.maxY - b.minY)) * 0.96;
+    return {
+      k,
+      x: w / 2 - ((b.minX + b.maxX) / 2) * k,
+      y: top + ah / 2 - ((b.minY + b.maxY) / 2) * k,
+    };
+  }, [layout]);
+
   const fitView = useCallback(
     (animate = true) => {
-      const { w, h } = size();
-      const b = layout.bounds;
-      const k = Math.min(w / (b.maxX - b.minX), h / (b.maxY - b.minY)) * 0.96;
-      const target = {
-        k,
-        x: w / 2 - ((b.minX + b.maxX) / 2) * k,
-        y: h / 2 - ((b.minY + b.maxY) / 2) * k,
-      };
+      const target = fitTarget();
       if (animate) animateTo(target);
       else {
         view.current = target;
         apply();
       }
     },
-    [layout, animateTo, apply],
+    [fitTarget, animateTo, apply],
   );
 
   const zoomAt = useCallback(
@@ -173,12 +256,40 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
     [fitView, animateTo, layout],
   );
 
-  // Vừa khung lúc đầu và khi đổi kích thước cửa sổ.
+  // Lúc mở: camera bay từ xa vào toàn cảnh. Sau đó chỉ vừa khung lại khi
+  // kích thước thật sự đổi (ResizeObserver cũng gọi một lần lúc bắt đầu).
+  const intro = useRef(true);
   useEffect(() => {
-    fitView(false);
-    const ro = new ResizeObserver(() => fitView(false));
+    const target = fitTarget();
+    const reduce = window.matchMedia?.(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+    if (intro.current && !reduce) {
+      intro.current = false;
+      const { w, h } = size();
+      const k0 = target.k * 0.3;
+      view.current = {
+        k: k0,
+        x: w / 2 - galaxy.cx * k0,
+        y: h / 2 - galaxy.cy * k0,
+      };
+      apply();
+      animateTo(target, 2400);
+    } else {
+      view.current = target;
+      apply();
+    }
+    let last = size();
+    const ro = new ResizeObserver(() => {
+      const now = size();
+      if (Math.abs(now.w - last.w) < 2 && Math.abs(now.h - last.h) < 2) return;
+      last = now;
+      fitView(false);
+    });
     if (svgRef.current) ro.observe(svgRef.current);
     return () => ro.disconnect();
+    // Chỉ chạy lại khi bố cục đổi; galaxy, apply, animateTo cùng nguồn layout.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fitView]);
 
   // Cuộn chuột: cần listener không passive để chặn cuộn trang.
@@ -224,7 +335,34 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
 
   const onPointerMove = (e: React.PointerEvent<SVGSVGElement>) => {
     const prev = pointers.current.get(e.pointerId);
-    if (!prev) return;
+    if (!prev) {
+      // Rê chuột (không kéo): trời nhích theo con trỏ, hành tinh hiện thẻ.
+      const r = svgRef.current?.getBoundingClientRect();
+      if (!r || !r.width || e.pointerType === 'touch') return;
+      const px = e.clientX - r.left;
+      const py = e.clientY - r.top;
+      skyRef.current?.style.setProperty(
+        '--mx',
+        ((px / r.width) * 2 - 1).toFixed(3),
+      );
+      skyRef.current?.style.setProperty(
+        '--my',
+        ((py / r.height) * 2 - 1).toFixed(3),
+      );
+      const code =
+        (e.target as Element)
+          .closest('[data-code]')
+          ?.getAttribute('data-code') ?? null;
+      setHover.current((h) =>
+        !code
+          ? null
+          : h?.code === code && Math.abs(h.x - px) < 6 && Math.abs(h.y - py) < 6
+            ? h
+            : { code, x: px, y: py },
+      );
+      return;
+    }
+    setHover.current(null);
     const next = { x: e.clientX, y: e.clientY };
     pointers.current.set(e.pointerId, next);
     if (pointers.current.size === 2) {
@@ -254,7 +392,22 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
     pointers.current.delete(e.pointerId);
     if (pointers.current.size < 2) gesture.current.pinch = null;
     if (pointers.current.size === 0 && gesture.current.moved < 6) {
-      onSelect(gesture.current.code);
+      const code = gesture.current.code;
+      // Chạm chỗ trống thì đóng thông tin nghề; nếu chưa chọn nghề nào và chỗ
+      // chạm nằm trong tinh vân của một vùng thì soi vùng đó.
+      if (!code && !selected && onRegion) {
+        const r = svgRef.current?.getBoundingClientRect();
+        const v = view.current;
+        const hit = r
+          ? nebulaAt(
+              layout.groups,
+              (e.clientX - r.left - v.x) / v.k,
+              (e.clientY - r.top - v.y) / v.k,
+            )
+          : null;
+        if (hit) onRegion(hit);
+      }
+      onSelect(code);
     }
   };
 
@@ -282,179 +435,313 @@ export const GalaxyMap = forwardRef<GalaxyMapHandle, Props>(function GalaxyMap(
   const motifId = `galaxy-${useId().replace(/:/g, '')}`;
   const stars = useMemo(() => {
     const rand = seededRandom('galaxy-cartoon-stars');
-    return Array.from({ length: 36 }, (_, i) => ({
-      x: 2 + rand() * 96,
-      y: 3 + rand() * 94,
+    return Array.from({ length: 30 }, (_, i) => ({
+      x: -10 + rand() * 120,
+      y: -10 + rand() * 120,
       size: i % 6 === 0 ? 15 : 6 + rand() * 5,
+      delay: -rand() * 5,
     }));
   }, []);
 
+  const nebulae = useMemo(() => nebulaBlobs(layout.groups), [layout.groups]);
+
   return (
-    <svg
-      ref={svgRef}
-      role="application"
-      aria-label="Bản đồ ngân hà nghề nghiệp. Kéo để di chuyển, cuộn để phóng to. Dùng chế độ danh sách nếu bạn dùng bàn phím hay trình đọc màn hình."
-      tabIndex={0}
-      className={className}
-      style={{ touchAction: 'none', cursor: 'grab' }}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerUp}
-      onPointerCancel={onPointerUp}
-      onKeyDown={onKeyDown}
-    >
-      <style>{`
+    <div className={className}>
+      <div ref={skyRef} className="gx-sky" aria-hidden="true">
+        <div ref={bandRef} className="gx-band">
+          <div className="gx-band__glow" />
+          <div className="gx-band__dust" />
+        </div>
+        <div ref={farRef} className="gx-stars gx-stars--far" />
+        <div ref={nearRef} className="gx-stars gx-stars--near" />
+        <div className="gx-comet" />
+      </div>
+      <GalaxySpiral
+        ref={spiralRef}
+        cx={galaxy.cx}
+        cy={galaxy.cy}
+        radius={galaxy.radius}
+      />
+      <svg
+        ref={svgRef}
+        role="application"
+        aria-label="Bản đồ ngân hà nghề nghiệp. Kéo để di chuyển, cuộn để phóng to. Dùng chế độ danh sách nếu bạn dùng bàn phím hay trình đọc màn hình."
+        tabIndex={0}
+        className="absolute inset-0 h-full w-full focus-visible:outline-none"
+        style={{ touchAction: 'none', cursor: 'grab' }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        onPointerLeave={() => setHover.current(null)}
+        onKeyDown={onKeyDown}
+      >
+        <style>{`
         @keyframes galaxy-ink-orbit { to { transform: rotate(360deg); } }
         @keyframes galaxy-ink-pick { 0% { transform: scale(.84); } 55% { transform: scale(1.12); } 100% { transform: scale(1); } }
         .galaxy-ink-orbit { animation: galaxy-ink-orbit 24s linear infinite; transform-origin: 0 0; }
         .galaxy-ink-pick { animation: galaxy-ink-pick .45s ease-out both; transform-origin: 0 0; }
         .galaxy-ink-star path { vector-effect: none; stroke-width: 4; }
+        .gx-planet-hit:hover + .gx-planet-body { transform: scale(1.12); }
+        .gx-planet-body { transition: transform .2s cubic-bezier(.3,1.6,.5,1); }
         @media (prefers-reduced-motion: reduce) {
           .galaxy-ink-orbit, .galaxy-ink-pick { animation: none; }
         }
       `}</style>
-      <defs>
-        <symbol id={`${motifId}-star`} viewBox="0 0 96 96">
-          <InkStar size={96} className="galaxy-ink-star" />
-        </symbol>
-        <symbol id={`${motifId}-surface`} viewBox="-1 -1 2 2">
-          <path
-            d="M0-1A1 1 0 0 1 0 1C.65.65.65-.65 0-1Z"
-            fill="#0c1834"
-            fillOpacity=".28"
-          />
-          <ellipse
-            cx="-.35"
-            cy="-.4"
-            rx=".18"
-            ry=".1"
-            transform="rotate(-30 -.35 -.4)"
-            fill="#fffaf0"
-          />
-        </symbol>
-      </defs>
-      <rect width="100%" height="100%" fill="#142650" />
-      <g aria-hidden="true" pointerEvents="none" opacity=".65">
-        {stars.map((star, i) => (
-          <use
-            key={i}
-            href={`#${motifId}-star`}
-            x={`${star.x}%`}
-            y={`${star.y}%`}
-            width={star.size}
-            height={star.size}
-          />
-        ))}
-      </g>
-
-      <g ref={worldRef}>
-        {layout.regions.map((r) => (
-          <path
-            key={r.id}
-            d={regionBlob(r.id, r.radius)}
-            transform={`translate(${r.x} ${r.y})`}
-            fill={regionColor(r.id)}
-            fillOpacity=".075"
-            stroke={regionColor(r.id)}
-            strokeOpacity=".3"
-            strokeWidth="1.5"
-            strokeDasharray="6 9"
-            vectorEffect="non-scaling-stroke"
-            pointerEvents="none"
-          />
-        ))}
-
-        {/* Đường chòm sao nối các nghề trong cùng nhóm. */}
-        {layout.groups.map((g) => (
-          <polyline
-            key={g.name}
-            points={orderAround(g.members, g.x, g.y)
-              .map((m) => `${m.x},${m.y}`)
-              .join(' ')}
-            fill="none"
-            stroke="#3b5aa0"
-            strokeDasharray="3 6"
-            strokeOpacity={detail === 'far' ? 0.65 : 0.85}
-            strokeWidth={1.2}
-            vectorEffect="non-scaling-stroke"
-          />
-        ))}
-
-        {ordered.map((p) => (
-          <PlanetNode
-            key={p.occupation.code}
-            p={p}
-            motifId={motifId}
-            detail={detail}
-            selected={selected === p.occupation.code}
-            dim={highlight !== null && !highlight.has(p.occupation.code)}
-            suggested={suggested.has(p.occupation.code)}
-          />
-        ))}
-
-        {/* Nhãn vẽ thành lớp riêng sau mọi hành tinh để không bị hành tinh khác che. */}
-        <g style={{ pointerEvents: 'none' }}>
-          {ordered
-            .filter((p) => labelled.has(p.occupation.code))
-            .map((p) => (
-              <PlanetLabel
-                key={p.occupation.code}
-                p={p}
-                detail={detail}
-                selected={selected === p.occupation.code}
+        <defs>
+          <symbol id={`${motifId}-star`} viewBox="0 0 96 96">
+            <InkStar size={96} className="galaxy-ink-star" />
+          </symbol>
+          <symbol id={`${motifId}-surface`} viewBox="-1 -1 2 2">
+            <path
+              d="M0-1A1 1 0 0 1 0 1C.65.65.65-.65 0-1Z"
+              fill="#0c1834"
+              fillOpacity=".28"
+            />
+            <ellipse
+              cx="-.35"
+              cy="-.4"
+              rx=".18"
+              ry=".1"
+              transform="rotate(-30 -.35 -.4)"
+              fill="#fffaf0"
+            />
+          </symbol>
+          {layout.regions.map((r) => (
+            <radialGradient key={r.id} id={`${motifId}-neb-${r.id}`}>
+              <stop offset="0" stopColor={regionColor(r.id)} stopOpacity=".5" />
+              <stop
+                offset=".45"
+                stopColor={regionColor(r.id)}
+                stopOpacity=".2"
+              />
+              <stop offset="1" stopColor={regionColor(r.id)} stopOpacity="0" />
+            </radialGradient>
+          ))}
+        </defs>
+        <g aria-hidden="true" pointerEvents="none" opacity=".6">
+          <g ref={inkRef}>
+            {stars.map((star, i) => (
+              <use
+                key={i}
+                href={`#${motifId}-star`}
+                x={`${star.x}%`}
+                y={`${star.y}%`}
+                width={star.size}
+                height={star.size}
               />
             ))}
+          </g>
         </g>
 
-        {detail === 'mid' &&
-          layout.groups.map((g) => (
-            <text
-              key={g.name}
-              x={g.x}
-              y={g.y - g.radius - 8}
-              textAnchor="middle"
-              fill={regionColor(g.regionId)}
-              fillOpacity={0.85}
-              fontSize={19}
-              fontFamily="var(--font-toon)"
-              stroke="#0c1834"
-              strokeWidth={5}
-              paintOrder="stroke"
-              fontWeight={800}
-              letterSpacing="0.06em"
-              style={{ textTransform: 'uppercase', pointerEvents: 'none' }}
-            >
-              {g.name}
-            </text>
+        <g ref={worldRef}>
+          {/* Vùng nghề là tinh vân mờ biên quanh các chòm của nó, không có
+            đường viền: hai vùng gần nhau hoà màu thay vì cắt nhau. */}
+          <g pointerEvents="none">
+            {layout.regions.map((r, ri) => (
+              <g
+                key={r.id}
+                className="gx-neb-region"
+                opacity={
+                  focusRegion === null ? 0.6 : focusRegion === r.id ? 1 : 0.14
+                }
+              >
+                <g
+                  className="gx-intro-fade"
+                  style={{ animationDelay: `${0.5 + ri * 0.18}s` }}
+                >
+                  {nebulae
+                    .filter((b) => b.regionId === r.id)
+                    .map((b) => (
+                      <g key={b.key}>
+                        {b.puffs.map((p, i) => (
+                          <circle
+                            key={i}
+                            cx={p.x}
+                            cy={p.y}
+                            r={p.r}
+                            fill={`url(#${motifId}-neb-${r.id})`}
+                          />
+                        ))}
+                      </g>
+                    ))}
+                </g>
+              </g>
+            ))}
+          </g>
+
+          {/* Đường chòm sao nối các nghề trong cùng nhóm. */}
+          <g className="gx-intro-fade" style={{ animationDelay: '1.6s' }}>
+            {layout.groups.map((g) => (
+              <polyline
+                key={g.name}
+                points={orderAround(g.members, g.x, g.y)
+                  .map((m) => `${m.x},${m.y}`)
+                  .join(' ')}
+                fill="none"
+                stroke={
+                  focusRegion === g.regionId
+                    ? regionColor(g.regionId)
+                    : '#3b5aa0'
+                }
+                strokeDasharray="3 6"
+                strokeOpacity={
+                  focusRegion && focusRegion !== g.regionId
+                    ? 0.3
+                    : detail === 'far'
+                      ? 0.35
+                      : 0.55
+                }
+                strokeWidth={1.2}
+                vectorEffect="non-scaling-stroke"
+              />
+            ))}
+          </g>
+
+          {ordered.map((p) => (
+            <PlanetNode
+              key={p.occupation.code}
+              p={p}
+              motifId={motifId}
+              detail={detail}
+              selected={selected === p.occupation.code}
+              dim={highlight !== null && !highlight.has(p.occupation.code)}
+              suggested={suggested.has(p.occupation.code)}
+              introDelay={
+                0.7 +
+                (Math.hypot(p.x - galaxy.cx, p.y - galaxy.cy) / galaxy.radius) *
+                  1.3
+              }
+            />
           ))}
 
-        {detail === 'far' &&
-          layout.regions.map((r) => (
-            <text
-              key={r.id}
-              x={r.x}
-              y={r.y}
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill={regionColor(r.id)}
-              fontFamily="var(--font-toon)"
-              fontSize={58}
-              fontWeight={800}
-              style={{
-                textTransform: 'uppercase',
-                pointerEvents: 'none',
-                paintOrder: 'stroke',
-              }}
-              stroke="#0c1834"
-              strokeWidth={10}
-            >
-              {r.name}
-            </text>
-          ))}
-      </g>
-    </svg>
+          {/* Nhãn vẽ thành lớp riêng sau mọi hành tinh để không bị hành tinh khác che. */}
+          <g style={{ pointerEvents: 'none' }}>
+            {ordered
+              .filter((p) => labelled.has(p.occupation.code))
+              .map((p) => (
+                <PlanetLabel
+                  key={p.occupation.code}
+                  p={p}
+                  detail={detail}
+                  selected={selected === p.occupation.code}
+                />
+              ))}
+          </g>
+
+          {detail === 'mid' &&
+            layout.groups.map((g) => (
+              <text
+                key={g.name}
+                x={g.x}
+                y={g.y - g.radius - 8}
+                textAnchor="middle"
+                fill={regionColor(g.regionId)}
+                opacity={focusRegion && focusRegion !== g.regionId ? 0.2 : 0.75}
+                fontSize={15}
+                fontFamily="var(--font-toon)"
+                stroke="#0c1834"
+                strokeOpacity={0.6}
+                strokeWidth={3}
+                paintOrder="stroke"
+                fontWeight={700}
+                style={{ pointerEvents: 'none' }}
+              >
+                {g.name}
+              </text>
+            ))}
+
+          {detail === 'far' &&
+            layout.regions.map((r) => {
+              // Nhãn vùng đẩy ra rìa ngoài (xa tâm thiên hà) để không đè hành tinh.
+              const dx = r.x - galaxy.cx;
+              const dy = r.y - galaxy.cy;
+              const d = Math.hypot(dx, dy) || 1;
+              const lx = r.x + (dx / d) * r.radius * 0.4;
+              const ly = r.y + (dy / d) * r.radius * 0.4;
+              return (
+                <text
+                  key={r.id}
+                  x={lx}
+                  y={ly}
+                  className="gx-intro-fade"
+
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fill={regionColor(r.id)}
+                  opacity={focusRegion && focusRegion !== r.id ? 0.22 : 1}
+                  fontFamily="var(--font-toon)"
+                  fontSize={56}
+                  fontWeight={800}
+                  letterSpacing="0.05em"
+                  style={{
+                    textTransform: 'uppercase',
+                    pointerEvents: 'none',
+                    paintOrder: 'stroke',
+                    animationDelay: '1.4s',
+                  }}
+                  stroke="#0c1834"
+                  strokeWidth={10}
+                >
+                  {r.name}
+                </text>
+              );
+            })}
+        </g>
+      </svg>
+      <TipLayer setter={setHover} svg={svgRef} layout={layout} />
+    </div>
   );
 });
+
+interface NebulaBlob {
+  key: string;
+  regionId: RegionId;
+  delay: number;
+  puffs: Array<{ x: number; y: number; r: number }>;
+}
+
+/**
+ * Mỗi chòm (nhóm nghề) là ba bốn "làn khói" tròn đặt lệch nhau theo hạt giống
+ * cố định, nên tinh vân có hình hữu cơ nhưng cùng danh mục thì cùng hình.
+ */
+function nebulaBlobs(groups: PlacedGroup[]): NebulaBlob[] {
+  return groups.map((g) => {
+    const rand = seededRandom(`nebula-${g.name}`);
+    const base = Math.max(g.radius, 40);
+    const puffs = [{ x: g.x, y: g.y, r: base * 2 }];
+    const n = 2;
+    for (let i = 0; i < n; i++) {
+      const a = (i / n) * Math.PI * 2 + rand() * 1.2;
+      const d = base * (0.45 + rand() * 0.5);
+      puffs.push({
+        x: g.x + Math.cos(a) * d,
+        y: g.y + Math.sin(a) * d,
+        r: base * (1.1 + rand() * 0.6),
+      });
+    }
+    return {
+      key: g.name,
+      regionId: g.regionId,
+      delay: -rand() * 12,
+      puffs,
+    };
+  });
+}
+
+/** Vùng có tinh vân phủ lên điểm (x, y) của thế giới, nếu có. */
+function nebulaAt(
+  groups: PlacedGroup[],
+  x: number,
+  y: number,
+): RegionId | null {
+  let best: { id: RegionId; d: number } | null = null;
+  for (const g of groups) {
+    const d = Math.hypot(g.x - x, g.y - y) / Math.max(g.radius, 40);
+    if (d < 1.6 && (!best || d < best.d)) best = { id: g.regionId, d };
+  }
+  return best?.id ?? null;
+}
 
 /** Sắp thành viên theo góc quanh tâm nhóm để đường chòm sao không cắt nhau. */
 function orderAround(members: PlacedOccupation[], cx: number, cy: number) {
@@ -594,13 +881,14 @@ function PlanetLabel({
   );
 }
 
-function PlanetNode({
+const PlanetNode = memo(function PlanetNode({
   p,
   detail,
   selected,
   dim,
   suggested,
   motifId,
+  introDelay = 0,
 }: {
   p: PlacedOccupation;
   detail: Detail;
@@ -608,10 +896,17 @@ function PlanetNode({
   dim: boolean;
   suggested: boolean;
   motifId: string;
+  introDelay?: number;
 }) {
   const o = p.occupation;
   const locked = o.gate.kind === 'PREREQUISITE' && o.my.status === 'NEW';
   const status = o.my.status;
+  // Nghề có màn chơi hay đã thử thì toả sáng; nghề đang chơi thì quầng đập.
+  const glow = !dim && (o.playable || status !== 'NEW');
+  // Nghề chưa có màn chơi và chưa thử chỉ là chấm màu vùng, không viền,
+  // không vân: 221 hành tinh viền đậm như nhau làm bản đồ rối mắt.
+  const quiet =
+    !o.playable && status === 'NEW' && !selected && !suggested && !locked;
   return (
     <g
       data-code={o.code}
@@ -619,101 +914,203 @@ function PlanetNode({
       opacity={dim ? 0.16 : locked ? 0.55 : 1}
       style={{ cursor: 'pointer' }}
     >
-      <title>{o.shortName}</title>
-      {/* Vùng bấm giữ nguyên để thao tác bằng ngón tay không đổi. */}
-      <circle r={Math.max(p.r + 8, 18)} fill="transparent" />
-      <g className={selected ? 'galaxy-ink-pick' : undefined}>
-        {(selected || suggested) && (
-          <circle
-            r={p.r + (selected ? 7 : 5)}
-            fill="none"
-            stroke="#f6cf5e"
-            strokeWidth={selected ? 3.5 : 1.5}
-            strokeDasharray={selected ? undefined : '2 4'}
-            vectorEffect="non-scaling-stroke"
-          />
-        )}
-        {o.playable && !dim && (
-          <ellipse
-            rx={p.r * 1.55}
-            ry={p.r * 0.5}
-            transform="rotate(-24)"
-            fill="#f6cf5e"
-            stroke="#0c1834"
-            strokeWidth="2"
-            vectorEffect="non-scaling-stroke"
-          />
-        )}
+      {glow && (
         <circle
-          r={p.r}
-          fill={regionColor(o.regionId)}
-          stroke="#0c1834"
-          strokeWidth="2"
-          vectorEffect="non-scaling-stroke"
-        />
-        <use
-          href={`#${motifId}-surface`}
-          x={-p.r}
-          y={-p.r}
-          width={p.r * 2}
-          height={p.r * 2}
+          r={p.r * (status === 'PLAYING' ? 3.2 : 2.6)}
+          fill={`url(#${motifId}-neb-${o.regionId})`}
           pointerEvents="none"
+          className={status === 'PLAYING' ? 'gx-pulse' : undefined}
         />
-        {status === 'PLAYING' && (
-          <circle
-            r={p.r + 11}
-            fill="none"
-            stroke="#f6cf5e"
-            strokeWidth="1.5"
-            strokeDasharray="4 6"
-            vectorEffect="non-scaling-stroke"
-            className="galaxy-ink-orbit"
-          />
-        )}
-        {status === 'COMPLETED' && (
-          <use
-            href={`#${motifId}-star`}
-            x={-7}
-            y={-p.r - 18}
-            width={14}
-            height={14}
-          />
-        )}
-        {locked && detail !== 'far' && (
-          <g
-            transform={`translate(${p.r * 0.55} ${p.r * 0.35})`}
-            stroke="#0c1834"
-            strokeWidth="1.3"
-            strokeLinejoin="round"
-          >
-            <path d="M-2.2-1v-1.6a2.2 2.2 0 0 1 4.4 0V-1" fill="none" />
-            <rect
-              x={-3.5}
-              y={-1}
-              width={7}
-              height={5.5}
-              rx={1}
-              fill="#fffaf0"
+      )}
+      {/* Vùng bấm giữ nguyên để thao tác bằng ngón tay không đổi. */}
+      <circle
+        className="gx-planet-hit"
+        r={Math.max(p.r + 8, 18)}
+        fill="transparent"
+      />
+      <g
+        className="gx-planet-body gx-intro-pop"
+        style={{ transformOrigin: '0 0', animationDelay: `${introDelay}s` }}
+      >
+        <g className={selected ? 'galaxy-ink-pick' : undefined}>
+          {(selected || suggested) && (
+            <circle
+              r={p.r + (selected ? 7 : 5)}
+              fill="none"
+              stroke="#f6cf5e"
+              strokeWidth={selected ? 3.5 : 1.5}
+              strokeDasharray={selected ? undefined : '2 4'}
+              vectorEffect="non-scaling-stroke"
             />
-          </g>
-        )}
+          )}
+          {o.playable && !dim && (
+            <ellipse
+              rx={p.r * 1.55}
+              ry={p.r * 0.5}
+              transform="rotate(-24)"
+              fill="#f6cf5e"
+              stroke="#0c1834"
+              strokeWidth="2"
+              vectorEffect="non-scaling-stroke"
+            />
+          )}
+          {quiet ? (
+            <circle
+              r={p.r * 0.5}
+              fill={regionColor(o.regionId)}
+              opacity={0.8}
+            />
+          ) : (
+            <>
+              <circle
+                r={p.r}
+                fill={regionColor(o.regionId)}
+                stroke="#0c1834"
+                strokeWidth="2"
+                vectorEffect="non-scaling-stroke"
+              />
+              <use
+                href={`#${motifId}-surface`}
+                x={-p.r}
+                y={-p.r}
+                width={p.r * 2}
+                height={p.r * 2}
+                pointerEvents="none"
+              />
+            </>
+          )}
+          {status === 'PLAYING' && (
+            <circle
+              r={p.r + 11}
+              fill="none"
+              stroke="#f6cf5e"
+              strokeWidth="1.5"
+              strokeDasharray="4 6"
+              vectorEffect="non-scaling-stroke"
+              className="galaxy-ink-orbit"
+            />
+          )}
+          {status === 'COMPLETED' && (
+            <use
+              href={`#${motifId}-star`}
+              x={-7}
+              y={-p.r - 18}
+              width={14}
+              height={14}
+            />
+          )}
+          {locked && detail !== 'far' && (
+            <g
+              transform={`translate(${p.r * 0.55} ${p.r * 0.35})`}
+              stroke="#0c1834"
+              strokeWidth="1.3"
+              strokeLinejoin="round"
+            >
+              <path d="M-2.2-1v-1.6a2.2 2.2 0 0 1 4.4 0V-1" fill="none" />
+              <rect
+                x={-3.5}
+                y={-1}
+                width={7}
+                height={5.5}
+                rx={1}
+                fill="#fffaf0"
+              />
+            </g>
+          )}
+        </g>
       </g>
     </g>
   );
+});
+
+/** Thẻ nổi khi rê chuột lên một hành tinh: tên, nhóm, trạng thái bằng ký hiệu. */
+function PlanetTip({
+  code,
+  x,
+  y,
+  svg,
+  layout,
+}: {
+  code: string;
+  x: number;
+  y: number;
+  svg: React.RefObject<SVGSVGElement | null>;
+  layout: GalaxyLayout;
+}) {
+  const p = layout.occupations.find((o) => o.occupation.code === code);
+  if (!p) return null;
+  const o = p.occupation;
+  const width = svg.current?.clientWidth ?? 800;
+  const left = x > width - 280 ? x - 268 : x + 18;
+  const kind: ToonStatusKind =
+    o.my.status === 'COMPLETED'
+      ? 'done'
+      : o.my.status === 'PLAYING'
+        ? 'playing'
+        : o.gate.kind === 'PREREQUISITE'
+          ? 'locked'
+          : o.playable
+            ? 'open'
+            : 'soon';
+  return (
+    <div
+      aria-hidden="true"
+      className="gx-tip pointer-events-none absolute z-20 w-[250px] rounded-[16px] bg-toon-paper/95 p-3 text-toon-ink shadow-soft-lg backdrop-blur-sm"
+      style={{ left, top: y + 16 }}
+    >
+      <p className="flex items-center gap-1.5 text-[11px] font-bold text-toon-ink-soft">
+        <span
+          className="size-2 rounded-full"
+          style={{ backgroundColor: regionColor(o.regionId) }}
+        />
+        {o.group}
+      </p>
+      <p className="mt-0.5 font-toon text-base font-extrabold leading-snug">
+        {o.shortName}
+      </p>
+      <div className="mt-2 flex items-center justify-between gap-2">
+        <ToonStatus
+          kind={kind}
+          label={
+            o.my.status === 'PLAYING' && o.my.currentLevel
+              ? `Đang chơi · cấp ${o.my.currentLevel}`
+              : undefined
+          }
+        />
+        <span className="text-[11px] font-semibold text-toon-ink-faint">
+          {o.levelCount} cấp
+        </span>
+      </div>
+    </div>
+  );
 }
 
-/** Mười hai điểm uốn mềm, luôn giữ cùng hình dáng theo mã vùng. */
-function regionBlob(seed: string, radius: number) {
-  const rand = seededRandom(`galaxy-region-${seed}`);
-  const points = Array.from({ length: 12 }, (_, i) => {
-    const a = (i * Math.PI) / 6;
-    const r = radius * (0.91 + rand() * 0.16);
-    return [Math.cos(a) * r, Math.sin(a) * r];
-  });
-  const midpoint = (a: number[], b: number[]) => [
-    (a[0] + b[0]) / 2,
-    (a[1] + b[1]) / 2,
-  ];
-  const start = midpoint(points[11], points[0]);
-  return `M${start.join(' ')} ${points.map((p, i) => `Q${p.join(' ')} ${midpoint(p, points[(i + 1) % points.length]).join(' ')}`).join(' ')}Z`;
+type Hover = { code: string; x: number; y: number } | null;
+/** Trước khi TipLayer gắn setter thật, rê chuột không làm gì. */
+const noop: HoverSetter = () => undefined;
+type HoverSetter = (next: Hover | ((prev: Hover) => Hover)) => void;
+
+function TipLayer({
+  setter,
+  svg,
+  layout,
+}: {
+  setter: React.RefObject<HoverSetter>;
+  svg: React.RefObject<SVGSVGElement | null>;
+  layout: GalaxyLayout;
+}) {
+  const [hover, setHover] = useState<Hover>(null);
+  useLayoutEffect(() => {
+    setter.current = setHover;
+  }, [setter]);
+  if (!hover) return null;
+  return (
+    <PlanetTip
+      code={hover.code}
+      x={hover.x}
+      y={hover.y}
+      svg={svg}
+      layout={layout}
+    />
+  );
 }

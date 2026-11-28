@@ -1,0 +1,323 @@
+/*
+ * Bầu trời phía sau bản đồ ngân hà (lớp HTML dưới SVG): dải ngân hà trôi chậm,
+ * hai lớp sao lấp lánh lệch nhịp, sao băng thỉnh thoảng bay qua. Lớp sao và
+ * dải ngân hà dịch theo thị sai khi kéo bản đồ (GalaxyMap ghi style trực tiếp).
+ * Tôn trọng prefers-reduced-motion: tắt hết chuyển động trang trí.
+ */
+.gx-sky {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: radial-gradient(
+    120% 90% at 50% 45%,
+    #1b3366 0%,
+    #142650 55%,
+    #0f1d40 100%
+  );
+  pointer-events: none;
+}
+
+.gx-band {
+  position: absolute;
+  left: -35%;
+  top: 22%;
+  width: 170%;
+  height: 46%;
+  will-change: transform;
+}
+
+.gx-band__glow {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  transform: rotate(-17deg);
+  background:
+    radial-gradient(
+      38% 34% at 30% 52%,
+      rgb(179 172 223 / 0.42),
+      transparent 70%
+    ),
+    radial-gradient(
+      30% 28% at 58% 46%,
+      rgb(114 197 242 / 0.32),
+      transparent 70%
+    ),
+    radial-gradient(
+      26% 30% at 78% 55%,
+      rgb(242 147 189 / 0.22),
+      transparent 72%
+    ),
+    radial-gradient(
+      60% 16% at 50% 50%,
+      rgb(251 230 164 / 0.2),
+      transparent 75%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgb(59 90 160 / 0.28) 32%,
+      rgb(120 140 210 / 0.36) 50%,
+      rgb(59 90 160 / 0.28) 68%,
+      transparent 100%
+    );
+  filter: blur(26px);
+  animation: gx-band-drift 70s ease-in-out infinite alternate;
+}
+
+/* Bụi sao dày theo trục dải ngân hà. */
+.gx-band__dust {
+  position: absolute;
+  inset: 18% 0;
+  transform: rotate(-17deg);
+  background-image:
+    radial-gradient(1px 1px at 12px 18px, #fffaf0 98%, transparent),
+    radial-gradient(1px 1px at 44px 52px, #c9d6f2 98%, transparent),
+    radial-gradient(1.4px 1.4px at 80px 14px, #fbe6a4 98%, transparent),
+    radial-gradient(1px 1px at 96px 70px, #fffaf0 98%, transparent),
+    radial-gradient(1px 1px at 128px 36px, #c9d6f2 98%, transparent);
+  background-size: 140px 84px;
+  mask-image: linear-gradient(
+    180deg,
+    transparent,
+    #000 35%,
+    #000 65%,
+    transparent
+  );
+  /* Tắt: thiên hà xoắn ốc đã có hạt sao, thêm lớp hạt nữa là rối. */
+  display: none;
+}
+
+.gx-stars {
+  position: absolute;
+  /* Rộng hơn khung một ô lát để dịch bằng transform mà không lộ mép. */
+  inset: -380px;
+  will-change: transform, opacity;
+}
+
+.gx-stars--far {
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #fffaf0 98%, transparent),
+    radial-gradient(1px 1px at 150px 80px, #c9d6f2 98%, transparent),
+    radial-gradient(1px 1px at 90px 170px, #fffaf0 98%, transparent),
+    radial-gradient(1px 1px at 210px 210px, #c9d6f2 98%, transparent),
+    radial-gradient(1.2px 1.2px at 40px 120px, #fbe6a4 98%, transparent),
+    radial-gradient(1px 1px at 190px 20px, #fffaf0 98%, transparent);
+  background-size: 240px 240px;
+  opacity: 0.6;
+  animation: gx-twinkle 5s ease-in-out infinite;
+}
+
+.gx-stars--near {
+  background-image:
+    radial-gradient(1.6px 1.6px at 60px 90px, #fffaf0 98%, transparent),
+    radial-gradient(1.4px 1.4px at 300px 40px, #fbe6a4 98%, transparent),
+    radial-gradient(1.8px 1.8px at 230px 300px, #fffaf0 98%, transparent),
+    radial-gradient(1.4px 1.4px at 120px 330px, #c9d6f2 98%, transparent);
+  background-size: 380px 380px;
+  opacity: 0.85;
+  animation: gx-twinkle 7.5s ease-in-out -3s infinite;
+}
+
+/* Sao băng: một vệt sáng chéo, 14 giây một lần. */
+.gx-comet {
+  position: absolute;
+  top: 12%;
+  right: 8%;
+  width: 140px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #fffaf0, rgb(255 250 240 / 0));
+  transform-origin: left center;
+  opacity: 0;
+  animation: gx-comet 14s linear 4s infinite;
+}
+
+/* Tinh vân của từng chòm thở chậm, lệch nhịp nhau. */
+/* Tinh vân và sao trong SVG đứng yên: hoạt hoạ phần tử SVG buộc trình duyệt
+   vẽ lại cả bản đồ mỗi khung hình. Chuyển động chỉ đặt ở lớp HTML ghép trên GPU. */
+
+.gx-neb-region {
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes gx-band-drift {
+  from {
+    transform: rotate(-17deg) translate3d(-2.5%, 0.6%, 0);
+  }
+  to {
+    transform: rotate(-17deg) translate3d(2.5%, -0.6%, 0);
+  }
+}
+
+@keyframes gx-twinkle {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes gx-breathe {
+  0%,
+  100% {
+    opacity: 0.82;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gx-comet {
+  0% {
+    opacity: 0;
+    transform: rotate(152deg) translateX(0);
+  }
+  1.5% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0;
+    transform: rotate(152deg) translateX(-460px);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(152deg) translateX(-460px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gx-band__glow,
+  .gx-band__dust,
+  .gx-stars,
+  .gx-inkstar,
+  .gx-neb {
+    animation: none;
+  }
+  .gx-comet {
+    display: none;
+  }
+}
+
+/* ── Thiên hà xoắn ốc (thế giới) ───────────────────────────────────── */
+.gx-spiral-world {
+  will-change: transform;
+}
+
+.gx-spiral {
+  display: block;
+  opacity: 0.8;
+  animation: gx-spin 720s linear infinite;
+}
+
+.gx-spiral-intro {
+  animation: gx-spiral-in 2.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Lớp trời nhích nhẹ theo con trỏ (biến --mx, --my do GalaxyMap ghi). */
+.gx-sky {
+  --mx: 0;
+  --my: 0;
+}
+
+.gx-stars--far,
+.gx-stars--near,
+.gx-band__glow {
+  transition: translate 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gx-stars--far {
+  translate: calc(var(--mx) * -6px) calc(var(--my) * -6px);
+}
+
+.gx-stars--near {
+  translate: calc(var(--mx) * -16px) calc(var(--my) * -16px);
+}
+
+.gx-band__glow {
+  translate: calc(var(--mx) * -10px) calc(var(--my) * -10px);
+}
+
+/* Màn mở đầu: tinh vân hiện dần theo vùng, hành tinh bật ra từ tâm. */
+.gx-intro-fade {
+  animation: gx-fade-in 1.6s ease-out backwards;
+}
+
+.gx-intro-pop {
+  animation: gx-pop 0.7s cubic-bezier(0.3, 1.6, 0.5, 1) backwards;
+}
+
+/* Quầng của hành tinh đang chơi đập nhẹ. */
+.gx-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: gx-pulse 2.6s ease-in-out infinite;
+}
+
+/* Thẻ thông tin khi rê chuột lên hành tinh. */
+.gx-tip {
+  animation: gx-tip-in 0.18s ease-out both;
+}
+
+@keyframes gx-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gx-spiral-in {
+  from {
+    opacity: 0;
+    transform: scale(0.55) rotate(-50deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gx-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes gx-pop {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes gx-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes gx-tip-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.97);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gx-spiral,
+  .gx-spiral-intro,
+  .gx-intro-fade,
+  .gx-intro-pop,
+  .gx-pulse,
+  .gx-tip {
+    animation: none;
+  }
+}

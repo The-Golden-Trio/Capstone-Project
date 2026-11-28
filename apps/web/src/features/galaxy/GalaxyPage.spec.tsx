@@ -119,6 +119,9 @@ it('nghề đang khám phá mở đúng lộ trình từ thẻ trên bản đồ
       await screen.findByRole('link', { name: /^Mở lộ trình nghề$/ })
     ).getAttribute('href'),
   ).toBe('/occupations/SWE_BACKEND/levels');
+  expect(
+    screen.getByRole('link', { name: /^Xem hồ sơ nghề$/ }).getAttribute('href'),
+  ).toBe('/occupations/SWE_BACKEND');
 });
 
 it('chuyển cách xem bằng phím mũi tên và chỉ một lựa chọn nằm trong thứ tự Tab', async () => {

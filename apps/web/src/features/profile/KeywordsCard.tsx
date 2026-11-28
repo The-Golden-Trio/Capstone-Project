@@ -7,10 +7,7 @@ const colors = ['bg-toon-coral-light', 'bg-toon-sky', 'bg-toon-mustard'];
 export function KeywordsCard({ record }: { record: PlayerRecord }) {
   const depth = keywordDepth(record.keywords);
   return (
-    <Foldout
-      title="Kỹ năng nghề đã mang về"
-      className="text-toon-ink shadow-toon"
-    >
+    <Foldout title="Kỹ năng nghề đã mang về">
       <p className="mb-4 text-sm text-toon-ink-soft">
         Hoàn thành cấp nghề để nhận huy chương Làm quen, Thành thạo và Chuyên
         sâu.

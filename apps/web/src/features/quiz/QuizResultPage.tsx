@@ -1,12 +1,25 @@
 import { Link } from 'react-router-dom';
 import { profile } from '@datn/game-core';
 import {
+  ArrowRight,
+  ChevronRight,
+  ClipboardList,
+  Flag,
+  HeartHandshake,
+  Microscope,
+  Palette,
+  Wrench,
+} from 'lucide-react';
+import {
   CartoonPlanet,
   NightCard,
-  ToonBadge,
   ToonButton,
+  ToonDisclosure,
+  ToonStatus,
+  ToonStatusGlyph,
   toonButtonClasses,
 } from '@datn/ui';
+import { RegionGlyph } from '../galaxy/regions';
 import { QuizNotice, QuizMessage } from './QuizDecor';
 import {
   errorText,
@@ -72,8 +85,12 @@ export default function QuizResultPage() {
         <p className="mt-2 text-sm text-toon-ink-soft">
           Chỉ để tham khảo, không gửi cho trường hay nhà tuyển dụng.
         </p>
-        <Link to="/galaxy" className={toonButtonClasses({ className: 'mt-5' })}>
-          Khám phá bản đồ →
+        <Link
+          to="/galaxy"
+          style={{ backgroundColor: 'var(--color-toon-star)' }}
+          className={toonButtonClasses({ className: 'mt-5' })}
+        >
+          Khám phá bản đồ <ArrowRight size={17} aria-hidden />
         </Link>
       </NightCard>
       <NightCard>
@@ -92,9 +109,15 @@ export default function QuizResultPage() {
             return (
               <li
                 key={axis}
-                className="grid items-center gap-2 sm:grid-cols-[7rem_1fr_3rem]"
+                className="grid grid-cols-[2.25rem_minmax(0,1fr)_2.5rem] items-center gap-x-3 gap-y-1 sm:grid-cols-[2.25rem_7rem_minmax(0,1fr)_2.5rem]"
               >
-                <span className="font-toon font-bold">
+                <span
+                  aria-hidden
+                  className="row-span-2 grid size-9 place-items-center rounded-full bg-toon-sand/60 sm:row-span-1"
+                >
+                  <RiasecIcon axis={axis} />
+                </span>
+                <span className="col-span-2 font-toon font-bold sm:col-span-1">
                   {profile.RIASEC_INFO[axis].name}
                 </span>
                 <div
@@ -103,7 +126,7 @@ export default function QuizResultPage() {
                   aria-valuemin={1}
                   aria-valuemax={3}
                   aria-valuenow={value}
-                  className="h-7 overflow-hidden rounded-full border-[3px] border-toon-ink bg-toon-cream shadow-toon-sm"
+                  className="h-4 overflow-hidden rounded-full border-2 border-toon-ink bg-toon-sand/60"
                 >
                   <div
                     className={
@@ -160,27 +183,38 @@ export default function QuizResultPage() {
             Chưa có vùng gợi ý. Bạn có thể chọn bất kỳ vùng nào trên bản đồ.
           </p>
         ) : (
-          <div className="grid gap-3 md:grid-cols-3">
+          <ul className="toon-card toon-rows overflow-hidden p-0 text-toon-ink">
             {data.regions.slice(0, 3).map((id) => {
               const region = catalogue.data.regions.find((r) => r.id === id);
               return region ? (
-                <Link
-                  key={id}
-                  to={`/galaxy?vung=${id}`}
-                  className="flex h-full flex-col rounded-2xl border-[3px] border-toon-ink bg-toon-paper p-5 text-toon-ink shadow-toon focus-visible:shadow-toon-focus"
-                >
-                  <CartoonPlanet seed={id} region={id} size={64} />
-                  <h3 className="mt-3 font-toon text-xl font-bold">
-                    {region.name}
-                  </h3>
-                  <p className="mt-3 text-sm text-toon-ink-soft">
-                    {region.card}
-                  </p>
-                  <span className="mt-4 block text-sm">Khám phá vùng →</span>
-                </Link>
+                <li key={id}>
+                  <Link
+                    to={`/galaxy?vung=${id}`}
+                    className="group flex items-center gap-4 px-4 py-3.5 transition-colors hover:bg-toon-cream focus-visible:bg-toon-cream focus-visible:outline-none sm:px-5"
+                  >
+                    <CartoonPlanet seed={id} region={id} size={48} />
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-center gap-2 font-toon text-lg font-bold">
+                        <RegionGlyph id={id} size={16} />
+                        {region.name}
+                      </span>
+                      <span className="mt-0.5 block text-sm text-toon-ink-soft">
+                        {region.card}
+                      </span>
+                    </span>
+                    <span className="hidden shrink-0 text-sm font-bold sm:inline">
+                      Khám phá vùng
+                    </span>
+                    <ChevronRight
+                      size={18}
+                      aria-hidden
+                      className="shrink-0 transition-transform group-hover:translate-x-0.5"
+                    />
+                  </Link>
+                </li>
               ) : null;
             })}
-          </div>
+          </ul>
         )}
       </section>
       <section aria-labelledby="suggestions-title">
@@ -193,23 +227,27 @@ export default function QuizResultPage() {
         <p className="mb-4 text-sm text-toon-star-soft">
           Đọc cả mặt khó của nghề, rồi tự chọn điều bạn muốn thử.
         </p>
-        <div className="grid gap-4 lg:grid-cols-3">
-          {data.suggestions.slice(0, 3).map((suggestion) => (
-            <Suggestion key={suggestion.code} suggestion={suggestion} />
-          ))}
-        </div>
+        {data.suggestions.length > 0 && (
+          <ol className="toon-card toon-rows overflow-hidden p-0 text-toon-ink">
+            {data.suggestions.slice(0, 3).map((suggestion, i) => (
+              <li key={suggestion.code}>
+                <Suggestion suggestion={suggestion} rank={i + 1} />
+              </li>
+            ))}
+          </ol>
+        )}
         {data.suggestions.length === 0 && (
           <p className="text-sm text-toon-star-soft">
             Chưa có gợi ý nghề. Bản đồ vẫn mở để bạn tự khám phá.
           </p>
         )}
       </section>
-      <NightCard>
-        <details>
-          <summary className="cursor-pointer font-toon text-2xl font-bold">
-            Mục tiêu của bạn
-          </summary>
-          <div className="mt-5">
+      <NightCard className="px-4 py-1 sm:px-6">
+        <ToonDisclosure
+          summary="Mục tiêu của bạn"
+          className="[&>summary]:min-h-14 [&>summary]:text-lg"
+        >
+          <div>
             {form.isError ? (
               <QuizMessage tone="warning">
                 {errorText(form.error)}{' '}
@@ -268,27 +306,41 @@ export default function QuizResultPage() {
               </Link>
             </div>
           </div>
-        </details>
+        </ToonDisclosure>
       </NightCard>
     </div>
   );
 }
 
-function Suggestion({ suggestion: s }: { suggestion: CareerSuggestion }) {
+function Suggestion({
+  suggestion: s,
+  rank,
+}: {
+  suggestion: CareerSuggestion;
+  rank: number;
+}) {
   const occupation = useOccupation(s.code);
   return (
-    <article className="min-w-0">
-      <NightCard className="flex h-full flex-col">
-        <div className="mb-4 flex items-center gap-3">
-          <CartoonPlanet seed={s.code} region={s.regionId} size={60} />
-          <div className="min-w-0">
-            <h3 className="font-toon text-xl font-bold">{s.name}</h3>
-            <p className="mt-1 text-xs text-toon-ink-faint">{s.group}</p>
-          </div>
+    <article className="flex min-w-0 gap-4 px-4 py-4 sm:px-5">
+      <span
+        aria-hidden
+        className="mt-1 hidden font-toon text-sm font-bold tabular-nums text-toon-ink-faint sm:block"
+      >
+        {String(rank).padStart(2, '0')}
+      </span>
+      <CartoonPlanet seed={s.code} region={s.regionId} size={52} />
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <h3 className="font-toon text-lg font-bold leading-snug">{s.name}</h3>
+          {!s.playable && <ToonStatus kind="soon" compact />}
         </div>
-        <p className="text-sm text-toon-ink-soft">{s.reason}</p>
-        <div className="my-4 text-sm">
-          <p className="font-semibold">Mặt khó của nghề</p>
+        <p className="text-xs text-toon-ink-faint">{s.group}</p>
+        <p className="mt-2 text-sm text-toon-ink-soft">{s.reason}</p>
+        {/* Mặt khó luôn đi cùng gợi ý (BR-07): hiện dòng đầu, phần còn lại gập. */}
+        <div className="mt-3 border-l-[3px] border-toon-coral/70 pl-3 text-sm">
+          <p className="flex items-center gap-2 font-toon font-bold">
+            <ToonStatusGlyph kind="warning" size={14} /> Mặt khó của nghề
+          </p>
           {occupation.isError ? (
             <p className="mt-1 text-toon-ink-soft">
               {errorText(occupation.error)}{' '}
@@ -300,39 +352,45 @@ function Suggestion({ suggestion: s }: { suggestion: CareerSuggestion }) {
               </button>
             </p>
           ) : !occupation.data ? (
-            <p role="status" className="mt-2">
+            <p role="status" className="mt-1">
               Đang mở mặt khó của nghề…
             </p>
           ) : occupation.data.downsides.length ? (
-            <ul className="mt-2 list-disc space-y-1 pl-4 text-toon-ink-soft">
+            <ul className="mt-1 list-disc space-y-1 pl-4 text-toon-ink-soft">
               {occupation.data.downsides.map((line) => (
                 <li key={line}>{line}</li>
               ))}
             </ul>
           ) : (
-            <p className="mt-2 text-toon-ink-faint">
+            <p className="mt-1 text-toon-ink-faint">
               Chưa có thông tin mặt khó; hồ sơ nghề đang được bổ sung.
             </p>
           )}
         </div>
-        {!s.playable && (
-          <ToonBadge
-            className="mb-4 whitespace-normal py-1 leading-relaxed"
-            tone="sky"
-          >
-            Chưa có màn chơi · Xem hồ sơ nghề
-          </ToonBadge>
-        )}
-        <Link
-          to={`/occupations/${s.code}`}
-          className={toonButtonClasses({
-            variant: 'secondary',
-            className: 'mt-auto w-full',
-          })}
-        >
-          Xem hồ sơ nghề →
-        </Link>
-      </NightCard>
+      </div>
+      <Link
+        to={`/occupations/${s.code}`}
+        aria-label={`Xem hồ sơ nghề ${s.name}`}
+        title="Xem hồ sơ nghề"
+        className="mt-1 grid size-10 shrink-0 place-items-center self-start rounded-full border-2 border-toon-ink/25 transition-colors hover:border-toon-ink hover:bg-toon-star focus-visible:shadow-toon-focus"
+      >
+        <ArrowRight size={18} aria-hidden />
+      </Link>
     </article>
   );
+}
+
+const RIASEC_ICONS = {
+  R: Wrench,
+  I: Microscope,
+  A: Palette,
+  S: HeartHandshake,
+  E: Flag,
+  C: ClipboardList,
+} as const;
+
+/** Mỗi kiểu việc một ký hiệu, để sáu thanh không chỉ phân biệt bằng chữ. */
+function RiasecIcon({ axis }: { axis: string }) {
+  const Icon = RIASEC_ICONS[axis as keyof typeof RIASEC_ICONS] ?? Wrench;
+  return <Icon size={17} strokeWidth={2.4} aria-hidden />;
 }

@@ -1,13 +1,25 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, Compass } from 'lucide-react';
-import { EmptyState, MEDAL, ToonButton, ToonProgress, cn } from '@datn/ui';
+import { ArrowUpRight, Compass } from 'lucide-react';
+import {
+  EmptyState,
+  MEDAL,
+  ToonButton,
+  ToonDisclosure,
+  ToonProgress,
+  cn,
+} from '@datn/ui';
+
 import { errorText } from '../../api/hooks';
 import type {
   KeywordRef,
   RatingCriterion,
   RatingSummary,
 } from '../../api/types';
+
+/** Dòng "Xem thêm" nhỏ bên trong một chương. */
+export const compactDisclosure =
+  '[&>summary]:min-h-9 [&>summary]:py-1 [&>summary]:text-sm';
 
 export function LoadError({
   error,
@@ -29,112 +41,96 @@ export function LoadError({
   );
 }
 
-/** Chỉ chia cách hiển thị, giữ nguyên toàn bộ chữ nguồn khi mở đọc tiếp. */
+/** Đoạn văn đầy đủ. `firstSentence`, `words` giữ để tương thích, không cắt nữa. */
 export function BriefText({
   text,
-  words = 35,
-  firstSentence = false,
 }: {
   text: string;
   words?: number;
   firstSentence?: boolean;
 }) {
-  const sentence = firstSentence
-    ? text.match(/^.*?[.!?](?=\s|$)/su)?.[0]
-    : undefined;
-  const prefix =
-    sentence ??
-    text.match(new RegExp(`^(?:\\S+\\s+){0,${words - 1}}\\S+`, 'u'))?.[0] ??
-    text;
-  const rest = text.slice(prefix.length);
-  return (
-    <div className="text-sm leading-relaxed">
-      <p>{prefix}</p>
-      {rest.trim() && (
-        <details className="mt-2">
-          <summary className="w-fit cursor-pointer rounded-md font-bold underline decoration-dotted underline-offset-4 focus-visible:shadow-toon-focus">
-            Xem thêm
-          </summary>
-          <p className="mt-2 whitespace-pre-line">{rest.trimStart()}</p>
-        </details>
-      )}
-    </div>
-  );
+  return <p className="whitespace-pre-line text-sm leading-relaxed">{text}</p>;
 }
 
+/**
+ * Một chương của hồ sơ nghề: luôn mở, có số thứ tự và ký hiệu riêng. Hồ sơ
+ * đọc từ trên xuống như một chuỗi, không phải lưới ô gập phải bấm từng ô.
+ */
 export function PaperSection({
   id,
   title,
   icon,
+  index,
+  tone = 'paper',
   children,
-  open = false,
 }: {
   id?: string;
   title: string;
   icon?: ReactNode;
+  /** Số chương trong chuỗi (1-based). */
+  index?: number;
+  tone?: 'paper' | 'warning';
   children: ReactNode;
-  open?: boolean;
 }) {
+  const headingId = id ? `${id}-title` : undefined;
   return (
-    <details
+    <section
       id={id}
-      open={open || undefined}
-      className="group scroll-mt-28 rounded-[22px] border-[3px] border-toon-ink bg-toon-paper text-toon-ink shadow-toon"
+      aria-labelledby={headingId}
+      className={cn(
+        'scroll-mt-24 rounded-[24px] p-5 text-toon-ink shadow-soft sm:p-7',
+        tone === 'warning' ? 'bg-toon-star-soft' : 'bg-toon-paper',
+      )}
     >
-      <summary className="flex cursor-pointer list-none items-center gap-3 rounded-[18px] px-5 py-5 font-toon text-xl font-extrabold focus-visible:shadow-toon-focus sm:px-6 [&::-webkit-details-marker]:hidden">
-        <span aria-hidden className="text-toon-ink-soft">
-          {icon ?? <Compass size={21} />}
+      <h2
+        id={headingId}
+        className="mb-5 flex items-center gap-3 font-toon text-xl font-extrabold leading-tight sm:text-2xl"
+      >
+        <span
+          aria-hidden
+          className={cn(
+            'grid size-10 shrink-0 place-items-center rounded-full',
+            tone === 'warning' ? 'bg-toon-paper/80' : 'bg-toon-sand/70',
+          )}
+        >
+          {icon ?? <Compass size={20} />}
         </span>
         <span className="min-w-0 flex-1">{title}</span>
-        <ChevronDown
-          aria-hidden
-          size={20}
-          className="shrink-0 transition-transform group-open:rotate-180 motion-reduce:transition-none"
-        />
-      </summary>
-      <div className="space-y-5 border-t-2 border-dashed border-toon-shade px-5 py-5 sm:px-6">
-        {children}
-      </div>
-    </details>
+        {index !== undefined && (
+          <span
+            aria-hidden
+            className="font-toon text-sm font-bold tabular-nums text-toon-ink-faint"
+          >
+            {String(index).padStart(2, '0')}
+          </span>
+        )}
+      </h2>
+      <div className="space-y-5">{children}</div>
+    </section>
   );
 }
 
 export function TaskList({
   items,
-  limit = 3,
   empty = 'Chưa có thông tin được công bố.',
 }: {
   items: string[];
+  /** Giữ để tương thích; danh sách luôn hiện đủ, không giấu sau "Xem thêm". */
   limit?: number;
   empty?: string;
 }) {
-  const list = (entries: string[]) => (
-    <ul className="space-y-3 text-sm leading-relaxed">
-      {entries.map((text, i) => (
+  return items.length ? (
+    <ul className="space-y-2.5 text-sm leading-relaxed">
+      {items.map((text, i) => (
         <li key={i} className="flex gap-3">
           <span
             aria-hidden
             className="mt-2 size-1.5 shrink-0 rounded-full bg-toon-sky-deep"
           />
-          <div className="min-w-0">
-            <BriefText text={text} />
-          </div>
+          <p className="min-w-0 whitespace-pre-line">{text}</p>
         </li>
       ))}
     </ul>
-  );
-  return items.length ? (
-    <div>
-      {list(items.slice(0, limit))}
-      {items.length > limit && (
-        <details className="mt-4">
-          <summary className="w-fit cursor-pointer rounded-md text-sm font-bold underline underline-offset-4 focus-visible:shadow-toon-focus">
-            Xem thêm ({items.length - limit})
-          </summary>
-          <div className="mt-3">{list(items.slice(limit))}</div>
-        </details>
-      )}
-    </div>
   ) : (
     <p className="text-sm text-toon-ink-faint">{empty}</p>
   );
@@ -150,54 +146,57 @@ export function Keywords({
   if (!items.length)
     return <p className="text-sm text-toon-ink-faint">{empty}</p>;
   const cards = (entries: KeywordRef[]) => (
-    <ul className="grid gap-3 sm:grid-cols-2">
+    <ul className="toon-rows">
       {entries.map((k) => (
-        <li
-          key={k.id}
-          className="flex min-w-0 items-center gap-3 rounded-2xl border-2 border-toon-ink bg-toon-cream p-3 shadow-toon-sm"
-        >
-          <span
-            aria-hidden
-            className="grid size-10 shrink-0 place-items-center rounded-xl border-2 border-toon-ink bg-toon-star font-toon text-xl font-extrabold"
-          >
-            {k.level}
+        <li key={k.id} className="flex min-w-0 items-center gap-3 py-2.5">
+          <LevelPips level={k.level} />
+          <p className="min-w-0 flex-1 break-words text-sm font-bold">
+            {k.name}
+          </p>
+          <span className="shrink-0 text-xs font-semibold text-toon-ink-faint">
+            {MEDAL[k.level].name}
           </span>
-          <div className="min-w-0">
-            <p className="break-words text-sm font-bold">{k.name}</p>
-            <p className="text-xs font-semibold text-toon-ink-faint">
-              {MEDAL[k.level].name}
-            </p>
-          </div>
         </li>
       ))}
     </ul>
   );
+  return cards(items);
+}
+
+/** Mức kỹ năng 1–3 bằng ba vạch: đọc được mà không cần chữ. */
+export function LevelPips({ level }: { level: number }) {
   return (
-    <div>
-      {cards(items.slice(0, 3))}
-      {items.length > 3 && (
-        <details className="mt-4">
-          <summary className="w-fit cursor-pointer rounded-md text-sm font-bold underline underline-offset-4 focus-visible:shadow-toon-focus">
-            Xem thêm kỹ năng ({items.length - 3})
-          </summary>
-          <div className="mt-3">{cards(items.slice(3))}</div>
-        </details>
-      )}
-    </div>
+    <span
+      role="img"
+      aria-label={`Mức ${level}/3`}
+      className="inline-flex shrink-0 items-end gap-0.5"
+    >
+      {[1, 2, 3].map((n) => (
+        <span
+          key={n}
+          aria-hidden
+          className={cn(
+            'w-1.5 rounded-full',
+            n === 1 ? 'h-2' : n === 2 ? 'h-3' : 'h-4',
+            n <= level ? 'bg-toon-ink' : 'bg-toon-ink/15',
+          )}
+        />
+      ))}
+    </span>
   );
 }
 
 export function KeywordLegend() {
   return (
-    <details className="mt-4 text-xs text-toon-ink-faint">
-      <summary className="w-fit cursor-pointer rounded-md font-bold focus-visible:shadow-toon-focus">
-        Ba mức kỹ năng
-      </summary>
-      <p className="mt-2">
+    <ToonDisclosure
+      summary="Ba mức kỹ năng"
+      className={cn('text-xs text-toon-ink-faint', compactDisclosure)}
+    >
+      <p>
         Làm quen · có hướng dẫn; Thành thạo · tự làm việc thường gặp; Chuyên sâu
         · xử lý việc khó và hướng dẫn người khác.
       </p>
-    </details>
+    </ToonDisclosure>
   );
 }
 
@@ -253,32 +252,27 @@ export function RoleLinks({
   roles: Array<{ code: string; name: string }>;
 }) {
   const links = (entries: typeof roles) => (
-    <ul className="flex flex-wrap gap-2">
+    <ul className="flex flex-wrap gap-x-5 gap-y-2">
       {entries.map((r) => (
         <li key={r.code}>
+          {/* Liên kết sang nghề khác: chữ có mũi tên, không mặc áo nút. */}
           <Link
             to={`/occupations/${r.code}`}
-            className="inline-block rounded-xl border-2 border-toon-ink bg-toon-cream px-3 py-2 text-sm font-bold hover:bg-toon-sand focus-visible:shadow-toon-focus"
+            className="group inline-flex items-center gap-1 rounded-md text-sm font-bold text-toon-sky-deep underline decoration-2 decoration-toon-sky-deep/30 underline-offset-4 hover:decoration-toon-sky-deep focus-visible:shadow-toon-focus"
           >
             {r.name}
+            <ArrowUpRight
+              size={14}
+              strokeWidth={2.6}
+              aria-hidden
+              className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
           </Link>
         </li>
       ))}
     </ul>
   );
-  return (
-    <div>
-      {links(roles.slice(0, 3))}
-      {roles.length > 3 && (
-        <details className="mt-3">
-          <summary className="w-fit cursor-pointer rounded-md text-sm font-bold focus-visible:shadow-toon-focus">
-            Xem thêm nghề ({roles.length - 3})
-          </summary>
-          <div className="mt-3">{links(roles.slice(3))}</div>
-        </details>
-      )}
-    </div>
-  );
+  return links(roles);
 }
 
 /** Đảo nổi chỉ dùng mảng màu phẳng; trạng thái luôn có chữ bên ngoài hình. */

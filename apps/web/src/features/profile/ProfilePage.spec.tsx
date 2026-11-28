@@ -80,11 +80,8 @@ describe('hành trang riêng tư', () => {
 
   it('hiện đủ 221 sao nghề chia vùng và các trạng thái chưa có dữ liệu', async () => {
     renderWithProviders(<ProfilePage />, '/profile?tab=thong-ke');
-    const stars = await screen.findByText('Những vì sao đã ghé', {
-      selector: 'summary',
-    });
-    expect(stars.closest('details')?.open).toBe(false);
-    fireEvent.click(stars);
+    // Mở sẵn, không giấu sau dòng gập: sao nghề nào cũng bấm được.
+    await screen.findByRole('heading', { name: 'Những vì sao đã ghé' });
     await waitFor(() =>
       expect(screen.getAllByRole('img', { name: /Cụm sao/ })).toHaveLength(6),
     );
