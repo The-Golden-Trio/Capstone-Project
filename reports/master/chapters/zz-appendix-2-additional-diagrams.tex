@@ -2,7 +2,7 @@
 \section*{Appendix 2 --- Additional diagrams}
 \addcontentsline{toc}{section}{Appendix 2 --- Additional diagrams}
 
-The diagrams that Chapter 5 refers to but does not print: the activity diagrams of Section 5.1.1, the sitemap of the staff application, the sequence diagrams of Section 5.3.3, the domain classes and entity--relationship views of Sections 5.3.4 and 5.3.5, and the package diagram of Chapter 6.
+The diagrams that Chapter 5 refers to but does not print: the activity diagrams of Section 5.1.1, the sitemap of the staff application, the sequence diagrams of Section 5.3.3 (their descriptions stay in that section), the module classes of Section 5.3.4 and the entity--relationship views of Section 5.3.5, and the package diagram of Chapter 6.
 
 Activity diagrams of the explorer.
 
@@ -40,6 +40,12 @@ Activity diagrams of the explorer.
 \centering
 \includegraphics[width=0.35\textwidth,height=0.85\textheight,keepaspectratio]{figures/AD-01g_Explorer_SendAppFeedback.png}
 \caption{Explorer: send app feedback (AD-01g)}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.35\textwidth,height=0.85\textheight,keepaspectratio]{figures/AD-01h_Explorer_ViewHint.png}
+\caption{Explorer: view a hint (AD-01h)}
 \end{figure}
 
 Activity diagrams of the content administrator.
@@ -148,6 +154,24 @@ Sitemap of the staff application.
 \end{figure}
 \end{landscape}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth,height=0.85\textheight,keepaspectratio]{figures/SITE-02_StaffApp_ContentAdmin.png}
+\caption{Sitemap of the content administrator portal (SITE-02, content administrator)}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth,height=0.85\textheight,keepaspectratio]{figures/SITE-03_StaffApp_DomainExpert.png}
+\caption{Sitemap of the domain expert portal (SITE-03)}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth,height=0.85\textheight,keepaspectratio]{figures/SITE-04_StaffApp_SystemAdmin.png}
+\caption{Sitemap of the system administrator portal (SITE-04)}
+\end{figure}
+
 Sequence diagrams.
 
 \begin{figure}[H]
@@ -204,21 +228,75 @@ Sequence diagrams.
 \caption{Sequence of monitoring operation and re-running a failed job (SD-12)}
 \end{figure}
 
-Domain classes.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{figures/SD-05_DomainExpert_GenerateScenario.png}
+\caption{Sequence of generating scenario content (SD-05): opening and assignment, generation and revision with AI, and completion and submission}
+\end{figure}
+
+Module classes. An association is constructor injection, a dashed arrow labelled «write» marks a table the module owns, and a dashed arrow with a hollow head is a realization.
 
 \begin{landscape}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CD-03_ScenarioContent.png}
-\caption{Domain classes of scenario content (CD-03): a scenario is composed of slots, facts, artefacts, actions, nodes with options, and reference answers}
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CL-01_IdentityAndAccess.png}
+\caption{Module classes of identity and access (CL-01)}
 \end{figure}
 \end{landscape}
 
 \begin{landscape}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CD-04_AuthoringReviewRelease.png}
-\caption{Domain classes of authoring, review, and release (CD-04): drafting with AI, review assignments and criteria versions, presentation, play-test, and the immutable release}
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CL-02_CatalogueAndImport.png}
+\caption{Module classes of the catalogue and import (CL-02)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CL-03_ScenarioAuthoringAndLifecycle.png}
+\caption{Module classes of scenario authoring and lifecycle (CL-03)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CL-04_ReviewAndPublishing.png}
+\caption{Module classes of review and publishing (CL-04)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CL-05_ExplorerCareerAndLife.png}
+\caption{Module classes of the explorer, career, and life (CL-05)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CL-06_PlayAssessmentAndQuality.png}
+\caption{Module classes of play, assessment, and quality (CL-06)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CL-07_AiFeedbackAndMonitoring.png}
+\caption{Module classes of AI, feedback, and monitoring (CL-07)}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth,height=0.86\textwidth,keepaspectratio,keepaspectratio]{figures/CL-08_SharedPlatform.png}
+\caption{Module classes of the shared platform (CL-08)}
 \end{figure}
 \end{landscape}
 

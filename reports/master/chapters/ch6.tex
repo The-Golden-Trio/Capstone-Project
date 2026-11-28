@@ -13,8 +13,8 @@ The prototype was built to show that the technologies of Section 5.2 work for th
 
 The code is one monorepo managed with pnpm and Nx; continuous integration uses Node.js 22. Figure PK-01 (Appendix 2) shows the packages and how they depend on one another.
 
-{\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.238\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.528\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.126\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.213\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.553\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.126\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.103\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \caption{Projects of the repository. Source lines are those of tracked TypeScript files that are neither tests nor generated code.} \\
 \hline
 \textbf{Project} & \textbf{Role} & \textbf{Source lines (about)} & \textbf{Test files} \\ \hline
@@ -36,8 +36,8 @@ The database schema has 72 models and 11 migrations. Occupation data is kept as 
 
 Table of the nineteen modules of CL-00 and what exists. The prototype also keeps modules that CL-00 does not have (\texttt{content}, \texttt{profile}, \texttt{runs}, \texttt{progress}), which come from the earlier play flow.
 
-{\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.256\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.177\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.561\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.249\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.171\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.575\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \caption{Modules of CL-00 and their implementation status.} \\
 \hline
 \textbf{Module (CL-00)} & \textbf{Status} & \textbf{Notes} \\ \hline
@@ -73,8 +73,8 @@ On the interface side, the explorer application can run against the real API, ag
 
 Table of the design mechanisms of Section 5.3.1 that exist in code.
 
-{\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.207\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.114\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.674\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.172\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.114\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.709\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \caption{Design mechanisms and where they are implemented.} \\
 \hline
 \textbf{Mechanism} & \textbf{Design} & \textbf{Implementation} \\ \hline
@@ -100,8 +100,8 @@ A run of the activity flow against real models, done by hand on 11 November with
 
 \subsubsection{Where the prototype differs from the design}
 
-{\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.344\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.188\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.304\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.356\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.172\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.307\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \caption{Differences between the prototype and the design.} \\
 \hline
 \textbf{Area} & \textbf{Prototype} & \textbf{Design} & \textbf{Plan} \\ \hline
@@ -126,8 +126,8 @@ Deployment & Local Docker Compose only & Cloud region, two zones, egress proxy (
 
 The tests in the repository are unit and component tests: Jest for the API and Vitest for the other four projects. On 21 November 2026 they gave the results below.
 
-{\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.288\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.183\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.159\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.183\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.183\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.308\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.179\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.151\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.179\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.179\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \caption{Results of the automated tests, 21 November 2026.} \\
 \hline
 \textbf{Project} & \textbf{Files or suites} & \textbf{Tests} & \textbf{Passed} & \textbf{Failed} \\ \hline
@@ -162,8 +162,8 @@ The 187 test cases of Section 5.3.9 and Appendix 5 are a plan. The unit tests ab
 
 The prototype implements the platform's backbone: identity and roles, the staff authoring pipeline to a draft game, the explorer's journey with the Galaxy Map, the shift play with AI narration, and AI assessment by a panel of judges, all through a queue, an event log, and a model gateway as designed. It does not yet implement reference-\allowbreak{}data import, the career and life modules, grading-\allowbreak{}quality tools, monitoring, release publication, and the migration to the new data model.
 
-{\small
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.443\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.552\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.432\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.563\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
 \caption{Implementation status by group of requirements.} \\
 \hline
 \textbf{Group of requirements} & \textbf{Status in the prototype} \\ \hline

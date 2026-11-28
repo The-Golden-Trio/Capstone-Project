@@ -160,16 +160,7 @@ The limitations of self-report instruments follow from the same body of theory. 
 
 Frameworks of career decision difficulty. The taxonomy of Gati, Krausz and Osipow [1], on which Section 1.1 relies, is one of several frameworks describing why career decisions stall, and it is among the oldest still in use, so its choice requires justification. Table 2.2 compares it with five others.
 
-| Framework | Year | What it describes | Structure | Missing occupational information as a separate component |
-|---|---|---|---|---|
-| Taxonomy of career decision-making difficulties (CDDQ) [1] | 1996 | Difficulties arising before and during the decision | Ten categories in three clusters: lack of readiness, lack of information, inconsistent information | Yes: within the lack-of-information cluster, alongside information about the self, the process, and ways of obtaining information |
-| Emotional and personality-related career decision-making difficulties (EPCD) [106] | 2008 | Emotional and personality-related difficulties | Three clusters: pessimistic views, anxiety, self-concept and identity | No |
-| Career Indecision Profile [107] | 2013 | Sources of indecision, including personality | Four factors: neuroticism and negative affectivity, choice and commitment anxiety, lack of readiness, interpersonal conflicts | No separate component |
-| Career Decision Self-Efficacy scale [108] | 1983 | Confidence in carrying out decision tasks | Five subscales: self-appraisal, occupational information, goal selection, planning, problem solving | Partly: confidence in gathering information, not the information that is lacking |
-| Career Thoughts Inventory [109] | 1996 | Dysfunctional career thoughts | Three scales: decision-making confusion, commitment anxiety, external conflict | No |
-| Career Decision Scale [110] | 1976 | Certainty and indecision | A certainty scale and an indecision scale | No separate component |
-
-: Frameworks of career decision difficulty compared with the taxonomy of Gati, Krausz and Osipow.
+Table 2.2 compares the frameworks and is given in Appendix 3.
 
 The comparison shows a division of labour rather than a succession. The later frameworks do not replace the taxonomy; they describe other sources of difficulty — emotional and personality-related dispositions [106][107][109], or confidence in carrying out decision tasks [108] — and the first of them was developed with the taxonomy's own author to complement it [106]. Only the taxonomy isolates missing information about occupations as a separately measured category, distinct from readiness and from inconsistent information. That category is the difficulty a system supplying occupational information can address directly, whereas dispositions are unlikely to be changed by information alone. The taxonomy's age is offset by recent structural evidence: its structure was re-examined across thirteen countries in 2023 [2], a study that re-validates the taxonomy rather than proposing an alternative to it.
 
@@ -453,7 +444,7 @@ Localisation presents a further difficulty: occupational taxonomies are authored
 
 ## 4.3 User's Requirements
 
-Requirements are expressed first as user requirements per group, each with a priority (Must, Should, Could). These are then analysed into functional, non-functional, and data requirements. Each of these carries two verification methods: a business verification, by which a stakeholder — an explorer, a domain expert, a content administrator, or a system administrator — confirms that the requirement meets its purpose, through acceptance tests, walkthroughs, or expert review; and a technical verification, by which the development team confirms that the implementation behaves correctly, through automated, integration, boundary, load, or fault-injection tests. The requirements are aligned with the use case diagram UC-00, the activity diagrams AD-01a to AD-05e, and the state machine SM-01 of Chapter 5.
+Requirements are expressed first as user requirements per group, each with a priority (Must, Should, Could). These are then analysed into functional, non-functional, and data requirements. Each of these carries two verification methods: a business verification, by which a stakeholder — an explorer, a domain expert, a content administrator, or a system administrator — confirms that the requirement meets its purpose, through acceptance tests, walkthroughs, or expert review; and a technical verification, by which the development team confirms that the implementation behaves correctly, through automated, integration, boundary, load, or fault-injection tests. The requirements are aligned with the use case diagram UC-00, the activity diagrams AD-01a to AD-05e, and the state machine SM-01 of Chapter 5. The business verification and the technical verification of each functional, non-functional, and data requirement are given in Appendix 3.
 
 ### 4.3.1 User requirements
 
@@ -461,79 +452,79 @@ The user requirements are 20 for explorers (UR-E01 to UR-E20), 9 for domain expe
 
 ### 4.3.2 Functional requirements
 
-| ID | Functional requirement | Group | Business verification | Technical verification |
-|---|---|---|---|---|
-| FR-01 | Register, sign in with a password or Google, and recover the account | Explorer | Acceptance test: a user registers, signs in with a password and with Google, resets a forgotten password, and reaches their own progress | Authentication tests; unauthenticated requests for progress are refused; reset links expire after one use; Google sign-in verifies the ID token and finds or creates the linked account |
-| FR-02 | Edit, sign out of, and delete the account | Explorer | Walkthrough of each account action | Account deletion removes personal data as defined in NFR-05 |
-| FR-03 | Run an optional, retakable RIASEC orientation quiz suggesting occupations [41] | Explorer | Pilot users complete the quiz and find the suggested occupations meaningful | Quiz yields a RIASEC profile; the five suggested occupations (project-defined) come from matching it with each occupation's O\*NET interest code, without AI; skipping leads to the Galaxy Map; retaking replaces the earlier result |
-| FR-04 | Show the explorer's portrait for their RIASEC profile, including the social index | Explorer | Pilot users judge the description relevant and not misleading | No AI is used in the quiz; the portrait is the fixed text written in advance for the explorer's highest-scoring RIASEC type, one text per type (six types [41]); the social index is the profile's Social score; the portrait is labelled as self-reported and not validated |
-| FR-05 | Browse occupations on the Galaxy Map and show each profile with its downsides and level descriptions | Explorer | Explorers find an occupation on the map and can state its main downsides and what each level involves | Every published occupation appears on the map with all profile fields and a description for every level; ratings follow FR-19 suppression |
-| FR-06 | Open the entry level of every published occupation to every explorer | Explorer | Acceptance test: a new explorer opens the entry level of any published occupation | Entry level reachable with zero credit and without any adjacency check |
-| FR-07 | Let explorers start an adjacent occupation at a higher level when overlap conditions are met | Explorer | Domain experts judge the offered starting levels as plausible for seeded profiles | Overlap only unlocks higher starting levels and never blocks an entry level; no offer is made where adjacency data is missing |
-| FR-08 | Enrol in levels, choose scenarios, award credit, and unlock the next level | Explorer | Acceptance test: an explorer enrols, chooses scenarios, and progresses through levels as expected | Threshold boundary tests unlock at and only at the specified credit; below the threshold, tasks for the missing competencies are suggested |
-| FR-09 | Offer the role, team, and context before each scenario | Explorer | Explorer walkthrough: explorers can open the context before a scenario and understand it | End-to-end test: an intro screen precedes every scenario and lets the explorer open the full context or skip it; an unavailable scenario shows a notice and returns the explorer to the Island Map |
-| FR-10 | Support choice, ordering, prioritising, and free-text answers | Explorer | Explorers complete each response form without help | Known-input tests return the expected scores for each closed form |
-| FR-11 | Score each free-text answer, including every follow-up answer, with anchor points backed by quotations | Explorer | Domain experts judge a sample of scored responses as fair and well-evidenced | Each answer is graded as soon as it is submitted, before any follow-up is decided, by a panel of three AI judges (project-defined) running in parallel, and their scores are combined into one; every quotation is found verbatim in the response; scores outside the rubric anchors are rejected; agreement with experts is checked under NFR-14 |
-| FR-12 | Answer follow-up questions generated by AI on free-text answers | Explorer | Explorers judge the follow-up questions relevant to what they wrote | A follow-up is decided only after the previous answer is graded; follow-ups stay within the expert's follow-up goal and the activity's limit; each follow-up passes the output check before display, otherwise the expert's default follow-up is shown; each follow-up answer is graded under FR-11 |
-| FR-13 | Offer hints when the explorer is stuck | Explorer | Explorers continue after a hint and still find the task meaningful | Using a hint removes the +2 option for that activity; hint use is recorded and shown in the summary; hints do not reveal grading criteria |
-| FR-14 | Return result, feedback, and guidance separately | Explorer | Usability test: explorers identify the result, the feedback, and the guidance separately | All three present and distinguishable for every assessed scenario; AI-written feedback notes are built from the rubric anchors and must pass the output check (on topic, no grading criteria, correct language); a note that fails is redrafted, with no expert default; explorers can flag wrong content to the domain expert |
-| FR-15 | Record evidenced expertise and soft-skill competencies, capped per skill per scenario | Explorer | Domain experts spot-check sampled sessions: recorded competencies match the observed behaviour | Records correspond to rubric criteria and are split into expertise and soft skills; random-event answers add bonus soft-skill evidence only; replay test confirms accumulation never exceeds the cap |
-| FR-16 | Offer optional side quests for bonus points | Explorer | Explorers find side quests short and optional | Side quests are authored by the domain expert (FR-22); side-quest points are recorded separately from main-quest competence credit |
-| FR-17 | Show the career path of each occupation level | Explorer | Explorers can describe the role held at each level of an occupation | Career path lists every level of the occupation with its role and description, as written by the domain expert |
-| FR-18 | Show a private record of attempts, expertise and soft-skill points, awards, and past scenario feedback | Explorer | Explorers confirm their record is accurate and complete | Record reconstructs from session history for a seeded account; both point types shown in the top bar, summary, and profile; past feedback is the end-of-scenario feedback of each attempt; not accessible to other users |
-| FR-19 | Collect occupation ratings and feedback | Explorer | Acceptance test: the rating and feedback form appears only after full completion; aggregated results are shown or withheld as expected | Form accepted only once every level is completed; aggregated result updates after each new submission; suppressed below the response-count threshold |
-| FR-20 | Send app feedback and review it | Explorer, System administrator | An explorer sends feedback and a system administrator finds it in the review list | Every submission is stored with time and app version; the system administrator can mark it as handled |
-| FR-21 | Manage the occupation profile: levels, level descriptions, future roles, downsides, salary, generation rules, competencies, adjacency | Domain expert | Experts approve the adaptation for Vietnamese practice | A profile can be created only for an occupation the content administrator has created; only domain experts assigned to the occupation can edit it; every rubric criterion resolves to a competency; routes without enough data are hidden, not guessed |
-| FR-22 | Author scenario context, allowed task types, option scores, rubric, hints, random events, and side quests | Domain expert | Walkthrough: an author prepares a scenario for an assigned task end to end, including its hints, random events, and side quests | Edits persist with authorship recorded; access limited to domain experts assigned to that occupation; every free-text activity has a follow-up goal and a default follow-up; random events are dropped into sessions at random within the configured probability, target the scenario's reviewed skills, and never lower the main score |
-| FR-23 | Generate scenario content with AI from the author's context, keeping its generation history | Domain expert | Domain-expert review of sampled generations against the required facts and the occupation's rules | Automated validator passes on every stored generation; a scenario that fails the checks cannot be submitted; each run's context, model, cost, and check result are viewable |
-| FR-24 | Add reference answers with expert scores | Domain expert | Experts confirm the stored criteria reflect what they intended | Item is stored only when validation passes; failing items return the reasons |
-| FR-25 | Review another expert's scenario against the review criteria | Domain expert | Walkthrough: an expert approves, rejects, and requests changes on sample scenarios using the criteria | Reviewer is never the author; every criterion is answered before a decision; unapproved scenarios are never served to explorers; a rejected scenario is retired and cannot be reopened |
-| FR-26 | Play-test the draft game before publication | Domain expert | Walkthrough: the author is invited, play-tests a draft game, and reports findings | Author is notified when the draft game is built; play-test sessions are excluded from every explorer aggregate; display findings return the scenario to presentation, content findings return it to the author and to review |
-| FR-27 | Revalidate a published scenario on request | Domain expert | Experts revalidate a sample of published scenarios on request | A domain expert or content administrator can send a published scenario back to the review queue; the scenario stays published and playable meanwhile; the result is recorded; outdated scenarios are flagged for replacement |
-| FR-28 | Report disagreements between AI and expert grading | Domain expert | Experts confirm the disagreement list helps them refine grading criteria | Disagreement list matches recomputation over the reference set |
-| FR-29 | Rate responses and scenarios blind | Domain expert | Experts confirm they cannot see AI scores or other experts' ratings while rating | Blind-rating records exist per expert; inter-expert agreement is computable |
-| FR-30 | Create and manage own occupations | Content administrator | Walkthrough: a content administrator takes their occupation from draft to published to retired | State transitions follow the defined lifecycle; publication requires completed review; actions on other occupations are refused; a domain that still holds occupations cannot be deleted |
-| FR-31 | Import O\*NET and ESCO reference data | Content administrator | A content administrator imports a sample and adjusts it | Imported records resolve against source identifiers; unresolved records are listed; domain experts are notified to derive competencies once the import completes |
-| FR-32 | Define the scenario review criteria | Content administrator | Domain experts confirm the criteria are clear enough to apply | Reviews cannot start until criteria exist for the occupation; each review records an answer per criterion |
-| FR-33 | Open one active scenario per task | Content administrator | Walkthrough: a content administrator opens a scenario and the author is notified | A second active scenario for the same task is refused; retired scenarios, including rejected ones, do not count |
-| FR-34 | Assign a domain expert as reviewer, with a deadline, and reassign overdue reviews | Content administrator | Walkthrough: a content administrator assigns a domain expert to review a scenario and reassigns an overdue review | Assigning the author is refused; the domain expert is notified; the deadline appears in the review queue; the reviewer is reminded before the deadline; once it passes, the content administrator is notified and can reassign the review with a new deadline |
-| FR-35 | Choose the scenario presentation with AI: task types from the domain expert's allowed set, characters, and scenes | Content administrator | Walkthrough: a content administrator gamifies an approved scenario | Task types outside the domain expert's allowed set are refused; content text is read-only in this step |
-| FR-36 | Maintain a bias-checked asset library; AI generates missing assets | Content administrator | Reviewers judge sampled assets, including AI-generated ones, free of stereotyping | Every asset carries its source and bias-check result; an AI-generated asset enters the library only after its bias check passes |
-| FR-37 | Publish a scenario after review and play-test | Content administrator | Walkthrough: a content administrator publishes a ready scenario with an effective date and release note | Publish is disabled unless the status is ready |
-| FR-38 | Delete a published scenario by retiring it | Content administrator | Walkthrough: a content administrator replaces an outdated scenario | Deleting retires the scenario and keeps its play history; the task's scenario slot is freed; retired scenarios are never served to explorers |
-| FR-39 | Monitor own occupations: statistics and coverage | Content administrator | A content administrator spots a weak or outdated scenario from the dashboard | Figures match stored records; ratings follow the suppression threshold; coverage matches stored metadata |
-| FR-40 | Assign and reassign one content administrator and domain experts to each occupation | System administrator | Walkthrough: a system administrator assigns staff to an occupation and moves it to another content administrator | Every occupation carries exactly one content administrator and at least one domain expert once assigned; reassigning an occupation moves its pending work to the new content administrator |
-| FR-41 | Manage all user accounts, roles, and role-based access | System administrator | Walkthrough: a system administrator views the activity log of an explorer and a staff member, then disables and deletes an account | Staff sign in on the shared login screen and see only the work for their assigned occupations; wrong-role access to admin screens is refused; disabled accounts cannot sign in; deleted accounts follow NFR-05; staff-authored records are kept |
-| FR-42 | Configure the generation model and the three judge models separately | System administrator | A system administrator changes a provider through the configuration screen | The three judges come from three different model families, none the same as the generation model's; configuration rejects any other combination |
-| FR-43 | Monitor usage, cost, and errors, and re-run failed AI jobs | System administrator | A system administrator uses the monitoring screen to spot cost or error spikes | Metrics consistent with generated load; alerts raised when a cost threshold is crossed; failed generation and grading runs listed with cause and can be re-run |
+| ID | Functional requirement | Group |
+|---|---|---|
+| FR-01 | Register, sign in with a password or Google, and recover the account | Explorer |
+| FR-02 | Edit, sign out of, and delete the account | Explorer |
+| FR-03 | Run an optional, retakable RIASEC orientation quiz suggesting occupations [41] | Explorer |
+| FR-04 | Show the explorer's portrait for their RIASEC profile, including the social index | Explorer |
+| FR-05 | Browse occupations on the Galaxy Map and show each profile with its downsides and level descriptions | Explorer |
+| FR-06 | Open the entry level of every published occupation to every explorer | Explorer |
+| FR-07 | Let explorers start an adjacent occupation at a higher level when overlap conditions are met | Explorer |
+| FR-08 | Enrol in levels, choose scenarios, award credit, and unlock the next level | Explorer |
+| FR-09 | Offer the role, team, and context before each scenario | Explorer |
+| FR-10 | Support choice, ordering, prioritising, and free-text answers | Explorer |
+| FR-11 | Score each free-text answer, including every follow-up answer, with anchor points backed by quotations | Explorer |
+| FR-12 | Answer follow-up questions generated by AI on free-text answers | Explorer |
+| FR-13 | Offer hints when the explorer is stuck | Explorer |
+| FR-14 | Return result, feedback, and guidance separately | Explorer |
+| FR-15 | Record evidenced expertise and soft-skill competencies, capped per skill per scenario | Explorer |
+| FR-16 | Offer optional side quests for bonus points | Explorer |
+| FR-17 | Show the career path of each occupation level | Explorer |
+| FR-18 | Show a private record of attempts, expertise and soft-skill points, awards, and past scenario feedback | Explorer |
+| FR-19 | Collect occupation ratings and feedback | Explorer |
+| FR-20 | Send app feedback and review it | Explorer, System administrator |
+| FR-21 | Manage the occupation profile: levels, level descriptions, future roles, downsides, salary, generation rules, competencies, adjacency | Domain expert |
+| FR-22 | Author scenario context, allowed task types, option scores, rubric, hints, random events, and side quests | Domain expert |
+| FR-23 | Generate scenario content with AI from the author's context, keeping its generation history | Domain expert |
+| FR-24 | Add reference answers with expert scores | Domain expert |
+| FR-25 | Review another expert's scenario against the review criteria | Domain expert |
+| FR-26 | Play-test the draft game before publication | Domain expert |
+| FR-27 | Revalidate a published scenario on request | Domain expert |
+| FR-28 | Report disagreements between AI and expert grading | Domain expert |
+| FR-29 | Rate responses and scenarios blind | Domain expert |
+| FR-30 | Create and manage own occupations | Content administrator |
+| FR-31 | Import O\*NET and ESCO reference data | Content administrator |
+| FR-32 | Define the scenario review criteria | Content administrator |
+| FR-33 | Open one active scenario per task | Content administrator |
+| FR-34 | Assign a domain expert as reviewer, with a deadline, and reassign overdue reviews | Content administrator |
+| FR-35 | Choose the scenario presentation with AI: task types from the domain expert's allowed set, characters, and scenes | Content administrator |
+| FR-36 | Maintain a bias-checked asset library; AI generates missing assets | Content administrator |
+| FR-37 | Publish a scenario after review and play-test | Content administrator |
+| FR-38 | Delete a published scenario by retiring it | Content administrator |
+| FR-39 | Monitor own occupations: statistics and coverage | Content administrator |
+| FR-40 | Assign and reassign one content administrator and domain experts to each occupation | System administrator |
+| FR-41 | Manage all user accounts, roles, and role-based access | System administrator |
+| FR-42 | Configure the generation model and the three judge models separately | System administrator |
+| FR-43 | Monitor usage, cost, and errors, and re-run failed AI jobs | System administrator |
 
-: Functional requirements with business and technical verification.
+: Functional requirements.
 
 ### 4.3.3 Non-functional requirements
 
-| ID | Non-functional requirement | Category | Business verification | Technical verification |
-|---|---|---|---|---|
-| NFR-01 | Follow-up generation within 5 s (95th percentile); progress shown after 2 s | Performance | Usability session: explorers find the wait for follow-up questions acceptable and see progress feedback | Latency distribution measured over at least 200 sampled follow-ups |
-| NFR-02 | Free-text assessment within 8 s (95th percentile) | Performance | Usability session: explorers find the wait for feedback acceptable | Latency distribution measured over at least 200 sampled assessments |
-| NFR-03 | Progress survives interruption | Reliability | Acceptance test: an explorer closes the browser mid-scenario, returns, and continues | Forced-interruption tests resume at the recorded position |
-| NFR-04 | Failover to another model when a model fails; no progress lost and user notified within 10 s when no model is available | Reliability | Explorers receive a clear message and find their progress intact | Fault injection against the provider interface: a failed model is replaced by another available model in the same role, and zero progress-record loss across injected failures |
-| NFR-05 | Minimal, encrypted, deletable personal data; only de-identified answers sent to AI providers | Security and privacy | Data-protection review against applicable regulation; walkthrough of an account deletion | Data inventory review; encryption check; account deletion removes records; AI requests contain no name, e-mail, or account ID; providers are configured with no training on submitted data and no retention |
-| NFR-06 | Suppress aggregates below a minimum population | Security and privacy | Privacy review confirms small-population figures are withheld and the reason is stated | Aggregates below threshold are withheld |
-| NFR-07 | Disclose AI generation and AI assessment | Transparency | Pilot users can state that scenarios and assessments are machine-produced | Disclosure present at the point of use in every relevant screen |
-| NFR-08 | Vietnamese-language interface and content | Usability | Native speakers review the interface and content for completeness and accuracy | Every screen and all content render in Vietnamese with no missing text |
-| NFR-09 | At least 80% of readers state the task objective correctly | Usability | Comprehension check with a minimum of 20 representative readers | Validator confirms every scenario states an explicit objective in its context |
-| NFR-10 | New occupations need no code change | Maintainability | A content administrator publishes a new occupation through the authoring interface alone | No code change or redeployment is recorded for the new occupation |
-| NFR-11 | Session cost stays within the configured ceiling | Cost | System administrator reviews cost against the agreed budget | Cost telemetry aggregated per session and compared against the configured ceiling |
-| NFR-12 | Model provider replaceable without content changes | Portability | Domain experts confirm scenario quality is unchanged after a provider switch | Provider substitution test with unchanged content; regression suite passes |
-| NFR-13 | Works in a mobile browser on a slow connection | Compatibility | Explorers complete a scenario on their own phone | Test on reference devices and a throttled network profile agreed for testing |
-| NFR-14 | AI grading validated against expert judgment | Fairness | Domain experts accept the agreement report for their occupation | Quadratic weighted kappa per difficulty stratum recomputed whenever a judge model changes |
-| NFR-15 | Published scenarios match approved content; AI content during play stays within expert-set limits | Accuracy | Reviewers confirm sampled published scenarios and sampled follow-ups and feedback stay within the approved content | Automated comparison between approved and published content shows no difference; every follow-up shown passed the output check or is the expert's default follow-up; every feedback note shown passed the output check |
-| NFR-16 | Scenario status changes logged; published content immutable | Auditability | A content administrator traces who approved and published a scenario | Lifecycle log complete for every scenario; write attempts on published content are refused |
-| NFR-17 | Passwords hashed, all traffic encrypted, idle sessions expire, AI prompts protected against injection | Security and privacy | Security review of sign-in, session handling, and AI prompts | Stored passwords are salted hashes; plain-HTTP requests are redirected or refused; sessions end after the configured idle time; explorer answers reach the AI as separated data whose instructions are ignored; an injection test set in the regression suite never changes a score |
-| NFR-18 | Explorer service available within the agreed operating target | Availability | A system administrator reviews monthly availability against the agreed target | Uptime monitoring records availability; planned maintenance is announced in advance |
-| NFR-19 | Explorer screens meet WCAG 2.1 level AA | Accessibility | Users with assistive technology complete a scenario | Automated and manual accessibility audit against WCAG 2.1 AA |
+| ID | Non-functional requirement | Category |
+|---|---|---|
+| NFR-01 | Follow-up generation within 5 s (95th percentile); progress shown after 2 s | Performance |
+| NFR-02 | Free-text assessment within 8 s (95th percentile) | Performance |
+| NFR-03 | Progress survives interruption | Reliability |
+| NFR-04 | Failover to another model when a model fails; no progress lost and user notified within 10 s when no model is available | Reliability |
+| NFR-05 | Minimal, encrypted, deletable personal data; only de-identified answers sent to AI providers | Security and privacy |
+| NFR-06 | Suppress aggregates below a minimum population | Security and privacy |
+| NFR-07 | Disclose AI generation and AI assessment | Transparency |
+| NFR-08 | Vietnamese-language interface and content | Usability |
+| NFR-09 | At least 80% of readers state the task objective correctly | Usability |
+| NFR-10 | New occupations need no code change | Maintainability |
+| NFR-11 | Session cost stays within the configured ceiling | Cost |
+| NFR-12 | Model provider replaceable without content changes | Portability |
+| NFR-13 | Works in a mobile browser on a slow connection | Compatibility |
+| NFR-14 | AI grading validated against expert judgment | Fairness |
+| NFR-15 | Published scenarios match approved content; AI content during play stays within expert-set limits | Accuracy |
+| NFR-16 | Scenario status changes logged; published content immutable | Auditability |
+| NFR-17 | Passwords hashed, all traffic encrypted, idle sessions expire, AI prompts protected against injection | Security and privacy |
+| NFR-18 | Explorer service available within the agreed operating target | Availability |
+| NFR-19 | Explorer screens meet WCAG 2.1 level AA | Accessibility |
 
-: Non-functional requirements with business and technical verification.
+: Non-functional requirements.
 
 Design constraints are recorded separately from business rules, since they arise from implementation choices rather than from the domain. Each derives from at least one non-functional requirement: the requirement states what must be achieved, and the constraint fixes or prohibits a design choice so that it can be.
 
@@ -548,29 +539,29 @@ Design constraints are recorded separately from business rules, since they arise
 
 ### 4.3.4 Data requirements
 
-| ID | Data requirement | Source | Business verification | Technical verification |
-|---|---|---|---|---|
-| DR-01 | Occupational reference data (occupations, tasks, skills) | O\*NET and ESCO, imported by the content administrator and adapted for Vietnamese practice by domain experts | Domain experts review the adaptation for Vietnamese practice | Imported records resolve against source identifiers |
-| DR-02 | Competency taxonomy with observable indicators | Derived from DR-01 under expert adaptation | Domain experts review definitions and indicators | Every rubric criterion resolves to a taxonomy entry |
-| DR-03 | Occupational adjacency with overlap measures | Computed from DR-01/DR-02 | Domain experts review computed adjacency for plausibility | Overlap values are reproducible from DR-01/DR-02 |
-| DR-04 | Scenario content: context, activities, option scores, rubric, hints, random events, side quests | Author domain expert with AI assistance | Reviewer sign-off recorded before presentation | Context schema validation; automatic checks pass before submission |
-| DR-05 | Generated scenarios with provenance | System | A content administrator traces any served scenario back to its context and model | Every served scenario carries resolvable provenance |
-| DR-06 | User progress: enrolled levels, competence credit capped per scenario, side-quest points, play history, end-of-scenario feedback, awards | System | Explorers confirm their progress and awards are shown correctly | Progress reconstructs from stored records; replaying a scenario never adds credit beyond the cap |
-| DR-07 | Assessment records, including each judge's score and the combined grade per answer, hidden feedback notes, hint use, and explorer flags | System and AI judges, with flags from explorers | Domain experts audit a sample of assessment records and review flagged content | Records complete for every assessed response, follow-up answers included; every feedback note stores its output-check result; every flag reaches a domain expert of that occupation |
-| DR-08 | Five-attribute occupation ratings (project-defined) | Explorers | Acceptance test of the rating flow after full completion | Ratings exist only for fully completed occupations |
-| DR-09 | Expert reference set stratified by difficulty | Domain experts | Inter-expert agreement recorded for the reference set | Set covers the defined difficulty strata; every item passed validation |
-| DR-10 | Operational telemetry | System | A system administrator answers cost and error questions from the telemetry | Telemetry present and queryable |
-| DR-11 | Play-test session flag | System | Staff confirm dashboards are unchanged after play-testing | Play-test sessions are absent from explorer-facing aggregates |
-| DR-12 | Quiz answers, RIASEC profile with social index, and the fixed portrait texts (one per RIASEC type) | Explorers; portrait texts written in advance by the project team | Pilot users judge the portrait texts relevant and not misleading | Profile recalculates from stored answers; every RIASEC type has a portrait text; retaking the quiz replaces the profile and portrait |
-| DR-13 | Scenario lifecycle record, including author and reviewer assignments with review deadlines, review decisions, comments, and revalidation results | System, from staff actions | A content administrator reconstructs a scenario's history | Every transition in SM-01 is logged; every assignment, reassignment, review, and revalidation result is stored with actor and time; at most one active scenario per task |
-| DR-14 | Presentation data and asset library | Content administrator with AI | Reviewers check sampled assets for stereotyping | Every presented asset resolves to a library entry with a bias-check result |
-| DR-15 | Occupation catalogue (domains and occupations) and occupation profiles (level descriptions, future roles, downsides) | Content administrator (catalogue) and domain experts (profiles) | A content administrator reviews the catalogue; domain experts review their occupation's profile for completeness | Every published occupation has all required fields and a description for every level; every profile field records the domain expert who wrote it |
-| DR-16 | User accounts, linked Google identities, roles, assignments, and activity log | System administrator; activity log from the system | A system administrator confirms each occupation's staff and reviews an account's activity | Exactly one content administrator and at least one domain expert per occupation; a Google identity links to one account only; every account action is logged |
-| DR-17 | Platform settings | System administrator | A system administrator reviews settings against policy | Every change is versioned with actor and time |
-| DR-18 | App feedback records | Explorers | A system administrator reviews recent feedback | Each record holds text, time, app version, and handling status |
-| DR-19 | Scenario review criteria | Content administrator | Domain experts confirm the criteria match how they review | Criteria are versioned; each review links to the version it used |
+| ID | Data requirement | Source |
+|---|---|---|
+| DR-01 | Occupational reference data (occupations, tasks, skills) | O\*NET and ESCO, imported by the content administrator and adapted for Vietnamese practice by domain experts |
+| DR-02 | Competency taxonomy with observable indicators | Derived from DR-01 under expert adaptation |
+| DR-03 | Occupational adjacency with overlap measures | Computed from DR-01/DR-02 |
+| DR-04 | Scenario content: context, activities, option scores, rubric, hints, random events, side quests | Author domain expert with AI assistance |
+| DR-05 | Generated scenarios with provenance | System |
+| DR-06 | User progress: enrolled levels, competence credit capped per scenario, side-quest points, play history, end-of-scenario feedback, awards | System |
+| DR-07 | Assessment records, including each judge's score and the combined grade per answer, hidden feedback notes, hint use, and explorer flags | System and AI judges, with flags from explorers |
+| DR-08 | Five-attribute occupation ratings (project-defined) | Explorers |
+| DR-09 | Expert reference set stratified by difficulty | Domain experts |
+| DR-10 | Operational telemetry | System |
+| DR-11 | Play-test session flag | System |
+| DR-12 | Quiz answers, RIASEC profile with social index, and the fixed portrait texts (one per RIASEC type) | Explorers; portrait texts written in advance by the project team |
+| DR-13 | Scenario lifecycle record, including author and reviewer assignments with review deadlines, review decisions, comments, and revalidation results | System, from staff actions |
+| DR-14 | Presentation data and asset library | Content administrator with AI |
+| DR-15 | Occupation catalogue (domains and occupations) and occupation profiles (level descriptions, future roles, downsides) | Content administrator (catalogue) and domain experts (profiles) |
+| DR-16 | User accounts, linked Google identities, roles, assignments, and activity log | System administrator; activity log from the system |
+| DR-17 | Platform settings | System administrator |
+| DR-18 | App feedback records | Explorers |
+| DR-19 | Scenario review criteria | Content administrator |
 
-: Data requirements with source, business verification, and technical verification.
+: Data requirements.
 
 Personal data within DR-06, DR-07, DR-08, DR-11, DR-12, DR-16, and DR-18 is subject to the policies in Section 4.1.4. DR-09 contains no personal data and is retained as a research asset.
 
@@ -588,7 +579,7 @@ This chapter specified the proposed system against the domain established in Cha
 
 The three processes identified in Section 4.1.2 are modelled below as activity diagrams, one for each flow of an actor. Swimlanes separate the actor, the system, and, where it takes part, the AI model.
 
-Exploration process. The explorer's part of the platform is modelled in seven diagrams, from access to the platform to sending feedback about the app (AD-01a to AD-01g). Perform scenario (AD-01d) is shown here, as it is the core flow; the other six are in Appendix 2.
+Exploration process. The explorer's part of the platform is modelled in eight diagrams, from access to the platform to viewing a hint (AD-01a to AD-01h). Perform scenario (AD-01d) is shown here, as it is the core flow; the other seven are in Appendix 2.
 
 ![Explorer: perform scenario (AD-01d).](latex/figures/AD-01d_Explorer_PerformScenario.png){width=1}
 
@@ -777,9 +768,7 @@ Testing the composition offline. The test harness must run every judge repeatedl
 
 **Decision: Inspect AI.** It has the repeated runs, multiple graders, and median reducer the panel needs, and its logs make each judgment reviewable; prompts and rubrics stay in data files that both the harness and the product read. In the product, the judge is the project's own TypeScript module with schema-validated output. These tools have no peer-reviewed papers; the cited science is in the method, rubric-based scoring with reasoning before the score [58] and panels of judges [74].
 
-Strength of the judge relative to the generator. The judge does not need to be stronger than the generator, because it scores text written by a person, not text the generator wrote. It does need enough capacity: on German clinical-reasoning transcripts, a small model agreed poorly with human raters (intraclass correlation below 0.20) and a larger one moderately (0.41 to 0.57), against 0.45 between the two human raters [124]. Whether a larger tier, or a reasoning model, is worth its cost for this task is not settled by published evidence, so each judge family is tested at two tiers and the cheaper tier is kept unless it is clearly worse.
-
-Reliability of a language-model judge. Published evidence supports a conditional answer, not reliability by default, and none of it concerns Vietnamese or role-play. A synthesis of 65 studies of essay scoring found agreement between language models and human raters to vary widely and to depend on context [101]. Untrained general models fall well short of dedicated scorers: on the ASAP essays, ChatGPT and Llama reached an average quadratic weighted kappa of 0.313 and 0.297, against 0.817 for a supervised system [125]. Agreement comes close to human level only under conditions: GPT-4 given a few scored examples reached a kappa of 0.70 on short answers in school subjects, against 0.75 between humans [102], and approached dedicated scoring systems on CEFR essays once calibration examples were supplied [103]. Three weaknesses recur. Scorers handle fully correct and fully incorrect answers well and degrade on partially correct ones, where human agreement stays stable [126]. Without a reference answer, judges agree with experts mainly on questions they can answer themselves [127], and a model's accuracy as a judge closely follows its accuracy at solving the same problems [60]; JobQuest has no reference answers, so the judge must know IT work, and the level descriptions of the rubric must carry the domain knowledge. And consistency is not validity: GPT-4's repeated ratings agreed with each other at an intraclass correlation of 0.94 to 0.99 [105], which says nothing about agreement with people. The design answers each weakness: a strong model and an explicit rubric from the start, scored examples later from expert rulings, a panel whose disagreements send partially correct cases to the expert, and level descriptions written by the expert. The project then measures reliability on its own task instead of assuming it (RP-2), against the criteria of Williamson, Xi and Breyer [71]: quadratic weighted kappa of at least 0.70, a standardised mean difference of at most 0.15, and agreement at most 0.10 below that between experts. The data, raters, measures, and thresholds are fixed in Section 7.3.
+The judge does not need to be stronger than the generator, because it scores text written by a person, but it needs enough capacity, and published evidence supports a conditional answer on the reliability of a language-model judge, not reliability by default; none of it concerns Vietnamese or role-play. Each judge family is therefore tested at two tiers, the cheaper tier is kept unless it is clearly worse, and agreement with experts is measured by the method of Section 7.3. The evidence, and the design items that await the game design, are in Appendix 3.
 
 AI-native character. The definition adopted is that a system is AI-native when AI is constitutive of its core loop, so that removing the AI makes the central activity collapse or change fundamentally [130], and when AI is a natural part of design, deployment, operation, and maintenance rather than a component added to a system built without it [131]. The test is therefore applied to JobQuest's core loop, the cycle an explorer repeats in every situation of a scenario.
 
@@ -794,8 +783,6 @@ AI-native character. The definition adopted is that a system is AI-native when A
 : The core loop of a situation, and what remains of it without AI.
 
 Removing AI leaves steps 1 and 2, the parts any quiz has; steps 3 to 5, which make the scenario a performed task rather than a questionnaire, either disappear or change fundamentally, so JobQuest meets the first part of the definition. It meets the second because AI also works outside the loop: it collects expert knowledge and drafts seeds (AI-1, AI-2), finds the cases an expert must see (AI-3), and reviews logs in operation. For the same reason there is no path without AI: when a model fails, the system switches to another model in the same role that meets the same constraints, which is still AI (DC-02); if no model is available, the session pauses with answers and progress saved, and resumes when a model returns (NFR-04, Section 5.3.6).
-
-Items awaiting game design. Several items cannot be settled before the game design is fixed: the scoring scale, where −1 / 0 / +1 / +2 is planned and not final and the current sample scenarios describe three levels only; the competency scoring table for a playthrough and the specific criteria given to the judge; the list of required facts in a seed, needed to measure fact preservation (NFR-15); and how evidence from the play process, such as hints, time, and follow-ups, counts and how scores combine into a competency. The AI design does not depend on them: the judge scores any criterion that comes with level descriptions, on any ordinal scale (Section 5.3.6), and agreement with experts can be computed on any such scale.
 
 Summary. The table summarises the selected stack and the requirements each choice serves.
 
@@ -862,31 +849,8 @@ Component view. The figure below shows the components and the interfaces between
 
 Each module is described below with its responsibility and its state in the prototype.
 
-Explorer application. The occupation map, levels, the scenario player for the four response forms of FR-10, hints, follow-ups, results, the personal record, ratings, and feedback (FR-03 to FR-20). It runs *game-core* for instant provisional feedback on closed formats, queues unsent turns locally, and receives narration, follow-ups, and assessment results through a server-sent event stream. Prototype: screens, the 3D map, and the four forms exist; the turn queue, event stream, and 2D map do not.
+Each component is described in Appendix 3: its responsibility, the requirements it serves, and its state in the prototype. The table below gives the NestJS modules of each component.
 
-Staff application. The thirty-three staff use cases: the AI-1 interview through which a domain expert gives the knowledge a seed needs, review, test playthroughs, reliability, and blind rating for domain experts; seed drafting with AI-2, catalogue, presentation, publication, and statistics for content administrators; accounts, model configuration, monitoring, and feedback for system administrators. It shares the sign-in screen and origin with the explorer application (FR-41) but is a separate download. Prototype: absent.
-
-Game core. A library with no framework, network, or storage dependency: the reducer folding run events into state, scoring of closed formats against expert keys, credit with the per-scenario cap, unlocking and adjacency offers, content schemas, and the rule checks on model output of Section 5.2.3 — numbers and names in narration found in the seed or the player's text, the follow-up count, each judge's quotation found verbatim in the answer, levels within the scale. It runs unchanged in browser and server. Prototype: present; its free-text grader is a synchronous keyword matcher inside the reducer, which must become an asynchronous assessment entering the run as an event.
-
-Identity and access. Accounts, sign-in and recovery, sessions, occupation-scoped roles, disabling, deletion, and the activity log (FR-01, FR-02, FR-40, FR-41); every module asks it whether an actor may act on an occupation. Prototype: registration, email and Google sign-in, rotating sessions, and deletion exist; reset, idle expiry, scoped roles, disabling, and the log do not, and the three prototype roles must become the four actors of Section 4.2.1.
-
-Exploration. Everything outside the assessment itself: orientation, catalogue and profiles, enrolment, runs and their events, credit, unlocking, adjacency offers, side quests, ratings, records, and feedback (FR-03 to FR-09, FR-15 to FR-20). It validates turn events with *game-core* and stores them; each free-text answer is handed to Assessment, which stores it with an assessment request in the same transaction. Prototype: present, but runs are submitted as one batch at the end.
-
-Assessment. Turns answers into results, feedback, and guidance (FR-10 to FR-14). Closed formats are scored synchronously by *game-core*; each free-text answer, follow-up answers included, is graded by the judge panel as soon as it is submitted (AI-5), and only then is a follow-up decided (FR-12). The grade and each activity's checked feedback note are written back as events, and at the end of the scenario the notes are combined into the feedback shown on the summary screen in the three separate parts of FR-14. It also routes explorers' flags of wrong content to the occupation's domain experts. Prototype: closed formats scored by replaying the run; free text matched by keyword.
-
-Content lifecycle. Occupations, knowledge, scenarios and drafts, generation history, review criteria, assignments and decisions, presentation, assets, and publication (FR-21 to FR-38). It is the only writer of content, implements the state machine SM-01, writes each transition with its log entry in one transaction, and publishes immutable, versioned releases. It uses AI orchestration for generation, validation, presentation, and missing assets; the scheduler for deadlines and annual revalidation; and the importer for O\*NET and ESCO, whose interest codes also drive orientation matching (FR-03). A domain expert or content administrator can send a published scenario back for revalidation while it stays playable (FR-27). Prototype: versioned immutable documents, written only by a seed script.
-
-AI orchestration. Runs every model use of the five AI components of Section 5.2.3 as a job: the expert interview (AI-1) and seed drafting (AI-2) at authoring time, with presentation design and missing assets (FR-35, FR-36); test playthroughs (AI-3); narration, follow-ups, and feedback notes during play (AI-4, FR-12, FR-14); and grading of each answer by a panel of three judges (AI-5, FR-11). The Get-to-know-me quiz uses no AI (FR-04). Per job it loads the pinned content version, removes identifying details from explorer text, checks the session budget, calls the model port, applies *game-core*'s rule checks, and records model, prompt version, cost, and latency. There is no scripted substitute for a model's output: a job that cannot complete is retried or waits, and a session pauses until it can. It rechecks at job time that no judge shares the narrator's family or another judge's. Prototype: absent; queue and model-client libraries are declared but unused.
-
-Model gateway. One adapter per provider and a registry recording each model's role — text generation, assessment, image generation (FR-36) — with its provider and family; configuration is refused when the narrator and a judge, or two judges, share either (FR-42, DC-01). It applies per-provider concurrency limits, timeouts, retries, and a circuit breaker. Adapters are written by the project over the OpenAI-compatible format, with native adapters where that format falls short (Section 5.2.3). Prototype: absent.
-
-Analytics. Everything shown only in aggregate: ratings and statistics above the population threshold, play-tests excluded (FR-19, FR-39, NFR-06, DR-11); coverage; agreement by difficulty stratum and the disagreement list (FR-28, NFR-14); and blind ratings (FR-29). Occupation ratings are re-aggregated in the transaction that stores each rating (FR-19); heavier statistics refresh periodically, later from a replica. It never returns an individual's record. Prototype: personal summaries only.
-
-Operations. Telemetry of usage, cost, latency, and errors (DR-10); failed jobs and re-runs (FR-43); versioned settings, including the cost ceiling (DR-17); and feedback review (FR-20). Prototype: absent.
-
-Notification, scheduler, and import. Notification sends email and in-app notices: reset links, review assignments, reminders, play-test invitations. The scheduler runs recurring jobs: review reminders and overdue notices (FR-34), annual revalidation (BR-15), retention, refreshing statistics, and the reconciliation that re-queues any narration or scoring request left without a result. The importer loads O\*NET and ESCO and lists unresolved records (FR-31). Prototype: absent.
-
-Data stores. The operational database is the system of record: relational tables for accounts, assignments, runs, events, evidence, reviews, ratings, and logs, and documents for content. The queue store holds jobs, rate limits, budget counters, and the publish–subscribe channel feeding event streams — nothing that cannot be rebuilt from the database. The object store holds assets and exports. Prototype: the database, with 19 tables.
 
 Modules of the code. The components above are realised by the 19 NestJS modules of Section 5.3.4, and the table gives which modules form each component. A scheduled job lives in the module that owns its data; for example, `ReleaseScheduler` publishes due releases from the publishing module.
 
@@ -947,11 +911,7 @@ Each tier scales by its own mechanism, summarised below for Stage 4.
 
 Appendix 3 gives, for each tier, the load at Stage 4 and how the tier scales.
 
-The in-flight figure follows from Little's law: 85 calls per second, each lasting three to eight seconds. Two sizing assumptions remain to be measured by the load tests of Chapter 7: if one single-vCPU API replica serves about 300 light requests per second, Stage 4 needs four replicas, six with headroom across two zones; if one worker holds 50 calls in flight, it needs six to fourteen workers.
-
-The architecture scales for seven reasons. Processing tiers are stateless, so capacity grows by adding replicas. Fast and slow work are separated: a request stores and acknowledges in about 0.2 s, and slow work waits in a queue, so a class of forty starting together lengthens the queue rather than overloading the API. The binding constraint, the model tier, is isolated and limited on its own. Published content is immutable and therefore almost entirely served from cache. Reads for statistics are separated from writes by a replica. Load is shed by priority rather than by failure: under pressure, live grading and narration go first, feedback notes wait a little longer for the summary screen, and authoring work waits for quiet hours. And no transaction spans services, so growth never requires distributed coordination. Canon content is approved once and served verbatim from releases, so run-time model calls are limited to narration, follow-ups, feedback notes, and grading; the cost per playthrough is estimated in Section 5.2.3.
-
-Reliability and operations. Availability of 99.5% a month is proposed for Stages 1 and 2 and 99.9% once two zones run (NFR-18). The write-ahead log is archived continuously and backups taken nightly, both copied to a second region in Vietnam, for a proposed recovery point of five minutes and recovery time of one hour. Deployments roll replica by replica behind health checks, with backward-compatible migrations so old and new versions run side by side. Monitoring tracks queue length, 95th-percentile latency per provider, cost per session, and error rates, alerting at the thresholds of NFR-01, NFR-02, and NFR-11. A web application firewall and TLS guard the entry, secrets are held in a secret manager, and the egress proxy admits only allowlisted model endpoints.
+The sizing arithmetic (Little's law), the seven reasons the architecture scales, and the reliability and operations targets (availability, recovery point and time, deployment, monitoring) are in Appendix 3. In short: the tiers that process requests are stateless, fast and slow work are separated by a queue, the model tier is isolated and limited on its own, and availability of 99.5% to 99.9% a month is proposed (NFR-18).
 
 From the prototype to the target. Four prototype mechanisms are kept: rules in a framework-free *game-core* shared by client and server; the server as score authority; content in versioned, immutable releases pinned to each run; and bearer-token sessions with rotating refresh tokens. Six changes reach the target: free-text assessment becomes an asynchronous job whose result enters the run as an event; runs are submitted turn by turn (NFR-03); content is written through the lifecycle module instead of a seed script; three roles become four occupation-scoped actors; the staff application, AI orchestration, gateway, queue, workers, and scheduler are added; and the accessible 2D map is added. Each change extends a prototype component along a boundary it already has; none discards one.
 
@@ -967,7 +927,7 @@ Staff application. One sign-in screen leads to three portals, one per staff acto
 
 ### 5.3.3 Sequence Diagrams
 
-The sequence diagrams below show how the components of Section 5.3.1 cooperate in the main flows of each actor; the assessed turn (SD-01) is shown in Section 5.3.1. Lifelines are the actors, the two applications, the modules, the data stores, and the external services; a solid arrow is a call and a dashed arrow a reply or a pushed event. All diagrams follow the conventions of SD-01: a request is stored in PostgreSQL before slow work is queued in Redis, so the reply comes at once; AI orchestration takes model work from the queue and reaches the providers only through the model gateway; results reach the open application through Redis and the result stream rather than by polling; and each state change of a scenario is written with its log entry, following SM-01. Of the twelve diagrams, SD-01 (Section 5.3.1), SD-05, and SD-10 are shown here, because they carry the central mechanisms: the assessed turn, the AI-assisted authoring, and the shift turn. The other nine (SD-02, SD-03, SD-04, SD-06 to SD-09, SD-11, SD-12) are in Appendix 2, each with its description.
+The sequence diagrams below show how the components of Section 5.3.1 cooperate in the main flows of each actor; the assessed turn (SD-01) is shown in Section 5.3.1. Lifelines are the actors, the two applications, the modules, the data stores, and the external services; a solid arrow is a call and a dashed arrow a reply or a pushed event. All diagrams follow the conventions of SD-01: a request is stored in PostgreSQL before slow work is queued in Redis, so the reply comes at once; AI orchestration takes model work from the queue and reaches the providers only through the model gateway; results reach the open application through Redis and the result stream rather than by polling; and each state change of a scenario is written with its log entry, following SM-01. Of the twelve diagrams, SD-01 (Section 5.3.1) and SD-10 are shown here, because they carry the central mechanisms: the assessed turn and the shift turn. The other ten (SD-02 to SD-09, SD-11, SD-12) are in Appendix 2; the description of each follows below, and the figure of each is in the appendix.
 
 Access the platform. The explorer application is a static bundle served by the content delivery network. Sign-in takes one of three paths: a password, checked against the stored hash; Google, for which Identity and access exchanges the authorization code for an ID token and verifies it before finding or creating the account; or registration. Wrong details or a disabled account end the flow with an error (FR-01, FR-41). Otherwise a session is started and the sign-in logged, and the reply says whether the Get-to-know-me quiz is done, which decides between the quiz and the Galaxy Map.
 
@@ -976,8 +936,6 @@ Get-to-know-me quiz. The questions are loaded once and the answers kept by the a
 Finish a scenario. If the hidden feedback notes of the last activities are still being written, the explorer sees progress, and the summary is requested again when AI orchestration announces the notes ready. Exploration then totals the activity scores, picks the ending, combines the notes, and caps the competency points (FR-15); with enough credit it unlocks the next level, otherwise it picks practice tasks (FR-08). Progress, history, and badges are stored before the ending, feedback, and guidance are shown (FR-14), and the explorer returns to the Island Map or opens the profile.
 
 Generate scenario content. The flow has three parts. The content administrator opens a scenario for a task; Content lifecycle refuses if the task already has an active scenario (FR-33), and otherwise creates an empty one, to which the administrator assigns an author and a reviewer with a review deadline (FR-34); the author is emailed through a queued notification. The author chooses situation options and writes the context; the generation job is stored and queued, and AI orchestration calls the model through the gateway, checks the output, stores the generation record, and pushes the content to the staff application (FR-23). Each revision the author requests of a part follows the same path and is kept in the generation history. The author then sets task types and option scores, checks the rubric anchors, adds sample answers, and writes hints and events (FR-22, FR-24); the automatic content checks must pass before the scenario can be submitted, which sets it submitted and emails the reviewer.
-
-![Sequence of generating scenario content (SD-05): opening and assignment, generation and revision with AI, and completion and submission.](latex/figures/SD-05_DomainExpert_GenerateScenario.png)
 
 Review a scenario. Identity and access refuses a reviewer who is the scenario's author or is not assigned to it. Opening the scenario sets it in review. The reviewer answers each review criterion and then rejects, requests changes, or approves; a decision with a criterion unanswered is refused (FR-25, FR-32). Rejection retires the scenario, a request for changes returns it to draft with the comments, and approval sets it approved. The outcome is pushed to the author's open staff application and emailed to the author and the content administrator.
 
@@ -997,26 +955,7 @@ Monitor operation and re-run a failed job. The system administrator opens the mo
 
 ### 5.3.4 Class Diagrams
 
-The class diagrams have two layers, and neither is drawn by hand. The domain layer states what the system stores: its classes are the entities of the entity–relationship diagram of Section 5.3.5, read as UML. The module layer states how the NestJS modules of Section 5.3.1 are built: controllers, services, queue processors, guards, ports, and the data transfer objects of the interface of Section 5.3.7. Scripts in the report's `design/compact` folder generate both layers as PlantUML, the domain layer from the entity–relationship diagram and a small file of added rules, the module layer from one description of the modules and their routes, so a change is made at the source and the diagrams are regenerated. The entity–relationship diagram itself is not changed by this step.
-
-Domain model. A class is an entity, named in PascalCase (`SCENARIO_SLOT` becomes `ScenarioSlot`), and an attribute keeps its name in camelCase.
-
-Three things are added to the entity–relationship diagram, each marked as an addition. Attribute types are inferred from column names (a name ending in `_at` is a date and time, one beginning `is_` a boolean) and are a proposal, not a decision. Enumerations are drawn only where a source states the values: the schema of the prototype, SM-01, a note in the diagram, or the project hub. Methods carry the business rule they implement, with its source («D-113», «SM-01»); pure rules live in *game-core*, and rules that touch the database live in the service that owns the table. Eight diagrams cover the 113 entities and 35 association classes.
-
-| Diagram | Content | Groups of Section 5.3.5 |
-|---|---|---|
-| CD-01 | Identity | A |
-| CD-02 | Catalogue, reference data, soft skills, keywords | B, C |
-| CD-03 | Level pack and scenario content | D, E |
-| CD-04 | AI drafting, review, presentation, play-test, release, lifecycle | F |
-| CD-05 | Tarot NPCs, side quests, economy, health, calendar | G, K |
-| CD-06 | Explorer profile and progression | H, I |
-| CD-07 | Runs and grading | J |
-| CD-08 | Grading quality, feedback, AI operations | L |
-
-: Domain class diagrams and the entity groups they cover.
-
-![Domain classes of runs and grading (CD-07): a run as an ordered list of events with provenance, evidence segments, assessments, judge results, and feedback notes.](latex/figures/CD-07_RunsAndGrading.png){landscape}
+The class diagrams describe how the NestJS modules of Section 5.3.1 are built: controllers, services, queue processors, guards, ports, and the data transfer objects of the interface of Section 5.3.7. They are not drawn by hand. A script in the report's `design/compact` folder generates them as PlantUML from one description of the modules and their routes, so a change is made at the source and the diagrams are regenerated. What the system stores is not repeated as classes: the entities, attributes, and relationships are those of the entity–relationship diagram of Section 5.3.5, which is the only model of the data.
 
 Module structure. The platform has 19 NestJS modules. The figure shows which module imports which; an arrow points from the importing module to the imported one, and a global module needs no arrow. The API and worker processes load the same modules, and the label of each module in the figure says which processes run it. Modules that serve staff routes also import the identity module for the guard that checks occupation assignment (FR-40), and those arrows are left out for legibility.
 
@@ -1024,35 +963,13 @@ Module structure. The platform has 19 NestJS modules. The figure shows which mod
 
 Each module is the only writer of the tables it owns, and each table has exactly one owner. The table gives the owners, the processes, and the number of routes of each module.
 
-| Module | Processes | Writes tables of | Routes |
-|---|---|---|---|
-| AuthModule | API | Group A except assignment, through the one account store | 7 |
-| UserModule | API | Assignment of staff to occupations (`ASSIGNED_TO`) | 10 |
-| CatalogueModule | API | Groups B and G (occupations, soft skills, tiers, NPC cards, outfits), loaded by a data-loading command | 6 |
-| ImportModule | Worker, API | O\*NET and ESCO import, `KEYWORD` | 4 |
-| ScenarioModule | Worker, API | Groups D and E, expert interviews, generation runs | 16 |
-| LifecycleModule | Shared | `LIFECYCLE_LOG`; the SM-01 state machine | 0 |
-| ReviewModule | API | Review criteria, reviews, revalidation | 10 |
-| PublishingModule | Worker, API | Assets, presentation, builds, play-test findings, releases | 12 |
-| CareerModule | API | Groups H and I | 9 |
-| LifeModule | API | Group K and side quests | 6 |
-| PlayModule | Worker, API | Runs and run events (group J) | 11 |
-| AssessmentModule | Worker | Assessments, judge results, feedback notes | 0 |
-| QualityModule | Worker, API | Content flags, blind ratings, regrading | 6 |
-| AiModule | API | Prompts, models, jobs, model calls (group L) | 2 |
-| FeedbackModule | API | Occupation ratings, app feedback | 4 |
-| MonitoringModule | API | None; reads usage, cost, and errors | 3 |
-| CoreModule | Global, shared | Activity log, platform settings | 0 |
-| NotificationModule | Global, worker, API | Notifications; the event stream | 3 |
-| GameCoreModule | Global, shared | None; a snapshot of reference tables built once at start-up for *game-core*, which never reads the database | 0 |
+The table in Appendix 3 gives, for each of the 19 modules, the processes that run it, the tables it writes, and the number of its routes. Each table has exactly one owning module.
 
-: NestJS modules, the processes that run them, the tables they write, and their routes.
-
-Eight module diagrams, CL-01 to CL-08, show the classes inside the modules: CL-01 identity and users, CL-02 catalogue and import, CL-03 scenario authoring and lifecycle, CL-04 review and publishing, CL-05 career and life, CL-06 play, assessment, and quality, CL-07 AI, feedback, and monitoring, and CL-08 the shared platform modules. Only the domain diagram of runs and grading (CD-07) and the module map are printed here. CD-03 and CD-04 are in Appendix 2; the other five domain diagrams and the eight module diagrams are too large to read on a page and are kept as PlantUML sources in the report's `plantuml/class` folder, with the generators. In the module diagrams an association is constructor injection, a dashed arrow labelled «write» marks a table the module owns, a dashed arrow with a hollow head is a realization (a model port, a guard), and a dashed arrow from a controller to data transfer objects shows the types of its routes. The generator refuses a design in which two routes share a method and path, a type in a route signature is undefined, a dependency is not provided, an import is unused or circular, an entity has no owner, or a module writes a table it does not own.
+Eight module diagrams, CL-01 to CL-08, show the classes inside the modules: CL-01 identity and users, CL-02 catalogue and import, CL-03 scenario authoring and lifecycle, CL-04 review and publishing, CL-05 career and life, CL-06 play, assessment, and quality, CL-07 AI, feedback, and monitoring, and CL-08 the shared platform modules. Only the module map is printed here. The eight module diagrams are in Appendix 2, and the PlantUML sources and generators are in the report's `plantuml/class` folder. In the module diagrams an association is constructor injection, a dashed arrow labelled «write» marks a table the module owns, a dashed arrow with a hollow head is a realization (a model port, a guard), and a dashed arrow from a controller to data transfer objects shows the types of its routes. The generator refuses a design in which two routes share a method and path, a type in a route signature is undefined, a dependency is not provided, an import is unused or circular, an entity has no owner, or a module writes a table it does not own.
 
 Correspondence with the sequence diagrams. Every message of the sequence diagrams SD-01 to SD-12 is matched to a method, except the few messages listed under the open points below; the entry method and the chain of methods behind each diagram are given in Appendix 3.
 
-Design points still open. Drawing the classes from the entity–relationship diagram and the game design research exposed places where the requirements of Chapter 4 and the diagrams of Section 5.3.3 still describe the earlier design. This report does not change them; each waits for a decision of the team and is recorded in the project's list of open issues (items A28 and A29).
+Design points still open. Drawing the module classes and the entity–relationship diagram from the game design research exposed places where the requirements of Chapter 4 and the diagrams of Section 5.3.3 still describe the earlier design. This report does not change them; each waits for a decision of the team and is recorded in the project's list of open issues (items A28 and A29).
 
 - Requirements: FR-03 (five suggested occupations from the quiz; the research gives two or three regions to try), FR-22 and FR-35 (the expert chooses answer formats and the engine derives hints and outfits), FR-33 (one scenario per task; the research allows several scenarios for one task), DR-03 (a fixed adjacency table; the research computes it per player), and DR-12 (a portrait text per RIASEC type, which the research dropped).
 - Sequence diagrams: three messages have no method because the design behind them changed — "Pick ending by score" in SD-02, "Pick portrait for top type" in SD-03, and "Get situation options" in SD-05, replaced by the expert interview — and "Use default follow-up" in SD-01 contradicts the rule that no step is replaced by a non-AI path (D-92); the resumption of a paused run takes its place. In SD-11 the eligibility shown when the rating form opens has no method of its own and is checked only when the rating is sent, and in SD-12 "Re-run failed job" and "Cost alert" have no route or method yet.
@@ -1107,7 +1024,7 @@ Properties the schema must keep. Most are enforced by constraints and transactio
 
 Personal data lies in groups A, H, I, J, K, and L (accounts, quiz answers, runs, economy, ratings, and feedback). Deleting an account removes the explorer's rows by cascade and clears the personal fields of the account, and rows authored by staff are kept (NFR-05, Section 5.3.10). Only de-identified text of runs is sent to a model provider.
 
-Entries still waiting for a decision. Some entities are drawn from research that is still marked as a draft or as to be decided: `DEPARTMENT`, the outfit entities, `CHECK_QUESTION`, `CONDUCT_FLAG`, `SKILL_TIER` and its tier names, `ACHIEVEMENT`, `DISTRESS_TERM`, `CAREER_HABIT`, `LIFE_MILESTONE`, and `SCENARIO.outcomes`. Prices of shop items, the amount of health recovered, and the cost of replaying a scenario have no figure yet, so tests check the relations between them, not their values. The turn identifier with which the explorer application makes a repeated submission safe (SD-10) has no attribute of `RUN_EVENT` yet; the prototype keeps it in the player-input event. Two readings of the diagram also need confirming: the `(min,max)` labels count the partners of the neighbouring entity in 13 relationships and the entity itself in the rest, and some lookup tables are drawn as having at least one row on the other side. They are items A28 and A29 of the open issues. The prototype's database does not follow this diagram yet, so migrating from it is part of the implementation (Chapter 6).
+Some entities are drawn from research that is still marked as a draft or as to be decided, and the turn identifier of SD-10 has no attribute of `RUN_EVENT` yet; these entries, with the two readings of the cardinality labels that need confirming, are listed in Appendix 3 and in items A28 and A29 of the open issues.
 
 ### 5.3.6 AI Model Design
 
@@ -1182,57 +1099,19 @@ The interface is designed from the sitemaps of Section 5.3.2 and the requirement
 
 Design principles. Each principle comes from a requirement and fixes a decision that every screen follows.
 
-| Principle | Source | Consequence for the interface |
-|---|---|---|
-| All text in Vietnamese, with no language selection | NFR-08, D-96 | Interface strings are written directly in Vietnamese; there is no translation layer to leave a screen half-translated |
-| Usable on a phone over a slow connection | NFR-13, DC-05 | Layouts are designed from the narrow width up; the 3D map and its libraries load only when the 3D view opens; a budget of 200 KB for the first interactive screen (Section 5.2.1) |
-| Accessible without a pointer or a canvas | NFR-19 | Every planet of the Galaxy Map is also a focusable, named element in an SVG view that can be chosen at any time and is used automatically when WebGL is missing, when reduced motion is requested, or on low-memory devices |
-| Result, feedback, and guidance are three separate things | FR-14 | The summary screen shows them in separate blocks, never as one score with a comment |
-| Waiting is never silent | NFR-01, NFR-02, NFR-04 | The answer screen shows "saved, assessing" at once, then progress after two seconds; when no model is available it says so and keeps the run |
-| Machine-produced content is labelled | NFR-07 | A disclosure appears at the point of use wherever a narration, a follow-up, or an assessment is shown |
-| Small populations are not shown | NFR-06 | Aggregated ratings show the reason they are withheld instead of a figure |
-| Content shown is content the expert approved | NFR-15, SM-01 | The play screens show only text of a published release or of a play-test draft; there is no free-text field through which the explorer can change a scenario |
-
-: Design principles of the interface and their sources.
+The design principles of the interface, with the source and the consequence of each, are tabulated in Appendix 3.
 
 Design system. Two visual languages sit in the one package, because the two parts of the explorer experience ask for different feelings. *Celestial Night* is used for the Galaxy Map, the occupation pages, the profile, and the whole staff application; its tokens (`packages/ui/src/styles/tokens.css`) are a night-blue scale from Deep Space (`#0a1026`) through Midnight Blue (`#142b52`) and Constellation Blue (`#254a7a`) to Mist (`#c7d2e0`), with a gold accent that also draws the keyboard focus ring. The *game kit*, "Cartoon viền đen" (black-outline cartoon, `packages/ui/src/game/`), is used inside a shift (island, onboarding, play, reflection, summary): a stage with characters and scenes, emotes, a clock, controls, and a like scale, drawn from the team's concept art. Occupation themes are CSS variables supplied by content data, so a new occupation needs no code (NFR-10). Components, charts, and the SVG art are exported from one entry point, and the package has its own component tests (Section 6.2).
 
 Explorer screens. Table of the routes of `apps/web` and the requirements each serves.
 
-| Screen | Route | Requirements |
-|---|---|---|
-| Welcome, sign in, register, forgot and reset password | `/welcome`, `/login`, `/register`, `/forgot-password`, `/reset-password` | FR-01 |
-| Galaxy Map (home) | `/galaxy`, `/home` | FR-05 |
-| Get-to-know-me quiz and its result | `/quiz`, `/quiz/result` | FR-03, FR-04 |
-| Occupation profile and level selection | `/occupations/:code`, `/occupations/:code/levels` | FR-05, FR-06, FR-08, FR-17 |
-| Island map and onboarding of a scenario | `/islands/:enrolmentId`, `/islands/:enrolmentId/onboard` | FR-08, FR-09, FR-16 |
-| Play | `/play/:runId` | FR-10 to FR-13, FR-15 |
-| Reflection and summary | `/play/:runId/reflect`, `/play/:runId/summary` | FR-14, FR-15 |
-| Profile | `/profile` | FR-18 |
-| Rate occupation | `/occupations/:code/rate` | FR-19 |
-| App feedback | `/feedback` | FR-20 |
-| Account settings | `/settings` | FR-02 |
-
-: Screens of the explorer application.
+The screens of the explorer application, with their routes and the requirements they serve, are tabulated in Appendix 3.
 
 ![Explorer app: screen flow of the core journey (UI-01).](latex/figures/UI-01_ExplorerScreenFlow.png){width=0.9}
 
 Staff screens. The staff application is served under `/staff/` and has one home per role (`ca`, `de`) and the screens below, which follow the activities AD-02 and AD-03 and the sitemaps SITE-02 to SITE-04.
 
-| Screen | Route (under `/staff`) | Requirements |
-|---|---|---|
-| Catalogue of occupations; reference-data import | `catalogue`, `catalogue/imports/:importId?` | FR-30, FR-31 |
-| Scenarios of an occupation; review criteria | `occupations/:occupationId/scenarios`, `.../review-criteria` | FR-32, FR-33, FR-34 |
-| Author a scenario: context, generation, reference answers | `scenarios/:scenarioId/author` | FR-22, FR-23, FR-24 |
-| Review a scenario | `scenarios/:scenarioId/review` | FR-25 |
-| Gamify: choose presentation, characters, scenes | `scenarios/:scenarioId/gamify` | FR-35 |
-| Asset library | `assets` | FR-36 |
-| Publish | `scenarios/:scenarioId/publish` | FR-37 |
-| System prompts of an occupation | `occupations/:occupationId/prompts` | FR-23 |
-| Monitor an occupation | `occupations/:occupationId/monitor` | FR-39 |
-| Settings | `settings` | — |
-
-: Screens of the staff application.
+The screens of the staff application, with their routes and the requirements they serve, are tabulated in Appendix 3.
 
 Which of these screens work against the API and which show sample data is recorded in Section 6.1.3; a route that appears here is a designed screen, not a claim that its function is complete.
 
@@ -1286,16 +1165,7 @@ This section sets the rules under which JobQuest processes personal data and sha
 
 Third parties and what they receive. The table lists every third party the platform deals with, what it receives, and where.
 
-| Third party | Purpose | What it receives | Where | Personal data |
-|---|---|---|---|---|
-| Content delivery network | Serve both applications and published releases | Static bundles and releases | Edge locations, including abroad | None |
-| Google Identity | Optional sign-in | An identity token, only when the user chooses Google | Abroad | Yes, by the user's choice |
-| E-mail provider | Password resets and notices | Address and message | To be chosen with a host in Vietnam | Yes |
-| Model providers | Narration, scoring, feedback, authoring help | Seed content and de-identified answer text, under an opaque run identifier | Abroad | Not by design; residual risk below |
-| O\*NET, ESCO | Reference data, imported | Nothing; data flows in only | — | None |
-| Second region of the cloud provider | Backups and recovery | Encrypted copies of the database and logs | Vietnam | Yes, encrypted |
-
-: Third parties and the data they receive.
+The third parties, their purpose, the data each receives, where it is processed, and whether it is personal data, are tabulated in Appendix 3.
 
 Options for using foreign models. Four ways to reconcile scoring by language models with data kept in Vietnam were compared.
 
@@ -1323,7 +1193,7 @@ A formal penetration test and an independent review of the prompts have not been
 
 ## 5.4 Summary
 
-This chapter turned the requirements of Chapter 4 into a design. The analysis (Section 5.1) modelled the business processes as activity diagrams and the system as use cases for the 43 functional requirements, with tabular descriptions of the key ones, and the lifecycle of a scenario as a state machine. The technology solution (Section 5.2) chose each technology against criteria and compared it with the alternatives, for the frontend, the backend, and the AI models. The design (Section 5.3) followed the order of the template: the architecture, from drivers to components and deployment (5.3.1); the sitemaps (5.3.2); the sequence diagrams, now twelve (5.3.3); the class diagrams for the domain and for the nineteen modules (5.3.4); the database as an entity–relationship model of twelve groups (5.3.5); the AI model design (5.3.6); the interface, 109 operations in fifteen modules (5.3.7); the screens and the design system (5.3.8); a test plan of 187 cases (5.3.9); and the policies and security controls for data and third parties (5.3.10).
+This chapter turned the requirements of Chapter 4 into a design. The analysis (Section 5.1) modelled the business processes as activity diagrams and the system as use cases for the 43 functional requirements, with tabular descriptions of the key ones, and the lifecycle of a scenario as a state machine. The technology solution (Section 5.2) chose each technology against criteria and compared it with the alternatives, for the frontend, the backend, and the AI models. The design (Section 5.3) followed the order of the template: the architecture, from drivers to components and deployment (5.3.1); the sitemaps (5.3.2); the sequence diagrams, now twelve (5.3.3); the class diagrams of the nineteen modules (5.3.4); the database as an entity–relationship model of twelve groups (5.3.5); the AI model design (5.3.6); the interface, 109 operations in fifteen modules (5.3.7); the screens and the design system (5.3.8); a test plan of 187 cases (5.3.9); and the policies and security controls for data and third parties (5.3.10).
 
 The table shows where each aspect of a software system is treated, so that a reader can see what the design covers.
 
@@ -1333,7 +1203,7 @@ The table shows where each aspect of a software system is treated, so that a rea
 | Functional behaviour | 5.1.2, 5.3.3 | UC-00, SD-01 to SD-12 |
 | Behaviour over time | 5.1.3, 5.3.3 | SM-01, SM-02 |
 | Structure and deployment | 5.3.1 | Component, deployment, PK-01 |
-| Static structure of the code | 5.3.4 | CL-00 to CL-08, CD-01 to CD-08 |
+| Static structure of the code | 5.3.4 | CL-00 to CL-08 |
 | Data | 5.3.5, 5.3.10 | ERD-01a to ERD-06d, DF-01 |
 | Interfaces | 5.3.7 | OpenAPI contract |
 | User interface | 5.3.2, 5.3.8 | SITE-01 to SITE-04, UI-01 |
@@ -1714,7 +1584,7 @@ This phase set out to specify and design a complete platform and to build a prot
 
 : Specific objectives and the state of each at the end of the phase.
 
-The deliverables of the phase are: a requirements specification of 43 functional and 19 non-functional requirements with design constraints and data requirements (Chapter 4); an analysis with 24 activity diagrams, a use-case model, and the state machines SM-01 and SM-02 (Section 5.1); a justified technology stack for frontend, backend, and AI (Section 5.2); a design set of an architecture with component and deployment views, twelve sequence diagrams, eight domain class diagrams and nine module diagrams, a data model of twelve groups drawn in six diagrams, an interface of 109 operations, the screens and design system, and a test plan of 187 cases (Section 5.3); a prototype of about 74,000 lines that passes 1,031 of 1,032 automated tests (Chapter 6); and measurements of the prototype's frontend, backend, and AI baseline against the requirements (Chapter 7). Chapter 7 also shows what the phase did not achieve: the mobile performance target (NFR-13) is not met, the keyword baseline fails, and the AI measures are fixed but not yet taken.
+The deliverables of the phase are: a requirements specification of 43 functional and 19 non-functional requirements with design constraints and data requirements (Chapter 4); an analysis with 24 activity diagrams, a use-case model, and the state machines SM-01 and SM-02 (Section 5.1); a justified technology stack for frontend, backend, and AI (Section 5.2); a design set of an architecture with component and deployment views, twelve sequence diagrams, nine module class diagrams, a data model of twelve groups drawn in six diagrams, an interface of 109 operations, the screens and design system, and a test plan of 187 cases (Section 5.3); a prototype of about 74,000 lines that passes 1,031 of 1,032 automated tests (Chapter 6); and measurements of the prototype's frontend, backend, and AI baseline against the requirements (Chapter 7). Chapter 7 also shows what the phase did not achieve: the mobile performance target (NFR-13) is not met, the keyword baseline fails, and the AI measures are fixed but not yet taken.
 
 ## 8.2 Future Works
 
@@ -3125,7 +2995,7 @@ System administrator use cases.
 
 # Appendix 2 — Additional diagrams {++}
 
-The diagrams that Chapter 5 refers to but does not print: the activity diagrams of Section 5.1.1, the sitemap of the staff application, the sequence diagrams of Section 5.3.3, the domain classes and entity–relationship views of Sections 5.3.4 and 5.3.5, and the package diagram of Chapter 6.
+The diagrams that Chapter 5 refers to but does not print: the activity diagrams of Section 5.1.1, the sitemap of the staff application, the sequence diagrams of Section 5.3.3 (their descriptions stay in that section), the module classes of Section 5.3.4 and the entity–relationship views of Section 5.3.5, and the package diagram of Chapter 6.
 
 Activity diagrams of the explorer.
 
@@ -3140,6 +3010,8 @@ Activity diagrams of the explorer.
 ![Explorer: manage profile and account (AD-01f).](latex/figures/AD-01f_Explorer_ProfileAccount.png){width=1}
 
 ![Explorer: send app feedback (AD-01g).](latex/figures/AD-01g_Explorer_SendAppFeedback.png){width=0.35}
+
+![Explorer: view a hint (AD-01h).](latex/figures/AD-01h_Explorer_ViewHint.png){width=0.35}
 
 Activity diagrams of the content administrator.
 
@@ -3181,6 +3053,12 @@ Sitemap of the staff application.
 
 ![Sitemap of the staff application (SITE-02): three portals behind one sign-in, with dashed arrows for the path a scenario takes between them.](latex/figures/SITE-02_StaffApp.png){landscape}
 
+![Sitemap of the content administrator portal (SITE-02, content administrator).](latex/figures/SITE-02_StaffApp_ContentAdmin.png){width=0.8}
+
+![Sitemap of the domain expert portal (SITE-03).](latex/figures/SITE-03_StaffApp_DomainExpert.png){width=0.8}
+
+![Sitemap of the system administrator portal (SITE-04).](latex/figures/SITE-04_StaffApp_SystemAdmin.png){width=0.8}
+
 Sequence diagrams.
 
 ![Sequence of finishing a scenario (SD-02): waiting for pending feedback notes, scoring, credit and unlocking, and the summary.](latex/figures/SD-02_Explorer_FinishScenario.png){width=0.92}
@@ -3201,11 +3079,25 @@ Sequence diagrams.
 
 ![Sequence of monitoring operation and re-running a failed job (SD-12).](latex/figures/SD-12_SystemAdmin_MonitorAndRerun.png)
 
-Domain classes.
+![Sequence of generating scenario content (SD-05): opening and assignment, generation and revision with AI, and completion and submission.](latex/figures/SD-05_DomainExpert_GenerateScenario.png)
 
-![Domain classes of scenario content (CD-03): a scenario is composed of slots, facts, artefacts, actions, nodes with options, and reference answers.](latex/figures/CD-03_ScenarioContent.png){landscape}
+Module classes. An association is constructor injection, a dashed arrow labelled «write» marks a table the module owns, and a dashed arrow with a hollow head is a realization.
 
-![Domain classes of authoring, review, and release (CD-04): drafting with AI, review assignments and criteria versions, presentation, play-test, and the immutable release.](latex/figures/CD-04_AuthoringReviewRelease.png){landscape}
+![Module classes of identity and access (CL-01).](latex/figures/CL-01_IdentityAndAccess.png){landscape}
+
+![Module classes of the catalogue and import (CL-02).](latex/figures/CL-02_CatalogueAndImport.png){landscape}
+
+![Module classes of scenario authoring and lifecycle (CL-03).](latex/figures/CL-03_ScenarioAuthoringAndLifecycle.png){landscape}
+
+![Module classes of review and publishing (CL-04).](latex/figures/CL-04_ReviewAndPublishing.png){landscape}
+
+![Module classes of the explorer, career, and life (CL-05).](latex/figures/CL-05_ExplorerCareerAndLife.png){landscape}
+
+![Module classes of play, assessment, and quality (CL-06).](latex/figures/CL-06_PlayAssessmentAndQuality.png){landscape}
+
+![Module classes of AI, feedback, and monitoring (CL-07).](latex/figures/CL-07_AiFeedbackAndMonitoring.png){landscape}
+
+![Module classes of the shared platform (CL-08).](latex/figures/CL-08_SharedPlatform.png){landscape}
 
 Entity–relationship views.
 
@@ -3257,7 +3149,7 @@ Repository packages.
 
 ![Repository packages and their dependencies (PK-01).](latex/figures/PK-01_RepositoryPackages.png){width=0.9}
 
-# Appendix 3 — Technology comparisons and architecture details {++}
+# Appendix 3 — Requirement verification, technology comparisons, and architecture details {++}
 
 Tables that support Sections 4.1.5, 4.3.1, 5.2, 5.3.1, and 5.3.4 and are kept out of the main text for length. Ratings in the comparison tables use the three symbols of Section 3.3.2: ● meets the criterion, ◐ meets it in part, ○ does not.
 
@@ -3720,6 +3612,252 @@ Step 4, advisor check. The advisor checks the scores and labels of a random samp
 
 Step 5, freeze and split. The set is versioned and hashed. One situation per archetype, five in all, forms a development split used while prompts and rubric formats are being written; the other ten form a test split that is scored once, with frozen prompts, for the reported results. Without the split, prompts tuned on the responses that measure them would overstate the judge.
 
+
+Requirement verification (Section 4.3).
+
+The functional, non-functional, and data requirements of Section 4.3, with the business and technical verification of each.
+
+| ID | Functional requirement | Group | Business verification | Technical verification |
+|---|---|---|---|---|
+| FR-01 | Register, sign in with a password or Google, and recover the account | Explorer | Acceptance test: a user registers, signs in with a password and with Google, resets a forgotten password, and reaches their own progress | Authentication tests; unauthenticated requests for progress are refused; reset links expire after one use; Google sign-in verifies the ID token and finds or creates the linked account |
+| FR-02 | Edit, sign out of, and delete the account | Explorer | Walkthrough of each account action | Account deletion removes personal data as defined in NFR-05 |
+| FR-03 | Run an optional, retakable RIASEC orientation quiz suggesting occupations [41] | Explorer | Pilot users complete the quiz and find the suggested occupations meaningful | Quiz yields a RIASEC profile; the five suggested occupations (project-defined) come from matching it with each occupation's O\*NET interest code, without AI; skipping leads to the Galaxy Map; retaking replaces the earlier result |
+| FR-04 | Show the explorer's portrait for their RIASEC profile, including the social index | Explorer | Pilot users judge the description relevant and not misleading | No AI is used in the quiz; the portrait is the fixed text written in advance for the explorer's highest-scoring RIASEC type, one text per type (six types [41]); the social index is the profile's Social score; the portrait is labelled as self-reported and not validated |
+| FR-05 | Browse occupations on the Galaxy Map and show each profile with its downsides and level descriptions | Explorer | Explorers find an occupation on the map and can state its main downsides and what each level involves | Every published occupation appears on the map with all profile fields and a description for every level; ratings follow FR-19 suppression |
+| FR-06 | Open the entry level of every published occupation to every explorer | Explorer | Acceptance test: a new explorer opens the entry level of any published occupation | Entry level reachable with zero credit and without any adjacency check |
+| FR-07 | Let explorers start an adjacent occupation at a higher level when overlap conditions are met | Explorer | Domain experts judge the offered starting levels as plausible for seeded profiles | Overlap only unlocks higher starting levels and never blocks an entry level; no offer is made where adjacency data is missing |
+| FR-08 | Enrol in levels, choose scenarios, award credit, and unlock the next level | Explorer | Acceptance test: an explorer enrols, chooses scenarios, and progresses through levels as expected | Threshold boundary tests unlock at and only at the specified credit; below the threshold, tasks for the missing competencies are suggested |
+| FR-09 | Offer the role, team, and context before each scenario | Explorer | Explorer walkthrough: explorers can open the context before a scenario and understand it | End-to-end test: an intro screen precedes every scenario and lets the explorer open the full context or skip it; an unavailable scenario shows a notice and returns the explorer to the Island Map |
+| FR-10 | Support choice, ordering, prioritising, and free-text answers | Explorer | Explorers complete each response form without help | Known-input tests return the expected scores for each closed form |
+| FR-11 | Score each free-text answer, including every follow-up answer, with anchor points backed by quotations | Explorer | Domain experts judge a sample of scored responses as fair and well-evidenced | Each answer is graded as soon as it is submitted, before any follow-up is decided, by a panel of three AI judges (project-defined) running in parallel, and their scores are combined into one; every quotation is found verbatim in the response; scores outside the rubric anchors are rejected; agreement with experts is checked under NFR-14 |
+| FR-12 | Answer follow-up questions generated by AI on free-text answers | Explorer | Explorers judge the follow-up questions relevant to what they wrote | A follow-up is decided only after the previous answer is graded; follow-ups stay within the expert's follow-up goal and the activity's limit; each follow-up passes the output check before display, otherwise the expert's default follow-up is shown; each follow-up answer is graded under FR-11 |
+| FR-13 | Offer hints when the explorer is stuck | Explorer | Explorers continue after a hint and still find the task meaningful | Using a hint removes the +2 option for that activity; hint use is recorded and shown in the summary; hints do not reveal grading criteria |
+| FR-14 | Return result, feedback, and guidance separately | Explorer | Usability test: explorers identify the result, the feedback, and the guidance separately | All three present and distinguishable for every assessed scenario; AI-written feedback notes are built from the rubric anchors and must pass the output check (on topic, no grading criteria, correct language); a note that fails is redrafted, with no expert default; explorers can flag wrong content to the domain expert |
+| FR-15 | Record evidenced expertise and soft-skill competencies, capped per skill per scenario | Explorer | Domain experts spot-check sampled sessions: recorded competencies match the observed behaviour | Records correspond to rubric criteria and are split into expertise and soft skills; random-event answers add bonus soft-skill evidence only; replay test confirms accumulation never exceeds the cap |
+| FR-16 | Offer optional side quests for bonus points | Explorer | Explorers find side quests short and optional | Side quests are authored by the domain expert (FR-22); side-quest points are recorded separately from main-quest competence credit |
+| FR-17 | Show the career path of each occupation level | Explorer | Explorers can describe the role held at each level of an occupation | Career path lists every level of the occupation with its role and description, as written by the domain expert |
+| FR-18 | Show a private record of attempts, expertise and soft-skill points, awards, and past scenario feedback | Explorer | Explorers confirm their record is accurate and complete | Record reconstructs from session history for a seeded account; both point types shown in the top bar, summary, and profile; past feedback is the end-of-scenario feedback of each attempt; not accessible to other users |
+| FR-19 | Collect occupation ratings and feedback | Explorer | Acceptance test: the rating and feedback form appears only after full completion; aggregated results are shown or withheld as expected | Form accepted only once every level is completed; aggregated result updates after each new submission; suppressed below the response-count threshold |
+| FR-20 | Send app feedback and review it | Explorer, System administrator | An explorer sends feedback and a system administrator finds it in the review list | Every submission is stored with time and app version; the system administrator can mark it as handled |
+| FR-21 | Manage the occupation profile: levels, level descriptions, future roles, downsides, salary, generation rules, competencies, adjacency | Domain expert | Experts approve the adaptation for Vietnamese practice | A profile can be created only for an occupation the content administrator has created; only domain experts assigned to the occupation can edit it; every rubric criterion resolves to a competency; routes without enough data are hidden, not guessed |
+| FR-22 | Author scenario context, allowed task types, option scores, rubric, hints, random events, and side quests | Domain expert | Walkthrough: an author prepares a scenario for an assigned task end to end, including its hints, random events, and side quests | Edits persist with authorship recorded; access limited to domain experts assigned to that occupation; every free-text activity has a follow-up goal and a default follow-up; random events are dropped into sessions at random within the configured probability, target the scenario's reviewed skills, and never lower the main score |
+| FR-23 | Generate scenario content with AI from the author's context, keeping its generation history | Domain expert | Domain-expert review of sampled generations against the required facts and the occupation's rules | Automated validator passes on every stored generation; a scenario that fails the checks cannot be submitted; each run's context, model, cost, and check result are viewable |
+| FR-24 | Add reference answers with expert scores | Domain expert | Experts confirm the stored criteria reflect what they intended | Item is stored only when validation passes; failing items return the reasons |
+| FR-25 | Review another expert's scenario against the review criteria | Domain expert | Walkthrough: an expert approves, rejects, and requests changes on sample scenarios using the criteria | Reviewer is never the author; every criterion is answered before a decision; unapproved scenarios are never served to explorers; a rejected scenario is retired and cannot be reopened |
+| FR-26 | Play-test the draft game before publication | Domain expert | Walkthrough: the author is invited, play-tests a draft game, and reports findings | Author is notified when the draft game is built; play-test sessions are excluded from every explorer aggregate; display findings return the scenario to presentation, content findings return it to the author and to review |
+| FR-27 | Revalidate a published scenario on request | Domain expert | Experts revalidate a sample of published scenarios on request | A domain expert or content administrator can send a published scenario back to the review queue; the scenario stays published and playable meanwhile; the result is recorded; outdated scenarios are flagged for replacement |
+| FR-28 | Report disagreements between AI and expert grading | Domain expert | Experts confirm the disagreement list helps them refine grading criteria | Disagreement list matches recomputation over the reference set |
+| FR-29 | Rate responses and scenarios blind | Domain expert | Experts confirm they cannot see AI scores or other experts' ratings while rating | Blind-rating records exist per expert; inter-expert agreement is computable |
+| FR-30 | Create and manage own occupations | Content administrator | Walkthrough: a content administrator takes their occupation from draft to published to retired | State transitions follow the defined lifecycle; publication requires completed review; actions on other occupations are refused; a domain that still holds occupations cannot be deleted |
+| FR-31 | Import O\*NET and ESCO reference data | Content administrator | A content administrator imports a sample and adjusts it | Imported records resolve against source identifiers; unresolved records are listed; domain experts are notified to derive competencies once the import completes |
+| FR-32 | Define the scenario review criteria | Content administrator | Domain experts confirm the criteria are clear enough to apply | Reviews cannot start until criteria exist for the occupation; each review records an answer per criterion |
+| FR-33 | Open one active scenario per task | Content administrator | Walkthrough: a content administrator opens a scenario and the author is notified | A second active scenario for the same task is refused; retired scenarios, including rejected ones, do not count |
+| FR-34 | Assign a domain expert as reviewer, with a deadline, and reassign overdue reviews | Content administrator | Walkthrough: a content administrator assigns a domain expert to review a scenario and reassigns an overdue review | Assigning the author is refused; the domain expert is notified; the deadline appears in the review queue; the reviewer is reminded before the deadline; once it passes, the content administrator is notified and can reassign the review with a new deadline |
+| FR-35 | Choose the scenario presentation with AI: task types from the domain expert's allowed set, characters, and scenes | Content administrator | Walkthrough: a content administrator gamifies an approved scenario | Task types outside the domain expert's allowed set are refused; content text is read-only in this step |
+| FR-36 | Maintain a bias-checked asset library; AI generates missing assets | Content administrator | Reviewers judge sampled assets, including AI-generated ones, free of stereotyping | Every asset carries its source and bias-check result; an AI-generated asset enters the library only after its bias check passes |
+| FR-37 | Publish a scenario after review and play-test | Content administrator | Walkthrough: a content administrator publishes a ready scenario with an effective date and release note | Publish is disabled unless the status is ready |
+| FR-38 | Delete a published scenario by retiring it | Content administrator | Walkthrough: a content administrator replaces an outdated scenario | Deleting retires the scenario and keeps its play history; the task's scenario slot is freed; retired scenarios are never served to explorers |
+| FR-39 | Monitor own occupations: statistics and coverage | Content administrator | A content administrator spots a weak or outdated scenario from the dashboard | Figures match stored records; ratings follow the suppression threshold; coverage matches stored metadata |
+| FR-40 | Assign and reassign one content administrator and domain experts to each occupation | System administrator | Walkthrough: a system administrator assigns staff to an occupation and moves it to another content administrator | Every occupation carries exactly one content administrator and at least one domain expert once assigned; reassigning an occupation moves its pending work to the new content administrator |
+| FR-41 | Manage all user accounts, roles, and role-based access | System administrator | Walkthrough: a system administrator views the activity log of an explorer and a staff member, then disables and deletes an account | Staff sign in on the shared login screen and see only the work for their assigned occupations; wrong-role access to admin screens is refused; disabled accounts cannot sign in; deleted accounts follow NFR-05; staff-authored records are kept |
+| FR-42 | Configure the generation model and the three judge models separately | System administrator | A system administrator changes a provider through the configuration screen | The three judges come from three different model families, none the same as the generation model's; configuration rejects any other combination |
+| FR-43 | Monitor usage, cost, and errors, and re-run failed AI jobs | System administrator | A system administrator uses the monitoring screen to spot cost or error spikes | Metrics consistent with generated load; alerts raised when a cost threshold is crossed; failed generation and grading runs listed with cause and can be re-run |
+
+: Functional requirements with business and technical verification.
+
+| ID | Non-functional requirement | Category | Business verification | Technical verification |
+|---|---|---|---|---|
+| NFR-01 | Follow-up generation within 5 s (95th percentile); progress shown after 2 s | Performance | Usability session: explorers find the wait for follow-up questions acceptable and see progress feedback | Latency distribution measured over at least 200 sampled follow-ups |
+| NFR-02 | Free-text assessment within 8 s (95th percentile) | Performance | Usability session: explorers find the wait for feedback acceptable | Latency distribution measured over at least 200 sampled assessments |
+| NFR-03 | Progress survives interruption | Reliability | Acceptance test: an explorer closes the browser mid-scenario, returns, and continues | Forced-interruption tests resume at the recorded position |
+| NFR-04 | Failover to another model when a model fails; no progress lost and user notified within 10 s when no model is available | Reliability | Explorers receive a clear message and find their progress intact | Fault injection against the provider interface: a failed model is replaced by another available model in the same role, and zero progress-record loss across injected failures |
+| NFR-05 | Minimal, encrypted, deletable personal data; only de-identified answers sent to AI providers | Security and privacy | Data-protection review against applicable regulation; walkthrough of an account deletion | Data inventory review; encryption check; account deletion removes records; AI requests contain no name, e-mail, or account ID; providers are configured with no training on submitted data and no retention |
+| NFR-06 | Suppress aggregates below a minimum population | Security and privacy | Privacy review confirms small-population figures are withheld and the reason is stated | Aggregates below threshold are withheld |
+| NFR-07 | Disclose AI generation and AI assessment | Transparency | Pilot users can state that scenarios and assessments are machine-produced | Disclosure present at the point of use in every relevant screen |
+| NFR-08 | Vietnamese-language interface and content | Usability | Native speakers review the interface and content for completeness and accuracy | Every screen and all content render in Vietnamese with no missing text |
+| NFR-09 | At least 80% of readers state the task objective correctly | Usability | Comprehension check with a minimum of 20 representative readers | Validator confirms every scenario states an explicit objective in its context |
+| NFR-10 | New occupations need no code change | Maintainability | A content administrator publishes a new occupation through the authoring interface alone | No code change or redeployment is recorded for the new occupation |
+| NFR-11 | Session cost stays within the configured ceiling | Cost | System administrator reviews cost against the agreed budget | Cost telemetry aggregated per session and compared against the configured ceiling |
+| NFR-12 | Model provider replaceable without content changes | Portability | Domain experts confirm scenario quality is unchanged after a provider switch | Provider substitution test with unchanged content; regression suite passes |
+| NFR-13 | Works in a mobile browser on a slow connection | Compatibility | Explorers complete a scenario on their own phone | Test on reference devices and a throttled network profile agreed for testing |
+| NFR-14 | AI grading validated against expert judgment | Fairness | Domain experts accept the agreement report for their occupation | Quadratic weighted kappa per difficulty stratum recomputed whenever a judge model changes |
+| NFR-15 | Published scenarios match approved content; AI content during play stays within expert-set limits | Accuracy | Reviewers confirm sampled published scenarios and sampled follow-ups and feedback stay within the approved content | Automated comparison between approved and published content shows no difference; every follow-up shown passed the output check or is the expert's default follow-up; every feedback note shown passed the output check |
+| NFR-16 | Scenario status changes logged; published content immutable | Auditability | A content administrator traces who approved and published a scenario | Lifecycle log complete for every scenario; write attempts on published content are refused |
+| NFR-17 | Passwords hashed, all traffic encrypted, idle sessions expire, AI prompts protected against injection | Security and privacy | Security review of sign-in, session handling, and AI prompts | Stored passwords are salted hashes; plain-HTTP requests are redirected or refused; sessions end after the configured idle time; explorer answers reach the AI as separated data whose instructions are ignored; an injection test set in the regression suite never changes a score |
+| NFR-18 | Explorer service available within the agreed operating target | Availability | A system administrator reviews monthly availability against the agreed target | Uptime monitoring records availability; planned maintenance is announced in advance |
+| NFR-19 | Explorer screens meet WCAG 2.1 level AA | Accessibility | Users with assistive technology complete a scenario | Automated and manual accessibility audit against WCAG 2.1 AA |
+
+: Non-functional requirements with business and technical verification.
+
+| ID | Data requirement | Source | Business verification | Technical verification |
+|---|---|---|---|---|
+| DR-01 | Occupational reference data (occupations, tasks, skills) | O\*NET and ESCO, imported by the content administrator and adapted for Vietnamese practice by domain experts | Domain experts review the adaptation for Vietnamese practice | Imported records resolve against source identifiers |
+| DR-02 | Competency taxonomy with observable indicators | Derived from DR-01 under expert adaptation | Domain experts review definitions and indicators | Every rubric criterion resolves to a taxonomy entry |
+| DR-03 | Occupational adjacency with overlap measures | Computed from DR-01/DR-02 | Domain experts review computed adjacency for plausibility | Overlap values are reproducible from DR-01/DR-02 |
+| DR-04 | Scenario content: context, activities, option scores, rubric, hints, random events, side quests | Author domain expert with AI assistance | Reviewer sign-off recorded before presentation | Context schema validation; automatic checks pass before submission |
+| DR-05 | Generated scenarios with provenance | System | A content administrator traces any served scenario back to its context and model | Every served scenario carries resolvable provenance |
+| DR-06 | User progress: enrolled levels, competence credit capped per scenario, side-quest points, play history, end-of-scenario feedback, awards | System | Explorers confirm their progress and awards are shown correctly | Progress reconstructs from stored records; replaying a scenario never adds credit beyond the cap |
+| DR-07 | Assessment records, including each judge's score and the combined grade per answer, hidden feedback notes, hint use, and explorer flags | System and AI judges, with flags from explorers | Domain experts audit a sample of assessment records and review flagged content | Records complete for every assessed response, follow-up answers included; every feedback note stores its output-check result; every flag reaches a domain expert of that occupation |
+| DR-08 | Five-attribute occupation ratings (project-defined) | Explorers | Acceptance test of the rating flow after full completion | Ratings exist only for fully completed occupations |
+| DR-09 | Expert reference set stratified by difficulty | Domain experts | Inter-expert agreement recorded for the reference set | Set covers the defined difficulty strata; every item passed validation |
+| DR-10 | Operational telemetry | System | A system administrator answers cost and error questions from the telemetry | Telemetry present and queryable |
+| DR-11 | Play-test session flag | System | Staff confirm dashboards are unchanged after play-testing | Play-test sessions are absent from explorer-facing aggregates |
+| DR-12 | Quiz answers, RIASEC profile with social index, and the fixed portrait texts (one per RIASEC type) | Explorers; portrait texts written in advance by the project team | Pilot users judge the portrait texts relevant and not misleading | Profile recalculates from stored answers; every RIASEC type has a portrait text; retaking the quiz replaces the profile and portrait |
+| DR-13 | Scenario lifecycle record, including author and reviewer assignments with review deadlines, review decisions, comments, and revalidation results | System, from staff actions | A content administrator reconstructs a scenario's history | Every transition in SM-01 is logged; every assignment, reassignment, review, and revalidation result is stored with actor and time; at most one active scenario per task |
+| DR-14 | Presentation data and asset library | Content administrator with AI | Reviewers check sampled assets for stereotyping | Every presented asset resolves to a library entry with a bias-check result |
+| DR-15 | Occupation catalogue (domains and occupations) and occupation profiles (level descriptions, future roles, downsides) | Content administrator (catalogue) and domain experts (profiles) | A content administrator reviews the catalogue; domain experts review their occupation's profile for completeness | Every published occupation has all required fields and a description for every level; every profile field records the domain expert who wrote it |
+| DR-16 | User accounts, linked Google identities, roles, assignments, and activity log | System administrator; activity log from the system | A system administrator confirms each occupation's staff and reviews an account's activity | Exactly one content administrator and at least one domain expert per occupation; a Google identity links to one account only; every account action is logged |
+| DR-17 | Platform settings | System administrator | A system administrator reviews settings against policy | Every change is versioned with actor and time |
+| DR-18 | App feedback records | Explorers | A system administrator reviews recent feedback | Each record holds text, time, app version, and handling status |
+| DR-19 | Scenario review criteria | Content administrator | Domain experts confirm the criteria match how they review | Criteria are versioned; each review links to the version it used |
+
+: Data requirements with source, business verification, and technical verification.
+
+Architecture details (Section 5.3.1).
+
+The in-flight figure follows from Little's law: 85 calls per second, each lasting three to eight seconds. Two sizing assumptions remain to be measured by the load tests of Chapter 7: if one single-vCPU API replica serves about 300 light requests per second, Stage 4 needs four replicas, six with headroom across two zones; if one worker holds 50 calls in flight, it needs six to fourteen workers.
+
+The architecture scales for seven reasons. Processing tiers are stateless, so capacity grows by adding replicas. Fast and slow work are separated: a request stores and acknowledges in about 0.2 s, and slow work waits in a queue, so a class of forty starting together lengthens the queue rather than overloading the API. The binding constraint, the model tier, is isolated and limited on its own. Published content is immutable and therefore almost entirely served from cache. Reads for statistics are separated from writes by a replica. Load is shed by priority rather than by failure: under pressure, live grading and narration go first, feedback notes wait a little longer for the summary screen, and authoring work waits for quiet hours. And no transaction spans services, so growth never requires distributed coordination. Canon content is approved once and served verbatim from releases, so run-time model calls are limited to narration, follow-ups, feedback notes, and grading; the cost per playthrough is estimated in Section 5.2.3.
+
+Reliability and operations. Availability of 99.5% a month is proposed for Stages 1 and 2 and 99.9% once two zones run (NFR-18). The write-ahead log is archived continuously and backups taken nightly, both copied to a second region in Vietnam, for a proposed recovery point of five minutes and recovery time of one hour. Deployments roll replica by replica behind health checks, with backward-compatible migrations so old and new versions run side by side. Monitoring tracks queue length, 95th-percentile latency per provider, cost per session, and error rates, alerting at the thresholds of NFR-01, NFR-02, and NFR-11. A web application firewall and TLS guard the entry, secrets are held in a secret manager, and the egress proxy admits only allowlisted model endpoints.
+
+Modules and tables (Section 5.3.4).
+
+| Module | Processes | Writes tables of | Routes |
+|---|---|---|---|
+| AuthModule | API | Group A except assignment, through the one account store | 7 |
+| UserModule | API | Assignment of staff to occupations (`ASSIGNED_TO`) | 10 |
+| CatalogueModule | API | Groups B and G (occupations, soft skills, tiers, NPC cards, outfits), loaded by a data-loading command | 6 |
+| ImportModule | Worker, API | O\*NET and ESCO import, `KEYWORD` | 4 |
+| ScenarioModule | Worker, API | Groups D and E, expert interviews, generation runs | 16 |
+| LifecycleModule | Shared | `LIFECYCLE_LOG`; the SM-01 state machine | 0 |
+| ReviewModule | API | Review criteria, reviews, revalidation | 10 |
+| PublishingModule | Worker, API | Assets, presentation, builds, play-test findings, releases | 12 |
+| CareerModule | API | Groups H and I | 9 |
+| LifeModule | API | Group K and side quests | 6 |
+| PlayModule | Worker, API | Runs and run events (group J) | 11 |
+| AssessmentModule | Worker | Assessments, judge results, feedback notes | 0 |
+| QualityModule | Worker, API | Content flags, blind ratings, regrading | 6 |
+| AiModule | API | Prompts, models, jobs, model calls (group L) | 2 |
+| FeedbackModule | API | Occupation ratings, app feedback | 4 |
+| MonitoringModule | API | None; reads usage, cost, and errors | 3 |
+| CoreModule | Global, shared | Activity log, platform settings | 0 |
+| NotificationModule | Global, worker, API | Notifications; the event stream | 3 |
+| GameCoreModule | Global, shared | None; a snapshot of reference tables built once at start-up for *game-core*, which never reads the database | 0 |
+
+: NestJS modules, the processes that run them, the tables they write, and their routes.
+
+Entries awaiting a decision (Section 5.3.5).
+
+Entries still waiting for a decision. Some entities are drawn from research that is still marked as a draft or as to be decided: `DEPARTMENT`, the outfit entities, `CHECK_QUESTION`, `CONDUCT_FLAG`, `SKILL_TIER` and its tier names, `ACHIEVEMENT`, `DISTRESS_TERM`, `CAREER_HABIT`, `LIFE_MILESTONE`, and `SCENARIO.outcomes`. Prices of shop items, the amount of health recovered, and the cost of replaying a scenario have no figure yet, so tests check the relations between them, not their values. The turn identifier with which the explorer application makes a repeated submission safe (SD-10) has no attribute of `RUN_EVENT` yet; the prototype keeps it in the player-input event. Two readings of the diagram also need confirming: the `(min,max)` labels count the partners of the neighbouring entity in 13 relationships and the entity itself in the rest, and some lookup tables are drawn as having at least one row on the other side. They are items A28 and A29 of the open issues. The prototype's database does not follow this diagram yet, so migrating from it is part of the implementation (Chapter 6).
+
+Judge strength and reliability (Section 5.2.3).
+
+Strength of the judge relative to the generator. The judge does not need to be stronger than the generator, because it scores text written by a person, not text the generator wrote. It does need enough capacity: on German clinical-reasoning transcripts, a small model agreed poorly with human raters (intraclass correlation below 0.20) and a larger one moderately (0.41 to 0.57), against 0.45 between the two human raters [124]. Whether a larger tier, or a reasoning model, is worth its cost for this task is not settled by published evidence, so each judge family is tested at two tiers and the cheaper tier is kept unless it is clearly worse.
+
+Reliability of a language-model judge. Published evidence supports a conditional answer, not reliability by default, and none of it concerns Vietnamese or role-play. A synthesis of 65 studies of essay scoring found agreement between language models and human raters to vary widely and to depend on context [101]. Untrained general models fall well short of dedicated scorers: on the ASAP essays, ChatGPT and Llama reached an average quadratic weighted kappa of 0.313 and 0.297, against 0.817 for a supervised system [125]. Agreement comes close to human level only under conditions: GPT-4 given a few scored examples reached a kappa of 0.70 on short answers in school subjects, against 0.75 between humans [102], and approached dedicated scoring systems on CEFR essays once calibration examples were supplied [103]. Three weaknesses recur. Scorers handle fully correct and fully incorrect answers well and degrade on partially correct ones, where human agreement stays stable [126]. Without a reference answer, judges agree with experts mainly on questions they can answer themselves [127], and a model's accuracy as a judge closely follows its accuracy at solving the same problems [60]; JobQuest has no reference answers, so the judge must know IT work, and the level descriptions of the rubric must carry the domain knowledge. And consistency is not validity: GPT-4's repeated ratings agreed with each other at an intraclass correlation of 0.94 to 0.99 [105], which says nothing about agreement with people. The design answers each weakness: a strong model and an explicit rubric from the start, scored examples later from expert rulings, a panel whose disagreements send partially correct cases to the expert, and level descriptions written by the expert. The project then measures reliability on its own task instead of assuming it (RP-2), against the criteria of Williamson, Xi and Breyer [71]: quadratic weighted kappa of at least 0.70, a standardised mean difference of at most 0.15, and agreement at most 0.10 below that between experts. The data, raters, measures, and thresholds are fixed in Section 7.3.
+
+Items awaiting game design. Several items cannot be settled before the game design is fixed: the scoring scale, where −1 / 0 / +1 / +2 is planned and not final and the current sample scenarios describe three levels only; the competency scoring table for a playthrough and the specific criteria given to the judge; the list of required facts in a seed, needed to measure fact preservation (NFR-15); and how evidence from the play process, such as hints, time, and follow-ups, counts and how scores combine into a competency. The AI design does not depend on them: the judge scores any criterion that comes with level descriptions, on any ordinal scale (Section 5.3.6), and agreement with experts can be computed on any such scale.
+
+Components (Section 5.3.1).
+
+Explorer application. The occupation map, levels, the scenario player for the four response forms of FR-10, hints, follow-ups, results, the personal record, ratings, and feedback (FR-03 to FR-20). It runs *game-core* for instant provisional feedback on closed formats, queues unsent turns locally, and receives narration, follow-ups, and assessment results through a server-sent event stream. Prototype: screens, the 3D map, and the four forms exist; the turn queue, event stream, and 2D map do not.
+
+Staff application. The thirty-three staff use cases: the AI-1 interview through which a domain expert gives the knowledge a seed needs, review, test playthroughs, reliability, and blind rating for domain experts; seed drafting with AI-2, catalogue, presentation, publication, and statistics for content administrators; accounts, model configuration, monitoring, and feedback for system administrators. It shares the sign-in screen and origin with the explorer application (FR-41) but is a separate download. Prototype: absent.
+
+Game core. A library with no framework, network, or storage dependency: the reducer folding run events into state, scoring of closed formats against expert keys, credit with the per-scenario cap, unlocking and adjacency offers, content schemas, and the rule checks on model output of Section 5.2.3 — numbers and names in narration found in the seed or the player's text, the follow-up count, each judge's quotation found verbatim in the answer, levels within the scale. It runs unchanged in browser and server. Prototype: present; its free-text grader is a synchronous keyword matcher inside the reducer, which must become an asynchronous assessment entering the run as an event.
+
+Identity and access. Accounts, sign-in and recovery, sessions, occupation-scoped roles, disabling, deletion, and the activity log (FR-01, FR-02, FR-40, FR-41); every module asks it whether an actor may act on an occupation. Prototype: registration, email and Google sign-in, rotating sessions, and deletion exist; reset, idle expiry, scoped roles, disabling, and the log do not, and the three prototype roles must become the four actors of Section 4.2.1.
+
+Exploration. Everything outside the assessment itself: orientation, catalogue and profiles, enrolment, runs and their events, credit, unlocking, adjacency offers, side quests, ratings, records, and feedback (FR-03 to FR-09, FR-15 to FR-20). It validates turn events with *game-core* and stores them; each free-text answer is handed to Assessment, which stores it with an assessment request in the same transaction. Prototype: present, but runs are submitted as one batch at the end.
+
+Assessment. Turns answers into results, feedback, and guidance (FR-10 to FR-14). Closed formats are scored synchronously by *game-core*; each free-text answer, follow-up answers included, is graded by the judge panel as soon as it is submitted (AI-5), and only then is a follow-up decided (FR-12). The grade and each activity's checked feedback note are written back as events, and at the end of the scenario the notes are combined into the feedback shown on the summary screen in the three separate parts of FR-14. It also routes explorers' flags of wrong content to the occupation's domain experts. Prototype: closed formats scored by replaying the run; free text matched by keyword.
+
+Content lifecycle. Occupations, knowledge, scenarios and drafts, generation history, review criteria, assignments and decisions, presentation, assets, and publication (FR-21 to FR-38). It is the only writer of content, implements the state machine SM-01, writes each transition with its log entry in one transaction, and publishes immutable, versioned releases. It uses AI orchestration for generation, validation, presentation, and missing assets; the scheduler for deadlines and annual revalidation; and the importer for O\*NET and ESCO, whose interest codes also drive orientation matching (FR-03). A domain expert or content administrator can send a published scenario back for revalidation while it stays playable (FR-27). Prototype: versioned immutable documents, written only by a seed script.
+
+AI orchestration. Runs every model use of the five AI components of Section 5.2.3 as a job: the expert interview (AI-1) and seed drafting (AI-2) at authoring time, with presentation design and missing assets (FR-35, FR-36); test playthroughs (AI-3); narration, follow-ups, and feedback notes during play (AI-4, FR-12, FR-14); and grading of each answer by a panel of three judges (AI-5, FR-11). The Get-to-know-me quiz uses no AI (FR-04). Per job it loads the pinned content version, removes identifying details from explorer text, checks the session budget, calls the model port, applies *game-core*'s rule checks, and records model, prompt version, cost, and latency. There is no scripted substitute for a model's output: a job that cannot complete is retried or waits, and a session pauses until it can. It rechecks at job time that no judge shares the narrator's family or another judge's. Prototype: absent; queue and model-client libraries are declared but unused.
+
+Model gateway. One adapter per provider and a registry recording each model's role — text generation, assessment, image generation (FR-36) — with its provider and family; configuration is refused when the narrator and a judge, or two judges, share either (FR-42, DC-01). It applies per-provider concurrency limits, timeouts, retries, and a circuit breaker. Adapters are written by the project over the OpenAI-compatible format, with native adapters where that format falls short (Section 5.2.3). Prototype: absent.
+
+Analytics. Everything shown only in aggregate: ratings and statistics above the population threshold, play-tests excluded (FR-19, FR-39, NFR-06, DR-11); coverage; agreement by difficulty stratum and the disagreement list (FR-28, NFR-14); and blind ratings (FR-29). Occupation ratings are re-aggregated in the transaction that stores each rating (FR-19); heavier statistics refresh periodically, later from a replica. It never returns an individual's record. Prototype: personal summaries only.
+
+Operations. Telemetry of usage, cost, latency, and errors (DR-10); failed jobs and re-runs (FR-43); versioned settings, including the cost ceiling (DR-17); and feedback review (FR-20). Prototype: absent.
+
+Notification, scheduler, and import. Notification sends email and in-app notices: reset links, review assignments, reminders, play-test invitations. The scheduler runs recurring jobs: review reminders and overdue notices (FR-34), annual revalidation (BR-15), retention, refreshing statistics, and the reconciliation that re-queues any narration or scoring request left without a result. The importer loads O\*NET and ESCO and lists unresolved records (FR-31). Prototype: absent.
+
+Data stores. The operational database is the system of record: relational tables for accounts, assignments, runs, events, evidence, reviews, ratings, and logs, and documents for content. The queue store holds jobs, rate limits, budget counters, and the publish–subscribe channel feeding event streams — nothing that cannot be rebuilt from the database. The object store holds assets and exports. Prototype: the database, with 19 tables.
+
+Interface principles and screens (Section 5.3.8).
+
+| Principle | Source | Consequence for the interface |
+|---|---|---|
+| All text in Vietnamese, with no language selection | NFR-08, D-96 | Interface strings are written directly in Vietnamese; there is no translation layer to leave a screen half-translated |
+| Usable on a phone over a slow connection | NFR-13, DC-05 | Layouts are designed from the narrow width up; the 3D map and its libraries load only when the 3D view opens; a budget of 200 KB for the first interactive screen (Section 5.2.1) |
+| Accessible without a pointer or a canvas | NFR-19 | Every planet of the Galaxy Map is also a focusable, named element in an SVG view that can be chosen at any time and is used automatically when WebGL is missing, when reduced motion is requested, or on low-memory devices |
+| Result, feedback, and guidance are three separate things | FR-14 | The summary screen shows them in separate blocks, never as one score with a comment |
+| Waiting is never silent | NFR-01, NFR-02, NFR-04 | The answer screen shows "saved, assessing" at once, then progress after two seconds; when no model is available it says so and keeps the run |
+| Machine-produced content is labelled | NFR-07 | A disclosure appears at the point of use wherever a narration, a follow-up, or an assessment is shown |
+| Small populations are not shown | NFR-06 | Aggregated ratings show the reason they are withheld instead of a figure |
+| Content shown is content the expert approved | NFR-15, SM-01 | The play screens show only text of a published release or of a play-test draft; there is no free-text field through which the explorer can change a scenario |
+
+: Design principles of the interface and their sources.
+
+| Screen | Route | Requirements |
+|---|---|---|
+| Welcome, sign in, register, forgot and reset password | `/welcome`, `/login`, `/register`, `/forgot-password`, `/reset-password` | FR-01 |
+| Galaxy Map (home) | `/galaxy`, `/home` | FR-05 |
+| Get-to-know-me quiz and its result | `/quiz`, `/quiz/result` | FR-03, FR-04 |
+| Occupation profile and level selection | `/occupations/:code`, `/occupations/:code/levels` | FR-05, FR-06, FR-08, FR-17 |
+| Island map and onboarding of a scenario | `/islands/:enrolmentId`, `/islands/:enrolmentId/onboard` | FR-08, FR-09, FR-16 |
+| Play | `/play/:runId` | FR-10 to FR-13, FR-15 |
+| Reflection and summary | `/play/:runId/reflect`, `/play/:runId/summary` | FR-14, FR-15 |
+| Profile | `/profile` | FR-18 |
+| Rate occupation | `/occupations/:code/rate` | FR-19 |
+| App feedback | `/feedback` | FR-20 |
+| Account settings | `/settings` | FR-02 |
+
+: Screens of the explorer application.
+
+| Screen | Route (under `/staff`) | Requirements |
+|---|---|---|
+| Catalogue of occupations; reference-data import | `catalogue`, `catalogue/imports/:importId?` | FR-30, FR-31 |
+| Scenarios of an occupation; review criteria | `occupations/:occupationId/scenarios`, `.../review-criteria` | FR-32, FR-33, FR-34 |
+| Author a scenario: context, generation, reference answers | `scenarios/:scenarioId/author` | FR-22, FR-23, FR-24 |
+| Review a scenario | `scenarios/:scenarioId/review` | FR-25 |
+| Gamify: choose presentation, characters, scenes | `scenarios/:scenarioId/gamify` | FR-35 |
+| Asset library | `assets` | FR-36 |
+| Publish | `scenarios/:scenarioId/publish` | FR-37 |
+| System prompts of an occupation | `occupations/:occupationId/prompts` | FR-23 |
+| Monitor an occupation | `occupations/:occupationId/monitor` | FR-39 |
+| Settings | `settings` | — |
+
+: Screens of the staff application.
+
+Third parties (Section 5.3.10).
+
+| Third party | Purpose | What it receives | Where | Personal data |
+|---|---|---|---|---|
+| Content delivery network | Serve both applications and published releases | Static bundles and releases | Edge locations, including abroad | None |
+| Google Identity | Optional sign-in | An identity token, only when the user chooses Google | Abroad | Yes, by the user's choice |
+| E-mail provider | Password resets and notices | Address and message | To be chosen with a host in Vietnam | Yes |
+| Model providers | Narration, scoring, feedback, authoring help | Seed content and de-identified answer text, under an opaque run identifier | Abroad | Not by design; residual risk below |
+| O\*NET, ESCO | Reference data, imported | Nothing; data flows in only | — | None |
+| Second region of the cloud provider | Backups and recovery | Encrypted copies of the database and logs | Vietnam | Yes, encrypted |
+
+: Third parties and the data they receive.
+
+Frameworks of career guidance (Section 2.4).
+
+| Framework | Year | What it describes | Structure | Missing occupational information as a separate component |
+|---|---|---|---|---|
+| Taxonomy of career decision-making difficulties (CDDQ) [1] | 1996 | Difficulties arising before and during the decision | Ten categories in three clusters: lack of readiness, lack of information, inconsistent information | Yes: within the lack-of-information cluster, alongside information about the self, the process, and ways of obtaining information |
+| Emotional and personality-related career decision-making difficulties (EPCD) [106] | 2008 | Emotional and personality-related difficulties | Three clusters: pessimistic views, anxiety, self-concept and identity | No |
+| Career Indecision Profile [107] | 2013 | Sources of indecision, including personality | Four factors: neuroticism and negative affectivity, choice and commitment anxiety, lack of readiness, interpersonal conflicts | No separate component |
+| Career Decision Self-Efficacy scale [108] | 1983 | Confidence in carrying out decision tasks | Five subscales: self-appraisal, occupational information, goal selection, planning, problem solving | Partly: confidence in gathering information, not the information that is lacking |
+| Career Thoughts Inventory [109] | 1996 | Dysfunctional career thoughts | Three scales: decision-making confusion, commitment anxiety, external conflict | No |
+| Career Decision Scale [110] | 1976 | Certainty and indecision | A certainty scale and an indecision scale | No separate component |
+
+: Frameworks of career decision difficulty compared with the taxonomy of Gati, Krausz and Osipow.
 
 # Appendix 4 — Traceability from requirements to design and implementation {++}
 

@@ -109,7 +109,7 @@ def table(rows, caption):
             floor = [f if lw <= 12 else f * scale for f, lw in zip(floor, longest_word)]
         else:  # bảng nhiều cột mà cột nào cũng chỉ có từ ngắn: co đều mọi cột
             floor = [f * 0.9 / sum(floor) for f in floor]
-    want = [max(sum(len(r[i]) for r in cells) / len(cells), lw) ** 0.75 for i, lw in enumerate(longest_word)]
+    want = [max(sum(len(r[i]) for r in cells) / len(cells), lw) ** 0.9 for i, lw in enumerate(longest_word)]
     frac, free = [None] * ncol, set(range(ncol))
     while True:
         room = 0.995 - sum(f for f in frac if f is not None)
@@ -126,7 +126,7 @@ def table(rows, caption):
         for f in frac
     ) + "|"
     head = " & ".join(f"\\textbf{{{inl(c)}}}" for c in header) + " \\\\ \\hline"
-    out = ["{" + size, f"\\begin{{longtable}}{{{cols}}}"]
+    out = ["{" + size + "\\setstretch{1}\\renewcommand{\\arraystretch}{1.1}", f"\\begin{{longtable}}{{{cols}}}"]
     if caption:
         out.append(f"\\caption{{{inl(caption)}}} \\\\")
     out += ["\\hline", head, "\\endfirsthead", "\\hline", head, "\\endhead"]
