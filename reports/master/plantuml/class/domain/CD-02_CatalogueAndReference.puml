@@ -123,10 +123,15 @@ class ImportIssue <<weak>> {
 class OnetOccupation <<entity>> {
   - socCode : String {id}
   - title : String
+  - sourceVersion : String
+  - sourceFile : String
 }
 class EscoOccupation <<entity>> {
   - escoUri : String {id}
+  - escoCode : String
   - nameEn : String
+  - sourceVersion : String
+  - sourceFile : String
 }
 class EscoSkillGroup <<entity>> {
   - escoUri : String {id}

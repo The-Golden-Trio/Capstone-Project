@@ -26,10 +26,15 @@ entity IMPORT_ISSUE <<weak>> {
 entity ONET_OCCUPATION {
   soc_code <<key>>
   title
+  source_version
+  source_file
 }
 entity ESCO_OCCUPATION {
   esco_uri <<key>>
+  esco_code
   name_en
+  source_version
+  source_file
 }
 entity ESCO_SKILL_GROUP {
   esco_uri <<key>>

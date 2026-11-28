@@ -580,19 +580,24 @@ Một dòng lỗi hoặc xung đột khi import, chờ người xử lý. Phụ 
 
 Nghề tham chiếu của O*NET.
 
-| Field      | Kiểu | Ý nghĩa   |
-| ---------- | ---- | --------- |
-| `soc_code` | khoá | Mã SOC.   |
-| `title`    |      | Tên nghề. |
+| Field            | Kiểu | Ý nghĩa                                                                                                  |
+| ---------------- | ---- | -------------------------------------------------------------------------------------------------------- |
+| `soc_code`       | khoá | Mã O\*NET-SOC (ví dụ `15-1252.00`); cũng là khoá tra trong file nguồn.                                   |
+| `title`          |      | Tên nghề.                                                                                                |
+| `source_version` |      | Phiên bản O\*NET của dữ liệu (ví dụ `31.0`).                                                             |
+| `source_file`    |      | File nguồn chứa hồ sơ nghề, tra bằng `soc_code` (ví dụ `occupation-data/generated/onet_all_roles.json`). |
 
 ##### `ESCO_OCCUPATION`
 
 Nghề tham chiếu của ESCO.
 
-| Field      | Kiểu | Ý nghĩa                  |
-| ---------- | ---- | ------------------------ |
-| `esco_uri` | khoá | URI của nghề trong ESCO. |
-| `name_en`  |      | Tên tiếng Anh.           |
+| Field            | Kiểu | Ý nghĩa                                                                                                       |
+| ---------------- | ---- | ------------------------------------------------------------------------------------------------------------- |
+| `esco_uri`       | khoá | URI của nghề trong ESCO; cũng là khoá tra trong file nguồn.                                                   |
+| `esco_code`      |      | Mã nghề ESCO theo ISCO-08 (ví dụ `2512.4`).                                                                   |
+| `name_en`        |      | Tên tiếng Anh.                                                                                                |
+| `source_version` |      | Phiên bản ESCO của dữ liệu (ví dụ `1.2.1`).                                                                   |
+| `source_file`    |      | File nguồn chứa nghề này, tra bằng `esco_uri` (ví dụ `research/research_notes/Bản đồ keyword/nghe_esco.csv`). |
 
 ##### `ESCO_SKILL_GROUP`
 

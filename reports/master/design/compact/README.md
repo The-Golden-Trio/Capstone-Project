@@ -11,7 +11,7 @@ Bộ class diagram duy nhất của hệ thống, vẽ ngày 20/11 từ `plantum
 
 ```
 python3 gen_domain.py [--types]   # đọc ERD, vẽ CD-01…08; --types in các cột chưa có kiểu riêng
-python3 gen_erd.py                # tách ERD Chen thành ERD-01a…06d (≤ 8 entity mỗi sơ đồ, danh sách ở VIEWS): entity vẽ đủ ở sơ đồ chủ, mượn sang sơ đồ khác chỉ còn key
+python3 gen_erd.py                # tách ERD Chen thành ERD-01a…06d (≤ 8 entity mỗi sơ đồ, danh sách ở VIEWS): entity vẽ đủ ở sơ đồ chủ, mượn sang sơ đồ khác chỉ còn key; kèm ERD-00_Overview: mọi entity và relationship trên một trang, không thuộc tính
 python3 gen_class.py              # kiểm module (DI, import, route, sở hữu bảng) rồi vẽ CL-00…08
 ```
 
