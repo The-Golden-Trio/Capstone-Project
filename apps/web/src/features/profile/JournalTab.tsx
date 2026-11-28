@@ -124,7 +124,7 @@ export function JournalTab({ record }: { record: PlayerRecord }) {
         <Foldout
           id="quyen-rieng-tu"
           title="Quản lý tự kể"
-          open={location.hash === '#quyen-rieng-tu' || undefined}
+          defaultOpen={location.hash === '#quyen-rieng-tu'}
           className="scroll-mt-24"
         >
           <p className="mb-4 text-sm text-toon-ink-soft">

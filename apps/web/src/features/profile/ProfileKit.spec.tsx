@@ -22,14 +22,11 @@ describe('thành phần form trên giấy', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Ẩn mật khẩu' }));
     expect(input.type).toBe('password');
   });
-  it('giữ nguyên phần kể dài trong vùng Xem thêm, không mất nội dung', () => {
+  it('hiện trọn phần kể dài, không giấu sau Xem thêm', () => {
     const words = Array.from({ length: 42 }, (_, i) => `từ${i}`);
-    const remainder = words.join(' ');
-    const { container } = render(
-      <ReadMore text={`Một câu trọn nghĩa. ${remainder}`} />,
-    );
-    expect(container.querySelector('details')?.open).toBe(false);
-    expect(screen.getByText(remainder)).toBeTruthy();
-    expect(container.querySelector('summary')?.textContent).toBe('Xem thêm');
+    const text = `Một câu trọn nghĩa. ${words.join(' ')}`;
+    const { container } = render(<ReadMore text={text} />);
+    expect(screen.getByText(text)).toBeTruthy();
+    expect(container.querySelector('details')).toBeNull();
   });
 });

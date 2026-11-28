@@ -17,6 +17,7 @@ import {
   NightCard,
   NightSky,
   ToonBadge,
+  ToonDisclosure,
   WavyDivider,
   toonButtonClasses,
 } from '@datn/ui';
@@ -185,21 +186,30 @@ export default function LandingPage() {
             >
               Từ hành tinh nghề tới một ngày làm việc
             </h2>
-            <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Bốn bước nối nhau trên một đường: đây là một chuỗi, không phải bốn thẻ rời. */}
+            <ol className="relative mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+              <span
+                aria-hidden
+                className="absolute left-[12.5%] right-[12.5%] top-8 hidden border-t-[3px] border-dashed border-toon-star/60 lg:block"
+              />
               {STEPS.map(({ icon: Icon, title, body }, i) => (
-                <li key={title}>
-                  <NightCard className="h-full" tape={i === 1 || i === 3}>
-                    <span className="flex items-center justify-between">
-                      <Icon size={30} strokeWidth={2.5} aria-hidden />
-                      <span className="font-toon text-3xl font-extrabold text-toon-ink-faint">
-                        0{i + 1}
-                      </span>
+                <li
+                  key={title}
+                  className="relative flex flex-col items-center text-center"
+                >
+                  <span
+                    aria-hidden
+                    className="relative grid size-16 place-items-center rounded-full bg-toon-paper text-toon-ink shadow-soft motion-safe:transition-transform motion-safe:hover:-translate-y-1"
+                  >
+                    <Icon size={28} strokeWidth={2.4} />
+                    <span className="absolute -right-1.5 -top-1.5 grid size-7 place-items-center rounded-full border-2 border-toon-ink bg-toon-star font-toon text-xs font-extrabold tabular-nums">
+                      {i + 1}
                     </span>
-                    <h3 className="mt-5 font-toon text-xl font-bold">
-                      {title}
-                    </h3>
-                    <p className="mt-2 text-sm text-toon-ink-soft">{body}</p>
-                  </NightCard>
+                  </span>
+                  <h3 className="mt-5 font-toon text-xl font-bold">{title}</h3>
+                  <p className="mt-1.5 max-w-56 text-sm text-toon-night-ink">
+                    {body}
+                  </p>
                 </li>
               ))}
             </ol>
@@ -221,25 +231,25 @@ export default function LandingPage() {
                     Chị Linh bên hỗ trợ gọi: khách sỉ dọa huỷ đơn. Bạn chọn hỏi
                     ai, mở log nào, hứa gì, rồi viết báo cáo.
                   </p>
-                  <details className="mt-5 rounded-xl border-2 border-toon-ink bg-toon-cream p-4">
-                    <summary className="cursor-pointer font-bold">
-                      Một ca diễn ra thế nào?
-                    </summary>
-                    <ul className="mt-3 list-disc space-y-3 pl-5 text-sm text-toon-ink-soft">
+                  <ToonDisclosure
+                    summary="Một ca diễn ra thế nào?"
+                    className="mt-3"
+                  >
+                    <ul className="list-disc space-y-2 pl-5 text-sm text-toon-ink-soft">
                       <li>Đồng hồ trong truyện chạy theo việc bạn làm.</li>
                       <li>Đồng nghiệp nhớ lời bạn đã hứa.</li>
                       <li>Chấm theo cách xử lý, không chấm thuộc bài.</li>
                     </ul>
-                  </details>
+                  </ToonDisclosure>
                 </div>
-                <div className="rounded-2xl border-[3px] border-toon-ink bg-toon-sky p-5 shadow-toon">
+                <div className="rounded-2xl bg-toon-sky/60 p-5">
                   <p className="mb-3 text-xs font-bold uppercase">
                     Chị Linh · Hỗ trợ khách hàng
                   </p>
-                  <p className="rounded-xl border-[3px] border-toon-ink bg-toon-paper p-4 font-semibold">
+                  <p className="mr-6 rounded-2xl rounded-tl-md border-2 border-toon-ink bg-toon-paper p-4 font-semibold">
                     Chị hứa với họ trưa xong được hông em?
                   </p>
-                  <p className="ml-5 mt-4 rounded-xl border-[3px] border-toon-ink bg-toon-star-soft p-4 font-semibold">
+                  <p className="ml-6 mt-3 rounded-2xl rounded-tr-md border-2 border-toon-ink bg-toon-star-soft p-4 font-semibold">
                     Em chưa chắc trưa xong chị ơi. 11:30 em báo chị tình hình
                     nha.
                   </p>

@@ -9,13 +9,7 @@ import {
   ToonTextarea,
   useToast,
 } from '@datn/ui';
-import {
-  Notice,
-  ReadMore,
-  EmptyMessage,
-  PaperCard,
-  CardHeading,
-} from './ProfileKit';
+import { Notice, ReadMore, EmptyMessage } from './ProfileKit';
 
 import { api } from '../../api';
 import { errorText, keys, useQuizForm } from '../../api/hooks';
@@ -54,27 +48,27 @@ export function GoalsCard({
     },
   });
   return (
-    <PaperCard>
-      <CardHeading
-        title="Mục tiêu của bạn"
-        description="Điều bạn muốn thử có thể thay đổi theo từng chặng."
-        action={
-          !editing && (
-            <ToonButton
-              ref={editButton}
-              variant="ghost"
-              size="sm"
-              onClick={() => {
-                save.reset();
-                setDraft(record.goals ?? {});
-                setEditing(true);
-              }}
-            >
-              Sửa
-            </ToonButton>
-          )
-        }
-      />
+    // Nằm trong dòng gập "Mục tiêu của bạn": không bọc thêm thẻ, không lặp tiêu đề.
+    <div>
+      <header className="mb-4 flex items-start justify-between gap-3">
+        <p className="max-w-xl text-sm text-toon-ink-soft">
+          Điều bạn muốn thử có thể thay đổi theo từng chặng.
+        </p>
+        {!editing && (
+          <ToonButton
+            ref={editButton}
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              save.reset();
+              setDraft(record.goals ?? {});
+              setEditing(true);
+            }}
+          >
+            Sửa
+          </ToonButton>
+        )}
+      </header>
       {form.isError ? (
         <EmptyMessage
           title="Chưa tải được câu hỏi"
@@ -207,6 +201,6 @@ export function GoalsCard({
           Hoặc làm Get to know me để được gợi ý vài nghề có thể thử
         </Link>
       )}
-    </PaperCard>
+    </div>
   );
 }

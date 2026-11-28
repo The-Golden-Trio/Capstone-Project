@@ -20,18 +20,19 @@ beforeEach(() => {
 });
 
 describe('Art direction JobQuest', () => {
-  it('hiện đủ tám mục, tương phản AA tính toán và dàn tranh thật; không gắn bộ Celestial cũ', () => {
+  it('hiện đủ chín mục, tương phản AA tính toán và dàn tranh thật; không gắn bộ Celestial cũ', () => {
     const { container } = renderWithProviders(<DesignSystemPage />, '/design');
     expect(screen.getByRole('heading', { level: 1 }).textContent).toBe(
       'Art direction JobQuest',
     );
-    expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(8);
+    expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(9);
     const toc = screen.getByRole('navigation', {
       name: 'Mục lục art direction',
     });
     const links = within(toc).getAllByRole('link');
     expect(links.map((link) => link.getAttribute('href'))).toEqual([
       '/design#nguyen-tac',
+      '/design#luat',
       '/design#logo',
       '/design#mau',
       '/design#chu',

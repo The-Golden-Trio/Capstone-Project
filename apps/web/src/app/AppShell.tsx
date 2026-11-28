@@ -2,6 +2,7 @@ import { useEffect, useRef, type ReactNode } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Backpack,
+  FlaskConical,
   LogOut,
   MessageSquareHeart,
   Orbit,
@@ -89,7 +90,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         right={
           <>
             <SampleLabel />
-            <div className="[&_[role=menu]]:rounded-2xl [&_[role=menu]]:border-[3px] [&_[role=menu]]:border-toon-ink [&_[role=menu]]:bg-toon-paper [&_[role=menu]]:shadow-toon-lg [&_[role=menuitem]]:font-semibold [&_[role=menuitem]]:text-toon-ink [&_[role=menuitem]:focus]:bg-toon-sand [&_[role=menuitem]:hover]:bg-toon-sand">
+            <div className="[&_[role=menu]]:rounded-2xl [&_[role=menu]]:border-0 [&_[role=menu]]:bg-toon-paper [&_[role=menu]]:shadow-soft-lg [&_[role=menuitem]]:font-semibold [&_[role=menuitem]]:text-toon-ink [&_[role=menuitem]:focus]:bg-toon-sand [&_[role=menuitem]:hover]:bg-toon-sand">
               <Menu
                 label="Tài khoản"
                 trigger={(props) => (
@@ -200,7 +201,14 @@ function SampleLabel() {
         tabIndex={0}
         className="rounded-full focus-visible:shadow-toon-focus"
       >
-        <ToonBadge tone="mustard">Dữ liệu mẫu</ToonBadge>
+        <ToonBadge
+          tone="mustard"
+          solid
+          icon={<FlaskConical size={13} strokeWidth={2.4} />}
+        >
+          <span className="hidden sm:inline">Dữ liệu mẫu</span>
+          <span className="sm:hidden">Mẫu</span>
+        </ToonBadge>
       </span>
     </Tooltip>
   );

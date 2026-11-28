@@ -5,11 +5,12 @@ import {
   type ReactNode,
   type SelectHTMLAttributes,
 } from 'react';
-import { Eye, EyeOff, Info } from 'lucide-react';
+import { Eye, EyeOff, Info, Sparkles } from 'lucide-react';
 import {
   InkStar,
   NightSky,
   StatTile,
+  ToonDisclosure,
   ToonInput,
   ToonIconButton,
   cn,
@@ -94,27 +95,39 @@ export function Notice({
   className?: string;
   children: ReactNode;
 }) {
+  // Ghi chú nằm trong thẻ: tô nhạt, có ký hiệu, không viền mực (tầng 2).
   return (
     <div
       role={tone === 'danger' ? 'alert' : undefined}
       className={cn(
-        'flex items-start gap-2 rounded-xl border-2 border-toon-ink p-3 text-sm text-toon-ink',
+        'flex items-start gap-2.5 rounded-[14px] p-3 text-sm text-toon-ink',
         tone === 'danger'
-          ? 'bg-toon-coral-light'
+          ? 'bg-toon-coral-light/60'
           : tone === 'warning' || tone === 'gold'
-            ? 'bg-toon-star-soft'
+            ? 'bg-toon-star-soft/70'
             : tone === 'success'
-              ? 'bg-toon-mint'
-              : 'bg-toon-sky',
+              ? 'bg-toon-mint/45'
+              : tone === 'ai'
+                ? 'bg-toon-lilac/35'
+                : 'bg-toon-sky/40',
         className,
       )}
     >
-      <Info
-        size={17}
-        strokeWidth={2.5}
-        className="mt-0.5 shrink-0"
-        aria-hidden
-      />
+      {tone === 'ai' ? (
+        <Sparkles
+          size={17}
+          strokeWidth={2.5}
+          className="mt-0.5 shrink-0 text-toon-maroon"
+          aria-hidden
+        />
+      ) : (
+        <Info
+          size={17}
+          strokeWidth={2.5}
+          className="mt-0.5 shrink-0"
+          aria-hidden
+        />
+      )}
       <div className="min-w-0">
         {tone === 'ai' && (
           <span className="mb-1 block font-toon text-xs font-extrabold">
@@ -153,42 +166,54 @@ export function EmptyMessage({
     </div>
   );
 }
+/**
+ * Phần gập. `inline` (mặc định) là một dòng có mũi tên trong thẻ, không đóng
+ * khung. `section` đứng thẳng trên nền đêm nên là một thẻ giấy (tầng 1).
+ */
 export function Foldout({
   title,
   children,
+  variant = 'inline',
+  meta,
+  icon,
   ...rest
-}: DetailsHTMLAttributes<HTMLDetailsElement> & { title: string }) {
-  return (
-    <details
+}: Omit<DetailsHTMLAttributes<HTMLDetailsElement>, 'title' | 'open'> & {
+  title: string;
+  defaultOpen?: boolean;
+  variant?: 'inline' | 'section';
+  meta?: ReactNode;
+  icon?: ReactNode;
+}) {
+  const body = (
+    <ToonDisclosure
       {...rest}
+      summary={title}
+      meta={meta}
+      icon={icon}
       className={cn(
-        'rounded-xl border-2 border-toon-ink bg-toon-cream p-3 open:pb-4',
+        variant === 'section' &&
+          '[&>summary]:min-h-14 [&>summary]:text-lg [&>summary]:px-1',
+        variant === 'inline' && rest.className,
+      )}
+    >
+      <div className="min-w-0 text-toon-ink">{children}</div>
+    </ToonDisclosure>
+  );
+  if (variant === 'inline') return body;
+  return (
+    <div
+      className={cn(
+        'toon-card border-toon-night-deep px-4 py-1 text-toon-ink sm:px-6',
         rest.className,
       )}
     >
-      <summary className="cursor-pointer font-toon font-bold text-toon-ink focus-visible:shadow-toon-focus">
-        {title}
-      </summary>
-      <div className="mt-3 min-w-0 text-toon-ink">{children}</div>
-    </details>
-  );
-}
-export function ReadMore({ text }: { text: string }) {
-  const boundary = /[.!?…](?:["”’)]*)\s+/u.exec(text);
-  const splitAt = boundary ? boundary.index + boundary[0].length : text.length;
-  return text.trim().split(/\s+/).length <= 35 || splitAt === text.length ? (
-    <p>{text}</p>
-  ) : (
-    <div>
-      <p>{text.slice(0, splitAt).trim()}</p>
-      <details className="mt-2">
-        <summary className="cursor-pointer font-bold underline underline-offset-4">
-          Xem thêm
-        </summary>
-        <p className="mt-2">{text.slice(splitAt)}</p>
-      </details>
+      {body}
     </div>
   );
+}
+/** Đoạn văn đầy đủ: không cắt giữa chừng bắt người chơi bấm "Xem thêm". */
+export function ReadMore({ text }: { text: string }) {
+  return <p>{text}</p>;
 }
 export function ToonSelect({
   invalid,
@@ -200,7 +225,7 @@ export function ToonSelect({
       {...props}
       aria-invalid={invalid || props['aria-invalid']}
       className={cn(
-        'min-h-11 w-full rounded-xl border-[3px] border-toon-ink bg-toon-paper px-3 py-2 font-toon-body text-sm text-toon-ink focus-visible:shadow-toon-focus',
+        'min-h-11 w-full rounded-xl border-2 border-toon-ink bg-toon-paper px-3 py-2 font-toon-body text-sm text-toon-ink focus-visible:shadow-toon-focus',
         className,
       )}
     />

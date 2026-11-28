@@ -159,7 +159,7 @@ export function ToonIconButton({
 }
 
 const inputBase =
-  'w-full rounded-[12px] border-[3px] bg-toon-paper font-toon-body text-[15px] text-toon-ink placeholder:text-toon-ink-faint focus:outline-none focus-visible:shadow-toon-focus disabled:cursor-not-allowed disabled:bg-toon-shade disabled:text-toon-ink-faint';
+  'w-full rounded-[12px] border-2 bg-toon-paper font-toon-body text-[15px] text-toon-ink placeholder:text-toon-ink-faint focus:outline-none focus-visible:shadow-toon-focus disabled:cursor-not-allowed disabled:bg-toon-shade disabled:text-toon-ink-faint';
 
 export function ToonInput({
   invalid,
@@ -346,7 +346,7 @@ export function ToonCheckbox({
             (rest['aria-label'] ? undefined : `${id}-label`)
           }
           aria-describedby={describedBy}
-          className="peer block size-full cursor-pointer appearance-none rounded-[6px] border-[3px] border-toon-ink bg-toon-paper checked:bg-toon-mustard focus-visible:outline-none focus-visible:shadow-toon-focus disabled:cursor-not-allowed disabled:bg-toon-shade"
+          className="peer block size-full cursor-pointer appearance-none rounded-[6px] border-2 border-toon-ink bg-toon-paper checked:bg-toon-mustard focus-visible:outline-none focus-visible:shadow-toon-focus disabled:cursor-not-allowed disabled:bg-toon-shade"
         />
         <svg
           aria-hidden
@@ -387,19 +387,40 @@ const tones: Record<ToonTone, string> = {
   olive: 'bg-toon-olive-deep text-toon-paper',
 };
 
+/**
+ * Nhãn chỉ để đọc phải khác hẳn nút: phẳng, không viền mực, không bóng cứng,
+ * bo góc nhỏ (nút bo 14px, chip lọc là viên thuốc). Màu tô nhạt hơn màu nút
+ * để không ai tưởng là bấm được.
+ */
+const badgeTones: Record<ToonTone, string> = {
+  paper: 'bg-toon-paper text-toon-ink ring-[1.5px] ring-inset ring-toon-ink/15',
+  mustard: 'bg-toon-mustard/35 text-toon-ink',
+  mint: 'bg-toon-mint/60 text-toon-ink',
+  coral: 'bg-toon-coral-light/70 text-toon-ink',
+  sky: 'bg-toon-sky/60 text-toon-ink',
+  maroon: 'bg-toon-maroon text-toon-paper',
+  olive: 'bg-toon-olive-deep text-toon-paper',
+};
+
 export function ToonBadge({
   tone = 'paper',
   icon,
+  solid = false,
   children,
   className,
   ...rest
-}: HTMLAttributes<HTMLSpanElement> & { tone?: ToonTone; icon?: ReactNode }) {
+}: HTMLAttributes<HTMLSpanElement> & {
+  tone?: ToonTone;
+  icon?: ReactNode;
+  /** Tô đặc: dùng khi nhãn nằm trên nền đêm, nơi màu nhạt không đủ tương phản. */
+  solid?: boolean;
+}) {
   return (
     <span
       {...rest}
       className={cn(
-        'inline-flex min-h-6 items-center gap-1 rounded-full border-2 border-toon-ink px-2.5 py-0.5 font-toon-body text-xs font-bold shadow-toon-sm',
-        tones[tone],
+        'inline-flex min-h-6 items-center gap-1 rounded-[7px] px-2 py-0.5 font-toon-body text-xs font-bold leading-none',
+        solid ? tones[tone] : badgeTones[tone],
         className,
       )}
     >
@@ -477,9 +498,9 @@ export function ToonTabs<K extends string>({
               refs.current[next]?.focus();
             }}
             className={cn(
-              'inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-full border-[3px] px-4 py-1.5 font-toon text-base font-bold focus-visible:outline-none focus-visible:shadow-toon-focus',
+              'inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-full border-2 px-4 py-1.5 font-toon text-base font-bold transition-colors focus-visible:outline-none focus-visible:shadow-toon-focus',
               active
-                ? 'border-toon-ink bg-toon-mustard text-toon-ink shadow-toon'
+                ? 'border-toon-ink bg-toon-mustard text-toon-ink'
                 : quiet
                   ? 'border-transparent bg-transparent text-toon-ink-soft hover:bg-toon-sand/70 hover:text-toon-ink'
                   : 'border-toon-ink bg-toon-paper text-toon-ink hover:bg-toon-sand',
@@ -497,7 +518,7 @@ export function ToonTabs<K extends string>({
                   {item.count}
                 </span>
               ) : (
-                <span className="inline-flex min-h-5 min-w-5 shrink-0 items-center justify-center rounded-full border-2 border-toon-ink bg-toon-paper px-1 font-toon-body text-xs tabular-nums">
+                <span className="inline-flex min-h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-toon-ink/10 px-1 font-toon-body text-xs tabular-nums">
                   {item.count}
                 </span>
               ))}
@@ -586,7 +607,7 @@ export function ToonProgress({
         aria-valuemax={limit}
         aria-valuenow={current}
         aria-valuetext={valueText}
-        className="h-5 overflow-hidden rounded-full border-[3px] border-toon-ink bg-toon-sand"
+        className="h-4 overflow-hidden rounded-full border-2 border-toon-ink bg-toon-sand"
       >
         <div
           className={cn('h-full rounded-full', tones[tone])}

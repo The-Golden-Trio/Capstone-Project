@@ -17,9 +17,11 @@ import {
   LogoGuide,
 } from './DirectionFoundations';
 import { DirectionComponents } from './DirectionComponents';
+import { DirectionRules } from './DirectionRules';
 
 export const DIRECTION_SECTIONS = [
   { id: 'nguyen-tac', title: 'Nguyên tắc' },
+  { id: 'luat', title: 'Luật dùng' },
   { id: 'logo', title: 'Logo & cách dùng' },
   { id: 'mau', title: 'Màu & tương phản' },
   { id: 'chu', title: 'Chữ' },
@@ -42,7 +44,7 @@ const PRINCIPLES = [
   {
     icon: Layers,
     title: 'Nét mực, màu phẳng',
-    body: 'Viền 3px, giấy kem, bóng cứng. Dùng sticker có chủ đích; không dùng gradient mượt hay glow mờ.',
+    body: 'Nét mực theo tầng: 3px cho vật đứng trên nền, 2px cho điều khiển trong thẻ, 1,5px cho đường chia. Màu tô phẳng; mờ biên chỉ dành cho tinh vân trên bản đồ.',
   },
   {
     icon: Sun,
@@ -150,31 +152,34 @@ export default function DesignSystemPage() {
               ))}
             </div>
           </DirectionSection>
-          <DirectionSection id="logo" title="Logo & cách dùng" number={2}>
+          <DirectionSection id="luat" title="Luật dùng" number={2}>
+            <DirectionRules />
+          </DirectionSection>
+          <DirectionSection id="logo" title="Logo & cách dùng" number={3}>
             <LogoGuide />
           </DirectionSection>
-          <DirectionSection id="mau" title="Màu & tương phản" number={3}>
+          <DirectionSection id="mau" title="Màu & tương phản" number={4}>
             <DirectionColors />
           </DirectionSection>
-          <DirectionSection id="chu" title="Chữ" number={4}>
+          <DirectionSection id="chu" title="Chữ" number={5}>
             <DirectionType />
           </DirectionSection>
-          <DirectionSection id="motif-dem" title="Motif đêm" number={5}>
+          <DirectionSection id="motif-dem" title="Motif đêm" number={6}>
             <CelestialShowcase />
           </DirectionSection>
           <DirectionSection
             id="tranh-ngay"
             title="Nhân vật & bối cảnh ngày"
-            number={6}
+            number={7}
           >
             <div className="theme-toon toon-dots space-y-6 rounded-2xl border-[3px] border-toon-ink p-4 sm:p-6">
               <DayArtExamples />
             </div>
           </DirectionSection>
-          <DirectionSection id="thanh-phan" title="Thành phần" number={7}>
+          <DirectionSection id="thanh-phan" title="Thành phần" number={8}>
             <DirectionComponents />
           </DirectionSection>
-          <DirectionSection id="mau-man" title="Mẫu màn" number={8}>
+          <DirectionSection id="mau-man" title="Mẫu màn" number={9}>
             <ScreenSamples />
           </DirectionSection>
         </main>

@@ -205,7 +205,7 @@ function Deck({
             </div>
             <article
               key={index}
-              className="toon-card relative min-h-80 animate-toon-slide p-6 shadow-toon-lg sm:p-9"
+              className="toon-card relative min-h-80 animate-toon-slide p-6 shadow-soft-lg sm:p-9"
               style={{ touchAction: 'pan-y' }}
               onTouchStart={(e) => {
                 const p = e.touches[0];

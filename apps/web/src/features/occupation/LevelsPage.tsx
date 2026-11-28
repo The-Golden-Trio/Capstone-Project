@@ -24,8 +24,11 @@ import { profile } from '@datn/game-core';
 import {
   InkStar,
   RadarChart,
-  ToonBadge,
   ToonButton,
+  ToonCallout,
+  ToonDisclosure,
+  ToonStatus,
+  ToonStatusGlyph,
   cn,
   regionColor,
   toonButtonClasses,
@@ -37,14 +40,14 @@ import {
   KeywordLegend,
   Keywords,
   LoadError,
-  PaperSection,
+  compactDisclosure,
 } from './Parts';
 
 const ACCESS = {
-  OPEN: { label: 'Đã mở', tone: 'sky' },
-  ENROLLED: { label: 'Đang khám phá', tone: 'mustard' },
-  COMPLETED: { label: 'Đã hoàn thành', tone: 'mint' },
-  LOCKED: { label: 'Chưa mở', tone: 'paper' },
+  OPEN: { label: 'Đã mở', kind: 'open' },
+  ENROLLED: { label: 'Đang khám phá', kind: 'playing' },
+  COMPLETED: { label: 'Đã hoàn thành', kind: 'done' },
+  LOCKED: { label: 'Chưa mở', kind: 'locked' },
 } as const;
 
 /** Toạ độ đảo trên bản đồ (phần trăm), lượn trái phải như đường mòn. */
@@ -143,7 +146,7 @@ export default function LevelsPage() {
           <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
             <section
               aria-label="Các đảo trong lộ trình"
-              className="relative min-w-0 rounded-[28px] border-[3px] border-toon-night-deep bg-toon-night-soft/40 px-2 py-6"
+              className="relative min-w-0 rounded-[28px] bg-toon-night-soft/40 px-2 py-6"
             >
               {/* Đường mòn nét đứt nối các đảo theo thứ tự cấp. */}
               <svg
@@ -253,7 +256,7 @@ export default function LevelsPage() {
               tabIndex={-1}
               id="level-details"
               aria-label={`Chi tiết cấp ${selected.levelNo}`}
-              className="toon-card relative min-w-0 scroll-mt-28 p-5 pt-7 text-toon-ink shadow-toon-lg focus:outline-none sm:p-7 sm:pt-8 lg:sticky lg:top-24"
+              className="toon-card relative min-w-0 scroll-mt-28 p-5 pt-7 text-toon-ink shadow-soft-lg focus:outline-none sm:p-7 sm:pt-8 lg:sticky lg:top-24"
             >
               <span className="absolute -top-4 left-5 inline-flex -rotate-2 items-center gap-1.5 rounded-xl border-[3px] border-toon-ink bg-toon-star px-3 py-0.5 font-toon text-sm font-extrabold shadow-toon-sm">
                 Cấp {selected.levelNo} ·{' '}
@@ -263,27 +266,33 @@ export default function LevelsPage() {
                 <h2 className="font-toon text-2xl font-extrabold leading-tight sm:text-3xl">
                   {selected.title}
                 </h2>
-                <ToonBadge tone={ACCESS[selected.access].tone}>
-                  {ACCESS[selected.access].label}
-                </ToonBadge>
+                <ToonStatus
+                  kind={ACCESS[selected.access].kind}
+                  label={ACCESS[selected.access].label}
+                />
               </div>
               {selected.coreOutput && (
-                <details className="mt-2 text-sm font-semibold text-toon-ink-soft">
-                  <summary className="w-fit cursor-pointer rounded-md underline decoration-dotted underline-offset-4">
-                    Trách nhiệm ở cấp này
-                  </summary>
-                  <p className="mt-1.5 leading-relaxed">
-                    {selected.coreOutput}
-                  </p>
-                </details>
+                <ToonDisclosure
+                  summary="Trách nhiệm ở cấp này"
+                  className={cn(
+                    'mt-1 text-sm font-semibold text-toon-ink-soft',
+                    compactDisclosure,
+                  )}
+                >
+                  <p className="leading-relaxed">{selected.coreOutput}</p>
+                </ToonDisclosure>
               )}
 
               {selected.tasks.length > 0 && (
-                <details className="group mt-4 rounded-2xl border-[2.5px] border-toon-ink bg-toon-cream px-3 py-2">
-                  <summary className="cursor-pointer rounded-md font-toon text-base font-extrabold focus-visible:shadow-toon-focus">
-                    Việc bạn sẽ làm ({selected.tasks.length})
-                  </summary>
-                  <ul className="mt-2 space-y-2 pb-1">
+                // Việc ở cấp này là một chuỗi đánh số: luôn mở, không giấu sau nút.
+                <section className="mt-5" aria-labelledby="level-tasks">
+                  <h3
+                    id="level-tasks"
+                    className="mb-2 font-toon text-lg font-extrabold"
+                  >
+                    Việc bạn sẽ làm
+                  </h3>
+                  <ol className="space-y-2.5">
                     {selected.tasks.map((t, i) => (
                       <li
                         key={i}
@@ -291,15 +300,15 @@ export default function LevelsPage() {
                       >
                         <span
                           aria-hidden
-                          className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-lg border-2 border-toon-ink bg-toon-sky font-toon text-xs font-extrabold"
+                          className="mt-px grid size-6 shrink-0 place-items-center rounded-full bg-toon-sky/70 font-toon text-xs font-extrabold"
                         >
                           {i + 1}
                         </span>
                         {t}
                       </li>
                     ))}
-                  </ul>
-                </details>
+                  </ol>
+                </section>
               )}
 
               <h3 className="mb-2 mt-5 font-toon text-lg font-extrabold">
@@ -351,11 +360,11 @@ export default function LevelsPage() {
                       );
                     })}
                   </ul>
-                  <details className="mt-2">
-                    <summary className="w-fit cursor-pointer rounded-md text-sm font-bold underline decoration-dotted underline-offset-4">
-                      Xem biểu đồ kỹ năng
-                    </summary>
-                    <div className="mt-2 rounded-2xl border-2 border-toon-ink bg-toon-night p-2 text-toon-paper">
+                  <ToonDisclosure
+                    summary="Xem biểu đồ kỹ năng"
+                    className={cn('mt-1', compactDisclosure)}
+                  >
+                    <div className="rounded-2xl bg-toon-night p-2 text-toon-paper">
                       <RadarChart
                         axes={profile.SOFT_SKILL_GROUPS.map((s) => ({
                           key: s.id,
@@ -370,20 +379,18 @@ export default function LevelsPage() {
                         Vùng vàng: bậc bạn đã đạt. Nét đứt: bậc cấp này cần.
                       </p>
                     </div>
-                  </details>
+                  </ToonDisclosure>
                 </>
               )}
 
               {selected.lockedReason && (
-                <p className="mt-4 flex items-start gap-2 rounded-xl border-2 border-toon-ink bg-[#ffe4a3] px-3 py-2 text-sm font-bold">
-                  <LockKeyhole
-                    size={16}
-                    strokeWidth={2.6}
-                    className="mt-0.5 shrink-0"
-                    aria-hidden
-                  />
-                  {selected.lockedReason}
-                </p>
+                <ToonCallout
+                  tone="tip"
+                  className="mt-4 font-bold"
+                  icon={<ToonStatusGlyph kind="locked" size={16} />}
+                >
+                  <span className="text-toon-ink">{selected.lockedReason}</span>
+                </ToonCallout>
               )}
               {(!o.playable || selected.questCount === 0) && (
                 <p className="mt-4 flex items-start gap-2 rounded-xl border-2 border-dashed border-toon-ink/50 px-3 py-2 text-sm font-semibold text-toon-ink-soft">
@@ -429,31 +436,36 @@ export default function LevelsPage() {
               {enrol.isError && actionLevel === selected.levelNo && (
                 <p
                   role="alert"
-                  className="mt-3 rounded-xl border-2 border-toon-ink bg-toon-coral-light px-3 py-2 text-sm font-bold"
+                  className="mt-3 rounded-[14px] bg-toon-coral-light/60 px-3 py-2 text-sm font-bold"
                 >
                   {errorText(enrol.error)}
                 </p>
               )}
 
-              <div className="mt-6">
-                <PaperSection
-                  title="Kỹ năng nghề"
-                  icon={<Gift size={20} strokeWidth={2.6} />}
+              {/* Không lồng thẻ trong thẻ: phần kỹ năng chỉ cách bằng một đường chia. */}
+              <section
+                aria-labelledby="level-keywords"
+                className="mt-6 space-y-4 border-t-[1.5px] border-toon-ink/12 pt-5"
+              >
+                <h3
+                  id="level-keywords"
+                  className="flex items-center gap-2 font-toon text-lg font-extrabold"
                 >
-                  <h4 className="font-toon text-base font-extrabold">
-                    Cần có khi vào cấp
-                  </h4>
-                  <Keywords
-                    items={selected.entryKeywords}
-                    empty="Không yêu cầu kỹ năng nghề đầu vào."
-                  />
-                  <h4 className="font-toon text-base font-extrabold">
-                    Hoàn thành cấp này sẽ nhận
-                  </h4>
-                  <Keywords items={selected.outputKeywords} />
-                  <KeywordLegend />
-                </PaperSection>
-              </div>
+                  <Gift size={18} strokeWidth={2.6} aria-hidden /> Kỹ năng nghề
+                </h3>
+                <h4 className="font-toon text-base font-extrabold">
+                  Cần có khi vào cấp
+                </h4>
+                <Keywords
+                  items={selected.entryKeywords}
+                  empty="Không yêu cầu kỹ năng nghề đầu vào."
+                />
+                <h4 className="font-toon text-base font-extrabold">
+                  Hoàn thành cấp này sẽ nhận
+                </h4>
+                <Keywords items={selected.outputKeywords} />
+                <KeywordLegend />
+              </section>
               <Link
                 to={`/occupations/${code}`}
                 className={toonButtonClasses({

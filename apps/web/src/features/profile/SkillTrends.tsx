@@ -51,7 +51,7 @@ export function SkillTrends({
   return (
     <section
       aria-labelledby={`${caption}-title`}
-      className="mt-6 rounded-2xl border-2 border-toon-ink bg-toon-cream p-3 sm:p-4"
+      className="mt-6 border-t-[1.5px] border-toon-ink/12 pt-5"
     >
       <h3 id={`${caption}-title`} className="font-toon text-xl font-bold">
         Qua từng ca
@@ -71,10 +71,10 @@ export function SkillTrends({
               setActiveRun(null);
             }}
             className={cn(
-              'rounded-full border-2 border-toon-ink px-3 py-1 text-xs font-bold focus-visible:shadow-toon-focus',
+              'min-h-8 rounded-full border-2 px-3 py-1 text-xs font-bold transition-colors focus-visible:shadow-toon-focus',
               selected === group.id
-                ? 'bg-toon-mustard text-toon-ink'
-                : 'bg-toon-paper text-toon-ink-soft',
+                ? 'border-toon-ink bg-toon-star text-toon-ink'
+                : 'border-toon-ink/30 bg-toon-paper text-toon-ink-soft hover:border-toon-ink hover:text-toon-ink',
             )}
           >
             {group.short}

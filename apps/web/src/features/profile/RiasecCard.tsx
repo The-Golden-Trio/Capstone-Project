@@ -5,10 +5,7 @@ import type { PlayerRecord } from '../../api/types';
 
 export function RiasecCard({ riasec }: { riasec: PlayerRecord['riasec'] }) {
   return (
-    <Foldout
-      title="Bạn thích kiểu việc nào?"
-      className="text-toon-ink shadow-toon"
-    >
+    <Foldout title="Bạn thích kiểu việc nào?">
       <p className="mb-4 text-sm text-toon-ink-soft">
         Hai góc nhìn: điều tự kể và cảm nhận sau khi thử. Bản nháp này không
         phải kết luận về bạn.

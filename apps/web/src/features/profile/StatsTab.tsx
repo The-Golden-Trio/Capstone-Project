@@ -1,13 +1,8 @@
-import { Link } from 'react-router-dom';
-import {
-  ToonButton,
-  LoadingBlock,
-  Tooltip,
-  CartoonPlanet,
-  InkStar,
-  regionColor,
-} from '@datn/ui';
-import { Foldout, Notice, EmptyMessage, StatCard } from './ProfileKit';
+import { useNavigate } from 'react-router-dom';
+import { CheckCircle2, Clock3, Layers, Orbit } from 'lucide-react';
+import { useId, type ReactNode } from 'react';
+import { ToonButton, LoadingBlock, Tooltip, regionColor } from '@datn/ui';
+import { Notice, EmptyMessage, PaperCard, CardHeading } from './ProfileKit';
 
 import { errorText, useCatalogue } from '../../api/hooks';
 import type { CatalogueOccupation, PlayerRecord } from '../../api/types';
@@ -19,25 +14,40 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
   const context = useRecordContext(record);
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <StatCard label="Ca đã hoàn thành" value={stats.scenarios} />
-        <StatCard
-          label="Giờ đã chơi"
-          value={(stats.minutes / 60).toLocaleString('vi-VN', {
-            maximumFractionDigits: 1,
-          })}
-          hint={`${stats.minutes.toLocaleString('vi-VN')} phút nhập vai`}
+      {/* Bốn con số trên một dải, không bốn thẻ rời. */}
+      <PaperCard className="p-0">
+        <dl className="grid grid-cols-2 divide-toon-ink/10 lg:grid-cols-4 lg:divide-x-[1.5px] [&>div:nth-child(-n+2)]:max-lg:border-b-[1.5px] [&>div:nth-child(-n+2)]:max-lg:border-toon-ink/10 [&>div:nth-child(odd)]:max-lg:border-r-[1.5px] [&>div:nth-child(odd)]:max-lg:border-toon-ink/10">
+          <Stat
+            icon={<CheckCircle2 size={20} />}
+            label="Ca đã hoàn thành"
+            value={stats.scenarios}
+          />
+          <Stat
+            icon={<Clock3 size={20} />}
+            label="Giờ đã chơi"
+            value={(stats.minutes / 60).toLocaleString('vi-VN', {
+              maximumFractionDigits: 1,
+            })}
+            hint={`${stats.minutes.toLocaleString('vi-VN')} phút nhập vai`}
+          />
+          <Stat
+            icon={<Orbit size={20} />}
+            label="Nghề đã thử"
+            value={`${stats.occupationsTried}/${stats.occupationsTotal}`}
+          />
+          <Stat
+            icon={<Layers size={20} />}
+            label="Nhóm ngành đã ghé"
+            value={stats.groupsVisited}
+          />
+        </dl>
+      </PaperCard>
+
+      <PaperCard>
+        <CardHeading
+          title="Những vì sao đã ghé"
+          description="Chấm sáng: nghề đã thử. Vùng còn tối: chơi thêm để mở. Chạm một ngôi sao để mở hồ sơ nghề."
         />
-        <StatCard
-          label="Nghề đã thử"
-          value={`${stats.occupationsTried}/${stats.occupationsTotal}`}
-        />
-        <StatCard label="Nhóm ngành đã ghé" value={stats.groupsVisited} />
-      </div>
-      <Foldout title="Những vì sao đã ghé">
-        <p className="mb-4 text-sm text-toon-ink-soft">
-          Chấm sáng: nghề đã thử. Vùng còn tối: chơi thêm để mở.
-        </p>
         {catalogue.isError ? (
           <EmptyMessage
             title="Chưa vẽ được bản đồ"
@@ -54,45 +64,66 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
         ) : !catalogue.data ? (
           <LoadingBlock />
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {catalogue.data.regions.map((region) => {
               const occupations = catalogue.data.occupations.filter(
                 (occupation) => occupation.regionId === region.id,
               );
               const tried = occupations.filter(
                 (occupation) => occupation.my.status !== 'NEW',
-              ).length;
+              );
+              const color = regionColor(region.id);
               return (
-                <div
-                  key={region.id}
-                  className="rounded-lg border border-toon-ink bg-toon-cream p-4"
-                >
-                  <h3
-                    className="font-toon text-sm font-bold"
-                    style={{
-                      borderBottom: `3px solid ${regionColor(region.id)}`,
-                    }}
-                  >
-                    {region.name}
-                  </h3>
-                  <p className="mt-1 text-xs text-toon-ink-soft">
-                    {tried}/{occupations.length} nghề đã thử
-                  </p>
+                <section key={region.id} aria-label={region.name}>
+                  <div className="flex items-baseline justify-between gap-2">
+                    <h3 className="font-toon text-base font-bold">
+                      {region.name}
+                    </h3>
+                    <span className="shrink-0 text-xs font-bold tabular-nums text-toon-ink-soft">
+                      {tried.length}/{occupations.length}
+                    </span>
+                  </div>
+                  <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-toon-ink/10">
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        width: `${(tried.length / Math.max(1, occupations.length)) * 100}%`,
+                        backgroundColor: color,
+                      }}
+                    />
+                  </div>
                   <RegionConstellation
                     occupations={occupations}
                     regionName={region.name}
-                    color={regionColor(region.id)}
+                    color={color}
                   />
-                </div>
+                  {/* Chỉ nêu tên nghề đã thử; nghề chưa thử đã thấy là chấm mờ ở trên. */}
+                  {tried.length > 0 && (
+                    <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs font-bold">
+                      {tried.map((o) => (
+                        <li key={o.code} className="flex items-center gap-1">
+                          <span
+                            aria-hidden
+                            className="size-2 rounded-full"
+                            style={{ backgroundColor: color }}
+                          />
+                          {o.shortName}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
               );
             })}
           </div>
         )}
-      </Foldout>
-      <Foldout title="Thời gian theo vùng">
-        <p className="mb-4 text-sm text-toon-ink-soft">
-          Mỗi ô đầy là 30 phút. Ô cuối ghi lại cả phần phút lẻ.
-        </p>
+      </PaperCard>
+
+      <PaperCard>
+        <CardHeading
+          title="Thời gian theo vùng"
+          description="Mỗi ô đầy là 30 phút. Ô cuối ghi lại cả phần phút lẻ."
+        />
         {!stats.minutes ? (
           <EmptyMessage
             className="grayscale opacity-60"
@@ -100,18 +131,25 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
             description="Thời gian được ghi lại khi bạn bắt đầu thử nghề."
           />
         ) : catalogue.data ? (
-          <div className="space-y-5">
+          <ul className="toon-rows">
             {catalogue.data.regions.map((region) => {
               const minutes = stats.minutesByRegion[region.id] ?? 0;
               return (
-                <div key={region.id}>
-                  <div className="mb-2 flex flex-wrap justify-between gap-2 text-sm">
-                    <h3 className="font-toon font-bold">{region.name}</h3>
-                    <span className="text-toon-ink-soft">{minutes} phút</span>
-                  </div>
+                <li
+                  key={region.id}
+                  className="grid items-center gap-x-4 gap-y-2 py-3 sm:grid-cols-[12rem_minmax(0,1fr)_5rem]"
+                >
+                  <h3 className="flex items-center gap-2 font-toon text-sm font-bold">
+                    <span
+                      aria-hidden
+                      className="size-2.5 rounded-full"
+                      style={{ backgroundColor: regionColor(region.id) }}
+                    />
+                    {region.name}
+                  </h3>
                   <div className="flex flex-wrap gap-1">
                     {minutes === 0 ? (
-                      <p className="text-xs text-toon-ink-soft">
+                      <p className="text-xs text-toon-ink-faint">
                         chơi thêm để mở
                       </p>
                     ) : (
@@ -123,7 +161,7 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
                           <button
                             type="button"
                             aria-label={`${region.name}, ô ${index + 1}: ${cell} phút`}
-                            className="relative size-5 overflow-hidden rounded-md border-2 border-toon-ink bg-toon-sand focus-visible:shadow-toon-focus"
+                            className="relative size-4 overflow-hidden rounded-[5px] bg-toon-ink/10 focus-visible:shadow-toon-focus"
                           >
                             <span
                               aria-hidden
@@ -138,10 +176,13 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
                       ))
                     )}
                   </div>
-                </div>
+                  <span className="text-right text-xs font-bold tabular-nums text-toon-ink-soft">
+                    {minutes} phút
+                  </span>
+                </li>
               );
             })}
-          </div>
+          </ul>
         ) : catalogue.isError ? (
           <Notice tone="danger">
             {errorText(catalogue.error)}
@@ -155,27 +196,31 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
         ) : (
           <LoadingBlock text="Đang lấy danh mục vùng nghề…" />
         )}
-      </Foldout>
-      <Foldout title="Việc bạn thích">
-        <p className="mb-4 text-sm text-toon-ink-soft">
-          Năm việc được chọn “Thích” nhiều nhất sau ca làm.
-        </p>
+      </PaperCard>
+
+      <PaperCard>
+        <CardHeading
+          title="Việc bạn thích"
+          description="Năm việc được chọn “Thích” nhiều nhất sau ca làm."
+        />
         {stats.favouriteTasks.length ? (
-          <ol className="grid gap-3 sm:grid-cols-2">
+          <ol className="toon-rows">
             {[...stats.favouriteTasks]
               .sort((a, b) => b.likes - a.likes)
               .slice(0, 5)
               .map((task, index) => (
-                <li
-                  key={task.text}
-                  className="rounded-xl border-2 border-toon-ink bg-toon-cream p-4"
-                >
-                  <p className="mb-2 text-xs font-bold text-toon-maroon">
-                    {index + 1}. {context.taskGroup(task.text)}
-                  </p>
-                  <p className="min-w-0 flex-1 text-sm">{task.text}</p>
-                  <span className="shrink-0 text-xs text-toon-ink-soft">
-                    {task.likes} lần thích
+                <li key={task.text} className="flex items-start gap-4 py-3">
+                  <span className="mt-0.5 font-toon text-sm font-bold tabular-nums text-toon-ink-faint">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm">{task.text}</p>
+                    <p className="mt-0.5 text-xs font-bold text-toon-maroon">
+                      {context.taskGroup(task.text)}
+                    </p>
+                  </div>
+                  <span className="shrink-0 text-xs font-bold tabular-nums text-toon-ink-soft">
+                    ♥ {task.likes}
                   </span>
                 </li>
               ))}
@@ -187,11 +232,45 @@ export function StatsTab({ record }: { record: PlayerRecord }) {
             description="Trả lời câu hỏi thích tới đâu sau một ca để ghi lại việc bạn muốn thử tiếp."
           />
         )}
-      </Foldout>
+      </PaperCard>
     </div>
   );
 }
 
+function Stat({
+  icon,
+  label,
+  value,
+  hint,
+}: {
+  icon: ReactNode;
+  label: string;
+  value: ReactNode;
+  hint?: string;
+}) {
+  return (
+    <div className="flex items-center gap-3 p-4 sm:p-5">
+      <span
+        aria-hidden
+        className="grid size-10 shrink-0 place-items-center rounded-full bg-toon-star-soft text-toon-ink"
+      >
+        {icon}
+      </span>
+      <div className="min-w-0">
+        <dt className="text-xs font-semibold text-toon-ink-soft">{label}</dt>
+        <dd className="font-toon text-2xl font-extrabold leading-tight tabular-nums">
+          {value}
+        </dd>
+        {hint && <p className="text-[11px] text-toon-ink-faint">{hint}</p>}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Chòm sao của một vùng: mỗi nghề một ngôi sao. Nghề đã thử sáng màu vùng và
+ * có quầng; nghề chưa thử là chấm mờ. Chạm sao nào mở hồ sơ nghề đó.
+ */
 function RegionConstellation({
   occupations,
   regionName,
@@ -201,96 +280,72 @@ function RegionConstellation({
   regionName: string;
   color: string;
 }) {
+  const navigate = useNavigate();
+  const glowId = `glow-${useId().replace(/:/g, '')}`;
   const points = constellationPoints(occupations.length);
-  const hasTried = occupations.some(
-    (occupation) => occupation.my.status !== 'NEW',
-  );
-
   if (!occupations.length)
     return (
       <p className="my-5 text-xs text-toon-ink-soft">
         Chưa có nghề trong vùng này.
       </p>
     );
-
+  const triedCount = occupations.filter((o) => o.my.status !== 'NEW').length;
   return (
-    <div>
+    <div className="my-3 overflow-hidden rounded-[16px] bg-toon-night">
       <svg
         viewBox="0 0 220 160"
         role="img"
-        aria-label={`Cụm sao ${regionName}: ${occupations.filter((occupation) => occupation.my.status !== 'NEW').length} trên ${occupations.length} nghề đã thử`}
-        className="my-3 w-full"
+        aria-label={`Cụm sao ${regionName}: ${triedCount} trên ${occupations.length} nghề đã thử`}
+        className="block w-full"
       >
-        <polyline
-          points={points.map(([x, y]) => `${x},${y}`).join(' ')}
-          fill="none"
-          stroke={hasTried ? color : '#5d7ea8'}
-          strokeOpacity=".6"
-          strokeWidth="1.2"
-          strokeDasharray="3 5"
+        <defs>
+          <radialGradient id={glowId}>
+            <stop offset="0" stopColor={color} stopOpacity=".55" />
+            <stop offset="1" stopColor={color} stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <ellipse
+          cx="110"
+          cy="80"
+          rx="100"
+          ry="66"
+          fill={`url(#${glowId})`}
+          opacity={0.25 + 0.75 * (triedCount / occupations.length)}
         />
         {occupations.map((occupation, index) => {
           const [x, y] = points[index];
           const tried = occupation.my.status !== 'NEW';
+          const href = `/occupations/${occupation.code}`;
           return (
-            <g key={occupation.code}>
+            <a
+              key={occupation.code}
+              href={href}
+              aria-label={`${occupation.name}, ${tried ? 'đã thử' : 'chưa thử'}`}
+              onClick={(event) => {
+                event.preventDefault();
+                navigate(href);
+              }}
+              className="cursor-pointer [&:focus-visible>circle]:stroke-toon-star [&:hover>circle]:opacity-100"
+            >
               <title>
                 {occupation.name} · {tried ? 'đã thử' : 'chưa thử'}
               </title>
-              <g
-                transform={`translate(${x - (tried ? 9 : 4)} ${y - (tried ? 9 : 4)})`}
-              >
-                {tried ? (
-                  <CartoonPlanet
-                    seed={occupation.code}
-                    region={occupation.regionId}
-                    size={18}
-                    ring={occupation.playable}
-                  />
-                ) : (
-                  <InkStar
-                    size={8}
-                    fill="#a6d2ea"
-                    className="[&_path]:[vector-effect:none]"
-                  />
-                )}
-              </g>
               {tried && (
-                <path
-                  d={`m${x - 3} ${y - 10} 2 2 4-4`}
-                  fill="none"
-                  stroke="#1e1b18"
-                  strokeWidth="1.5"
-                />
+                <circle cx={x} cy={y} r="9" fill={color} opacity=".3" />
               )}
-            </g>
+              <circle
+                cx={x}
+                cy={y}
+                r={tried ? 4.5 : 2}
+                fill={tried ? color : '#c9d6f2'}
+                opacity={tried ? 1 : 0.4}
+                stroke={tried ? '#fffaf0' : 'none'}
+                strokeWidth="1.2"
+              />
+            </a>
           );
         })}
       </svg>
-      <Foldout title="Xem các nghề trong cụm">
-        <ul className="max-h-60 space-y-2 overflow-y-auto">
-          {occupations.map((occupation) => (
-            <li key={occupation.code}>
-              <Link
-                to={`/occupations/${occupation.code}`}
-                className="flex gap-2 rounded py-1 text-xs text-toon-ink-soft hover:underline"
-              >
-                <span
-                  style={{
-                    color: occupation.my.status !== 'NEW' ? color : '#8ea5c3',
-                  }}
-                >
-                  {occupation.my.status !== 'NEW' ? '✓' : '○'}
-                </span>
-                <span>
-                  {occupation.name} ·{' '}
-                  {occupation.my.status !== 'NEW' ? 'đã thử' : 'chưa thử'}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Foldout>
     </div>
   );
 }
