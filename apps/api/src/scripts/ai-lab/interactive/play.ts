@@ -172,6 +172,33 @@ export async function playInteractive(
       const answer = line.trim().toLowerCase();
       if (YES.has(answer) || (answer === '' && saved)) ticks.push(t.id);
     }
+    for (const select of form.selects) {
+      const options = select.options.map(({ id, label }) => `${id} = ${label}`);
+      const saved = select.options.find(({ id }) =>
+        form.prefill?.ticks.includes(`${select.id}=${id}`),
+      )?.id;
+      while (true) {
+        const line = await reader.read(
+          `  ${select.label} (${options.join(' / ')}${saved ? `, Enter giữ ${saved}` : ''}): `,
+        );
+        if (line === null || line.trim() === ABORT_FORM) return null;
+        const answer = line.trim() || saved;
+        if (!answer) break;
+        if (select.options.some(({ id }) => id === answer)) {
+          ticks.push(`${select.id}=${answer}`);
+          break;
+        }
+        out(
+          `✘ Chọn một trong các mã ${select.options.map(({ id }) => id).join(', ')}.`,
+        );
+      }
+      if (select.reason) {
+        const id = `${select.id}__why`;
+        const line = await reader.read(`  Vì sao (${select.label}): `);
+        if (line === null || line.trim() === ABORT_FORM) return null;
+        fields[id] = line.trim() || form.prefill?.fields[id] || '';
+      }
+    }
     return { fields, ticks };
   };
 

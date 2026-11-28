@@ -3,13 +3,26 @@
  * Chỉ bật khi `AI_MODE=fake`, và `loadEnv` cấm chế độ này ở production (D-92).
  */
 import { shift } from '@datn/game-core';
-import type { AiOutcome, ShiftChecker, ShiftNarrator } from './types';
+import type {
+  AiCallOptions,
+  AiOutcome,
+  ShiftChecker,
+  ShiftNarrator,
+} from './types';
 
 const provenance = { adapter: 'fake', promptVersion: 'fake' } as const;
 
 export class FakeShiftNarrator implements ShiftNarrator {
-  async narrate(req: shift.NarrateRequest): Promise<AiOutcome<shift.Beat[]>> {
-    return { status: 'ok', value: shift.fakeNarration(req), provenance };
+  async narrate(
+    req: shift.NarrateRequest,
+    opts?: AiCallOptions,
+  ): Promise<AiOutcome<shift.Beat[]>> {
+    const script = opts?.ctx ? shift.FAKE_SCRIPTS[opts.ctx.seed.id] : undefined;
+    return {
+      status: 'ok',
+      value: shift.fakeNarration(req, script),
+      provenance,
+    };
   }
 }
 

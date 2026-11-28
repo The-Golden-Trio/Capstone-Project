@@ -7,7 +7,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
-import { CirclePause, Flag, PartyPopper, Users } from 'lucide-react';
+import {
+  ArrowLeft,
+  ArrowRight,
+  CirclePause,
+  Flag,
+  PartyPopper,
+  Users,
+} from 'lucide-react';
 import {
   Character,
   Dialog,
@@ -21,25 +28,32 @@ import {
 import { api, sourceOf } from '../../api';
 import { keys, useRun } from '../../api/hooks';
 import type { SceneView } from '../../api/types';
-import { ArtefactForm } from './ArtefactForm';
+import { Desktop } from './desktop/Desktop';
+import { DocumentViewer, InlineMarkdown } from './desktop/DocumentViewer';
+import { ArtefactEditor } from './desktop/editors';
 import { Composer } from './Composer';
 import { Hud } from './Hud';
 import { Notebook } from './Notebook';
 import { Stage } from './Stage';
 import { usePlaySession } from './usePlaySession';
+import { usePlayDesktop } from './usePlayDesktop';
 import { Avatar } from './Stage';
 import { TOON_BACKDROPS, castCharacters } from '../../lib/toon';
 
-type Action = SceneView['actions'][number];
-
 export default function PlayPage() {
   const { runId = '' } = useParams();
+  return <RunPlayPage key={runId} runId={runId} />;
+}
+
+function RunPlayPage({ runId }: { runId: string }) {
   const run = useRun(runId);
   const s = usePlaySession(runId);
   const navigate = useNavigate();
   const qc = useQueryClient();
   const { toast } = useToast();
   const [intro, setIntro] = useState(true);
+  const desktop = usePlayDesktop(s, intro, runId);
+  const desktopOpen = desktop.windows.length > 0;
   const composerRef = useRef<HTMLDivElement>(null);
 
   // Nút hay ô nhập đang focus bị thay khi đổi pha (trả lời xong, kết thúc
@@ -58,7 +72,7 @@ export default function PlayPage() {
       ].join(':')
     : '';
   useEffect(() => {
-    if (!focusKey || intro) return;
+    if (!focusKey || intro || desktopOpen) return;
     const id = requestAnimationFrame(() => {
       const active = document.activeElement;
       const dialogue = document.getElementById('stage-dialog');
@@ -75,9 +89,8 @@ export default function PlayPage() {
       (target ?? dialogue)?.focus();
     });
     return () => cancelAnimationFrame(id);
-  }, [focusKey, intro, hasQueue]);
+  }, [focusKey, intro, hasQueue, desktopOpen]);
   const [notebook, setNotebook] = useState(false);
-  const [writing, setWriting] = useState<Action | null>(null);
   const [flagOpen, setFlagOpen] = useState(false);
 
   // Ca đã có diễn biến thì không hiện lại màn giới thiệu.
@@ -142,16 +155,11 @@ export default function PlayPage() {
       : 'Đang soạn lời…'
     : null;
 
-  const pick = (a: Action) => {
-    if (a.form) setWriting(a);
-    else void s.send({ kind: 'action', key: a.key });
-  };
-
   const looks = castCharacters(r.cast);
 
   return (
     <div className="theme-toon toon-dots relative flex h-dvh flex-col overflow-hidden">
-      <div className="contents" inert={intro || undefined}>
+      <div className="contents" inert={intro || desktopOpen || undefined}>
         <Hud
           title={r.title}
           goal={r.goal}
@@ -160,7 +168,7 @@ export default function PlayPage() {
           onNotebook={() => setNotebook(true)}
           notebookCount={scene.notebook.facts.length}
           onHint={() => void s.send({ kind: 'hint' })}
-          hintDisabled={locked || s.sending || scene.ended}
+          hintDisabled={locked || s.sending || !!s.paused || scene.ended}
           aiLabel={
             sourceOf('play') === 'demo'
               ? 'AI giả (bản xem thử)'
@@ -169,106 +177,172 @@ export default function PlayPage() {
         />
       </div>
 
-      <div
-        className="relative mx-auto flex min-h-0 w-full max-w-[1280px] flex-1 sm:p-3 lg:p-4"
-        inert={intro || undefined}
-      >
-        <main className="relative flex min-w-0 flex-1 flex-col overflow-hidden bg-toon-cream sm:rounded-[20px] sm:border-[3px] sm:border-toon-ink sm:shadow-toon">
-          {scene.conversation && (
-            <div className="pointer-events-none absolute inset-x-0 top-3 z-30 flex px-3 pr-16 sm:justify-center sm:px-48">
-              <p className="inline-flex max-w-full items-center gap-2 rounded-full border-[2.5px] border-toon-ink bg-toon-paper py-1 pl-1.5 pr-3.5 text-sm font-bold text-toon-ink shadow-toon-sm">
-                <span className="flex -space-x-2">
-                  {scene.conversation.people.map((p) => {
-                    const look = looks.get(p.slot);
-                    return look ? (
-                      <Avatar
-                        key={p.slot}
-                        src={look.src}
-                        color={look.color}
-                        size={30}
-                      />
-                    ) : null;
-                  })}
-                </span>
-                <Users size={15} strokeWidth={2.6} aria-hidden />
-                <span className="truncate">
-                  Đang trò chuyện với{' '}
-                  {scene.conversation.people.map((p) => p.name).join(', ')}
-                </span>
-              </p>
-            </div>
-          )}
-          <Stage
-            run={r}
-            lines={s.shown}
-            current={s.current}
-            queued={s.queued}
-            waitingLabel={waitingLabel}
-            conversationChannel={scene.conversation?.channel ?? null}
-            quiet={scene.mode === 'phase' || scene.await.kind === 'node_choice'}
-            onAdvance={s.advance}
-          />
-          <div
-            ref={composerRef}
-            className="relative z-20 border-t-[3px] border-toon-ink bg-[#f1dcb6] px-3 py-3 sm:px-5 sm:py-4"
-          >
-            <div className="mx-auto max-w-3xl">
-              {s.error && (
-                <p
-                  role="alert"
-                  className="mb-3 rounded-xl border-[2.5px] border-toon-ink bg-toon-coral-light px-3 py-2 text-sm font-bold text-toon-ink"
-                >
-                  {s.error}
-                </p>
-              )}
-              {s.paused ? (
-                <div className="rounded-2xl border-[3px] border-toon-ink bg-[#ffe4a3] p-4 shadow-toon-sm">
-                  <p className="font-toon text-lg font-extrabold text-toon-ink">
-                    Ca làm tạm dừng
-                  </p>
-                  <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
-                    Chưa gọi được mô hình dẫn truyện. Tiến độ của bạn vẫn được
-                    giữ nguyên, không mất gì.
-                  </p>
-                  <ToonButton
-                    size="sm"
-                    className="mt-3"
-                    leftIcon={<CirclePause size={15} strokeWidth={2.6} />}
-                    onClick={() => void s.resume()}
-                  >
-                    Thử tiếp tục
-                  </ToonButton>
-                </div>
-              ) : scene.ended ? (
-                <EndCard onNext={() => navigate(`/play/${runId}/reflect`)} />
-              ) : (
-                <Composer
-                  scene={scene}
-                  busy={s.sending}
-                  locked={locked}
-                  onSend={s.send}
-                  onPickAction={pick}
-                  spoken={s.current?.text ?? null}
-                />
-              )}
-              {s.queued > 0 && !s.paused && (
-                <p className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm font-bold text-toon-ink-soft">
-                  Bấm vào hộp thoại hoặc nhấn Space để nghe tiếp.
-                  {s.queued > 1 && (
+      <Desktop
+        documents={desktop.documents}
+        windows={desktop.windows}
+        onOpen={desktop.openDocument}
+        onRaise={desktop.raise}
+        onClose={desktop.close}
+        renderWindow={(id) => {
+          const entry = desktop.windows.find((item) => item.id === id);
+          if (!entry) return null;
+          if (entry.kind === 'document') {
+            const doc = scene.documents.find((item) => item.id === id);
+            return doc ? <DocumentViewer document={doc} /> : null;
+          }
+          return (
+            <>
+              {(s.error || s.paused) && (
+                <p role="alert" className="desktop-error">
+                  {s.error ?? s.paused} Bản nháp vẫn còn.
+                  {s.paused && (
                     <button
                       type="button"
-                      onClick={s.revealAll}
-                      className="rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-0.5 font-toon text-sm font-bold text-toon-ink shadow-toon-sm hover:-translate-y-px focus-visible:outline-none focus-visible:shadow-toon-focus"
+                      className="ml-2 underline"
+                      onClick={() => void s.resume()}
                     >
-                      Hiện hết ({s.queued})
+                      Thử tiếp tục
                     </button>
                   )}
                 </p>
               )}
+              <ArtefactEditor
+                form={desktop.draftFor(entry.form)}
+                onDraftChange={(draft) =>
+                  desktop.updateDraft(entry.form.id, draft)
+                }
+                busy={s.sending || s.waiting || !!s.paused}
+                submitLabel={entry.submitLabel}
+                onSubmit={(fields, ticks) =>
+                  desktop.submit(entry, fields, ticks)
+                }
+                onCancel={() => desktop.close(id)}
+              />
+            </>
+          );
+        }}
+      >
+        <div
+          className="relative mx-auto flex min-h-0 w-full max-w-[1280px] flex-1 sm:p-3 lg:p-4"
+          inert={intro || undefined}
+        >
+          <main className="relative flex min-w-0 flex-1 flex-col overflow-hidden bg-toon-cream sm:rounded-[20px] sm:border-[3px] sm:border-toon-ink sm:shadow-toon">
+            {scene.conversation && (
+              <div className="pointer-events-none absolute inset-x-0 top-3 z-30 flex px-3 pr-16 sm:justify-center sm:px-48">
+                <p className="inline-flex max-w-full items-center gap-2 rounded-full border-[2.5px] border-toon-ink bg-toon-paper py-1 pl-1.5 pr-3.5 text-sm font-bold text-toon-ink shadow-toon-sm">
+                  <span className="flex -space-x-2">
+                    {scene.conversation.people.map((p) => {
+                      const look = looks.get(p.slot);
+                      return look ? (
+                        <Avatar
+                          key={p.slot}
+                          src={look.src}
+                          color={look.color}
+                          size={30}
+                        />
+                      ) : null;
+                    })}
+                  </span>
+                  <Users size={15} strokeWidth={2.6} aria-hidden />
+                  <span className="truncate">
+                    Đang trò chuyện với{' '}
+                    {scene.conversation.people
+                      .map((person) => {
+                        const status = scene.cast.find(
+                          (cast) => cast.slot === person.slot,
+                        )?.status;
+                        return status
+                          ? `${person.name} (${status})`
+                          : person.name;
+                      })
+                      .join(', ')}
+                  </span>
+                </p>
+              </div>
+            )}
+            <Stage
+              run={r}
+              lines={s.shown}
+              bots={scene.bots}
+              castStatus={scene.cast}
+              glossary={scene.glossary}
+              inactive={intro || desktopOpen}
+              current={s.current}
+              queued={s.queued}
+              waitingLabel={waitingLabel}
+              conversationChannel={scene.conversation?.channel ?? null}
+              quiet={
+                scene.mode === 'phase' || scene.await.kind === 'node_choice'
+              }
+              onAdvance={s.advance}
+            />
+            <div
+              ref={composerRef}
+              className="relative z-20 border-t-[3px] border-toon-ink bg-[#f1dcb6] px-3 py-3 sm:px-5 sm:py-4"
+            >
+              <div className="mx-auto max-w-3xl">
+                {s.error && (
+                  <p
+                    role="alert"
+                    className="mb-3 rounded-xl border-[2.5px] border-toon-ink bg-toon-coral-light px-3 py-2 text-sm font-bold text-toon-ink"
+                  >
+                    {s.error}
+                  </p>
+                )}
+                {s.paused ? (
+                  <div className="rounded-2xl border-[3px] border-toon-ink bg-[#ffe4a3] p-4 shadow-toon-sm">
+                    <p className="font-toon text-lg font-extrabold text-toon-ink">
+                      Ca làm tạm dừng
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-toon-ink-soft">
+                      Chưa gọi được mô hình dẫn truyện. Tiến độ của bạn vẫn được
+                      giữ nguyên, không mất gì.
+                    </p>
+                    <ToonButton
+                      size="sm"
+                      className="mt-3"
+                      leftIcon={<CirclePause size={15} strokeWidth={2.6} />}
+                      onClick={() => void s.resume()}
+                    >
+                      Thử tiếp tục
+                    </ToonButton>
+                  </div>
+                ) : scene.ended ? (
+                  !locked && (
+                    <EndCard
+                      onNext={() => navigate(`/play/${runId}/reflect`)}
+                    />
+                  )
+                ) : (
+                  <Composer
+                    scene={scene}
+                    busy={s.sending}
+                    locked={locked}
+                    onSend={s.send}
+                    onPickAction={(action) => void desktop.pick(action)}
+                    onOpenNode={desktop.openNode}
+                    spoken={s.current?.text ?? null}
+                  />
+                )}
+                {s.queued > 0 && !s.paused && (
+                  <p className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm font-bold text-toon-ink-soft">
+                    Bấm vào hộp thoại hoặc nhấn Space để nghe tiếp.
+                    {s.queued > 1 && (
+                      <button
+                        type="button"
+                        onClick={s.revealAll}
+                        className="rounded-full border-[2.5px] border-toon-ink bg-toon-paper px-3 py-0.5 font-toon text-sm font-bold text-toon-ink shadow-toon-sm hover:-translate-y-px focus-visible:outline-none focus-visible:shadow-toon-focus"
+                      >
+                        Hiện hết ({s.queued})
+                      </button>
+                    )}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-        </main>
-      </div>
+          </main>
+        </div>
+      </Desktop>
 
       <Sheet
         open={notebook}
@@ -281,6 +355,10 @@ export default function PlayPage() {
           run={r}
           scene={scene}
           lines={s.shown}
+          onOpenDocument={(id) => {
+            setNotebook(false);
+            desktop.openDocument(id);
+          }}
           className="-mx-6 -mt-2 h-[70dvh]"
         />
         <button
@@ -291,50 +369,6 @@ export default function PlayPage() {
           <Flag size={13} strokeWidth={2.6} aria-hidden /> Báo nội dung sai
         </button>
       </Sheet>
-
-      <Dialog
-        open={writing !== null}
-        onClose={() => {
-          if (!s.sending) setWriting(null);
-        }}
-        title={writing?.label ?? ''}
-        size="lg"
-        theme="toon"
-        description={
-          writing
-            ? `Mất khoảng ${writing.points * scene.clock.minutesPerPoint} phút trong ca.`
-            : undefined
-        }
-      >
-        {writing && s.error && (
-          <p
-            role="alert"
-            className="mb-3 rounded-xl border-2 border-toon-ink bg-toon-coral-light p-3 text-sm font-bold"
-          >
-            {s.error} Bản nháp vẫn còn; bạn có thể gửi lại.
-          </p>
-        )}
-        {writing?.form && (
-          <ArtefactForm
-            form={writing.form}
-            submitLabel="Xong"
-            busy={s.sending}
-            onCancel={() => setWriting(null)}
-            onSubmit={async (fields, ticks) => {
-              // Chỉ đóng khi lượt đã được nhận, để lỗi mạng không làm mất bài viết.
-              if (
-                await s.send({
-                  kind: 'action',
-                  key: writing.key,
-                  fields,
-                  ticks,
-                })
-              )
-                setWriting(null);
-            }}
-          />
-        )}
-      </Dialog>
 
       <FlagDialog
         open={flagOpen}
@@ -367,6 +401,10 @@ function IntroOverlay({
   scene: SceneView;
   onStart: () => void;
 }) {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const slides = scene.introSlides ?? [];
+  const slide = slides[slideIndex];
+  const lastSlide = slideIndex >= slides.length - 1;
   const looks = castCharacters(run.cast);
   const host = run.cast[0];
   const hostLook = host ? looks.get(host.slot) : undefined;
@@ -403,65 +441,106 @@ function IntroOverlay({
           >
             {run.title}
           </h2>
-          {run.scene && (
-            <p className="mt-3 text-base font-semibold leading-relaxed text-toon-ink-soft">
-              {run.scene}
-            </p>
-          )}
-          <div className="mt-5 rounded-2xl border-[2.5px] border-toon-ink bg-[#d6ecf7] p-4">
-            <p className="font-toon text-sm font-extrabold uppercase tracking-wide text-toon-ink-soft">
-              Vai của bạn
-            </p>
-            <p className="mt-1 font-semibold text-toon-ink">{run.role}</p>
-          </div>
-          <p className="mt-5 font-toon text-sm font-extrabold uppercase tracking-wide text-toon-ink-soft">
-            Người bạn sẽ gặp
-          </p>
-          <ul className="mt-2 grid gap-2.5 sm:grid-cols-2">
-            {run.cast.map((c) => {
-              const look = looks.get(c.slot);
-              return (
-                <li
-                  key={c.slot}
-                  className="flex items-center gap-3 rounded-2xl border-[2.5px] border-toon-ink bg-toon-paper p-2 pr-3 shadow-toon-sm"
-                >
-                  {look && (
-                    <Avatar src={look.src} color={look.color} size={52} />
-                  )}
-                  <span className="min-w-0 text-sm">
-                    <span className="block font-toon text-base font-extrabold capitalize text-toon-ink">
-                      {c.name}
-                    </span>
-                    <span className="block font-semibold text-toon-ink-soft">
-                      {c.relation}
-                    </span>
+          {slide ? (
+            <section
+              aria-live="polite"
+              className="mt-5 min-h-48 rounded-2xl border-[2.5px] border-toon-ink bg-toon-paper p-4 shadow-toon-sm sm:min-h-56 sm:p-5"
+            >
+              <h3 className="font-toon text-xl font-extrabold leading-tight text-toon-ink sm:text-2xl">
+                {slide.title}
+              </h3>
+              <p className="mt-2 whitespace-pre-line text-base font-semibold leading-relaxed text-toon-ink-soft">
+                <InlineMarkdown text={slide.body} />
+              </p>
+            </section>
+          ) : (
+            <>
+              {run.scene && (
+                <p className="mt-3 text-base font-semibold leading-relaxed text-toon-ink-soft">
+                  {run.scene}
+                </p>
+              )}
+              <div className="mt-5 rounded-2xl border-[2.5px] border-toon-ink bg-[#d6ecf7] p-4">
+                <p className="font-toon text-sm font-extrabold uppercase tracking-wide text-toon-ink-soft">
+                  Vai của bạn
+                </p>
+                <p className="mt-1 font-semibold text-toon-ink">{run.role}</p>
+              </div>
+              <p className="mt-5 font-toon text-sm font-extrabold uppercase tracking-wide text-toon-ink-soft">
+                Người bạn sẽ gặp
+              </p>
+              <ul className="mt-2 grid gap-2.5 sm:grid-cols-2">
+                {run.cast.map((c) => {
+                  const look = looks.get(c.slot);
+                  return (
+                    <li
+                      key={c.slot}
+                      className="flex items-center gap-3 rounded-2xl border-[2.5px] border-toon-ink bg-toon-paper p-2 pr-3 shadow-toon-sm"
+                    >
+                      {look && (
+                        <Avatar src={look.src} color={look.color} size={52} />
+                      )}
+                      <span className="min-w-0 text-sm">
+                        <span className="block font-toon text-base font-extrabold capitalize text-toon-ink">
+                          {c.name}
+                        </span>
+                        <span className="block font-semibold text-toon-ink-soft">
+                          {c.relation}
+                        </span>
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+              <details className="group mt-5 rounded-xl border-2 border-dashed border-toon-ink/50 px-3 py-2 text-sm font-semibold text-toon-ink-soft">
+                <summary className="cursor-pointer list-none font-toon font-extrabold text-toon-ink marker:hidden">
+                  <span className="mr-1 inline-block transition-transform group-open:rotate-90">
+                    ▸
                   </span>
-                </li>
-              );
-            })}
-          </ul>
-          <details className="group mt-5 rounded-xl border-2 border-dashed border-toon-ink/50 px-3 py-2 text-sm font-semibold text-toon-ink-soft">
-            <summary className="cursor-pointer list-none font-toon font-extrabold text-toon-ink marker:hidden">
-              <span className="mr-1 inline-block transition-transform group-open:rotate-90">
-                ▸
-              </span>
-              Cách chơi
-            </summary>
-            <p className="mt-1.5">
-              Đồng hồ chạy theo việc bạn làm: mỗi việc ghi rõ mất bao nhiêu
-              phút. Hết giờ không phải thua, bạn vẫn nộp với những gì đã có. Lời
-              nhân vật do AI dẫn dắt theo kịch bản chuyên gia duyệt.
-            </p>
-          </details>
-          <ToonButton
-            size="lg"
-            block
-            className="mt-6"
-            onClick={onStart}
-            autoFocus
-          >
-            Vào ca
-          </ToonButton>
+                  Cách chơi
+                </summary>
+                <p className="mt-1.5">
+                  Đồng hồ chạy theo việc bạn làm: mỗi việc ghi rõ mất bao nhiêu
+                  phút. Hết giờ không phải thua, bạn vẫn nộp với những gì đã có.
+                  Lời nhân vật do AI dẫn dắt theo kịch bản chuyên gia duyệt.
+                </p>
+              </details>
+            </>
+          )}
+          <div className="mt-6 flex flex-wrap items-center gap-2">
+            {slide && (
+              <>
+                <ToonButton
+                  size="sm"
+                  variant="secondary"
+                  leftIcon={<ArrowLeft size={16} aria-hidden />}
+                  onClick={() => setSlideIndex((index) => index - 1)}
+                  disabled={slideIndex === 0}
+                >
+                  Trước
+                </ToonButton>
+                <p
+                  aria-label={`Trang ${slideIndex + 1} trên ${slides.length}`}
+                  className="mr-auto px-1 text-sm font-bold tabular-nums text-toon-ink-soft"
+                >
+                  {slideIndex + 1} / {slides.length}
+                </p>
+              </>
+            )}
+            <ToonButton
+              size="lg"
+              block={!slide}
+              rightIcon={
+                !lastSlide ? <ArrowRight size={18} aria-hidden /> : undefined
+              }
+              onClick={
+                lastSlide ? onStart : () => setSlideIndex((index) => index + 1)
+              }
+              autoFocus
+            >
+              {lastSlide ? 'Vào ca' : 'Tiếp theo'}
+            </ToonButton>
+          </div>
         </div>
       </div>
     </SceneBackdrop>

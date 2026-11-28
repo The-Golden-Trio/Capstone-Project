@@ -232,7 +232,7 @@ class Run {
 }
 
 const PATCH = {
-  mo_ta:
+  ghi_chu:
     'Bỏ vòng lặp, gom chi tiết đơn bằng một truy vấn. Thêm phân trang 50 đơn.',
 };
 const NOTE = {
@@ -241,21 +241,27 @@ const NOTE = {
   da_lam: 'Viết bản vá, chạy staging.',
 };
 const EMAIL = {
+  tieu_de: 'Xin duyệt bản sửa API lịch sử đơn',
   nguyen_nhan: 'API gọi DB trong vòng lặp, 901 lần cho MP-0042.',
   huong_xu_ly: 'Gom truy vấn, thêm phân trang.',
-  rui_ro: 'Theo dõi log sau khi lên; lỗi thì rollback về bản cũ.',
+  rui_ro: 'Lỗi thì rollback về bản cũ.',
 };
+const SUPPORT_UPDATE = 'Chị ơi em tìm ra lỗi rồi, đang sửa.';
+const SUPPORT_APPOINTMENT = `${SUPPORT_UPDATE} 11:30 em gọi báo lại chị nha.`;
 
-function fullRun(): ShiftState {
+function fullRun(supportUpdate = SUPPORT_APPOINTMENT): ShiftState {
   const d = new Run().send({ type: 'START' }).say('Dạ em coi liền anh.');
-  d.action('open_log').action('open_code').action('open_bang');
+  d.action('open_log')
+    .action('open_code')
+    .action('open_bang')
+    .action('open_dashboard');
   d.action('talk_mentor').say(
     'Anh ơi API gọi DB trong vòng lặp, 901 lần cho MP-0042. Khách ít đơn cùng giờ vẫn nhanh nên không phải DB.',
   );
-  d.action('talk_support').say(
-    'Chị ơi em tìm ra lỗi rồi, đang sửa. 11:30 em gọi báo lại chị nha.',
-  );
-  d.action('write_patch', PATCH).action('run_staging').action('wait');
+  d.action('talk_support').say(supportUpdate);
+  d.action('write_patch', PATCH, ['v1', 'v2', 'v3'])
+    .action('run_staging')
+    .action('wait');
   d.send({ type: 'CHOOSE', option: 'a', elapsedMs: 9000 });
   d.say('Dạ em đang sửa rồi chị.');
   d.action('chot_nguyen_nhan');
@@ -263,11 +269,15 @@ function fullRun(): ShiftState {
     type: 'SAVE_ARTEFACT',
     artefact: 'ghi_chu_su_co',
     fields: NOTE,
-    ticks: ['h3'],
+    ticks: ['h3=giu', 'h6=chua_ro'],
   });
   d.say(
     'Em giữ khả năng API trả hết đơn không giới hạn vì app cũ không gửi số trang.',
   );
+  d.action('meeting');
+  d.say('Em có bản sửa chạy thử rồi, còn chờ anh An duyệt.');
+  d.send({ type: 'END_CONVERSATION' });
+  d.action('talk_support');
   d.action('gui_anh_an');
   d.send({ type: 'CONFIRM_END' });
   d.send({ type: 'SAVE_ARTEFACT', artefact: 'email_an', fields: EMAIL });
@@ -305,11 +315,12 @@ describe('evidenceSegments', () => {
   };
 
   it('một đoạn cho mỗi nơi lấy bằng chứng: nút theo thứ tự seed, rồi pha', () => {
-    expect(segments.map((s) => s.id)).toEqual(['n1', 'n2', 'n3', 'pha']);
-    expect(byId('n1').subs).toEqual(['1.5']);
+    expect(segments.map((s) => s.id)).toEqual(['n1', 'e1', 'n2', 'n3', 'pha']);
+    expect(byId('n1').subs).toEqual(['1.5', '7.4']);
+    expect(byId('e1').subs).toEqual(['1.5', '7.4']);
     expect(byId('n2').subs).toEqual(['4.2', '7.1']);
-    expect(byId('n3').subs).toEqual(['7.1', '1.1']);
-    expect(byId('pha').subs).toEqual(['4.2', '1.5', '7.4']);
+    expect(byId('n3').subs).toEqual(['4.2', '7.1', '1.1']);
+    expect(byId('pha').subs).toEqual(['4.2', '7.1', '1.5', '7.4']);
     expect(segments.every((s) => s.outcome === 'answered')).toBe(true);
   });
 
@@ -325,17 +336,38 @@ describe('evidenceSegments', () => {
     expect(fullRun()).toEqual(state);
   });
 
-  it('nút đóng: chữ phương án không vào đoạn, lời nói thêm thì có', () => {
-    const n1 = turnsOf(byId('n1'));
-    expect(n1.map((t) => t.text)).toEqual(['Dạ em đang sửa rồi chị.']);
-    const option = ctx.seed.nodes
-      .find((n) => n.id === 'n1')
-      ?.options.find((o) => o.key === 'a')?.text;
-    expect(
-      state.transcript.some((l) => l.kind === 'player' && l.text === option),
-    ).toBe(true);
-    expect(JSON.stringify(byId('n1'))).not.toContain(option as string);
-  });
+  it.each([
+    [
+      'mặc định',
+      SUPPORT_UPDATE,
+      'Em chưa dám hứa giờ chị ạ. 11h30 em gọi báo chị tình hình nha.',
+    ],
+    [
+      'đổi theo hẹn',
+      SUPPORT_APPOINTMENT,
+      'Em chưa dám hứa giờ chị ạ. Tới giờ hẹn em báo chị như đã nói.',
+    ],
+  ])(
+    'nút đóng: chữ phương án %s không vào đoạn, lời nói thêm thì có',
+    (_, supportUpdate, option) => {
+      const run = fullRun(supportUpdate);
+      const n1 = evidenceSegments(run, ctx, OBSERVES).find(
+        (segment) => segment.id === 'n1',
+      );
+      if (!n1) throw new Error('Thiếu đoạn n1');
+      expect(turnsOf(n1).map((t) => t.text)).toEqual([
+        'Dạ em đang sửa rồi chị.',
+      ]);
+      expect(run.transcript).toContainEqual(
+        expect.objectContaining({
+          kind: 'player',
+          context: 'node:n1',
+          text: option,
+        }),
+      );
+      expect(JSON.stringify(n1)).not.toContain(option);
+    },
+  );
 
   it('nút artefact: cả bài nộp là một lượt, kèm câu trả lời probe riêng', () => {
     const n3 = turnsOf(byId('n3'));
@@ -364,9 +396,7 @@ describe('evidenceSegments', () => {
       state.actionLog.map((_, i) => `act${String(i + 1).padStart(2, '0')}`),
     );
     expect(actions[0].text).toContain('open_log');
-    expect(
-      turnsOf(pha).some((t) => t.text.includes('11:30 em gọi báo lại')),
-    ).toBe(true);
+    expect(turnsOf(pha).some((t) => t.text === SUPPORT_APPOINTMENT)).toBe(true);
     // Kết quả chạy thử có mặt như bối cảnh hệ thống.
     expect(pha.entries.some((e) => e.role === 'system')).toBe(true);
     // Mỗi lượt không đi trước lượt trước nó.
@@ -389,9 +419,9 @@ describe('evidenceSegments', () => {
   it('bản vá nộp trong pha là một lượt art_ban_va của đoạn pha (D-144)', () => {
     const pha = byId('pha');
     const patch = turnsOf(pha).find((t) => t.code === 'art_ban_va');
-    expect(patch).toMatchObject({ kind: 'artefact', text: PATCH.mo_ta });
+    expect(patch).toMatchObject({ kind: 'artefact', text: PATCH.ghi_chu });
     expect(patch?.parts).toEqual([
-      { label: 'Mô tả thay đổi', text: PATCH.mo_ta },
+      { label: 'Ghi chú cho người review', text: PATCH.ghi_chu },
     ]);
     // Bài nộp của nút không lặp lại trong pha.
     expect(turnsOf(pha).some((t) => t.code === 'art_email_an')).toBe(false);
@@ -428,7 +458,7 @@ describe('evidenceSegments', () => {
     const review = evidenceSegments(copy, ctx, OBSERVES).find(
       (s) => s.id === 'review',
     );
-    expect(review).toMatchObject({ kind: 'review', subs: ['7.1', '7.4'] });
+    expect(review).toMatchObject({ kind: 'review', subs: ['7.4'] });
     expect(turnsOf(review as EvidenceSegment).map((t) => t.code)).toEqual([
       `t${base + 1}`,
     ]);
@@ -450,10 +480,17 @@ describe('evidenceSegments', () => {
     const seg = evidenceSegments(copy, ctx, OBSERVES).find(
       (s) => s.id === 'n1',
     );
-    expect(seg).toMatchObject({ outcome: 'timed_out', subs: ['1.5'] });
+    expect(seg).toMatchObject({ outcome: 'timed_out', subs: ['1.5', '7.4'] });
     expect(fixedPairLevels([seg as EvidenceSegment])).toEqual([
       {
         sub: '1.5',
+        segment: 'n1',
+        level: 0,
+        forcedZero: false,
+        fixed: 'timed_out',
+      },
+      {
+        sub: '7.4',
         segment: 'n1',
         level: 0,
         forcedZero: false,

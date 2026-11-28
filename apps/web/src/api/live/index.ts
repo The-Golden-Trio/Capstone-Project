@@ -10,7 +10,7 @@ import type {
   PlayEvent,
   PlayService,
 } from '../port';
-import { ApiError } from '../port';
+import { ApiError, createTurnId } from '../port';
 import type {
   ChecklistGrade,
   Me,
@@ -263,11 +263,6 @@ function toRun(r: LiveRun, enrolmentId: string | null = null): ShiftRun {
   };
 }
 
-const uuid = () =>
-  typeof crypto !== 'undefined' && 'randomUUID' in crypto
-    ? crypto.randomUUID()
-    : `${Date.now().toString(16)}-${Math.random().toString(16).slice(2)}`;
-
 /**
  * SSE có Bearer: EventSource không gửi được header, nên đọc luồng bằng
  * fetch và tự tách sự kiện. Một kết nối chung cho mọi lượt đang mở.
@@ -358,8 +353,7 @@ export const livePlay: PlayService = {
     http<TranscriptLine[] | { lines: TranscriptLine[] }>(
       `/shift-runs/${runId}/transcript${after !== undefined ? `?after=${after}` : ''}`,
     ).then((r) => (Array.isArray(r) ? r : r.lines)),
-  turn: async (runId, input): Promise<TurnResult> => {
-    const turnId = uuid();
+  turn: async (runId, input, turnId = createTurnId()): Promise<TurnResult> => {
     const body = await http<{
       turnId: string;
       lines: TranscriptLine[];

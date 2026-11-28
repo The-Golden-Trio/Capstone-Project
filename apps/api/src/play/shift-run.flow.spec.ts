@@ -4,6 +4,7 @@
  * → ghi bản ghi có khoá → đẩy tin. Queue và stream thay bằng mảng.
  */
 import { randomUUID } from 'node:crypto';
+import { join } from 'node:path';
 import { fixtureShiftContext } from '@datn/game-core/testing';
 import {
   FakeChecklistJudge,
@@ -18,7 +19,8 @@ import type { ShiftGradeJob, ShiftTurnJob } from '../core/queues';
 import { ShiftLogService } from '../core/shift-log.service';
 import type { Job } from 'bullmq';
 import type { StreamEvent } from '../notification/stream.service';
-import type { TurnDto } from './shift.dto';
+import { loadPlaythrough, stepApplies } from '../scripts/ai-lab/playthrough';
+import { TurnSchema, type TurnDto } from './shift.dto';
 import { ShiftRunService } from './shift-run.service';
 import { memoryPrisma } from './testing/memory-prisma';
 
@@ -100,10 +102,8 @@ function setup(
       await grader.process(gradingJob(job));
   };
   const play = async (runId: string, turn: TurnInput) => {
-    const res = await service.submitTurn(USER, runId, {
-      turnId: randomUUID(),
-      ...turn,
-    } as TurnDto);
+    const dto = TurnSchema.parse({ turnId: randomUUID(), ...turn });
+    const res = await service.submitTurn(USER, runId, dto);
     await drain();
     return res;
   };
@@ -132,57 +132,28 @@ async function problemOf(promise: Promise<unknown>) {
   throw new Error('Không ném lỗi');
 }
 
-/** Chơi trọn ca L3.m2 tới `FINISHED`; trả lượt chơi. */
+/** Chơi trọn ca L3.m2 (bản 5.2) tới `FINISHED` theo kịch bản `lam-tot`; trả lượt chơi. */
 async function playToEnd(
   service: ShiftRunService,
   play: (runId: string, turn: TurnInput) => Promise<unknown>,
 ) {
   const { run } = await service.start(USER, { taskId: SEED });
-  await play(run.id, { kind: 'say', text: 'Dạ.' });
   await service.addNote(USER, run.id, 'Nhớ xem log trước');
-  await play(run.id, { kind: 'action', key: 'open_log' });
-  await play(run.id, { kind: 'action', key: 'talk_mentor' });
-  await play(run.id, {
-    kind: 'say',
-    text: 'Lỗi do vòng lặp gọi DB 901 lần, khách ít đơn vẫn nhanh.',
-  });
-  await play(run.id, {
-    kind: 'action',
-    key: 'write_patch',
-    fields: { mo_ta: 'Bỏ vòng lặp, gom một truy vấn.' },
-  });
-  await play(run.id, { kind: 'action', key: 'open_code' });
-  while ((await service.scene(USER, run.id)).mode === 'phase')
-    await play(run.id, { kind: 'action', key: 'wait' });
-  await play(run.id, { kind: 'choose', option: 'c', elapsedMs: 5000 });
-  await play(run.id, { kind: 'say', text: 'Dạ em đang sửa chị.' });
-  await service.flag(USER, run.id, {
-    activityKey: 'n1',
-    reason: 'Câu thoại hơi gượng',
-  });
-  await play(run.id, { kind: 'action', key: 'chot_nguyen_nhan' });
-  await play(run.id, {
-    kind: 'save_artefact',
-    artefact: 'ghi_chu_su_co',
-    fields: { hien_tuong: 'Chậm', nguyen_nhan: 'Vòng lặp', da_lam: 'Vá' },
-    ticks: ['h3', 'h4'],
-  });
-  await play(run.id, { kind: 'action', key: 'gui_anh_an' });
-  await play(run.id, { kind: 'confirm_end' });
-  await play(run.id, {
-    kind: 'save_artefact',
-    artefact: 'email_an',
-    fields: {
-      nguyen_nhan: 'Vòng lặp',
-      huong_xu_ly: 'Gom truy vấn',
-      rui_ro: 'Theo dõi log, lỗi thì rollback.',
-    },
-  });
-  await play(run.id, {
-    kind: 'say',
-    text: 'Em theo dõi log và rollback nếu lỗi.',
-  });
-
+  const { steps } = loadPlaythrough(
+    join(__dirname, '../scripts/ai-lab/playthroughs/lam-tot.json'),
+  );
+  for (const step of steps) {
+    const { do: kind, ifAwait: _ifAwait, ...args } = step;
+    if (kind === 'start') continue; // POST /shift-runs đã đưa ca vào n0.
+    const scene = await service.scene(USER, run.id);
+    if (!stepApplies(step, scene.await.kind)) continue;
+    if (kind === 'choose')
+      await service.flag(USER, run.id, {
+        activityKey: 'n1',
+        reason: 'Câu thoại hơi gượng',
+      });
+    await play(run.id, { kind, ...args } as TurnInput);
+  }
   return run;
 }
 
@@ -210,7 +181,7 @@ describe('luồng ca làm (API + worker)', () => {
     expect(await service.tasks('SWE_BACKEND', 'L3')).toEqual([
       expect.objectContaining({
         taskId: SEED,
-        title: 'Sự cố hệ thống giờ cao điểm!',
+        title: 'Chín trăm đơn của Minh Phát',
         minutes: 140,
       }),
     ]);
@@ -301,10 +272,10 @@ describe('luồng ca làm (API + worker)', () => {
     let down = true;
     const fake = new FakeShiftNarrator();
     const narrator: ShiftNarrator = {
-      narrate: async (req) =>
+      narrate: async (req, opts) =>
         down
           ? { status: 'unavailable', reason: 'no_model' }
-          : fake.narrate(req),
+          : fake.narrate(req, opts),
     };
     const { service, play, published, drain, prisma } = setup(narrator);
     const { run } = await service.start(USER, { taskId: SEED });
@@ -449,4 +420,127 @@ describe('luồng ca làm (API + worker)', () => {
     });
     expect(published.filter((e) => e.type === 'summary.ready').length).toBe(1);
   });
+
+  it.each(['say', 'end_conversation'] as const)(
+    'chơi trọn ca 5.2 với lượt báo tin %s: FINISHED và tổng kết chưa chấm',
+    async (lastWordInput) => {
+      const fake = new FakeShiftNarrator();
+      const narrate = jest.fn(fake.narrate.bind(fake));
+      const { service, play, prisma, published } = setup({ narrate });
+      const { run } = await service.start(USER, { taskId: SEED });
+      await service.addNote(USER, run.id, 'Nhớ xem log trước');
+      const { steps } = loadPlaythrough(
+        join(__dirname, '../scripts/ai-lab/playthroughs/lam-tot.json'),
+      );
+
+      for (const step of steps) {
+        const { do: kind, ifAwait, ...args } = step;
+        if (kind === 'start') continue; // POST /shift-runs đã đưa ca vào n0.
+        const scene = await service.scene(USER, run.id);
+        if (!stepApplies(step, scene.await.kind)) continue;
+        if (kind === 'choose')
+          await service.flag(USER, run.id, {
+            activityKey: 'n1',
+            reason: 'Câu thoại hơi gượng',
+          });
+
+        if (ifAwait === 'last_word') {
+          expect(scene.await).toMatchObject({
+            kind: 'last_word',
+            to: 'support',
+          });
+          expect(published).toContainEqual(
+            expect.objectContaining({
+              type: 'turn.done',
+              payload: expect.objectContaining({
+                scene: expect.objectContaining({ await: scene.await }),
+              }),
+            }),
+          );
+          const result = await play(
+            run.id,
+            lastWordInput === 'say'
+              ? TurnSchema.parse({ kind, turnId: randomUUID(), ...args })
+              : { kind: 'end_conversation' },
+          );
+          const lines = await service.transcript(USER, run.id);
+          const lastWord = lines.filter((line) => line.context === 'last_word');
+          if (lastWordInput === 'say') {
+            expect(result.status).toBe(200);
+            expect(lastWord.map(({ kind }) => kind)).toEqual(['player', 'npc']);
+          } else {
+            expect(result.status).toBe(202);
+            expect(lastWord).toEqual([]);
+            const review = await service.scene(USER, run.id);
+            expect(review.await).toMatchObject({
+              kind: 'probe_answer',
+              review: 'hua_con_treo',
+            });
+            await play(run.id, {
+              kind: 'say',
+              text: 'Em sẽ báo lại chị ngay.',
+            });
+          }
+        } else {
+          await play(
+            run.id,
+            TurnSchema.parse({ kind, turnId: randomUUID(), ...args }),
+          );
+        }
+      }
+
+      const transcript = await service.transcript(USER, run.id);
+      expect(transcript).toContainEqual(
+        expect.objectContaining({
+          kind: 'system',
+          speaker: 'bot_deploy',
+          text: 'Build module thanh toán #482 bắt đầu chạy…',
+        }),
+      );
+      expect(transcript).toContainEqual(
+        expect.objectContaining({
+          kind: 'system',
+          speaker: 'bot_deploy',
+          context: 'epilogue',
+        }),
+      );
+      expect(transcript).toContainEqual(
+        expect.objectContaining({
+          kind: 'npc',
+          speaker: 'mentor',
+          text: 'Vậy hổng phải DB rồi.',
+        }),
+      );
+      expect(
+        narrate.mock.calls
+          .flatMap(([req]) => req.recent)
+          .some(
+            ({ speaker }) =>
+              speaker === 'bot_deploy' || speaker === 'bot_giam_sat',
+          ),
+      ).toBe(false);
+
+      expect((await service.get(USER, run.id)).status).toBe('FINISHED');
+      // Ca làm chưa chấm: không ghi completedAt, nên tiến độ và mở cấp của luồng cũ không tính nó.
+      expect(
+        prisma.scenarioRun.rows.find((r) => r.id === run.id)?.completedAt,
+      ).toBeNull();
+      const summary = await service.summary(USER, run.id);
+      expect(summary).toMatchObject({ graded: false, seedId: SEED });
+      expect(summary.nodes.every((n) => n.status === 'done')).toBe(true);
+      expect(summary.promises.map(({ status }) => status)).toEqual([
+        'kept',
+        'kept',
+        lastWordInput === 'say' ? 'kept' : 'carried',
+      ]);
+      expect((await service.scene(USER, run.id)).notes).toEqual([
+        expect.objectContaining({ text: 'Nhớ xem log trước' }),
+      ]);
+      const events = prisma.runEvent.rows.filter((r) => r.runId === run.id);
+      expect(events.map((r) => r.seq)).toEqual(events.map((_, i) => i + 1));
+      expect(events.some((r) => r.type === 'CONTENT_FLAGGED')).toBe(true);
+      // Mở lại sau khi xong: lượt mới.
+      expect((await service.start(USER, { taskId: SEED })).created).toBe(true);
+    },
+  );
 });

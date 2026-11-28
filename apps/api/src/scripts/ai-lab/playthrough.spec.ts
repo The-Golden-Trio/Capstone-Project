@@ -164,22 +164,36 @@ describe('các kịch bản đi kèm', () => {
       const { seed } = fixtureShiftContext(p.seed);
       const optionKeys = seed.nodes.flatMap((n) => n.options.map((o) => o.key));
       for (const step of p.steps) {
-        if (step.do === 'action') {
-          const action = seed.actions.find((a) => a.key === step.key);
-          expect(action).toBeDefined();
-          const artefact = seed.artefacts.find((a) => a.id === action?.target);
-          for (const field of Object.keys(step.fields ?? {}))
-            expect(artefact?.fields?.map((f) => f.id)).toContain(field);
-        } else if (step.do === 'save_artefact') {
-          const artefact = seed.artefacts.find((a) => a.id === step.artefact);
-          expect(artefact).toBeDefined();
-          for (const field of Object.keys(step.fields))
-            expect(artefact?.fields?.map((f) => f.id)).toContain(field);
-          for (const tick of step.ticks ?? [])
-            expect(artefact?.ticks?.map((t) => t.id)).toContain(tick);
-        } else if (step.do === 'choose') {
+        if (step.do === 'choose') {
           expect(optionKeys).toContain(step.option);
+          continue;
         }
+        if (step.do !== 'action' && step.do !== 'save_artefact') continue;
+
+        const action =
+          step.do === 'action'
+            ? seed.actions.find((a) => a.key === step.key)
+            : undefined;
+        if (step.do === 'action') expect(action).toBeDefined();
+        const id = step.do === 'save_artefact' ? step.artefact : action?.target;
+        const artefact = seed.artefacts.find((a) => a.id === id);
+        if (step.do === 'save_artefact') expect(artefact).toBeDefined();
+
+        const fields = [
+          ...(artefact?.fields ?? []).map((f) => f.id),
+          ...(artefact?.selects ?? [])
+            .filter((s) => s.reason)
+            .map((s) => `${s.id}__why`),
+        ];
+        const ticks = [
+          ...(artefact?.ticks ?? []).map((t) => t.id),
+          ...(artefact?.selects ?? []).flatMap((s) =>
+            s.options.map((o) => `${s.id}=${o.id}`),
+          ),
+        ];
+        for (const field of Object.keys(step.fields ?? {}))
+          expect(fields).toContain(field);
+        for (const tick of step.ticks ?? []) expect(ticks).toContain(tick);
       }
     },
   );

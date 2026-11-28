@@ -325,6 +325,33 @@ describe('JudgePanelService', () => {
     expect(r.grades[0]).toMatchObject({ score: 1, judgeScores: [2, 1] });
   });
 
+  it('lượt gọi lỗi có thể đã bị tính tiền thì ghi cận trên; bị từ chối trước thì 0', async () => {
+    const { service } = setup(
+      byModel({
+        'google/gemini-3.8-flash': { status: 500 },
+        'google/gemini-3.5-flash-lite': { status: 429 },
+        'anthropic/claude-haiku-5.5': reply('2'),
+        'openai/gpt-6-luna': reply('1'),
+      }),
+    );
+    const r = await service.grade(input());
+    const google = r.records.filter((c) => c.modelKey.startsWith('gemini'));
+    const server = google.filter((c) => c.error?.kind === 'server');
+    const limited = google.filter((c) => c.error?.kind === 'rate_limited');
+    expect(server.length).toBeGreaterThan(0);
+    expect(limited.length).toBeGreaterThan(0);
+    for (const c of server) {
+      expect(c.cost?.basis).toBe('upper_bound');
+      expect(c.cost?.usd).toBeGreaterThan(0);
+    }
+    for (const c of limited) expect(c.cost).toEqual({ usd: 0, basis: 'list' });
+    expect(r.cost.basis).toBe('upper_bound');
+    expect(r.cost.usd).toBeCloseTo(
+      r.records.reduce((sum, c) => sum + (c.cost?.usd ?? 0), 0),
+      12,
+    );
+  });
+
   it('D-132: hai họ hỏng thì vẫn chờ, kể cả ở lượt thử cuối', async () => {
     const { service } = setup(
       byModel({

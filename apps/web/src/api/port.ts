@@ -80,7 +80,7 @@ export interface PlayService {
   run(runId: string): Promise<ShiftRun>;
   scene(runId: string): Promise<SceneView>;
   transcript(runId: string, after?: number): Promise<TranscriptLine[]>;
-  turn(runId: string, input: TurnInput): Promise<TurnResult>;
+  turn(runId: string, input: TurnInput, turnId?: string): Promise<TurnResult>;
   resume(runId: string): Promise<void>;
   addNote(runId: string, text: string): Promise<void>;
   notes(runId: string): Promise<Array<{ text: string; at: string }>>;
@@ -103,6 +103,17 @@ export type PlayEvent =
   | { type: 'done'; turnId: string; scene: SceneView; ended: boolean }
   | { type: 'delay'; turnId: string; waitingFor: 'narration' | 'checks' }
   | { type: 'paused'; turnId: string; reason: string };
+
+export function createTurnId(): string {
+  if (typeof crypto.randomUUID === 'function') return crypto.randomUUID();
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  bytes[6] = (bytes[6] & 0x0f) | 0x40;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = Array.from(bytes, (byte) =>
+    byte.toString(16).padStart(2, '0'),
+  ).join('');
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
 
 export interface FeedbackService {
   ratingForm(occupationCode: string): Promise<RatingForm>;

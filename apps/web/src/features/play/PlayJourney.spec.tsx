@@ -34,6 +34,10 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
     </Routes>,
     `/play/${run.runId}`,
   );
+  const initial = await api.play.scene(run.runId);
+  for (let slide = 0; slide < (initial.introSlides?.length ?? 0) - 1; slide++) {
+    fireEvent.click(await screen.findByRole('button', { name: 'Tiếp theo' }));
+  }
   fireEvent.click(await screen.findByRole('button', { name: 'Vào ca' }));
 
   async function sendByUi(action: () => void) {
@@ -51,15 +55,16 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
     const form = within(scope);
     for (const field of form.getAllByRole('textbox'))
       fireEvent.change(field, { target: { value: reply } });
-    for (const checkbox of form.queryAllByRole('checkbox'))
-      fireEvent.click(checkbox);
+    for (const checkbox of form.queryAllByRole<HTMLInputElement>('checkbox')) {
+      if (!checkbox.checked) fireEvent.click(checkbox);
+    }
+    for (const select of form.queryAllByRole<HTMLSelectElement>('combobox')) {
+      const option = Array.from(select.options).find((item) => item.value);
+      assert(option);
+      fireEvent.change(select, { target: { value: option.value } });
+    }
   }
-  const used = new Set<string>();
-  const covered = new Set<string>();
-  let conversationSpoke = false;
-  let scene: SceneView = await api.play.scene(run.runId);
-  for (let i = 0; i < 100 && !scene.ended; i++) {
-    // Space đi qua nhịp, target là body để không gửi nhầm form đang focus.
+  function revealBeats() {
     for (
       let beat = 0;
       beat < 25 && screen.queryByText(/Bấm vào hộp thoại hoặc nhấn Space/);
@@ -67,9 +72,39 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
     ) {
       fireEvent.keyDown(document.body, { key: ' ' });
     }
+  }
+
+  async function inspectDocument(action: SceneView['actions'][number]) {
+    if (action.kind !== 'open' && action.kind !== 'run') return;
+    const opened = (await api.play.scene(run.runId)).documents.find(
+      (doc) => doc.id === action.target,
+    );
+    if (!opened) return;
+    const viewer = await screen.findByRole('dialog', { name: opened.title });
+    fireEvent.keyDown(viewer, { key: 'Escape' });
+
+    const count = turn.mock.calls.length;
+    const dock = within(
+      screen.getByRole('navigation', { name: 'Tài liệu đã mở' }),
+    );
+    fireEvent.click(dock.getByRole('button', { name: opened.title }));
+    const reopened = await screen.findByRole('dialog', { name: opened.title });
+    expect(turn).toHaveBeenCalledTimes(count);
+    fireEvent.click(
+      within(reopened).getByRole('button', { name: 'Đóng cửa sổ' }),
+    );
+  }
+
+  const used = new Set<string>();
+  const covered = new Set<string>();
+  let conversationSpoke = false;
+  let scene: SceneView = await api.play.scene(run.runId);
+  for (let i = 0; i < 100 && !scene.ended; i++) {
+    revealBeats();
     switch (scene.await.kind) {
       case 'node_reply':
       case 'probe_answer':
+      case 'last_word':
         fireEvent.change(
           await within(screen.getByRole('main')).findByRole('textbox'),
           { target: { value: reply } },
@@ -112,9 +147,11 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
         break;
       }
       case 'node_artefact': {
-        const submit = await screen.findByRole('button', {
-          name: /^(Gửi|Gửi và kết thúc ca)$/,
+        assert(scene.node?.form);
+        const editor = await screen.findByRole('dialog', {
+          name: scene.node.form.title,
         });
+        const submit = within(editor).getByRole('button', { name: /^Gửi/ });
         const form = submit.closest('form');
         assert(form);
         fillForm(form);
@@ -124,7 +161,11 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
       }
       case 'confirm_end':
         await sendByUi(() =>
-          fireEvent.click(screen.getByRole('button', { name: 'Nộp luôn' })),
+          fireEvent.click(
+            within(screen.getByRole('dialog')).getByRole('button', {
+              name: 'Gửi',
+            }),
+          ),
         );
         covered.add('confirm_end');
         break;
@@ -158,11 +199,19 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
           fillForm(dialog);
           await sendByUi(() =>
             fireEvent.click(
-              within(dialog).getByRole('button', { name: 'Xong' }),
+              within(dialog).getByRole('button', {
+                name:
+                  action.form?.view?.type === 'patch'
+                    ? 'Lưu bản vá'
+                    : action.form?.view?.type === 'channel'
+                      ? 'Gửi'
+                      : 'Xong',
+              }),
             ),
           );
         } else {
           await sendByUi(() => fireEvent.click(button));
+          await inspectDocument(action);
         }
         covered.add('action');
         break;
@@ -188,6 +237,7 @@ it('vào ca SWE_BACKEND.L3.m2, thao tác tới cuối, tự soi rồi xem điể
       'confirm_end',
     ]),
   );
+  revealBeats();
   expect(await screen.findByText('Ca làm đã khép lại')).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Tiếp tục' }));
   expect(

@@ -13,6 +13,7 @@ import type {
   CastSlot,
   Fact,
   LevelPack,
+  NodeOption,
   ShiftNode,
   ShiftSeed,
 } from './schema.js';
@@ -48,14 +49,26 @@ export function actionOf(ctx: ShiftContext, key: string): Action | undefined {
 
 export const flagSet = (s: ShiftState): Set<string> => new Set(s.flags);
 
+export function optionText(
+  option: NodeOption,
+  flags: ReadonlySet<string>,
+): string {
+  return (
+    option.text_if.find((variant) => matches(variant.if, flags))?.text ??
+    option.text
+  );
+}
+
 /** Mọi nút đứng trước nút này trong lõi đã xong (A1b: lõi đi đúng thứ tự). */
 export function previousDone(
   s: ShiftState,
   ctx: ShiftContext,
   id: string,
 ): boolean {
+  if (nodeOf(ctx, id).interjection) return true;
   for (const node of ctx.seed.nodes) {
     if (node.id === id) return true;
+    if (node.interjection) continue;
     const status = s.nodes[node.id]?.status;
     if (status !== 'done' && status !== 'skipped') return false;
   }
@@ -63,11 +76,26 @@ export function previousDone(
 }
 
 /** Nút lõi kế tiếp chưa xảy ra. */
-export function nextCoreNode(
-  s: ShiftState,
-  ctx: ShiftContext,
-): ShiftNode | undefined {
-  return ctx.seed.nodes.find((n) => s.nodes[n.id]?.status === 'pending');
+function nextTimePoint(s: ShiftState, ctx: ShiftContext): number {
+  if (ctx.seed.version < 5) {
+    const next = ctx.seed.nodes.find(
+      (node) => s.nodes[node.id]?.status === 'pending',
+    );
+    return next?.trigger.by === 'time' && next.trigger.at
+      ? pointOf(next.trigger.at, ctx)
+      : Infinity;
+  }
+  let next = Infinity;
+  for (const node of ctx.seed.nodes) {
+    if (
+      s.nodes[node.id]?.status === 'pending' &&
+      node.trigger.by === 'time' &&
+      node.trigger.at &&
+      previousDone(s, ctx, node.id)
+    )
+      next = Math.min(next, pointOf(node.trigger.at, ctx));
+  }
+  return next;
 }
 
 export const isRevealed = (s: ShiftState, factId: string): boolean =>
@@ -193,6 +221,7 @@ export function buildNarrateRequest(
   return {
     requestId: args.requestId,
     task: args.task,
+    ...(ctx.seed.version >= 5 && s.activeNode ? { node: s.activeNode } : {}),
     slot: args.slot,
     present,
     channel: args.channel,
@@ -263,14 +292,14 @@ export function actionAvailability(
             : action.points,
       };
     case 'wait': {
-      const next = nextCoreNode(s, ctx);
-      if (!next || next.trigger.by !== 'time' || !next.trigger.at)
+      const next = nextTimePoint(s, ctx);
+      if (!Number.isFinite(next))
         return no('Không có việc theo giờ sắp tới', 0);
-      const gap = pointOf(next.trigger.at, ctx) - s.points;
+      const gap = next - s.points;
       if (gap <= 0 || gap > ctx.seed.wait_window) return no('Chưa tới lúc', 0);
       return {
         ok: true,
-        points: waitPoints(s, ctx, pointOf(next.trigger.at, ctx)),
+        points: waitPoints(s, ctx, next),
       };
     }
     case 'trigger': {

@@ -256,7 +256,10 @@ export interface IslandMap {
 
 /* ── Chơi một ca (shift-runs) ──────────────────────────────────────── */
 
-export type SceneView = shift.SceneView;
+export type SceneView = shift.SceneView & {
+  paused?: boolean;
+  pendingTurnId?: string | null;
+};
 export type TranscriptLine = shift.TranscriptLine;
 
 export interface ShiftRun {
