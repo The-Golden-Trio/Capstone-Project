@@ -19,6 +19,7 @@
  * Tuỳ chọn:
  *     --play=<tên>|a,b|all|<file.json>  kịch bản trong `ai-lab/playthroughs/` hoặc đường dẫn file (mặc định all)
  *     --play=interactive      tester tự chơi; thêm --seed=<mã> (mặc định SWE_BACKEND.L3.m2), xem `ai-lab/interactive/play.ts`
+ *     --play=persona          chạy batch persona. Xem tài liệu tích hợp AI-4/AI-5 cho tùy chọn cohort và ngân sách batch.
  *     --only=narrator|checker|judge  chỉ thử riêng một service; các service còn lại chạy bản giả
  *     --out=thư/mục           ghi nhật ký JSON từng lượt gọi (request, response nguyên văn, không có key);
  *                             chơi tay ghi thêm kịch bản `.json` chạy lại được và báo cáo `.md`
@@ -48,6 +49,7 @@ import {
 } from './ai-lab/ports';
 import { createLineReader } from './ai-lab/interactive/lineReader';
 import { DEFAULT_SEED, playInteractive } from './ai-lab/interactive/play';
+import { runPersonaBatch } from './ai-lab/persona-batch';
 import { selectPlaythroughs } from './ai-lab/playthrough';
 import { printResult, printingObserver, rule, writeLog } from './ai-lab/report';
 import { runPlaythrough, type RunResult } from './ai-lab/runner';
@@ -179,7 +181,8 @@ async function main(): Promise<void> {
 
   const play = args.get('play') ?? 'all';
   const interactive = play === 'interactive';
-  const playthroughs = interactive
+  const persona = play === 'persona';
+  const playthroughs = interactive || persona
     ? []
     : selectPlaythroughs(PLAYTHROUGH_DIR, play);
   const outDir = args.get('out');
@@ -200,6 +203,12 @@ async function main(): Promise<void> {
     if (only) console.log('(--only không có tác dụng ở chế độ fake)');
     runtime = fakeRuntime({ allowUnconfirmedProviders: false });
   }
+  if (persona) {
+    if (!(await runPersonaBatch(args, { runtime, only, budgetUsd, identity: IDENTITY })))
+      process.exitCode = 1;
+    return;
+  }
+
   const ports = createPorts(runtime, only);
   console.log(
     `Chế độ ${mode}: dẫn truyện ${ports.narratorMode}, bộ phán ${ports.checkerMode}.`,

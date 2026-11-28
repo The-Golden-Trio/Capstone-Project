@@ -53,7 +53,27 @@ pnpm exec nx run @datn/api:ai-lab -- --mode=live --play=lam-tot --out=tmp/lab   
 pnpm exec nx run @datn/api:ai-lab -- --mode=live --only=narrator           # chỉ AI-4 chạy thật, bộ phán dùng bản giả
 ```
 
-Kịch bản có sẵn: `lam-tot` (điều tra, hẹn báo lại, vá đủ ba ý, email có cách kiểm và rollback), `lam-nhanh-quen-hen` (hứa giờ rồi trễ, email thiếu rollback), `lac-de-tan-cong` (lạc đề, chèn lệnh, đòi xem đáp án). Thêm kịch bản = thêm một file JSON; bước có `ifAwait` chỉ chạy khi engine đang chờ đúng loại đó, vì nhánh của engine đổi theo câu trả lời của bộ phán. In ra từng bước, cảnh hiện ra, mỗi lượt gọi AI (loại việc, model, nhịp trả về, kết quả R1–R4 từng lần thử, đáp án có/không kèm câu trích, cờ vừa bật, độ trễ, token, tiền) và `shiftSummary`. `--out` ghi mỗi lượt gọi một file JSON gồm request và response nguyên văn, key thay bằng tên biến. Bước chạy sau ca (chấm bằng AI-5) là một `LabStage` thêm vào `LAB_STAGES` trong `ai-lab/stages.ts`; hiện danh sách trống.
+Kịch bản có sẵn: `lam-tot` (điều tra, hẹn báo lại, vá đủ ba ý, email có cách kiểm và rollback), `lam-nhanh-quen-hen` (hứa giờ rồi trễ, email thiếu rollback), `lac-de-tan-cong` (lạc đề, chèn lệnh, đòi xem đáp án). Thêm kịch bản = thêm một file JSON; bước có `ifAwait` chỉ chạy khi engine đang chờ đúng loại đó, vì nhánh của engine đổi theo câu trả lời của bộ phán. In ra từng bước, cảnh hiện ra, mỗi lượt gọi AI (loại việc, model, nhịp trả về, kết quả R1–R4 từng lần thử, đáp án có/không kèm câu trích, cờ vừa bật, độ trễ, token, tiền) và `shiftSummary`. `--out` ghi mỗi lượt gọi một file JSON gồm request và response nguyên văn, key thay bằng tên biến. Bước chạy sau ca (chấm bằng AI-5) là một `LabStage` thêm vào `LAB_STAGES` trong `ai-lab/stages.ts`; nhánh lab đã đăng ký bước chấm checklist.
+
+### Chơi thử tự động bằng persona trong AI-3
+
+```powershell
+pnpm exec nx run @datn/api:ai-lab -- --play=persona --mode=fake
+pnpm exec nx run @datn/api:ai-lab -- --play=persona --mode=live --persona=khach-san --policy=dieu-tra-ky --baseline --limit=2 --budget=0.25 --batch-budget=0.50
+```
+
+Mặc định dùng ca `SWE_BACKEND.L3.m2`, với sáu hồ sơ và ba cách chơi. Bốn hồ sơ được rút gọn từ Nemotron-Personas-Vietnam, hai hồ sơ Backend do nhóm đặt để so sánh mức quen nghề. `fake` chạy hai kịch bản có sẵn qua cùng runner, chủ yếu để kiểm tra luồng engine và chấm. `live` dùng model ra quyết định theo từng cảnh, tốn tiền và yêu cầu khai báo `--batch-budget`. Model theo chuỗi cấu hình narrator hiện hành, có thể chọn một họ cụ thể qua `--persona-family=qwen` hoặc `--persona-family=deepseek` nếu có cấu hình phù hợp. Họ model persona phải khác các họ AI-5.
+
+- `--cohort=<file.json>`, `--persona=<id>`, `--policy=all|dieu-tra-ky|lam-voi|hoi-tro-giup` chọn tập thử. `--baseline` thêm ca đối chứng với cùng chính sách và bỏ hồ sơ trong prompt. `--limit` cắt batch, mặc định hai ca khi gọi thật.
+- `--max-turns`, `--timeout-ms`, `--budget` giới hạn từng ca. `--batch-budget` theo dõi tổng chi phí gọi model, gồm AI-4, checker, persona và AI-5. Chi phí của lượt gọi lỗi có thể là ước tính theo cận trên.
+- `--out=<thư mục>` đổi nơi ghi kết quả, mặc định `apps/api/dist/persona`. Mỗi batch có `batch.json` và thư mục theo ca với `trial.json`, `result.json` và `replay.json`. Dùng `--play=<đường dẫn replay.json>` để chạy lại. `batch.json` lưu cờ, mã case và mẫu audit theo `--audit-seed`. Thư mục `review/` chứa transcript và thao tác cho người chấm duyệt mù trước khi xem điểm AI-5.
+- Bộ chọn mẫu từ Parquet chạy ngoại tuyến bằng Python có `pyarrow`. Tải trước shard của [revision dữ liệu đã ghim](https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam/tree/ec2f7347a07ceca8b8b0d1fe49fbd35ca08201ea/data), chạy lệnh dưới đây rồi rà nghề, kỹ năng và gán mức quen nghề theo ca thử. Có thể lặp `--occupation` để lọc nghề.
+
+```powershell
+python apps/api/src/scripts/ai-lab/personas/prepare_cohort.py <shard-1.parquet> <shard-2.parquet> --revision ec2f7347a07ceca8b8b0d1fe49fbd35ca08201ea --seed jobquest-persona-v1 --out cohort.json
+```
+
+Batch ghi artifact trong lab và có nguồn `synthetic_persona`. Kết quả model giả xác nhận luồng kỹ thuật. Lượt thật và nhãn độc lập của DE là cơ sở đánh giá chất lượng AI-5 theo D-93. [Ghi chú lý thuyết và kế hoạch](../../../../research/research_notes/Giải%20pháp%20AI%20cho%20JobQuest/persona_agent_playtest.md)
 
 ## 3. Bản đồ code
 

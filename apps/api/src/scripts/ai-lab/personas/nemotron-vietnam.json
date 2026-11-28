@@ -1,0 +1,76 @@
+{
+  "source": {
+    "url": "https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam",
+    "revision": "ec2f7347a07ceca8b8b0d1fe49fbd35ca08201ea",
+    "attribution": "NVIDIA và các tác giả Nemotron-Personas-Vietnam, https://creativecommons.org/licenses/by/4.0/",
+    "license": "CC BY 4.0",
+    "selection": "Bốn bản ghi chọn thủ công từ Dataset Viewer, bỏ tên và tóm tắt kỹ năng/mục tiêu. Hai profile Backend do nhóm mô phỏng để có đối chứng kinh nghiệm. Mức quen nghề do JobQuest gán."
+  },
+  "profiles": [
+    {
+      "id": "khach-san",
+      "sourceUuid": "89e85296-fd3c-5ced-8d9c-7c8fe8bdac54",
+      "occupation": "Nhân viên khách sạn",
+      "skills": [
+        "Kiểm tra phòng",
+        "Xử lý yêu cầu của khách",
+        "Sắp xếp công việc theo thời gian"
+      ],
+      "goal": "Cải thiện cách xử lý yêu cầu phát sinh và giữ công việc ổn định.",
+      "familiarity": "mới"
+    },
+    {
+      "id": "trong-ca-phe",
+      "sourceUuid": "adb04454-dcd4-5bce-b1c9-269b3e764c46",
+      "occupation": "Người trồng cà phê",
+      "skills": [
+        "Nhận biết dấu hiệu sâu bệnh",
+        "Theo dõi tình trạng đất và cây"
+      ],
+      "goal": "Cải thiện năng suất vụ tới bằng kinh nghiệm quan sát và thử nghiệm.",
+      "familiarity": "mới"
+    },
+    {
+      "id": "tap-hoa",
+      "sourceUuid": "6cdf3803-a845-57e4-9aca-e1f9257a7e06",
+      "occupation": "Chủ cửa hàng tạp hóa",
+      "skills": [
+        "Theo dõi số lượng hàng tồn",
+        "Tính dòng tiền",
+        "Bảo trì thiết bị cơ bản"
+      ],
+      "goal": "Mở rộng việc kinh doanh nhưng kiểm soát được chi phí.",
+      "familiarity": "gần nghề"
+    },
+    {
+      "id": "quan-ly-cua-hang",
+      "sourceUuid": "05cfc3bd-23e9-56d2-b1f5-07efb57a9023",
+      "occupation": "Quản lý cửa hàng",
+      "skills": [
+        "Vận hành phần mềm bán lẻ",
+        "Kiểm kê kho",
+        "Xử lý sự cố vận hành"
+      ],
+      "goal": "Phát triển kỹ năng quản lý và thử sức với công việc có nhiều công nghệ hơn.",
+      "familiarity": "gần nghề"
+    },
+    {
+      "id": "backend-moi-di-lam",
+      "occupation": "Lập trình viên Backend mới đi làm",
+      "skills": ["Đọc log API", "Truy vấn SQL cơ bản", "Kiểm thử trên staging"],
+      "goal": "Học cách tham gia xử lý sự cố cùng nhóm.",
+      "familiarity": "quen Backend"
+    },
+    {
+      "id": "backend-van-hanh",
+      "occupation": "Kỹ sư Backend phụ trách vận hành",
+      "skills": [
+        "Theo dõi độ trễ",
+        "Chẩn đoán sự cố",
+        "Kiểm thử hồi quy và phối hợp triển khai"
+      ],
+      "goal": "Luyện cách ưu tiên bằng chứng và trao đổi với các bên liên quan khi xử lý sự cố.",
+      "familiarity": "quen Backend"
+    }
+  ]
+}
