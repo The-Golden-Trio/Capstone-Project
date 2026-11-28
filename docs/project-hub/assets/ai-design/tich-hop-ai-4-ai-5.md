@@ -75,6 +75,22 @@ python apps/api/src/scripts/ai-lab/personas/prepare_cohort.py <shard-1.parquet> 
 
 Batch ghi artifact trong lab và có nguồn `synthetic_persona`. Kết quả model giả xác nhận luồng kỹ thuật. Lượt thật và nhãn độc lập của DE là cơ sở đánh giá chất lượng AI-5 theo D-93. [Ghi chú lý thuyết và kế hoạch](../../../../research/research_notes/Giải%20pháp%20AI%20cho%20JobQuest/persona_agent_playtest.md)
 
+### So sánh AI-5 với decision model trong lab
+
+```powershell
+pnpm exec nx run @datn/api:ai-lab -- --play=ai5-eval --mode=fake --decision-model=all
+pnpm exec nx run @datn/api:ai-lab -- --play=ai5-eval --mode=fake --input=<result.json>
+pnpm exec nx run @datn/api:ai-lab -- --play=ai5-eval --mode=live --fixture=lam-tot --budget=0.25
+```
+
+- Mặc định dựng đầu vào từ kịch bản `lam-tot` bằng engine và AI giả. Dùng `--fixture` để chọn kịch bản lab khác. `--input` nhận `result.json` của ca lab đã chấm, gồm ca persona, hoặc `snapshot.json` đã xuất. Chạy lại từ snapshot chỉ gọi judge.
+- AI-5 LLM chạy panel checklist hiện hành. Decision model nhận cùng dữ kiện đã khử định danh. Lượt `noul` trả xác suất cho applicability, A/B/C và cờ. Lượt `choice` chọn mã bằng chứng trong đoạn liên quan hoặc cả màn đối với cờ. Game-core kiểm câu trích, áp dụng luật cờ và quy mức cho một judge độc lập. Refusal, câu thiếu hoặc kiểu sai được báo chưa chấm.
+- Panel decision mặc định chạy song song `typesafe/jev-1.14`, `liquid/d1-ultra` và `nace-ai/drex-max`. Hai bên dùng cùng luật trung vị, đa số cờ và `pending` khi thiếu ghế. `--decision-model=all` chạy thêm `perplexity/pplx-decider-v1.2` riêng. Danh sách ba ID phân tách bằng dấu phẩy đổi panel. Một hoặc hai ID chạy từng model để chẩn đoán. Drex Max và Decider V1.2 cùng họ Qwen nên chỉ chọn một trong panel. `--decision-threshold` mặc định 0,5.
+- `--budget` là ngân sách cho một lần so sánh. Ba ghế decision giữ chỗ ngân sách chung trước khi gọi song song, sau đó ghi số thực tế từ `usage.cost`. Lượt gọi d1-ultra dự phòng chi phí theo số câu hỏi trong request.
+- Mỗi lần chạy xuất `snapshot.json` và `comparison.json` dưới `apps/api/dist/ai5-eval` hoặc thư mục `--out`. Báo cáo lưu hash đầu vào, kết quả hai panel và từng ghế, xác suất decision, bằng chứng, lỗi và điểm ghép cặp theo mục con–đoạn. `decisionPanel` ghi độ trễ và chi phí riêng của panel. Điểm hết giờ được đánh dấu riêng. `live` cần key OpenRouter, tính phí, và hiện dành cho dữ liệu mô phỏng. Dùng `--synthetic` khi đưa artifact giả vào lần chạy live.
+
+Chế độ này chạy thử thuật toán chấm và xuất dữ liệu để đối chiếu. Đánh giá với nhãn DE, hiệu chỉnh ngưỡng và cascade thuộc thí nghiệm sau. [Kế hoạch đánh giá AI-5](../../../../research/research_notes/Giải%20pháp%20AI%20cho%20JobQuest/ai5_decision_vs_llm_evaluation.md) · [OpenRouter Decisions API](https://openrouter.ai/docs/guides/features/decisions)
+
 ## 3. Bản đồ code
 
 ```

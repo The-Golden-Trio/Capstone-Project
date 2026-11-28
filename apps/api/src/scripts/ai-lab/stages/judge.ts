@@ -19,7 +19,7 @@ import { JudgePanelService } from '../../../ai/judge/judge-panel.service';
 import { FakeClock, fakeTransport } from '../../../ai/testing/fake-model';
 import type { LabStage, LabStageInput, LabStageResult } from '../stages';
 
-function fakeService(
+export function fakeService(
   segments: readonly shift.EvidenceSegment[],
   identity: LabStageInput['identity'],
 ): JudgePanelService {

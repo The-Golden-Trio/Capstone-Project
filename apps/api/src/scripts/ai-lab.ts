@@ -20,6 +20,7 @@
  *     --play=<tên>|a,b|all|<file.json>  kịch bản trong `ai-lab/playthroughs/` hoặc đường dẫn file (mặc định all)
  *     --play=interactive      tester tự chơi; thêm --seed=<mã> (mặc định SWE_BACKEND.L3.m2), xem `ai-lab/interactive/play.ts`
  *     --play=persona          chạy batch persona. Xem tài liệu tích hợp AI-4/AI-5 cho tùy chọn cohort và ngân sách batch.
+ *     --play=ai5-eval         so panel LLM với Decisions API trên cùng snapshot bằng chứng
  *     --only=narrator|checker|judge  chỉ thử riêng một service; các service còn lại chạy bản giả
  *     --out=thư/mục           ghi nhật ký JSON từng lượt gọi (request, response nguyên văn, không có key);
  *                             chơi tay ghi thêm kịch bản `.json` chạy lại được và báo cáo `.md`
@@ -37,6 +38,7 @@ import { aiSettingsFromEnv } from '../ai/ai.module';
 import { keyWarnings } from '../ai/gateway/diagnose';
 import type { AiSettings } from '../ai/gateway/models';
 import { loadAiEnv } from '../config/env';
+import { runAi5Eval } from './ai-lab/ai5-eval';
 import { parseBudgetUsd } from './ai-lab/budget';
 import { runCheck } from './ai-lab/check';
 import {
@@ -180,6 +182,17 @@ async function main(): Promise<void> {
   }
 
   const play = args.get('play') ?? 'all';
+  if (play === 'ai5-eval') {
+    if (only) throw new Error('--play=ai5-eval không dùng --only.');
+    const settings = mode === 'live' ? loadSettings() : null;
+    if (mode === 'live' && !settings) return;
+    const runtime = settings
+      ? liveRuntime(settings)
+      : fakeRuntime({ allowUnconfirmedProviders: false });
+    if (!(await runAi5Eval(args, runtime, IDENTITY, budgetUsd)))
+      process.exitCode = 1;
+    return;
+  }
   const interactive = play === 'interactive';
   const persona = play === 'persona';
   const playthroughs = interactive || persona

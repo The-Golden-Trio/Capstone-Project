@@ -191,6 +191,8 @@ The first feature is an expert-written reference answer. Without a reference, a 
 
 **Verification.** Stage A measures, on the synthetic benchmark described in the next section, each judge alone, each pair and the three-judge median against the known level, with the full reporting set; it runs the two ablations (one call for all competencies against one per competency; median against best single judge), the own-family test (mean signed error of each judge on answers written by each generator family), the bias probes with zero expected change, the stability of the panel median over repeated runs, and raw against redacted input. An English pre-check on ASAP-SAS and on the Mohler data-structures set costs no expert time. Stage B is the test of NFR-14: real responses rated blind by three experts per pilot role, the panel compared with the expert consensus by QWK, and expert–expert agreement by Krippendorff's alpha with the ordinal metric.
 
+**Checklist panel experiment, November 2026.** The lab now supports a paired comparison of a three-judge decision panel and the existing three-judge LLM panel under D-116. Both panels receive the same frozen evidence and use the same aggregation rules. The study compares each panel with blind expert labels and reports evidence quality, coverage, latency, cost, and shared errors between seats. The pilot model lineages and the held-out evaluation protocol are recorded in the research note. [AI-5 decision panel experiment](../research_notes/Giải%20pháp%20AI%20cho%20JobQuest/ai5_decision_vs_llm_evaluation.md)
+
 ## Public benchmarks inform the design, and only the project's own data can test NFR-14
 
 ### What exists for each component and what it can tell the project
