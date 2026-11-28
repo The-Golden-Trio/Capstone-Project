@@ -61,12 +61,32 @@
     'Nunito Variable', 'Nunito', ui-rounded, system-ui, -apple-system,
     'Segoe UI', sans-serif;
 
+  /*
+   * Nét: đúng ba độ dày, theo tầng (xem docs/plans/2026-11-25_nguyen-tac-giao-dien.md).
+   *   bold (3px)  vật cấp 1: thẻ đứng trên nền, nút bấm.
+   *   base (2px)  điều khiển nằm trong thẻ: ô nhập, chip lọc, thanh tiến độ, tab.
+   *   hair (1.5px) đường chia, viền ô lồng, chấm trạng thái.
+   * Không dùng 2.5px, 4px, 5px. Vật lồng trong thẻ không bao giờ dày hơn thẻ.
+   * Class: `border-[3px]`, `border-2`, `border-[1.5px]`.
+   */
+
+  /* Màu chữ phụ trên nền đêm (chữ trắng ngà mờ, đủ 4.5:1 với nền trời). */
+  --color-toon-night-ink: #c9d6f2;
+
   /* Bóng cứng lệch xuống phải: cảm giác giấy cắt dán, không nhoè. */
   --shadow-toon-sm: 2px 2px 0 0 #1e1b18;
   --shadow-toon: 4px 4px 0 0 #1e1b18;
   --shadow-toon-lg: 6px 6px 0 0 #1e1b18;
   --shadow-toon-press: 1px 1px 0 0 #1e1b18;
   --shadow-toon-focus: 0 0 0 3px #fffaf0, 0 0 0 6px #4f8db3;
+  /* Bóng mềm cho mặt đọc (thẻ, panel). Viền mực + bóng cứng giờ chỉ còn ở
+     thứ bấm được (nút), để nhìn là biết cái gì bấm được. */
+  --shadow-soft:
+    0 1px 0 0 rgb(255 255 255 / 0.65) inset, 0 2px 6px -2px rgb(6 10 26 / 0.22),
+    0 22px 44px -24px rgb(6 10 26 / 0.65);
+  --shadow-soft-lg:
+    0 1px 0 0 rgb(255 255 255 / 0.65) inset, 0 4px 12px -4px rgb(6 10 26 / 0.3),
+    0 34px 70px -30px rgb(6 10 26 / 0.8);
 
   --animate-toon-bob: toon-bob 3.2s ease-in-out infinite;
   --animate-toon-hop: toon-hop 0.55s cubic-bezier(0.3, 1.6, 0.5, 1) both;
@@ -185,11 +205,24 @@
 }
 
 /* Thẻ giấy viền đen, bóng cứng. */
+/* Mặt đọc: giấy kem, bo lớn, bóng mềm, không viền mực (25/11/2026). */
 @utility toon-card {
   background-color: var(--color-toon-paper);
-  border: 3px solid var(--color-toon-ink);
-  border-radius: 18px;
-  box-shadow: var(--shadow-toon);
+  border-radius: 22px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Ô lồng trong thẻ: tô nền cát nhạt, không viền, không bóng (tầng 2). */
+@utility toon-inset {
+  background-color: rgb(234 216 184 / 0.45);
+  border-radius: 14px;
+}
+
+/* Danh sách theo hàng trong một thẻ: đường chia mảnh thay cho thẻ con. */
+@utility toon-rows {
+  & > * + * {
+    border-top: 1.5px solid rgb(30 27 24 / 0.12);
+  }
 }
 
 /* Nền giấy có chấm mờ, dùng cho mặt bàn và khung lớn. */

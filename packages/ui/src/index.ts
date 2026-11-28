@@ -31,6 +31,7 @@ export * from './game/Frames';
 export * from './game/Stage';
 export * from './game/ToonClock';
 export * from './game/ToonControls';
+export * from './game/ToonKit';
 export * from './game/ToonLikeScale';
 export * from './tokens';
 export * from './lib/cn';

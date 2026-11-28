@@ -59,10 +59,10 @@ export function NightCard({
     <div
       {...rest}
       className={cn(
-        'relative min-w-0 rounded-[24px] border-[3px] p-6 font-toon-body shadow-toon-lg',
+        'relative min-w-0 rounded-[24px] p-6 font-toon-body shadow-soft',
         tone === 'paper'
-          ? 'border-toon-ink bg-toon-paper text-toon-ink'
-          : 'border-toon-night-deep bg-toon-night-soft text-toon-paper',
+          ? 'bg-toon-paper text-toon-ink'
+          : 'bg-toon-night-soft text-toon-paper',
         className,
       )}
     >
@@ -161,10 +161,10 @@ export function PillTabs<K extends string>({
               refs.current[next]?.focus();
             }}
             className={cn(
-              'inline-flex min-h-11 max-w-full items-center gap-2 rounded-t-2xl rounded-b-lg border-[3px] border-toon-night-deep px-4 py-2 font-toon text-base font-bold shadow-toon-sm focus-visible:outline-none focus-visible:shadow-toon-focus motion-safe:transition-transform motion-safe:hover:-translate-y-0.5',
+              'inline-flex min-h-10 max-w-full items-center gap-2 rounded-full px-4 py-1.5 font-toon text-base font-bold transition-colors focus-visible:outline-none focus-visible:shadow-toon-focus',
               active
                 ? 'bg-toon-star text-toon-ink'
-                : 'bg-toon-night-soft text-toon-paper hover:bg-toon-night',
+                : 'text-toon-night-ink hover:bg-toon-night-soft hover:text-toon-paper',
             )}
           >
             {item.icon && (
@@ -342,14 +342,14 @@ export function StatTile({
     <div
       {...rest}
       className={cn(
-        'flex min-w-0 items-center gap-4 rounded-[22px] border-[3px] border-toon-ink bg-toon-paper p-4 font-toon-body text-toon-ink shadow-toon',
+        'flex min-w-0 items-center gap-4 rounded-[22px] bg-toon-paper p-4 font-toon-body text-toon-ink shadow-soft',
         className,
       )}
     >
       <span
         aria-hidden="true"
         className={cn(
-          'grid size-12 shrink-0 place-items-center rounded-full border-[3px] border-toon-ink shadow-toon-sm',
+          'grid size-12 shrink-0 place-items-center rounded-full',
           statTones[tone],
         )}
       >
