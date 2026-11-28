@@ -1,5 +1,4 @@
 @startuml AD-04_GeneratingScenario
-title AD-04 · Generating scenario
 
 |Content Admin|
 |Domain Expert (author)|

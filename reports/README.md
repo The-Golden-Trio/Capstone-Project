@@ -28,6 +28,8 @@ latexmk -pdf -outdir=build main.tex    (tự chạy đủ số lần; PDF ở bu
 - Công thức: một dòng `$$ … $$` thành `equation` có đánh số; `$…$` trong câu giữ nguyên cho LaTeX (class đã nạp `amsmath`).
 - Dòng phụ trên bìa lấy từ comment `<!-- reporttype: Report: Chapters 1 to 5 and 7 -->` ở đầu `report.md`; không có comment thì giữ chữ mặc định "Report: Chapters 1 to 5.1".
 - Được phép bỏ qua chương hoặc mục chưa viết (ví dụ có Chương 7 khi chưa có Chương 6, hay §5.3.10 ngay sau §5.3.1): script đặt lại bộ đếm LaTeX để số in ra khớp số ghi trong `report.md`.
+- Mục không đánh số sau chương cuối: `# Tên {+}` đặt trước References (ví dụ Plan for Capstone Project), `# Tên {++}` đặt sau References (Appendix). Heading cấp 1 sau `## References` kết thúc danh sách tài liệu tham khảo.
+- Bảng có dòng tiếp nối (ô đầu rỗng, ví dụ các bước của một test case): script chỉ kẻ ngang ở những cột có nội dung, nên các ô ở trên trông như đã gộp. Phần chính (Chương 1–8) giới hạn 100 trang: sơ đồ phụ, use case description, bảng so sánh công nghệ và chi tiết kiểm thử nằm ở các Appendix 1–6.
 - Bảng use case viết thẳng bằng LaTeX trong `report.md`, từ dòng `\begin{usecase}{UC-E01}{Tên}` đến `\end{usecase}`. Script chép nguyên văn khối này; môi trường `usecase` và các lệnh `\ucrow`, `\ucsteps`, `\ucstep`, `\ucitem` định nghĩa trong hằng `MAIN`.
 - Bìa (tên môn, GVHD, nhóm, sinh viên) nằm trong hằng `MAIN` của `tools/report/md2tex.py`.
 - **Bài học 8–16/10:** Chương 5 từng được sửa tay trong `.tex` (bảng use case, activity diagram), nên `report.md` lệch với bản nộp 16/10. Ngày 19/10 đã đưa các sửa đó về `reports/master/report.md`; sinh lại từ file này ra đúng nội dung bản 16/10 (chỉ khác độ rộng cột tự tính). Từ bản sau, mọi sửa đi qua `report.md`.

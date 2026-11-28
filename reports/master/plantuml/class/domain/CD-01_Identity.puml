@@ -1,5 +1,4 @@
 @startuml CD-01_Identity
-title CD-01 · Domain model · Identity and access\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections A); the ERD is unchanged</size>
 hide empty members
 skinparam classAttributeIconSize 0
 skinparam linetype polyline

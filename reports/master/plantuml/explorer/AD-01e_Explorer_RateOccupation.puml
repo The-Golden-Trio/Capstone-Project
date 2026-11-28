@@ -1,5 +1,4 @@
 @startuml AD-01e_Explorer_RateOccupation
-title AD-01e · Explorer — rate a completed occupation
 
 |Explorer|
 |System|

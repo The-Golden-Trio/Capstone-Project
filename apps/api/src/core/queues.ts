@@ -28,6 +28,20 @@ export interface GradeJob {
 export const GRADING_ATTEMPTS = 5;
 export const GRADING_BACKOFF_MS = 15_000;
 
+/**
+ * Chấm một đoạn bằng chứng của ca làm (AI-5, checklist). Dùng chung queue
+ * `grading` với tên job `shift-segment`; `GradingProcessor` rẽ theo tên.
+ */
+export const SHIFT_GRADING_JOB = 'shift-segment';
+
+export interface ShiftGradeJob {
+  /** `ai_job.id` = `${runId}:${segment}`. */
+  aiJobId: string;
+  runId: string;
+  /** Id đoạn bằng chứng: id nút, `pha` hoặc `review`. */
+  segment: string;
+}
+
 export const redisOptions = (url: string) => ({
   url,
   // BullMQ yêu cầu `null` cho kết nối của worker: lệnh chặn không được tự huỷ.
@@ -67,7 +81,7 @@ export interface GenerationJob {
 
 @Injectable()
 export class QueueService implements OnModuleDestroy {
-  readonly grading: Queue<GradeJob>;
+  readonly grading: Queue<GradeJob | ShiftGradeJob>;
   readonly shift: Queue<ShiftTurnJob>;
   readonly email: Queue<EmailJob>;
   readonly generation: Queue<GenerationJob>;
@@ -79,7 +93,7 @@ export class QueueService implements OnModuleDestroy {
     this.generation = new Queue<GenerationJob>(GENERATION_QUEUE, {
       connection: redisOptions(url),
     });
-    this.grading = new Queue<GradeJob>(GRADING_QUEUE, {
+    this.grading = new Queue<GradeJob | ShiftGradeJob>(GRADING_QUEUE, {
       connection: redisOptions(url),
     });
     this.shift = new Queue<ShiftTurnJob>(SHIFT_QUEUE, {
@@ -101,6 +115,17 @@ export class QueueService implements OnModuleDestroy {
   /** `jobId` = `ai_job.id`: gửi lại cùng việc thì BullMQ bỏ qua bản trùng. */
   enqueueGrading(job: GradeJob): Promise<unknown> {
     return this.grading.add('grade', job, {
+      jobId: job.aiJobId,
+      attempts: GRADING_ATTEMPTS,
+      backoff: { type: 'exponential', delay: GRADING_BACKOFF_MS },
+      removeOnComplete: 1000,
+      removeOnFail: 1000,
+    });
+  }
+
+  /** `jobId` = `ai_job.id`: gửi lại cùng đoạn thì BullMQ bỏ qua bản trùng. */
+  enqueueShiftGrading(job: ShiftGradeJob): Promise<unknown> {
+    return this.grading.add(SHIFT_GRADING_JOB, job, {
       jobId: job.aiJobId,
       attempts: GRADING_ATTEMPTS,
       backoff: { type: 'exponential', delay: GRADING_BACKOFF_MS },

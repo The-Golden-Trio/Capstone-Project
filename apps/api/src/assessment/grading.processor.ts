@@ -46,11 +46,16 @@ import {
   REDIS_URL,
   redisOptions,
   type GradeJob,
+  type ShiftGradeJob,
 } from '../core/queues';
 import { RunLogService, type LoadedRun } from '../core/run-log.service';
 import { StreamService } from '../notification/stream.service';
 import { PrismaService } from '../prisma/prisma.service';
 import { FollowUpService } from './follow-up.service';
+import {
+  isShiftGradingJob,
+  ShiftSegmentGrader,
+} from './shift-grading.processor';
 import { transcriptBefore } from './transcript';
 import type { UsageRow } from './usage';
 
@@ -71,7 +76,7 @@ export class GradingProcessor
   implements OnApplicationBootstrap, OnModuleDestroy
 {
   private readonly logger = new Logger('Worker·grading');
-  private worker: Worker<GradeJob> | null = null;
+  private worker: Worker<GradeJob | ShiftGradeJob> | null = null;
 
   constructor(
     @Inject(REDIS_URL) private readonly redisUrl: string,
@@ -80,10 +85,11 @@ export class GradingProcessor
     private readonly panel: JudgePanelService,
     private readonly followUps: FollowUpService,
     private readonly stream: StreamService,
+    private readonly shiftGrader: ShiftSegmentGrader,
   ) {}
 
   onApplicationBootstrap(): void {
-    this.worker = new Worker<GradeJob>(
+    this.worker = new Worker<GradeJob | ShiftGradeJob>(
       GRADING_QUEUE,
       (job) => this.process(job),
       {
@@ -93,9 +99,11 @@ export class GradingProcessor
     );
     this.worker.on('failed', (job, err) => {
       if (job)
-        void this.onFailed(job, err).catch((e: unknown) =>
-          this.logger.error(String(e)),
-        );
+        void (
+          isShiftGradingJob(job)
+            ? this.shiftGrader.onFailed(job, err)
+            : this.onFailed(job as Job<GradeJob>, err)
+        ).catch((e: unknown) => this.logger.error(String(e)));
     });
     this.worker.on('error', (err) =>
       this.logger.error(`Worker lỗi: ${err.message}`),
@@ -111,8 +119,9 @@ export class GradingProcessor
 
   /* ── Một job ─────────────────────────────────────────────────────── */
 
-  async process(job: Job<GradeJob>): Promise<void> {
-    const { aiJobId, runId, answerId } = job.data;
+  async process(job: Job<GradeJob | ShiftGradeJob>): Promise<void> {
+    if (isShiftGradingJob(job)) return this.shiftGrader.process(job);
+    const { aiJobId, runId, answerId } = (job as Job<GradeJob>).data;
     const answer = await this.prisma.answer.findUnique({
       where: { id: answerId },
       include: { assessment: true },

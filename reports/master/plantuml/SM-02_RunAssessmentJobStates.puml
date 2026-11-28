@@ -1,0 +1,35 @@
+@startuml SM-02_RunAssessmentJobStates
+
+state "Run (RunStatus)" as RunS {
+  [*] --> IN_PROGRESS : start run
+  IN_PROGRESS --> IN_PROGRESS : turn appended to the event log\n(or run paused: no model available, D-92)
+  IN_PROGRESS --> FINISHED : last turn closed
+  IN_PROGRESS --> ABANDONED : explorer leaves for good
+  FINISHED --> [*]
+  ABANDONED --> [*]
+}
+
+state "Assessment (AssessmentStatus)" as AsmS {
+  [*] --> QUEUED : answer stored with job
+  QUEUED --> GRADED : enough judges agree
+  QUEUED --> PENDING : too few judges (D-108)\nanswer kept
+  PENDING --> QUEUED : regrade later
+  QUEUED --> FAILED : attempts exhausted
+  GRADED --> [*]
+  FAILED --> [*]
+}
+
+state "AI job (ai_job.status)" as JobS {
+  [*] --> JQ : enqueue
+  state "QUEUED" as JQ
+  state "RUNNING" as JR
+  state "SUCCEEDED" as JS
+  state "FAILED" as JF
+  JQ --> JR : worker takes job
+  JR --> JS : result stored, event published
+  JR --> JQ : retry (attempts < limit)
+  JR --> JF : last attempt failed
+  JF --> JQ : system admin re-runs
+  JS --> [*]
+}
+@enduml

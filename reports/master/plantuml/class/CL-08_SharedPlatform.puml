@@ -1,5 +1,4 @@
 @startuml CL-08_SharedPlatform
-title CL-08 · NestJS modules — Shared platform
 hide empty members
 skinparam classAttributeIconSize 0
 left to right direction

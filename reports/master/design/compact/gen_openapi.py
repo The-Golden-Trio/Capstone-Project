@@ -197,7 +197,8 @@ schemas = {
                                                                      "nextCursor": {"type": ["string", "null"]}}},
     "StreamEvent": {"type": "object", "required": ["type"], "properties": {
         "type": {"type": "string", "enum": ["turn.lines", "turn.done", "provider.delay", "run.paused", "summary.ready", "judgement.ready", "notification"]},
-        "runId": {"type": "string", "format": "uuid"}, "jobId": {"type": "string", "format": "uuid"}, "payload": {"type": "object"}}},
+        "runId": {"type": "string", "format": "uuid"}, "jobId": {"type": "string", "format": "uuid"},
+        "payload": {"type": "object", "description": "judgement.ready: {segment} (one evidence segment of a shift graded by the judge panel). summary.ready: {} (every segment of the finished run is graded or failed). provider.delay: {waitingFor: narration | checks | summary}. run.paused: {turnId, reason}."}}},
 }
 for name, spec in {**DTOS, **VIEWS}.items():
     schemas[name] = object_schema(spec, name)

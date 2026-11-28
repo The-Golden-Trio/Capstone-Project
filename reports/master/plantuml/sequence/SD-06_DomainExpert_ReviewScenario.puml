@@ -1,5 +1,4 @@
 @startuml SD-06_DomainExpert_ReviewScenario
-title SD-06 · Domain Expert — review scenario
 
 actor "Domain Expert\n(reviewer)" as RV
 participant "Staff app\n(reviewer)" as App

@@ -1,5 +1,4 @@
 @startuml CL-06_PlayAssessmentAndQuality
-title CL-06 · NestJS modules — Play, assessment and quality
 hide empty members
 skinparam classAttributeIconSize 0
 left to right direction

@@ -188,7 +188,7 @@ node tools/dev/play-e2e.mjs                            # đầu cuối, model th
 
 ## 10. Chấm luồng ca làm theo checklist có/không (18/11/2026)
 
-Đường chấm cho luồng ca làm (D-116, thư viện câu hỏi `occupation-data/specs/spec-checklist-softskill.md` v4.1). Chạy độc lập với `grade(...)` của luồng activity; hai đường không dùng chung prompt và không đổi nhau. **Chưa nối vào worker hay HTTP**, chưa có `observes` trong seed thật (seed L3.m2 bản 4 vẫn không có khối E).
+Đường chấm cho luồng ca làm (D-116, thư viện câu hỏi `occupation-data/specs/spec-checklist-softskill.md` v4.1). Chạy độc lập với `grade(...)` của luồng activity; hai đường không dùng chung prompt và không đổi nhau. **Đã nối vào worker và HTTP từ 21/11 (mục 11)**; seed L3.m2 có `observes` nháp (AI soạn, chờ DE duyệt).
 
 **Có gì mới**
 
@@ -197,7 +197,7 @@ node tools/dev/play-e2e.mjs                            # đầu cuối, model th
   - `observe.ts`: `ObserveItem { sub, from, signs? }` theo E1 và `lintObserves`.
   - `evidence.ts`: `evidenceSegments(state, ctx, observes)` dựng đoạn bằng chứng, `verifyQuote`.
   - `scoring.ts`: `checkOutput` (kiểm câu trích), `itemLevel` (A → 1, A và B hoặc C → 2, không A → 0, không xét → null), `normalizeFlags`, `consensusFlags`, `pairLevels` (ép về 0), `subLevels`, `groupScores`.
-  - `testing/l3m2.observes.draft.ts`: 5 mục con cho L3.m2 (4.2, 7.1, 1.5, 7.4, 1.1). **Nháp do AI soạn để test, chưa DE duyệt.**
+  - 5 mục con cho L3.m2 (4.2, 7.1, 1.5, 7.4, 1.1) nay nằm trong `observes` của seed. **Nháp do AI soạn để test, chưa DE duyệt.**
 - `apps/api/src/ai/judge/`: `prompts/judge.v2.ts`, `checklist.prompt.ts`, `checklist.output.ts`, `checklist.combine.ts`, `checklist.segments.ts`, `checklist.types.ts`, `CHECKLIST_PROFILE` trong `judge.profile.ts`, và `JudgePanelService.gradeChecklist(...)`.
 
 **Luồng**
@@ -223,3 +223,11 @@ node tools/dev/play-e2e.mjs                            # đầu cuối, model th
 **Lệch giữa các tài liệu cần nhóm chọn:** spec `spec-checklist-softskill.md` (tiêu đề), `Seed scenario JobQuest.md` E1/E2 và `Hồ sơ JobQuest cơ chế game.md` G5 đều ghi **42** mục con, nhưng bảng trong spec có **43** dòng (nhóm 2 có 2.1–2.7, thêm 2.7 "Xây dựng và giữ quan hệ"), trong khi `packages/game-core/src/profile/softSkills.ts` liệt kê 6 mục ở nhóm 2. Code theo bảng (43); test khoá theo bảng, không theo tiêu đề.
 
 **Kiểm:** `pnpm exec nx run game-core:test` (`shift/grading/grading.spec.ts`) và `pnpm exec nx run @datn/api:test` (`judge/checklist.spec.ts`).
+
+## 11. Chấm ca làm nối vào backend (21/11/2026)
+
+- **Khi nào:** từng đoạn bằng chứng, ngay khi đóng (`shift.closedSegments`: nút `done`; `pha` và `review` khi ca kết thúc). `ShiftLogService.write` ghi `GRADING_REQUESTED` và `ai_job` (`SHIFT_GRADING`, id `<runId>-<đoạn>`) trong cùng transaction với lượt đóng đoạn, rồi đẩy job `shift-segment` vào queue `grading` sau commit. Cả lượt từ API lẫn từ worker (`ShiftTurnProcessor`) đều đi qua đây.
+- **Worker:** `GradingProcessor` rẽ theo tên job sang `ShiftSegmentGrader` (`assessment/shift-grading.processor.ts`): `gradeChecklist` một đoạn, ghi `usage_cost`, ghi `SEGMENT_GRADED` (mức từng cặp mục con–đoạn, cờ, model, prompt `judge-v2`, chi phí). Panel chưa đủ judge thì ném lỗi cho BullMQ thử lại (`GRADING_ATTEMPTS` 5, từ lần 3 gộp hai judge, D-132). Hết lượt thì ghi đoạn hỏng (`failed: true`), không chấm thay (D-92). SSE: `judgement.ready {segment}` mỗi đoạn, `summary.ready` khi ca đã hết và mọi đoạn có kết quả.
+- **HTTP:** `GET /shift-runs/:id/summary` thêm `grading` (`assessment/shift-grading.view.ts`, tính lại từ sổ sự kiện). Ca chưa có `observes` thì `NOT_AVAILABLE`. Chưa có điểm số: `groupScores` vẫn chưa được gọi vì chưa có trần nhóm từng màn.
+- **`AI_MODE=fake`:** cổng `SHIFT_JUDGE` dùng `FakeChecklistJudge` (`ai/judge/fake-checklist.ts`, cùng bản giả của `ai-lab`).
+- **Lựa chọn tạm:** cờ xét trong phạm vi từng đoạn (cùng mã cờ có thể lặp ở nhiều đoạn); `SHIFT_RUN_BUDGET_USD` dùng chung cho dẫn truyện, bộ phán và chấm; `pendingTurn` bỏ qua bản ghi `GRADING_REQUESTED`, `SEGMENT_GRADED`. Lệch hợp đồng API: [07 A30](../../07-van-de-mo.md).

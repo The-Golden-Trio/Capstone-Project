@@ -1,5 +1,4 @@
 @startuml AD-02f_ContentAdmin_ReassignOverdueReview
-title AD-02f · Content Admin — reassign an overdue review
 
 |Content Admin|
 |System|

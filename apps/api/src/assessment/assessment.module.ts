@@ -6,6 +6,8 @@
 import { Module, type Provider } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { AiModule } from '../ai/ai.module';
+import { FakeChecklistJudge, SHIFT_JUDGE } from '../ai/judge/fake-checklist';
+import { JudgePanelService } from '../ai/judge/judge-panel.service';
 import { ShiftCheckerService } from '../ai/shift/checker.service';
 import { FakeShiftChecker, FakeShiftNarrator } from '../ai/shift/fake';
 import { SHIFT_CHECKER, SHIFT_NARRATOR } from '../ai/shift/types';
@@ -37,6 +39,12 @@ const shiftPorts: Provider[] = [
       live: ShiftCheckerService,
     ) => (mode(config) === 'fake' ? new FakeShiftChecker() : live),
   },
+  {
+    provide: SHIFT_JUDGE,
+    inject: [ConfigService, JudgePanelService],
+    useFactory: (config: ConfigService<Env, true>, live: JudgePanelService) =>
+      mode(config) === 'fake' ? new FakeChecklistJudge() : live,
+  },
 ];
 
 @Module({
@@ -48,6 +56,7 @@ const shiftPorts: Provider[] = [
     AiModule,
     SHIFT_NARRATOR,
     SHIFT_CHECKER,
+    SHIFT_JUDGE,
   ],
 })
 export class AssessmentModule {}

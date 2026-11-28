@@ -1,0 +1,49 @@
+@startuml SD-10_Explorer_ShiftTurn
+
+actor Explorer
+participant "Explorer app" as App
+participant "Play" as Play
+participant "Result stream" as RS
+database "PostgreSQL" as DB
+queue "Redis" as R
+participant "AI orchestration" as AI
+participant "Model gateway" as GW
+
+Explorer -> App : Act, say, choose, ask a hint, or let time run out
+App -> App : Compute provisional state with game-core
+App -> Play : Submit turn with turn id
+Play -> DB : Lock run, append turn event in one transaction
+alt turn id already recorded
+  DB --> Play : Existing result
+else new turn
+  Play -> R : Enqueue shift-turn job
+end
+Play --> App : Accepted, job id
+App --> Explorer : Show "saved, assessing"
+
+R -> AI : Take job
+AI -> DB : Load run events
+AI -> AI : Fold events with game-core, find pending request
+opt engine needs a judgement or a scene
+  AI -> GW : Narrate scene / answer yes-no question (de-identified)
+  GW --> AI : Text with model, prompt version, cost, latency
+end
+AI -> DB : Append result events with provenance
+AI -> R : Publish turn result
+R --> RS : Turn result event
+RS --> App : Push event
+App --> Explorer : Show next beat
+
+opt a segment closed
+  AI -> GW : Grade segment against checklist (judge seats)
+  GW --> AI : Checklist marks with quotations
+  alt enough judges
+    AI -> DB : Append grading event
+  else too few judges
+    AI -> DB : Keep answer, mark pending
+    AI -> R : Publish provider delay
+    R --> RS : Provider delay event
+    RS --> App : Show wait message
+  end
+end
+@enduml

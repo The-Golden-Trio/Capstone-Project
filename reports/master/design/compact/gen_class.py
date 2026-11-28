@@ -301,7 +301,7 @@ def diagram_file(did, title):
 written = []
 for did, d in nest["diagrams"].items():
     name = diagram_file(did, d["title"])
-    out = [f"@startuml {name.stem}", f"title {did} · NestJS modules — {d['title']}", "hide empty members",
+    out = [f"@startuml {name.stem}", "hide empty members",
            "skinparam classAttributeIconSize 0", "left to right direction", ""]
     cross, rels = set(), []
     for m in d["modules"]:
@@ -335,8 +335,7 @@ for did, d in nest["diagrams"].items():
 
 # ───────────── CL-00 module map ─────────────
 o = ["@startuml CL-00_ModuleMap",
-     "title CL-00 · NestJS module map (API app and worker app)\\n<size:11>Arrows are module imports. Global modules are available everywhere. Modules with /staff routes also import AuthModule for OccupationAccessGuard (arrows omitted).</size>",
-     "skinparam componentStyle rectangle", ""]
+          "skinparam componentStyle rectangle", ""]
 by_comp = defaultdict(list)
 for m, mod in nest["modules"].items():
     by_comp[mod["component"]].append(m)

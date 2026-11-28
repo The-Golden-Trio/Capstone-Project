@@ -227,6 +227,19 @@ Thêm: biên r = 0,43, 0,429, 0,61, 0,73; S = 0,38, 0,379, 0,55, 0,67; loại ng
 - **Nguồn:** ERD `[CAM]` `DISTRESS_TERM` (H4, còn gọi C4), `ACHIEVEMENT` (D3, khoảng 100 thành tựu)
 - **Trạng thái:** Chặn – chờ chốt. Mục tiêu: văn bản người chơi tự viết chứa từ báo hiệu căng thẳng thì app hiện lời hỗ trợ thay vì tiếp tục như thường; thành tựu mở đúng điều kiện và không trùng. Lý do chặn: danh sách từ và danh sách thành tựu chưa chốt
 
+### TC-H-NF-01 · Giao diện và nội dung tiếng Việt
+
+- **Nguồn:** NFR-08; D-96; SITE-01…SITE-04
+- **Cấp · loại · kỹ thuật:** System · khả dụng · duyệt màn và kiểm thủ công
+- **Ưu tiên:** Vừa
+- **Tiền điều kiện:** bản build explorer và staff; nội dung đã seed
+- **Dữ liệu vào:** mọi màn, gồm trạng thái lỗi và rỗng; một màn chơi có lời AI, ghi chú phản hồi, tổng kết
+- **Các bước:** 1. Mở từng màn. 2. Chơi một màn và đọc lời AI, ghi chú, tổng kết. 3. Người bản ngữ duyệt một mẫu màn và nội dung.
+- **Kết quả mong đợi:** mọi nhãn và thông báo bằng tiếng Việt; không có chữ rỗng, key thô hay tên mã; lời AI, ghi chú, tổng kết bằng tiếng Việt; chữ thiếu hoặc sai ghi thành lỗi
+- **Hậu điều kiện:** danh sách lỗi theo màn
+- **Tự động hoá:** duyệt màn trong E2E (dự kiến); duyệt bản ngữ thủ công
+- **Trạng thái:** Chờ hiện thực
+
 ## Mục tiêu white box
 
 ### WB-H-01 · `packages/game-core/src/profile/riasec.ts`, `zodiac.ts`

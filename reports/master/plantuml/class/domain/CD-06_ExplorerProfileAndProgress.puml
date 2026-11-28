@@ -1,5 +1,4 @@
 @startuml CD-06_ExplorerProfileAndProgress
-title CD-06 · Domain model · Explorer profile and progression\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections H, I); the ERD is unchanged</size>
 hide empty members
 skinparam classAttributeIconSize 0
 skinparam linetype polyline
@@ -241,7 +240,7 @@ SoftSkillGroup "1" -- "0..*" ScenarioBest : BEST_FOR_GROUP
 ScenarioBest "0..*" -- "1" ScenarioRun : BEST_RUN
 note bottom of AnswersCard : { 18 answers once the attempt is complete }
 note bottom of EarnedKeyword : { unique (explorer, keyword) }
-note bottom of ScenarioBest : {id = (scenario, explorer, softSkillGroup)}  identified by several owners
+note bottom of ScenarioBest : {id = (softSkillGroup, explorer, scenario)}  identified by several owners
 note bottom of DistressTerm : «pending A28» H4
 note bottom of Achievement : «pending A28» D3: about 100 achievements
 note bottom of Casts : «research only» fixed roles per level: N4 still open

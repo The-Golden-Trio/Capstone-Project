@@ -8,6 +8,7 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { ConfigModule } from '@nestjs/config';
 import { AssessmentModule } from './assessment/assessment.module';
 import { GradingProcessor } from './assessment/grading.processor';
+import { ShiftSegmentGrader } from './assessment/shift-grading.processor';
 import { ShiftTurnProcessor } from './assessment/shift-turn.processor';
 import { loadEnv } from './config/env';
 import { ContentModule } from './content/content.module';
@@ -38,6 +39,7 @@ import { ScenarioModule } from './scenario/scenario.module';
   providers: [
     GradingProcessor,
     ShiftTurnProcessor,
+    ShiftSegmentGrader,
     EmailProcessor,
     GenerationProcessor,
     ReminderScheduler,

@@ -1,0 +1,31 @@
+@startuml PK-01_RepositoryPackages
+skinparam componentStyle rectangle
+
+package "apps" {
+  [apps/web\n<size:10>Explorer app · React 19, Vite</size>] as Web
+  [apps/staff\n<size:10>Staff app (CA, DE) · React 19, Vite</size>] as Staff
+  [apps/api\n<size:10>NestJS 11 · API role and worker role; one build, started with --worker</size>] as Api
+}
+package "packages" {
+  [packages/ui\n<size:10>Design system: Celestial Night, game kit</size>] as Ui
+  [packages/game-core\n<size:10>Engine, grading, band, fit; runs in browser and server</size>] as Core
+}
+package "data and docs" {
+  [occupation-data\n<size:10>Sources and build scripts</size>] as Occ
+  [reports/master/api\n<size:10>openapi.yaml (contract)</size>] as Oas
+}
+database "PostgreSQL\n<size:10>Prisma 7</size>" as Pg
+queue "Redis\n<size:10>BullMQ, pub/sub</size>" as Rd
+
+Web --> Ui
+Staff --> Ui
+Web --> Core
+Staff --> Core
+Api --> Core
+Occ ..> Core : pnpm data:build\n(game-data.json)
+Web ..> Oas : client follows
+Staff ..> Oas : client follows
+Api ..> Oas : implements
+Api --> Pg
+Api --> Rd
+@enduml

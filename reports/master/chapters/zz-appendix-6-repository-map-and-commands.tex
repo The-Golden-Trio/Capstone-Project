@@ -1,0 +1,44 @@
+\newpage
+\section*{Appendix 6 --- Repository map and commands}
+\addcontentsline{toc}{section}{Appendix 6 --- Repository map and commands}
+
+The counts of Chapter 6 were produced from the repository root with the commands below. The workspace uses pnpm and Nx.
+
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.355\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.640\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Commands used and their purpose.} \\
+\hline
+\textbf{Purpose} & \textbf{Command} \\ \hline
+\endfirsthead
+\hline
+\textbf{Purpose} & \textbf{Command} \\ \hline
+\endhead
+Install & \texttt{pnpm install -\allowbreak{}-\allowbreak{}frozen-\allowbreak{}lockfile} \\ \hline
+Run explorer and API & \texttt{pnpm start} (explorer on port 4200, API on port 3000) \\ \hline
+Run staff application & \texttt{pnpm exec nx run @\allowbreak{}datn/\allowbreak{}staff:serve} (port 4300, base path \texttt{/\allowbreak{}staff/\allowbreak{}}) \\ \hline
+Local services & \texttt{docker compose -\allowbreak{}f infra/\allowbreak{}local/\allowbreak{}dev-\allowbreak{}stack.\allowbreak{}yml up -\allowbreak{}d} (Redis, PostgreSQL, mail catcher, S3-\allowbreak{}compatible store) \\ \hline
+Run all tests & \texttt{pnpm exec nx run-\allowbreak{}many -\allowbreak{}t test} \\ \hline
+Whole gate (lint, typecheck, build, test) & \texttt{pnpm check} \\ \hline
+Rebuild occupation data & \texttt{pnpm data:build} \\ \hline
+Try the AI layer without database & \texttt{pnpm exec nx run @\allowbreak{}datn/\allowbreak{}api:ai-\allowbreak{}lab -\allowbreak{}-\allowbreak{} -\allowbreak{}-\allowbreak{}mode=fake -\allowbreak{}-\allowbreak{}play=all} \\ \hline
+Play a level-one scenario through HTTP & \texttt{node tools/\allowbreak{}dev/\allowbreak{}play-\allowbreak{}e2e.\allowbreak{}mjs} \\ \hline
+\end{longtable}
+}
+
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.321\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.674\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Map of the repository.} \\
+\hline
+\textbf{Path} & \textbf{Content} \\ \hline
+\endfirsthead
+\hline
+\textbf{Path} & \textbf{Content} \\ \hline
+\endhead
+\texttt{apps/\allowbreak{}web}, \texttt{apps/\allowbreak{}staff} & Explorer and staff applications \\ \hline
+\texttt{apps/\allowbreak{}api} & API and worker; \texttt{prisma/\allowbreak{}} holds the schema and migrations \\ \hline
+\texttt{packages/\allowbreak{}game-\allowbreak{}core}, \texttt{packages/\allowbreak{}ui} & Shared rules; design system \\ \hline
+\texttt{occupation-\allowbreak{}data/\allowbreak{}} & Sources of occupation data and the scripts that build it \\ \hline
+\texttt{reports/\allowbreak{}master/\allowbreak{}} & This report, its diagrams in \texttt{plantuml/\allowbreak{}}, the interface contract in \texttt{api/\allowbreak{}} \\ \hline
+\texttt{docs/\allowbreak{}project-\allowbreak{}hub/\allowbreak{}} & Decisions, product notes, open issues \\ \hline
+\end{longtable}
+}

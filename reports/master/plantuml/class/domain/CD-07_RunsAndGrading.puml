@@ -1,5 +1,4 @@
 @startuml CD-07_RunsAndGrading
-title CD-07 · Domain model · Runs and grading\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections J); the ERD is unchanged</size>
 hide empty members
 skinparam classAttributeIconSize 0
 skinparam linetype polyline
@@ -209,8 +208,8 @@ SideQuestRun "0..*" -- "0..1" Gap : IN_GAP
 note right of ScenarioRun : {xor} a run plays a release, or a build when isPlaytest\n(OF_RELEASE, OF_BUILD)
 note right of EvidenceSegment : {xor} a segment sits at a node or at a review probe (by kind)\n(SEGMENT_AT_NODE, SEGMENT_AT_PROBE)
 note right of SideQuestRun : {xor} a side quest run is of an NPC chapter or of a side activity\n(OF_CHAPTER, OF_ACTIVITY)
-note bottom of EvidenceSegment : {id = (assessment, scenarioRun)}  identified by several owners
-note bottom of Assessment : {id = (judgeResult, evidenceSegment, softSkillItem)}  identified by several owners
+note bottom of Assessment : {id = (softSkillItem, evidenceSegment, judgeResult)}  identified by several owners
+note bottom of EvidenceSegment : {id = (scenarioRun, assessment)}  identified by several owners
 legend bottom
   | Notation | Meaning |
   | white / light blue class | entity / weak entity (composition ◆ from its owner) |

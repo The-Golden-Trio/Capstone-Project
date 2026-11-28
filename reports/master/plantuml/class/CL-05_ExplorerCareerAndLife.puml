@@ -1,5 +1,4 @@
 @startuml CL-05_ExplorerCareerAndLife
-title CL-05 · NestJS modules — Explorer career and life
 hide empty members
 skinparam classAttributeIconSize 0
 left to right direction

@@ -1,5 +1,4 @@
 @startuml SD-07_ContentAdmin_GamifyAndPlaytest
-title SD-07 · Content Admin, Domain Expert — gamify and play-test
 
 actor "Content Admin" as CA
 actor "Domain Expert\n(author)" as DE

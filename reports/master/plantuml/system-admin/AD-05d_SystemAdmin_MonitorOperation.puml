@@ -1,5 +1,4 @@
 @startuml AD-05d_SystemAdmin_MonitorOperation
-title AD-05d · System Admin — monitor usage, cost, and errors
 
 |System Admin|
 |System|

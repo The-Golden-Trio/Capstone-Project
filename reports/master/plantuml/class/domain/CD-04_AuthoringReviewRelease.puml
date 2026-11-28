@@ -1,5 +1,4 @@
 @startuml CD-04_AuthoringReviewRelease
-title CD-04 · Domain model · AI drafting, review, presentation, play-test and release\n<size:11>Derived from ERD_JobQuest_Chen.puml (sections F); the ERD is unchanged</size>
 hide empty members
 skinparam classAttributeIconSize 0
 skinparam linetype polyline

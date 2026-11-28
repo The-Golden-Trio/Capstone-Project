@@ -5,7 +5,7 @@ Thuộc [testing plan](../2026-11-20_testing-plan.md). Trạng thái ca kiểm g
 ## Phạm vi
 
 - **ERD:** `BLIND_RATING`, `REFERENCE_REGRADE`, `OCCUPATION_RATING`, `RATING_ATTRIBUTE`, `APP_FEEDBACK` (`status`, `app_version`), `PROMPT_TEMPLATE` (`key`, `version`, `role`), `MODEL_CONFIG` (`family`, `tier`, `pinned_snapshot`, `call_profile`, `is_active`), `MODEL_SLOT` (`role`), `MODEL_PRICE` (yếu; `effective_from`), `AI_JOB` (`kind`, `status`, `attempts`), `MODEL_CALL` (`tokens`, `cost`, `price_date`, `latency`, `finish_reason`, `check_result`), `NOTIFICATION`, `PLATFORM_SETTING` (`version`); quan hệ `SCORES_ATTR (5,5)`, `FILLS_SLOT` (`priority`), `PRICED`, `JOB_FOR_RUN`, `JOB_PROMPT`, `CALLS`, `CALL_MODEL`.
-- **Yêu cầu:** FR-19, FR-20, FR-28, FR-29, FR-39, FR-42, FR-43; DR-07…DR-10, DR-17, DR-18; NFR-01, NFR-02, NFR-04, NFR-05, NFR-06, NFR-07, NFR-11, NFR-12, NFR-14, NFR-15, NFR-17; DC-01, DC-02, DC-03; D-92. **Use case:** UC-E17, UC-E20, UC-D09, UC-D10, UC-C11, UC-C12, UC-S06…S09. **Diagram:** `AD-01e`, `AD-01g`, `AD-02e`, `AD-03c`, `AD-05c`, `AD-05d`, `AD-05e`; class `CL-06`, `CL-07` (PlayAssessmentAndQuality, AiFeedbackAndMonitoring).
+- **Yêu cầu:** FR-19, FR-20, FR-28, FR-29, FR-39, FR-42, FR-43; DR-07…DR-10, DR-17, DR-18; NFR-01, NFR-02, NFR-04, NFR-05, NFR-06, NFR-07, NFR-11, NFR-12, NFR-14, NFR-15, NFR-17, NFR-18; DC-01, DC-02, DC-03; D-92. **Use case:** UC-E17, UC-E20, UC-D09, UC-D10, UC-C11, UC-C12, UC-S06…S09. **Diagram:** `AD-01e`, `AD-01g`, `AD-02e`, `AD-03c`, `AD-05c`, `AD-05d`, `AD-05e`; class `CL-06`, `CL-07` (PlayAssessmentAndQuality, AiFeedbackAndMonitoring).
 - **Code:** `apps/api/src/ai/gateway/` (`model-gateway.ts`, `adapters.ts` 455 dòng, `circuit-breaker.ts`, `cost.ts`, `models.ts`, `diagnose.ts`) có spec đầy đủ, kể cả `provider-contract.spec.ts`. **Mô hình và giá hiện được viết cứng trong `models.ts`**, chưa có bảng `MODEL_CONFIG`, `MODEL_SLOT`, `MODEL_PRICE`, `PLATFORM_SETTING`, `BLIND_RATING`, `REFERENCE_REGRADE`. Có `FeedbackModule` (`rating.service.ts` có spec, `app-feedback.service.ts` chưa có spec; phần admin chưa làm), `NotificationModule`, `UsageCost` (≈ `MODEL_CALL`), `PromptTemplate`, `AiJob`, `OccupationRating`, `RatingAttribute`, `RatingScore`, `AppFeedback`.
 - **Đánh giá chất lượng AI** (kappa, probe, độ nhất quán) đo theo report §7.3; file này kiểm cơ chế vận hành, không đo chất lượng model.
 
@@ -114,7 +114,7 @@ Thuộc [testing plan](../2026-11-20_testing-plan.md). Trạng thái ca kiểm g
 
 ### TC-L-ST-01 · Vòng đời job AI và chạy lại
 
-- **Nguồn:** FR-43; UC-S08; `AD-05d`; ERD `AI_JOB` (`status`, `attempts`, `error`)
+- **Nguồn:** FR-43; UC-S08; `AD-05d`, `SD-12`; SM-02 (trạng thái job AI); ERD `AI_JOB` (`status`, `attempts`, `error`)
 - **Cấp · loại · kỹ thuật:** Integration · độ tin cậy · black box, chuyển trạng thái
 - **Ưu tiên:** Vừa
 - **Tiền điều kiện:** hàng đợi và worker; job thất bại do model lỗi
@@ -273,6 +273,19 @@ Thuộc [testing plan](../2026-11-20_testing-plan.md). Trạng thái ca kiểm g
 
 - **Nguồn:** NFR-06 (không có số), 07 A26(6) (`RATING_MIN_RESPONSES` = 5 chưa có nguồn); ERD `MODEL_CONFIG`, `MODEL_SLOT`, `MODEL_PRICE` (đang viết cứng trong `models.ts`)
 - **Trạng thái:** Chặn – chờ chốt cho giá trị ngưỡng (kiểm bất biến theo tham số ở `TC-L-BVA-01`); các bảng cấu hình model là _Chờ hiện thực_, không chặn. Mục tiêu: số ngưỡng có nguồn và được nhóm chốt
+
+### TC-L-NF-05 · Khả dụng của dịch vụ explorer
+
+- **Nguồn:** NFR-18
+- **Cấp · loại · kỹ thuật:** System · khả dụng · giám sát
+- **Ưu tiên:** Thấp
+- **Tiền điều kiện:** giám sát uptime cho dịch vụ explorer; mục tiêu cấu hình được (chưa có con số chốt, kiểm quan hệ, không kiểm giá trị)
+- **Dữ liệu vào:** dừng API trong một khoảng biết trước; một đợt bảo trì có kế hoạch
+- **Các bước:** 1. Dừng API. 2. Lập số khả dụng của tháng. 3. Lên lịch bảo trì.
+- **Kết quả mong đợi:** lần ngừng được ghi với giờ bắt đầu, kết thúc; số khả dụng tính từ bản ghi và so với mục tiêu cấu hình; explorer được báo trước đợt bảo trì
+- **Hậu điều kiện:** báo cáo tháng cho System Admin
+- **Tự động hoá:** công cụ giám sát uptime (chưa chọn)
+- **Trạng thái:** Chờ hiện thực
 
 ## Mục tiêu white box
 

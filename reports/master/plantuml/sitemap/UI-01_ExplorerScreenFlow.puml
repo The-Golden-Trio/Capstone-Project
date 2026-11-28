@@ -1,0 +1,27 @@
+@startuml UI-01_ExplorerScreenFlow
+skinparam state {
+  BackgroundColor #142b52
+  FontColor white
+  BorderColor #5d7ea8
+}
+[*] --> Welcome : /welcome
+Welcome --> SignIn : /login, /register
+SignIn --> Galaxy : /galaxy
+Welcome --> Galaxy : signed in
+Galaxy --> Quiz : /quiz (optional)
+Quiz --> QuizResult : /quiz/result
+QuizResult --> Galaxy
+Galaxy --> Occupation : /occupations/:code
+Occupation --> Levels : /occupations/:code/levels
+Levels --> Island : /islands/:enrolmentId
+Island --> Onboard : /islands/:enrolmentId/onboard
+Onboard --> Play : /play/:runId
+Island --> Play : /play/:runId
+Play --> Reflect : /play/:runId/reflect
+Reflect --> Summary : /play/:runId/summary
+Summary --> Island : next scenario
+Summary --> Rate : /occupations/:code/rate
+Galaxy --> Profile : /profile
+Profile --> Settings : /settings
+Galaxy --> Feedback : /feedback
+@enduml

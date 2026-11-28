@@ -1,5 +1,4 @@
 @startuml AD-03a_DomainExpert_AccessPortal
-title AD-03a · Domain Expert — access the admin portal
 
 |Domain Expert|
 |System|

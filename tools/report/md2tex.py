@@ -17,6 +17,10 @@ from pathlib import Path
 UNICODE = {
     "—": "---", "–": "--", "−": "$-$", "ρ": "$\\rho$",
     "●": "$\\bullet$", "◐": "$\\ominus$", "○": "$\\circ$",
+    # Not available in the T5 font encoding: use the math symbols.
+    "≤": "$\\leq$", "≥": "$\\geq$", "≠": "$\\neq$", "∈": "$\\in$", "ε": "$\\varepsilon$",
+    "÷": "$\\div$", "×": "$\\times$", "±": "$\\pm$", "→": "$\\rightarrow$",
+    "✅": "$\\checkmark$", "❌": "$\\times$", "ø": "\\o{}", "ü": "\\\"u",
 }
 CHAR_CM = 0.18      # bề rộng trung bình một ký tự ở cỡ \small
 TEXT_CM = 16.0      # \textwidth của hcmut-report
@@ -37,6 +41,29 @@ def inl(text, cites=True):
         holders.append(tex)
         return f"\x00H{len(holders) - 1}\x00"
 
+    # `code`: \texttt, cho phép ngắt dòng sau _ - . / @ (tên bảng, cột, tệp dài không tràn ô bảng).
+    def code(m):
+        out = []
+        for ch in m.group(1):
+            if ch == "\\":
+                out.append("\\textbackslash{}")
+            elif ch in "&%$#{}":
+                out.append("\\" + ch)
+            elif ch == "_":
+                out.append("\\_\\allowbreak{}")
+            elif ch in "-./@":
+                out.append(ch + "\\allowbreak{}")
+            elif ch == "~":
+                out.append("\\textasciitilde{}")
+            elif ch == "^":
+                out.append("\\textasciicircum{}")
+            else:
+                out.append(ch)
+        return hold("\\texttt{" + "".join(out) + "}")
+
+    text = re.sub(r"`([^`\n]+)`", code, text)
+    # Từ dài ngoài `code` (email, tên tệp, từ ghép): cho phép ngắt sau _ - . / @.
+    text = re.sub(r"[^\s\x00]{12,}", lambda m: re.sub(r"([-._/@])(?=[^\s\x00])", "\\1\x01", m.group(0)), text)
     # Công thức trong dòng $...$: giữ nguyên cho LaTeX.
     text = re.sub(r"\$([^$\n]+?)\$", lambda m: hold("$" + m.group(1) + "$"), text)
     if cites:
@@ -51,7 +78,7 @@ def inl(text, cites=True):
     text = re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", text)
     text = re.sub(r"\*(.+?)\*", r"\\textit{\1}", text)
     text = re.sub(r'"([^"]*)"', r"``\1''", text)
-    text = fix_unicode(text).replace("\x00AST\x00", "*")
+    text = fix_unicode(text).replace("\x00AST\x00", "*").replace("\x01", "\\allowbreak{}")
     return re.sub(r"\x00H(\d+)\x00", lambda m: holders[int(m.group(1))], text)
 
 
@@ -62,16 +89,27 @@ def table(rows, caption):
     size = "\\footnotesize" if ncol >= 6 else "\\small"
     char_cm = CHAR_CM * (0.9 if ncol >= 6 else 1)
     # Mỗi cột rộng tối thiểu bằng từ dài nhất của nó; phần còn lại chia theo độ dài nội dung trung bình.
-    longest_word = [max(max((len(w) for w in re.split(r"[\s/]+|(?<=[a-z])-(?=[a-z])", r[i])), default=1) for r in cells) for i in range(ncol)]
+    def unbreakable(cell):
+        """Độ dài các đoạn không ngắt được của một ô (code và từ dài ≥ 12 ký tự ngắt được sau _ - . / @)."""
+        lens = []
+        for k, part in enumerate(re.split(r"`", cell)):
+            if k % 2:  # trong `code`
+                lens += [len(w) for w in re.split(r"[-._/@\s]+", part)]
+                continue
+            for w in re.split(r"\s+|(?<=[a-z])-(?=[a-z])", part):
+                lens += [len(x) for x in re.split(r"[-._/@]", w)] if len(w) >= 12 else [len(w)]
+        return max(lens, default=1)
+
+    longest_word = [max(unbreakable(r[i]) for r in cells) for i in range(ncol)]
     floor = [min((lw * char_cm + 0.75) / TEXT_CM, 0.30) for lw in longest_word]
     if sum(floor) > 0.9:    # quá chật: chỉ bóp các cột có từ dài, giữ nguyên cột ID
-        keep = sum(f for f, lw in zip(floor, longest_word) if lw <= 8)
+        keep = sum(f for f, lw in zip(floor, longest_word) if lw <= 12)
         if keep < 0.9 and sum(floor) > keep:
             scale = (0.9 - keep) / (sum(floor) - keep)
-            floor = [f if lw <= 8 else f * scale for f, lw in zip(floor, longest_word)]
+            floor = [f if lw <= 12 else f * scale for f, lw in zip(floor, longest_word)]
         else:  # bảng nhiều cột mà cột nào cũng chỉ có từ ngắn: co đều mọi cột
             floor = [f * 0.9 / sum(floor) for f in floor]
-    want = [max(sum(len(r[i]) for r in cells) / len(cells), lw) ** 0.75 for i, lw in enumerate(longest_word)]
+    want = [max(sum(len(r[i]) for r in cells) / len(cells), lw) ** 0.9 for i, lw in enumerate(longest_word)]
     frac, free = [None] * ncol, set(range(ncol))
     while True:
         room = 0.995 - sum(f for f in frac if f is not None)
@@ -88,11 +126,24 @@ def table(rows, caption):
         for f in frac
     ) + "|"
     head = " & ".join(f"\\textbf{{{inl(c)}}}" for c in header) + " \\\\ \\hline"
-    out = ["{" + size, f"\\begin{{longtable}}{{{cols}}}"]
+    out = ["{" + size + "\\setstretch{1}\\renewcommand{\\arraystretch}{1.1}", f"\\begin{{longtable}}{{{cols}}}"]
     if caption:
         out.append(f"\\caption{{{inl(caption)}}} \\\\")
     out += ["\\hline", head, "\\endfirsthead", "\\hline", head, "\\endhead"]
-    out += [" & ".join(inl(c) for c in r) + " \\\\ \\hline" for r in body]
+    def rule(k):
+        # Dòng kế tiếp có ô đầu rỗng là phần tiếp của cùng một mục (ví dụ các bước của một test case):
+        # chỉ kẻ ngang ở những cột có nội dung, để các cột còn lại trông như một ô gộp.
+        if k + 1 < len(body) and body[k + 1][0].strip() == "" and any(c.strip() for c in body[k + 1]):
+            cols_on = [i + 1 for i, c in enumerate(body[k + 1]) if c.strip()]
+            runs, start = [], cols_on[0]
+            for a, b in zip(cols_on, cols_on[1:] + [None]):
+                if b != a + 1:
+                    runs.append((start, a))
+                    start = b
+            return " ".join(f"\\cline{{{a}-{b}}}" for a, b in runs)
+        return "\\hline"
+
+    out += [" & ".join(inl(c) for c in r) + " \\\\ " + rule(k) for k, r in enumerate(body)]
     out += ["\\end{longtable}", "}"]
     return "\n".join(out)
 
@@ -134,6 +185,8 @@ def convert(md, outdir):
 
     while i < len(lines):
         ln = lines[i]
+        if in_refs and ln.startswith("# "):
+            in_refs = False  # appendices follow the references
         if in_refs:
             m = re.match(r"\[(\d+)\] (.+)", ln)
             if m:
@@ -145,6 +198,15 @@ def convert(md, outdir):
             continue
         if ln.startswith("## References"):
             in_refs = True
+            i += 1
+            continue
+        m = re.match(r"# (.+?) \{(\+{1,2})\}$", ln)
+        if m:
+            # {+}: unnumbered section after the last chapter, before the references (plan);
+            # {++}: after the references (appendices).
+            title = m.group(1)
+            start(("ym-" if m.group(2) == "+" else "zz-") + re.sub(r"\W+", "-", title.lower()).strip("-"))
+            cur.append(f"\\newpage\n\\section*{{{inl(title)}}}\n\\addcontentsline{{toc}}{{section}}{{{inl(title)}}}")
             i += 1
             continue
         m = re.match(r"# (.+?) \{-\}$", ln)
@@ -261,12 +323,13 @@ def convert(md, outdir):
         encoding="utf-8",
     )
     front = [n for n, _ in files if n.startswith("00-")]
-    chapters = [n for n, _ in files if n.startswith("ch")]
+    chapters = [n for n, _ in files if n.startswith("ch") or n.startswith("ym-")]
+    back = [n for n, _ in files if n.startswith("zz-")]
     main = MAIN.replace("Report: Chapters 1 to 5.1", inl(rt.group(1)) if rt else "Report: Chapters 1 to 5.1")
     main = main.replace("%%FRONT%%", "\n".join(
         f"\\input{{chapters/{n}}}\n\\newpage" + ("\n\\tableofcontents\n\\newpage" if n == front[0] else "")
         for n in front
-    )).replace("%%CHAPTERS%%", "\n".join(f"\\input{{chapters/{n}}}" for n in chapters))
+    )).replace("%%CHAPTERS%%", "\n".join(f"\\input{{chapters/{n}}}" for n in chapters)).replace("%%BACK%%", "\n".join(f"\\input{{chapters/{n}}}" for n in back))
     (outdir / "main.tex").write_text(main, encoding="utf-8")
     return len(files), len(refs), nfig
 
@@ -349,6 +412,7 @@ MAIN = r"""% Sinh tự động từ report.md bằng tools/report/md2tex.py. S�
 %%CHAPTERS%%
 
 \input{references}
+%%BACK%%
 \end{document}
 """
 

@@ -1,5 +1,4 @@
 @startuml SD-09_ContentAdmin_ImportReferenceData
-title SD-09 · Content Admin — import reference data
 
 actor "Content Admin" as CA
 participant "Staff app" as App

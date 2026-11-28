@@ -461,3 +461,19 @@ export function evidenceSegments(
 
   return segments;
 }
+
+/**
+ * Đoạn đã chốt bằng chứng, chấm được ngay: nút `done`; `pha` và `review` chỉ
+ * khi ca đã kết thúc (còn chơi thì còn thêm lời vào đoạn). Nút chưa tới hoặc
+ * bị bỏ qua không có đoạn (không xét).
+ */
+export function closedSegments(
+  s: ShiftState,
+  ctx: ShiftContext,
+  observes: readonly ObserveItem[],
+): EvidenceSegment[] {
+  return evidenceSegments(s, ctx, observes).filter((seg) => {
+    if (seg.kind !== 'node') return s.ended;
+    return s.nodes[seg.id]?.status === 'done';
+  });
+}

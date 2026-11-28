@@ -1,5 +1,4 @@
 @startuml CL-00_ModuleMap
-title CL-00 · NestJS module map (API app and worker app)\n<size:11>Arrows are module imports. Global modules are available everywhere. Modules with /staff routes also import AuthModule for OccupationAccessGuard (arrows omitted).</size>
 skinparam componentStyle rectangle
 
 package "Identity & access" {

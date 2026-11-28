@@ -1,5 +1,4 @@
 @startuml SD-02_Explorer_FinishScenario
-title SD-02 · Explorer — finish a scenario
 
 actor Explorer
 participant "Explorer app" as App

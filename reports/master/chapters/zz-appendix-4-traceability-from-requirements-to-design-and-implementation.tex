@@ -1,0 +1,144 @@
+\newpage
+\section*{Appendix 4 --- Traceability from requirements to design and implementation}
+\addcontentsline{toc}{section}{Appendix 4 --- Traceability from requirements to design and implementation}
+
+Each row follows one or more functional requirements through the activity diagram, the sequence diagram, the module of CL-00, the group of the data model (A to L, Section 5.3.5), and the API module (Section 5.3.7), and gives the implementation status of Chapter 6. A dash means that no dedicated diagram of that kind exists and the behaviour is shown inside another diagram. The test plan is organised by the same groups, so the test cases of a requirement are found in the groups of its data column (Appendix 5); the few requirements tested in another group are listed in the plan.
+
+Traceability from requirements to use cases.
+
+The traceability matrix below traces every requirement to the use case realising it, so that no requirement is left unrealised and no use case introduces behaviour the requirements do not specify. Use cases are listed by actor, in the order explorer, domain expert, content administrator, and system administrator, each followed by the use cases it includes or is extended by.
+
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.392\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.217\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.217\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.169\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Traceability from requirements to use cases.} \\
+\hline
+\textbf{Use case} & \textbf{Functional} & \textbf{Non-\allowbreak{}functional} & \textbf{Data} \\ \hline
+\endfirsthead
+\hline
+\textbf{Use case} & \textbf{Functional} & \textbf{Non-\allowbreak{}functional} & \textbf{Data} \\ \hline
+\endhead
+Register account & FR-01 & NFR-05, NFR-17 & DR-16 \\ \hline
+Manage account & FR-02 & NFR-05 & DR-16 \\ \hline
+Complete Get-\allowbreak{}to-\allowbreak{}know-\allowbreak{}me quiz & FR-03 & NFR-08 & DR-01, DR-12 \\ \hline
+Build user portrait & FR-04 & NFR-05 & DR-12 \\ \hline
+View career path & FR-17 & --- & DR-15 \\ \hline
+View personal record & FR-18 & NFR-05 & DR-06, DR-07 \\ \hline
+Send app feedback & FR-20 & --- & DR-18 \\ \hline
+Explore occupations & FR-05, FR-06 & NFR-08, NFR-13, NFR-18, NFR-19 & DR-01, DR-15 \\ \hline
+View occupation profile & FR-05 & NFR-06 & DR-08, DR-15 \\ \hline
+Enter adjacent occupation & FR-07 & --- & DR-02, DR-03, DR-06 \\ \hline
+Choose scenario & FR-08 & --- & DR-06 \\ \hline
+View level description & FR-05 & --- & DR-15 \\ \hline
+Complete side quest & FR-16 & --- & DR-04, DR-06 \\ \hline
+Perform scenario & FR-09, FR-10, FR-14, FR-15 & NFR-03, NFR-04, NFR-07, NFR-11, NFR-13, NFR-15, NFR-19 & DR-04, DR-05, DR-06, DR-07 \\ \hline
+View scenario context & FR-09 & NFR-09 & DR-04 \\ \hline
+Resolve activity & FR-11, FR-12, FR-15 & NFR-02, NFR-05, NFR-07, NFR-14, NFR-17 & DR-07 \\ \hline
+Get hint & FR-13 & --- & DR-07 \\ \hline
+Answer follow-up question & FR-12 & NFR-01, NFR-15, NFR-17 & DR-07 \\ \hline
+Flag wrong content & FR-14 & --- & DR-07 \\ \hline
+Rate occupation & FR-19 & NFR-06 & DR-08 \\ \hline
+Author scenario & FR-22 & NFR-10, NFR-16 & DR-04 \\ \hline
+Generate scenario content & FR-23 & NFR-11, NFR-12 & DR-05, DR-10 \\ \hline
+Build reference set & FR-24 & --- & DR-09 \\ \hline
+Review scenario & FR-25 & NFR-15, NFR-16 & DR-13 \\ \hline
+Apply review criteria & FR-25 & --- & DR-19 \\ \hline
+Revalidate scenario & FR-27 & NFR-16 & DR-13 \\ \hline
+Review flagged content & FR-14 & --- & DR-07 \\ \hline
+Play-test draft game & FR-26 & --- & DR-11 \\ \hline
+Check grading reliability & FR-28 & NFR-14 & DR-07, DR-09 \\ \hline
+Submit blind ratings & FR-29 & --- & DR-09 \\ \hline
+Manage occupation profile & FR-21 & NFR-10, NFR-16 & DR-01, DR-02, DR-03, DR-15 \\ \hline
+Manage occupation & FR-30 & NFR-10, NFR-16 & DR-13, DR-15 \\ \hline
+Import reference data & FR-31 & --- & DR-01 \\ \hline
+Assign domain expert & FR-34 & --- & DR-13, DR-16 \\ \hline
+Reassign overdue review & FR-34 & --- & DR-13 \\ \hline
+Design scenario presentation & FR-35 & NFR-15 & DR-14 \\ \hline
+Generate missing asset & FR-36 & --- & DR-14 \\ \hline
+Define review criteria & FR-32 & --- & DR-19 \\ \hline
+Open task scenario & FR-33 & --- & DR-13 \\ \hline
+Publish scenario & FR-37 & NFR-15, NFR-16 & DR-13 \\ \hline
+Remove scenario & FR-38 & NFR-16 & DR-13 \\ \hline
+Monitor occupation statistics & FR-39 & NFR-06 & DR-06, DR-08, DR-11 \\ \hline
+Request revalidation & FR-27 & --- & DR-13 \\ \hline
+View coverage report & FR-39 & --- & DR-04, DR-15 \\ \hline
+Manage user accounts & FR-41 & NFR-17 & DR-16 \\ \hline
+Assign occupation staff & FR-40 & --- & DR-16 \\ \hline
+Disable account & FR-41 & --- & DR-16 \\ \hline
+Delete account & FR-41 & NFR-05 & DR-16 \\ \hline
+View activity log & FR-41 & --- & DR-16 \\ \hline
+Configure AI models & FR-42 & NFR-12, NFR-14 & DR-17 \\ \hline
+Monitor operation cost & FR-43 & NFR-11, NFR-18 & DR-10 \\ \hline
+Re-run failed job & FR-43 & NFR-04 & DR-10 \\ \hline
+Review app feedback & FR-20 & --- & DR-18 \\ \hline
+\end{longtable}
+}
+
+Traceability to design and implementation.
+
+{\footnotesize\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.108\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.128\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.158\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.087\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.148\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.238\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Traceability of functional requirements.} \\
+\hline
+\textbf{FR} & \textbf{Activity} & \textbf{Sequence} & \textbf{Module} & \textbf{Data} & \textbf{API} & \textbf{Status} \\ \hline
+\endfirsthead
+\hline
+\textbf{FR} & \textbf{Activity} & \textbf{Sequence} & \textbf{Module} & \textbf{Data} & \textbf{API} & \textbf{Status} \\ \hline
+\endhead
+FR-01, FR-02 & AD-01a, AD-01f & SD-04 & Auth, User & A & Auth, User & FR-01 implemented; FR-02 partly \\ \hline
+FR-03, FR-04 & AD-01b & SD-03 & Career & H & Career & Screens on sample data \\ \hline
+FR-05, FR-17 & AD-01c & --- & Catalogue, Career & B & Catalogue, Career & Partly \\ \hline
+FR-06, FR-08 & AD-01c & SD-02 & Career & D, I & Catalogue, Career & Designed; shown on sample data \\ \hline
+FR-07 & AD-01c & --- & Career & I & Career & Deferred, waiting for the team's decision \\ \hline
+FR-09, FR-10 & AD-01d & SD-01, SD-10 & Play & E, J & Play & Implemented \\ \hline
+FR-11, FR-12 & AD-01d & SD-01, SD-10 & Assessment, Ai & J, L & Play & Implemented \\ \hline
+FR-13 & AD-01h & SD-10 & Play & J & Play & Implemented in the shift flow \\ \hline
+FR-14, FR-15 & AD-01d & SD-02 & Play, Career & I, J & Play & Partly; no numeric score in the shift flow \\ \hline
+FR-16 & AD-01c & --- & Life & G & Life & Designed only \\ \hline
+FR-18 & AD-01f & --- & Career & H, I & Career & Screens on sample data \\ \hline
+FR-19 & AD-01e & SD-11 & Feedback & L & Feedback & Implemented \\ \hline
+FR-20 & AD-01g, AD-05e & SD-11 & Feedback & L & Feedback & Explorer side implemented; administrator side not built \\ \hline
+FR-21 & AD-03d & --- & Catalogue & B & Catalogue & Partly \\ \hline
+FR-22, FR-23, FR-24 & AD-04 & SD-05 & Scenario, Ai & E, F & Scenario, Ai & Implemented \\ \hline
+FR-25, FR-32 & --- & SD-06 & Review & F & Review & Implemented \\ \hline
+FR-26 & --- & SD-07 & Publishing & F & Publishing & Designed only \\ \hline
+FR-27 & AD-03b & --- & Review & F & Review & Designed only \\ \hline
+FR-28, FR-29 & AD-03c & --- & Quality & L & Quality & Designed only \\ \hline
+FR-30 & AD-02b & --- & Catalogue, Lifecycle & B, F & Catalogue & Partly \\ \hline
+FR-31 & AD-02c & SD-09 & Import & C & Import & Designed only \\ \hline
+FR-33, FR-34 & AD-02f & SD-06 & Scenario, Review & F & Scenario, Review & Implemented for opening and assigning; reassigning overdue reviews not verified \\ \hline
+FR-35, FR-36 & --- & SD-07 & Publishing, Ai & E, G & Publishing & Partly: presentation, assets, draft build \\ \hline
+FR-37, FR-38 & AD-02d & SD-08 & Publishing, Lifecycle & F & Publishing & Designed only \\ \hline
+FR-39 & AD-02e & --- & Monitoring & --- & Monitoring & Designed only \\ \hline
+FR-40, FR-41 & AD-05a, AD-05b & --- & User, Auth & A & User & Partly \\ \hline
+FR-42 & AD-05c & --- & Ai & L & Ai & Partly: models from configuration, set recorded at start-up \\ \hline
+FR-43 & AD-05d & SD-12 & Monitoring & L & Monitoring & Designed only; cost ledger exists \\ \hline
+\end{longtable}
+}
+
+{\small\setstretch{1}\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr 0.126\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.401\textwidth-2\tabcolsep-\arrayrulewidth\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.468\textwidth-2\tabcolsep-\arrayrulewidth\relax}|}
+\caption{Traceability of non-\allowbreak{}functional requirements.} \\
+\hline
+\textbf{NFR} & \textbf{Design element} & \textbf{Evidence} \\ \hline
+\endfirsthead
+\hline
+\textbf{NFR} & \textbf{Design element} & \textbf{Evidence} \\ \hline
+\endhead
+NFR-01, NFR-02 & Asynchronous grading and event stream (5.3.1) & Measures fixed (7.3.2), not yet taken; single manual runs (6.1.4) \\ \hline
+NFR-03 & Event log, turn identifier, browser store (5.3.8) & Prototype sends a run at the end, so not met (7.4); the shift flow resumes (6.1.4) \\ \hline
+NFR-04 & Failover, circuit breaker, pause (5.3.1) & Unit tests of the gateway (6.2.1); not measured on live outage \\ \hline
+NFR-05, NFR-06 & De-\allowbreak{}identification, DF-01, suppression (5.3.10) & De-\allowbreak{}identification implemented in the narrator path; policies designed \\ \hline
+NFR-07 & Disclosure at the point of use (5.3.8) & Design \\ \hline
+NFR-08 & Vietnamese only (5.3.8) & Implemented in both applications \\ \hline
+NFR-09 & Objective stated in every scenario & Validator; comprehension check in Phase E \\ \hline
+NFR-10 & Content as data (5.3.1) & Implemented in the authoring pipeline \\ \hline
+NFR-11 & Cost ledger and ceiling (5.3.1) & Ledger implemented; one observed cost (6.1.4) \\ \hline
+NFR-12 & Gateway port and adapter & Implemented; no substitution test yet \\ \hline
+NFR-13 & Budget and lazy loading (5.2.1) & Not met (7.1) \\ \hline
+NFR-14, NFR-15 & Judge panel, reference set (7.3) & Method fixed; keyword baseline fails; panel not yet measured \\ \hline
+NFR-16 & Lifecycle log, immutable release (SM-01) & Log implemented; release not built \\ \hline
+NFR-17 & Security controls (5.3.10) & Partly (threat table) \\ \hline
+NFR-18 & Two zones, monitoring (5.3.1) & Design; one-process capacity measured (7.2) \\ \hline
+NFR-19 & Accessible SVG map, contrast (5.3.8) & Partly (7.1) \\ \hline
+\end{longtable}
+}

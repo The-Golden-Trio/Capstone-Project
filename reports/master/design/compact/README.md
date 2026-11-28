@@ -2,16 +2,16 @@
 
 Bộ class diagram duy nhất của hệ thống, vẽ ngày 20/11 từ `plantuml/erd/ERD_JobQuest_Chen.puml` (ERD **không bị sửa**) và `research/`. Nó **thay** hai bộ cũ (`class/CL-00…07` vẽ ngày 6/11 và `class/compact/`). Cả hai nhóm file đều **sinh bằng script** rồi mới render, nên sửa nguồn rồi chạy lại, đừng sửa tay file `.puml`.
 
-| Nhóm                                                                                               | File                                  | Nguồn                     | Script           |
-| -------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------- | ---------------- |
-| Domain (UML OOP: thuộc tính, method, kế thừa, composition, aggregation, association class, bội số) | `plantuml/class/domain/CD-01 … CD-08` | ERD Chen + `domain.yaml`  | `gen_domain.py`  |
-| Module NestJS (controller, service, processor, guard, port, DTO)                                   | `plantuml/class/CL-00 … CL-08`        | `nest-modules.yaml` + ERD | `gen_class.py`   |
-| ERD tách 6 sơ đồ (`plantuml/erd/ERD-01 … ERD-06`, 21/11)                                           | A+L · B+C · D+E · F · G+K · H+I+J     | ERD Chen                  | `gen_erd.py`     |
-| Hợp đồng API (`api/compact/openapi.yaml`, `swagger.html`)                                          | sinh lại 21/11 (109 operation)        | `nest-modules.yaml`       | `gen_openapi.py` |
+| Nhóm                                                                                                 | File                                  | Nguồn                     | Script           |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------- | ---------------- |
+| Domain (UML OOP: thuộc tính, method, kế thừa, composition, aggregation, association class, bội số)   | `plantuml/class/domain/CD-01 … CD-08` | ERD Chen + `domain.yaml`  | `gen_domain.py`  |
+| Module NestJS (controller, service, processor, guard, port, DTO)                                     | `plantuml/class/CL-00 … CL-08`        | `nest-modules.yaml` + ERD | `gen_class.py`   |
+| ERD tách 24 sơ đồ nhỏ (`plantuml/erd/ERD-01a … ERD-06d`, 6 nhóm ERD-01…06 từ 21/11, tách tiếp 24/11) | A+L · B+C · D+E · F · G+K · H+I+J     | ERD Chen                  | `gen_erd.py`     |
+| Hợp đồng API (`api/compact/openapi.yaml`, `swagger.html`)                                            | sinh lại 21/11 (109 operation)        | `nest-modules.yaml`       | `gen_openapi.py` |
 
 ```
 python3 gen_domain.py [--types]   # đọc ERD, vẽ CD-01…08; --types in các cột chưa có kiểu riêng
-python3 gen_erd.py                # tách ERD Chen thành ERD-01…06: entity vẽ đủ ở sơ đồ chủ, mượn sang sơ đồ khác chỉ còn key
+python3 gen_erd.py                # tách ERD Chen thành ERD-01a…06d (≤ 8 entity mỗi sơ đồ, danh sách ở VIEWS): entity vẽ đủ ở sơ đồ chủ, mượn sang sơ đồ khác chỉ còn key; kèm ERD-00_Overview: mọi entity và relationship trên một trang, không thuộc tính
 python3 gen_class.py              # kiểm module (DI, import, route, sở hữu bảng) rồi vẽ CL-00…08
 ```
 

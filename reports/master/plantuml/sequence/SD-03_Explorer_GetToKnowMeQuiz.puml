@@ -1,5 +1,4 @@
 @startuml SD-03_Explorer_GetToKnowMeQuiz
-title SD-03 · Explorer — complete Get-to-know-me quiz
 
 actor Explorer
 participant "Explorer app" as App
